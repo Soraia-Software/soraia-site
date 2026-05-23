@@ -1,0 +1,451 @@
+---
+import Layout from "~/layouts/Layout.astro";
+
+const title = "AI Readiness Scorecard — capisci dove sei in 3 minuti | Soraia";
+const description =
+  "7 domande, 3 minuti. Ottieni il tuo AI Readiness Score + un report personalizzato con next-step concreti per portare l'IA nella tua azienda.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  name: "AI Readiness Scorecard",
+  url: "https://www.soraia.io/scorecard",
+  about: "Assessment for SMEs to evaluate AI adoption readiness",
+};
+
+// Questions structure with weighted scoring
+const questions = [
+  {
+    id: "team_size",
+    label: "Quanto è grande il tuo team?",
+    options: [
+      { value: "xs", label: "1–10 persone",     score: 5 },
+      { value: "s",  label: "11–25 persone",    score: 10 },
+      { value: "m",  label: "26–50 persone",    score: 14 },
+      { value: "l",  label: "51–200 persone",   score: 14 },
+      { value: "xl", label: "200+ persone",     score: 10 },
+    ],
+  },
+  {
+    id: "industry",
+    label: "In quale settore operate?",
+    options: [
+      { value: "hr",        label: "Recruiting & HR",        score: 14 },
+      { value: "finance",   label: "Finance & Accounting",   score: 14 },
+      { value: "vc",        label: "Venture Capital · PE · M&A", score: 14 },
+      { value: "sales",     label: "Sales & Marketing",      score: 13 },
+      { value: "support",   label: "Customer Support · Ops", score: 13 },
+      { value: "other",     label: "Altro",                  score: 8 },
+    ],
+  },
+  {
+    id: "repetitive",
+    label: "Quanta % del tempo del team va su task ripetitivi a basso valore?",
+    options: [
+      { value: "low",  label: "Meno del 20%",   score: 4 },
+      { value: "med",  label: "20–40%",          score: 9 },
+      { value: "high", label: "40–60%",          score: 14 },
+      { value: "vhigh",label: "Oltre il 60%",   score: 16 },
+    ],
+  },
+  {
+    id: "ai_today",
+    label: "State già usando strumenti AI nel team?",
+    options: [
+      { value: "none",     label: "Per niente",                                   score: 4 },
+      { value: "personal", label: "Sì, individualmente (ChatGPT/Claude personali)", score: 10 },
+      { value: "business", label: "Sì, licenza business condivisa",                 score: 12 },
+      { value: "custom",   label: "Sì, anche con qualche workflow custom",          score: 14 },
+    ],
+  },
+  {
+    id: "pain",
+    label: "Quale è il vostro biggest pain point operativo?",
+    options: [
+      { value: "screening",  label: "Screening / qualifica candidati o lead", score: 13 },
+      { value: "docs",       label: "Lettura e gestione documenti",            score: 13 },
+      { value: "outreach",   label: "Outreach personalizzato a scala",         score: 13 },
+      { value: "support",    label: "Smistamento richieste e ticket",          score: 13 },
+      { value: "data",       label: "Estrazione dati e reportistica",          score: 13 },
+      { value: "other",      label: "Altro / più di uno",                       score: 8 },
+    ],
+  },
+  {
+    id: "budget",
+    label: "Quale budget hai allocato per portare l'AI nel team nei prossimi 12 mesi?",
+    options: [
+      { value: "none",    label: "Nessuno per ora — sto esplorando", score: 4 },
+      { value: "low",     label: "Sotto i €10.000",                  score: 9 },
+      { value: "mid",     label: "€10.000–€30.000",                  score: 14 },
+      { value: "high",    label: "€30.000–€100.000",                 score: 16 },
+      { value: "vhigh",   label: "Oltre €100.000",                   score: 14 },
+    ],
+  },
+  {
+    id: "urgency",
+    label: "Quanto urge per voi vedere risultati?",
+    options: [
+      { value: "asap",    label: "Adesso — sentiamo la pressione",     score: 13 },
+      { value: "q",       label: "Entro questo trimestre",              score: 13 },
+      { value: "half",    label: "Entro 6 mesi",                        score: 9 },
+      { value: "year",    label: "Quest'anno",                          score: 6 },
+      { value: "none",    label: "Stiamo solo esplorando",              score: 3 },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+  <!-- ============================================================
+       HERO + QUIZ
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-violet-mesh" style="min-height: calc(100vh - 72px);">
+    <div class="container-soraia pt-16 md:pt-24 pb-20 relative">
+
+      <!-- Intro state -->
+      <div id="sc-intro" class="max-w-3xl mx-auto text-center">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
+          <span class="w-1 h-1 rounded-full bg-violet-600"></span>
+          AI Readiness Scorecard · 3 minuti
+        </p>
+
+        <h1 class="text-balance" style="font-size: clamp(2.25rem, 5vw + 1rem, 4rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+          Capisci dove sei.<br/>Scopri da dove iniziare.
+        </h1>
+
+        <p class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl mx-auto text-pretty" style="color: var(--color-ink-muted);">
+          7 domande sulla tua realtà operativa. Ti restituiamo un <strong style="color: var(--color-ink); font-weight: 500;">AI Readiness Score</strong> (0-100) + 3 raccomandazioni concrete per il tuo caso. Nessuna email richiesta per vedere il risultato.
+        </p>
+
+        <button type="button" id="sc-start" class="btn btn-primary mt-9">
+          Inizia lo scorecard
+          <span class="btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </button>
+
+        <div class="mt-12 grid grid-cols-3 gap-4 max-w-2xl mx-auto text-[13px]" style="color: var(--color-ink-muted);">
+          <div class="flex flex-col items-center gap-2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#892D9C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span><strong style="color: var(--color-ink); font-weight: 500;">3 min</strong> medi</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#892D9C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            <span><strong style="color: var(--color-ink); font-weight: 500;">7</strong> domande</span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#892D9C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M3 12a9 9 0 1118 0M3 12a9 9 0 0018 0"/></svg>
+            <span><strong style="color: var(--color-ink); font-weight: 500;">No email</strong> per vedere risultato</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz state -->
+      <div id="sc-quiz" class="max-w-2xl mx-auto hidden">
+        <!-- Progress -->
+        <div class="mb-10">
+          <div class="flex items-center justify-between mb-3 text-[11px] font-medium tracking-[0.14em] uppercase" style="color: var(--color-ink-soft);">
+            <span>Domanda <span id="sc-current">1</span> di {questions.length}</span>
+            <span><span id="sc-percent">0</span>%</span>
+          </div>
+          <div class="h-[3px] rounded-full overflow-hidden" style="background: var(--color-line);">
+            <div id="sc-progress" class="h-full transition-all duration-300" style="width: 0%; background: linear-gradient(90deg, #892D9C 0%, #9F1AB1 100%);"></div>
+          </div>
+        </div>
+
+        <!-- Questions container -->
+        <div id="sc-questions"></div>
+
+        <!-- Nav -->
+        <div class="mt-10 flex items-center justify-between">
+          <button type="button" id="sc-back" class="btn btn-ghost" disabled style="opacity: 0.4; cursor: not-allowed;">← Indietro</button>
+          <button type="button" id="sc-next" class="btn btn-primary" disabled style="opacity: 0.4; cursor: not-allowed;">Avanti</button>
+        </div>
+      </div>
+
+      <!-- Result state -->
+      <div id="sc-result" class="max-w-3xl mx-auto hidden">
+        <div class="text-center mb-12">
+          <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
+            <span class="w-1 h-1 rounded-full bg-violet-600"></span>
+            Il tuo AI Readiness Score
+          </p>
+
+          <p style="font-family: var(--font-sans); font-size: clamp(5rem, 14vw, 8rem); font-weight: 500; letter-spacing: -0.04em; line-height: 1; color: #892D9C;">
+            <span id="sc-score">—</span><span style="font-size: 0.4em; color: var(--color-ink-soft); font-weight: 400;">/100</span>
+          </p>
+
+          <h2 id="sc-tier-title" class="mt-6 text-balance" style="font-size: clamp(1.5rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">—</h2>
+          <p id="sc-tier-desc" class="mt-5 text-[17px] leading-relaxed max-w-xl mx-auto" style="color: var(--color-ink-muted);">—</p>
+        </div>
+
+        <!-- 3 recommendations -->
+        <div class="card-editorial !p-8 md:!p-10 mb-8">
+          <p class="eyebrow mb-5">3 next-step raccomandate</p>
+          <ul id="sc-recs" class="space-y-5"></ul>
+        </div>
+
+        <!-- CTA: download sample + book call -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="/downloads/ai-assessment-sample" class="card-editorial !p-6 group no-underline transition-all hover:!-translate-y-1 hover:shadow-md">
+            <div class="flex items-start gap-4">
+              <div class="w-11 h-11 rounded-lg bg-violet-50 text-violet-700 flex items-center justify-center flex-shrink-0">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </div>
+              <div>
+                <p class="font-medium text-[15px]" style="color: var(--color-ink);">Scarica il sample assessment</p>
+                <p class="text-[13px] mt-1 leading-snug" style="color: var(--color-ink-muted);">PDF anonimo di esempio: cosa riceveresti in 1-2 settimane.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="/parliamone" class="card-editorial !p-6 group no-underline transition-all hover:!-translate-y-1 hover:shadow-md" style="border-color: var(--color-violet-200); background: #FDF4FF;">
+            <div class="flex items-start gap-4">
+              <div class="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0" style="background: #892D9C; color: white;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+              </div>
+              <div>
+                <p class="font-medium text-[15px]" style="color: var(--color-ink);">Discuti il tuo risultato</p>
+                <p class="text-[13px] mt-1 leading-snug" style="color: var(--color-ink-muted);">20 min con il CEO. Capiamo insieme da dove iniziare.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="mt-12 text-center">
+          <button type="button" id="sc-restart" class="btn btn-ghost text-[14px]">Rifai lo scorecard ↻</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ questions }}>
+    (function () {
+      const intro = document.getElementById("sc-intro");
+      const quiz = document.getElementById("sc-quiz");
+      const result = document.getElementById("sc-result");
+      const startBtn = document.getElementById("sc-start");
+      const backBtn = document.getElementById("sc-back");
+      const nextBtn = document.getElementById("sc-next");
+      const restartBtn = document.getElementById("sc-restart");
+      const questionsEl = document.getElementById("sc-questions");
+      const currentEl = document.getElementById("sc-current");
+      const percentEl = document.getElementById("sc-percent");
+      const progressEl = document.getElementById("sc-progress");
+      const scoreEl = document.getElementById("sc-score");
+      const tierTitle = document.getElementById("sc-tier-title");
+      const tierDesc = document.getElementById("sc-tier-desc");
+      const recsEl = document.getElementById("sc-recs");
+
+      const state = { step: 0, answers: {} };
+
+      function show(el) { el.classList.remove("hidden"); }
+      function hide(el) { el.classList.add("hidden"); }
+
+      function renderQuestion() {
+        const q = questions[state.step];
+        currentEl.textContent = state.step + 1;
+        const pct = Math.round((state.step / questions.length) * 100);
+        percentEl.textContent = pct;
+        progressEl.style.width = pct + "%";
+
+        const selected = state.answers[q.id];
+
+        questionsEl.innerHTML = `
+          <h2 class="text-balance" style="font-size: clamp(1.5rem, 3vw + 0.4rem, 2rem); line-height: 1.2; letter-spacing: -0.02em; font-weight: 500;">${q.label}</h2>
+          <div class="mt-8 space-y-3">
+            ${q.options.map((o) => `
+              <label class="sc-opt block cursor-pointer rounded-lg border p-4 transition-all ${selected === o.value ? "selected" : ""}" data-value="${o.value}" data-score="${o.score}">
+                <div class="flex items-center gap-3">
+                  <span class="sc-radio relative w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0"></span>
+                  <span class="text-[15px]" style="color: var(--color-ink);">${o.label}</span>
+                </div>
+              </label>
+            `).join("")}
+          </div>
+        `;
+
+        // Bind option clicks
+        questionsEl.querySelectorAll(".sc-opt").forEach((el) => {
+          el.addEventListener("click", () => {
+            questionsEl.querySelectorAll(".sc-opt").forEach((e) => e.classList.remove("selected"));
+            el.classList.add("selected");
+            state.answers[q.id] = el.dataset.value;
+            // Update next button
+            nextBtn.disabled = false;
+            nextBtn.style.opacity = "1";
+            nextBtn.style.cursor = "pointer";
+          });
+        });
+
+        // Reset next button per question
+        if (state.answers[q.id]) {
+          nextBtn.disabled = false;
+          nextBtn.style.opacity = "1";
+          nextBtn.style.cursor = "pointer";
+        } else {
+          nextBtn.disabled = true;
+          nextBtn.style.opacity = "0.4";
+          nextBtn.style.cursor = "not-allowed";
+        }
+
+        // Back button
+        if (state.step === 0) {
+          backBtn.disabled = true;
+          backBtn.style.opacity = "0.4";
+          backBtn.style.cursor = "not-allowed";
+        } else {
+          backBtn.disabled = false;
+          backBtn.style.opacity = "1";
+          backBtn.style.cursor = "pointer";
+        }
+
+        // Last question label
+        nextBtn.innerHTML = state.step === questions.length - 1
+          ? 'Vedi il tuo score →'
+          : 'Avanti';
+      }
+
+      function computeScore() {
+        let total = 0;
+        let max = 0;
+        for (const q of questions) {
+          const ans = state.answers[q.id];
+          const opt = q.options.find((o) => o.value === ans);
+          if (opt) total += opt.score;
+          const maxOpt = Math.max(...q.options.map((o) => o.score));
+          max += maxOpt;
+        }
+        // Normalize to 0-100
+        return Math.round((total / max) * 100);
+      }
+
+      function tierFor(score) {
+        if (score < 40) return {
+          tier: "early",
+          title: "Early stage — serve foundation",
+          desc: "Sei in una fase esplorativa. Prima di costruire agenti, conviene allineare il team sull'uso dell'AI e fissare i processi di base.",
+          recs: [
+            { title: "Inizia da un AI Adoption Foundation", body: "Workshop 2 giorni per livellare il team sull'uso AI quotidiano + governance di base. €8-10k per team fino a 20 persone." },
+            { title: "Mappa i tuoi processi", body: "Prima di automatizzare, capisci chi fa cosa e dove si perde tempo. Senza baseline, gli agenti non hanno target." },
+            { title: "Tieniti pronto per uno sprint", body: "Una volta che il team è allineato, scegli 1-2 processi ad alto impatto e costruisci il primo agente. 4 settimane al primo deploy." },
+          ],
+        };
+        if (score < 70) return {
+          tier: "ready",
+          title: "Ready — sei pronto a costruire",
+          desc: "Hai i bottleneck giusti, il team motivato, e probabilmente un budget. Adesso serve un piano d'azione preciso e un primo agente in produzione.",
+          recs: [
+            { title: "Fai l'AI Readiness Assessment (€2.000)", body: "1-2 settimane di lavoro insieme. Esce con: mappa processi, bottleneck con priorità, valutazione tool, action plan operativo. Rimborsato se procedi." },
+            { title: "Co-Building Sprint da €10-50k", body: "Prima delivery in 4 settimane. Se non sei soddisfatto, non paghi. Il tuo team forma con noi durante lo sprint." },
+            { title: "Affianca l'AI Adoption", body: "Mentre costruiamo gli agenti, formiamo il team che li userà. Senza adoption, gli agenti finiscono dimenticati." },
+          ],
+        };
+        return {
+          tier: "advanced",
+          title: "Advanced — costruiamo agenti specifici",
+          desc: "Stai già sfruttando AI a un livello base. Il prossimo salto è costruire agenti custom sui tuoi processi specifici, con codice tuo e zero lock-in.",
+          recs: [
+            { title: "Salta all'Assessment + Sprint", body: "Hai le basi. Andiamo dritti su 2-3 processi a ROI più alto. Assessment €2.000 (rimborsato), Sprint €10-50k, garanzia inclusa." },
+            { title: "Considera il Brain pilot", body: "Per i power user, deploy framework Soraia Brain — ogni persona ha un AI 'intern personale' che conosce il suo lavoro. Differenziatore reale." },
+            { title: "Pensa lungo termine: codice tuo, no lock-in", body: "Il codice degli agenti è tuo dalla prima settimana. Se vuoi internalizzare dopo, ti diamo training + docs. Zero abbonamenti perpetui." },
+          ],
+        };
+      }
+
+      function showResult() {
+        hide(quiz);
+        show(result);
+        const score = computeScore();
+        const t = tierFor(score);
+
+        // Animate score number
+        let curr = 0;
+        const step = Math.max(1, Math.ceil(score / 30));
+        const interval = setInterval(() => {
+          curr += step;
+          if (curr >= score) { curr = score; clearInterval(interval); }
+          scoreEl.textContent = curr;
+        }, 30);
+
+        tierTitle.textContent = t.title;
+        tierDesc.textContent = t.desc;
+        recsEl.innerHTML = t.recs.map((r, i) => `
+          <li class="flex items-start gap-4">
+            <span class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-[12px] font-medium" style="background: var(--color-violet-50); color: var(--color-violet-700);">${i + 1}</span>
+            <div>
+              <p class="font-medium text-[15px] mb-1" style="color: var(--color-ink);">${r.title}</p>
+              <p class="text-[14px] leading-relaxed" style="color: var(--color-ink-muted);">${r.body}</p>
+            </div>
+          </li>
+        `).join("");
+
+        // Scroll to top of result
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      startBtn.addEventListener("click", () => {
+        hide(intro);
+        show(quiz);
+        state.step = 0;
+        renderQuestion();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (nextBtn.disabled) return;
+        if (state.step === questions.length - 1) {
+          showResult();
+        } else {
+          state.step++;
+          renderQuestion();
+        }
+      });
+
+      backBtn.addEventListener("click", () => {
+        if (backBtn.disabled) return;
+        state.step--;
+        renderQuestion();
+      });
+
+      restartBtn.addEventListener("click", () => {
+        state.step = 0;
+        state.answers = {};
+        hide(result);
+        show(intro);
+        scoreEl.textContent = "—";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    })();
+  </script>
+
+  <style is:global>
+    .sc-opt {
+      border-color: var(--color-line);
+      background: white;
+    }
+    .sc-opt:hover {
+      border-color: var(--color-violet-300);
+      background: #FDFAFE;
+    }
+    .sc-opt .sc-radio {
+      border-color: var(--color-line-strong);
+    }
+    .sc-opt.selected {
+      border-color: var(--color-violet-600);
+      background: #FDF4FF;
+    }
+    .sc-opt.selected .sc-radio {
+      border-color: var(--color-violet-700);
+    }
+    .sc-opt.selected .sc-radio::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-violet-700);
+    }
+  </style>
+</Layout>

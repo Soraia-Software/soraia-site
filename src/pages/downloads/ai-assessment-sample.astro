@@ -1,0 +1,726 @@
+---
+// AI Readiness Assessment — sample anonymized report (printable to PDF via Cmd+P)
+// Stand-alone page, NOT using the global Layout (no header/footer for print)
+const title = "AI Readiness Assessment — Sample Report | Soraia";
+const description = "Esempio anonimo di un AI Readiness Assessment Soraia: cosa riceve un cliente in 1-2 settimane dopo €2.000.";
+---
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --brand: #892D9C;
+      --brand-deep: #4A1656;
+      --brand-soft: #FDF4FF;
+      --ink: #1A1A1A;
+      --ink-muted: #5F5E5A;
+      --ink-soft: #8B8A85;
+      --line: rgba(0,0,0,0.08);
+      --line-strong: rgba(0,0,0,0.14);
+      --bg: #FAFAF8;
+      --amber: #F4B842;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-family: "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; color: var(--ink); background: var(--bg); }
+    body { font-size: 14px; line-height: 1.6; }
+
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 64px 64px;
+      background: white;
+      min-height: 297mm;
+    }
+    @media print {
+      .page { max-width: none; padding: 24mm 22mm; box-shadow: none; min-height: auto; }
+      .no-print { display: none !important; }
+      .page-break { page-break-after: always; break-after: page; }
+      body { background: white; }
+    }
+
+    /* TYPOGRAPHY */
+    h1 { font-size: 2.5rem; font-weight: 500; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.5rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; margin: 2.5rem 0 1rem; }
+    h3 { font-size: 1.125rem; font-weight: 500; letter-spacing: -0.01em; margin: 1.5rem 0 0.5rem; color: var(--ink); }
+    h4 { font-size: 1rem; font-weight: 500; margin: 1rem 0 0.25rem; }
+    p { color: var(--ink-muted); margin-bottom: 0.85rem; }
+    strong { color: var(--ink); font-weight: 500; }
+    em { font-style: italic; color: var(--ink); }
+
+    .eyebrow {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      display: inline-block;
+    }
+
+    /* HAIRLINES */
+    .hr { border-top: 1px solid var(--line); margin: 2rem 0; }
+    .hr-strong { border-top: 1px solid var(--line-strong); margin: 2rem 0; }
+
+    /* COVER */
+    .cover {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .cover-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 4rem;
+    }
+    .cover-mark { width: 36px; height: 36px; }
+    .cover-brand-name { font-size: 1.25rem; font-weight: 500; letter-spacing: -0.01em; }
+    .cover-title { margin-top: auto; }
+    .cover-meta {
+      margin-top: 2rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--brand-soft);
+      border-radius: 12px;
+      border-left: 3px solid var(--brand);
+    }
+    .cover-meta-row { display: flex; gap: 2rem; align-items: baseline; flex-wrap: wrap; }
+    .cover-meta-row + .cover-meta-row { margin-top: 0.5rem; }
+    .cover-meta-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); min-width: 100px; }
+    .cover-meta-value { font-size: 14px; color: var(--ink); font-weight: 500; }
+    .cover-footer { margin-top: auto; padding-top: 3rem; font-size: 11px; color: var(--ink-soft); border-top: 1px solid var(--line); }
+
+    /* EXEC SUMMARY */
+    .exec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      margin: 2rem 0;
+    }
+    .exec-stat { background: white; padding: 1.5rem 1.25rem; }
+    .exec-stat-num {
+      font-size: 2.5rem;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--brand);
+    }
+    .exec-stat-label {
+      font-size: 12px;
+      color: var(--ink-muted);
+      margin-top: 0.5rem;
+      line-height: 1.4;
+    }
+
+    /* TABLES */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 13px;
+    }
+    th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      border-bottom: 1px solid var(--line-strong);
+      background: var(--bg);
+    }
+    td {
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      vertical-align: top;
+    }
+    td:last-child, th:last-child { text-align: right; }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .badge-high { background: #FEF2F2; color: #B91C1C; }
+    .badge-med  { background: #FEF5E0; color: #B45309; }
+    .badge-low  { background: #ECFDF5; color: #047857; }
+
+    /* PROCESSES LIST */
+    .process {
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      background: white;
+    }
+    .process-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.5rem; }
+    .process-name { font-weight: 500; color: var(--ink); }
+    .process-time { font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--ink-soft); }
+
+    /* ACTION PLAN */
+    .action {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .action:last-child { border-bottom: none; }
+    .action-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 9999px;
+      background: var(--brand-soft);
+      color: var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 13px;
+    }
+    .action-content h4 { margin-top: 0; }
+    .action-content .meta {
+      font-size: 11px;
+      font-family: "JetBrains Mono", monospace;
+      color: var(--ink-soft);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    /* CALLOUT */
+    .callout {
+      background: var(--brand-soft);
+      border-left: 3px solid var(--brand);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+    .callout p { color: var(--ink); margin: 0; }
+
+    /* PROOF */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .proof-card {
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: white;
+    }
+    .proof-card-num {
+      font-size: 1.75rem;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1;
+      color: var(--brand);
+    }
+    .proof-card-label {
+      font-size: 12px;
+      color: var(--ink-muted);
+      margin-top: 0.3rem;
+    }
+
+    /* PRINT CONTROLS (non-print only) */
+    .print-bar {
+      position: sticky;
+      top: 0;
+      background: white;
+      border-bottom: 1px solid var(--line-strong);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      margin: -24px -24px 0;
+    }
+    .print-bar a { color: var(--ink-muted); font-size: 13px; text-decoration: none; }
+    .print-bar a:hover { color: var(--ink); }
+    .print-btn {
+      background: var(--brand);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .print-btn:hover { background: var(--brand-deep); }
+
+    @media (max-width: 768px) {
+      .page { padding: 32px 24px; }
+      h1 { font-size: 1.875rem; }
+      .exec-grid { grid-template-columns: 1fr; }
+      .proof-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print print-bar">
+    <a href="/">← Soraia</a>
+    <button onclick="window.print()" class="print-btn">Stampa / Salva come PDF</button>
+  </div>
+
+  <div class="page">
+
+    <!-- ============================================================
+         COVER
+         ============================================================ -->
+    <div class="cover">
+      <div class="cover-header">
+        <img src="/logos/soraia-mark.svg" alt="Soraia" class="cover-mark" />
+        <span class="cover-brand-name">Soraia</span>
+      </div>
+
+      <div class="cover-title">
+        <p class="eyebrow" style="margin-bottom: 1.25rem;">AI Readiness Assessment · Sample anonimo</p>
+        <h1>AI Readiness Assessment per Acme Recruitment Srl.</h1>
+        <p style="margin-top: 1rem; font-size: 1.125rem; color: var(--ink-muted); max-width: 600px;">
+          Mappatura processi · Identificazione bottleneck · Valutazione stack · Action plan operativo
+        </p>
+      </div>
+
+      <div class="cover-meta">
+        <div class="cover-meta-row">
+          <span class="cover-meta-label">Cliente</span>
+          <span class="cover-meta-value">Acme Recruitment Srl. <em style="color: var(--ink-soft); font-weight: 400;">(nome anonimizzato)</em></span>
+        </div>
+        <div class="cover-meta-row">
+          <span class="cover-meta-label">Settore</span>
+          <span class="cover-meta-value">Recruiting & HR · Executive Search</span>
+        </div>
+        <div class="cover-meta-row">
+          <span class="cover-meta-label">Team</span>
+          <span class="cover-meta-value">18 persone (12 recruiter, 4 ops, 2 management)</span>
+        </div>
+        <div class="cover-meta-row">
+          <span class="cover-meta-label">Durata assessment</span>
+          <span class="cover-meta-value">12 giorni · 8 interviste interne · 3 sessioni con sponsor</span>
+        </div>
+        <div class="cover-meta-row">
+          <span class="cover-meta-label">Data</span>
+          <span class="cover-meta-value">Marzo 2026</span>
+        </div>
+      </div>
+
+      <div class="cover-footer">
+        Soraia S.r.l. · Via Losana 13, 13900 Biella (BI) · P.IVA 02820060024 · soraia.io · hello@soraia.io
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         EXECUTIVE SUMMARY
+         ============================================================ -->
+    <section>
+      <p class="eyebrow">Sezione 01 · Executive Summary</p>
+      <h2 style="margin-top: 0.75rem;">Cosa abbiamo trovato in 2 settimane di lavoro.</h2>
+
+      <p>
+        Acme Recruitment è un'agenzia di executive search in forte crescita (+38% revenue YoY) con un problema strutturale: <strong>il 56% del tempo del team recruiter va su attività amministrative ripetitive</strong> — screening CV, data entry su ATS legacy, scheduling colloqui, reportistica manuale per i clienti. Il management ha capito che servono ore liberate per scaling commerciale, ma le iniziative interne (template di prompt ChatGPT, automazioni Make sporadiche) non hanno generato impatto sistemico.
+      </p>
+
+      <div class="exec-grid">
+        <div class="exec-stat">
+          <div class="exec-stat-num">56%</div>
+          <div class="exec-stat-label">Tempo recruiter su task amministrativi misurato</div>
+        </div>
+        <div class="exec-stat">
+          <div class="exec-stat-num">€186k</div>
+          <div class="exec-stat-label">Valore annuo recuperabile (12 recruiter × baseline)</div>
+        </div>
+        <div class="exec-stat">
+          <div class="exec-stat-num">3</div>
+          <div class="exec-stat-label">Processi ad alta priorità identificati per Sprint 1</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p>
+          <strong>Raccomandazione</strong>: procedere con un <em>Co-Building Sprint</em> di 5-7 settimane focalizzato sui 3 processi prioritari (vedi Sezione 04). Investimento stimato <strong>€34.000–€42.000</strong>, payback atteso <strong>7-10 settimane</strong>, garanzia "ore recuperate o rimborso" inclusa.
+        </p>
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- ============================================================
+         CONTESTO OPERATIVO
+         ============================================================ -->
+    <section>
+      <p class="eyebrow">Sezione 02 · Contesto operativo</p>
+      <h2 style="margin-top: 0.75rem;">Come lavora oggi il team.</h2>
+
+      <h3>Stack attuale</h3>
+      <p>
+        Il team usa una stack frammentata: <strong>Bullhorn</strong> come ATS principale, <strong>Microsoft 365</strong> per email/calendar, <strong>Slack</strong> interno, fogli Google sparsi per tracking commerciale, <strong>Make</strong> per 2-3 automazioni isolate. Nessun layer di intelligence sopra l'ATS.
+      </p>
+
+      <h3>Processi mappati (top 6 per consumo orario)</h3>
+
+      <div class="process">
+        <div class="process-header">
+          <span class="process-name">1. Screening CV inbound</span>
+          <span class="process-time">~14 h/settimana/recruiter</span>
+        </div>
+        <p style="margin: 0; font-size: 13px;">
+          Recruiter scarica CV da Bullhorn, legge manualmente, valuta fit con JD, scarta o promuove. Il 70% scartato dopo 3-5 min di lettura. Nessuna automazione fit-scoring.
+        </p>
+      </div>
+
+      <div class="process">
+        <div class="process-header">
+          <span class="process-name">2. Outreach candidati passivi</span>
+          <span class="process-time">~9 h/settimana/recruiter</span>
+        </div>
+        <p style="margin: 0; font-size: 13px;">
+          Personalizzazione manuale email su LinkedIn + Bullhorn. Tasso di risposta 6%. Template generici penalizzano il brand.
+        </p>
+      </div>
+
+      <div class="process">
+        <div class="process-header">
+          <span class="process-name">3. Scheduling colloqui</span>
+          <span class="process-time">~5 h/settimana/recruiter</span>
+        </div>
+        <p style="margin: 0; font-size: 13px;">
+          Coordinamento email avanti-indietro tra candidato, cliente e team interno. Calendly poco usato perché clienti enterprise non vogliono link booking pubblici.
+        </p>
+      </div>
+
+      <div class="process">
+        <div class="process-header">
+          <span class="process-name">4. Reportistica weekly al cliente</span>
+          <span class="process-time">~4 h/settimana/recruiter</span>
+        </div>
+        <p style="margin: 0; font-size: 13px;">
+          Excel manuali aggiornati ogni venerdì. Status candidate, pipeline, prossimi step. Doppione di dati già in Bullhorn.
+        </p>
+      </div>
+
+      <div class="process">
+        <div class="process-header">
+          <span class="process-name">5. JD parsing &amp; intake da cliente</span>
+          <span class="process-time">~3 h/settimana/recruiter</span>
+        </div>
+        <p style="margin: 0; font-size: 13px;">
+          PDF/DOC ricevuti via email. Estrazione requisiti hard/soft, riformattazione per Bullhorn. Errori frequenti.
+        </p>
+      </div>
+
+      <div class="process">
+        <div class="process-header">
+          <span class="process-name">6. BD prospecting nuove aziende</span>
+          <span class="process-time">~2 h/settimana/recruiter</span>
+        </div>
+        <p style="margin: 0; font-size: 13px;">
+          Identificazione aziende in hiring spike. Fonti pubbliche miste, manuale, non scalabile.
+        </p>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         BOTTLENECK ANALYSIS
+         ============================================================ -->
+    <section>
+      <p class="eyebrow">Sezione 03 · Bottleneck con priorità</p>
+      <h2 style="margin-top: 0.75rem;">Dove l'AI produce il ROI più alto, più velocemente.</h2>
+
+      <p>
+        Abbiamo ranking 6 bottleneck per <em>impatto orario</em>, <em>fattibilità tecnica</em> e <em>velocità a regime</em>. Solo i primi 3 valgono uno sprint immediato.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Bottleneck</th>
+            <th>Impatto (h/sett)</th>
+            <th>Fattibilità</th>
+            <th>Priorità</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Screening CV inbound</strong><br/><span style="color: var(--ink-soft); font-size: 12px;">Agent: fit-scoring JD-driven + classificazione</span></td>
+            <td>168 h/sett</td>
+            <td>Alta — Bullhorn ha API</td>
+            <td><span class="badge badge-high">P0</span></td>
+          </tr>
+          <tr>
+            <td><strong>Outreach personalizzato</strong><br/><span style="color: var(--ink-soft); font-size: 12px;">Agent: drafting + multi-touch sequence</span></td>
+            <td>108 h/sett</td>
+            <td>Alta — integrazione LinkedIn Sales Nav</td>
+            <td><span class="badge badge-high">P0</span></td>
+          </tr>
+          <tr>
+            <td><strong>Reportistica weekly</strong><br/><span style="color: var(--ink-soft); font-size: 12px;">Agent: estrazione Bullhorn → narrative client report</span></td>
+            <td>48 h/sett</td>
+            <td>Alta — diretta su Bullhorn</td>
+            <td><span class="badge badge-high">P0</span></td>
+          </tr>
+          <tr>
+            <td><strong>Scheduling colloqui</strong><br/><span style="color: var(--ink-soft); font-size: 12px;">Agent: coordinatore email-based</span></td>
+            <td>60 h/sett</td>
+            <td>Media — richiede orchestrazione 3-way</td>
+            <td><span class="badge badge-med">P1</span></td>
+          </tr>
+          <tr>
+            <td><strong>JD parsing</strong><br/><span style="color: var(--ink-soft); font-size: 12px;">Agent: intake doc + Bullhorn fill</span></td>
+            <td>36 h/sett</td>
+            <td>Alta — basso volume</td>
+            <td><span class="badge badge-med">P1</span></td>
+          </tr>
+          <tr>
+            <td><strong>BD prospecting</strong><br/><span style="color: var(--ink-soft); font-size: 12px;">Agent: aziende-in-hiring spotter</span></td>
+            <td>24 h/sett</td>
+            <td>Bassa — dipende fonti esterne instabili</td>
+            <td><span class="badge badge-low">P2</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <p>
+          <strong>Concentrare lo sprint sui 3 P0</strong> recupera <strong>324 h/sett complessive</strong> (~57% del tempo amministrativo del team). I P1 li affrontiamo in uno sprint successivo, una volta che i 3 agenti P0 girano stabili.
+        </p>
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- ============================================================
+         STACK ASSESSMENT
+         ============================================================ -->
+    <section>
+      <p class="eyebrow">Sezione 04 · Stack assessment</p>
+      <h2 style="margin-top: 0.75rem;">Cosa tenere, cosa integrare, cosa eliminare.</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Stato</th>
+            <th>Raccomandazione</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bullhorn</strong> (ATS)</td>
+            <td><span class="badge badge-low">Tenere</span></td>
+            <td>Resta sorgente di verità. Agenti scrivono via API.</td>
+          </tr>
+          <tr>
+            <td><strong>Microsoft 365</strong></td>
+            <td><span class="badge badge-low">Tenere</span></td>
+            <td>Email + calendar OK. Aggiungere Graph API per scheduling agent.</td>
+          </tr>
+          <tr>
+            <td><strong>Make</strong> (automazioni)</td>
+            <td><span class="badge badge-med">Riposizionare</span></td>
+            <td>Resta per glue light. Agenti complessi vanno su layer dedicato.</td>
+          </tr>
+          <tr>
+            <td><strong>Fogli Google tracking</strong></td>
+            <td><span class="badge badge-high">Eliminare</span></td>
+            <td>Doppione di Bullhorn. Sostituiti da reportistica automatica.</td>
+          </tr>
+          <tr>
+            <td><strong>LinkedIn Sales Navigator</strong></td>
+            <td><span class="badge badge-low">Tenere</span></td>
+            <td>Necessario per outreach agent + BD prospecting.</td>
+          </tr>
+          <tr>
+            <td><strong>Layer AI agents</strong> (nuovo)</td>
+            <td><span class="badge badge-low">Aggiungere</span></td>
+            <td>LLM provider azienda (Anthropic Claude Business) + workflow orchestrator + observability. Stack agnostic, dettagli in Action Plan.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        <strong>Compliance</strong>: i candidati sono dati personali. La proposta tecnica prevede infrastruttura UE (Cloudflare Workers + UE-hosted LLM), audit log completo di ogni decisione agent, retention configurabile (default 90 giorni post-closure), DPA art. 28 con Soraia incluso.
+      </p>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         ACTION PLAN
+         ============================================================ -->
+    <section>
+      <p class="eyebrow">Sezione 05 · Action Plan operativo</p>
+      <h2 style="margin-top: 0.75rem;">Cosa facciamo nei prossimi 5-7 settimane.</h2>
+
+      <div class="action">
+        <div class="action-num">1</div>
+        <div class="action-content">
+          <h4>Settimana 1 · Kick-off + baseline</h4>
+          <p>Sessione full-day con sponsor (CEO + COO + lead recruiter). Lock dei target per i 3 agenti P0 con metriche misurabili. Setup ambienti dev + accessi Bullhorn API.</p>
+          <div class="meta">Deliverable: baseline document signed</div>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="action-num">2</div>
+        <div class="action-content">
+          <h4>Settimana 2–3 · Build Agent 1 (Screening CV)</h4>
+          <p>Costruzione fit-scoring agent contro JD. Test su dataset storico ultimi 6 mesi. Calibrazione threshold con 3 recruiter senior. Deploy in shadow mode (parallel a screening manuale).</p>
+          <div class="meta">Deliverable: agent live + 1 settimana shadow data</div>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="action-num">3</div>
+        <div class="action-content">
+          <h4>Settimana 3–4 · Build Agent 2 (Outreach)</h4>
+          <p>Personalizzazione email drafting agent. Templates approvati da brand. Multi-touch sequence (3 step). Integrazione LinkedIn Sales Nav + Bullhorn outbound.</p>
+          <div class="meta">Deliverable: agent live + A/B test setup</div>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="action-num">4</div>
+        <div class="action-content">
+          <h4>Settimana 4–5 · Build Agent 3 (Weekly Report)</h4>
+          <p>Estrazione pipeline da Bullhorn → narrative report client-facing. Template per ciascun cliente custom. Auto-send venerdì h17 con preview umano in approval queue.</p>
+          <div class="meta">Deliverable: agent live + 2 cicli weekly testati</div>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="action-num">5</div>
+        <div class="action-content">
+          <h4>Settimana 5–6 · Training team + Adoption</h4>
+          <p>Workshop 4h con tutti i 18 membri team. Demo agenti, governance, escalation rules. Definizione "agent champion" interno (1 recruiter senior).</p>
+          <div class="meta">Deliverable: prompt-pack interno + policy 1-pager</div>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="action-num">6</div>
+        <div class="action-content">
+          <h4>Settimana 6–7 · Go-live + misurazione</h4>
+          <p>Switch off shadow mode. Misurazione settimana-1 vs baseline. Adjustment finale agenti. <strong>30 giorni di hypercare</strong> con check settimanali.</p>
+          <div class="meta">Deliverable: report 30gg con metriche reali vs baseline</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- ============================================================
+         INVESTIMENTO + GARANZIA
+         ============================================================ -->
+    <section>
+      <p class="eyebrow">Sezione 06 · Investimento + Garanzia</p>
+      <h2 style="margin-top: 0.75rem;">Quanto costa e cosa promettiamo.</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Voce</th>
+            <th>Settimane</th>
+            <th>Importo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Co-Building Sprint (3 agenti P0)</td>
+            <td>5</td>
+            <td>€28.000–€34.000</td>
+          </tr>
+          <tr>
+            <td>AI Adoption workshop (18 persone, 1 batch)</td>
+            <td>1</td>
+            <td>€5.000</td>
+          </tr>
+          <tr>
+            <td>Hypercare (30 giorni post go-live)</td>
+            <td>4</td>
+            <td>Incluso</td>
+          </tr>
+          <tr style="background: var(--brand-soft);">
+            <td><strong>Totale</strong></td>
+            <td>5-7 settimane</td>
+            <td><strong>€33.000–€39.000</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <p>
+          <strong>Garanzia "ore recuperate o rimborso"</strong>. Target sprint: <strong>recupero medio di 7 ore/settimana per recruiter</strong> al go-live + 30gg di hypercare. Se non ci arriviamo, lavoriamo gratis finché non succede — o ti rimborsiamo lo sprint. Misurazione su baseline definita in Sezione 02.
+        </p>
+      </div>
+
+      <h3>Proiezione 12 mesi</h3>
+
+      <div class="proof-grid">
+        <div class="proof-card">
+          <div class="proof-card-num">~4.400h</div>
+          <div class="proof-card-label">Ore liberate anno 1<br/>(12 recruiter × 7h × 52 sett)</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-card-num">€220–€350k</div>
+          <div class="proof-card-label">Valore generato anno 1<br/>(fully loaded €50-80/h)</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-card-num">7–10 sett</div>
+          <div class="proof-card-label">Payback dello sprint<br/>(scenario conservativo)</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- ============================================================
+         CLOSING
+         ============================================================ -->
+    <section>
+      <p class="eyebrow">Prossimi passi</p>
+      <h2 style="margin-top: 0.75rem;">Come si parte.</h2>
+      <ol style="margin: 1.5rem 0 1rem 1.5rem; color: var(--ink-muted);">
+        <li style="margin-bottom: 0.75rem;"><strong style="color: var(--ink);">Allineamento (1 settimana)</strong>: revisione del report con sponsor + commitment formale sul budget.</li>
+        <li style="margin-bottom: 0.75rem;"><strong style="color: var(--ink);">Firma sprint + 50% fattura</strong>: lock delle settimane di delivery. Kick-off entro 10 giorni.</li>
+        <li><strong style="color: var(--ink);">Inizio sprint</strong>: 5-7 settimane fino al go-live. <em>Assessment €2.000 rimborsato sullo sprint</em>.</li>
+      </ol>
+
+      <p style="margin-top: 2rem;">
+        Per allineare i prossimi step: <strong>daniel.levis@soraia.io</strong> · <strong>hello@soraia.io</strong> · <strong>soraia.io/parliamone</strong>.
+      </p>
+
+      <div class="hr-strong"></div>
+      <p style="font-size: 11px; color: var(--ink-soft); margin-top: 1rem;">
+        <em>Questo documento è un sample anonimizzato. Tutti i dati cliente, le metriche operative e le proiezioni sono indicativi di un caso reale Soraia ma resi anonimi. L'assessment effettivo è custom per ogni cliente e include dati misurati direttamente sulla loro operatività.</em>
+      </p>
+    </section>
+
+  </div>
+</body>
+</html>
