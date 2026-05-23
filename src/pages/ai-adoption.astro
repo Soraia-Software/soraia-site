@@ -1,0 +1,601 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import CTABanner from "~/components/CTABanner.astro";
+import FAQ from "~/components/FAQ.astro";
+import LeadForm from "~/components/LeadForm.tsx";
+
+const title = "AI Adoption — formazione e change management | Soraia";
+const description =
+  "Programmi strutturati di formazione AI per Business Analyst, PM, recruiter, account, marketing, ops. Workshop, tutoraggio mensile, Company Brain. 3 livelli, prezzo per persona, ROI misurabile in 7-11 settimane.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "AI Adoption — formazione e change management",
+  provider: {
+    "@type": "Organization",
+    name: "Soraia",
+    url: "https://www.soraia.io",
+  },
+  areaServed: ["IT", "EU"],
+  serviceType: "AI training and change management for SMEs",
+};
+
+const phases = [
+  {
+    num: "01",
+    name: "Kick-off scoping",
+    what: "Sessione con sponsor interno e advanced users per mappare i processi reali da portare in aula. Output: agenda workshop customizzata sui task del tuo team.",
+    time: "2-4 ore",
+  },
+  {
+    num: "02",
+    name: "Workshop Batch A",
+    what: "Primo gruppo (max 10 persone). Uso consapevole di Claude e ChatGPT, connettori standardizzati (Airtable, Drive, Gmail, Slack, CRM, ATS), skill aziendali condivise, policy \"AI safe use\".",
+    time: "2 giorni × 4h",
+  },
+  {
+    num: "03",
+    name: "Workshop Batch B",
+    what: "Secondo gruppo, stesso contenuto. Doppio batch per garantire engagement e tenere libera la metà del team operativo durante le sessioni.",
+    time: "2 giorni × 4h",
+  },
+  {
+    num: "04",
+    name: "Wrap-up review",
+    what: "Due sessioni a 1 mese (una per batch). Formato circle: ogni partecipante porta un caso reale, vediamo cosa è stato applicato, dove ci si è bloccati, cosa serve consolidare.",
+    time: "2 × 2 ore",
+  },
+];
+
+const deliverables = [
+  "Prompt-pack per ruolo con i task ricorrenti già pronti",
+  "Set di skill aziendali standardizzate (delete protection, approval flow, gestione connettori)",
+  "Policy 1-pager \"AI safe use\" da circolare internamente",
+  "Checklist connettori: cosa attivare, cosa disattivare, quando, con che permessi",
+];
+
+const retainerFeatures = [
+  "Check-up mensile di gruppo (1h)",
+  "Call individuale di follow-up (30 min/mese)",
+  "Supporto async via Slack ed email",
+  "Evoluzione continua delle skill aziendali condivise",
+  "Onboarding nuove persone che entrano nel team",
+];
+
+const dontFeatures = [
+  "Corsi teorici sull'impatto dell'AI nella società o nell'economia",
+  "Slide riempite di tool generici, scollegate dai tuoi processi reali",
+  "Workshop one-shot senza follow-up — il 70% del contenuto si perde in 2 settimane",
+];
+
+const faqs = [
+  {
+    q: "Per chi è pensato il programma?",
+    a: "Per <strong>knowledge worker che fanno lavoro analitico, gestionale o creativo</strong>: Business Analyst, M&A, Project Manager, Recruiter, Account Manager, Content Creator, Operations, Customer Success. Lavoriamo con team da 10 a 50 persone — sopra i 50 modulariamo in più batch.",
+  },
+  {
+    q: "Quanto dura il programma completo?",
+    a: "<strong>Foundation</strong>: ~6 settimane totali (kick-off + 2 workshop in 2-3 sett + wrap-up a 1 mese). <strong>Foundation + Tutoraggio</strong>: 4 mesi (Foundation + 3 mesi di accompagnamento). <strong>Foundation + Brain Pilot</strong>: 4 mesi con coaching dedicato sul brain.",
+  },
+  {
+    q: "Quali tool insegnate ad usare?",
+    a: "Partiamo da quello che hai già: <strong>Claude e ChatGPT business</strong>, <strong>Airtable, Make, n8n</strong>, <strong>Google Workspace o Microsoft 365</strong>, <strong>il tuo CRM/ATS/ERP</strong>. Non vendiamo licenze nuove. Insegniamo a usare bene quello che il team usa già male o non usa.",
+  },
+  {
+    q: "Cosa significa Company Brain e perché serve?",
+    a: "Un framework leggero (cartella locale + repository privato) dove ogni persona accumula conoscenza propria sui processi, clienti, progetti seguiti. Claude ci accede e diventa di fatto un \"intern personale\" che conosce il lavoro della persona e a cui delegare task. <strong>Già adottato internamente da Soraia da oltre 6 mesi</strong>, framework pronto da deployare.",
+  },
+  {
+    q: "Workshop in presenza o da remoto?",
+    a: "<strong>Default: in presenza presso la tua sede</strong>, perché l'engagement è 3x e i casi pratici emergono spontaneamente. Possibile da remoto per team distribuiti, con setup specifico (sessioni più corte, esercizi async tra le sessioni). Trasferte in Italia incluse nel setup.",
+  },
+  {
+    q: "Come misurate il ROI?",
+    a: "<strong>Tracking della produttività self-reported</strong>: punto di partenza in kick-off, milestone a 1 e 3 mesi. <strong>Final review a 5 mesi</strong> con dati di impatto consolidati e roadmap successiva. La stima conservativa è 30 minuti liberati/giorno/persona, che a 220 giorni lavorativi = 110h/anno/persona × €50-80/h fully loaded.",
+  },
+  {
+    q: "Cosa succede se l'adozione non parte?",
+    a: "Le Proposte 2 e 3 includono <strong>tutoraggio mensile con accountability</strong> (esercizio assegnato, check-up di gruppo, coaching 1:1): è la differenza tra adozione reale e workshop dimenticato. Se nonostante questo l'adozione non si attiva, lo capiamo a 2 mesi e adattiamo metodo o partecipanti — non aspettiamo il final review.",
+  },
+  {
+    q: "Avete esperienza nel mio settore?",
+    a: "Abbiamo erogato programmi simili a clienti in <strong>venture capital e financial services</strong> (LIFTT), <strong>recruitment</strong> (APraise, OggiLavoro, Stars Be Original), <strong>marketing</strong> (KB&B), <strong>accounting</strong> (Numeraria), <strong>real estate</strong> (Winter, FRH), <strong>tech</strong> (Rainplan, Navily). Lo scoping iniziale parte sempre dal tuo settore specifico.",
+  },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700">
+    <div class="orb orb-violet w-[600px] h-[600px] -top-32 -right-20 opacity-50 float-slow" aria-hidden="true"></div>
+    <div class="orb orb-lilac w-[500px] h-[500px] -bottom-32 -left-20 opacity-40 float-slower" aria-hidden="true"></div>
+
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="max-w-[900px]">
+        <p class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-semibold uppercase tracking-[0.14em] text-violet-100 mb-7 fade-up">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber animate-pulse"></span>
+          Persone · AI Adoption
+        </p>
+
+        <h1 class="font-display text-[2.75rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] font-semibold tracking-[-0.035em] leading-[0.98] text-white text-balance fade-up fade-up-delay-1">
+          Programmi di <em class="not-italic text-amber">AI Adoption</em> che generano produttività reale.
+        </h1>
+
+        <p class="mt-7 text-[18px] md:text-[20px] text-violet-100/85 leading-[1.5] max-w-2xl fade-up fade-up-delay-2 text-pretty">
+          Workshop pratico sui tuoi processi reali, governance dell'uso AI, tutoraggio mensile per garantire adozione e <strong class="text-white">ROI misurabile in 7-11 settimane</strong>.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+          <a href="#proposte" class="btn !bg-white !text-violet-900 hover:!bg-amber hover:!text-ink-900">
+            Vedi le 3 proposte
+            <span class="btn-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="#metodo" class="btn !bg-transparent !text-white !border-white/25 hover:!bg-white/10">
+            Il metodo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       IL PROBLEMA
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Il problema"
+        title="Il vero gap non è l'AI. È l'adozione."
+        subtitle="In ogni team convivono due popolazioni: <strong>una minoranza avanzata</strong> che costruisce agent e skill personali, e <strong>una maggioranza</strong> che usa Claude o ChatGPT come una chat (mail, ricerche, sintesi). Il rischio non è la tecnologia: è il divario di produttività che genera asimmetrie dentro lo stesso team e impedisce processi condivisi."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <article class="card-editorial reveal !p-7 flex flex-col gap-4">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-violet-700 to-violet-500 flex items-center justify-center shadow-violet">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-semibold text-ink-900 leading-tight">Asimmetrie nel team</h3>
+            <p class="mt-2 text-[15px] text-ink-600 leading-relaxed text-pretty">Chi sa usare l'AI fa il triplo. Chi non sa, resta indietro. La produttività media non sale, sale solo quella dei 2-3 power user.</p>
+          </div>
+        </article>
+
+        <article class="card-editorial reveal reveal-delay-1 !p-7 flex flex-col gap-4">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-violet-700 to-violet-500 flex items-center justify-center shadow-violet">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-semibold text-ink-900 leading-tight">Governance assente</h3>
+            <p class="mt-2 text-[15px] text-ink-600 leading-relaxed text-pretty">"Claude ha cancellato i file" è successo davvero in più aziende. Servono skill con multi-step confirmation, approval workflow, regole condivise.</p>
+          </div>
+        </article>
+
+        <article class="card-editorial reveal reveal-delay-2 !p-7 flex flex-col gap-4">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-violet-700 to-violet-500 flex items-center justify-center shadow-violet">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-semibold text-ink-900 leading-tight">Workshop dimenticati</h3>
+            <p class="mt-2 text-[15px] text-ink-600 leading-relaxed text-pretty">Il <strong class="text-ink-900">70% del contenuto</strong> di un corso evapora in 2 settimane senza accountability. Per questo i nostri programmi includono tutoraggio mensile.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       IL METODO
+       ============================================================ -->
+  <section id="metodo" class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Il metodo"
+        title="Quattro fasi. Niente slide, solo casi vostri."
+        subtitle="Tutte le proposte condividono lo stesso scheletro metodologico. Cambiano profondità e durata dell'accompagnamento post-workshop."
+        align="center"
+      />
+
+      <div class="card-editorial !p-0 overflow-hidden reveal max-w-5xl mx-auto">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead class="bg-ink-50">
+              <tr class="border-b border-ink-200">
+                <th class="px-6 py-5 text-[10px] font-semibold text-ink-500 uppercase tracking-[0.14em]">Fase</th>
+                <th class="px-6 py-5 text-[10px] font-semibold text-ink-500 uppercase tracking-[0.14em]">Cosa succede</th>
+                <th class="px-6 py-5 text-[10px] font-semibold text-ink-500 uppercase tracking-[0.14em] text-right">Tempi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {phases.map((p) => (
+                <tr class="border-b border-ink-100 last:border-b-0">
+                  <td class="px-6 py-6 align-top">
+                    <div class="flex items-center gap-3">
+                      <span class="font-display text-2xl font-semibold text-ink-200 leading-none">{p.num}</span>
+                      <span class="font-semibold text-ink-900 text-[15px] leading-tight">{p.name}</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-6 text-[14px] text-ink-700 leading-relaxed max-w-2xl">{p.what}</td>
+                  <td class="px-6 py-6 text-right text-[13px] font-mono text-violet-700 font-semibold whitespace-nowrap align-top">{p.time}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Deliverable -->
+      <div class="mt-12 max-w-5xl mx-auto reveal">
+        <p class="eyebrow mb-5">Deliverable consegnati</p>
+        <h3 class="font-display text-[1.5rem] md:text-[1.75rem] font-semibold text-ink-900 mb-6 leading-tight">Cosa porta a casa il tuo team.</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {deliverables.map((d) => (
+            <li class="flex items-start gap-3 p-4 rounded-xl bg-white border border-ink-200">
+              <span class="shrink-0 mt-0.5 inline-flex w-6 h-6 rounded-full bg-violet-50 items-center justify-center">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#892D9C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              </span>
+              <span class="text-[15px] text-ink-700 leading-relaxed">{d}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3 PROPOSTE — PRICING
+       ============================================================ -->
+  <section id="proposte" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Tre livelli"
+        title="Tre proposte. Stessa base, accompagnamento diverso."
+        subtitle="Tutte includono kick-off, workshop e wrap-up. Cambia la profondità del follow-up post-workshop — perché è lì che si gioca l'adozione reale."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Proposta 1: Foundation -->
+        <article class="card-editorial relative reveal !p-8 flex flex-col">
+          <div class="mb-5">
+            <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-2">Proposta 1</p>
+            <h3 class="font-display text-[1.5rem] md:text-[1.75rem] font-semibold text-ink-900 leading-tight">Foundation</h3>
+          </div>
+
+          <div class="flex items-baseline gap-1.5 mb-2">
+            <span class="font-display text-[2.5rem] font-semibold text-ink-900 leading-none">€8.5–10.5k</span>
+          </div>
+          <p class="text-[12px] text-ink-500 mb-5">15–20 persone · €200/persona + setup</p>
+
+          <p class="text-[14px] text-ink-700 leading-relaxed mb-6 text-pretty flex-1">
+            <strong class="text-ink-900">Quando ha senso:</strong> serve livellare le skill base e mettere in sicurezza l'uso AI senza commitment di lungo periodo.
+          </p>
+
+          <div class="hairline mb-5"></div>
+
+          <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-3">Cosa include</p>
+          <ul class="space-y-2 text-[14px] text-ink-700 mb-6">
+            {[
+              "Kick-off scoping (2-4h)",
+              "Workshop 2 batch × 2 giorni × 4h",
+              "Wrap-up review a 1 mese (2h × 2 batch)",
+              "Tutti i deliverable concreti",
+            ].map((item) => (
+              <li class="flex items-start gap-2.5">
+                <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-violet-50 items-center justify-center">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#892D9C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+
+        <!-- Proposta 2: Foundation + Tutoraggio (RECOMMENDED) -->
+        <article class="relative reveal reveal-delay-1 rounded-2xl p-8 flex flex-col overflow-hidden bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700 text-white shadow-violet-lg">
+          <div class="orb orb-violet w-[300px] h-[300px] -top-20 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
+          <div class="orb orb-amber w-[200px] h-[200px] -bottom-10 -left-10 opacity-25 float-slower" aria-hidden="true"></div>
+
+          <div class="relative flex flex-col h-full">
+            <div class="absolute -top-2 -right-2">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber/30 border border-amber/50 text-amber text-[10px] font-semibold uppercase tracking-[0.14em]">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber"></span>
+                Raccomandata
+              </span>
+            </div>
+
+            <div class="mb-5">
+              <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-2">Proposta 2</p>
+              <h3 class="font-display text-[1.5rem] md:text-[1.75rem] font-semibold text-white leading-tight">Foundation + Tutoraggio</h3>
+            </div>
+
+            <div class="flex items-baseline gap-1.5 mb-2">
+              <span class="font-display text-[2.5rem] font-semibold text-white leading-none">€19.5–21k</span>
+            </div>
+            <p class="text-[12px] text-white/60 mb-5">15–20 persone · €300/persona + setup + retainer</p>
+
+            <p class="text-[14px] text-white/85 leading-relaxed mb-6 text-pretty flex-1">
+              <strong class="text-white">Quando ha senso:</strong> vuoi garantire adozione reale lungo i 3 mesi successivi al workshop e generare metriche di impatto misurabili per la valutazione interna.
+            </p>
+
+            <div class="h-px bg-white/15 mb-5"></div>
+
+            <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-3">Tutto della Proposta 1, più</p>
+            <ul class="space-y-2 text-[14px] text-white/90 mb-6">
+              {[
+                "Check-up mensile di gruppo (1h × 3)",
+                "Coaching 1:1 (30min/mese × 3) per ognuno",
+                "Esercizio mensile con accountability",
+                "Tracking produttività self-reported",
+                "Final review a 5 mesi con roadmap successiva",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-white/15 items-center justify-center">
+                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+
+        <!-- Proposta 3: Foundation + Tutoraggio + Brain Pilot -->
+        <article class="card-editorial relative reveal reveal-delay-2 !p-8 flex flex-col">
+          <div class="mb-5">
+            <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-2">Proposta 3</p>
+            <h3 class="font-display text-[1.5rem] md:text-[1.75rem] font-semibold text-ink-900 leading-tight">Foundation + Tutoraggio + Brain Pilot</h3>
+          </div>
+
+          <div class="flex items-baseline gap-1.5 mb-2">
+            <span class="font-display text-[2.5rem] font-semibold text-ink-900 leading-none">€27.5–32k</span>
+          </div>
+          <p class="text-[12px] text-ink-500 mb-5">17 persone + 4–6 pilot advanced users</p>
+
+          <p class="text-[14px] text-ink-700 leading-relaxed mb-6 text-pretty flex-1">
+            <strong class="text-ink-900">Quando ha senso:</strong> vuoi costruire ownership interna duratura. Non solo skill in testa alle persone, ma un'infrastruttura di conoscenza che cresce con il team.
+          </p>
+
+          <div class="hairline mb-5"></div>
+
+          <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-3">Tutto della Proposta 2, più</p>
+          <ul class="space-y-2 text-[14px] text-ink-700 mb-6">
+            {[
+              "Setup Brain personale per 5-6 advanced users",
+              "Skill aziendali pre-configurate (su misura)",
+              "Coaching dedicato sul brain (1.5h/mese × 3)",
+              "Roadmap per estendere a tutto il team",
+              "Framework Soraia pronto da deployare",
+            ].map((item) => (
+              <li class="flex items-start gap-2.5">
+                <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-violet-50 items-center justify-center">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#892D9C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      </div>
+
+      <p class="text-center text-sm text-ink-500 mt-10 max-w-3xl mx-auto reveal">
+        Tariffe per range 15-20 persone. Sopra le 20 persone modularizziamo in più batch. Tutti gli importi sono al netto di IVA 22%.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ADD-ON: RETAINER POST-ENGAGEMENT
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia max-w-5xl">
+      <SectionHeader
+        eyebrow="Add-on opzionale"
+        title="Retainer post-engagement."
+        subtitle="Dopo i 3 mesi di tutoraggio, opzione di prosecuzione mensile per consolidare l'adozione, integrare nuove skill aziendali ed evolvere i processi AI nel tempo. <strong>Tariffa flat per partecipante attivo</strong>, fatturazione mensile, nessun attrito contrattuale."
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+        <article class="card-editorial reveal !p-7">
+          <div class="flex items-baseline justify-between mb-4">
+            <h3 class="font-display text-xl font-semibold text-ink-900">Mese su mese</h3>
+            <span class="text-xs uppercase tracking-wider text-ink-500 font-semibold">Massima flessibilità</span>
+          </div>
+          <p class="font-display text-[2.5rem] font-semibold text-ink-900 leading-none">€120<span class="text-base text-ink-500 font-normal"> /persona/mese</span></p>
+          <p class="text-[13px] text-ink-600 mt-3">Disdetta con 30 giorni di preavviso. Ideale per testare il valore del follow-up senza commitment.</p>
+        </article>
+
+        <article class="card-editorial reveal reveal-delay-1 !p-7 ring-2 ring-violet-200 bg-violet-50/30">
+          <div class="flex items-baseline justify-between mb-4">
+            <h3 class="font-display text-xl font-semibold text-ink-900">Committed 5 mesi</h3>
+            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-violet-600 text-white text-[10px] font-semibold uppercase tracking-wider">-15%</span>
+          </div>
+          <p class="font-display text-[2.5rem] font-semibold text-ink-900 leading-none">€102<span class="text-base text-ink-500 font-normal"> /persona/mese</span></p>
+          <p class="text-[13px] text-ink-600 mt-3">Sottoscrizione 5 mesi consecutivi, fatturazione mensile. Risparmio del 15% sulla tariffa base.</p>
+        </article>
+      </div>
+
+      <div class="reveal">
+        <p class="eyebrow mb-5">Cosa include la tariffa</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {retainerFeatures.map((f) => (
+            <li class="flex items-start gap-2.5 text-[14px] text-ink-700">
+              <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-violet-50 items-center justify-center">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#892D9C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              </span>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ROI
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="ROI"
+        title="Perché vale l'investimento."
+        subtitle="Stima conservativa basata su 30 minuti di tempo liberato al giorno per persona con uso AI corretto, 220 giorni lavorativi/anno."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+        <div class="card-editorial reveal !p-8 text-center">
+          <p class="font-display text-[3.5rem] font-semibold tracking-tight text-gradient-violet leading-none">110h</p>
+          <p class="mt-3 text-sm font-semibold text-ink-900">Tempo liberato anno 1</p>
+          <p class="mt-1 text-xs text-ink-500">per persona — team di 17 = 1.870h/anno</p>
+        </div>
+        <div class="card-editorial reveal reveal-delay-1 !p-8 text-center">
+          <p class="font-display text-[3.5rem] font-semibold tracking-tight text-gradient-violet leading-none">€5.5–9k</p>
+          <p class="mt-3 text-sm font-semibold text-ink-900">Valore generato anno 1</p>
+          <p class="mt-1 text-xs text-ink-500">per persona — fully loaded €50-80/h</p>
+        </div>
+        <div class="card-editorial reveal reveal-delay-2 !p-8 text-center">
+          <p class="font-display text-[3.5rem] font-semibold tracking-tight text-gradient-violet leading-none">7–11 <span class="text-2xl">sett</span></p>
+          <p class="mt-3 text-sm font-semibold text-ink-900">Payback proposta 2</p>
+          <p class="mt-1 text-xs text-ink-500">team di 15-20 persone</p>
+        </div>
+      </div>
+
+      <!-- Benchmark -->
+      <div class="card-editorial !p-0 overflow-hidden reveal max-w-5xl mx-auto">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead class="bg-ink-50">
+              <tr class="border-b border-ink-200">
+                <th class="px-6 py-4 text-[10px] font-semibold text-ink-500 uppercase tracking-[0.14em]">Tipologia</th>
+                <th class="px-6 py-4 text-[10px] font-semibold text-ink-500 uppercase tracking-[0.14em]">Profilo</th>
+                <th class="px-6 py-4 text-[10px] font-semibold text-ink-500 uppercase tracking-[0.14em] text-right">Range (€)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-ink-100">
+                <td class="px-6 py-5 text-[14px] text-ink-700">Corsi mass market</td>
+                <td class="px-6 py-5 text-[14px] text-ink-600">Udemy / Coursera / vendor</td>
+                <td class="px-6 py-5 text-[14px] text-ink-600 text-right">30–500 per persona</td>
+              </tr>
+              <tr class="border-b border-ink-100">
+                <td class="px-6 py-5 text-[14px] text-ink-700">Boutique AI integrators</td>
+                <td class="px-6 py-5 text-[14px] text-ink-600">Workshop tailored 1-2 giorni</td>
+                <td class="px-6 py-5 text-[14px] text-ink-600 text-right">8.000–20.000 per company</td>
+              </tr>
+              <tr class="border-b border-ink-100 bg-violet-50/30">
+                <td class="px-6 py-5 text-[14px] font-semibold text-ink-900">Soraia</td>
+                <td class="px-6 py-5 text-[14px] font-semibold text-ink-900">Boutique premium con knowledge specifica</td>
+                <td class="px-6 py-5 text-[14px] font-semibold text-violet-700 text-right">9.000–31.000</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-5 text-[14px] text-ink-700">Big consultancy</td>
+                <td class="px-6 py-5 text-[14px] text-ink-600">Deloitte AI Academy, BCG Gamma</td>
+                <td class="px-6 py-5 text-[14px] text-ink-600 text-right">40.000–150.000+</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="text-center text-[13px] text-ink-500 mt-6 max-w-3xl mx-auto reveal italic">
+        Posizionamento Soraia: range basso del segmento "premium boutique", con livello di personalizzazione e accompagnamento post-workshop che il segmento standard non offre.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COSA NON FACCIAMO
+       ============================================================ -->
+  <section class="section bg-ink-900 relative overflow-hidden">
+    <div class="orb orb-violet w-[500px] h-[500px] -top-20 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
+
+    <div class="container-soraia relative z-10 max-w-4xl">
+      <p class="eyebrow eyebrow-light mb-6 reveal">Cosa NON facciamo</p>
+      <h2 class="font-display text-[2.5rem] md:text-[3.5rem] font-semibold tracking-tight text-white leading-[1.05] text-balance reveal mb-10">
+        Lo diciamo subito, per evitare malintesi.
+      </h2>
+
+      <ul class="space-y-4 reveal reveal-delay-1">
+        {dontFeatures.map((item) => (
+          <li class="flex items-start gap-4 pb-5 border-b border-white/10 last:border-b-0">
+            <span class="shrink-0 mt-1 inline-flex w-7 h-7 rounded-full bg-red-500/15 items-center justify-center">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            <span class="text-[16px] md:text-[17px] text-white/85 leading-relaxed">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia max-w-4xl">
+      <SectionHeader
+        eyebrow="Domande frequenti"
+        title="Quello che ci chiedono di solito."
+        align="center"
+      />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FORM
+       ============================================================ -->
+  <section id="contact" class="section bg-violet-mesh">
+    <div class="container-soraia">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="lg:col-span-5 lg:sticky lg:top-32">
+          <p class="eyebrow mb-6">Parliamone</p>
+          <h2 class="font-display text-[2.5rem] md:text-[3.5rem] font-semibold tracking-tight text-ink-900 leading-[1.05] text-balance">
+            Pronto a portare<br/>l'AI nel tuo team?
+          </h2>
+          <p class="mt-5 text-[18px] text-ink-700 leading-relaxed text-pretty">
+            Raccontaci la dimensione del team e le funzioni che vuoi formare. Ti rispondiamo entro 24 ore con una proposta concreta, perimetrata sui tuoi processi.
+          </p>
+          <ul class="mt-8 space-y-3.5">
+            {[
+              "Kick-off scoping incluso in tutte le proposte",
+              "Risposta entro 24 ore",
+              "Nessun impegno a procedere",
+              "Workshop in presenza, trasferte incluse",
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-600 items-center justify-center">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                <span class="text-[15px] text-ink-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="lg:col-span-7">
+          <LeadForm client:load lang="it" source="ai-adoption" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINALE — Call CEO
+       ============================================================ -->
+  <CTABanner
+    title="Inizia con una call gratuita con il nostro CEO."
+    description="20 minuti per capire insieme quale delle 3 proposte ha senso per il tuo team. Nessun impegno, nessun pitch commerciale."
+    ctaText="Prenota la call"
+    ctaHref="#contact"
+    avatarName="Daniel Levis"
+    avatarRole="Co-Founder & CEO"
+    avatarSrc="/team/daniel-levis.png"
+  />
+</Layout>
