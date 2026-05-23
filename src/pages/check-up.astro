@@ -1,15 +1,15 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 
-const title = "AI Readiness Scorecard — capisci dove sei in 3 minuti | Soraia";
+const title = "Check-up IA gratuito — capisci dove sei in 3 minuti | Soraia";
 const description =
-  "7 domande, 3 minuti. Ottieni il tuo AI Readiness Score + un report personalizzato con next-step concreti per portare l'IA nella tua azienda.";
+  "7 domande, 3 minuti. Ottieni il tuo Punteggio prontezza IA + un report personalizzato con next-step concreti per portare l'IA nella tua azienda.";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Quiz",
-  name: "AI Readiness Scorecard",
-  url: "https://www.soraia.io/scorecard",
+  name: "Check-up IA",
+  url: "https://www.soraia.io/check-up",
   about: "Assessment for SMEs to evaluate AI adoption readiness",
 };
 
@@ -106,7 +106,7 @@ const questions = [
       <div id="sc-intro" class="max-w-3xl mx-auto text-center">
         <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
           <span class="w-1 h-1 rounded-full bg-violet-600"></span>
-          AI Readiness Scorecard · 3 minuti
+          Check-up IA · 3 minuti
         </p>
 
         <h1 class="text-balance" style="font-size: clamp(2.25rem, 5vw + 1rem, 4rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
@@ -114,11 +114,11 @@ const questions = [
         </h1>
 
         <p class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl mx-auto text-pretty" style="color: var(--color-ink-muted);">
-          7 domande sulla tua realtà operativa. Ti restituiamo un <strong style="color: var(--color-ink); font-weight: 500;">AI Readiness Score</strong> (0-100) + 3 raccomandazioni concrete per il tuo caso. Nessuna email richiesta per vedere il risultato.
+          7 domande sulla tua realtà operativa. Ti restituiamo un <strong style="color: var(--color-ink); font-weight: 500;">Punteggio prontezza IA</strong> (0-100) + 3 raccomandazioni concrete per il tuo caso. Nessuna email richiesta per vedere il risultato.
         </p>
 
         <button type="button" id="sc-start" class="btn btn-primary mt-9">
-          Inizia lo scorecard
+          Inizia il check-up
           <span class="btn-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </span>
@@ -168,7 +168,7 @@ const questions = [
         <div class="text-center mb-12">
           <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
             <span class="w-1 h-1 rounded-full bg-violet-600"></span>
-            Il tuo AI Readiness Score
+            Il tuo Punteggio prontezza IA
           </p>
 
           <p style="font-family: var(--font-sans); font-size: clamp(5rem, 14vw, 8rem); font-weight: 500; letter-spacing: -0.04em; line-height: 1; color: #892D9C;">
@@ -213,7 +213,7 @@ const questions = [
         </div>
 
         <div class="mt-12 text-center">
-          <button type="button" id="sc-restart" class="btn btn-ghost text-[14px]">Rifai lo scorecard ↻</button>
+          <button type="button" id="sc-restart" class="btn btn-ghost text-[14px]">Rifai il check-up ↻</button>
         </div>
       </div>
 

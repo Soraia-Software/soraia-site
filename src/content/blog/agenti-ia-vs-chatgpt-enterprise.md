@@ -68,4 +68,4 @@ Te lo dico in faccia se mi chiami:
 - **Processi cambieranno a breve** → costruire un agente custom su workflow che cambia tra 3 mesi è uno spreco
 - **Zero baseline misurata** → senza sapere quanto costa oggi un task, non puoi misurare se l'agente ha senso
 
-Per il resto: [parliamone](/parliamone) o [fai lo scorecard](/scorecard).
+Per il resto: [parliamone](/parliamone) o [fai il check-up](/check-up).

@@ -17,7 +17,7 @@ const labels = {
     col_legal: "Legali",
     nav_agents: "AI Agents",
     nav_adoption: "AI Adoption",
-    nav_scorecard: "AI Readiness Scorecard",
+    nav_scorecard: "Check-up IA",
     nav_recruitment: "Recruiting & HR",
     nav_finance: "Finance & Accounting",
     nav_vc: "Venture Capital",
@@ -43,7 +43,7 @@ const labels = {
     col_legal: "Legal",
     nav_agents: "AI Agents",
     nav_adoption: "AI Adoption",
-    nav_scorecard: "AI Readiness Scorecard",
+    nav_scorecard: "Check-up IA",
     nav_recruitment: "Recruiting & HR",
     nav_finance: "Finance & Accounting",
     nav_vc: "Venture Capital",
@@ -88,8 +88,8 @@ const p = (path: string) => (lang === "en" ? "/en" + path : path);
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </span>
         </a>
-        <a href={p("/scorecard")} class="btn btn-secondary">
-          Fai lo scorecard — 3 min
+        <a href={p("/check-up")} class="btn btn-secondary">
+          Fai il check-up — 3 min
         </a>
       </div>
     </div>
@@ -120,7 +120,7 @@ const p = (path: string) => (lang === "en" ? "/en" + path : path);
       <div>
         <p class="text-[11px] font-semibold uppercase tracking-[0.14em] mb-5" style="color: var(--color-ink-soft);">{labels.col_resources}</p>
         <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
-          <li><a href={p("/scorecard")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_scorecard}</a></li>
+          <li><a href={p("/check-up")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_scorecard}</a></li>
           <li><a href={p("/downloads/ai-assessment-sample")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_sample}</a></li>
           <li><a href={p("/blog")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_blog}</a></li>
         </ul>

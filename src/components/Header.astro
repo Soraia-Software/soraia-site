@@ -11,7 +11,7 @@ const labels = {
     nav_adoption: "AI Adoption",
     nav_recruitment: "Recruitment",
     nav_blog: "Blog",
-    nav_scorecard: "Scorecard",
+    nav_scorecard: "Check-up IA",
     cta: "Parliamone",
   },
   en: {
@@ -19,7 +19,7 @@ const labels = {
     nav_adoption: "AI Adoption",
     nav_recruitment: "Recruitment",
     nav_blog: "Blog",
-    nav_scorecard: "Scorecard",
+    nav_scorecard: "Check-up IA",
     cta: "Let's talk",
   },
 }[lang];
@@ -29,7 +29,7 @@ const agentsHref = lang === "en" ? "/en/ai-agents" : "/ai-agents";
 const adoptionHref = lang === "en" ? "/en/ai-adoption" : "/ai-adoption";
 const recHref = lang === "en" ? "/en/recruitment" : "/recruitment";
 const blogHref = lang === "en" ? "/en/blog" : "/blog";
-const scorecardHref = lang === "en" ? "/en/scorecard" : "/scorecard";
+const scorecardHref = lang === "en" ? "/en/check-up" : "/check-up";
 const otherLang = lang === "it" ? "en" : "it";
 const otherHref = otherLang === "en"
   ? Astro.url.pathname === "/" ? "/en/" : `/en${Astro.url.pathname}`

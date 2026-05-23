@@ -65,4 +65,4 @@ Se non raggiungiamo il target, lavoriamo gratis o rimborsiamo lo sprint. Non per
 
 ---
 
-**Vuoi vedere come funziona sul tuo caso?** [Fai lo scorecard](/scorecard) (3 minuti, no email) o [parlami direttamente](/parliamone).
+**Vuoi vedere come funziona sul tuo caso?** [Fai il check-up](/check-up) (3 minuti, no email) o [parlami direttamente](/parliamone).
