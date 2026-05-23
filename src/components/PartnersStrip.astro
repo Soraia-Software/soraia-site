@@ -1,6 +1,7 @@
 ---
 interface Partner {
   name: string;
+  src?: string;
   category?: string;
 }
 
@@ -11,17 +12,39 @@ interface Props {
 const { partners } = Astro.props;
 ---
 
-<div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
+<div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
   {partners.map((p) => (
-    <div class="flex flex-col items-center px-4 py-3 rounded-xl hover:bg-white transition-colors">
-      <span class="text-base md:text-lg font-bold tracking-tight text-ink-700 hover:text-violet-700 transition-colors">
-        {p.name}
-      </span>
+    <div class="flex flex-col items-center gap-1.5 px-2 py-2" title={p.name}>
+      {p.src ? (
+        <img
+          src={p.src}
+          alt={p.name}
+          loading="lazy"
+          decoding="async"
+          class="logo-img-tools h-7 md:h-8 w-auto object-contain"
+        />
+      ) : (
+        <span class="font-display text-base md:text-lg font-semibold tracking-tight text-ink-700 hover:text-violet-700 transition-colors">
+          {p.name}
+        </span>
+      )}
       {p.category && (
-        <span class="text-[10px] uppercase tracking-[0.14em] text-ink-500 mt-0.5">
+        <span class="text-[10px] uppercase tracking-[0.14em] text-ink-500">
           {p.category}
         </span>
       )}
     </div>
   ))}
 </div>
+
+<style is:global>
+  .logo-img-tools {
+    filter: grayscale(100%) brightness(0.4);
+    opacity: 0.7;
+    transition: filter 0.3s var(--ease-out-quart), opacity 0.3s var(--ease-out-quart);
+  }
+  .logo-img-tools:hover {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+  }
+</style>

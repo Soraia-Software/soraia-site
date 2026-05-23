@@ -1,6 +1,7 @@
 ---
 interface Logo {
   name: string;
+  src?: string;       // path to logo image (svg/png/jpg)
   detail?: string;
 }
 
@@ -26,14 +27,39 @@ const doubled = [...logos, ...logos];
     <div class="marquee-track">
       {doubled.map((logo, idx) => (
         <div
-          class="flex items-center shrink-0 px-2"
+          class="flex items-center shrink-0 px-4"
           aria-hidden={idx >= logos.length ? "true" : undefined}
+          title={logo.name}
         >
-          <span class="font-display text-xl md:text-2xl font-semibold tracking-tight text-ink-400 hover:text-ink-900 transition-colors duration-300 whitespace-nowrap">
-            {logo.name}
-          </span>
+          {logo.src ? (
+            <img
+              src={logo.src}
+              alt={logo.name}
+              loading="lazy"
+              decoding="async"
+              class="logo-img max-h-9 md:max-h-10 w-auto object-contain"
+            />
+          ) : (
+            <span class="font-display text-xl md:text-2xl font-semibold tracking-tight text-ink-400 hover:text-ink-900 transition-colors duration-300 whitespace-nowrap">
+              {logo.name}
+            </span>
+          )}
         </div>
       ))}
     </div>
   </div>
 </section>
+
+<style is:global>
+  /* Uniform premium treatment for client logos: grayscale, low contrast, full color on hover */
+  .logo-img {
+    filter: grayscale(100%) brightness(0.55) contrast(1.1);
+    opacity: 0.75;
+    transition: filter 0.4s var(--ease-out-quart), opacity 0.4s var(--ease-out-quart);
+  }
+  .marquee:hover .logo-img,
+  .logo-img:hover {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+  }
+</style>
