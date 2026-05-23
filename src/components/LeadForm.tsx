@@ -118,7 +118,7 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
               required
               className="w-full px-4 py-3 rounded-xl border border-ink-200 bg-white text-ink-900 focus:border-violet-600 focus:ring-2 focus:ring-violet-200 focus:outline-none transition-all"
             >
-              <option value="">—</option>
+              <option value="">·</option>
               <option value="1-5">{t.range_1}</option>
               <option value="6-15">{t.range_2}</option>
               <option value="16-40">{t.range_3}</option>

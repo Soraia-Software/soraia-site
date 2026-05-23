@@ -1,5 +1,5 @@
 ---
-// Soraia Agent Feed — 5 industry tabs, click to switch workflow.
+// Soraia Agent Feed, 5 industry tabs, click to switch workflow.
 // Auto-cycles on init, pauses on user interaction.
 
 const industries = [
@@ -90,7 +90,7 @@ const icons: Record<string, string> = {
 };
 ---
 
-<div class="agent-feed-soraia" aria-label="Soraia agents — live workflow per industry">
+<div class="agent-feed-soraia" aria-label="Soraia agents, live workflow per industry">
 
   <!-- Industry tabs -->
   <div class="afs-tabs" role="tablist" aria-label="Industries">
@@ -116,7 +116,7 @@ const icons: Record<string, string> = {
     <div class="afs-header">
       <span class="afs-dot"></span>
       <span class="afs-header-label">Soraia · agent activity</span>
-      <span class="afs-time" data-feed-clock>—</span>
+      <span class="afs-time" data-feed-clock>·</span>
     </div>
 
     <!-- Industry context -->
@@ -125,9 +125,9 @@ const icons: Record<string, string> = {
         <span class="afs-industry-icon" data-industry-icon>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
         </span>
-        <span class="afs-industry-name" data-industry-name>—</span>
+        <span class="afs-industry-name" data-industry-name>·</span>
       </div>
-      <p class="afs-industry-role" data-industry-role>—</p>
+      <p class="afs-industry-role" data-industry-role>·</p>
     </div>
 
     <!-- Events stream -->

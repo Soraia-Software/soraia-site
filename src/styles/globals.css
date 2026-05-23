@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 /* =============================================================
-   SORAIA DESIGN TOKENS — editorial premium, Linkly-inspired
+   SORAIA DESIGN TOKENS, editorial premium, Linkly-inspired
    Restrained typography, subtle hairlines, single font (Inter)
    ============================================================= */
 
 @theme {
-  /* —— Brand violet (Soraia palette) —— */
+  /* // Brand violet (Soraia palette) // */
   --color-violet-50: #FDF4FF;
   --color-violet-100: #F6D0FE;
   --color-violet-200: #E8B3F0;
@@ -23,12 +23,12 @@
   --color-brand-deep: #4A1656;
   --color-brand-soft: #FDF4FF;     /* very light violet for tints */
 
-  /* —— Surfaces —— */
+  /* // Surfaces // */
   --color-bg: #FAFAF8;             /* warm off-white primary */
   --color-surface: #F2F1ED;        /* alternate sections */
   --color-surface-dark: #1A1A1A;
 
-  /* —— Ink (text) —— */
+  /* // Ink (text) // */
   --color-ink: #1A1A1A;
   --color-ink-muted: #5F5E5A;
   --color-ink-soft: #8B8A85;
@@ -44,22 +44,22 @@
   --color-ink-800: #1A1A1A;
   --color-ink-900: #1A1A1A;
 
-  /* —— Hairlines —— */
+  /* // Hairlines // */
   --color-line: rgba(0, 0, 0, 0.08);
   --color-line-strong: rgba(0, 0, 0, 0.14);
   --color-line-dark: rgba(255, 255, 255, 0.12);
 
-  /* —— Accents —— */
+  /* // Accents // */
   --color-amber: #F4B842;
   --color-amber-soft: #FEF5E0;
   --color-success: #17B26A;
 
-  /* —— Fonts (Inter only, Linkly-style) —— */
+  /* // Fonts (Inter only, Linkly-style) // */
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-display: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* —— Type scale (restrained, editorial) —— */
+  /* // Type scale (restrained, editorial) // */
   --text-display-1: 4.5rem;        /* 72px max */
   --text-display-2: 3.5rem;
   --text-display-3: 2.75rem;
@@ -72,7 +72,7 @@
   --text-micro: 0.75rem;
   --text-eyebrow: 0.6875rem;
 
-  /* —— Radii (small, editorial) —— */
+  /* // Radii (small, editorial) // */
   --radius-xs: 0.25rem;
   --radius-sm: 0.5rem;             /* 8px */
   --radius-md: 0.75rem;             /* 12px */
@@ -81,25 +81,25 @@
   --radius-2xl: 1.5rem;
   --radius-full: 9999px;
 
-  /* —— Shadows (minimal, premium) —— */
+  /* // Shadows (minimal, premium) // */
   --shadow-xs: 0 1px 1px rgb(0 0 0 / 0.04);
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.04), 0 2px 8px -2px rgb(0 0 0 / 0.04);
   --shadow-md: 0 4px 12px -4px rgb(0 0 0 / 0.06), 0 8px 24px -8px rgb(0 0 0 / 0.04);
   --shadow-lg: 0 8px 24px -8px rgb(0 0 0 / 0.08), 0 16px 48px -16px rgb(0 0 0 / 0.06);
   --shadow-violet: 0 8px 24px -8px rgba(137, 45, 156, 0.18);
 
-  /* —— Motion —— */
+  /* // Motion // */
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
 
-  /* —— Section spacing —— */
+  /* // Section spacing // */
   --section-y: 8rem;
   --section-y-mobile: 5rem;
 }
 
 /* =============================================================
-   BASE — Linkly-inspired editorial
+   BASE. Linkly-inspired editorial
    Wrapped in @layer base so Tailwind utilities (text-white, etc.) win
    ============================================================= */
 
@@ -123,7 +123,7 @@
     letter-spacing: -0.005em;
   }
 
-  /* Headings — restrained weight (500), sentence case, tight tracking */
+  /* Headings, restrained weight (500), sentence case, tight tracking */
   h1, h2, h3, h4, h5, h6, .font-display {
     font-family: var(--font-sans);
     font-weight: 500;
@@ -190,7 +190,7 @@
 }
 
 /* =============================================================
-   TYPOGRAPHY UTILITIES — restrained, editorial
+   TYPOGRAPHY UTILITIES, restrained, editorial
    ============================================================= */
 
 .eyebrow {
@@ -213,10 +213,10 @@
 .text-balance { text-wrap: balance; }
 .text-pretty { text-wrap: pretty; }
 
-/* Brand color text utility — solid, no gradient */
+/* Brand color text utility, solid, no gradient */
 .text-brand { color: var(--color-brand); }
 
-/* Editorial big number (44-56px) — for stats, pricing */
+/* Editorial big number (44-56px), for stats, pricing */
 .bignum {
   font-family: var(--font-sans);
   font-weight: 500;
@@ -253,7 +253,7 @@
 }
 
 /* =============================================================
-   BACKGROUNDS — restrained, minimal
+   BACKGROUNDS, restrained, minimal
    ============================================================= */
 
 .bg-violet-radial {
@@ -270,7 +270,7 @@
     var(--color-bg);
 }
 
-/* Premium dark hero — near-black with violet undertones (Linear/Vercel style) */
+/* Premium dark hero, near-black with violet undertones (Linear/Vercel style) */
 .bg-hero-dark {
   background:
     radial-gradient(ellipse 80% 60% at 20% 0%, rgba(159, 26, 177, 0.30) 0%, transparent 55%),
@@ -279,7 +279,7 @@
 }
 
 /* =============================================================
-   BUTTONS — Linkly-style, small radius, no gradient hover
+   BUTTONS. Linkly-style, small radius, no gradient hover
    ============================================================= */
 
 .btn {
@@ -351,7 +351,7 @@
 }
 
 /* =============================================================
-   CARDS — restrained, hairlines, small radii
+   CARDS, restrained, hairlines, small radii
    ============================================================= */
 
 .card {
@@ -381,7 +381,7 @@
 }
 
 /* =============================================================
-   ANIMATIONS — minimal, subtle
+   ANIMATIONS, minimal, subtle
    ============================================================= */
 
 @keyframes fade-up {
@@ -434,7 +434,7 @@
 .reveal-delay-4 { transition-delay: 0.24s; }
 
 /* =============================================================
-   MARQUEE — for proof bar
+   MARQUEE, for proof bar
    ============================================================= */
 
 .marquee {
@@ -457,7 +457,7 @@
 }
 
 /* =============================================================
-   LINKS — restrained
+   LINKS, restrained
    ============================================================= */
 
 .link-violet {
@@ -495,7 +495,7 @@
   transform: scaleX(1);
 }
 
-/* Focus state — a11y */
+/* Focus state, a11y */
 :focus-visible {
   outline: 2px solid var(--color-brand);
   outline-offset: 2px;
@@ -520,7 +520,7 @@
 }
 
 /* =============================================================
-   DECORATIVE ORBS — kept but more restrained, used sparingly
+   DECORATIVE ORBS, kept but more restrained, used sparingly
    ============================================================= */
 
 .orb {
@@ -549,7 +549,7 @@
 .float-slower { animation: float-slower 22s var(--ease-in-out-quart) infinite; }
 
 /* =============================================================
-   FAQ ACCORDION — Linkly-style native details/summary
+   FAQ ACCORDION. Linkly-style native details/summary
    ============================================================= */
 
 details.faq-item {

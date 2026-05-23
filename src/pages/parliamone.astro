@@ -4,18 +4,18 @@ import LeadForm from "~/components/LeadForm.tsx";
 import AvatarCircle from "~/components/AvatarCircle.astro";
 import ProofBar from "~/components/ProofBar.astro";
 
-const title = "Parliamone — contattaci | Soraia";
+const title = "Parliamone, contattaci | Soraia";
 const description =
   "Raccontaci la tua realtà operativa. Ti rispondiamo entro 24 ore con una proposta di AI Readiness Assessment concreta, perimetrata sul tuo contesto.";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  name: "Parliamone — Soraia",
+  name: "Parliamone. Soraia",
   url: "https://www.soraia.io/parliamone",
 };
 
-// Mini proof bar — solo 6 logos key per non distrarre dal form
+// Mini proof bar, solo 6 logos key per non distrarre dal form
 const proofLogos = [
   { name: "APraise", src: "/logos/clients/apraise.webp" },
   { name: "OggiLavoro", src: "/logos/clients/oggilavoro.png" },
@@ -48,7 +48,7 @@ const proofLogos = [
             Raccontaci la tua realtà operativa. Ti rispondiamo entro 24 ore con una proposta di assessment concreta, perimetrata sul tuo contesto.
           </p>
 
-          <!-- GARANZIA — più prominente -->
+          <!-- GARANZIA, più prominente -->
           <div class="mt-7 p-5 rounded-2xl bg-gradient-to-br from-violet-700 to-violet-600 text-white fade-up fade-up-delay-3 max-w-md shadow-violet">
             <div class="flex items-center gap-3 mb-2">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -57,7 +57,7 @@ const proofLogos = [
               <p class="text-lg font-semibold text-white">Garanzia inclusa</p>
             </div>
             <p class="text-[14px] text-white/90 leading-relaxed">
-              Se al go-live l'agente non recupera le ore promesse, lavoriamo gratis finché non succede — oppure ti rimborsiamo lo sprint. <strong class="text-amber">Nessun cavillo contrattuale.</strong>
+              Se al go-live l'agente non recupera le ore promesse, lavoriamo gratis finché non succede, oppure ti rimborsiamo lo sprint. <strong class="text-amber">Nessun cavillo contrattuale.</strong>
             </p>
           </div>
 
@@ -105,7 +105,7 @@ const proofLogos = [
               ))}
             </div>
             <p class="text-[15px] text-ink-700 leading-relaxed italic mb-4">
-              "Il nuovo sistema è come avere quattro recruiter in più nel team — senza il costo e la complessità. Estremamente soddisfatti della consulenza e del supporto continuo."
+              "Il nuovo sistema è come avere quattro recruiter in più nel team, senza il costo e la complessità. Estremamente soddisfatti della consulenza e del supporto continuo."
             </p>
             <div class="flex items-center gap-3">
               <img src="/testimonials/jacopo-castano-apraise.png" alt="Jacopo Castano" loading="lazy" class="w-10 h-10 rounded-full object-cover" />
@@ -121,7 +121,7 @@ const proofLogos = [
   </section>
 
   <!-- ============================================================
-       PROOF BAR — mini, per credibilità
+       PROOF BAR, mini, per credibilità
        ============================================================ -->
   <ProofBar label="40+ clienti in 11 paesi · Tra cui" logos={proofLogos} />
 </Layout>

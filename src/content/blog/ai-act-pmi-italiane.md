@@ -1,5 +1,5 @@
 ---
-title: "AI Act 2026 per le PMI italiane — cosa cambia davvero in operatività"
+title: "AI Act 2026 per le PMI italiane, cosa cambia davvero in operatività"
 description: "Il Regolamento europeo IA è in vigore. Per la maggior parte delle PMI italiane gli obblighi sono limitati, ma le 4 cose da fare ci sono. Guida pratica."
 pubDate: 2026-04-22
 author: "Daniel Levis"
@@ -45,13 +45,13 @@ Questo ci tiene **a cavallo tra livello alto (assistito) e limitato (humano semp
 
 ## Finance & Accounting: rischio minimo se fatto bene
 
-Agenti che leggono fatture, fanno OCR, validano IVA, generano report — **livello minimo**. Niente decisioni autonome che impattano persone, solo automation interna.
+Agenti che leggono fatture, fanno OCR, validano IVA, generano report, **livello minimo**. Niente decisioni autonome che impattano persone, solo automation interna.
 
 Obbligo principale: trasparenza interna (il team deve sapere che l'agente è AI-driven).
 
 ## Sales & Marketing: limitato
 
-Agenti che fanno outreach personalizzato, scoring lead, drafting email — **livello limitato**. Se l'output va a un cliente esterno (es. email di follow-up automatico), occorre:
+Agenti che fanno outreach personalizzato, scoring lead, drafting email, **livello limitato**. Se l'output va a un cliente esterno (es. email di follow-up automatico), occorre:
 
 - Indicazione che è stata generata con assistenza AI (dove appropriato)
 - Possibilità per il destinatario di chiedere intervento umano

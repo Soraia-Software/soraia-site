@@ -1,5 +1,5 @@
 ---
-title: "Come misurare il ROI di un agente IA — framework + baseline che funzionano"
+title: "Come misurare il ROI di un agente IA, framework + baseline che funzionano"
 description: "Senza baseline, ogni claim 'l'AI ci ha fatto risparmiare X ore' è un'opinione. Il framework che usiamo con i clienti Soraia per misurare ROI con onestà."
 pubDate: 2026-05-15
 author: "Daniel Levis"
@@ -16,7 +16,7 @@ Questo è il framework che usiamo in Soraia per ogni sprint. Quattro pezzi: base
 
 ## 1. La baseline che NON funziona
 
-"I miei recruiter passano metà del tempo a leggere CV." — questa NON è una baseline.
+"I miei recruiter passano metà del tempo a leggere CV.", questa NON è una baseline.
 
 È un'opinione raccontata in riunione. Non è misurata. Non è ripetibile. Non è confutabile.
 
@@ -61,7 +61,7 @@ Misurare prima del 30° giorno = misurare il rumore. La curva di adoption ha bis
 
 Quando i 4 pezzi sopra sono chiari, puoi promettere ROI in modo concreto. Ed è esattamente quello che facciamo con la **garanzia "ore recuperate o rimborso"**: il target del metric primario è scritto nel contratto, misurato sulla baseline definita insieme, valutato a 30gg dal go-live.
 
-Se non raggiungiamo il target, lavoriamo gratis o rimborsiamo lo sprint. Non perché siamo eroici — perché abbiamo costruito il sistema di misurazione che lo rende verificabile.
+Se non raggiungiamo il target, lavoriamo gratis o rimborsiamo lo sprint. Non perché siamo eroici, perché abbiamo costruito il sistema di misurazione che lo rende verificabile.
 
 ---
 

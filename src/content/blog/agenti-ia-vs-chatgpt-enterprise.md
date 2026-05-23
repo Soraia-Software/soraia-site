@@ -1,5 +1,5 @@
 ---
-title: "Agenti IA custom vs ChatGPT Enterprise — quando conviene cosa"
+title: "Agenti IA custom vs ChatGPT Enterprise, quando conviene cosa"
 description: "Tre criteri concreti per capire se al tuo team serve una licenza ChatGPT Enterprise condivisa o un agente IA custom sui processi. Senza FOMO, senza vendite."
 pubDate: 2026-05-08
 author: "Daniel Levis"
@@ -14,7 +14,7 @@ Risposta onesta: **a volte basta**. E in quel caso, lo dico al cliente. Soraia n
 
 Ma servono spesso. Ecco i 3 criteri che usiamo per decidere.
 
-## Criterio 1 — Chi deve eseguire il task
+## Criterio 1. Chi deve eseguire il task
 
 ChatGPT (anche Enterprise) **risponde** a una persona che gli fa una domanda. La persona deve leggere, valutare, agire.
 
@@ -24,7 +24,7 @@ Se il task ha alto volume e l'output va sempre nei tuoi sistemi (CRM, ATS, ERP),
 
 **Cut-off pratico**: oltre i 20-30 task ripetitivi/settimana per persona, conviene un agente.
 
-## Criterio 2 — Quanto è specifico il contesto
+## Criterio 2. Quanto è specifico il contesto
 
 ChatGPT è generalista. Conosce tutto, non conosce il tuo business.
 
@@ -37,7 +37,7 @@ Un agente custom conosce:
 
 **Cut-off pratico**: se serve riformulare ogni prompt con 5+ righe di contesto (chi sei, cosa fai, regole del tuo settore), conviene un agente custom.
 
-## Criterio 3 — Governance e auditabilità
+## Criterio 3. Governance e auditabilità
 
 ChatGPT Enterprise ha audit log, ma a livello di chat. Sai *che* qualcuno ha chiesto qualcosa, non *come è stata presa la decisione*.
 

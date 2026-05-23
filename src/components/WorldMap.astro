@@ -36,7 +36,7 @@ const { regions } = Astro.props;
       <button
         type="button"
         class="region-dot"
-        aria-label={`${r.label} — ${r.total} clients`}
+        aria-label={`${r.label}, ${r.total} clients`}
       >
         <span class="region-pulse"></span>
         <span class="region-core"></span>
@@ -137,7 +137,7 @@ const { regions } = Astro.props;
     75%, 100% { transform: scale(3); opacity: 0; }
   }
 
-  /* Popup card — visible on hover/focus */
+  /* Popup card, visible on hover/focus */
   .region-popup {
     position: absolute;
     bottom: calc(100% + 16px);
