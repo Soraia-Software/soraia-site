@@ -1,92 +1,368 @@
 ---
-// Abstract domain-agnostic agent-at-work visualization for hero
+// Soraia Agent Feed — live activity stream cycling between 3 client contexts.
+// Linkly-inspired but with softer rounded corners, icons per agent type, violet palette.
+
+const contexts = [
+  {
+    client: "APraise",
+    flag: "🇮🇹",
+    role: "Recruitment agency · Milano",
+    target: "Anna R. · Senior Recruiter",
+    events: [
+      { agent: "SCREENING",  icon: "doc",     text: "847 CV analizzati · fit ranking completato" },
+      { agent: "ENRICHMENT", icon: "search",  text: "+LinkedIn · +email · +stack profilo" },
+      { agent: "QUALIFY",    icon: "check",   text: "47 candidati shortlisted · score >88%" },
+      { agent: "OUTREACH",   icon: "mail",    text: "Primo touch inviato · personalizzato" },
+      { agent: "SCHEDULE",   icon: "calendar",text: "12 colloqui prenotati · slot ATS" },
+      { agent: "ANALYTICS",  icon: "chart",   text: "19 giorni-uomo recuperati questa settimana" },
+    ],
+  },
+  {
+    client: "Numeraria",
+    flag: "🇮🇹",
+    role: "Studio commercialisti · Piemonte",
+    target: "Marco D. · Junior Accountant",
+    events: [
+      { agent: "INTAKE",     icon: "doc",     text: "32 fatture lette · OCR + estrazione dati" },
+      { agent: "VALIDATE",   icon: "check",   text: "IVA + codici verificati · anomalie segnalate" },
+      { agent: "RECONCILE",  icon: "search",  text: "Riconciliazione bancaria · 218 movimenti" },
+      { agent: "REPORT",     icon: "chart",   text: "F24 generato · pronto per revisione" },
+      { agent: "NOTIFY",     icon: "mail",    text: "Client portal aggiornato · 8 clienti notificati" },
+      { agent: "ANALYTICS",  icon: "chart",   text: "€32.000/mese costi operativi recuperati" },
+    ],
+  },
+  {
+    client: "KB&B",
+    flag: "🇩🇪",
+    role: "Marketing agency · Family brands",
+    target: "Sara B. · Content Lead",
+    events: [
+      { agent: "BRIEF",      icon: "doc",     text: "Brief letto · keyword + tone of voice" },
+      { agent: "DRAFT",      icon: "search",  text: "Articolo 1.200 parole generato · SEO ok" },
+      { agent: "VISUAL",     icon: "chart",   text: "Cover image creata · 4 varianti social" },
+      { agent: "PUBLISH",    icon: "calendar",text: "Programmato Instagram + LinkedIn · CMS sync" },
+      { agent: "TRACK",      icon: "check",   text: "Performance monitorate · alert engagement" },
+      { agent: "ANALYTICS",  icon: "chart",   text: "7 ore risparmiate per articolo pubblicato" },
+    ],
+  },
+];
+
+const icons: Record<string, string> = {
+  doc: `<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>`,
+  mail: `<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>`,
+  calendar: `<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>`,
+  search: `<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>`,
+  check: `<polyline points="20 6 9 17 4 12"/>`,
+  chart: `<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>`,
+};
 ---
 
-<div class="relative w-full h-full min-h-[440px] lg:min-h-[520px] flex items-center justify-center">
-  <!-- Floating orbs as background -->
-  <div class="absolute inset-0">
-    <div class="orb orb-lilac w-[420px] h-[420px] -top-10 -right-20 opacity-50 float-slow" aria-hidden="true"></div>
-    <div class="orb orb-amber w-[280px] h-[280px] -bottom-20 -left-10 opacity-30 float-slower" aria-hidden="true"></div>
+<div class="agent-feed-soraia" aria-hidden="true">
+  <!-- Header -->
+  <div class="afs-header">
+    <span class="afs-dot"></span>
+    <span class="afs-label">Soraia · agent activity</span>
+    <span class="afs-time" data-feed-clock>09:32:14</span>
   </div>
 
-  <!-- Main floating dashboard card — generic agent metrics -->
-  <div class="relative z-10 w-full max-w-md float-slower" style="animation-duration: 22s">
-    <div class="rounded-3xl bg-white/95 backdrop-blur-xl shadow-2xl border border-white/40 p-6">
-      <div class="flex items-center justify-between mb-5">
-        <div class="flex items-center gap-2.5">
-          <span class="inline-block w-8 h-8 rounded-lg bg-gradient-to-br from-violet-700 to-violet-500"></span>
-          <div>
-            <p class="text-[10px] uppercase tracking-wider text-ink-500 font-semibold">Agente</p>
-            <p class="text-sm font-semibold text-ink-900">Soraia · in produzione</p>
-          </div>
-        </div>
-        <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-semibold uppercase tracking-wider">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          Live
+  <!-- Client context -->
+  <div class="afs-context">
+    <div class="afs-client-row">
+      <span class="afs-client" data-client-name>—</span>
+      <span class="afs-flag" data-client-flag>—</span>
+    </div>
+    <p class="afs-role" data-client-role>—</p>
+    <p class="afs-target">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align: -1px; margin-right: 4px;"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0113 0"/></svg>
+      Per <strong data-client-target>—</strong>
+    </p>
+  </div>
+
+  <!-- Events stream -->
+  <ol class="afs-events">
+    {[0,1,2,3,4,5].map((i) => (
+      <li class="afs-event" data-slot={i}>
+        <span class="afs-event-icon">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
         </span>
-      </div>
-
-      <div class="grid grid-cols-3 gap-2 mb-5">
-        <div class="rounded-xl bg-violet-50 p-3">
-          <p class="text-[9px] uppercase text-violet-700 font-semibold">Task</p>
-          <p class="text-xl font-semibold text-violet-700">1.247</p>
+        <div class="afs-event-body">
+          <span class="afs-agent"></span>
+          <span class="afs-text"></span>
         </div>
-        <div class="rounded-xl bg-ink-50 p-3">
-          <p class="text-[9px] uppercase text-ink-500 font-semibold">Ore</p>
-          <p class="text-xl font-semibold text-ink-900">+24<span class="text-xs">/sett</span></p>
-        </div>
-        <div class="rounded-xl bg-amber/15 p-3">
-          <p class="text-[9px] uppercase text-ink-700 font-semibold">Precis.</p>
-          <p class="text-xl font-semibold text-ink-900">97<span class="text-xs">%</span></p>
-        </div>
-      </div>
+        <span class="afs-event-check">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+      </li>
+    ))}
+  </ol>
 
-      <div class="space-y-2">
-        {[
-          { icon: "doc", label: "Documento analizzato", time: "12s fa" },
-          { icon: "mail", label: "Email inviata", time: "1m fa" },
-          { icon: "calendar", label: "Calendar invite", time: "3m fa" },
-        ].map((item) => (
-          <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-ink-50 transition-colors">
-            <span class="w-7 h-7 rounded-full bg-gradient-to-br from-violet-700 to-violet-500 text-white flex items-center justify-center">
-              {item.icon === "doc" && (
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              )}
-              {item.icon === "mail" && (
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              )}
-              {item.icon === "calendar" && (
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              )}
-            </span>
-            <div class="flex-1 min-w-0">
-              <p class="text-xs font-medium text-ink-900 leading-tight">{item.label}</p>
-            </div>
-            <span class="text-[10px] text-ink-400">{item.time}</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#17B26A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-
-  <!-- Floating bubble: AI status -->
-  <div class="absolute z-20 hidden md:block top-[6%] left-[-3%] float-slow" style="animation-duration: 17s">
-    <div class="rounded-2xl bg-ink-900 shadow-xl p-4 max-w-[220px]">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="w-6 h-6 rounded-full bg-gradient-to-br from-violet-500 to-violet-300"></span>
-        <span class="text-[10px] font-semibold text-white/60 uppercase tracking-wider">Soraia Agent</span>
-      </div>
-      <p class="text-[12px] text-white leading-relaxed">Pronti per il prossimo task? Ho già preparato il summary.</p>
-    </div>
-  </div>
-
-  <!-- Floating bubble: savings -->
-  <div class="absolute z-20 hidden md:block bottom-[8%] right-[-3%] float-slower" style="animation-duration: 20s">
-    <div class="rounded-2xl bg-white shadow-xl p-4 border border-violet-100 max-w-[180px]">
-      <p class="text-[10px] uppercase tracking-wider text-violet-700 font-semibold mb-1">Tempo recuperato</p>
-      <p class="text-2xl font-semibold text-ink-900 leading-none">+24 h<span class="text-base text-ink-500 font-normal">/sett</span></p>
-      <p class="text-[10px] text-ink-500 mt-1">per persona</p>
-    </div>
+  <!-- Footer progress -->
+  <div class="afs-footer">
+    <div class="afs-progress"><span class="afs-progress-fill" data-feed-progress></span></div>
+    <span class="afs-time" data-feed-total>00:24</span>
   </div>
 </div>
+
+<script is:inline define:vars={{ contexts, icons }}>
+  (function () {
+    const root = document.currentScript.previousElementSibling;
+    if (!root) return;
+
+    const slots = root.querySelectorAll(".afs-event");
+    const clockEl = root.querySelector("[data-feed-clock]");
+    const nameEl = root.querySelector("[data-client-name]");
+    const flagEl = root.querySelector("[data-client-flag]");
+    const roleEl = root.querySelector("[data-client-role]");
+    const targetEl = root.querySelector("[data-client-target]");
+    const progressEl = root.querySelector("[data-feed-progress]");
+
+    let idx = 0;
+
+    function pad(n) { return n < 10 ? "0" + n : "" + n; }
+    function fmtTime(d) { return pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds()); }
+
+    function clearSlots() {
+      slots.forEach((s) => {
+        s.classList.remove("is-visible");
+        s.querySelector(".afs-agent").textContent = "";
+        s.querySelector(".afs-text").textContent = "";
+        const svg = s.querySelector(".afs-event-icon svg");
+        if (svg) svg.innerHTML = "";
+      });
+      progressEl.style.transform = "scaleX(0)";
+    }
+
+    function renderCtx() {
+      const c = contexts[idx];
+      const now = new Date();
+      nameEl.textContent = c.client;
+      flagEl.textContent = c.flag;
+      roleEl.textContent = c.role;
+      targetEl.textContent = c.target;
+      clockEl.textContent = fmtTime(now);
+
+      clearSlots();
+
+      const STEP_MS = 1100;
+
+      c.events.forEach((ev, i) => {
+        setTimeout(() => {
+          const slot = slots[i];
+          slot.querySelector(".afs-agent").textContent = ev.agent;
+          slot.querySelector(".afs-text").textContent = ev.text;
+          const svg = slot.querySelector(".afs-event-icon svg");
+          if (svg && icons[ev.icon]) svg.innerHTML = icons[ev.icon];
+          slot.classList.add("is-visible");
+          progressEl.style.transform = "scaleX(" + ((i + 1) / c.events.length) + ")";
+        }, i * STEP_MS);
+      });
+
+      const TOTAL_MS = STEP_MS * c.events.length;
+      setTimeout(() => {
+        idx = (idx + 1) % contexts.length;
+        renderCtx();
+      }, TOTAL_MS + 3200);
+    }
+
+    const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) {
+      const c = contexts[0];
+      nameEl.textContent = c.client;
+      flagEl.textContent = c.flag;
+      roleEl.textContent = c.role;
+      targetEl.textContent = c.target;
+      progressEl.style.transform = "scaleX(1)";
+      c.events.forEach((ev, i) => {
+        const slot = slots[i];
+        slot.querySelector(".afs-agent").textContent = ev.agent;
+        slot.querySelector(".afs-text").textContent = ev.text;
+        const svg = slot.querySelector(".afs-event-icon svg");
+        if (svg && icons[ev.icon]) svg.innerHTML = icons[ev.icon];
+        slot.classList.add("is-visible");
+      });
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          renderCtx();
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    io.observe(root);
+  })();
+</script>
+
+<style>
+  .agent-feed-soraia {
+    background: #FFFFFF;
+    border: 1px solid var(--color-line);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.04),
+      0 24px 60px -28px rgba(137, 45, 156, 0.25),
+      0 32px 80px -32px rgba(137, 45, 156, 0.15);
+    font-size: 13px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* Header dark */
+  .afs-header {
+    background: linear-gradient(135deg, #1A1A1A 0%, #2A1530 100%);
+    color: white;
+    padding: 0.85rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+  .afs-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #17B26A;
+    box-shadow: 0 0 0 0 rgba(23, 178, 106, 0.55);
+    animation: afsPulse 1.8s ease-out infinite;
+  }
+  .afs-label { text-transform: uppercase; flex: 1; opacity: 0.92; }
+  .afs-time { opacity: 0.6; font-variant-numeric: tabular-nums; }
+
+  @keyframes afsPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(23, 178, 106, 0.55); }
+    100% { box-shadow: 0 0 0 10px rgba(23, 178, 106, 0); }
+  }
+
+  /* Client context */
+  .afs-context {
+    padding: 1.1rem 1.25rem 1rem;
+    border-bottom: 1px solid var(--color-line);
+    background: linear-gradient(180deg, #FDFCFB 0%, #FFFFFF 100%);
+  }
+  .afs-client-row {
+    display: flex; align-items: center; gap: 0.55rem;
+    font-size: 16px; font-weight: 500; color: var(--color-ink);
+  }
+  .afs-flag { font-size: 14px; line-height: 1; }
+  .afs-role {
+    margin-top: 0.2rem;
+    font-size: 12px;
+    color: var(--color-ink-soft);
+    line-height: 1.4;
+  }
+  .afs-target {
+    margin-top: 0.5rem;
+    font-size: 11.5px;
+    color: var(--color-violet-700);
+    background: var(--color-violet-50);
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+  }
+  .afs-target strong { font-weight: 600; margin-left: 3px; }
+
+  /* Events stream */
+  .afs-events {
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    min-height: 280px;
+  }
+  .afs-event {
+    display: grid;
+    grid-template-columns: 28px 1fr 18px;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.6rem 1.25rem;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 400ms ease, transform 400ms ease;
+  }
+  .afs-event.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .afs-event-icon {
+    width: 28px; height: 28px;
+    border-radius: 0.625rem;
+    background: linear-gradient(135deg, #892D9C 0%, #9F1AB1 100%);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .afs-event-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+  }
+  .afs-agent {
+    color: var(--color-violet-700);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .afs-text {
+    color: var(--color-ink);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.35;
+  }
+  .afs-event-check {
+    color: #17B26A;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Footer */
+  .afs-footer {
+    border-top: 1px solid var(--color-line);
+    background: #FDFCFB;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+  .afs-progress {
+    flex: 1;
+    height: 3px;
+    background: var(--color-line);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .afs-progress-fill {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #892D9C 0%, #9F1AB1 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.1s ease;
+  }
+  .afs-footer .afs-time {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .agent-feed-soraia { border-radius: 1.25rem; }
+    .afs-event { grid-template-columns: 24px 1fr 16px; padding: 0.5rem 1rem; }
+    .afs-event-icon { width: 24px; height: 24px; }
+  }
+</style>
