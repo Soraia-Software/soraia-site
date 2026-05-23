@@ -1,38 +1,38 @@
 @import "tailwindcss";
 
 /* =============================================================
-   SORAIA DESIGN TOKENS
-   Palette estratta da soraia.io — viola brand + neutrals premium
+   SORAIA DESIGN TOKENS — Premium editorial
    ============================================================= */
 
 @theme {
-  /* —— Brand violet scale —— anchored to Soraia guidelines (--lilac-deep #a276b6) + production palette extracted from soraia.io */
-  --color-violet-50: #FDF4FF;   /* almost-white violet tint */
-  --color-violet-100: #F6D0FE;  /* very light lavender */
+  /* —— Brand violet scale —— Soraia guidelines (lilac-deep #a276b6) + production extract */
+  --color-violet-50: #FDF4FF;
+  --color-violet-100: #F6D0FE;
   --color-violet-200: #E8B3F0;
-  --color-violet-300: #DAB5D1;  /* pale mauve */
-  --color-violet-400: #CFA0D8;  /* light violet */
-  --color-violet-500: #A276B6;  /* lilac-deep (brand accent ufficiale) */
-  --color-violet-600: #9F1AB1;  /* primary vivid */
-  --color-violet-700: #892D9C;  /* primary deep */
+  --color-violet-300: #DAB5D1;
+  --color-violet-400: #CFA0D8;
+  --color-violet-500: #A276B6;  /* lilac-deep (brand accent) */
+  --color-violet-600: #9F1AB1;
+  --color-violet-700: #892D9C;
   --color-violet-800: #6B1F7A;
   --color-violet-900: #4A1656;
+  --color-violet-950: #2D0E36;
 
-  /* —— Neutrals (premium grayscale) —— */
-  --color-ink-50: #FAFAFA;
-  --color-ink-100: #F5F5F5;
-  --color-ink-200: #E9EAEB;
-  --color-ink-300: #D5D7DA;
-  --color-ink-400: #9CA3AF;
-  --color-ink-500: #6B7280;
-  --color-ink-600: #414651;
-  --color-ink-700: #2A2D33;
-  --color-ink-800: #18191C;
-  --color-ink-900: #0A0A0A;
+  /* —— Neutrals (premium grayscale, warm-leaning) —— */
+  --color-ink-50: #FAFAF9;        /* warm white */
+  --color-ink-100: #F5F4F2;
+  --color-ink-200: #E8E6E1;
+  --color-ink-300: #D5D3CD;
+  --color-ink-400: #9C9A93;
+  --color-ink-500: #6B6864;
+  --color-ink-600: #3F3E3B;
+  --color-ink-700: #28272A;
+  --color-ink-800: #16151A;
+  --color-ink-900: #0A0A0B;
 
   /* —— Accents —— */
-  --color-amber: #FEC84B;        /* highlights, garanzia badge */
-  --color-amber-soft: #FEF3C7;
+  --color-amber: #F4B842;
+  --color-amber-soft: #FEF5E0;
   --color-success: #17B26A;
 
   /* —— Fonts —— Soraia brand: Bricolage Grotesque (display) + Inter (body) */
@@ -40,66 +40,82 @@
   --font-display: "Bricolage Grotesque", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* —— Type scale (premium, generous) —— */
-  --text-display-1: 5rem;        /* 80px */
-  --text-display-2: 4rem;        /* 64px */
-  --text-display-3: 3rem;        /* 48px */
-  --text-h1: 2.5rem;             /* 40px */
-  --text-h2: 2rem;               /* 32px */
+  /* —— Type scale (editorial, generous) —— */
+  --text-display-1: 7rem;        /* 112px */
+  --text-display-2: 5.5rem;      /* 88px */
+  --text-display-3: 4rem;        /* 64px */
+  --text-h1: 3rem;               /* 48px */
+  --text-h2: 2.25rem;            /* 36px */
   --text-h3: 1.5rem;             /* 24px */
-  --text-body-lg: 1.125rem;      /* 18px */
-  --text-body: 1rem;             /* 16px */
-  --text-small: 0.875rem;        /* 14px */
-  --text-micro: 0.75rem;         /* 12px */
+  --text-body-lg: 1.15rem;       /* 18.4px */
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-micro: 0.75rem;
 
-  /* —— Radius —— */
-  --radius-xs: 0.375rem;
+  /* —— Radius (less rounded, more editorial) —— */
+  --radius-xs: 0.25rem;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-  --radius-2xl: 2rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
   --radius-full: 9999px;
 
-  /* —— Shadows (premium soft) —— */
-  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.04);
-  --shadow-sm: 0 2px 8px -2px rgb(0 0 0 / 0.06), 0 4px 16px -4px rgb(0 0 0 / 0.04);
-  --shadow-md: 0 8px 24px -6px rgb(0 0 0 / 0.08), 0 16px 48px -12px rgb(0 0 0 / 0.06);
-  --shadow-lg: 0 16px 48px -12px rgb(0 0 0 / 0.12), 0 32px 96px -24px rgb(0 0 0 / 0.08);
-  --shadow-violet: 0 24px 64px -16px rgb(137 45 156 / 0.25);
+  /* —— Shadows (softer, more refined) —— */
+  --shadow-xs: 0 1px 1px rgb(10 10 11 / 0.04);
+  --shadow-sm: 0 1px 2px rgb(10 10 11 / 0.04), 0 4px 12px -2px rgb(10 10 11 / 0.05);
+  --shadow-md: 0 4px 16px -4px rgb(10 10 11 / 0.08), 0 16px 40px -12px rgb(10 10 11 / 0.06);
+  --shadow-lg: 0 12px 32px -8px rgb(10 10 11 / 0.10), 0 32px 80px -20px rgb(10 10 11 / 0.08);
+  --shadow-violet: 0 20px 60px -16px rgb(137 45 156 / 0.30);
+  --shadow-violet-lg: 0 32px 96px -24px rgb(137 45 156 / 0.40);
 
-  /* —— Easing & motion —— */
+  /* —— Motion —— */
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 /* =============================================================
    BASE LAYER
    ============================================================= */
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv11", "ss03";
 }
 
 body {
   font-family: var(--font-sans);
   color: var(--color-ink-900);
   background: var(--color-ink-50);
-  font-feature-settings: "ss01", "cv11";
   font-size: var(--text-body);
-  line-height: 1.6;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+
+  /* Subtle grain texture for filmic premium feel */
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 h1, h2, h3, .font-display {
   font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+
+h4, h5, h6 {
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
 
-/* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -110,11 +126,11 @@ h1, h2, h3, .font-display {
 }
 
 /* =============================================================
-   UTILITIES
+   LAYOUT UTILITIES
    ============================================================= */
 
 .container-soraia {
-  max-width: 1240px;
+  max-width: 1280px;
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
@@ -123,108 +139,226 @@ h1, h2, h3, .font-display {
   .container-soraia { padding-inline: 2.5rem; }
 }
 
-/* Gradient text */
+.section {
+  padding-block: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  .section { padding-block: 8rem; }
+}
+
+/* =============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================= */
+
 .text-gradient-violet {
-  background: linear-gradient(135deg, var(--color-violet-700) 0%, var(--color-violet-600) 50%, var(--color-violet-500) 100%);
+  background: linear-gradient(115deg, var(--color-violet-700) 0%, var(--color-violet-600) 50%, var(--color-violet-500) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  /* Avoid clipping issues with descenders/ascenders */
+  padding-block: 0.05em;
 }
 
-/* Premium hero gradient backdrop */
+.text-balance { text-wrap: balance; }
+.text-pretty { text-wrap: pretty; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: var(--radius-full);
+  background: var(--color-violet-50);
+  color: var(--color-violet-700);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+  background: var(--color-violet-600);
+}
+
+.eyebrow-light {
+  background: rgb(255 255 255 / 0.08);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  color: var(--color-violet-200);
+}
+
+.eyebrow-light::before { background: var(--color-violet-400); }
+
+/* =============================================================
+   BACKGROUNDS — refined gradients with grain integration
+   ============================================================= */
+
 .bg-violet-radial {
   background:
-    radial-gradient(circle at 15% 20%, rgba(159, 26, 177, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 85% 65%, rgba(137, 45, 156, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 60% at 20% 15%, rgba(159, 26, 177, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 70%, rgba(137, 45, 156, 0.08) 0%, transparent 55%),
     linear-gradient(180deg, var(--color-ink-50) 0%, var(--color-violet-50) 100%);
 }
 
 .bg-violet-mesh {
   background:
-    radial-gradient(circle at 25% 0%, rgba(159, 26, 177, 0.18) 0%, transparent 35%),
-    radial-gradient(circle at 75% 100%, rgba(137, 45, 156, 0.16) 0%, transparent 40%),
-    linear-gradient(180deg, #FAFAFA 0%, #FDF4FF 100%);
+    radial-gradient(ellipse 90% 70% at 25% 0%, rgba(159, 26, 177, 0.16) 0%, transparent 45%),
+    radial-gradient(ellipse 80% 60% at 80% 100%, rgba(137, 45, 156, 0.14) 0%, transparent 45%),
+    linear-gradient(180deg, #FAFAF9 0%, #FDF4FF 100%);
 }
 
-/* Premium button base */
+.bg-grain {
+  position: relative;
+}
+.bg-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+}
+
+/* =============================================================
+   BUTTONS — premium with sliding arrow
+   ============================================================= */
+
 .btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  padding: 0.875rem 1.5rem;
+  padding: 0.95rem 1.5rem;
   border-radius: var(--radius-full);
-  font-weight: 600;
-  font-size: var(--text-body);
+  font-weight: 500;
+  font-size: 0.9375rem;
   line-height: 1;
-  letter-spacing: -0.01em;
-  transition: all 0.2s var(--ease-out-quart);
+  letter-spacing: -0.005em;
+  transition: all 0.4s var(--ease-out-quart);
   cursor: pointer;
   white-space: nowrap;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-violet-700) 0%, var(--color-violet-600) 100%);
+  background: var(--color-ink-900);
   color: white;
-  box-shadow: var(--shadow-sm), 0 8px 24px -8px rgb(137 45 156 / 0.4);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(115deg, var(--color-violet-700) 0%, var(--color-violet-600) 100%);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out-quart);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: var(--shadow-md), 0 16px 32px -8px rgb(137 45 156 / 0.5);
+  box-shadow: var(--shadow-md), 0 16px 32px -12px rgb(137 45 156 / 0.5);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
 }
 
 .btn-secondary {
-  background: white;
+  background: transparent;
   color: var(--color-ink-900);
-  border: 1px solid var(--color-ink-200);
-  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--color-ink-300);
+  box-shadow: none;
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-violet-600);
-  color: var(--color-violet-700);
+  border-color: var(--color-ink-900);
+  background: var(--color-ink-900);
+  color: white;
   transform: translateY(-1px);
 }
 
-.btn-ghost {
-  color: var(--color-ink-700);
-  background: transparent;
+.btn-violet {
+  background: linear-gradient(115deg, var(--color-violet-700) 0%, var(--color-violet-600) 100%);
+  color: white;
+  box-shadow: var(--shadow-sm), 0 12px 28px -10px rgb(137 45 156 / 0.45);
 }
 
-.btn-ghost:hover {
-  color: var(--color-violet-700);
+.btn-violet:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md), 0 20px 40px -10px rgb(137 45 156 / 0.55);
 }
 
-/* Card premium */
+/* Sliding arrow inside buttons */
+.btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  width: 14px;
+  overflow: hidden;
+}
+
+.btn-arrow svg {
+  transition: transform 0.4s var(--ease-out-quart);
+}
+
+.btn:hover .btn-arrow svg {
+  transform: translateX(3px);
+}
+
+/* =============================================================
+   CARDS — softer, more editorial
+   ============================================================= */
+
 .card {
   background: white;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-2xl);
   border: 1px solid var(--color-ink-200);
   padding: 2rem;
-  transition: all 0.3s var(--ease-out-quart);
+  transition: all 0.4s var(--ease-out-quart);
+}
+
+.card-hover {
+  position: relative;
 }
 
 .card-hover:hover {
-  border-color: var(--color-violet-200);
+  border-color: var(--color-ink-300);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
-/* Section spacing */
-.section {
-  padding-block: 5rem;
+/* Editorial card — fewer borders, more breathing */
+.card-editorial {
+  background: white;
+  border-radius: var(--radius-2xl);
+  padding: 2.5rem;
+  border: 1px solid var(--color-ink-200);
+  transition: all 0.4s var(--ease-out-quart);
+  position: relative;
 }
 
-@media (min-width: 768px) {
-  .section { padding-block: 7rem; }
+.card-editorial:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  border-color: var(--color-violet-200);
 }
 
-/* Subtle entrance animation */
+/* =============================================================
+   ANIMATIONS — refined
+   ============================================================= */
+
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -232,30 +366,173 @@ h1, h2, h3, .font-display {
   }
 }
 
-.fade-up {
-  animation: fade-up 0.7s var(--ease-out-expo) both;
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.fade-up-delay-1 { animation-delay: 0.1s; }
-.fade-up-delay-2 { animation-delay: 0.2s; }
-.fade-up-delay-3 { animation-delay: 0.3s; }
-.fade-up-delay-4 { animation-delay: 0.4s; }
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -30px) scale(1.05); }
+}
 
-/* Inline link */
+@keyframes float-slower {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 20px) scale(0.95); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - 4rem)); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(0.95); }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+
+.fade-up {
+  animation: fade-up 0.9s var(--ease-out-expo) both;
+}
+
+.fade-up-delay-1 { animation-delay: 0.08s; }
+.fade-up-delay-2 { animation-delay: 0.16s; }
+.fade-up-delay-3 { animation-delay: 0.24s; }
+.fade-up-delay-4 { animation-delay: 0.32s; }
+.fade-up-delay-5 { animation-delay: 0.40s; }
+
+.float-slow { animation: float-slow 14s var(--ease-in-out-quart) infinite; }
+.float-slower { animation: float-slower 18s var(--ease-in-out-quart) infinite; }
+.pulse-soft { animation: pulse-soft 3.2s var(--ease-in-out-quart) infinite; }
+
+/* Scroll-triggered reveal — set by IntersectionObserver */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* =============================================================
+   MARQUEE — for logo strip
+   ============================================================= */
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  gap: 4rem;
+  animation: marquee 40s linear infinite;
+  padding-right: 4rem;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* =============================================================
+   LINKS & MISC
+   ============================================================= */
+
 .link-violet {
   color: var(--color-violet-700);
-  text-decoration: underline;
-  text-decoration-color: var(--color-violet-300);
-  text-underline-offset: 3px;
-  transition: text-decoration-color 0.2s;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+  transition: background-size 0.3s var(--ease-out-quart);
 }
 
 .link-violet:hover {
-  text-decoration-color: var(--color-violet-700);
+  background-size: 0% 1px;
 }
 
-/* Selection */
+.link-underline-anim {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline-anim::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease-out-quart);
+}
+
+.link-underline-anim:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
 ::selection {
-  background: var(--color-violet-200);
-  color: var(--color-violet-900);
+  background: var(--color-violet-700);
+  color: white;
+}
+
+/* Smooth focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-violet-600);
+  outline-offset: 3px;
+  border-radius: 0.25rem;
+}
+
+/* =============================================================
+   DECORATIVE — abstract violet orbs
+   ============================================================= */
+
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(64px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-violet {
+  background: radial-gradient(circle, rgba(159, 26, 177, 0.45), transparent 70%);
+}
+
+.orb-lilac {
+  background: radial-gradient(circle, rgba(207, 160, 216, 0.55), transparent 70%);
+}
+
+.orb-amber {
+  background: radial-gradient(circle, rgba(244, 184, 66, 0.30), transparent 70%);
+}
+
+/* =============================================================
+   DIVIDERS
+   ============================================================= */
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-ink-200), transparent);
+}
+
+.hairline-violet {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-violet-300), transparent);
 }

@@ -10,24 +10,30 @@ interface Props {
 }
 
 const { label, logos } = Astro.props;
+
+// Duplicate for seamless marquee loop
+const doubled = [...logos, ...logos];
 ---
 
-<section class="border-y border-ink-200 bg-white/50 backdrop-blur-sm">
-  <div class="container-soraia py-10">
-    <p class="text-xs font-medium uppercase tracking-[0.18em] text-ink-500 text-center mb-6">
+<section class="py-14 md:py-16 border-y border-ink-200 bg-white">
+  <div class="container-soraia">
+    <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 text-center mb-9">
       {label}
     </p>
-    <ul class="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-      {logos.map((logo) => (
-        <li class="flex flex-col items-center">
-          <span class="text-lg md:text-xl font-bold tracking-tight text-ink-700 hover:text-violet-700 transition-colors">
+  </div>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      {doubled.map((logo, idx) => (
+        <div
+          class="flex items-center shrink-0 px-2"
+          aria-hidden={idx >= logos.length ? "true" : undefined}
+        >
+          <span class="font-display text-xl md:text-2xl font-semibold tracking-tight text-ink-400 hover:text-ink-900 transition-colors duration-300 whitespace-nowrap">
             {logo.name}
           </span>
-          {logo.detail && (
-            <span class="text-xs text-ink-500 mt-0.5">{logo.detail}</span>
-          )}
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   </div>
 </section>

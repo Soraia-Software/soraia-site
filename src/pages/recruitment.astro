@@ -179,56 +179,68 @@ const faqs = [
 
 <Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
   <!-- ============================================================
-       HERO
+       HERO — Editorial premium recruitment
        ============================================================ -->
   <section class="bg-violet-mesh relative overflow-hidden">
-    <div class="container-soraia pt-16 pb-20 md:pt-24 md:pb-32 relative">
-      <div class="max-w-4xl">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-violet-200 shadow-xs mb-7 fade-up">
-          <span class="w-2 h-2 rounded-full bg-violet-600 animate-pulse"></span>
-          <span class="text-sm font-medium text-violet-900">Per agenzie di recruitment</span>
-        </div>
+    <div class="orb orb-violet w-[560px] h-[560px] -right-40 -top-20 float-slow opacity-60" aria-hidden="true"></div>
+    <div class="orb orb-lilac w-[460px] h-[460px] -left-32 top-1/2 float-slower opacity-70" aria-hidden="true"></div>
 
-        <h1 class="text-display-3 md:text-display-2 lg:text-display-1 font-bold tracking-[-0.02em] leading-[1.02] text-ink-900 fade-up fade-up-delay-1">
-          I tuoi recruiter dal
-          <span class="text-gradient-violet whitespace-nowrap">60% admin</span>
-          al
-          <span class="text-gradient-violet whitespace-nowrap">60% selling</span>.
-        </h1>
-
-        <p class="mt-7 text-body-lg md:text-xl text-ink-700 leading-relaxed max-w-2xl fade-up fade-up-delay-2">
-          Costruiamo agenti IA che fanno il lavoro ripetitivo &mdash; screening CV, contatto candidati, lettura JD, calendario colloqui. I tuoi recruiter chiudono. <strong class="text-ink-900">Live in 4 settimane.</strong> Se non recuperi ore, ti rimborsiamo.
+    <div class="container-soraia pt-20 pb-24 md:pt-28 md:pb-36 lg:pt-36 lg:pb-44 relative z-10">
+      <div class="max-w-[1100px]">
+        <p class="eyebrow mb-8 fade-up">
+          Per agenzie di recruitment
         </p>
 
-        <div class="mt-10 flex flex-col sm:flex-row gap-4 fade-up fade-up-delay-3">
-          <a href="#contact" class="btn btn-primary text-base">
-            Richiedi assessment &mdash; 2.000€
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M13 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="#cases" class="btn btn-secondary text-base">
-            Vedi i risultati di APraise
-          </a>
+        <h1 class="font-display text-[3rem] sm:text-[4.5rem] md:text-[5.75rem] lg:text-[7.5rem] font-semibold tracking-[-0.045em] leading-[0.93] text-ink-900 fade-up fade-up-delay-1 text-balance">
+          I tuoi recruiter dal
+          <em class="not-italic text-gradient-violet">60% admin</em>
+          al
+          <em class="not-italic text-gradient-violet">60% selling</em>.
+        </h1>
+
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-x-12 gap-y-10 items-end">
+          <p class="lg:col-span-7 text-[18px] md:text-[20px] text-ink-700 leading-[1.55] max-w-2xl fade-up fade-up-delay-2 text-pretty">
+            Costruiamo agenti IA che fanno il lavoro ripetitivo &mdash; screening CV, contatto candidati, lettura JD, calendario colloqui. I tuoi recruiter chiudono. <strong class="text-ink-900">Live in 4 settimane.</strong> Se non recuperi ore, ti rimborsiamo.
+          </p>
+
+          <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 fade-up fade-up-delay-3 lg:justify-end">
+            <a href="#contact" class="btn btn-primary">
+              Richiedi assessment &mdash; 2.000€
+              <span class="btn-arrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </a>
+            <a href="#cases" class="btn btn-secondary">
+              Risultati APraise
+            </a>
+          </div>
         </div>
 
-        <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink-600 fade-up fade-up-delay-4">
-          <div class="inline-flex items-center gap-2">
-            <CheckIcon variant="violet" /> Live in 4 settimane
+        <div class="mt-16 md:mt-20 hairline fade-up fade-up-delay-4"></div>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-y-4 gap-x-10 text-[13px] fade-up fade-up-delay-4">
+          <div class="flex items-baseline gap-3">
+            <span class="font-display text-[28px] font-semibold text-gradient-violet leading-none">4</span>
+            <span class="text-ink-600">settimane al primo agente live</span>
           </div>
-          <div class="inline-flex items-center gap-2">
-            <CheckIcon variant="violet" /> Ore recuperate o rimborso
+          <div class="flex items-baseline gap-3">
+            <span class="font-display text-[28px] font-semibold text-gradient-violet leading-none">5–8h</span>
+            <span class="text-ink-600">a settimana per recruiter, garantite</span>
           </div>
-          <div class="inline-flex items-center gap-2">
-            <CheckIcon variant="violet" /> Codice tuo, nessuna dipendenza
+          <div class="flex items-baseline gap-3">
+            <span class="font-display text-[28px] font-semibold text-gradient-violet leading-none">0</span>
+            <span class="text-ink-600">dipendenza dal fornitore</span>
           </div>
         </div>
       </div>
-
-      <!-- Decorative gradient blobs -->
-      <div class="absolute -right-32 top-1/4 w-96 h-96 rounded-full bg-violet-200/40 blur-3xl pointer-events-none"></div>
-      <div class="absolute -left-32 bottom-0 w-72 h-72 rounded-full bg-violet-100/60 blur-3xl pointer-events-none"></div>
     </div>
+
+    <a href="#problema" class="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-ink-500 hover:text-ink-900 transition-colors group z-10" aria-label="Scroll">
+      <span class="text-[10px] uppercase tracking-[0.18em] font-semibold">Scorri</span>
+      <span class="w-[1px] h-10 bg-gradient-to-b from-ink-400 to-transparent group-hover:from-violet-600 transition-colors"></span>
+    </a>
   </section>
 
   <!-- ============================================================
@@ -242,7 +254,7 @@ const faqs = [
   <!-- ============================================================
        PROBLEMA
        ============================================================ -->
-  <section class="section bg-white">
+  <section id="problema" class="section bg-white">
     <div class="container-soraia">
       <SectionHeader
         eyebrow="Il problema"
@@ -298,31 +310,28 @@ const faqs = [
   </section>
 
   <!-- ============================================================
-       GARANZIA
+       GARANZIA — editorial dark
        ============================================================ -->
-  <section class="section bg-white">
-    <div class="container-soraia">
-      <div class="card !p-10 md:!p-16 bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700 !border-0 relative overflow-hidden">
-        <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-violet-500/20 blur-3xl"></div>
-        <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-violet-400/15 blur-3xl"></div>
+  <section class="section bg-ink-900 relative overflow-hidden">
+    <div class="orb orb-violet w-[700px] h-[700px] -top-32 -right-32 opacity-50 float-slow" aria-hidden="true"></div>
+    <div class="orb orb-amber w-[400px] h-[400px] -bottom-20 left-1/4 opacity-30 float-slower" aria-hidden="true"></div>
 
-        <div class="relative max-w-3xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber/20 border border-amber/30 mb-6">
-            <span class="text-xs font-bold uppercase tracking-[0.14em] text-amber">La nostra garanzia</span>
-          </div>
+    <div class="container-soraia relative z-10">
+      <div class="max-w-4xl reveal">
+        <p class="eyebrow eyebrow-light mb-8">La nostra garanzia</p>
 
-          <p class="text-display-3 md:text-display-2 font-bold tracking-tight text-white leading-[1.1]">
-            5–8 ore a settimana <span class="text-amber">per ogni recruiter</span>, recuperate entro 4 settimane.
-          </p>
+        <h2 class="font-display text-[3rem] sm:text-[4rem] md:text-[5.5rem] font-semibold tracking-[-0.04em] leading-[0.95] text-white text-balance">
+          <span class="text-gradient-violet">5–8 ore</span> a settimana per recruiter.
+          <span class="block text-white/40 font-light">Recuperate in 4 settimane. O rimborso.</span>
+        </h2>
 
-          <p class="mt-7 text-body-lg text-white/85 leading-relaxed">
-            Le misuriamo sulla baseline definita insieme in assessment. Se non ci arriviamo, lavoriamo gratis finché non succede &mdash; oppure ti rimborsiamo lo sprint.
-          </p>
+        <p class="mt-10 text-[18px] md:text-[20px] text-white/70 leading-relaxed max-w-2xl text-pretty">
+          Le misuriamo sulla baseline definita insieme in assessment. Se non ci arriviamo, lavoriamo gratis finché non succede &mdash; oppure ti rimborsiamo lo sprint.
+        </p>
 
-          <p class="mt-5 text-sm text-white/65">
-            Sì, è una garanzia vera. Funziona perché in assessment definiamo insieme baseline, perimetro e metodo di misurazione. <strong class="text-white">Niente sorprese, niente sotterfugi.</strong>
-          </p>
-        </div>
+        <p class="mt-6 text-[15px] text-white/50 leading-relaxed max-w-2xl text-pretty">
+          Funziona perché in assessment definiamo insieme baseline, perimetro e metodo di misurazione. <strong class="text-white/80">Niente sorprese, niente sotterfugi contrattuali.</strong>
+        </p>
       </div>
     </div>
   </section>
@@ -424,24 +433,4 @@ const faqs = [
     </div>
   </section>
 </Layout>
-
-<script>
-  // IntersectionObserver per fade-in delle sezioni
-  if (typeof window !== "undefined" && "IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-up");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.05 }
-    );
-    document.querySelectorAll("section .card, section .grid > *").forEach((el) => {
-      io.observe(el);
-    });
-  }
-</script>
 

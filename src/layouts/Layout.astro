@@ -79,5 +79,28 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString(
       <slot />
     </main>
     <Footer lang={lang} />
+
+    <script>
+      // Refined scroll-triggered reveal
+      if (typeof window !== "undefined" && "IntersectionObserver" in window) {
+        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (!reduced) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("in-view");
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+          );
+          document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+        } else {
+          document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in-view"));
+        }
+      }
+    </script>
   </body>
 </html>

@@ -12,15 +12,28 @@ interface Props {
 const { metrics } = Astro.props;
 ---
 
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-ink-200 rounded-2xl overflow-hidden">
-  {metrics.map((m) => (
-    <div class="bg-white p-7 md:p-10">
-      <p class="text-display-3 md:text-display-2 font-bold tracking-tight leading-none text-gradient-violet">
-        {m.value}
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-x-10">
+  {metrics.map((m, i) => (
+    <div class="reveal relative" style={`transition-delay: ${i * 80}ms`}>
+      <p class="text-[10px] font-semibold tracking-[0.18em] uppercase text-ink-500 mb-3">
+        {String(i + 1).padStart(2, "0")} /
       </p>
-      <p class="mt-3 text-sm font-medium text-ink-900 leading-tight">{m.label}</p>
+
+      <p class="font-display text-[3.5rem] md:text-[4.5rem] font-semibold tracking-[-0.04em] leading-[0.95] text-ink-900">
+        {m.value.startsWith("€") ? (
+          <>
+            <span class="text-ink-400">€</span><span class="text-gradient-violet">{m.value.slice(1)}</span>
+          </>
+        ) : (
+          <span class="text-gradient-violet">{m.value}</span>
+        )}
+      </p>
+
+      <div class="mt-5 hairline-violet"></div>
+
+      <p class="mt-4 text-sm font-medium text-ink-900 leading-snug text-pretty">{m.label}</p>
       {m.detail && (
-        <p class="mt-1 text-xs text-ink-500">{m.detail}</p>
+        <p class="mt-1.5 text-xs text-ink-500 leading-relaxed text-pretty">{m.detail}</p>
       )}
     </div>
   ))}
