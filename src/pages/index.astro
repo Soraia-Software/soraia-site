@@ -74,7 +74,7 @@ const partners = [
 const testimonials = [
   {
     quote:
-      "Il nuovo sistema è come avere quattro recruiter in più nel team &mdash; senza il costo e la complessità.",
+      "Il nuovo sistema è come avere quattro recruiter in più nel team , senza il costo e la complessità.",
     name: "Jacopo Castano",
     role: "Managing Partner",
     company: "APraise",
@@ -200,20 +200,37 @@ const faqs = [
           </h1>
 
           <p class="mt-7 text-[18px] md:text-[19px] text-violet-100/85 leading-relaxed max-w-xl fade-up fade-up-delay-2 text-pretty">
-            Agenti IA che eseguono i tuoi processi end-to-end &mdash; non software che il tuo team deve imparare a usare. Prima delivery in 4 settimane.
+            Agenti IA che eseguono i tuoi processi end-to-end. Non software che il tuo team deve imparare a usare. Prima delivery in 4 settimane.
           </p>
 
-          <!-- GARANZIA BADGE, restrained -->
-          <div class="mt-6 inline-flex items-center gap-2 fade-up fade-up-delay-2">
+          <!-- HARD NUMBERS BAND, upfront credibility -->
+          <div class="mt-8 grid grid-cols-3 gap-3 max-w-xl fade-up fade-up-delay-2">
+            <div>
+              <p class="text-white font-medium" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1; letter-spacing: -0.02em;">70%</p>
+              <p class="text-[12px] text-violet-200/70 mt-2 leading-snug">tempo recuperato<br/>medio per processo</p>
+            </div>
+            <div>
+              <p class="text-white font-medium" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1; letter-spacing: -0.02em;">40+</p>
+              <p class="text-[12px] text-violet-200/70 mt-2 leading-snug">progetti consegnati<br/>in 11 paesi</p>
+            </div>
+            <div>
+              <p class="text-white font-medium" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1; letter-spacing: -0.02em;">4 sett.</p>
+              <p class="text-[12px] text-violet-200/70 mt-2 leading-snug">al primo<br/>agente live</p>
+            </div>
+          </div>
+
+          <!-- GARANZIA BADGE -->
+          <div class="mt-7 inline-flex items-center gap-2 fade-up fade-up-delay-2">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
             </svg>
             <span class="text-[14px] text-amber font-medium">Se non funziona, non paghi. Garanzia inclusa.</span>
           </div>
 
-          <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+          <!-- CTA + CEO CHIP -->
+          <div class="mt-9 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
             <a href="/parliamone" class="btn btn-primary !bg-white !text-violet-900 hover:!bg-violet-50">
-              Parliamone, è gratis
+              20 min con Daniel
               <span class="btn-arrow">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
               </span>
@@ -223,21 +240,21 @@ const faqs = [
             </a>
           </div>
 
-          <!-- TRUST ROW -->
-          <div class="mt-12 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] fade-up fade-up-delay-4">
-            <div class="inline-flex items-center gap-2">
-              <span class="w-1 h-1 rounded-full bg-amber"></span>
-              <span class="text-violet-100/80"><strong class="text-white font-medium">40+ clienti</strong> in 11 paesi</span>
-            </div>
-            <div class="inline-flex items-center gap-2">
-              <span class="w-1 h-1 rounded-full bg-amber"></span>
-              <span class="text-violet-100/80"><strong class="text-white font-medium">4 settimane</strong> al primo agente live</span>
-            </div>
-            <div class="inline-flex items-center gap-2">
-              <span class="w-1 h-1 rounded-full bg-amber"></span>
-              <span class="text-violet-100/80"><strong class="text-white font-medium">GDPR + AI Act</strong> compliant</span>
-            </div>
-          </div>
+          <!-- CEO CREDIBILITY CHIP -->
+          <a href="/parliamone" class="mt-6 inline-flex items-center gap-3 group fade-up fade-up-delay-4 no-underline">
+            <img
+              src="/team/daniel-levis.avif"
+              alt="Daniel Levis"
+              width="40"
+              height="40"
+              class="w-10 h-10 rounded-full object-cover ring-2 ring-white/20 group-hover:ring-white/40 transition-all"
+              loading="eager"
+            />
+            <span class="text-[13px] leading-tight">
+              <span class="block text-white/85">Daniel Levis, CEO Soraia</span>
+              <span class="block text-violet-200/60">capiamo insieme se ha senso. Senza pitch.</span>
+            </span>
+          </a>
         </div>
 
         <!-- Right: visual -->
@@ -307,25 +324,25 @@ const faqs = [
             <ul class="space-y-3.5 mb-8 flex-1">
               <li class="flex items-start gap-3">
                 <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#892D9C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 </span>
                 <span class="text-[15px] text-ink-900"><strong class="font-semibold">AI Leadership</strong>, sessione strategica per il management su scenari, rischi, decisioni.</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#892D9C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 </span>
                 <span class="text-[15px] text-ink-900"><strong class="font-semibold">AI Upskilling</strong>, formazione a 3 livelli per tutti i ruoli, con AI Working Labs operativi.</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#892D9C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 </span>
                 <span class="text-[15px] text-ink-900"><strong class="font-semibold">AI Policy</strong>, redazione della tua policy interna sull'uso responsabile dell'IA.</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#892D9C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 </span>
                 <span class="text-[15px] text-ink-900"><strong class="font-semibold">AI Champions</strong>, programma per creare un nucleo interno di leader IA che continua dopo di noi.</span>
               </li>
@@ -645,9 +662,9 @@ const faqs = [
        16. CTA FINALE. Call con il CEO
        ============================================================ -->
   <CTABanner
-    title="Iniziamo con una call gratuita."
-    description="20 minuti con il CEO per capire insieme se ha senso parlarci. Nessun pitch, nessun impegno, solo una conversazione operativa."
-    ctaText="Parliamone"
+    title="20 minuti col CEO. Senza pitch."
+    description="Capiamo insieme se ha senso lavorare. Nessun impegno, nessun preventivo a sorpresa: solo una conversazione operativa sui tuoi processi."
+    ctaText="20 min con Daniel"
     ctaHref="/parliamone"
     avatarName="Daniel Levis"
     avatarRole="Co-Founder & CEO"
