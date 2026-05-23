@@ -63,35 +63,35 @@ const partners = [
 const testimonials = [
   {
     quote:
+      "Il nuovo sistema è come avere quattro recruiter in più nel team — senza il costo e la complessità. Estremamente soddisfatti della consulenza, dello sviluppo e del supporto continuo.",
+    name: "Jacopo Castano",
+    role: "Managing Partner",
+    company: "APraise",
+    photoSrc: "/testimonials/jacopo-castano-apraise.png",
+  },
+  {
+    quote:
       "Grazie a Soraia risparmiamo 7 ore su ogni articolo che pubblichiamo. Automatizzano i nostri contenuti dalla bozza ai social in un solo click.",
     name: "Rolf Kosakowski",
     role: "CEO & Founder",
     company: "KB&B Family Marketing",
-    photoSrc: "/testimonials/rolf-kosakowski.webp",
+    photoSrc: "/testimonials/rolf-kbb.png",
   },
   {
     quote:
-      "Estremamente soddisfatti della collaborazione: hanno gestito un progetto complesso con chiarezza e consegnato sopra le aspettative.",
-    name: "Russell Fyfe",
-    role: "Head of Product",
-    company: "Rainplan",
-    photoSrc: "/testimonials/russell-fyfe.webp",
-  },
-  {
-    quote:
-      "Il nuovo sistema è come avere quattro recruiter in più nel team — senza il costo e la complessità. Estremamente soddisfatta della consulenza, dello sviluppo e del supporto continuo.",
-    name: "Gabriella Bruzzone",
-    role: "Founder",
-    company: "APraise",
-    photoSrc: "/testimonials/gabriella-bruzzone.webp",
+      "Siamo passati da zero a uno, risparmiando 70 ore per ogni nuovo esperto che integriamo. Un miglioramento significativo che sta accelerando la crescita del nostro business.",
+    name: "Brian Dandelet",
+    role: "Head of Operations",
+    company: "CXL",
+    photoSrc: "/testimonials/brian-dandelet-cxl.png",
   },
   {
     quote:
       "Provider giovani, professionali, seri. Tutto è chiaro e fluido. Li adoro.",
-    name: "Gianluca Di Donato",
-    role: "CEO & Founder",
-    company: "Utravel",
-    photoSrc: "/testimonials/gianluca-didonato.webp",
+    name: "Gabriella Bruzzone",
+    role: "CMO",
+    company: "Stars Be Original",
+    photoSrc: "/testimonials/gabriella-bruzzone-stars.png",
   },
 ];
 
@@ -108,16 +108,53 @@ const team = [
   { name: "Sebastian Geido", role: "Senior Developer", flag: "🇦🇷", photoSrc: "/team/sebastian-geido.png" },
 ];
 
-// Coordinates calibrated for Wikimedia equirectangular world map projection
-const worldDots = [
-  { x: 53.5, y: 38, label: "Italia" },
-  { x: 50.5, y: 36, label: "Francia" },
-  { x: 50, y: 33, label: "UK" },
-  { x: 49, y: 39, label: "Spagna" },
-  { x: 53.5, y: 32, label: "Germania" },
-  { x: 29, y: 40, label: "USA" },
-  { x: 34, y: 76, label: "Argentina" },
-  { x: 52.5, y: 42, label: "Tunisia" },
+// Regional dots with hover-popup breakdown (clients per country)
+const worldRegions = [
+  {
+    x: 51.5, y: 38,
+    label: "Europa",
+    flag: "🌍",
+    total: 20,
+    countries: [
+      { flag: "🇮🇹", name: "Italia", count: 12 },
+      { flag: "🇫🇷", name: "Francia", count: 4 },
+      { flag: "🇪🇸", name: "Spagna", count: 1 },
+      { flag: "🇩🇪", name: "Germania", count: 1 },
+      { flag: "🇬🇧", name: "UK", count: 1 },
+      { flag: "🇨🇭", name: "Svizzera", count: 1 },
+    ],
+    align: "right" as const,
+  },
+  {
+    x: 23, y: 40,
+    label: "Nord America",
+    flag: "🇺🇸",
+    total: 5,
+    countries: [
+      { flag: "🇺🇸", name: "USA", count: 3 },
+      { flag: "🇨🇦", name: "Canada", count: 2 },
+    ],
+    align: "left" as const,
+  },
+  {
+    x: 64, y: 50,
+    label: "Medio Oriente",
+    flag: "🇦🇪",
+    total: 1,
+    countries: [
+      { flag: "🇦🇪", name: "Emirati Arabi", count: 1 },
+    ],
+  },
+  {
+    x: 84, y: 71,
+    label: "Australia",
+    flag: "🇦🇺",
+    total: 1,
+    countries: [
+      { flag: "🇦🇺", name: "Australia", count: 1 },
+    ],
+    align: "right" as const,
+  },
 ];
 
 const faqs = [
@@ -506,12 +543,12 @@ const faqs = [
     <div class="container-soraia">
       <SectionHeader
         eyebrow="Reach globale"
-        title="Reach globale, impatto locale."
-        subtitle="Siamo basati a Biella, in Piemonte. Ma lavoriamo con clienti in mezza Europa, Nord e Sud America."
+        title="Azienda italiana. Clienti e collaboratori in tutto il mondo."
+        subtitle="Siamo basati a Biella, in Piemonte. Lavoriamo con clienti tra Italia, Europa, Nord America, Medio Oriente e Australia &mdash; con un team distribuito tra 5 paesi."
         align="center"
       />
 
-      <WorldMap dots={worldDots} />
+      <WorldMap regions={worldRegions} />
 
       <!-- Stats bar -->
       <div class="mt-20 grid grid-cols-3 gap-px bg-ink-200 rounded-3xl overflow-hidden max-w-4xl mx-auto reveal">
@@ -608,7 +645,7 @@ const faqs = [
           <div class="md:col-span-4 md:order-1 flex justify-center md:justify-start">
             <div class="relative w-48 h-48 md:w-56 md:h-56">
               <img
-                src="/testimonials/rolf-kosakowski.webp"
+                src="/testimonials/rolf-storywonder.png"
                 alt="Rolf Kosakowski"
                 loading="lazy"
                 class="absolute inset-0 w-full h-full rounded-full object-cover shadow-violet"

@@ -1,57 +1,261 @@
 ---
-interface Dot {
-  x: number;  // percent left
-  y: number;  // percent top
-  label: string;
+interface CountryBreakdown {
+  flag: string;
+  name: string;
+  count: number;
+}
+
+interface Region {
+  x: number;          // percent left
+  y: number;          // percent top
+  label: string;      // e.g. "Europe"
+  flag: string;       // primary flag emoji
+  total: number;      // total clients
+  countries: CountryBreakdown[];
+  align?: "left" | "right" | "center";  // popup horizontal alignment
 }
 
 interface Props {
-  dots: Dot[];
+  regions: Region[];
 }
 
-const { dots } = Astro.props;
+const { regions } = Astro.props;
 ---
 
-<div class="relative w-full max-w-5xl mx-auto">
-  <!-- Real Wikimedia world map loaded as <img>, styled with CSS filters -->
-  <img
-    src="/maps/world.svg"
-    alt=""
-    aria-hidden="true"
-    loading="lazy"
-    class="w-full h-auto select-none pointer-events-none world-map-img"
-  />
+<div class="world-map-wrapper">
+  <!-- Dot-pattern world map: CSS background of dots, masked by world.svg silhouette -->
+  <div class="world-map-dots" aria-hidden="true"></div>
 
-  <!-- Animated dots for active markets -->
-  {dots.map((dot, i) => (
+  <!-- Region markers -->
+  {regions.map((r) => (
     <div
-      class="absolute reveal"
-      style={`left: ${dot.x}%; top: ${dot.y}%; transform: translate(-50%, -50%); transition-delay: ${i * 60}ms;`}
+      class="region-marker reveal"
+      style={`left: ${r.x}%; top: ${r.y}%;`}
+      data-align={r.align ?? "center"}
     >
-      <span class="relative flex w-3 h-3">
-        <span class="absolute inset-0 rounded-full bg-violet-600 opacity-75 animate-ping" style={`animation-delay: ${i * 0.5}s`}></span>
-        <span class="relative inline-flex w-3 h-3 rounded-full bg-violet-700 shadow-[0_0_18px_rgba(159,26,177,0.55)] ring-2 ring-white"></span>
-      </span>
-      <span class="absolute left-1/2 -translate-x-1/2 -bottom-6 text-[10px] md:text-[11px] font-semibold text-ink-700 whitespace-nowrap bg-white/85 backdrop-blur-sm px-1.5 py-0.5 rounded shadow-sm">
-        {dot.label}
-      </span>
+      <button
+        type="button"
+        class="region-dot"
+        aria-label={`${r.label} — ${r.total} clients`}
+      >
+        <span class="region-pulse"></span>
+        <span class="region-core"></span>
+      </button>
+
+      <div class="region-popup">
+        <div class="region-popup-flag">{r.flag}</div>
+        <p class="region-popup-name">{r.label}</p>
+        <p class="region-popup-total">{r.total} clienti</p>
+        {r.countries.length > 1 && (
+          <ul class="region-popup-list">
+            {r.countries.map((c) => (
+              <li>
+                <span class="popup-flag">{c.flag}</span>
+                <span class="popup-text"><strong>{c.count}</strong> {c.name}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   ))}
 </div>
 
 <style is:global>
-  .world-map-img {
-    filter:
-      brightness(0)
-      saturate(100%)
-      invert(85%)
-      sepia(8%)
-      saturate(338%)
-      hue-rotate(338deg)
-      brightness(95%)
-      contrast(91%);
-    /* Equivalent to soft warm grey (#D5D3CD / ink-300) */
-    opacity: 0.45;
-    mix-blend-mode: multiply;
+  .world-map-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 980px;
+    margin-inline: auto;
+    aspect-ratio: 2 / 1;
+  }
+
+  /* Dot-pattern background masked by world.svg */
+  .world-map-dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, #D5D3CD 1px, transparent 1.5px);
+    background-size: 11px 11px;
+    background-position: center;
+    -webkit-mask-image: url("/maps/world.svg");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url("/maps/world.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    opacity: 0.85;
+  }
+
+  /* Region marker container */
+  .region-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  /* Pulsing dot button */
+  .region-dot {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .region-pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: rgba(159, 26, 177, 0.35);
+    animation: ping 2.4s var(--ease-out-quart) infinite;
+  }
+
+  .region-core {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #892D9C, #9F1AB1);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9), 0 0 24px rgba(159, 26, 177, 0.6);
+    transition: transform 0.3s var(--ease-out-quart);
+  }
+
+  .region-dot:hover .region-core,
+  .region-dot:focus-visible .region-core {
+    transform: scale(1.25);
+  }
+
+  @keyframes ping {
+    0% { transform: scale(1); opacity: 0.8; }
+    75%, 100% { transform: scale(3); opacity: 0; }
+  }
+
+  /* Popup card — visible on hover/focus */
+  .region-popup {
+    position: absolute;
+    bottom: calc(100% + 16px);
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    min-width: 200px;
+    max-width: 240px;
+    background: white;
+    border-radius: 14px;
+    border: 1px solid var(--color-ink-200);
+    padding: 16px 18px;
+    box-shadow: 0 12px 32px -8px rgba(10, 10, 11, 0.18), 0 24px 64px -16px rgba(137, 45, 156, 0.20);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s var(--ease-out-quart), transform 0.25s var(--ease-out-quart), visibility 0.25s;
+    pointer-events: none;
+    z-index: 20;
+  }
+
+  /* Popup alignment variants for edge markers */
+  .region-marker[data-align="left"] .region-popup {
+    left: 0;
+    transform: translateX(-12px) translateY(8px);
+  }
+
+  .region-marker[data-align="right"] .region-popup {
+    left: auto;
+    right: 0;
+    transform: translateX(12px) translateY(8px);
+  }
+
+  .region-marker:hover .region-popup,
+  .region-marker:focus-within .region-popup {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .region-marker[data-align="left"]:hover .region-popup,
+  .region-marker[data-align="left"]:focus-within .region-popup {
+    transform: translateX(-12px) translateY(0);
+  }
+
+  .region-marker[data-align="right"]:hover .region-popup,
+  .region-marker[data-align="right"]:focus-within .region-popup {
+    transform: translateX(12px) translateY(0);
+  }
+
+  /* Arrow tail */
+  .region-popup::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: white;
+    filter: drop-shadow(0 2px 1px rgba(10, 10, 11, 0.08));
+  }
+
+  .region-marker[data-align="left"] .region-popup::after { left: 16px; transform: none; }
+  .region-marker[data-align="right"] .region-popup::after { left: auto; right: 16px; transform: none; }
+
+  .region-popup-flag {
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    background: var(--color-ink-50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 1;
+    margin-bottom: 8px;
+    box-shadow: 0 0 0 1px var(--color-ink-200);
+  }
+
+  .region-popup-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--color-ink-900);
+    font-size: 15px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+
+  .region-popup-total {
+    font-size: 12px;
+    color: var(--color-ink-500);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .region-popup-list {
+    border-top: 1px solid var(--color-ink-100);
+    padding-top: 10px;
+    margin: 0;
+    list-style: none;
+  }
+
+  .region-popup-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 0;
+    font-size: 12.5px;
+    color: var(--color-ink-700);
+  }
+
+  .popup-flag {
+    font-size: 14px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .popup-text strong {
+    color: var(--color-ink-900);
+    font-weight: 600;
   }
 </style>
