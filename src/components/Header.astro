@@ -7,20 +7,21 @@ const { lang = "it" } = Astro.props;
 
 const labels = {
   it: {
+    nav_agents: "AI Agents",
     nav_recruitment: "Recruitment",
     nav_cases: "Casi studio",
-    nav_about: "Soraia",
     cta: "Assessment",
   },
   en: {
+    nav_agents: "AI Agents",
     nav_recruitment: "Recruitment",
     nav_cases: "Case studies",
-    nav_about: "Soraia",
     cta: "Assessment",
   },
 }[lang];
 
 const homeHref = lang === "en" ? "/en/" : "/";
+const agentsHref = lang === "en" ? "/en/ai-agents" : "/ai-agents";
 const recHref = lang === "en" ? "/en/recruitment" : "/recruitment";
 const otherLang = lang === "it" ? "en" : "it";
 const otherHref = otherLang === "en"
@@ -43,9 +44,9 @@ const otherHref = otherLang === "en"
       </a>
 
       <ul class="hidden md:flex items-center gap-9 text-[14px] text-ink-700">
+        <li><a href={agentsHref} class="link-underline-anim hover:text-ink-900 transition-colors">{labels.nav_agents}</a></li>
         <li><a href={recHref} class="link-underline-anim hover:text-ink-900 transition-colors">{labels.nav_recruitment}</a></li>
         <li><a href={`${homeHref}#cases`} class="link-underline-anim hover:text-ink-900 transition-colors">{labels.nav_cases}</a></li>
-        <li><a href={`${homeHref}#about`} class="link-underline-anim hover:text-ink-900 transition-colors">{labels.nav_about}</a></li>
       </ul>
 
       <div class="flex items-center gap-3">
