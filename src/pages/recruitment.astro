@@ -1,0 +1,447 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import ProofBar from "~/components/ProofBar.astro";
+import CaseStudyCard from "~/components/CaseStudyCard.astro";
+import ProcessCard from "~/components/ProcessCard.astro";
+import ComparisonTable from "~/components/ComparisonTable.astro";
+import FAQ from "~/components/FAQ.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import LeadForm from "~/components/LeadForm.tsx";
+import CheckIcon from "~/components/CheckIcon.astro";
+
+const title = "Agenti IA per agenzie di recruitment | Soraia";
+const description =
+  "I tuoi recruiter dal 60% di lavoro amministrativo al 60% di tempo dedicato al closing. Agenti IA su misura, attivi in 4 settimane. Se non recuperi ore, rimborsiamo.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Agenti IA per Recruitment — Soraia",
+    provider: {
+      "@type": "Organization",
+      name: "Soraia",
+      url: "https://www.soraia.io",
+    },
+    areaServed: "IT",
+    serviceType: "AI agents for recruitment agencies",
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "EUR",
+      price: "2000",
+      description: "Assessment iniziale 2.000€, rimborsato se procedi con lo sprint.",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Come gestite GDPR e dati candidati?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Gli agenti girano in ambiente cloud europeo o on-premise sulla tua infrastruttura. Audit log completo, retention configurabile, nessun training su dati tuoi.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Si integra con l'ATS che già usiamo?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Sì. Lavoriamo con Bullhorn, Bee-Staffing, Salesforce, In-Recruiting e ATS proprietari. In assessment validiamo l'integrazione specifica.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quanto costa?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Assessment 2.000€ (rimborsato se procedi). Sprint di build 10–50k€ a seconda dei processi coperti. Garanzia: se non recuperi le ore promesse, rimborsiamo.",
+        },
+      },
+    ],
+  },
+];
+
+const recruitmentLogos = [
+  { name: "APraise", detail: "Recruitment internazionale" },
+  { name: "OggiLavoro", detail: "APL, 1500+ persone" },
+  { name: "Aegis Group", detail: "Holding, 60+ recruiter" },
+  { name: "Talent Match", detail: "Gruppo spagnolo" },
+  { name: "Stars Be Original", detail: "Tourist recruiting" },
+];
+
+const processes = [
+  {
+    number: "01",
+    title: "Screening CV intelligente",
+    description:
+      "L'agente valuta ogni CV contro la job description, non solo per parole chiave. Classifica per fit, scarta motivando, alimenta il tuo ATS. Quello che oggi prende ore lo fa in minuti.",
+    icon: "screen" as const,
+  },
+  {
+    number: "02",
+    title: "Contatto candidati a scala",
+    description:
+      "L'agente invia il primo contatto personalizzato per ogni ruolo, gestisce i follow-up multi-touch, qualifica chi risponde. I tuoi recruiter ricevono solo i candidati caldi e pronti.",
+    icon: "outreach" as const,
+  },
+  {
+    number: "03",
+    title: "Lettura JD e shortlist",
+    description:
+      "L'agente legge la richiesta del cliente, estrae requisiti tecnici e soft, scansiona il tuo database e LinkedIn, propone una shortlist ordinata. Il recruiter sceglie, non cerca.",
+    icon: "match" as const,
+  },
+  {
+    number: "04",
+    title: "Calendario colloqui automatico",
+    description:
+      "L'agente coordina disponibilità tra candidato, cliente e il tuo team. Conferme, promemoria, riprogrammazioni. Zero email avanti e indietro: i recruiter recuperano ore al giorno.",
+    icon: "calendar" as const,
+  },
+  {
+    number: "05",
+    title: "Sviluppo nuovi clienti",
+    description:
+      "L'agente identifica aziende che stanno assumendo sui canali pubblici, qualifica il fit con i tuoi verticali, prepara dossier pronti per il tuo team commerciale. Pipeline alimentata in continuo.",
+    icon: "compass" as const,
+  },
+];
+
+const cases = [
+  {
+    client: "APraise",
+    industry: "Recruitment internazionale",
+    metric: "+19",
+    metricLabel: "Giorni-uomo a settimana recuperati",
+    description:
+      "Flussi IA su screening, contatto candidati e qualifica. 360.000€ di costo operativo recuperati ogni anno, zero nuove assunzioni.",
+  },
+  {
+    client: "Stars Be Original",
+    industry: "Recruiting turistico",
+    metric: "+30%",
+    metricLabel: "Produttività team recruitment",
+    description:
+      "Agenti su screening e qualifica candidati per il settore turistico stagionale. Più candidati qualificati alla shortlist, meno tempo perso su CV fuori target.",
+  },
+  {
+    client: "OggiLavoro",
+    industry: "APL italiana · 1500+ persone",
+    metric: "→",
+    metricLabel: "ATS-agentico nativo in deploy",
+    description:
+      "Stiamo deployando agenti IA sull'intero flusso candidato-cliente per l'agenzia di somministrazione. Sistema scalabile su tutte le filiali.",
+  },
+];
+
+const comparisonRows = [
+  { label: "Costo", values: ["Basso", "Alto annuo", "Medio una tantum"] as [string, string, string] },
+  { label: "Tempo a regime", values: ["Subito", "3–6 mesi", "4 settimane"] as [string, string, string] },
+  { label: "Esegue task in autonomia", values: ["No", "Limitato", "Sì, end-to-end"] as [string, string, string] },
+  { label: "Su misura sui tuoi processi", values: ["No", "Configurabile", "Costruito per te"] as [string, string, string] },
+  { label: "Dipendenza dal fornitore", values: ["Nessuna", "Totale", "Nessuna (codice tuo)"] as [string, string, string] },
+  { label: "Ore recuperate garantite", values: ["No", "No", "Sì, o rimborso"] as [string, string, string] },
+];
+
+const faqs = [
+  {
+    q: "Come gestite GDPR e dati candidati?",
+    a: "Gli agenti girano in ambiente cloud europeo o direttamente sulla tua infrastruttura. Log di tutte le operazioni, retention configurabile, <strong>nessun addestramento sui tuoi dati</strong>.",
+  },
+  {
+    q: "Si integra con l'ATS che già usiamo?",
+    a: "Sì. Lavoriamo con Bullhorn, Bee-Staffing, Salesforce, In-Recruiting e ATS proprietari. Se hai uno strumento particolare, lo validiamo in assessment.",
+  },
+  {
+    q: "Lingua italiana e mercato locale?",
+    a: "Sì. Gli agenti sono multilingua nativi. Lavoriamo già con agenzie italiane (OggiLavoro), spagnole (Talent Match) e internazionali (APraise, Aegis Group).",
+  },
+  {
+    q: "E se dopo voglio gestire tutto in autonomia?",
+    a: "Il codice è tuo dalla prima settimana. Documentazione completa, training del tuo team se vuoi internalizzare. <strong>Nessuna dipendenza, nessuna licenza mensile.</strong>",
+  },
+  {
+    q: "Quanto costa davvero?",
+    a: "Assessment <strong>2.000€</strong> (rimborsato se procedi con lo sprint). Sprint di costruzione <strong>10–50k€</strong> a seconda di quanti processi copri. Garanzia: se gli agenti non recuperano le ore promesse, rimborsiamo.",
+  },
+  {
+    q: "Cosa succede in 4 settimane esattamente?",
+    a: "<strong>Settimana 1:</strong> discovery con il tuo team, baseline misurata. <strong>Settimane 2–3:</strong> costruzione e integrazione degli agenti. <strong>Settimana 4:</strong> deploy in produzione, formazione del team, prima misurazione. 30 giorni di affiancamento inclusi dopo il deploy.",
+  },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="bg-violet-mesh relative overflow-hidden">
+    <div class="container-soraia pt-16 pb-20 md:pt-24 md:pb-32 relative">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-violet-200 shadow-xs mb-7 fade-up">
+          <span class="w-2 h-2 rounded-full bg-violet-600 animate-pulse"></span>
+          <span class="text-sm font-medium text-violet-900">Per agenzie di recruitment</span>
+        </div>
+
+        <h1 class="text-display-3 md:text-display-2 lg:text-display-1 font-bold tracking-[-0.02em] leading-[1.02] text-ink-900 fade-up fade-up-delay-1">
+          I tuoi recruiter dal
+          <span class="text-gradient-violet whitespace-nowrap">60% admin</span>
+          al
+          <span class="text-gradient-violet whitespace-nowrap">60% selling</span>.
+        </h1>
+
+        <p class="mt-7 text-body-lg md:text-xl text-ink-700 leading-relaxed max-w-2xl fade-up fade-up-delay-2">
+          Costruiamo agenti IA che fanno il lavoro ripetitivo &mdash; screening CV, contatto candidati, lettura JD, calendario colloqui. I tuoi recruiter chiudono. <strong class="text-ink-900">Live in 4 settimane.</strong> Se non recuperi ore, ti rimborsiamo.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 fade-up fade-up-delay-3">
+          <a href="#contact" class="btn btn-primary text-base">
+            Richiedi assessment &mdash; 2.000€
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#cases" class="btn btn-secondary text-base">
+            Vedi i risultati di APraise
+          </a>
+        </div>
+
+        <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink-600 fade-up fade-up-delay-4">
+          <div class="inline-flex items-center gap-2">
+            <CheckIcon variant="violet" /> Live in 4 settimane
+          </div>
+          <div class="inline-flex items-center gap-2">
+            <CheckIcon variant="violet" /> Ore recuperate o rimborso
+          </div>
+          <div class="inline-flex items-center gap-2">
+            <CheckIcon variant="violet" /> Codice tuo, nessuna dipendenza
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative gradient blobs -->
+      <div class="absolute -right-32 top-1/4 w-96 h-96 rounded-full bg-violet-200/40 blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-32 bottom-0 w-72 h-72 rounded-full bg-violet-100/60 blur-3xl pointer-events-none"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROOF BAR
+       ============================================================ -->
+  <ProofBar
+    label="Già scelti da agenzie di recruitment in Italia, Spagna e UK"
+    logos={recruitmentLogos}
+  />
+
+  <!-- ============================================================
+       PROBLEMA
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Il problema"
+        title="Più della metà del tempo dei tuoi recruiter non porta fatturato"
+        subtitle="Lo sai già. L'hanno notato i tuoi competitor che hanno comprato licenze ChatGPT Enterprise. Ma il problema è che <strong>tu vuoi ore liberate al mese 1, non una roadmap a 12 mesi</strong>."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <div class="card">
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center mb-5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          </div>
+          <h3 class="text-h3 font-bold text-ink-900 mb-2">Screening manuale infinito</h3>
+          <p class="text-ink-600 leading-relaxed">Il 70% dei CV viene scartato. Ma qualcuno deve leggerli tutti. I tuoi recruiter più cari spendono lì le mattine.</p>
+        </div>
+
+        <div class="card">
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center mb-5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          </div>
+          <h3 class="text-h3 font-bold text-ink-900 mb-2">Contatti che non rispondono</h3>
+          <p class="text-ink-600 leading-relaxed">Outreach a candidati con un tasso di risposta del 5%. Personalizzazione manuale insostenibile, automatismi base che bruciano il brand.</p>
+        </div>
+
+        <div class="card">
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center mb-5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          </div>
+          <h3 class="text-h3 font-bold text-ink-900 mb-2">ATS che non risolvono</h3>
+          <p class="text-ink-600 leading-relaxed">Stesse funzioni dei tuoi competitor, abbonamenti mensili che crescono, dati ostaggio del fornitore. Differenziazione zero.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5 PROCESSI
+       ============================================================ -->
+  <section class="section bg-violet-50/40 relative overflow-hidden">
+    <div class="container-soraia relative">
+      <SectionHeader
+        eyebrow="La soluzione"
+        title="5 processi dove gli agenti IA producono ore liberate dalla settimana 4"
+        subtitle="Non un software che il team deve imparare. Lavoratori digitali che eseguono task end-to-end, decidendo sul contesto come farebbe un recruiter senior."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        {processes.map((p) => (
+          <ProcessCard {...p} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GARANZIA
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <div class="card !p-10 md:!p-16 bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700 !border-0 relative overflow-hidden">
+        <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-violet-500/20 blur-3xl"></div>
+        <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-violet-400/15 blur-3xl"></div>
+
+        <div class="relative max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber/20 border border-amber/30 mb-6">
+            <span class="text-xs font-bold uppercase tracking-[0.14em] text-amber">La nostra garanzia</span>
+          </div>
+
+          <p class="text-display-3 md:text-display-2 font-bold tracking-tight text-white leading-[1.1]">
+            5–8 ore a settimana <span class="text-amber">per ogni recruiter</span>, recuperate entro 4 settimane.
+          </p>
+
+          <p class="mt-7 text-body-lg text-white/85 leading-relaxed">
+            Le misuriamo sulla baseline definita insieme in assessment. Se non ci arriviamo, lavoriamo gratis finché non succede &mdash; oppure ti rimborsiamo lo sprint.
+          </p>
+
+          <p class="mt-5 text-sm text-white/65">
+            Sì, è una garanzia vera. Funziona perché in assessment definiamo insieme baseline, perimetro e metodo di misurazione. <strong class="text-white">Niente sorprese, niente sotterfugi.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CASE STUDY
+       ============================================================ -->
+  <section id="cases" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Casi studio"
+        title="Cosa abbiamo già costruito per agenzie come la tua"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {cases.map((c) => (
+          <CaseStudyCard {...c} />
+        ))}
+      </div>
+
+      <p class="mt-10 text-center text-ink-600">
+        Tra gli altri clienti recruitment: <strong class="text-ink-900">Aegis Group</strong> (60+ recruiter, holding multi-business) e <strong class="text-ink-900">Talent Match</strong> (gruppo spagnolo, 40+ recruiter).
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPARISON
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Confronto"
+        title="Perché agenti IA su misura, e non altro"
+        subtitle="Le tre opzioni sul tavolo per un'agenzia di recruitment oggi. Solo una è progettata sulla tua realtà."
+      />
+
+      <ComparisonTable
+        columns={["ChatGPT / Copilot", "ATS con IA integrata", "Soraia agenti IA"]}
+        rows={comparisonRows}
+        highlightCol={2}
+      />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia max-w-4xl">
+      <SectionHeader
+        eyebrow="Domande"
+        title="Quello che ci chiedono di solito"
+      />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTATTO / FORM
+       ============================================================ -->
+  <section id="contact" class="section bg-violet-mesh">
+    <div class="container-soraia">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="lg:col-span-5 lg:sticky lg:top-32">
+          <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-violet-200 text-violet-700 text-xs font-semibold uppercase tracking-[0.14em] mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-violet-600"></span>
+            Prossimo passo
+          </p>
+
+          <h2 class="text-h1 md:text-display-3 font-bold tracking-tight text-ink-900 leading-[1.1]">
+            Scopri quante ore<br />può recuperare il tuo team.
+          </h2>
+
+          <p class="mt-5 text-body-lg text-ink-700 leading-relaxed">
+            In assessment partiamo dalla tua realtà operativa: misuriamo baseline, identifichiamo i 2-3 processi a ROI più alto, ti restituiamo una proposta concreta con numeri.
+          </p>
+
+          <ul class="mt-8 space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-0.5"><CheckIcon variant="violet" /></span>
+              <span class="text-ink-700"><strong class="text-ink-900">2.000€</strong>, rimborsati se procedi con lo sprint</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-0.5"><CheckIcon variant="violet" /></span>
+              <span class="text-ink-700"><strong class="text-ink-900">1–2 settimane</strong> dall'inizio al report</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-0.5"><CheckIcon variant="violet" /></span>
+              <span class="text-ink-700"><strong class="text-ink-900">Nessun impegno</strong> a procedere</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7">
+          <LeadForm client:load lang="it" source="recruitment" />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // IntersectionObserver per fade-in delle sezioni
+  if (typeof window !== "undefined" && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-up");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.05 }
+    );
+    document.querySelectorAll("section .card, section .grid > *").forEach((el) => {
+      io.observe(el);
+    });
+  }
+</script>
+

@@ -1,0 +1,28 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  align?: "left" | "center";
+}
+
+const { eyebrow, title, subtitle, align = "left" } = Astro.props;
+const alignClass = align === "center" ? "text-center mx-auto" : "";
+---
+
+<header class={`max-w-3xl ${alignClass} mb-12 md:mb-16`}>
+  {eyebrow && (
+    <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-50 text-violet-700 text-xs font-semibold uppercase tracking-[0.14em] mb-5">
+      <span class="w-1.5 h-1.5 rounded-full bg-violet-600"></span>
+      {eyebrow}
+    </p>
+  )}
+  <h2 class="text-h1 md:text-display-3 font-bold tracking-tight text-ink-900 leading-[1.05]">
+    <slot name="title">{title}</slot>
+  </h2>
+  {subtitle && (
+    <p class="mt-5 text-body-lg text-ink-600 leading-relaxed">
+      <Fragment set:html={subtitle} />
+    </p>
+  )}
+</header>

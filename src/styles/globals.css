@@ -1,0 +1,261 @@
+@import "tailwindcss";
+
+/* =============================================================
+   SORAIA DESIGN TOKENS
+   Palette estratta da soraia.io — viola brand + neutrals premium
+   ============================================================= */
+
+@theme {
+  /* —— Brand violet scale —— anchored to Soraia guidelines (--lilac-deep #a276b6) + production palette extracted from soraia.io */
+  --color-violet-50: #FDF4FF;   /* almost-white violet tint */
+  --color-violet-100: #F6D0FE;  /* very light lavender */
+  --color-violet-200: #E8B3F0;
+  --color-violet-300: #DAB5D1;  /* pale mauve */
+  --color-violet-400: #CFA0D8;  /* light violet */
+  --color-violet-500: #A276B6;  /* lilac-deep (brand accent ufficiale) */
+  --color-violet-600: #9F1AB1;  /* primary vivid */
+  --color-violet-700: #892D9C;  /* primary deep */
+  --color-violet-800: #6B1F7A;
+  --color-violet-900: #4A1656;
+
+  /* —— Neutrals (premium grayscale) —— */
+  --color-ink-50: #FAFAFA;
+  --color-ink-100: #F5F5F5;
+  --color-ink-200: #E9EAEB;
+  --color-ink-300: #D5D7DA;
+  --color-ink-400: #9CA3AF;
+  --color-ink-500: #6B7280;
+  --color-ink-600: #414651;
+  --color-ink-700: #2A2D33;
+  --color-ink-800: #18191C;
+  --color-ink-900: #0A0A0A;
+
+  /* —— Accents —— */
+  --color-amber: #FEC84B;        /* highlights, garanzia badge */
+  --color-amber-soft: #FEF3C7;
+  --color-success: #17B26A;
+
+  /* —— Fonts —— Soraia brand: Bricolage Grotesque (display) + Inter (body) */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Bricolage Grotesque", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* —— Type scale (premium, generous) —— */
+  --text-display-1: 5rem;        /* 80px */
+  --text-display-2: 4rem;        /* 64px */
+  --text-display-3: 3rem;        /* 48px */
+  --text-h1: 2.5rem;             /* 40px */
+  --text-h2: 2rem;               /* 32px */
+  --text-h3: 1.5rem;             /* 24px */
+  --text-body-lg: 1.125rem;      /* 18px */
+  --text-body: 1rem;             /* 16px */
+  --text-small: 0.875rem;        /* 14px */
+  --text-micro: 0.75rem;         /* 12px */
+
+  /* —— Radius —— */
+  --radius-xs: 0.375rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+
+  /* —— Shadows (premium soft) —— */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+  --shadow-sm: 0 2px 8px -2px rgb(0 0 0 / 0.06), 0 4px 16px -4px rgb(0 0 0 / 0.04);
+  --shadow-md: 0 8px 24px -6px rgb(0 0 0 / 0.08), 0 16px 48px -12px rgb(0 0 0 / 0.06);
+  --shadow-lg: 0 16px 48px -12px rgb(0 0 0 / 0.12), 0 32px 96px -24px rgb(0 0 0 / 0.08);
+  --shadow-violet: 0 24px 64px -16px rgb(137 45 156 / 0.25);
+
+  /* —— Easing & motion —— */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =============================================================
+   BASE LAYER
+   ============================================================= */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink-900);
+  background: var(--color-ink-50);
+  font-feature-settings: "ss01", "cv11";
+  font-size: var(--text-body);
+  line-height: 1.6;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =============================================================
+   UTILITIES
+   ============================================================= */
+
+.container-soraia {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container-soraia { padding-inline: 2.5rem; }
+}
+
+/* Gradient text */
+.text-gradient-violet {
+  background: linear-gradient(135deg, var(--color-violet-700) 0%, var(--color-violet-600) 50%, var(--color-violet-500) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Premium hero gradient backdrop */
+.bg-violet-radial {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(159, 26, 177, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 65%, rgba(137, 45, 156, 0.10) 0%, transparent 50%),
+    linear-gradient(180deg, var(--color-ink-50) 0%, var(--color-violet-50) 100%);
+}
+
+.bg-violet-mesh {
+  background:
+    radial-gradient(circle at 25% 0%, rgba(159, 26, 177, 0.18) 0%, transparent 35%),
+    radial-gradient(circle at 75% 100%, rgba(137, 45, 156, 0.16) 0%, transparent 40%),
+    linear-gradient(180deg, #FAFAFA 0%, #FDF4FF 100%);
+}
+
+/* Premium button base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: var(--text-body);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  transition: all 0.2s var(--ease-out-quart);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-violet-700) 0%, var(--color-violet-600) 100%);
+  color: white;
+  box-shadow: var(--shadow-sm), 0 8px 24px -8px rgb(137 45 156 / 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md), 0 16px 32px -8px rgb(137 45 156 / 0.5);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--color-ink-900);
+  border: 1px solid var(--color-ink-200);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-violet-600);
+  color: var(--color-violet-700);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  color: var(--color-ink-700);
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  color: var(--color-violet-700);
+}
+
+/* Card premium */
+.card {
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-ink-200);
+  padding: 2rem;
+  transition: all 0.3s var(--ease-out-quart);
+}
+
+.card-hover:hover {
+  border-color: var(--color-violet-200);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Section spacing */
+.section {
+  padding-block: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section { padding-block: 7rem; }
+}
+
+/* Subtle entrance animation */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.7s var(--ease-out-expo) both;
+}
+
+.fade-up-delay-1 { animation-delay: 0.1s; }
+.fade-up-delay-2 { animation-delay: 0.2s; }
+.fade-up-delay-3 { animation-delay: 0.3s; }
+.fade-up-delay-4 { animation-delay: 0.4s; }
+
+/* Inline link */
+.link-violet {
+  color: var(--color-violet-700);
+  text-decoration: underline;
+  text-decoration-color: var(--color-violet-300);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+
+.link-violet:hover {
+  text-decoration-color: var(--color-violet-700);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-violet-200);
+  color: var(--color-violet-900);
+}

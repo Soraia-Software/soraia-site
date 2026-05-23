@@ -1,0 +1,87 @@
+---
+interface Props {
+  lang?: "it" | "en";
+}
+const { lang = "it" } = Astro.props;
+
+const year = new Date().getFullYear();
+
+const labels = {
+  it: {
+    tagline: "Agenti IA su misura per le tue operazioni.",
+    nav_title: "Esplora",
+    nav_home: "Home",
+    nav_recruitment: "Recruitment",
+    nav_cases: "Casi studio",
+    contact_title: "Contatti",
+    legal_title: "Legali",
+    privacy: "Privacy",
+    terms: "Termini",
+    rights: "Tutti i diritti riservati.",
+  },
+  en: {
+    tagline: "Custom AI agents for your operations.",
+    nav_title: "Explore",
+    nav_home: "Home",
+    nav_recruitment: "Recruitment",
+    nav_cases: "Case studies",
+    contact_title: "Contact",
+    legal_title: "Legal",
+    privacy: "Privacy",
+    terms: "Terms",
+    rights: "All rights reserved.",
+  },
+}[lang];
+
+const homeHref = lang === "en" ? "/en/" : "/";
+const recHref = lang === "en" ? "/en/recruitment" : "/recruitment";
+---
+
+<footer class="border-t border-ink-200 bg-white">
+  <div class="container-soraia py-16">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <div class="md:col-span-5">
+        <a href={homeHref} class="inline-flex items-center gap-2">
+          <span class="inline-block w-8 h-8 rounded-lg bg-gradient-to-br from-violet-700 to-violet-600"></span>
+          <span class="text-xl font-bold">Soraia</span>
+        </a>
+        <p class="mt-4 text-ink-600 max-w-sm leading-relaxed">
+          {labels.tagline}
+        </p>
+        <p class="mt-6 text-sm text-ink-500">
+          Soraia S.r.l. — Biella, Italia
+        </p>
+      </div>
+
+      <div class="md:col-span-2">
+        <h3 class="text-sm font-semibold text-ink-900 mb-4">{labels.nav_title}</h3>
+        <ul class="space-y-3 text-sm text-ink-600">
+          <li><a href={homeHref} class="hover:text-violet-700 transition-colors">{labels.nav_home}</a></li>
+          <li><a href={recHref} class="hover:text-violet-700 transition-colors">{labels.nav_recruitment}</a></li>
+          <li><a href={`${homeHref}#cases`} class="hover:text-violet-700 transition-colors">{labels.nav_cases}</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3">
+        <h3 class="text-sm font-semibold text-ink-900 mb-4">{labels.contact_title}</h3>
+        <ul class="space-y-3 text-sm text-ink-600">
+          <li><a href="mailto:hello@soraia.io" class="hover:text-violet-700 transition-colors">hello@soraia.io</a></li>
+          <li><a href="https://www.linkedin.com/company/soraia-io" class="hover:text-violet-700 transition-colors" rel="noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-2">
+        <h3 class="text-sm font-semibold text-ink-900 mb-4">{labels.legal_title}</h3>
+        <ul class="space-y-3 text-sm text-ink-600">
+          <li><a href="/privacy" class="hover:text-violet-700 transition-colors">{labels.privacy}</a></li>
+          <li><a href="/terms" class="hover:text-violet-700 transition-colors">{labels.terms}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-ink-200 flex flex-col sm:flex-row justify-between gap-4 text-sm text-ink-500">
+      <p>© {year} Soraia. {labels.rights}</p>
+      <p>Made with care · Biella → Worldwide</p>
+    </div>
+  </div>
+</footer>

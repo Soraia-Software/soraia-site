@@ -1,0 +1,40 @@
+---
+import Layout from "~/layouts/Layout.astro";
+
+const title = "Soraia — Agenti IA su misura per le tue operazioni";
+const description =
+  "Costruiamo agenti IA che eseguono i tuoi processi end-to-end. Live in 4 settimane. Se non recuperi ore, ti rimborsiamo.";
+---
+
+<Layout title={title} description={description} lang="it">
+  <section class="bg-violet-mesh min-h-[80vh] flex items-center">
+    <div class="container-soraia py-24">
+      <div class="max-w-3xl">
+        <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-violet-200 text-violet-700 text-xs font-semibold uppercase tracking-[0.14em] mb-7">
+          <span class="w-1.5 h-1.5 rounded-full bg-violet-600 animate-pulse"></span>
+          In arrivo
+        </p>
+
+        <h1 class="text-display-3 md:text-display-2 font-bold tracking-tight leading-[1.05]">
+          Agenti IA su misura per le tue operazioni.
+        </h1>
+
+        <p class="mt-7 text-body-lg md:text-xl text-ink-700 leading-relaxed max-w-2xl">
+          Stiamo finalizzando la nuova versione del sito. Per ora, abbiamo già pronta la pagina per le agenzie di recruitment.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="/recruitment" class="btn btn-primary text-base">
+            Soluzioni per il recruitment
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="mailto:hello@soraia.io" class="btn btn-secondary text-base">
+            Scrivici a hello@soraia.io
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

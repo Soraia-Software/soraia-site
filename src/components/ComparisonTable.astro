@@ -1,0 +1,55 @@
+---
+interface Row {
+  label: string;
+  values: [string, string, string];
+}
+
+interface Props {
+  columns: [string, string, string];
+  rows: Row[];
+  highlightCol?: number;
+}
+
+const { columns, rows, highlightCol = 2 } = Astro.props;
+---
+
+<div class="card !p-0 overflow-hidden">
+  <div class="overflow-x-auto">
+    <table class="w-full text-left">
+      <thead>
+        <tr class="border-b border-ink-200">
+          <th class="px-6 py-5 text-sm font-medium text-ink-500 uppercase tracking-wider"></th>
+          {columns.map((col, i) => (
+            <th
+              class={`px-6 py-5 text-sm font-semibold text-center ${
+                i === highlightCol
+                  ? "text-violet-700 bg-violet-50"
+                  : "text-ink-700"
+              }`}
+            >
+              {col}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr class="border-b border-ink-100 last:border-b-0">
+            <td class="px-6 py-5 text-sm font-medium text-ink-900">{row.label}</td>
+            {row.values.map((value, i) => (
+              <td
+                class={`px-6 py-5 text-sm text-center ${
+                  i === highlightCol
+                    ? "bg-violet-50/50 text-violet-900 font-semibold"
+                    : "text-ink-600"
+                }`}
+              >
+                {value}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
