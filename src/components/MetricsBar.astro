@@ -19,7 +19,7 @@ const { metrics } = Astro.props;
         {String(i + 1).padStart(2, "0")} /
       </p>
 
-      <p class="font-display text-[3.5rem] md:text-[4.5rem] font-semibold tracking-[-0.04em] leading-[0.95] text-ink-900">
+      <p class="text-[3.5rem] md:text-[4.5rem] font-semibold tracking-[-0.04em] leading-[0.95] text-ink-900">
         {m.value.startsWith("€") ? (
           <>
             <span class="text-ink-400">€</span><span class="text-gradient-violet">{m.value.slice(1)}</span>

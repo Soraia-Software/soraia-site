@@ -10,21 +10,19 @@ interface Props {
 const { eyebrow, title, subtitle, align = "left", variant = "default" } = Astro.props;
 const alignClass = align === "center" ? "text-center mx-auto" : "";
 const eyebrowClass = variant === "dark" ? "eyebrow eyebrow-light" : "eyebrow";
-const titleClass = variant === "dark" ? "text-white" : "text-ink-900";
-const subtitleClass = variant === "dark" ? "text-white/70" : "text-ink-600";
+const titleClass = variant === "dark" ? "text-white" : "text-ink";
+const subtitleClass = variant === "dark" ? "text-white/70" : "";
 ---
 
-<header class={`max-w-3xl ${alignClass} mb-14 md:mb-20 reveal`}>
+<header class={`max-w-3xl ${alignClass} mb-14 md:mb-16 reveal`}>
   {eyebrow && (
-    <p class={`${eyebrowClass} mb-6`}>
-      {eyebrow}
-    </p>
+    <p class={`${eyebrowClass} mb-5`}>{eyebrow}</p>
   )}
-  <h2 class={`font-display text-[2.5rem] md:text-[3.75rem] lg:text-[4.25rem] font-semibold tracking-[-0.035em] ${titleClass} leading-[0.98] text-balance`}>
+  <h2 class={`${titleClass} text-balance`} style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem); line-height: 1.15;">
     <slot name="title">{title}</slot>
   </h2>
   {subtitle && (
-    <p class={`mt-6 text-[17px] md:text-[19px] ${subtitleClass} leading-relaxed text-pretty max-w-2xl`}>
+    <p class={`mt-6 text-[17px] md:text-[18px] leading-relaxed text-pretty max-w-2xl ${subtitleClass}`}>
       <Fragment set:html={subtitle} />
     </p>
   )}
