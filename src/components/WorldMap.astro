@@ -23,8 +23,9 @@ const { regions } = Astro.props;
 ---
 
 <div class="world-map-wrapper">
-  <!-- Dot-pattern world map: CSS background of dots, masked by world.svg silhouette -->
-  <div class="world-map-dots" aria-hidden="true"></div>
+  <!-- Silhouette world map: SVG continents as soft filled shapes (editorial style) -->
+  <div class="world-map-fill" aria-hidden="true"></div>
+  <div class="world-map-stroke" aria-hidden="true"></div>
 
   <!-- Region markers -->
   {regions.map((r) => (
@@ -70,12 +71,27 @@ const { regions } = Astro.props;
     aspect-ratio: 2 / 1;
   }
 
-  /* Dot-pattern background masked by world.svg */
-  .world-map-dots {
+  /* Solid soft-gray continents (editorial Stripe-style) */
+  .world-map-fill {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, #6B6864 1.4px, transparent 1.6px);
-    background-size: 11px 11px;
+    background: #E8E6E1;
+    -webkit-mask-image: url("/maps/world.svg");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url("/maps/world.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  /* Optional finer dot texture overlay, very subtle */
+  .world-map-stroke {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(31, 30, 28, 0.35) 0.5px, transparent 0.6px);
+    background-size: 4px 4px;
     background-position: center;
     -webkit-mask-image: url("/maps/world.svg");
     -webkit-mask-size: contain;
@@ -85,7 +101,8 @@ const { regions } = Astro.props;
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
-    opacity: 1;
+    opacity: 0.55;
+    mix-blend-mode: multiply;
   }
 
   /* Region marker container */
@@ -95,11 +112,11 @@ const { regions } = Astro.props;
     z-index: 10;
   }
 
-  /* Pulsing dot button */
+  /* Pulsing dot button — refined, smaller, more editorial */
   .region-dot {
     position: relative;
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     background: transparent;
     border: none;
     padding: 0;
@@ -113,28 +130,28 @@ const { regions } = Astro.props;
     position: absolute;
     inset: 0;
     border-radius: 9999px;
-    background: rgba(159, 26, 177, 0.35);
-    animation: ping 2.4s var(--ease-out-quart) infinite;
+    background: rgba(74, 30, 92, 0.18);
+    animation: ping 2.8s var(--ease-out-quart) infinite;
   }
 
   .region-core {
     position: relative;
-    width: 14px;
-    height: 14px;
+    width: 9px;
+    height: 9px;
     border-radius: 9999px;
-    background: linear-gradient(135deg, #4A1E5C, #4A1E5C);
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9), 0 0 24px rgba(159, 26, 177, 0.6);
+    background: #4A1E5C;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.95), 0 1px 3px rgba(42, 14, 54, 0.30);
     transition: transform 0.3s var(--ease-out-quart);
   }
 
   .region-dot:hover .region-core,
   .region-dot:focus-visible .region-core {
-    transform: scale(1.25);
+    transform: scale(1.3);
   }
 
   @keyframes ping {
-    0% { transform: scale(1); opacity: 0.8; }
-    75%, 100% { transform: scale(3); opacity: 0; }
+    0%   { transform: scale(0.9); opacity: 0.55; }
+    75%, 100% { transform: scale(3.2); opacity: 0; }
   }
 
   /* Popup card, visible on hover/focus */
