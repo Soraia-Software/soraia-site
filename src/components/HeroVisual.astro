@@ -6,7 +6,7 @@ const industries = [
   {
     id: "hr",
     label: "Recruiting & HR",
-    flag: "👥",
+    industryIcon: "users",
     role: "Per recruiter, HR ops, agenzie di selezione",
     events: [
       { agent: "SCREENING",  icon: "doc",      text: "847 CV analizzati · fit ranking JD-driven" },
@@ -20,7 +20,7 @@ const industries = [
   {
     id: "finance",
     label: "Finance & Accounting",
-    flag: "💼",
+    industryIcon: "briefcase",
     role: "Per studi commercialisti, CFO, finance ops",
     events: [
       { agent: "INTAKE",     icon: "doc",      text: "32 fatture lette · OCR + estrazione dati" },
@@ -34,7 +34,7 @@ const industries = [
   {
     id: "vc",
     label: "Venture Capital",
-    flag: "📈",
+    industryIcon: "trending",
     role: "Per fondi VC/PE, family office, M&A",
     events: [
       { agent: "INTAKE",     icon: "doc",      text: "14 deck letti · sintesi 1-pager generata" },
@@ -48,7 +48,7 @@ const industries = [
   {
     id: "support",
     label: "Customer Support",
-    flag: "🎧",
+    industryIcon: "headphones",
     role: "Per CS teams, customer ops, helpdesk",
     events: [
       { agent: "TRIAGE",     icon: "search",   text: "127 ticket classificati · priorità assegnata" },
@@ -62,7 +62,7 @@ const industries = [
   {
     id: "sales",
     label: "Sales & Marketing",
-    flag: "🎯",
+    industryIcon: "target",
     role: "Per sales teams, growth, marketing ops",
     events: [
       { agent: "PROSPECT",   icon: "search",   text: "240 lead identificati · ICP match score" },
@@ -82,6 +82,11 @@ const icons: Record<string, string> = {
   search: `<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>`,
   check: `<polyline points="20 6 9 17 4 12"/>`,
   chart: `<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>`,
+  users: `<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+  briefcase: `<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>`,
+  trending: `<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>`,
+  headphones: `<path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>`,
+  target: `<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>`,
 };
 ---
 
@@ -97,7 +102,9 @@ const icons: Record<string, string> = {
         role="tab"
         aria-selected={i === 0 ? "true" : "false"}
       >
-        <span class="afs-tab-flag">{ind.flag}</span>
+        <span class="afs-tab-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[ind.industryIcon]} />
+        </span>
         <span class="afs-tab-label">{ind.label}</span>
       </button>
     ))}
@@ -115,7 +122,9 @@ const icons: Record<string, string> = {
     <!-- Industry context -->
     <div class="afs-context">
       <div class="afs-industry-row">
-        <span class="afs-industry-flag" data-industry-flag>—</span>
+        <span class="afs-industry-icon" data-industry-icon>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+        </span>
         <span class="afs-industry-name" data-industry-name>—</span>
       </div>
       <p class="afs-industry-role" data-industry-role>—</p>
@@ -157,7 +166,7 @@ const icons: Record<string, string> = {
     const slots = root.querySelectorAll(".afs-event");
     const clockEl = root.querySelector("[data-feed-clock]");
     const nameEl = root.querySelector("[data-industry-name]");
-    const flagEl = root.querySelector("[data-industry-flag]");
+    const industryIconEl = root.querySelector("[data-industry-icon] svg");
     const roleEl = root.querySelector("[data-industry-role]");
     const progressEl = root.querySelector("[data-feed-progress]");
 
@@ -204,7 +213,7 @@ const icons: Record<string, string> = {
       setActive(id);
 
       nameEl.textContent = ind.label;
-      flagEl.textContent = ind.flag;
+      if (industryIconEl && icons[ind.industryIcon]) industryIconEl.innerHTML = icons[ind.industryIcon];
       roleEl.textContent = ind.role;
       clockEl.textContent = fmtTime(new Date());
 
@@ -249,7 +258,7 @@ const icons: Record<string, string> = {
     if (prefersReduced) {
       const ind = industries[0];
       nameEl.textContent = ind.label;
-      flagEl.textContent = ind.flag;
+      if (industryIconEl && icons[ind.industryIcon]) industryIconEl.innerHTML = icons[ind.industryIcon];
       roleEl.textContent = ind.role;
       progressEl.style.transform = "scaleX(1)";
       ind.events.forEach((ev, i) => {
@@ -319,10 +328,13 @@ const icons: Record<string, string> = {
     border-color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   }
-  .afs-tab-flag {
-    font-size: 13px;
-    line-height: 1;
+  .afs-tab-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
   }
+  .afs-tab.is-active .afs-tab-icon { opacity: 1; }
 
   /* Card */
   .afs-card {
@@ -371,12 +383,18 @@ const icons: Record<string, string> = {
     border-bottom: 1px solid var(--color-line);
   }
   .afs-industry-row {
-    display: flex; align-items: center; gap: 0.55rem;
+    display: flex; align-items: center; gap: 0.6rem;
     font-size: 17px; font-weight: 500; color: var(--color-ink);
   }
-  .afs-industry-flag {
-    font-size: 18px;
-    line-height: 1;
+  .afs-industry-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px; height: 26px;
+    border-radius: 0.5rem;
+    background: var(--color-violet-50);
+    color: var(--color-violet-700);
+    flex-shrink: 0;
   }
   .afs-industry-role {
     margin-top: 0.3rem;
