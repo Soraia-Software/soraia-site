@@ -108,50 +108,51 @@ const team = [
   { name: "Sebastian Geido", role: "Senior Developer", flag: "🇦🇷", photoSrc: "/team/sebastian-geido.png" },
 ];
 
-// Regional dots with hover-popup breakdown (clients per country)
+// Regional dots — Europa raggruppata, altre regioni singole
 const worldRegions = [
   {
-    x: 51.5, y: 38,
+    x: 50.5, y: 36,
     label: "Europa",
-    flag: "🌍",
-    total: 20,
+    flag: "🇪🇺",
+    total: 28,
     countries: [
       { flag: "🇮🇹", name: "Italia", count: 12 },
-      { flag: "🇫🇷", name: "Francia", count: 4 },
-      { flag: "🇪🇸", name: "Spagna", count: 1 },
-      { flag: "🇩🇪", name: "Germania", count: 1 },
-      { flag: "🇬🇧", name: "UK", count: 1 },
-      { flag: "🇨🇭", name: "Svizzera", count: 1 },
+      { flag: "🇨🇭", name: "Svizzera", count: 3 },
+      { flag: "🇫🇷", name: "Francia", count: 3 },
+      { flag: "🇬🇧", name: "Inghilterra", count: 3 },
+      { flag: "🇪🇸", name: "Spagna", count: 2 },
+      { flag: "🇳🇱", name: "Paesi Bassi", count: 2 },
+      { flag: "🇩🇪", name: "Germania", count: 2 },
+      { flag: "🇵🇹", name: "Portogallo", count: 1 },
     ],
     align: "right" as const,
   },
   {
     x: 23, y: 40,
-    label: "Nord America",
+    label: "Stati Uniti",
     flag: "🇺🇸",
-    total: 5,
+    total: 7,
     countries: [
-      { flag: "🇺🇸", name: "USA", count: 3 },
-      { flag: "🇨🇦", name: "Canada", count: 2 },
+      { flag: "🇺🇸", name: "USA", count: 7 },
     ],
     align: "left" as const,
   },
   {
-    x: 64, y: 50,
-    label: "Medio Oriente",
+    x: 60, y: 49,
+    label: "Emirati Arabi",
     flag: "🇦🇪",
-    total: 1,
+    total: 4,
     countries: [
-      { flag: "🇦🇪", name: "Emirati Arabi", count: 1 },
+      { flag: "🇦🇪", name: "UAE", count: 4 },
     ],
   },
   {
     x: 84, y: 71,
     label: "Australia",
     flag: "🇦🇺",
-    total: 1,
+    total: 2,
     countries: [
-      { flag: "🇦🇺", name: "Australia", count: 1 },
+      { flag: "🇦🇺", name: "Australia", count: 2 },
     ],
     align: "right" as const,
   },
@@ -244,7 +245,7 @@ const faqs = [
               <AvatarCircle name="Martina Rochstein" src="/team/martina-rochstein.png" size="sm" />
             </div>
             <p class="text-sm text-violet-100/70 leading-snug">
-              <strong class="text-white">30+ clienti</strong> tra Italia, Spagna, UK, USA<br/>
+              <strong class="text-white">40+ clienti</strong> tra Europa, USA, UAE, Australia<br/>
               <span class="text-violet-200/60">Live media 4 settimane · GDPR + AI Act</span>
             </p>
           </div>
@@ -544,7 +545,7 @@ const faqs = [
       <SectionHeader
         eyebrow="Reach globale"
         title="Azienda italiana. Clienti e collaboratori in tutto il mondo."
-        subtitle="Siamo basati a Biella, in Piemonte. Lavoriamo con clienti tra Italia, Europa, Nord America, Medio Oriente e Australia &mdash; con un team distribuito tra 5 paesi."
+        subtitle="Siamo basati a Biella, in Piemonte. <strong>40+ clienti</strong> distribuiti tra Europa, Stati Uniti, Emirati Arabi e Australia."
         align="center"
       />
 
@@ -553,7 +554,7 @@ const faqs = [
       <!-- Stats bar -->
       <div class="mt-20 grid grid-cols-3 gap-px bg-ink-200 rounded-3xl overflow-hidden max-w-4xl mx-auto reveal">
         <div class="bg-white p-8 md:p-10 text-center">
-          <p class="font-display text-[3rem] md:text-[4rem] font-semibold tracking-tight leading-none text-gradient-violet">30+</p>
+          <p class="font-display text-[3rem] md:text-[4rem] font-semibold tracking-tight leading-none text-gradient-violet">40+</p>
           <p class="mt-3 text-sm font-medium text-ink-900">Clienti felici</p>
         </div>
         <div class="bg-white p-8 md:p-10 text-center">
@@ -561,7 +562,7 @@ const faqs = [
           <p class="mt-3 text-sm font-medium text-ink-900">Progetti completati</p>
         </div>
         <div class="bg-white p-8 md:p-10 text-center">
-          <p class="font-display text-[3rem] md:text-[4rem] font-semibold tracking-tight leading-none text-gradient-violet">8</p>
+          <p class="font-display text-[3rem] md:text-[4rem] font-semibold tracking-tight leading-none text-gradient-violet">11</p>
           <p class="mt-3 text-sm font-medium text-ink-900">Paesi serviti</p>
         </div>
       </div>
