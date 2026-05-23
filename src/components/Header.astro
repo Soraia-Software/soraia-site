@@ -10,12 +10,16 @@ const labels = {
     nav_agents: "AI Agents",
     nav_adoption: "AI Adoption",
     nav_recruitment: "Recruitment",
+    nav_blog: "Blog",
+    nav_scorecard: "Scorecard",
     cta: "Parliamone",
   },
   en: {
     nav_agents: "AI Agents",
     nav_adoption: "AI Adoption",
     nav_recruitment: "Recruitment",
+    nav_blog: "Blog",
+    nav_scorecard: "Scorecard",
     cta: "Let's talk",
   },
 }[lang];
@@ -24,6 +28,8 @@ const homeHref = lang === "en" ? "/en/" : "/";
 const agentsHref = lang === "en" ? "/en/ai-agents" : "/ai-agents";
 const adoptionHref = lang === "en" ? "/en/ai-adoption" : "/ai-adoption";
 const recHref = lang === "en" ? "/en/recruitment" : "/recruitment";
+const blogHref = lang === "en" ? "/en/blog" : "/blog";
+const scorecardHref = lang === "en" ? "/en/scorecard" : "/scorecard";
 const otherLang = lang === "it" ? "en" : "it";
 const otherHref = otherLang === "en"
   ? Astro.url.pathname === "/" ? "/en/" : `/en${Astro.url.pathname}`
@@ -44,10 +50,12 @@ const otherHref = otherLang === "en"
         <span class="text-[1.125rem] font-semibold tracking-tight">Soraia</span>
       </a>
 
-      <ul class="hidden md:flex items-center gap-8 text-[14px] text-ink-700">
+      <ul class="hidden md:flex items-center gap-7 lg:gap-8 text-[14px] text-ink-700">
         <li><a href={adoptionHref} class="link-underline-anim hover:text-ink-900 transition-colors">{labels.nav_adoption}</a></li>
         <li><a href={agentsHref} class="link-underline-anim hover:text-ink-900 transition-colors">{labels.nav_agents}</a></li>
         <li><a href={recHref} class="link-underline-anim hover:text-ink-900 transition-colors">{labels.nav_recruitment}</a></li>
+        <li><a href={blogHref} class="link-underline-anim hover:text-ink-900 transition-colors">{labels.nav_blog}</a></li>
+        <li><a href={scorecardHref} class="link-underline-anim hover:text-ink-900 transition-colors inline-flex items-center gap-1.5">{labels.nav_scorecard}<span class="text-[10px] font-semibold tracking-[0.1em] uppercase px-1.5 py-0.5 rounded-full" style="background: var(--color-violet-50, #F5EEF7); color: var(--color-brand);">3 min</span></a></li>
       </ul>
 
       <div class="flex items-center gap-3">

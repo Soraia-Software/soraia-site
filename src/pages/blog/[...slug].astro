@@ -1,0 +1,198 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const allPosts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const related = allPosts.filter((p) => p.id !== post.id).slice(0, 2);
+
+function formatDate(d: Date) {
+  return d.toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
+}
+
+const title = `${post.data.title} | Soraia`;
+const description = post.data.description;
+---
+
+<Layout title={title} description={description} lang="it">
+  <article>
+    <!-- ============================================================
+         HERO POST
+         ============================================================ -->
+    <header class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
+      <div class="container-soraia max-w-3xl pt-20 md:pt-24 pb-12 md:pb-14">
+        <a href="/blog" class="inline-flex items-center gap-1.5 text-[12px] font-medium tracking-[0.1em] uppercase mb-8 hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Tutti gli articoli
+        </a>
+        <div class="flex items-center gap-3 text-[11px] font-medium tracking-[0.14em] uppercase mb-6" style="color: var(--color-ink-soft);">
+          <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+          <span>·</span>
+          <span>{post.data.readMinutes ?? 5} min lettura</span>
+          <span>·</span>
+          <span>{post.data.author}</span>
+        </div>
+        <h1 class="text-balance" style="font-size: clamp(1.875rem, 4vw + 0.5rem, 3rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
+          {post.data.title}
+        </h1>
+        <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+          {post.data.description}
+        </p>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         CONTENT (prose)
+         ============================================================ -->
+    <section class="bg-white">
+      <div class="container-soraia max-w-3xl py-12 md:py-16">
+        <div class="prose-soraia">
+          <Content />
+        </div>
+
+        {post.data.tags?.length > 0 && (
+          <div class="mt-12 pt-8 border-t border-line flex flex-wrap gap-2">
+            {post.data.tags.map((t) => (
+              <span class="text-[11px] font-medium tracking-[0.1em] uppercase px-3 py-1.5 rounded-full" style="background: var(--color-ink-50); color: var(--color-ink-soft);">{t}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- ============================================================
+         RELATED
+         ============================================================ -->
+    {related.length > 0 && (
+      <section class="border-t border-line bg-white" style="padding-block: 4rem;">
+        <div class="container-soraia">
+          <p class="eyebrow mb-8">Continua a leggere</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {related.map((p) => (
+              <a href={`/blog/${p.id}`} class="card-editorial !p-7 group no-underline flex flex-col transition-all hover:!-translate-y-0.5 hover:shadow-md">
+                <div class="flex items-center gap-3 text-[11px] font-medium tracking-[0.14em] uppercase mb-4" style="color: var(--color-ink-soft);">
+                  <time datetime={p.data.pubDate.toISOString()}>{formatDate(p.data.pubDate)}</time>
+                  <span>·</span>
+                  <span>{p.data.readMinutes ?? 5} min</span>
+                </div>
+                <h3 class="mb-3 text-balance" style="font-size: 1.25rem; line-height: 1.2; letter-spacing: -0.015em; font-weight: 500;">{p.data.title}</h3>
+                <p class="text-[14px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{p.data.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- ============================================================
+         CTA finale → scorecard
+         ============================================================ -->
+    <section class="section bg-violet-mesh">
+      <div class="container-soraia text-center max-w-3xl mx-auto">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
+          <span class="w-1 h-1 rounded-full bg-violet-600"></span>
+          Prossimo passo
+        </p>
+        <h2 class="text-balance" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 2.5rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
+          Dove sei nel percorso AI?
+        </h2>
+        <p class="mt-5 text-[17px] leading-relaxed" style="color: var(--color-ink-muted);">
+          Lo scorecard ti dà un AI Readiness Score (0-100) + 3 next-step concreti. 3 minuti, no email.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="/scorecard" class="btn btn-primary">
+            Inizia lo scorecard
+            <span class="btn-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="/parliamone" class="btn btn-secondary">Parliamone direttamente</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<style is:global>
+  .prose-soraia {
+    color: var(--color-ink);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .prose-soraia > * + * { margin-top: 1.25em; }
+  .prose-soraia h2 {
+    font-size: clamp(1.5rem, 2vw + 0.5rem, 1.875rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin-top: 2.5em;
+    margin-bottom: 0.6em;
+    color: var(--color-ink);
+  }
+  .prose-soraia h3 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    color: var(--color-ink);
+  }
+  .prose-soraia p { color: var(--color-ink); }
+  .prose-soraia strong { font-weight: 600; color: var(--color-ink); }
+  .prose-soraia a {
+    color: var(--color-brand);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .prose-soraia a:hover { opacity: 0.7; }
+  .prose-soraia ul, .prose-soraia ol {
+    padding-left: 1.4em;
+    color: var(--color-ink);
+  }
+  .prose-soraia ul { list-style: disc; }
+  .prose-soraia ol { list-style: decimal; }
+  .prose-soraia li { margin: 0.4em 0; }
+  .prose-soraia li::marker { color: var(--color-ink-soft); }
+  .prose-soraia hr {
+    border: none;
+    border-top: 1px solid var(--color-line);
+    margin-block: 2.5em;
+  }
+  .prose-soraia blockquote {
+    border-left: 3px solid var(--color-brand);
+    padding-left: 1.25em;
+    margin-left: 0;
+    color: var(--color-ink-muted);
+    font-style: italic;
+  }
+  .prose-soraia code {
+    background: var(--color-ink-50);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
+  }
+  .prose-soraia pre {
+    background: var(--color-ink-50);
+    padding: 1em 1.25em;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+  .prose-soraia pre code { background: transparent; padding: 0; }
+</style>
