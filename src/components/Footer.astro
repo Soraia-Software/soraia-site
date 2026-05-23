@@ -130,6 +130,7 @@ const p = (path: string) => (lang === "en" ? "/en" + path : path);
         <p class="text-[11px] font-semibold uppercase tracking-[0.14em] mb-5" style="color: var(--color-ink-soft);">{labels.col_company}</p>
         <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
           <li><a href={p("/")} class="link-underline-anim hover:opacity-80 transition-opacity">Home</a></li>
+          <li><a href={p("/chi-siamo")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_about}</a></li>
           <li><a href="/parliamone" class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_contact}</a></li>
           <li><a href="mailto:hello@soraia.io" class="link-underline-anim hover:opacity-80 transition-opacity">hello@soraia.io</a></li>
           <li><a href="https://www.linkedin.com/company/soraia-io" target="_blank" rel="noopener" class="link-underline-anim hover:opacity-80 transition-opacity">LinkedIn ↗</a></li>

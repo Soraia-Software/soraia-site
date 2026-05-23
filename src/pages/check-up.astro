@@ -3,7 +3,7 @@ import Layout from "~/layouts/Layout.astro";
 
 const title = "Check-up IA gratuito, capisci dove sei in 3 minuti | Soraia";
 const description =
-  "7 domande, 3 minuti. Ottieni il tuo Punteggio prontezza IA + un report personalizzato con next-step concreti per portare l'IA nella tua azienda.";
+  "7 domande, 3 minuti, niente email. Ottieni il tuo Punteggio prontezza IA + 3 raccomandazioni concrete per portare l'IA nella tua azienda.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -13,329 +13,343 @@ const jsonLd = {
   about: "Assessment for SMEs to evaluate AI adoption readiness",
 };
 
-// Questions structure with weighted scoring
+// Questions structure with weighted scoring + layout hint per question
 const questions = [
   {
     id: "team_size",
     label: "Quanto è grande il tuo team?",
+    sub: "Persone totali in azienda, inclusi founder.",
+    layout: "grid-cols-2 md:grid-cols-5",
+    variant: "compact",
     options: [
-      { value: "xs", label: "1–10 persone",     score: 5 },
-      { value: "s",  label: "11–25 persone",    score: 10 },
-      { value: "m",  label: "26–50 persone",    score: 14 },
-      { value: "l",  label: "51–200 persone",   score: 14 },
-      { value: "xl", label: "200+ persone",     score: 10 },
+      { value: "xs", big: "1-10",    sub: "persone", score: 5 },
+      { value: "s",  big: "11-25",   sub: "persone", score: 10 },
+      { value: "m",  big: "26-50",   sub: "persone", score: 14 },
+      { value: "l",  big: "51-200",  sub: "persone", score: 14 },
+      { value: "xl", big: "200+",    sub: "persone", score: 10 },
     ],
   },
   {
     id: "industry",
     label: "In quale settore operate?",
+    sub: "Serve a calibrare le raccomandazioni sul tuo contesto.",
+    layout: "grid-cols-1 md:grid-cols-2",
+    variant: "text",
     options: [
-      { value: "hr",        label: "Recruiting & HR",        score: 14 },
-      { value: "finance",   label: "Finance & Accounting",   score: 14 },
-      { value: "vc",        label: "Venture Capital · PE · M&A", score: 14 },
-      { value: "sales",     label: "Sales & Marketing",      score: 13 },
-      { value: "support",   label: "Customer Support · Ops", score: 13 },
-      { value: "other",     label: "Altro",                  score: 8 },
+      { value: "hr",      label: "Recruiting & HR",              score: 14 },
+      { value: "finance", label: "Finance & Accounting",         score: 14 },
+      { value: "vc",      label: "Venture Capital · PE · M&A",   score: 14 },
+      { value: "sales",   label: "Sales & Marketing",            score: 13 },
+      { value: "support", label: "Customer Support · Ops",       score: 13 },
+      { value: "other",   label: "Altro",                        score: 8 },
     ],
   },
   {
     id: "repetitive",
     label: "Quanta % del tempo del team va su task ripetitivi a basso valore?",
+    sub: "Email standardizzate, data entry, screening, reportistica manuale.",
+    layout: "grid-cols-2 md:grid-cols-4",
+    variant: "compact",
     options: [
-      { value: "low",  label: "Meno del 20%",   score: 4 },
-      { value: "med",  label: "20–40%",          score: 9 },
-      { value: "high", label: "40–60%",          score: 14 },
-      { value: "vhigh",label: "Oltre il 60%",   score: 16 },
+      { value: "low",   big: "<20%",   sub: "del tempo", score: 4 },
+      { value: "med",   big: "20-40%", sub: "del tempo", score: 9 },
+      { value: "high",  big: "40-60%", sub: "del tempo", score: 14 },
+      { value: "vhigh", big: ">60%",   sub: "del tempo", score: 16 },
     ],
   },
   {
     id: "ai_today",
     label: "State già usando strumenti AI nel team?",
+    sub: "ChatGPT, Claude, Copilot, Gemini o tool simili.",
+    layout: "grid-cols-1 md:grid-cols-2",
+    variant: "rich",
     options: [
-      { value: "none",     label: "Per niente",                                   score: 4 },
-      { value: "personal", label: "Sì, individualmente (ChatGPT/Claude personali)", score: 10 },
-      { value: "business", label: "Sì, licenza business condivisa",                 score: 12 },
-      { value: "custom",   label: "Sì, anche con qualche workflow custom",          score: 14 },
+      { value: "none",     title: "Per niente",               desc: "Nessuno strumento AI in uso oggi.",                    score: 4 },
+      { value: "personal", title: "Sì, individualmente",      desc: "Singoli usano ChatGPT/Claude personali.",              score: 10 },
+      { value: "business", title: "Sì, licenza business",     desc: "Abbonamento aziendale condiviso (Copilot, ChatGPT Team).", score: 12 },
+      { value: "custom",   title: "Sì, con workflow custom",  desc: "Anche automazioni Make/n8n o agenti dedicati.",        score: 14 },
     ],
   },
   {
     id: "pain",
-    label: "Quale è il vostro biggest pain point operativo?",
+    label: "Qual è il vostro principale problema operativo?",
+    sub: "Dove perdete più tempo o accumulate più errori.",
+    layout: "grid-cols-1 md:grid-cols-2",
+    variant: "rich",
     options: [
-      { value: "screening",  label: "Screening / qualifica candidati o lead", score: 13 },
-      { value: "docs",       label: "Lettura e gestione documenti",            score: 13 },
-      { value: "outreach",   label: "Outreach personalizzato a scala",         score: 13 },
-      { value: "support",    label: "Smistamento richieste e ticket",          score: 13 },
-      { value: "data",       label: "Estrazione dati e reportistica",          score: 13 },
-      { value: "other",      label: "Altro / più di uno",                       score: 8 },
+      { value: "screening", title: "Screening / qualifica",  desc: "Candidati, lead, fornitori da filtrare ogni settimana.", score: 13 },
+      { value: "docs",      title: "Documenti",              desc: "Fatture, contratti, allegati da leggere e gestire.",    score: 13 },
+      { value: "outreach",  title: "Outreach a scala",       desc: "Email personalizzate, follow-up, sequenze.",            score: 13 },
+      { value: "support",   title: "Ticket e richieste",     desc: "Smistamento, prima risposta, escalation.",              score: 13 },
+      { value: "data",      title: "Dati e report",          desc: "Estrazione, consolidamento, reportistica manuale.",     score: 13 },
+      { value: "other",     title: "Altro / più di uno",     desc: "Difficile sceglierne uno solo.",                        score: 8 },
     ],
   },
   {
     id: "budget",
-    label: "Quale budget hai allocato per portare l'AI nel team nei prossimi 12 mesi?",
+    label: "Quale budget hai per portare l'AI nel team nei prossimi 12 mesi?",
+    sub: "Stima onesta. Niente domanda follow-up se la risposta è bassa.",
+    layout: "grid-cols-1 md:grid-cols-2",
+    variant: "compact",
     options: [
-      { value: "none",    label: "Nessuno per ora, sto esplorando", score: 4 },
-      { value: "low",     label: "Sotto i €10.000",                  score: 9 },
-      { value: "mid",     label: "€10.000–€30.000",                  score: 14 },
-      { value: "high",    label: "€30.000–€100.000",                 score: 16 },
-      { value: "vhigh",   label: "Oltre €100.000",                   score: 14 },
+      { value: "none",  big: "Sto esplorando", sub: "nessun budget",        score: 4 },
+      { value: "low",   big: "< €10k",         sub: "12 mesi",              score: 9 },
+      { value: "mid",   big: "€10-30k",        sub: "12 mesi",              score: 14 },
+      { value: "high",  big: "€30-100k",       sub: "12 mesi",              score: 16 },
+      { value: "vhigh", big: "> €100k",        sub: "12 mesi",              score: 14 },
     ],
   },
   {
     id: "urgency",
     label: "Quanto urge per voi vedere risultati?",
+    sub: "Da qui dipende molto la scelta del primo step.",
+    layout: "grid-cols-1 md:grid-cols-2",
+    variant: "text",
     options: [
-      { value: "asap",    label: "Adesso, sentiamo la pressione",     score: 13 },
-      { value: "q",       label: "Entro questo trimestre",              score: 13 },
-      { value: "half",    label: "Entro 6 mesi",                        score: 9 },
-      { value: "year",    label: "Quest'anno",                          score: 6 },
-      { value: "none",    label: "Stiamo solo esplorando",              score: 3 },
+      { value: "asap", label: "Adesso, sentiamo la pressione", score: 13 },
+      { value: "q",    label: "Entro questo trimestre",        score: 13 },
+      { value: "half", label: "Entro 6 mesi",                  score: 9 },
+      { value: "year", label: "Quest'anno",                    score: 6 },
+      { value: "none", label: "Stiamo solo esplorando",        score: 3 },
     ],
   },
 ];
 ---
 
 <Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+
   <!-- ============================================================
-       HERO + QUIZ
+       INTRO COMPATTO
        ============================================================ -->
-  <section class="relative overflow-hidden bg-violet-mesh" style="min-height: calc(100vh - 72px);">
-    <div class="container-soraia pt-16 md:pt-24 pb-20 relative">
+  <section class="container-soraia pt-16 md:pt-20 pb-10" id="cu-intro-section">
+    <nav class="flex items-center gap-2 text-[13px] mb-8" style="color: var(--color-ink-soft);">
+      <a href="/" class="hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">Home</a>
+      <span>›</span>
+      <span style="color: var(--color-ink-muted);">Check-up IA</span>
+    </nav>
 
-      <!-- Intro state -->
-      <div id="sc-intro" class="max-w-3xl mx-auto text-center">
+    <div class="max-w-3xl">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-5" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+        Check-up IA · 3 minuti · no email
+      </p>
+
+      <h1 class="text-balance" style="font-size: clamp(2rem, 4vw + 0.5rem, 3.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+        Capisci dove sei. Scopri da dove iniziare.
+      </h1>
+
+      <p class="mt-6 text-[17px] md:text-[18px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
+        7 domande sulla tua realtà operativa. Ti restituiamo un <strong style="color: var(--color-ink); font-weight: 500;">Punteggio prontezza IA</strong> (0-100) e 3 raccomandazioni concrete per il tuo caso. Nessuna email richiesta per vedere il risultato.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WIZARD
+       ============================================================ -->
+  <section class="container-soraia pb-24" id="cu-wizard-section">
+    <div class="max-w-3xl mx-auto">
+      <!-- Progress -->
+      <div class="flex items-center justify-between mb-10" id="cu-progress-row">
+        <p class="font-mono text-[11px] uppercase tracking-[0.14em]" style="color: var(--color-ink-soft);">
+          Domanda <span data-step-current>1</span> di {questions.length}
+        </p>
+        <div class="flex items-center gap-1.5">
+          {questions.map((_, i) => (
+            <span class={`cu-dot ${i === 0 ? "cu-dot--active" : ""}`} data-step-dot={i + 1}></span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Steps -->
+      {questions.map((q, i) => (
+        <div class={`cu-step ${i === 0 ? "is-active" : ""}`} data-step={i + 1} data-qid={q.id}>
+          <h2 class="text-balance" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 500;">{q.label}</h2>
+          {q.sub && (
+            <p class="mt-3 text-[15px] leading-relaxed max-w-2xl" style="color: var(--color-ink-muted);">{q.sub}</p>
+          )}
+
+          <div class={`mt-8 grid ${q.layout} gap-3`}>
+            {q.options.map((o) => (
+              <button
+                type="button"
+                class={`cu-option cu-option--${q.variant}`}
+                data-qid={q.id}
+                data-value={o.value}
+                data-score={o.score}
+              >
+                {q.variant === "compact" && (
+                  <>
+                    <span class="cu-option__big">{o.big}</span>
+                    <span class="cu-option__sub">{o.sub}</span>
+                  </>
+                )}
+                {q.variant === "text" && (
+                  <span class="cu-option__label">{o.label}</span>
+                )}
+                {q.variant === "rich" && (
+                  <>
+                    <span class="cu-option__title">{o.title}</span>
+                    <span class="cu-option__desc">{o.desc}</span>
+                  </>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <!-- Back -->
+      <button type="button" id="cu-back" class="mt-10 hidden text-[13px] font-medium hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">
+        ← Torna alla domanda precedente
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESULT
+       ============================================================ -->
+  <section class="container-soraia pb-32 hidden" id="cu-result-section">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
         <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
-          <span class="w-1 h-1 rounded-full bg-violet-600"></span>
-          Check-up IA · 3 minuti
+          <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+          Il tuo Punteggio prontezza IA
         </p>
 
-        <h1 class="text-balance" style="font-size: clamp(2.25rem, 5vw + 1rem, 4rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
-          Capisci dove sei.<br/>Scopri da dove iniziare.
-        </h1>
-
-        <p class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl mx-auto text-pretty" style="color: var(--color-ink-muted);">
-          7 domande sulla tua realtà operativa. Ti restituiamo un <strong style="color: var(--color-ink); font-weight: 500;">Punteggio prontezza IA</strong> (0-100) + 3 raccomandazioni concrete per il tuo caso. Nessuna email richiesta per vedere il risultato.
+        <p style="font-family: var(--font-sans); font-size: clamp(5rem, 14vw, 8rem); font-weight: 500; letter-spacing: -0.04em; line-height: 1; color: var(--color-brand);">
+          <span id="cu-score">·</span><span style="font-size: 0.4em; color: var(--color-ink-soft); font-weight: 400;">/100</span>
         </p>
 
-        <button type="button" id="sc-start" class="btn btn-primary mt-9">
-          Inizia il check-up
-          <span class="btn-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </span>
-        </button>
-
-        <div class="mt-12 grid grid-cols-3 gap-4 max-w-2xl mx-auto text-[13px]" style="color: var(--color-ink-muted);">
-          <div class="flex flex-col items-center gap-2">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span><strong style="color: var(--color-ink); font-weight: 500;">3 min</strong> medi</span>
-          </div>
-          <div class="flex flex-col items-center gap-2">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-            <span><strong style="color: var(--color-ink); font-weight: 500;">7</strong> domande</span>
-          </div>
-          <div class="flex flex-col items-center gap-2">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M3 12a9 9 0 1118 0M3 12a9 9 0 0018 0"/></svg>
-            <span><strong style="color: var(--color-ink); font-weight: 500;">No email</strong> per vedere risultato</span>
-          </div>
-        </div>
+        <h2 id="cu-tier-title" class="mt-6 text-balance" style="font-size: clamp(1.5rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">·</h2>
+        <p id="cu-tier-desc" class="mt-5 text-[17px] leading-relaxed max-w-xl mx-auto" style="color: var(--color-ink-muted);">·</p>
       </div>
 
-      <!-- Quiz state -->
-      <div id="sc-quiz" class="max-w-2xl mx-auto hidden">
-        <!-- Progress -->
-        <div class="mb-10">
-          <div class="flex items-center justify-between mb-3 text-[11px] font-medium tracking-[0.14em] uppercase" style="color: var(--color-ink-soft);">
-            <span>Domanda <span id="sc-current">1</span> di {questions.length}</span>
-            <span><span id="sc-percent">0</span>%</span>
-          </div>
-          <div class="h-[3px] rounded-full overflow-hidden" style="background: var(--color-line);">
-            <div id="sc-progress" class="h-full transition-all duration-300" style="width: 0%; background: linear-gradient(90deg, #4A1E5C 0%, #4A1E5C 100%);"></div>
-          </div>
-        </div>
-
-        <!-- Questions container -->
-        <div id="sc-questions"></div>
-
-        <!-- Nav -->
-        <div class="mt-10 flex items-center justify-between">
-          <button type="button" id="sc-back" class="btn btn-ghost" disabled style="opacity: 0.4; cursor: not-allowed;">← Indietro</button>
-          <button type="button" id="sc-next" class="btn btn-primary" disabled style="opacity: 0.4; cursor: not-allowed;">Avanti</button>
-        </div>
+      <!-- 3 recommendations -->
+      <div class="card-editorial !p-8 md:!p-10 mb-8">
+        <p class="eyebrow mb-5">3 next-step raccomandate</p>
+        <ul id="cu-recs" class="space-y-5"></ul>
       </div>
 
-      <!-- Result state -->
-      <div id="sc-result" class="max-w-3xl mx-auto hidden">
-        <div class="text-center mb-12">
-          <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
-            <span class="w-1 h-1 rounded-full bg-violet-600"></span>
-            Il tuo Punteggio prontezza IA
-          </p>
-
-          <p style="font-family: var(--font-sans); font-size: clamp(5rem, 14vw, 8rem); font-weight: 500; letter-spacing: -0.04em; line-height: 1; color: #4A1E5C;">
-            <span id="sc-score">·</span><span style="font-size: 0.4em; color: var(--color-ink-soft); font-weight: 400;">/100</span>
-          </p>
-
-          <h2 id="sc-tier-title" class="mt-6 text-balance" style="font-size: clamp(1.5rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">·</h2>
-          <p id="sc-tier-desc" class="mt-5 text-[17px] leading-relaxed max-w-xl mx-auto" style="color: var(--color-ink-muted);">·</p>
-        </div>
-
-        <!-- 3 recommendations -->
-        <div class="card-editorial !p-8 md:!p-10 mb-8">
-          <p class="eyebrow mb-5">3 next-step raccomandate</p>
-          <ul id="sc-recs" class="space-y-5"></ul>
-        </div>
-
-        <!-- CTA: download sample + book call -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <a href="/downloads/ai-assessment-sample" class="card-editorial !p-6 group no-underline transition-all hover:!-translate-y-1 hover:shadow-md">
-            <div class="flex items-start gap-4">
-              <div class="w-11 h-11 rounded-lg bg-violet-50 text-violet-700 flex items-center justify-center flex-shrink-0">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </div>
-              <div>
-                <p class="font-medium text-[15px]" style="color: var(--color-ink);">Scarica il sample assessment</p>
-                <p class="text-[13px] mt-1 leading-snug" style="color: var(--color-ink-muted);">PDF anonimo di esempio: cosa riceveresti in 1-2 settimane.</p>
-              </div>
+      <!-- CTA: download sample + book call -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/downloads/ai-assessment-sample" class="card-editorial !p-6 group no-underline transition-all hover:!-translate-y-1 hover:shadow-md">
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-lg bg-violet-50 text-violet-700 flex items-center justify-center flex-shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </div>
-          </a>
-
-          <a href="/parliamone" class="card-editorial !p-6 group no-underline transition-all hover:!-translate-y-1 hover:shadow-md" style="border-color: var(--color-violet-200); background: #FDF4FF;">
-            <div class="flex items-start gap-4">
-              <div class="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0" style="background: #4A1E5C; color: white;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-              </div>
-              <div>
-                <p class="font-medium text-[15px]" style="color: var(--color-ink);">Discuti il tuo risultato</p>
-                <p class="text-[13px] mt-1 leading-snug" style="color: var(--color-ink-muted);">20 min con il CEO. Capiamo insieme da dove iniziare.</p>
-              </div>
+            <div>
+              <p class="font-medium text-[15px]" style="color: var(--color-ink);">Scarica il sample assessment</p>
+              <p class="text-[13px] mt-1 leading-snug" style="color: var(--color-ink-muted);">PDF anonimo di esempio. Cosa riceveresti in 1-2 settimane.</p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
 
-        <div class="mt-12 text-center">
-          <button type="button" id="sc-restart" class="btn btn-ghost text-[14px]">Rifai il check-up ↻</button>
-        </div>
+        <a href="/parliamone" class="card-editorial !p-6 group no-underline transition-all hover:!-translate-y-1 hover:shadow-md" style="border-color: var(--color-violet-200); background: #FDF4FF;">
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0" style="background: var(--color-brand); color: white;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            </div>
+            <div>
+              <p class="font-medium text-[15px]" style="color: var(--color-ink);">Discuti il tuo risultato</p>
+              <p class="text-[13px] mt-1 leading-snug" style="color: var(--color-ink-muted);">20 min con il CEO. Capiamo insieme da dove iniziare.</p>
+            </div>
+          </div>
+        </a>
       </div>
 
+      <div class="mt-12 text-center">
+        <button type="button" id="cu-restart" class="btn btn-ghost text-[14px]">Rifai il check-up ↻</button>
+      </div>
     </div>
   </section>
 
   <script is:inline define:vars={{ questions }}>
     (function () {
-      const intro = document.getElementById("sc-intro");
-      const quiz = document.getElementById("sc-quiz");
-      const result = document.getElementById("sc-result");
-      const startBtn = document.getElementById("sc-start");
-      const backBtn = document.getElementById("sc-back");
-      const nextBtn = document.getElementById("sc-next");
-      const restartBtn = document.getElementById("sc-restart");
-      const questionsEl = document.getElementById("sc-questions");
-      const currentEl = document.getElementById("sc-current");
-      const percentEl = document.getElementById("sc-percent");
-      const progressEl = document.getElementById("sc-progress");
-      const scoreEl = document.getElementById("sc-score");
-      const tierTitle = document.getElementById("sc-tier-title");
-      const tierDesc = document.getElementById("sc-tier-desc");
-      const recsEl = document.getElementById("sc-recs");
+      const introSec    = document.getElementById("cu-intro-section");
+      const wizardSec   = document.getElementById("cu-wizard-section");
+      const resultSec   = document.getElementById("cu-result-section");
+      const progressRow = document.getElementById("cu-progress-row");
+      const stepCurrent = document.querySelector("[data-step-current]");
+      const dots        = document.querySelectorAll("[data-step-dot]");
+      const steps       = document.querySelectorAll(".cu-step");
+      const backBtn     = document.getElementById("cu-back");
+      const restartBtn  = document.getElementById("cu-restart");
+      const scoreEl     = document.getElementById("cu-score");
+      const tierTitle   = document.getElementById("cu-tier-title");
+      const tierDesc    = document.getElementById("cu-tier-desc");
+      const recsEl      = document.getElementById("cu-recs");
 
-      const state = { step: 0, answers: {} };
+      const state = { step: 1, answers: {} };
 
-      function show(el) { el.classList.remove("hidden"); }
-      function hide(el) { el.classList.add("hidden"); }
-
-      function renderQuestion() {
-        const q = questions[state.step];
-        currentEl.textContent = state.step + 1;
-        const pct = Math.round((state.step / questions.length) * 100);
-        percentEl.textContent = pct;
-        progressEl.style.width = pct + "%";
-
-        const selected = state.answers[q.id];
-
-        questionsEl.innerHTML = `
-          <h2 class="text-balance" style="font-size: clamp(1.5rem, 3vw + 0.4rem, 2rem); line-height: 1.2; letter-spacing: -0.02em; font-weight: 500;">${q.label}</h2>
-          <div class="mt-8 space-y-3">
-            ${q.options.map((o) => `
-              <label class="sc-opt block cursor-pointer rounded-lg border p-4 transition-all ${selected === o.value ? "selected" : ""}" data-value="${o.value}" data-score="${o.score}">
-                <div class="flex items-center gap-3">
-                  <span class="sc-radio relative w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0"></span>
-                  <span class="text-[15px]" style="color: var(--color-ink);">${o.label}</span>
-                </div>
-              </label>
-            `).join("")}
-          </div>
-        `;
-
-        // Bind option clicks
-        questionsEl.querySelectorAll(".sc-opt").forEach((el) => {
-          el.addEventListener("click", () => {
-            questionsEl.querySelectorAll(".sc-opt").forEach((e) => e.classList.remove("selected"));
-            el.classList.add("selected");
-            state.answers[q.id] = el.dataset.value;
-            // Update next button
-            nextBtn.disabled = false;
-            nextBtn.style.opacity = "1";
-            nextBtn.style.cursor = "pointer";
-          });
-        });
-
-        // Reset next button per question
-        if (state.answers[q.id]) {
-          nextBtn.disabled = false;
-          nextBtn.style.opacity = "1";
-          nextBtn.style.cursor = "pointer";
-        } else {
-          nextBtn.disabled = true;
-          nextBtn.style.opacity = "0.4";
-          nextBtn.style.cursor = "not-allowed";
-        }
-
-        // Back button
-        if (state.step === 0) {
-          backBtn.disabled = true;
-          backBtn.style.opacity = "0.4";
-          backBtn.style.cursor = "not-allowed";
-        } else {
-          backBtn.disabled = false;
-          backBtn.style.opacity = "1";
-          backBtn.style.cursor = "pointer";
-        }
-
-        // Last question label
-        nextBtn.innerHTML = state.step === questions.length - 1
-          ? 'Vedi il tuo score →'
-          : 'Avanti';
+      function scrollToProgress() {
+        const rect = progressRow.getBoundingClientRect();
+        const top = window.scrollY + rect.top - 24;
+        window.scrollTo({ top, behavior: "smooth" });
       }
+
+      function showStep(n) {
+        state.step = n;
+        steps.forEach((el) => el.classList.toggle("is-active", parseInt(el.dataset.step) === n));
+        dots.forEach((dot) => {
+          const i = parseInt(dot.dataset.stepDot);
+          dot.classList.remove("cu-dot--active", "cu-dot--done");
+          if (i < n) dot.classList.add("cu-dot--done");
+          else if (i === n) dot.classList.add("cu-dot--active");
+        });
+        stepCurrent.textContent = String(n);
+        backBtn.classList.toggle("hidden", n === 1);
+        scrollToProgress();
+      }
+
+      // Single-select with auto-advance
+      document.querySelectorAll(".cu-option").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const qid = btn.dataset.qid;
+          const value = btn.dataset.value;
+          state.answers[qid] = { value, score: parseInt(btn.dataset.score) };
+          document.querySelectorAll(`.cu-option[data-qid="${qid}"]`).forEach((b) => {
+            b.classList.toggle("is-selected", b === btn);
+          });
+          setTimeout(() => {
+            if (state.step < questions.length) {
+              showStep(state.step + 1);
+            } else {
+              renderResult();
+            }
+          }, 240);
+        });
+      });
+
+      backBtn.addEventListener("click", () => {
+        if (state.step > 1) showStep(state.step - 1);
+      });
 
       function computeScore() {
         let total = 0;
         let max = 0;
         for (const q of questions) {
           const ans = state.answers[q.id];
-          const opt = q.options.find((o) => o.value === ans);
-          if (opt) total += opt.score;
-          const maxOpt = Math.max(...q.options.map((o) => o.score));
+          if (ans) total += ans.score;
+          const maxOpt = Math.max.apply(null, q.options.map((o) => o.score));
           max += maxOpt;
         }
-        // Normalize to 0-100
         return Math.round((total / max) * 100);
       }
 
       function tierFor(score) {
         if (score < 40) return {
-          tier: "early",
-          title: "Early stage, serve foundation",
+          title: "Early stage, serve foundation.",
           desc: "Sei in una fase esplorativa. Prima di costruire agenti, conviene allineare il team sull'uso dell'AI e fissare i processi di base.",
           recs: [
-            { title: "Inizia da un AI Adoption Foundation", body: "Workshop 2 giorni per livellare il team sull'uso AI quotidiano + governance di base. €8-10k per team fino a 20 persone." },
-            { title: "Mappa i tuoi processi", body: "Prima di automatizzare, capisci chi fa cosa e dove si perde tempo. Senza baseline, gli agenti non hanno target." },
+            { title: "Inizia da un AI Adoption Foundation", body: "Workshop di 2 giorni per livellare il team sull'uso AI quotidiano + governance di base. €8-10k per team fino a 20 persone." },
+            { title: "Mappa i tuoi processi prima di automatizzare", body: "Capisci chi fa cosa e dove si perde tempo. Senza baseline, gli agenti non hanno target." },
             { title: "Tieniti pronto per uno sprint", body: "Una volta che il team è allineato, scegli 1-2 processi ad alto impatto e costruisci il primo agente. 4 settimane al primo deploy." },
           ],
         };
         if (score < 70) return {
-          tier: "ready",
-          title: "Ready, sei pronto a costruire",
-          desc: "Hai i bottleneck giusti, il team motivato, e probabilmente un budget. Adesso serve un piano d'azione preciso e un primo agente in produzione.",
+          title: "Ready. Sei pronto a costruire.",
+          desc: "Hai i bottleneck giusti, il team motivato e probabilmente un budget. Adesso serve un piano d'azione preciso e un primo agente in produzione.",
           recs: [
             { title: "Fai l'AI Readiness Assessment (€2.000)", body: "1-2 settimane di lavoro insieme. Esce con: mappa processi, bottleneck con priorità, valutazione tool, action plan operativo. Rimborsato se procedi." },
             { title: "Co-Building Sprint da €10-50k", body: "Prima delivery in 4 settimane. Se non sei soddisfatto, non paghi. Il tuo team forma con noi durante lo sprint." },
@@ -343,24 +357,24 @@ const questions = [
           ],
         };
         return {
-          tier: "advanced",
-          title: "Advanced, costruiamo agenti specifici",
+          title: "Advanced. Costruiamo agenti specifici.",
           desc: "Stai già sfruttando AI a un livello base. Il prossimo salto è costruire agenti custom sui tuoi processi specifici, con codice tuo e zero lock-in.",
           recs: [
             { title: "Salta all'Assessment + Sprint", body: "Hai le basi. Andiamo dritti su 2-3 processi a ROI più alto. Assessment €2.000 (rimborsato), Sprint €10-50k, garanzia inclusa." },
-            { title: "Considera il Brain pilot", body: "Per i power user, deploy framework Soraia Brain, ogni persona ha un AI 'intern personale' che conosce il suo lavoro. Differenziatore reale." },
+            { title: "Considera il Brain pilot", body: "Per i power user, deploy framework Soraia Brain: ogni persona ha un AI intern personale che conosce il suo lavoro. Differenziatore reale." },
             { title: "Pensa lungo termine: codice tuo, no lock-in", body: "Il codice degli agenti è tuo dalla prima settimana. Se vuoi internalizzare dopo, ti diamo training + docs. Zero abbonamenti perpetui." },
           ],
         };
       }
 
-      function showResult() {
-        hide(quiz);
-        show(result);
+      function renderResult() {
+        introSec.classList.add("hidden");
+        wizardSec.classList.add("hidden");
+        resultSec.classList.remove("hidden");
+
         const score = computeScore();
         const t = tierFor(score);
 
-        // Animate score number
         let curr = 0;
         const step = Math.max(1, Math.ceil(score / 30));
         const interval = setInterval(() => {
@@ -381,71 +395,148 @@ const questions = [
           </li>
         `).join("");
 
-        // Scroll to top of result
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
-      startBtn.addEventListener("click", () => {
-        hide(intro);
-        show(quiz);
-        state.step = 0;
-        renderQuestion();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
-      nextBtn.addEventListener("click", () => {
-        if (nextBtn.disabled) return;
-        if (state.step === questions.length - 1) {
-          showResult();
-        } else {
-          state.step++;
-          renderQuestion();
-        }
-      });
-
-      backBtn.addEventListener("click", () => {
-        if (backBtn.disabled) return;
-        state.step--;
-        renderQuestion();
-      });
-
       restartBtn.addEventListener("click", () => {
-        state.step = 0;
+        state.step = 1;
         state.answers = {};
-        hide(result);
-        show(intro);
+        document.querySelectorAll(".cu-option.is-selected").forEach((b) => b.classList.remove("is-selected"));
+        introSec.classList.remove("hidden");
+        wizardSec.classList.remove("hidden");
+        resultSec.classList.add("hidden");
         scoreEl.textContent = "·";
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        showStep(1);
       });
     })();
   </script>
 
   <style is:global>
-    .sc-opt {
-      border-color: var(--color-line);
-      background: white;
+    /* === Step dots === */
+    .cu-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-line-strong);
+      transition: background-color 200ms ease, transform 200ms ease;
     }
-    .sc-opt:hover {
-      border-color: var(--color-violet-300);
-      background: #FDFAFE;
+    .cu-dot--active {
+      background: var(--color-brand);
+      transform: scale(1.35);
     }
-    .sc-opt .sc-radio {
-      border-color: var(--color-line-strong);
+    .cu-dot--done {
+      background: var(--color-brand);
     }
-    .sc-opt.selected {
-      border-color: var(--color-violet-600);
-      background: #FDF4FF;
+
+    /* === Steps (one visible at a time) === */
+    .cu-step { display: none; }
+    .cu-step.is-active {
+      display: block;
+      animation: cuStepFadeIn 280ms ease;
     }
-    .sc-opt.selected .sc-radio {
-      border-color: var(--color-violet-700);
+    @keyframes cuStepFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-    .sc-opt.selected .sc-radio::after {
+
+    /* === Option cards (premium hairline) === */
+    .cu-option {
+      background: #FFFFFF;
+      border: 1px solid var(--color-line-strong);
+      border-radius: 0.875rem;
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+      transition: border-color 180ms ease, background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-family: inherit;
+      position: relative;
+    }
+    .cu-option:hover {
+      border-color: var(--color-brand);
+      background: var(--color-brand-soft);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px -4px rgba(74, 30, 92, 0.10);
+    }
+    .cu-option.is-selected {
+      border-color: var(--color-brand);
+      background: var(--color-brand-soft);
+      box-shadow: 0 0 0 1px var(--color-brand);
+    }
+    .cu-option.is-selected::after {
       content: "";
       position: absolute;
-      width: 10px;
-      height: 10px;
+      top: 14px;
+      right: 14px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
-      background: var(--color-violet-700);
+      background: var(--color-brand);
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5'/></svg>");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Compact variant (big number + sub) */
+    .cu-option--compact {
+      align-items: flex-start;
+      padding: 1.5rem 1.25rem;
+      min-height: 96px;
+      justify-content: center;
+    }
+    .cu-option__big {
+      font-size: 1.375rem;
+      font-weight: 500;
+      color: var(--color-ink);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .cu-option__sub {
+      font-size: 11px;
+      color: var(--color-ink-soft);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Text variant (single line label centered) */
+    .cu-option--text {
+      padding: 1.15rem 1.5rem;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 64px;
+    }
+    .cu-option__label {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--color-ink);
+      line-height: 1.4;
+    }
+
+    /* Rich variant (title + desc) */
+    .cu-option--rich {
+      padding: 1.25rem 1.5rem;
+      padding-right: 3rem;
+    }
+    .cu-option__title {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--color-ink);
+      line-height: 1.3;
+    }
+    .cu-option__desc {
+      font-size: 13.5px;
+      color: var(--color-ink-muted);
+      line-height: 1.55;
+    }
+
+    /* Slight visual softening on small screens */
+    @media (max-width: 640px) {
+      .cu-option--compact { min-height: 88px; }
+      .cu-option__big { font-size: 1.25rem; }
     }
   </style>
 </Layout>

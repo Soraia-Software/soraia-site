@@ -11,6 +11,7 @@ const labels = {
     nav_adoption: "AI Adoption",
     nav_recruitment: "Recruitment",
     nav_blog: "Blog",
+    nav_about: "Chi siamo",
     nav_scorecard: "Check-up IA",
     cta: "20 min con Daniel",
   },
@@ -19,6 +20,7 @@ const labels = {
     nav_adoption: "AI Adoption",
     nav_recruitment: "Recruitment",
     nav_blog: "Blog",
+    nav_about: "About",
     nav_scorecard: "Check-up IA",
     cta: "20 min with Daniel",
   },
@@ -29,6 +31,7 @@ const agentsHref = lang === "en" ? "/en/ai-agents" : "/ai-agents";
 const adoptionHref = lang === "en" ? "/en/ai-adoption" : "/ai-adoption";
 const recHref = lang === "en" ? "/en/recruitment" : "/recruitment";
 const blogHref = lang === "en" ? "/en/blog" : "/blog";
+const aboutHref = lang === "en" ? "/en/chi-siamo" : "/chi-siamo";
 const scorecardHref = lang === "en" ? "/en/check-up" : "/check-up";
 const otherLang = lang === "it" ? "en" : "it";
 const otherHref = otherLang === "en"
@@ -55,6 +58,7 @@ const otherHref = otherLang === "en"
         <li><a href={agentsHref} class="link-underline-anim hover:text-ink-900 transition-colors">{labels.nav_agents}</a></li>
         <li><a href={recHref} class="link-underline-anim hover:text-ink-900 transition-colors">{labels.nav_recruitment}</a></li>
         <li><a href={blogHref} class="link-underline-anim hover:text-ink-900 transition-colors">{labels.nav_blog}</a></li>
+        <li><a href={aboutHref} class="link-underline-anim hover:text-ink-900 transition-colors">{labels.nav_about}</a></li>
         <li><a href={scorecardHref} class="link-underline-anim hover:text-ink-900 transition-colors inline-flex items-center gap-1.5">{labels.nav_scorecard}<span class="text-[10px] font-semibold tracking-[0.1em] uppercase px-1.5 py-0.5 rounded-full" style="background: var(--color-violet-50, #F5EEF7); color: var(--color-brand);">3 min</span></a></li>
       </ul>
 
