@@ -1,0 +1,158 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const products = [
+  {
+    id: "linkly",
+    name: "Linkly",
+    tagline: "Il sistema di AI agents per le fiere B2B",
+    description: "Sei AI agents specializzati che gestiscono ogni contatto raccolto in fiera: cattura, arricchimento, qualifica, attivazione CRM, follow-up automatico, reportistica executive. Orchestrati da un consulente Linkly dedicato.",
+    status: "active",
+    statusLabel: "Disponibile",
+    price: "€1.900 + IVA / anno",
+    priceNote: "Offerta early adopter 2026",
+    targets: ["Manifatturiero", "F&B", "Fashion", "Nautica", "Pharma", "Retail"],
+    url: "https://linkly.soraia.io",
+    external: true,
+    iconBgColor: "#016F54",
+    iconPath: '<rect x="268" y="711" width="249" height="463" rx="124.5" transform="rotate(-90 268 711)" stroke="white" stroke-width="70" fill="none"/><rect x="517" y="711" width="249" height="463" rx="124.5" transform="rotate(-180 517 711)" stroke="white" stroke-width="70" fill="none"/>',
+    iconViewBox: "0 0 960 960",
+    cta: "Vai al sito Linkly",
+    bullets: [
+      "6 AI agents end-to-end (cattura → follow-up)",
+      "Integrazione qualsiasi CRM (HubSpot, Salesforce, gestionali italiani)",
+      "Infrastruttura UE, GDPR compliant, DPA art. 28",
+      "Onboarding incluso, 1 ora di videochiamata",
+    ],
+  },
+  {
+    id: "sourcer",
+    name: "Sourcer",
+    tagline: "Chrome extension per recruiter B2B",
+    description: "Estensione Chrome che si integra con il vostro ATS o CRM recruitment. Permette di catturare candidati direttamente da LinkedIn, job boards e qualsiasi sito di settore, con arricchimento automatico (email professionale, telefono, esperienza, skill).",
+    status: "coming",
+    statusLabel: "In arrivo",
+    price: "TBD",
+    priceNote: "Disponibile da Q3 2026",
+    targets: ["Recruitment agencies", "Talent acquisition team", "Executive search", "Head hunter"],
+    url: "/parliamone?prodotto=sourcer",
+    external: false,
+    iconBgColor: "#4A1E5C",
+    iconPath: '<path d="M10 4h-4a2 2 0 0 0 -2 2v4c1.105 0 2 0.895 2 2c0 1.105 -0.895 2 -2 2v4a2 2 0 0 0 2 2h4c0 -1.105 0.895 -2 2 -2c1.105 0 2 0.895 2 2h4a2 2 0 0 0 2 -2v-4c-1.105 0 -2 -0.895 -2 -2c0 -1.105 0.895 -2 2 -2v-4a2 2 0 0 0 -2 -2h-4c0 1.105 -0.895 2 -2 2c-1.105 0 -2 -0.895 -2 -2z" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
+    iconViewBox: "0 0 24 24",
+    cta: "Tienimi aggiornato",
+    bullets: [
+      "1-click capture da LinkedIn, job boards, siti aziendali",
+      "Arricchimento candidato (email, telefono, skill, esperienza)",
+      "Integrazione ATS/CRM (Greenhouse, Bullhorn, Recruitee, custom)",
+      "Pensata per recruitment agencies italiane ed europee",
+    ],
+  },
+];
+---
+
+<Layout
+  title="Prodotti · AI agents pronti all'uso di Soraia"
+  description="I prodotti AI di Soraia: Linkly per le fiere B2B, Sourcer per il recruitment B2B. Strumenti ready-to-use sviluppati per i mercati italiani ed europei."
+  lang="it"
+>
+  <!-- Hero -->
+  <section class="container-soraia pt-20 md:pt-28 pb-16">
+    <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-brand">Prodotti</p>
+    <h1 class="mt-6 text-[2.5rem] md:text-[3.5rem] font-medium tracking-tight leading-[1.1] max-w-4xl">
+      I prodotti AI di Soraia, pronti all'uso.
+    </h1>
+    <p class="mt-8 max-w-2xl text-[18px] leading-relaxed text-ink-700">
+      Non solo consulting. Soraia sviluppa anche prodotti SaaS verticali per problemi B2B ricorrenti. Ogni prodotto nasce da una pain reale incontrata con i nostri clienti, e diventa un sistema standalone.
+    </p>
+  </section>
+
+  <!-- Products grid -->
+  <section class="container-soraia pb-32">
+    <div class="space-y-12">
+      {products.map((p) => (
+        <article id={p.id} class="bg-white rounded-2xl border border-ink-200/80 overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-0">
+
+            <!-- Icon side -->
+            <div class="relative flex items-center justify-center p-12 md:p-16" style={`background: ${p.iconBgColor}`}>
+              <div class="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
+                <svg viewBox={p.iconViewBox} class="w-full h-full" set:html={p.iconPath} />
+              </div>
+              {p.status === "coming" && (
+                <span class="absolute top-5 left-5 px-3 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-[0.12em] bg-white/15 text-white backdrop-blur-sm">
+                  {p.statusLabel}
+                </span>
+              )}
+              {p.status === "active" && (
+                <span class="absolute top-5 left-5 px-3 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-[0.12em] bg-white/15 text-white backdrop-blur-sm inline-flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                  {p.statusLabel}
+                </span>
+              )}
+            </div>
+
+            <!-- Content side -->
+            <div class="p-8 md:p-12 lg:p-14">
+              <p class="text-[12px] font-semibold uppercase tracking-[0.14em] text-ink-500 mb-3">{p.tagline}</p>
+              <h2 class="text-[2rem] md:text-[2.5rem] font-medium tracking-tight">{p.name}</h2>
+
+              <p class="mt-5 text-[16px] leading-relaxed text-ink-700">{p.description}</p>
+
+              <ul class="mt-7 space-y-3">
+                {p.bullets.map((b) => (
+                  <li class="flex items-start gap-3 text-[15px] text-ink-700">
+                    <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-brand)">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <!-- Targets -->
+              <div class="mt-7">
+                <p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-500 mb-3">Per chi è</p>
+                <div class="flex flex-wrap gap-2">
+                  {p.targets.map((t) => (
+                    <span class="text-[12px] text-ink-700 px-2.5 py-1 rounded-md border border-ink-200">{t}</span>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Price + CTA -->
+              <div class="mt-8 pt-8 border-t border-ink-200/80 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
+                <div>
+                  <p class="text-[24px] font-medium tracking-tight">{p.price}</p>
+                  <p class="text-[12px] text-ink-500 mt-1">{p.priceNote}</p>
+                </div>
+                <a href={p.url} target={p.external ? "_blank" : undefined} rel={p.external ? "noopener noreferrer" : undefined} class="btn btn-primary !py-3 !px-5 text-[14px] inline-flex">
+                  {p.cta}
+                  {p.external ? (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                      <polyline points="15 3 21 3 21 9"/>
+                      <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                  ) : (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 5l7 7-7 7"/>
+                    </svg>
+                  )}
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Closing note -->
+    <div class="mt-16 max-w-3xl">
+      <p class="text-[14px] text-ink-500 leading-relaxed">
+        Stiamo sviluppando altri prodotti verticali su problemi B2B ricorrenti che incontriamo nei progetti di consulting. Se avete in mente un caso d'uso specifico per la vostra industria, <a href="/parliamone" class="underline hover:text-ink-900">parliamone</a>.
+      </p>
+    </div>
+  </section>
+
+</Layout>
