@@ -8,80 +8,155 @@ const year = new Date().getFullYear();
 
 const labels = {
   it: {
-    tagline: "Agenti IA su misura per le tue operazioni.",
-    nav_title: "Esplora",
-    nav_home: "Home",
-    nav_recruitment: "Recruitment",
+    tagline_big: "Agenti IA per le PMI Italiane.",
+    tagline_small: "AI Adoption per i tuoi team. Costruiamo, formiamo, garantiamo.",
+    col_solutions: "Soluzioni",
+    col_industries: "Settori",
+    col_resources: "Risorse",
+    col_company: "Soraia",
+    col_legal: "Legali",
+    nav_agents: "AI Agents",
+    nav_adoption: "AI Adoption",
+    nav_scorecard: "AI Readiness Scorecard",
+    nav_recruitment: "Recruiting & HR",
+    nav_finance: "Finance & Accounting",
+    nav_vc: "Venture Capital",
+    nav_support: "Customer Support",
+    nav_sales: "Sales & Marketing",
+    nav_blog: "Blog & Insights",
+    nav_sample: "Assessment di esempio",
     nav_cases: "Casi studio",
-    contact_title: "Contatti",
-    legal_title: "Legali",
-    privacy: "Privacy",
+    nav_about: "Chi siamo",
+    nav_contact: "Parliamone",
+    privacy: "Privacy policy",
     terms: "Termini",
+    cookies: "Cookie",
     rights: "Tutti i diritti riservati.",
   },
   en: {
-    tagline: "Custom AI agents for your operations.",
-    nav_title: "Explore",
-    nav_home: "Home",
-    nav_recruitment: "Recruitment",
+    tagline_big: "AI Agents for European SMEs.",
+    tagline_small: "AI Adoption for your team. We build, train, guarantee.",
+    col_solutions: "Solutions",
+    col_industries: "Industries",
+    col_resources: "Resources",
+    col_company: "Soraia",
+    col_legal: "Legal",
+    nav_agents: "AI Agents",
+    nav_adoption: "AI Adoption",
+    nav_scorecard: "AI Readiness Scorecard",
+    nav_recruitment: "Recruiting & HR",
+    nav_finance: "Finance & Accounting",
+    nav_vc: "Venture Capital",
+    nav_support: "Customer Support",
+    nav_sales: "Sales & Marketing",
+    nav_blog: "Blog & Insights",
+    nav_sample: "Sample assessment",
     nav_cases: "Case studies",
-    contact_title: "Contact",
-    legal_title: "Legal",
-    privacy: "Privacy",
+    nav_about: "About",
+    nav_contact: "Let's talk",
+    privacy: "Privacy policy",
     terms: "Terms",
+    cookies: "Cookies",
     rights: "All rights reserved.",
   },
 }[lang];
 
 const homeHref = lang === "en" ? "/en/" : "/";
-const recHref = lang === "en" ? "/en/recruitment" : "/recruitment";
+const p = (path: string) => (lang === "en" ? "/en" + path : path);
 ---
 
-<footer class="border-t border-ink-200 bg-white">
-  <div class="container-soraia py-16">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-      <div class="md:col-span-5">
-        <a href={homeHref} class="inline-flex items-center gap-2.5">
-          <img src="/logos/soraia-mark.svg" alt="" width="36" height="36" class="w-9 h-9" />
-          <span class="text-xl font-semibold tracking-tight">Soraia</span>
+<footer class="bg-ink-50 border-t border-line" style="background: #F2F1ED;">
+  <div class="container-soraia">
+    <!-- Big editorial tagline -->
+    <div class="py-20 md:py-28 max-w-4xl">
+      <a href={homeHref} class="inline-flex items-center gap-3 mb-10">
+        <img src="/logos/soraia-mark.svg" alt="" width="40" height="40" class="w-10 h-10" />
+        <span class="text-[1.5rem] font-medium tracking-tight" style="color: #1A1A1A;">Soraia</span>
+      </a>
+
+      <h2 class="text-balance" style="color: #1A1A1A; font-size: clamp(2rem, 4vw + 0.5rem, 3.5rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+        {labels.tagline_big}
+      </h2>
+      <p class="mt-5 text-[18px] md:text-[19px] leading-relaxed max-w-2xl" style="color: var(--color-ink-muted);">
+        {labels.tagline_small}
+      </p>
+
+      <div class="mt-9 flex flex-col sm:flex-row gap-3">
+        <a href="/parliamone" class="btn btn-primary">
+          {labels.nav_contact}
+          <span class="btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
         </a>
-        <p class="mt-4 text-ink-600 max-w-sm leading-relaxed">
-          {labels.tagline}
-        </p>
-        <p class="mt-6 text-sm text-ink-500">
-          Soraia S.r.l. — Biella, Italia
-        </p>
+        <a href={p("/scorecard")} class="btn btn-secondary">
+          Fai lo scorecard — 3 min
+        </a>
       </div>
+    </div>
 
-      <div class="md:col-span-2">
-        <h3 class="text-sm font-semibold text-ink-900 mb-4">{labels.nav_title}</h3>
-        <ul class="space-y-3 text-sm text-ink-600">
-          <li><a href={homeHref} class="hover:text-violet-700 transition-colors">{labels.nav_home}</a></li>
-          <li><a href={recHref} class="hover:text-violet-700 transition-colors">{labels.nav_recruitment}</a></li>
-          <li><a href={`${homeHref}#cases`} class="hover:text-violet-700 transition-colors">{labels.nav_cases}</a></li>
+    <div class="hairline-t"></div>
+
+    <!-- 5 columns -->
+    <div class="py-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-8">
+      <div>
+        <p class="text-[11px] font-semibold uppercase tracking-[0.14em] mb-5" style="color: var(--color-ink-soft);">{labels.col_solutions}</p>
+        <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
+          <li><a href={p("/ai-adoption")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_adoption}</a></li>
+          <li><a href={p("/ai-agents")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_agents}</a></li>
         </ul>
       </div>
 
-      <div class="md:col-span-3">
-        <h3 class="text-sm font-semibold text-ink-900 mb-4">{labels.contact_title}</h3>
-        <ul class="space-y-3 text-sm text-ink-600">
-          <li><a href="mailto:hello@soraia.io" class="hover:text-violet-700 transition-colors">hello@soraia.io</a></li>
-          <li><a href="https://www.linkedin.com/company/soraia-io" class="hover:text-violet-700 transition-colors" rel="noopener" target="_blank">LinkedIn</a></li>
+      <div>
+        <p class="text-[11px] font-semibold uppercase tracking-[0.14em] mb-5" style="color: var(--color-ink-soft);">{labels.col_industries}</p>
+        <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
+          <li><a href={p("/recruitment")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_recruitment}</a></li>
+          <li><span style="color: var(--color-ink-soft);">{labels.nav_finance}</span></li>
+          <li><span style="color: var(--color-ink-soft);">{labels.nav_vc}</span></li>
+          <li><span style="color: var(--color-ink-soft);">{labels.nav_support}</span></li>
+          <li><span style="color: var(--color-ink-soft);">{labels.nav_sales}</span></li>
         </ul>
       </div>
 
-      <div class="md:col-span-2">
-        <h3 class="text-sm font-semibold text-ink-900 mb-4">{labels.legal_title}</h3>
-        <ul class="space-y-3 text-sm text-ink-600">
-          <li><a href="/privacy" class="hover:text-violet-700 transition-colors">{labels.privacy}</a></li>
-          <li><a href="/terms" class="hover:text-violet-700 transition-colors">{labels.terms}</a></li>
+      <div>
+        <p class="text-[11px] font-semibold uppercase tracking-[0.14em] mb-5" style="color: var(--color-ink-soft);">{labels.col_resources}</p>
+        <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
+          <li><a href={p("/scorecard")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_scorecard}</a></li>
+          <li><a href={p("/downloads/ai-assessment-sample")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_sample}</a></li>
+          <li><a href={p("/blog")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_blog}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-[11px] font-semibold uppercase tracking-[0.14em] mb-5" style="color: var(--color-ink-soft);">{labels.col_company}</p>
+        <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
+          <li><a href={p("/")} class="link-underline-anim hover:opacity-80 transition-opacity">Home</a></li>
+          <li><a href="/parliamone" class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_contact}</a></li>
+          <li><a href="mailto:hello@soraia.io" class="link-underline-anim hover:opacity-80 transition-opacity">hello@soraia.io</a></li>
+          <li><a href="https://www.linkedin.com/company/soraia-io" target="_blank" rel="noopener" class="link-underline-anim hover:opacity-80 transition-opacity">LinkedIn ↗</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-[11px] font-semibold uppercase tracking-[0.14em] mb-5" style="color: var(--color-ink-soft);">{labels.col_legal}</p>
+        <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
+          <li><a href={p("/privacy")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.privacy}</a></li>
+          <li><a href={p("/terms")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.terms}</a></li>
+          <li><a href={p("/cookies")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.cookies}</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-16 pt-8 border-t border-ink-200 flex flex-col sm:flex-row justify-between gap-4 text-sm text-ink-500">
-      <p>© {year} Soraia. {labels.rights}</p>
-      <p>Made with care · Biella → Worldwide</p>
+    <div class="hairline-t"></div>
+
+    <!-- Bottom row -->
+    <div class="py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 text-[13px]" style="color: var(--color-ink-soft);">
+      <div>
+        © {year} Soraia S.r.l. · Via Losana 13, 13900 Biella (BI) · P.IVA 02820060024
+      </div>
+      <div class="flex items-center gap-1">
+        <span>Made in</span>
+        <span style="color: #1A1A1A; font-weight: 500;">Biella · Italia</span>
+      </div>
     </div>
   </div>
 </footer>
