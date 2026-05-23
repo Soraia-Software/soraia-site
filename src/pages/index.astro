@@ -9,7 +9,6 @@ import HeroVisual from "~/components/HeroVisual.astro";
 import FAQ from "~/components/FAQ.astro";
 import PartnersStrip from "~/components/PartnersStrip.astro";
 import AvatarCircle from "~/components/AvatarCircle.astro";
-import LeadForm from "~/components/LeadForm.tsx";
 
 const title = "Soraia — Portiamo gli Agenti IA nelle PMI Italiane";
 const description =
@@ -244,7 +243,7 @@ const faqs = [
           </p>
 
           <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
-            <a href="#contact" class="btn !bg-white !text-violet-900 hover:!bg-amber hover:!text-ink-900">
+            <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-amber hover:!text-ink-900">
               Call gratuita con il CEO
               <span class="btn-arrow">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -558,43 +557,6 @@ const faqs = [
   </section>
 
   <!-- ============================================================
-       13. CONTACT FORM
-       ============================================================ -->
-  <section id="contact" class="section bg-violet-mesh">
-    <div class="container-soraia">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        <div class="lg:col-span-5 lg:sticky lg:top-32">
-          <p class="eyebrow mb-6">Parliamone</p>
-          <h2 class="font-display text-[2.5rem] md:text-[3.5rem] font-semibold tracking-tight text-ink-900 leading-[1.05] text-balance">
-            Parliamo dei tuoi processi?
-          </h2>
-          <p class="mt-5 text-[18px] text-ink-700 leading-relaxed text-pretty">
-            Raccontaci la tua realtà operativa. Ti rispondiamo entro 24 ore con una proposta di assessment concreta, perimetrata sul tuo contesto.
-          </p>
-          <ul class="mt-8 space-y-3.5">
-            {[
-              "Assessment 2.000€, rimborsato se procedi",
-              "Risposta entro 24 ore",
-              "Nessun impegno a procedere",
-              "Se non funziona, non paghi",
-            ].map((item) => (
-              <li class="flex items-start gap-3">
-                <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-600 items-center justify-center">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                </span>
-                <span class="text-[15px] text-ink-700">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="lg:col-span-7">
-          <LeadForm client:load lang="it" source="home" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
        14. FAQ
        ============================================================ -->
   <section class="section bg-white">
@@ -615,7 +577,7 @@ const faqs = [
     title="Inizia con una call gratuita con il nostro CEO."
     description="20 minuti per capire insieme se ha senso fare l'AI Readiness Assessment. Nessun impegno, nessun pitch commerciale — solo una conversazione operativa."
     ctaText="Prenota la call"
-    ctaHref="#contact"
+    ctaHref="/parliamone"
     avatarName="Daniel Levis"
     avatarRole="Co-Founder & CEO"
     avatarSrc="/team/daniel-levis.png"

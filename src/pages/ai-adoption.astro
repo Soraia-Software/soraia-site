@@ -3,7 +3,6 @@ import Layout from "~/layouts/Layout.astro";
 import SectionHeader from "~/components/SectionHeader.astro";
 import CTABanner from "~/components/CTABanner.astro";
 import FAQ from "~/components/FAQ.astro";
-import LeadForm from "~/components/LeadForm.tsx";
 
 const title = "AI Adoption — formazione e change management | Soraia";
 const description =
@@ -495,50 +494,13 @@ const faqs = [
   </section>
 
   <!-- ============================================================
-       FORM
-       ============================================================ -->
-  <section id="contact" class="section bg-violet-mesh">
-    <div class="container-soraia">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        <div class="lg:col-span-5 lg:sticky lg:top-32">
-          <p class="eyebrow mb-6">Parliamone</p>
-          <h2 class="font-display text-[2.5rem] md:text-[3.5rem] font-semibold tracking-tight text-ink-900 leading-[1.05] text-balance">
-            Pronto a portare<br/>l'AI nel tuo team?
-          </h2>
-          <p class="mt-5 text-[18px] text-ink-700 leading-relaxed text-pretty">
-            Raccontaci la dimensione del team e le funzioni che vuoi formare. Ti rispondiamo entro 24 ore con una proposta concreta, perimetrata sui tuoi processi.
-          </p>
-          <ul class="mt-8 space-y-3.5">
-            {[
-              "Kick-off scoping incluso in tutte le proposte",
-              "Risposta entro 24 ore",
-              "Nessun impegno a procedere",
-              "Workshop in presenza, trasferte incluse",
-            ].map((item) => (
-              <li class="flex items-start gap-3">
-                <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-600 items-center justify-center">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                </span>
-                <span class="text-[15px] text-ink-700">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="lg:col-span-7">
-          <LeadForm client:load lang="it" source="ai-adoption" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
        CTA FINALE — Call CEO
        ============================================================ -->
   <CTABanner
     title="Inizia con una call gratuita con il nostro CEO."
     description="20 minuti per capire insieme quale delle 3 proposte ha senso per il tuo team. Nessun impegno, nessun pitch commerciale."
     ctaText="Prenota la call"
-    ctaHref="#contact"
+    ctaHref="/parliamone"
     avatarName="Daniel Levis"
     avatarRole="Co-Founder & CEO"
     avatarSrc="/team/daniel-levis.png"
