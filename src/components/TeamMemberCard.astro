@@ -1,0 +1,24 @@
+---
+import AvatarCircle from "./AvatarCircle.astro";
+
+interface Props {
+  name: string;
+  role: string;
+  photoSrc?: string;
+  flag?: string;
+}
+
+const { name, role, photoSrc, flag } = Astro.props;
+---
+
+<article class="card-editorial group flex flex-col items-start gap-4 reveal !p-6 !rounded-2xl relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-violet-700/0 via-violet-700/0 to-violet-700/8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+  <AvatarCircle name={name} src={photoSrc} size="lg" variant="violet" />
+  <div class="relative">
+    <p class="font-display text-[1.125rem] font-semibold text-ink-900 leading-tight flex items-center gap-2">
+      {name}
+      {flag && <span class="text-base">{flag}</span>}
+    </p>
+    <p class="text-sm text-ink-500 mt-1 leading-tight">{role}</p>
+  </div>
+</article>

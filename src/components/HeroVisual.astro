@@ -1,0 +1,82 @@
+---
+// Abstract floating agent-at-work card visualization for hero
+---
+
+<div class="relative w-full h-full min-h-[440px] lg:min-h-[520px] flex items-center justify-center">
+  <!-- Floating violet orbs as background -->
+  <div class="absolute inset-0">
+    <div class="orb orb-lilac w-[420px] h-[420px] -top-10 -right-20 opacity-50 float-slow" aria-hidden="true"></div>
+    <div class="orb orb-amber w-[280px] h-[280px] -bottom-20 -left-10 opacity-30 float-slower" aria-hidden="true"></div>
+  </div>
+
+  <!-- Main floating dashboard card -->
+  <div class="relative z-10 w-full max-w-md float-slower" style="animation-duration: 22s">
+    <div class="rounded-3xl bg-white/95 backdrop-blur-xl shadow-2xl border border-white/40 p-6">
+      <div class="flex items-center justify-between mb-5">
+        <div class="flex items-center gap-2.5">
+          <span class="inline-block w-8 h-8 rounded-lg bg-gradient-to-br from-violet-700 to-violet-500"></span>
+          <div>
+            <p class="text-[10px] uppercase tracking-wider text-ink-500 font-semibold">Agente</p>
+            <p class="font-display text-sm font-semibold text-ink-900">Screening + Outreach</p>
+          </div>
+        </div>
+        <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-semibold uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          Live
+        </span>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2 mb-5">
+        <div class="rounded-xl bg-violet-50 p-3">
+          <p class="text-[9px] uppercase text-violet-700 font-semibold">Elaborati</p>
+          <p class="font-display text-xl font-semibold text-violet-700">847</p>
+        </div>
+        <div class="rounded-xl bg-ink-50 p-3">
+          <p class="text-[9px] uppercase text-ink-500 font-semibold">Shortlist</p>
+          <p class="font-display text-xl font-semibold text-ink-900">47</p>
+        </div>
+        <div class="rounded-xl bg-amber/15 p-3">
+          <p class="text-[9px] uppercase text-ink-700 font-semibold">Ore rec.</p>
+          <p class="font-display text-xl font-semibold text-ink-900">19</p>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        {[
+          { initials: "AR", name: "Anna R.", role: "Senior Recruiter", score: 96 },
+          { initials: "MD", name: "Marco D.", role: "Sales Rep", score: 91 },
+          { initials: "SB", name: "Sara B.", role: "Project Manager", score: 88 },
+        ].map((c) => (
+          <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-ink-50 transition-colors">
+            <span class="w-8 h-8 rounded-full bg-gradient-to-br from-violet-700 to-violet-500 text-white text-[10px] font-semibold flex items-center justify-center">{c.initials}</span>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-semibold text-ink-900 leading-tight">{c.name}</p>
+              <p class="text-[10px] text-ink-500 leading-tight">{c.role}</p>
+            </div>
+            <span class="px-1.5 py-0.5 rounded-md bg-violet-50 text-violet-700 text-[10px] font-semibold">{c.score}%</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating bubble: agent message -->
+  <div class="absolute z-20 hidden md:block top-[8%] left-[-2%] float-slow" style="animation-duration: 17s">
+    <div class="rounded-2xl bg-ink-900 shadow-xl p-4 max-w-[220px]">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-6 h-6 rounded-full bg-gradient-to-br from-violet-500 to-violet-300"></span>
+        <span class="text-[10px] font-semibold text-white/60 uppercase tracking-wider">Agente</span>
+      </div>
+      <p class="text-[12px] text-white leading-relaxed">Ho contattato 23 candidati. 8 hanno risposto positivamente. Aggiorno l'ATS?</p>
+    </div>
+  </div>
+
+  <!-- Floating bubble: small stat -->
+  <div class="absolute z-20 hidden md:block bottom-[10%] right-[-2%] float-slower" style="animation-duration: 20s">
+    <div class="rounded-2xl bg-white shadow-xl p-4 border border-violet-100 max-w-[180px]">
+      <p class="text-[10px] uppercase tracking-wider text-violet-700 font-semibold mb-1">Risparmio settimanale</p>
+      <p class="font-display text-2xl font-semibold text-ink-900 leading-none">19 h</p>
+      <p class="text-[10px] text-ink-500 mt-1">per recruiter</p>
+    </div>
+  </div>
+</div>

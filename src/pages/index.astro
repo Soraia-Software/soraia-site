@@ -1,16 +1,16 @@
 ---
 import Layout from "~/layouts/Layout.astro";
-import AnnouncementBar from "~/components/AnnouncementBar.astro";
 import SectionHeader from "~/components/SectionHeader.astro";
-import MetricsBar from "~/components/MetricsBar.astro";
-import ProcessCard from "~/components/ProcessCard.astro";
 import ProofBar from "~/components/ProofBar.astro";
-import CaseStudyCard from "~/components/CaseStudyCard.astro";
-import SectorsGrid from "~/components/SectorsGrid.astro";
-import TrustGrid from "~/components/TrustGrid.astro";
+import ServiceFeature from "~/components/ServiceFeature.astro";
+import TestimonialCard from "~/components/TestimonialCard.astro";
+import TeamMemberCard from "~/components/TeamMemberCard.astro";
+import WorldMap from "~/components/WorldMap.astro";
+import CTABanner from "~/components/CTABanner.astro";
+import HeroVisual from "~/components/HeroVisual.astro";
+import FAQ from "~/components/FAQ.astro";
 import PartnersStrip from "~/components/PartnersStrip.astro";
-import AskAISection from "~/components/AskAISection.astro";
-import CheckIcon from "~/components/CheckIcon.astro";
+import AvatarCircle from "~/components/AvatarCircle.astro";
 import LeadForm from "~/components/LeadForm.tsx";
 
 const title = "Soraia — Portiamo gli Agenti IA nelle PMI Italiane";
@@ -30,17 +30,8 @@ const jsonLd = {
     addressLocality: "Biella",
     addressCountry: "IT",
   },
-  sameAs: [
-    "https://www.linkedin.com/company/soraia-io",
-  ],
+  sameAs: ["https://www.linkedin.com/company/soraia-io"],
 };
-
-const metrics = [
-  { value: "30+", label: "Clienti tra Italia, Spagna, UK, USA", detail: "Recruitment, accounting, marketing, real estate, govtech" },
-  { value: "4", label: "Settimane dall'assessment al primo agente live", detail: "Non 12 mesi di roadmap" },
-  { value: "€360k", label: "Risparmio annuo per APraise", detail: "Recruitment internazionale, agenti su screening + outreach" },
-  { value: "750h", label: "Ore liberate ogni anno per KB&B", detail: "Marketing agency, agenti su content e publishing" },
-];
 
 const homeLogos = [
   { name: "APraise", src: "/logos/clients/apraise.webp" },
@@ -58,385 +49,378 @@ const homeLogos = [
   { name: "French Riviera Househunting", src: "/logos/clients/frh.webp" },
 ];
 
-const processSteps = [
-  {
-    number: "01",
-    title: "Assessment — 2.000€",
-    description:
-      "1–2 settimane. Mappiamo i processi reali, definiamo la baseline misurabile, identifichiamo dove gli agenti producono ore liberate entro 4 settimane. Esce un report concreto con perimetro e numeri.",
-    icon: "compass" as const,
-  },
-  {
-    number: "02",
-    title: "Build sprint — 4 settimane",
-    description:
-      "Costruiamo gli agenti, li integriamo nei tuoi sistemi (ATS, ERP, CRM, gestionali), li portiamo in produzione. Settimana 4: stanno già lavorando. 10–50k€ a seconda di quanti processi copri.",
-    icon: "match" as const,
-  },
-  {
-    number: "03",
-    title: "Adozione e scala — 30 giorni di affiancamento",
-    description:
-      "Training del tuo team, misurazione delle ore recuperate sulla baseline, refinement degli agenti. Se vuoi, estendiamo a nuovi processi. Codice tuo dalla prima settimana.",
-    icon: "outreach" as const,
-  },
-];
-
-const cases = [
-  {
-    client: "APraise",
-    industry: "Recruitment internazionale",
-    metric: "€360k",
-    metricLabel: "Risparmio annuo",
-    description:
-      "19 giorni-uomo recuperati ogni settimana. Agenti IA su screening CV, contatto candidati e qualifica. Zero nuove assunzioni.",
-  },
-  {
-    client: "Numeraria",
-    industry: "Studio commercialisti · Piemonte",
-    metric: "€32k",
-    metricLabel: "Risparmio mensile",
-    description:
-      "Agenti IA su onboarding clienti, riconciliazioni e preparazione documenti standard. +25% di produttività sul team commercialisti.",
-  },
-  {
-    client: "KB&B",
-    industry: "Marketing agency · Kids brands",
-    metric: "750h",
-    metricLabel: "Liberate ogni anno",
-    description:
-      "Workflow IA per content creation e publishing social. Il team creativo torna a fare creatività, non operativa ripetitiva.",
-  },
-  {
-    client: "Startup GovTech",
-    industry: "Piattaforma per ministeri · Svizzera",
-    metric: "2h+",
-    metricLabel: "Recuperate ogni giorno",
-    description:
-      "Agenti IA su tracking elezioni, gestione reciprocità diplomatiche, automazione workflow. Compliance gov-grade end-to-end.",
-  },
-];
-
-const sectors = [
-  {
-    name: "Recruitment & Staffing",
-    description: "Agenzie e APL — screening, outreach, matching, scheduling, BD.",
-    href: "/recruitment",
-    available: true,
-    icon: "users" as const,
-  },
-  {
-    name: "Studi professionali",
-    description: "Commercialisti, avvocati, consulenti — onboarding, riconciliazioni, doc prep.",
-    available: false,
-    icon: "briefcase" as const,
-  },
-  {
-    name: "Marketing & Content",
-    description: "Agenzie e team interni — creazione, qualifica, publishing, reporting.",
-    available: false,
-    icon: "chart" as const,
-  },
-  {
-    name: "Real Estate & Immobiliare",
-    description: "Agenzie luxury e tradizionali — qualifica lead, CRM intelligence, follow-up.",
-    available: false,
-    icon: "home" as const,
-  },
-  {
-    name: "Green Tech & Energy",
-    description: "MVP, validazione modelli, automazione back-office su piattaforme green.",
-    available: false,
-    icon: "leaf" as const,
-  },
-  {
-    name: "Eventi & Tradeshow",
-    description: "Cattura, qualifica, attivazione e analisi ROI dei lead da fiere.",
-    available: false,
-    icon: "calendar" as const,
-  },
-  {
-    name: "Healthcare & Pharma",
-    description: "Cliniche, distributori — CRM, automazione amministrativa, intake paziente.",
-    available: false,
-    icon: "heart" as const,
-  },
-  {
-    name: "GovTech & Compliance",
-    description: "Sistemi gov-grade — audit log, retention, conformità AI Act + GDPR.",
-    available: false,
-    icon: "shield" as const,
-  },
-];
-
-const trustItems = [
-  {
-    title: "Conformità GDPR",
-    description:
-      "Processi, integrazioni e agenti progettati in conformità con il GDPR. Niente training su dati tuoi, niente trasferimenti extra-UE non autorizzati.",
-    icon: "shield" as const,
-  },
-  {
-    title: "Conformità AI Act",
-    description:
-      "Allineamento al Regolamento europeo sull'IA. Classificazione del rischio per ogni agente, documentazione tecnica, supervisione umana sui processi critici.",
-    icon: "scale" as const,
-  },
-  {
-    title: "Dati in Europa",
-    description:
-      "Infrastruttura cloud europea per default (Cloudflare, AWS Frankfurt). Hosting dedicato e on-premise disponibili per settori regolamentati.",
-    icon: "globe" as const,
-  },
-  {
-    title: "Log e audit trail",
-    description:
-      "Ogni decisione e azione degli agenti è tracciata. Log completi, replay del ragionamento, audit pronto per ispezioni interne e regolatori.",
-    icon: "eye" as const,
-  },
-  {
-    title: "DPO esterno",
-    description:
-      "Lavoriamo con Data Protection Officer esterni per governance sui dati. Valutazioni d'impatto (DPIA) quando il caso d'uso lo richiede.",
-    icon: "user-shield" as const,
-  },
-  {
-    title: "Codice tuo, no lock-in",
-    description:
-      "Il codice degli agenti è tuo dalla prima settimana. Documentazione completa, training per internalizzare. Niente licenze mensili perpetue.",
-    icon: "lock" as const,
-  },
-];
-
 const partners = [
-  { name: "Anthropic", src: "/logos/tools/anthropic.webp", category: "Modelli IA" },
-  { name: "OpenAI", src: "/logos/tools/openai.svg", category: "Modelli IA" },
-  { name: "Mistral", src: "/logos/tools/mistral.webp", category: "Modelli IA" },
-  { name: "Google Cloud", src: "/logos/tools/google.webp", category: "Infra · IA" },
-  { name: "Make", src: "/logos/tools/make.webp", category: "Workflow" },
-  { name: "n8n", src: "/logos/tools/n8n.webp", category: "Workflow" },
-  { name: "Xano", src: "/logos/tools/xano.webp", category: "Backend" },
-  { name: "WeWeb", src: "/logos/tools/weweb.svg", category: "Frontend" },
-  { name: "Cloudflare", src: "/logos/tools/cloudflare.svg", category: "Infra" },
+  { name: "Anthropic", src: "/logos/tools/anthropic.webp" },
+  { name: "OpenAI", src: "/logos/tools/openai.svg" },
+  { name: "Mistral", src: "/logos/tools/mistral.webp" },
+  { name: "Google Cloud", src: "/logos/tools/google.webp" },
+  { name: "Make", src: "/logos/tools/make.webp" },
+  { name: "n8n", src: "/logos/tools/n8n.webp" },
+  { name: "Xano", src: "/logos/tools/xano.webp" },
+  { name: "WeWeb", src: "/logos/tools/weweb.svg" },
+  { name: "Cloudflare", src: "/logos/tools/cloudflare.svg" },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Soraia ha portato i nostri recruiter dal 60% di tempo su attività amministrative al 60% sul valore — closing e candidate experience. L'agente lavora, loro chiudono.",
+    name: "Jacopo Berti",
+    role: "CEO",
+    company: "APraise",
+  },
+  {
+    quote:
+      "Ci siamo trovati con €32.000 al mese di costi operativi recuperati. Non era nelle slide di una consulenza, era nei numeri di fine mese.",
+    name: "Massimo Cretier",
+    role: "Founder",
+    company: "Numeraria",
+  },
+  {
+    quote:
+      "In 4 settimane gli agenti erano live. Non abbiamo dovuto formare nessuno: il team ha smesso di fare quel lavoro, ha iniziato a fare cose nuove.",
+    name: "Stefano Cantamessa",
+    role: "Co-Founder",
+    company: "Aegis Group",
+  },
+  {
+    quote:
+      "Hanno costruito su misura, hanno spiegato cosa stavano facendo, ci hanno passato il codice. Nessuna sensazione di dipendenza dal fornitore.",
+    name: "Maximilien Brungs",
+    role: "CEO",
+    company: "KB&B Family Marketing",
+  },
+];
+
+const team = [
+  { name: "Daniel Levis", role: "Co-Founder & CEO", flag: "🇮🇹" },
+  { name: "Davide Silvestri", role: "Co-Founder & CTO", flag: "🇮🇹" },
+  { name: "Eleonora Cogo", role: "Project Manager", flag: "🇮🇹" },
+  { name: "Narella Petrocco", role: "Project Manager + QA", flag: "🇮🇹" },
+  { name: "Veronica Pisana", role: "Linkly Lead", flag: "🇮🇹" },
+  { name: "Martina Rochstein", role: "Senior Developer", flag: "🇩🇪" },
+  { name: "Mohamed Mejri", role: "Senior Developer", flag: "🇹🇳" },
+  { name: "Lorenzo Barbaglia", role: "Senior Developer", flag: "🇮🇹" },
+  { name: "Bilel Abdelmoula", role: "Senior Developer", flag: "🇹🇳" },
+  { name: "Sebastian Geido", role: "Senior Developer", flag: "🇦🇷" },
+  { name: "Guillaume", role: "Mobile Developer", flag: "🇫🇷" },
+  { name: "Andrea Aschei", role: "Mobile Developer", flag: "🇮🇹" },
+];
+
+const worldDots = [
+  { x: 50, y: 32, label: "Italia" },
+  { x: 47, y: 36, label: "Francia" },
+  { x: 46, y: 31, label: "UK" },
+  { x: 45, y: 38, label: "Spagna" },
+  { x: 20, y: 36, label: "USA" },
+  { x: 28, y: 78, label: "Argentina" },
+  { x: 53, y: 62, label: "Tunisia" },
+  { x: 47, y: 28, label: "Germania" },
+];
+
+const faqs = [
+  {
+    q: "Cosa significa esattamente \"agente IA\"?",
+    a: "Un agente IA è un software che esegue compiti in autonomia: legge dati, prende decisioni e agisce sui tuoi sistemi (ATS, CRM, gestionale). Non è ChatGPT che ti suggerisce risposte. È un lavoratore digitale che fa il lavoro al posto del tuo team, sui processi che voi scegliete.",
+  },
+  {
+    q: "Quanto tempo serve per vedere risultati?",
+    a: "4 settimane dal go al primo agente in produzione. La settimana 1 facciamo discovery e misuriamo la baseline. Settimane 2 e 3 costruiamo. Settimana 4 deploy, training del team e prima misurazione. <strong>30 giorni di affiancamento inclusi</strong> dopo il go-live.",
+  },
+  {
+    q: "Quanto costa?",
+    a: "<strong>Assessment 2.000€</strong> (rimborsato se procedi con lo sprint). <strong>Sprint di build 10–50k€</strong> a seconda di quanti processi copri. Garanzia: se gli agenti non recuperano le ore promesse, lavoriamo gratis finché non succede — o rimborsiamo.",
+  },
+  {
+    q: "Come gestite GDPR, AI Act e dati sensibili?",
+    a: "Agenti in ambiente cloud europeo o on-premise sulla tua infrastruttura. <strong>Nessun training sui tuoi dati</strong>. Log completi di ogni decisione, DPO esterno per le valutazioni d'impatto, allineamento al Regolamento europeo IA.",
+  },
+  {
+    q: "Si integra con i sistemi che già usiamo?",
+    a: "Sì. Lavoriamo con Bullhorn, Salesforce, Bee-Staffing, In-Recruiting, Odoo, Fatture in Cloud, HubSpot, Pipedrive, gestionali italiani legacy. Se hai uno strumento custom, lo validiamo in assessment.",
+  },
+  {
+    q: "Cosa succede se voglio internalizzare dopo?",
+    a: "<strong>Il codice è tuo dalla prima settimana.</strong> Documentazione completa, training del tuo team se vuoi gestire in autonomia. Niente abbonamenti perpetui, niente lock-in.",
+  },
+  {
+    q: "Lavorate solo in Italia?",
+    a: "Siamo basati a Biella, ma serviamo clienti in Italia, Spagna, UK, Francia, USA, Argentina e Canada. Il team parla italiano, inglese, francese e spagnolo nativamente.",
+  },
+  {
+    q: "E se non funziona?",
+    a: "<strong>Non paghi.</strong> Misuriamo le ore recuperate sulla baseline definita insieme in assessment. Se gli agenti non raggiungono il target, continuiamo gratis finché ci arrivano — oppure ti rimborsiamo lo sprint. Nessun cavillo contrattuale.",
+  },
 ];
 ---
 
 <Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
-  <AnnouncementBar
-    text="Se non funziona, non paghi. Garanzia inclusa in ogni sprint Soraia."
-    ctaText="Come funziona"
-    ctaHref="#garanzia"
-  />
-
   <!-- ============================================================
-       HERO — Editorial premium
+       1. HERO DEEP PURPLE
        ============================================================ -->
-  <section class="bg-violet-radial relative overflow-hidden">
-    <!-- Floating orbs -->
-    <div class="orb orb-violet w-[600px] h-[600px] -right-48 -top-24 float-slow opacity-60" aria-hidden="true"></div>
-    <div class="orb orb-lilac w-[500px] h-[500px] -left-40 top-1/2 float-slower opacity-70" aria-hidden="true"></div>
-    <div class="orb orb-amber w-[300px] h-[300px] right-1/3 bottom-0 float-slow opacity-40" aria-hidden="true" style="animation-delay: -7s"></div>
+  <section class="relative overflow-hidden bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700">
+    <!-- Background decoration -->
+    <div class="orb orb-violet w-[600px] h-[600px] -top-32 -right-20 opacity-50 float-slow" aria-hidden="true"></div>
+    <div class="orb orb-lilac w-[500px] h-[500px] -bottom-32 -left-20 opacity-40 float-slower" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(244,184,66,0.10),transparent_55%)]"></div>
 
-    <div class="container-soraia pt-20 pb-24 md:pt-28 md:pb-36 lg:pt-36 lg:pb-44 relative z-10">
-      <div class="max-w-[1100px]">
-        <p class="eyebrow mb-8 fade-up">
-          AI Agency · PMI italiane
-        </p>
-
-        <h1 class="font-display text-[3.25rem] sm:text-[4.75rem] md:text-[6rem] lg:text-[7.75rem] font-semibold tracking-[-0.045em] leading-[0.94] text-ink-900 fade-up fade-up-delay-1 text-balance">
-          Portiamo gli <em class="not-italic text-gradient-violet">Agenti IA</em> nelle PMI Italiane.
-        </h1>
-
-        <div class="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-x-12 gap-y-10 items-end">
-          <p class="lg:col-span-7 text-[18px] md:text-[20px] text-ink-700 leading-[1.55] max-w-2xl fade-up fade-up-delay-2 text-pretty">
-            Non software che il tuo team deve imparare a usare. <strong class="text-ink-900">Agenti IA che eseguono i tuoi processi.</strong> Misuriamo il tempo recuperato &mdash; se non funziona, non paghi.
+    <div class="container-soraia pt-14 md:pt-20 pb-16 md:pb-24 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center min-h-[60vh]">
+        <!-- Left: copy -->
+        <div class="lg:col-span-6 text-white">
+          <p class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-semibold uppercase tracking-[0.14em] text-violet-100 mb-7 fade-up">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber animate-pulse"></span>
+            AI Agency · Italia
           </p>
 
-          <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 fade-up fade-up-delay-3 lg:justify-end">
-            <a href="#contact" class="btn btn-primary">
-              Prenota un assessment
+          <h1 class="font-display text-[2.75rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.25rem] font-semibold tracking-[-0.035em] leading-[0.98] text-balance fade-up fade-up-delay-1">
+            Portiamo gli <em class="not-italic text-amber">Agenti&nbsp;IA</em> nelle PMI Italiane.
+          </h1>
+
+          <p class="mt-7 text-[18px] md:text-[20px] text-violet-100/85 leading-[1.5] max-w-xl fade-up fade-up-delay-2 text-pretty">
+            Non software che il tuo team deve imparare a usare. <strong class="text-white">Agenti IA che eseguono i tuoi processi.</strong> Misuriamo il tempo recuperato — se non funziona, non paghi.
+          </p>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+            <a href="#contact" class="btn !bg-white !text-violet-900 hover:!bg-amber hover:!text-ink-900">
+              Call gratuita con il CEO
               <span class="btn-arrow">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M13 5l7 7-7 7"/>
-                </svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
               </span>
             </a>
-            <a href="#servizi" class="btn btn-secondary">
-              Come funziona
+            <a href="#servizi" class="btn !bg-transparent !text-white !border-white/25 hover:!bg-white/10">
+              Cosa facciamo
             </a>
+          </div>
+
+          <div class="mt-12 flex items-center gap-4 fade-up fade-up-delay-4">
+            <div class="flex -space-x-2">
+              <AvatarCircle name="DL" size="sm" variant="lilac" />
+              <AvatarCircle name="DS" size="sm" variant="violet" />
+              <AvatarCircle name="EC" size="sm" variant="lilac" />
+              <AvatarCircle name="MR" size="sm" variant="ink" />
+            </div>
+            <p class="text-sm text-violet-100/70 leading-snug">
+              <strong class="text-white">30+ clienti</strong> tra Italia, Spagna, UK, USA<br/>
+              <span class="text-violet-200/60">Live media 4 settimane · GDPR + AI Act</span>
+            </p>
           </div>
         </div>
 
-        <div class="mt-16 md:mt-20 hairline fade-up fade-up-delay-4"></div>
+        <!-- Right: visual -->
+        <div class="lg:col-span-6 fade-up fade-up-delay-2">
+          <HeroVisual />
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-y-4 gap-x-10 text-[13px] fade-up fade-up-delay-4">
-          <div class="flex items-baseline gap-3">
-            <span class="font-display text-[28px] font-semibold text-gradient-violet leading-none">30+</span>
-            <span class="text-ink-600">clienti in IT, ES, UK, USA</span>
+  <!-- ============================================================
+       2. TRUSTED BY — proof bar
+       ============================================================ -->
+  <ProofBar label="Si fidano di noi" logos={homeLogos} />
+
+  <!-- ============================================================
+       3. CEO INTRO
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="eyebrow mb-6 mx-auto reveal">Il nostro approccio</p>
+        <h2 class="font-display text-[2.5rem] md:text-[4rem] font-semibold tracking-tight leading-[1.02] text-ink-900 text-balance reveal">
+          Velocità senza compromessi sulla qualità.
+        </h2>
+        <p class="mt-7 text-[17px] md:text-[19px] text-ink-600 leading-relaxed max-w-3xl mx-auto text-pretty reveal reveal-delay-1">
+          Lavoriamo a sprint settimanali, costruiamo agenti che producono ROI dalla settimana 4, ti consegniamo codice tuo e documentato. Niente trasformazioni a 12 mesi, niente shelfware, niente dipendenza dal fornitore.
+        </p>
+
+        <!-- CEO card -->
+        <div class="mt-12 inline-flex flex-col items-center gap-5 reveal reveal-delay-2">
+          <div class="relative">
+            <AvatarCircle name="Daniel Levis" size="xl" variant="violet" />
+            <span class="absolute -bottom-1.5 -right-1.5 w-8 h-8 rounded-full bg-white border-2 border-ink-50 flex items-center justify-center text-base">🇮🇹</span>
           </div>
-          <div class="flex items-baseline gap-3">
-            <span class="font-display text-[28px] font-semibold text-gradient-violet leading-none">4</span>
-            <span class="text-ink-600">settimane al primo agente live</span>
-          </div>
-          <div class="flex items-baseline gap-3">
-            <span class="font-display text-[28px] font-semibold text-gradient-violet leading-none">100%</span>
-            <span class="text-ink-600">conformità GDPR + AI Act</span>
+          <div>
+            <p class="font-display text-xl font-semibold text-ink-900">Daniel Levis</p>
+            <p class="text-sm text-ink-500 mt-0.5">Co-Founder & CEO · Biella, Italia</p>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Scroll indicator -->
-    <a href="#servizi" class="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-ink-500 hover:text-ink-900 transition-colors group z-10" aria-label="Scroll">
-      <span class="text-[10px] uppercase tracking-[0.18em] font-semibold">Scorri</span>
-      <span class="w-[1px] h-10 bg-gradient-to-b from-ink-400 to-transparent group-hover:from-violet-600 transition-colors"></span>
-    </a>
   </section>
 
   <!-- ============================================================
-       METRICS
+       4. CTA BANNER — start with a free call
        ============================================================ -->
-  <section class="section bg-white">
-    <div class="container-soraia">
-      <SectionHeader
-        eyebrow="Risultati"
-        title="L'impatto reale sui nostri clienti"
-        subtitle="Numeri veri, non statistiche di marketing. Ogni metrica viene da un caso cliente che possiamo raccontarti in dettaglio."
-      />
-      <MetricsBar metrics={metrics} />
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PROOF BAR
-       ============================================================ -->
-  <ProofBar
-    label="Ci hanno già scelto"
-    logos={homeLogos}
+  <CTABanner
+    title="Inizia con una call gratuita con il nostro CEO."
+    description="20 minuti per capire se gli agenti IA hanno senso per il tuo business. Nessun impegno, nessun pitch commerciale: solo una conversazione operativa."
+    ctaText="Prenota la call"
+    ctaHref="#contact"
+    avatarName="Daniel Levis"
+    avatarRole="Co-Founder & CEO"
   />
 
   <!-- ============================================================
-       SERVIZI / COME FUNZIONA
+       5. SERVIZI — feature tabs
        ============================================================ -->
   <section id="servizi" class="section bg-ink-50">
     <div class="container-soraia">
       <SectionHeader
-        eyebrow="Come funziona"
-        title="Dall'assessment all'agente in produzione in 6 settimane"
-        subtitle="Un percorso lineare con prezzi definiti, garanzia inclusa e nessun lock-in. Non vendiamo trasformazione. Vendiamo ore liberate."
+        eyebrow="Cosa facciamo"
+        title="Agenti IA, custom software, automazioni."
+        subtitle="Tre modi per portare l'intelligenza artificiale dentro la tua operatività. Iniziamo sempre dall'assessment, poi scegliamo l'approccio giusto per il tuo caso."
+        align="center"
       />
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {processSteps.map((s) => (
-          <ProcessCard {...s} />
+      <div class="space-y-24 md:space-y-32">
+        <ServiceFeature
+          eyebrow="01 · Agenti IA"
+          title="Agenti che eseguono i tuoi processi end-to-end."
+          description="Screening, qualifica, outreach, scheduling, riconciliazioni, moderazione. L'agente legge, decide, agisce sui tuoi sistemi. I tuoi recruiter / commerciali / contabili tornano a fare il lavoro a valore."
+          variant="dashboard"
+          bullets={[
+            { badge: "Live in 4 settimane.", text: "Assessment + sprint di build con prezzo definito." },
+            { badge: "Lavora sui tuoi sistemi.", text: "Si integra con ATS, CRM, ERP e gestionali italiani." },
+            { badge: "Garanzia ore recuperate.", text: "Se non funziona, non paghi. Rimborso o lavoriamo gratis." },
+          ]}
+          ctaText="Approfondisci"
+          ctaHref="/recruitment"
+        />
+
+        <ServiceFeature
+          eyebrow="02 · Custom Software con IA"
+          title="App, dashboard e workflow su misura — alimentati da agenti."
+          description="Costruiamo prodotti software completi quando l'agente da solo non basta: ATS interi, CRM custom, sistemi di intake clienti, dashboard intelligenti per il management. Architettura nostra, codice tuo."
+          variant="code"
+          reverse
+          bullets={[
+            { badge: "Web app + mobile native.", text: "Stack moderno (Next, Astro, Flutter), zero lock-in." },
+            { badge: "AI integrata nel flusso.", text: "Non un chatbot bolt-on: AI come motore dei processi." },
+            { badge: "Owned codebase.", text: "Repository tuo, documentazione tua, scelta di internalizzare quando vuoi." },
+          ]}
+        />
+
+        <ServiceFeature
+          eyebrow="03 · Mobile + Web App"
+          title="Esperienze native che i tuoi clienti vogliono usare."
+          description="Per i prodotti consumer e B2B abbiamo costruito app native iOS/Android e progressive web app. KB&B con StoryWonder, Linkly per gli eventi B2B, Diplotools per i ministeri."
+          variant="phone"
+          bullets={[
+            { badge: "iOS e Android nativi.", text: "Flutter e React Native, performance e UX premium." },
+            { badge: "Progressive Web App.", text: "Quando non serve un app store, un'esperienza web va meglio." },
+            { badge: "Backend scalabile.", text: "Xano, Supabase, Cloudflare Workers — pagamento solo per quello che usi." },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. TESTIMONIALS GRID
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Cosa dicono di noi"
+        title="Non prendere solo la nostra parola."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {testimonials.map((t) => (
+          <TestimonialCard {...t} />
         ))}
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       CASE STUDY
+       7. CTA "Give us a shot"
        ============================================================ -->
-  <section id="cases" class="section bg-white">
-    <div class="container-soraia">
-      <SectionHeader
-        eyebrow="Casi studio"
-        title="Storie di agenti che lavorano davvero"
-        subtitle="Cosa abbiamo costruito per agenzie di recruitment, studi professionali, marketing e tech in produzione."
-      />
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {cases.map((c) => (
-          <CaseStudyCard {...c} />
-        ))}
-      </div>
-
-      <p class="mt-10 text-center text-ink-600">
-        Altri clienti: <strong class="text-ink-900">Aegis Group</strong>, <strong class="text-ink-900">Talent Match</strong>, <strong class="text-ink-900">OggiLavoro</strong>, <strong class="text-ink-900">Winter Immobilier</strong>, <strong class="text-ink-900">French Riviera Househunting</strong>, <strong class="text-ink-900">Rainplan</strong>, <strong class="text-ink-900">CXL</strong>, <strong class="text-ink-900">Stars Be Original</strong>.
-      </p>
-    </div>
-  </section>
+  <CTABanner
+    title="Dacci una possibilità."
+    description="Un'ora di call con il CEO, zero pitch commerciale. Se non ti convince, ti abbiamo solo rubato 60 minuti."
+    ctaText="Prenota la call"
+    ctaHref="#contact"
+    avatarName="Daniel Levis"
+    avatarRole="Co-Founder & CEO"
+  />
 
   <!-- ============================================================
-       SETTORI
+       8. GLOBAL REACH + STATS
        ============================================================ -->
-  <section id="settori" class="section bg-ink-50">
+  <section class="section bg-ink-50">
     <div class="container-soraia">
       <SectionHeader
-        eyebrow="Settori"
-        title="Lavoriamo in tutti i settori, con focus sui processi ripetitivi a basso valore"
-        subtitle="Iniziamo dal Recruitment perché abbiamo cinque casi solidi. Per gli altri settori abbiamo già lavorato — le pagine dedicate arrivano nelle prossime settimane."
+        eyebrow="Reach globale"
+        title="Reach globale, impatto locale."
+        subtitle="Siamo basati a Biella, in Piemonte. Ma lavoriamo con clienti in mezza Europa, Nord e Sud America."
+        align="center"
       />
-      <SectorsGrid sectors={sectors} />
-    </div>
-  </section>
 
-  <!-- ============================================================
-       GARANZIA — editorial dark
-       ============================================================ -->
-  <section id="garanzia" class="section bg-ink-900 relative overflow-hidden">
-    <div class="orb orb-violet w-[700px] h-[700px] -top-32 -right-32 opacity-50 float-slow" aria-hidden="true"></div>
-    <div class="orb orb-amber w-[400px] h-[400px] -bottom-20 left-1/4 opacity-30 float-slower" aria-hidden="true"></div>
+      <WorldMap dots={worldDots} />
 
-    <div class="container-soraia relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-end">
-        <div class="lg:col-span-8 reveal">
-          <p class="eyebrow eyebrow-light mb-8">La nostra garanzia</p>
-
-          <h2 class="font-display text-[3rem] sm:text-[4rem] md:text-[5.5rem] font-semibold tracking-[-0.04em] leading-[0.95] text-white text-balance">
-            <span class="text-gradient-violet">5–8 ore</span> a settimana per persona.
-            <span class="block text-white/40 font-light">Recuperate in 4 settimane. O rimborso.</span>
-          </h2>
-
-          <p class="mt-10 text-[18px] md:text-[20px] text-white/70 leading-relaxed max-w-2xl text-pretty">
-            Le misuriamo sulla baseline definita insieme in assessment. Se non ci arriviamo, lavoriamo gratis finché non succede &mdash; oppure ti rimborsiamo lo sprint.
-          </p>
+      <!-- Stats bar -->
+      <div class="mt-20 grid grid-cols-3 gap-px bg-ink-200 rounded-3xl overflow-hidden max-w-4xl mx-auto reveal">
+        <div class="bg-white p-8 md:p-10 text-center">
+          <p class="font-display text-[3rem] md:text-[4rem] font-semibold tracking-tight leading-none text-gradient-violet">30+</p>
+          <p class="mt-3 text-sm font-medium text-ink-900">Clienti felici</p>
         </div>
-
-        <ul class="lg:col-span-4 space-y-5 reveal reveal-delay-2">
-          <li class="flex items-start gap-4 text-white/90 pb-5 border-b border-white/10">
-            <span class="font-display text-2xl font-semibold text-violet-300 leading-none">01</span>
-            <span class="text-[15px] leading-relaxed">Baseline misurata <strong class="text-white">insieme</strong>, perimetro chiaro</span>
-          </li>
-          <li class="flex items-start gap-4 text-white/90 pb-5 border-b border-white/10">
-            <span class="font-display text-2xl font-semibold text-violet-300 leading-none">02</span>
-            <span class="text-[15px] leading-relaxed">30 giorni di affiancamento <strong class="text-white">inclusi</strong> dopo il deploy</span>
-          </li>
-          <li class="flex items-start gap-4 text-white/90 pb-5 border-b border-white/10">
-            <span class="font-display text-2xl font-semibold text-violet-300 leading-none">03</span>
-            <span class="text-[15px] leading-relaxed">Se le ore non si vedono, <strong class="text-white">rimborsiamo</strong></span>
-          </li>
-          <li class="flex items-start gap-4 text-white/90">
-            <span class="font-display text-2xl font-semibold text-violet-300 leading-none">04</span>
-            <span class="text-[15px] leading-relaxed">Niente lock-in, niente abbonamenti perpetui</span>
-          </li>
-        </ul>
+        <div class="bg-white p-8 md:p-10 text-center">
+          <p class="font-display text-[3rem] md:text-[4rem] font-semibold tracking-tight leading-none text-gradient-violet">50+</p>
+          <p class="mt-3 text-sm font-medium text-ink-900">Progetti completati</p>
+        </div>
+        <div class="bg-white p-8 md:p-10 text-center">
+          <p class="font-display text-[3rem] md:text-[4rem] font-semibold tracking-tight leading-none text-gradient-violet">8</p>
+          <p class="mt-3 text-sm font-medium text-ink-900">Paesi serviti</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       TRUST & SECURITY
+       9. FEATURED TESTIMONIAL
        ============================================================ -->
-  <section class="section bg-violet-50/30">
+  <section class="section bg-white">
     <div class="container-soraia">
-      <SectionHeader
-        eyebrow="Sicurezza e conformità"
-        title="La protezione dei dati è un vincolo di progetto, non un'opzione"
-        subtitle="Operiamo in settori regolamentati &mdash; recruitment, govtech, finance, healthcare. Ogni agente è progettato per stare dentro le regole, oggi e quando le regole cambieranno."
-      />
-      <TrustGrid items={trustItems} />
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center reveal">
+          <div class="md:col-span-4 flex justify-center md:justify-start">
+            <div class="relative">
+              <AvatarCircle name="Annamaria Russo" size="xl" variant="violet" />
+              <div class="absolute -inset-3 rounded-full border border-violet-200 -z-10"></div>
+              <div class="absolute -inset-6 rounded-full border border-violet-100 -z-10"></div>
+            </div>
+          </div>
+          <div class="md:col-span-8">
+            <div class="flex gap-1 mb-5 text-amber">
+              {[1,2,3,4,5].map(() => (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
+            <p class="font-display text-[1.5rem] md:text-[2rem] font-semibold text-ink-900 leading-[1.2] text-balance">
+              "Avevamo un sistema in cui i nostri operatori passavano metà del tempo a smistare richieste. Oggi un agente IA le qualifica al primo contatto, riassume, decide a chi assegnarle. Il team fa il salto di qualità che cercavamo."
+            </p>
+            <p class="mt-6 font-semibold text-ink-900">Annamaria Russo</p>
+            <p class="text-sm text-ink-500 mt-0.5">Operations Lead · Pro Tier</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ============================================================
-       PARTNERS
+       10. TECH STACK
        ============================================================ -->
-  <section class="section bg-white border-y border-ink-200">
+  <section class="section bg-ink-50 border-y border-ink-200">
     <div class="container-soraia">
       <SectionHeader
-        eyebrow="Stack tecnologico"
-        title="Costruiamo sui modelli e sulle piattaforme migliori del mondo IA"
+        eyebrow="Tech stack"
+        title="Potente, scalabile, sicuro, conforme."
+        subtitle="Lavoriamo con i modelli e le piattaforme migliori del mondo IA. Stack europeo dove serve, vendor-neutral per default."
         align="center"
       />
       <PartnersStrip partners={partners} />
@@ -444,38 +428,81 @@ const partners = [
   </section>
 
   <!-- ============================================================
-       FORM / PARLIAMONE
+       11. SECOND FEATURED TESTIMONIAL
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center reveal">
+          <div class="md:col-span-8 md:order-2">
+            <p class="font-display text-[1.5rem] md:text-[2rem] font-semibold text-ink-900 leading-[1.2] text-balance">
+              "Il mio sogno per quest'anno è diventato realtà: siamo felici di avere voi dalla nostra parte e questo è il tipo di prodotto che vogliamo costruire nelle nostre mani."
+            </p>
+            <p class="mt-6 font-semibold text-ink-900">Rolf Kowalewski</p>
+            <p class="text-sm text-ink-500 mt-0.5">CEO & Founder · KB&B Family Marketing</p>
+          </div>
+          <div class="md:col-span-4 md:order-1 flex justify-center md:justify-start">
+            <div class="relative">
+              <AvatarCircle name="Rolf Kowalewski" size="xl" variant="lilac" />
+              <div class="absolute -inset-3 rounded-full border border-violet-200 -z-10"></div>
+              <div class="absolute -inset-6 rounded-full border border-violet-100 -z-10"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       12. TEAM GRID
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Il team"
+        title="Le persone con cui lavorerai."
+        subtitle="Un team distribuito tra Italia, Tunisia, Germania, Francia e Argentina. Italiano, inglese, francese e spagnolo nativi."
+        align="center"
+      />
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {team.map((m) => (
+          <TeamMemberCard {...m} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       13. CONTACT FORM
        ============================================================ -->
   <section id="contact" class="section bg-violet-mesh">
     <div class="container-soraia">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         <div class="lg:col-span-5 lg:sticky lg:top-32">
-          <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-violet-200 text-violet-700 text-xs font-semibold uppercase tracking-[0.14em] mb-6">
-            <span class="w-1.5 h-1.5 rounded-full bg-violet-600"></span>
-            Parliamone
-          </p>
-          <h2 class="text-h1 md:text-display-3 font-bold tracking-tight text-ink-900 leading-[1.1]">
-            Pronto a vedere<br />quanto puoi recuperare?
+          <p class="eyebrow mb-6">Parliamone</p>
+          <h2 class="font-display text-[2.5rem] md:text-[3.5rem] font-semibold tracking-tight text-ink-900 leading-[1.05] text-balance">
+            Pronto a vedere<br/>cosa puoi recuperare?
           </h2>
-          <p class="mt-5 text-body-lg text-ink-700 leading-relaxed">
+          <p class="mt-5 text-[18px] text-ink-700 leading-relaxed text-pretty">
             Raccontaci la tua realtà operativa. Ti rispondiamo entro 24 ore con una proposta di assessment concreta, perimetrata sul tuo settore.
           </p>
-          <ul class="mt-8 space-y-4">
-            <li class="flex items-start gap-3">
-              <CheckIcon variant="violet" />
-              <span class="text-ink-700"><strong class="text-ink-900">Assessment 2.000€</strong>, rimborsato se procedi</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <CheckIcon variant="violet" />
-              <span class="text-ink-700">Risposta entro <strong class="text-ink-900">24 ore</strong></span>
-            </li>
-            <li class="flex items-start gap-3">
-              <CheckIcon variant="violet" />
-              <span class="text-ink-700">Nessun impegno a procedere</span>
-            </li>
+          <ul class="mt-8 space-y-3.5">
+            {[
+              "Assessment 2.000€, rimborsato se procedi",
+              "Risposta entro 24 ore",
+              "Nessun impegno a procedere",
+              "Se non funziona, non paghi",
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-600 items-center justify-center">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                <span class="text-[15px] text-ink-700">{item}</span>
+              </li>
+            ))}
           </ul>
         </div>
-
         <div class="lg:col-span-7">
           <LeadForm client:load lang="it" source="home" />
         </div>
@@ -484,7 +511,16 @@ const partners = [
   </section>
 
   <!-- ============================================================
-       ASK AI (GEO)
+       14. FAQ
        ============================================================ -->
-  <AskAISection lang="it" />
+  <section class="section bg-white">
+    <div class="container-soraia max-w-4xl">
+      <SectionHeader
+        eyebrow="Domande frequenti"
+        title="Quello che ci chiedono di solito."
+        align="center"
+      />
+      <FAQ items={faqs} />
+    </div>
+  </section>
 </Layout>

@@ -1,0 +1,59 @@
+---
+interface Dot {
+  x: number;  // percent left
+  y: number;  // percent top
+  label: string;
+}
+
+interface Props {
+  dots: Dot[];
+}
+
+const { dots } = Astro.props;
+---
+
+<div class="relative w-full max-w-3xl mx-auto">
+  <!-- Stylized world map silhouette using radial dots pattern -->
+  <svg viewBox="0 0 800 400" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <pattern id="dotPattern" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1" fill="#D5D3CD"/>
+      </pattern>
+      <mask id="mapMask">
+        <!-- Approximate continent shapes (simplified) -->
+        <rect width="800" height="400" fill="black"/>
+        <!-- North America -->
+        <ellipse cx="160" cy="130" rx="100" ry="60" fill="white"/>
+        <ellipse cx="180" cy="200" rx="50" ry="50" fill="white"/>
+        <!-- South America -->
+        <ellipse cx="240" cy="290" rx="40" ry="70" fill="white"/>
+        <!-- Europe -->
+        <ellipse cx="410" cy="120" rx="60" ry="40" fill="white"/>
+        <!-- Africa -->
+        <ellipse cx="430" cy="240" rx="60" ry="80" fill="white"/>
+        <!-- Asia -->
+        <ellipse cx="570" cy="140" rx="120" ry="60" fill="white"/>
+        <ellipse cx="620" cy="200" rx="50" ry="40" fill="white"/>
+        <!-- Oceania -->
+        <ellipse cx="660" cy="320" rx="50" ry="30" fill="white"/>
+      </mask>
+    </defs>
+    <rect width="800" height="400" fill="url(#dotPattern)" mask="url(#mapMask)"/>
+  </svg>
+
+  <!-- Animated dots for active markets -->
+  {dots.map((dot, i) => (
+    <div
+      class="absolute"
+      style={`left: ${dot.x}%; top: ${dot.y}%; transform: translate(-50%, -50%); animation-delay: ${i * 0.5}s`}
+    >
+      <span class="relative flex w-3 h-3">
+        <span class="absolute inset-0 rounded-full bg-violet-600 opacity-75 animate-ping"></span>
+        <span class="relative inline-flex w-3 h-3 rounded-full bg-violet-700 shadow-violet"></span>
+      </span>
+      <span class="absolute left-1/2 -translate-x-1/2 -bottom-7 text-[11px] font-semibold text-ink-700 whitespace-nowrap">
+        {dot.label}
+      </span>
+    </div>
+  ))}
+</div>
