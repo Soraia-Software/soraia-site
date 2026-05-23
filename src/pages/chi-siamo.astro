@@ -41,14 +41,16 @@ const founders = [
     role: "Co-Founder & CEO",
     photo: "/team/daniel-levis.avif",
     bio: "Più di 10 anni tra IT e management consulting. Daniel guida la parte commerciale, change management e adoption sui 40+ progetti consegnati. Convinto che il valore dell'AI per una PMI dipenda al 70% da come la introduci nel team, non da quale modello scegli.",
-    badges: ["Bocconi", "ESCP", "Accenture", "REPLY"],
+    education: ["Politecnico di Torino", "ESCP"],
+    companies: ["Reply", "Accenture", "Alten", "Satispay"],
   },
   {
     name: "Davide Silvestri",
     role: "Co-Founder & CTO",
     photo: "/team/davide-silvestri.avif",
     bio: "Più di 10 anni in technical project management, technical leadership e backend architecture. Davide guida lo stack tecnico Soraia: garantisce qualità del codice, performance degli agenti, scalabilità delle soluzioni. Owner architetturale dei progetti più complessi del portfolio.",
-    badges: ["Bocconi", "ESCP", "Amazon", "Satispay"],
+    education: ["Politecnico di Torino", "ESCP"],
+    companies: ["Simon-Kucher", "Amazon", "Dott", "Satispay"],
   },
 ];
 
@@ -104,8 +106,8 @@ const faqs = [
     a: "Cresciamo principalmente tramite referral interno. Se hai esperienza in AI engineering, change management o customer-facing consulting, scrivici a <a href='mailto:hello@soraia.io' style='color: var(--color-brand); text-decoration: underline;'>hello@soraia.io</a> con un breve profilo. Rispondiamo sempre, anche solo per dire no.",
   },
   {
-    q: "Dove avete sede?",
-    a: "<strong>Sede legale a Biella</strong> (Via Losana 13, 13900 Biella). Operativamente siamo full-remote: niente uffici corporate, niente costi gonfiati che finiscono nel prezzo dei progetti. Ci incontriamo dal vivo per kickoff strategici e workshop di adoption quando il cliente lo chiede.",
+    q: "Dove avete sede e come lavorate?",
+    a: "<strong>Sede legale a Biella</strong> (Via Losana 13, 13900 Biella). Delivery <strong>100% remote</strong>: niente uffici corporate, niente costi gonfiati nel preventivo. Ma per le fasi che richiedono il contatto umano — <strong>AI Readiness Assessment</strong> (2 giorni onsite per analizzare i processi sul campo) e <strong>AI Adoption workshop</strong> (sempre in sede cliente) — ci muoviamo noi. Il change management non si fa da Zoom.",
   },
 ];
 ---
@@ -217,11 +219,25 @@ const faqs = [
               </div>
             </div>
             <p class="text-[15px] leading-relaxed text-pretty flex-1" style="color: var(--color-ink-muted);">{f.bio}</p>
-            <div class="mt-7 pt-6 border-t border-line flex flex-wrap items-center gap-x-5 gap-y-2">
-              <p class="text-[10px] font-medium tracking-[0.14em] uppercase" style="color: var(--color-ink-soft);">Background</p>
-              {f.badges.map((b) => (
-                <span class="text-[12px] font-medium" style="color: var(--color-ink);">{b}</span>
-              ))}
+            <div class="mt-7 pt-6 border-t border-line space-y-3">
+              <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <p class="text-[10px] font-medium tracking-[0.14em] uppercase w-[78px] flex-shrink-0" style="color: var(--color-ink-soft);">Education</p>
+                {f.education.map((e, i) => (
+                  <>
+                    {i > 0 && <span class="text-[11px]" style="color: var(--color-ink-soft);">·</span>}
+                    <span class="text-[13px] font-medium" style="color: var(--color-ink);">{e}</span>
+                  </>
+                ))}
+              </div>
+              <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <p class="text-[10px] font-medium tracking-[0.14em] uppercase w-[78px] flex-shrink-0" style="color: var(--color-ink-soft);">Experience</p>
+                {f.companies.map((c, i) => (
+                  <>
+                    {i > 0 && <span class="text-[11px]" style="color: var(--color-ink-soft);">·</span>}
+                    <span class="text-[13px] font-medium" style="color: var(--color-ink);">{c}</span>
+                  </>
+                ))}
+              </div>
             </div>
           </article>
         ))}
@@ -241,26 +257,62 @@ const faqs = [
         align="center"
       />
 
-      <div class="max-w-5xl mx-auto space-y-1">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 max-w-6xl mx-auto">
         {team.map((m) => (
-          <article class="grid grid-cols-[80px_1fr_auto] md:grid-cols-[100px_1fr_auto] items-center gap-5 md:gap-7 py-5 border-b border-line">
-            <img src={m.photo} alt={m.name} loading="lazy" width="100" height="100" class="w-20 h-20 md:w-24 md:h-24 rounded-2xl object-cover" />
-            <div>
-              <h3 style="font-size: 1.125rem; line-height: 1.2; letter-spacing: -0.015em; font-weight: 500; color: var(--color-ink);">{m.name}</h3>
-              <p class="mt-1 text-[14px]" style="color: var(--color-brand);">{m.role}</p>
-              <p class="mt-1 text-[13px]" style="color: var(--color-ink-soft);">{m.tag}</p>
+          <article class="group">
+            <div class="aspect-square overflow-hidden rounded-xl mb-4" style="background: var(--color-ink-50);">
+              <img src={m.photo} alt={m.name} loading="lazy" width="220" height="220" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
             </div>
-            <div class="hidden md:flex items-center gap-2 text-[11px] font-medium tracking-[0.14em] uppercase" style="color: var(--color-ink-soft);">
-              <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
-              <span>Remote</span>
-            </div>
+            <h3 style="font-size: 0.9375rem; line-height: 1.25; letter-spacing: -0.01em; font-weight: 500; color: var(--color-ink);">{m.name}</h3>
+            <p class="mt-1 text-[12.5px]" style="color: var(--color-brand);">{m.role}</p>
+            <p class="mt-0.5 text-[12px] leading-snug" style="color: var(--color-ink-soft);">{m.tag}</p>
           </article>
         ))}
       </div>
 
-      <p class="text-center mt-12 text-[14px]" style="color: var(--color-ink-muted);">
+      <p class="text-center mt-14 text-[14px]" style="color: var(--color-ink-muted);">
         Stiamo crescendo. Posizioni aperte? Scrivici a <a href="mailto:hello@soraia.io" class="underline underline-offset-4" style="color: var(--color-brand);">hello@soraia.io</a>
       </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MODALITÀ DI LAVORO
+       ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Come lavoriamo"
+        title="Full-remote operativo. In sede quando il valore lo richiede."
+        subtitle="La delivery quotidiana è 100% remote: niente uffici corporate, niente costi gonfiati che finiscono nel preventivo. Quando serve incontrarsi dal vivo, ci muoviamo noi."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+        <article class="card-editorial !p-8 md:!p-9">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-6" style="background: var(--color-brand-soft); color: var(--color-brand);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="text-balance" style="font-size: 1.25rem; line-height: 1.25; letter-spacing: -0.02em; font-weight: 500; color: var(--color-ink);">
+            Delivery 100% remote
+          </h3>
+          <p class="mt-3 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+            Build, deploy, hypercare e supporto post-go-live li gestiamo da remoto. Strumenti pensati per la collaborazione asincrona, niente call inutili. Team distribuito tra Italia, Argentina e Algeria, fuso orario coperto su giornata lavorativa europea.
+          </p>
+        </article>
+
+        <article class="card-editorial !p-8 md:!p-9">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-6" style="background: var(--color-brand-soft); color: var(--color-brand);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="text-balance" style="font-size: 1.25rem; line-height: 1.25; letter-spacing: -0.02em; font-weight: 500; color: var(--color-ink);">
+            In sede quando conta
+          </h3>
+          <p class="mt-3 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+            <strong style="color: var(--color-ink); font-weight: 500;">AI Readiness Assessment</strong>: 2 giorni onsite per analizzare i processi sul campo, non per schermo condiviso. <strong style="color: var(--color-ink); font-weight: 500;">AI Adoption workshop</strong>: sempre in sede cliente, mai da remoto, perché il change management si fa guardando le persone negli occhi.
+          </p>
+        </article>
+      </div>
     </div>
   </section>
 
