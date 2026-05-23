@@ -270,6 +270,14 @@
     var(--color-bg);
 }
 
+/* Premium dark hero — near-black with violet undertones (Linear/Vercel style) */
+.bg-hero-dark {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 0%, rgba(159, 26, 177, 0.30) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 90% 80%, rgba(74, 22, 86, 0.45) 0%, transparent 50%),
+    linear-gradient(135deg, #0A0810 0%, #1A0D24 40%, #2D0E36 100%);
+}
+
 /* =============================================================
    BUTTONS — Linkly-style, small radius, no gradient hover
    ============================================================= */
