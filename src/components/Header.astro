@@ -32,9 +32,13 @@ const otherHref = otherLang === "en"
   <div class="container-soraia">
     <nav class="flex items-center justify-between h-16 md:h-[72px]" aria-label="Main">
       <a href={homeHref} class="flex items-center gap-2.5 group" aria-label="Soraia home">
-        <span class="relative inline-block w-7 h-7 rounded-lg bg-gradient-to-br from-violet-700 to-violet-500 shadow-violet overflow-hidden">
-          <span class="absolute inset-0 bg-gradient-to-br from-violet-600 to-violet-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-        </span>
+        <img
+          src="/logos/soraia-mark.svg"
+          alt=""
+          width="32"
+          height="32"
+          class="w-8 h-8 transition-transform duration-300 group-hover:scale-105"
+        />
         <span class="font-display text-[1.125rem] font-semibold tracking-tight">Soraia</span>
       </a>
 

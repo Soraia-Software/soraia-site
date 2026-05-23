@@ -13,16 +13,16 @@ import AskAISection from "~/components/AskAISection.astro";
 import CheckIcon from "~/components/CheckIcon.astro";
 import LeadForm from "~/components/LeadForm.tsx";
 
-const title = "Soraia — Agenti IA che fanno il lavoro. In 4 settimane.";
+const title = "Soraia — Portiamo gli Agenti IA nelle PMI Italiane";
 const description =
-  "Costruiamo agenti IA su misura per le tue operazioni: screening, qualifica, riconciliazioni, contenuti, moderazione. Live in 4 settimane. Garanzia ore recuperate o rimborso.";
+  "Non software che il tuo team deve imparare a usare. Agenti IA che eseguono i tuoi processi. Misuriamo il tempo recuperato, se non funziona, non paghi.";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Soraia",
   url: "https://www.soraia.io",
-  logo: "https://www.soraia.io/og/soraia-logo.png",
+  logo: "https://www.soraia.io/logos/soraia-full.svg",
   description,
   email: "hello@soraia.io",
   address: {
@@ -219,7 +219,7 @@ const partners = [
 
 <Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
   <AnnouncementBar
-    text="Garanzia 'ore recuperate o rimborso' su ogni sprint Soraia."
+    text="Se non funziona, non paghi. Garanzia inclusa in ogni sprint Soraia."
     ctaText="Come funziona"
     ctaHref="#garanzia"
   />
@@ -236,17 +236,16 @@ const partners = [
     <div class="container-soraia pt-20 pb-24 md:pt-28 md:pb-36 lg:pt-36 lg:pb-44 relative z-10">
       <div class="max-w-[1100px]">
         <p class="eyebrow mb-8 fade-up">
-          Agenti IA · Live in 4 settimane
+          AI Agency · PMI italiane
         </p>
 
-        <h1 class="font-display text-[3.5rem] sm:text-[5rem] md:text-[6.5rem] lg:text-[8.5rem] font-semibold tracking-[-0.045em] leading-[0.92] text-ink-900 fade-up fade-up-delay-1 text-balance">
-          Agenti IA che <em class="not-italic text-gradient-violet">fanno il lavoro</em>.
-          <span class="block text-ink-400 font-light">Non software che lo aspetta.</span>
+        <h1 class="font-display text-[3.25rem] sm:text-[4.75rem] md:text-[6rem] lg:text-[7.75rem] font-semibold tracking-[-0.045em] leading-[0.94] text-ink-900 fade-up fade-up-delay-1 text-balance">
+          Portiamo gli <em class="not-italic text-gradient-violet">Agenti IA</em> nelle PMI Italiane.
         </h1>
 
         <div class="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-x-12 gap-y-10 items-end">
           <p class="lg:col-span-7 text-[18px] md:text-[20px] text-ink-700 leading-[1.55] max-w-2xl fade-up fade-up-delay-2 text-pretty">
-            Costruiamo agenti IA su misura per i tuoi processi &mdash; recruitment, contabilità, marketing, immobiliare, govtech, eventi. <strong class="text-ink-900">Live in 4 settimane.</strong> Se non recuperi le ore promesse, ti rimborsiamo.
+            Non software che il tuo team deve imparare a usare. <strong class="text-ink-900">Agenti IA che eseguono i tuoi processi.</strong> Misuriamo il tempo recuperato &mdash; se non funziona, non paghi.
           </p>
 
           <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 fade-up fade-up-delay-3 lg:justify-end">
