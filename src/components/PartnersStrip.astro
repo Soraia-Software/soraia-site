@@ -1,0 +1,27 @@
+---
+interface Partner {
+  name: string;
+  category?: string;
+}
+
+interface Props {
+  partners: Partner[];
+}
+
+const { partners } = Astro.props;
+---
+
+<div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
+  {partners.map((p) => (
+    <div class="flex flex-col items-center px-4 py-3 rounded-xl hover:bg-white transition-colors">
+      <span class="text-base md:text-lg font-bold tracking-tight text-ink-700 hover:text-violet-700 transition-colors">
+        {p.name}
+      </span>
+      {p.category && (
+        <span class="text-[10px] uppercase tracking-[0.14em] text-ink-500 mt-0.5">
+          {p.category}
+        </span>
+      )}
+    </div>
+  ))}
+</div>

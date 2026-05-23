@@ -1,40 +1,472 @@
 ---
 import Layout from "~/layouts/Layout.astro";
+import AnnouncementBar from "~/components/AnnouncementBar.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import MetricsBar from "~/components/MetricsBar.astro";
+import ProcessCard from "~/components/ProcessCard.astro";
+import ProofBar from "~/components/ProofBar.astro";
+import CaseStudyCard from "~/components/CaseStudyCard.astro";
+import SectorsGrid from "~/components/SectorsGrid.astro";
+import TrustGrid from "~/components/TrustGrid.astro";
+import PartnersStrip from "~/components/PartnersStrip.astro";
+import AskAISection from "~/components/AskAISection.astro";
+import CheckIcon from "~/components/CheckIcon.astro";
+import LeadForm from "~/components/LeadForm.tsx";
 
-const title = "Soraia — Agenti IA su misura per le tue operazioni";
+const title = "Soraia — Agenti IA che fanno il lavoro. In 4 settimane.";
 const description =
-  "Costruiamo agenti IA che eseguono i tuoi processi end-to-end. Live in 4 settimane. Se non recuperi ore, ti rimborsiamo.";
+  "Costruiamo agenti IA su misura per le tue operazioni: screening, qualifica, riconciliazioni, contenuti, moderazione. Live in 4 settimane. Garanzia ore recuperate o rimborso.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Soraia",
+  url: "https://www.soraia.io",
+  logo: "https://www.soraia.io/og/soraia-logo.png",
+  description,
+  email: "hello@soraia.io",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Biella",
+    addressCountry: "IT",
+  },
+  sameAs: [
+    "https://www.linkedin.com/company/soraia-io",
+  ],
+};
+
+const metrics = [
+  { value: "30+", label: "Clienti tra Italia, Spagna, UK, USA", detail: "Recruitment, accounting, marketing, real estate, govtech" },
+  { value: "4", label: "Settimane dall'assessment al primo agente live", detail: "Non 12 mesi di roadmap" },
+  { value: "€360k", label: "Risparmio annuo per APraise", detail: "Recruitment internazionale, agenti su screening + outreach" },
+  { value: "750h", label: "Ore liberate ogni anno per KB&B", detail: "Marketing agency, agenti su content e publishing" },
+];
+
+const homeLogos = [
+  { name: "APraise" },
+  { name: "OggiLavoro" },
+  { name: "Numeraria" },
+  { name: "KB&B" },
+  { name: "Rainplan" },
+  { name: "Aegis Group" },
+  { name: "Talent Match" },
+  { name: "Winter Immobilier" },
+  { name: "CXL" },
+  { name: "Stars Be Original" },
+];
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Assessment — 2.000€",
+    description:
+      "1–2 settimane. Mappiamo i processi reali, definiamo la baseline misurabile, identifichiamo dove gli agenti producono ore liberate entro 4 settimane. Esce un report concreto con perimetro e numeri.",
+    icon: "compass" as const,
+  },
+  {
+    number: "02",
+    title: "Build sprint — 4 settimane",
+    description:
+      "Costruiamo gli agenti, li integriamo nei tuoi sistemi (ATS, ERP, CRM, gestionali), li portiamo in produzione. Settimana 4: stanno già lavorando. 10–50k€ a seconda di quanti processi copri.",
+    icon: "match" as const,
+  },
+  {
+    number: "03",
+    title: "Adozione e scala — 30 giorni di affiancamento",
+    description:
+      "Training del tuo team, misurazione delle ore recuperate sulla baseline, refinement degli agenti. Se vuoi, estendiamo a nuovi processi. Codice tuo dalla prima settimana.",
+    icon: "outreach" as const,
+  },
+];
+
+const cases = [
+  {
+    client: "APraise",
+    industry: "Recruitment internazionale",
+    metric: "€360k",
+    metricLabel: "Risparmio annuo",
+    description:
+      "19 giorni-uomo recuperati ogni settimana. Agenti IA su screening CV, contatto candidati e qualifica. Zero nuove assunzioni.",
+  },
+  {
+    client: "Numeraria",
+    industry: "Studio commercialisti · Piemonte",
+    metric: "€32k",
+    metricLabel: "Risparmio mensile",
+    description:
+      "Agenti IA su onboarding clienti, riconciliazioni e preparazione documenti standard. +25% di produttività sul team commercialisti.",
+  },
+  {
+    client: "KB&B",
+    industry: "Marketing agency · Kids brands",
+    metric: "750h",
+    metricLabel: "Liberate ogni anno",
+    description:
+      "Workflow IA per content creation e publishing social. Il team creativo torna a fare creatività, non operativa ripetitiva.",
+  },
+  {
+    client: "Startup GovTech",
+    industry: "Piattaforma per ministeri · Svizzera",
+    metric: "2h+",
+    metricLabel: "Recuperate ogni giorno",
+    description:
+      "Agenti IA su tracking elezioni, gestione reciprocità diplomatiche, automazione workflow. Compliance gov-grade end-to-end.",
+  },
+];
+
+const sectors = [
+  {
+    name: "Recruitment & Staffing",
+    description: "Agenzie e APL — screening, outreach, matching, scheduling, BD.",
+    href: "/recruitment",
+    available: true,
+    icon: "users" as const,
+  },
+  {
+    name: "Studi professionali",
+    description: "Commercialisti, avvocati, consulenti — onboarding, riconciliazioni, doc prep.",
+    available: false,
+    icon: "briefcase" as const,
+  },
+  {
+    name: "Marketing & Content",
+    description: "Agenzie e team interni — creazione, qualifica, publishing, reporting.",
+    available: false,
+    icon: "chart" as const,
+  },
+  {
+    name: "Real Estate & Immobiliare",
+    description: "Agenzie luxury e tradizionali — qualifica lead, CRM intelligence, follow-up.",
+    available: false,
+    icon: "home" as const,
+  },
+  {
+    name: "Green Tech & Energy",
+    description: "MVP, validazione modelli, automazione back-office su piattaforme green.",
+    available: false,
+    icon: "leaf" as const,
+  },
+  {
+    name: "Eventi & Tradeshow",
+    description: "Cattura, qualifica, attivazione e analisi ROI dei lead da fiere.",
+    available: false,
+    icon: "calendar" as const,
+  },
+  {
+    name: "Healthcare & Pharma",
+    description: "Cliniche, distributori — CRM, automazione amministrativa, intake paziente.",
+    available: false,
+    icon: "heart" as const,
+  },
+  {
+    name: "GovTech & Compliance",
+    description: "Sistemi gov-grade — audit log, retention, conformità AI Act + GDPR.",
+    available: false,
+    icon: "shield" as const,
+  },
+];
+
+const trustItems = [
+  {
+    title: "Conformità GDPR",
+    description:
+      "Processi, integrazioni e agenti progettati in conformità con il GDPR. Niente training su dati tuoi, niente trasferimenti extra-UE non autorizzati.",
+    icon: "shield" as const,
+  },
+  {
+    title: "Conformità AI Act",
+    description:
+      "Allineamento al Regolamento europeo sull'IA. Classificazione del rischio per ogni agente, documentazione tecnica, supervisione umana sui processi critici.",
+    icon: "scale" as const,
+  },
+  {
+    title: "Dati in Europa",
+    description:
+      "Infrastruttura cloud europea per default (Cloudflare, AWS Frankfurt). Hosting dedicato e on-premise disponibili per settori regolamentati.",
+    icon: "globe" as const,
+  },
+  {
+    title: "Log e audit trail",
+    description:
+      "Ogni decisione e azione degli agenti è tracciata. Log completi, replay del ragionamento, audit pronto per ispezioni interne e regolatori.",
+    icon: "eye" as const,
+  },
+  {
+    title: "DPO esterno",
+    description:
+      "Lavoriamo con Data Protection Officer esterni per governance sui dati. Valutazioni d'impatto (DPIA) quando il caso d'uso lo richiede.",
+    icon: "user-shield" as const,
+  },
+  {
+    title: "Codice tuo, no lock-in",
+    description:
+      "Il codice degli agenti è tuo dalla prima settimana. Documentazione completa, training per internalizzare. Niente licenze mensili perpetue.",
+    icon: "lock" as const,
+  },
+];
+
+const partners = [
+  { name: "Anthropic", category: "Modelli IA" },
+  { name: "OpenAI", category: "Modelli IA" },
+  { name: "Google", category: "Workspace · IA" },
+  { name: "Make", category: "Workflow" },
+  { name: "n8n", category: "Workflow" },
+  { name: "Xano", category: "Backend" },
+  { name: "WeWeb", category: "Frontend" },
+  { name: "Cloudflare", category: "Infra" },
+];
 ---
 
-<Layout title={title} description={description} lang="it">
-  <section class="bg-violet-mesh min-h-[80vh] flex items-center">
-    <div class="container-soraia py-24">
-      <div class="max-w-3xl">
-        <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-violet-200 text-violet-700 text-xs font-semibold uppercase tracking-[0.14em] mb-7">
-          <span class="w-1.5 h-1.5 rounded-full bg-violet-600 animate-pulse"></span>
-          In arrivo
-        </p>
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+  <AnnouncementBar
+    text="Garanzia 'ore recuperate o rimborso' su ogni sprint Soraia."
+    ctaText="Come funziona"
+    ctaHref="#garanzia"
+  />
 
-        <h1 class="text-display-3 md:text-display-2 font-bold tracking-tight leading-[1.05]">
-          Agenti IA su misura per le tue operazioni.
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="bg-violet-radial relative overflow-hidden">
+    <div class="container-soraia pt-16 pb-20 md:pt-24 md:pb-32 relative">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-violet-200 shadow-xs mb-7 fade-up">
+          <span class="w-2 h-2 rounded-full bg-violet-600 animate-pulse"></span>
+          <span class="text-sm font-medium text-violet-900">Agenti IA su misura · Live in 4 settimane</span>
+        </div>
+
+        <h1 class="text-display-3 md:text-display-2 lg:text-display-1 font-bold tracking-[-0.02em] leading-[1.02] text-ink-900 fade-up fade-up-delay-1">
+          Agenti IA che <span class="text-gradient-violet">fanno il lavoro</span>.
+          <span class="block mt-2">Non software che lo aspetta.</span>
         </h1>
 
-        <p class="mt-7 text-body-lg md:text-xl text-ink-700 leading-relaxed max-w-2xl">
-          Stiamo finalizzando la nuova versione del sito. Per ora, abbiamo già pronta la pagina per le agenzie di recruitment.
+        <p class="mt-7 text-body-lg md:text-xl text-ink-700 leading-relaxed max-w-2xl fade-up fade-up-delay-2">
+          Costruiamo agenti IA su misura per i tuoi processi &mdash; recruitment, contabilità, marketing, immobiliare, govtech, eventi. <strong class="text-ink-900">Live in 4 settimane.</strong> Se non recuperi le ore promesse, ti rimborsiamo.
         </p>
 
-        <div class="mt-10 flex flex-col sm:flex-row gap-4">
-          <a href="/recruitment" class="btn btn-primary text-base">
-            Soluzioni per il recruitment
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 fade-up fade-up-delay-3">
+          <a href="#contact" class="btn btn-primary text-base">
+            Prenota un assessment
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M13 5l7 7-7 7"/>
             </svg>
           </a>
-          <a href="mailto:hello@soraia.io" class="btn btn-secondary text-base">
-            Scrivici a hello@soraia.io
+          <a href="#servizi" class="btn btn-secondary text-base">
+            Scopri come funziona
           </a>
+        </div>
+
+        <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink-600 fade-up fade-up-delay-4">
+          <div class="inline-flex items-center gap-2">
+            <CheckIcon variant="violet" /> 30+ clienti tra Italia, Spagna, UK, USA
+          </div>
+          <div class="inline-flex items-center gap-2">
+            <CheckIcon variant="violet" /> Conformità GDPR e AI Act
+          </div>
+          <div class="inline-flex items-center gap-2">
+            <CheckIcon variant="violet" /> Codice tuo, no lock-in
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute -right-40 top-1/3 w-[480px] h-[480px] rounded-full bg-violet-200/40 blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-32 bottom-0 w-80 h-80 rounded-full bg-violet-100/60 blur-3xl pointer-events-none"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       METRICS
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Risultati"
+        title="L'impatto reale sui nostri clienti"
+        subtitle="Numeri veri, non statistiche di marketing. Ogni metrica viene da un caso cliente che possiamo raccontarti in dettaglio."
+      />
+      <MetricsBar metrics={metrics} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROOF BAR
+       ============================================================ -->
+  <ProofBar
+    label="Ci hanno già scelto"
+    logos={homeLogos}
+  />
+
+  <!-- ============================================================
+       SERVIZI / COME FUNZIONA
+       ============================================================ -->
+  <section id="servizi" class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Come funziona"
+        title="Dall'assessment all'agente in produzione in 6 settimane"
+        subtitle="Un percorso lineare con prezzi definiti, garanzia inclusa e nessun lock-in. Non vendiamo trasformazione. Vendiamo ore liberate."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {processSteps.map((s) => (
+          <ProcessCard {...s} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CASE STUDY
+       ============================================================ -->
+  <section id="cases" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Casi studio"
+        title="Storie di agenti che lavorano davvero"
+        subtitle="Cosa abbiamo costruito per agenzie di recruitment, studi professionali, marketing e tech in produzione."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {cases.map((c) => (
+          <CaseStudyCard {...c} />
+        ))}
+      </div>
+
+      <p class="mt-10 text-center text-ink-600">
+        Altri clienti: <strong class="text-ink-900">Aegis Group</strong>, <strong class="text-ink-900">Talent Match</strong>, <strong class="text-ink-900">OggiLavoro</strong>, <strong class="text-ink-900">Winter Immobilier</strong>, <strong class="text-ink-900">French Riviera Househunting</strong>, <strong class="text-ink-900">Rainplan</strong>, <strong class="text-ink-900">CXL</strong>, <strong class="text-ink-900">Stars Be Original</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SETTORI
+       ============================================================ -->
+  <section id="settori" class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Settori"
+        title="Lavoriamo in tutti i settori, con focus sui processi ripetitivi a basso valore"
+        subtitle="Iniziamo dal Recruitment perché abbiamo cinque casi solidi. Per gli altri settori abbiamo già lavorato — le pagine dedicate arrivano nelle prossime settimane."
+      />
+      <SectorsGrid sectors={sectors} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GARANZIA
+       ============================================================ -->
+  <section id="garanzia" class="section bg-white">
+    <div class="container-soraia">
+      <div class="card !p-10 md:!p-16 bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700 !border-0 relative overflow-hidden">
+        <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-violet-500/20 blur-3xl"></div>
+        <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-violet-400/15 blur-3xl"></div>
+
+        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber/20 border border-amber/30 mb-6">
+              <span class="text-xs font-bold uppercase tracking-[0.14em] text-amber">La nostra garanzia</span>
+            </div>
+            <h2 class="text-display-3 md:text-display-2 font-bold tracking-tight text-white leading-[1.1]">
+              5–8 ore a settimana <span class="text-amber">per persona</span>, recuperate entro 4 settimane.
+            </h2>
+            <p class="mt-6 text-body-lg text-white/85 leading-relaxed">
+              Le misuriamo sulla baseline definita insieme in assessment. Se non ci arriviamo, lavoriamo gratis finché non succede &mdash; oppure ti rimborsiamo lo sprint.
+            </p>
+          </div>
+
+          <ul class="lg:col-span-5 space-y-4">
+            <li class="flex items-start gap-3 text-white">
+              <CheckIcon variant="violet" />
+              <span>Baseline misurata <strong>insieme</strong>, perimetro chiaro, metodo condiviso</span>
+            </li>
+            <li class="flex items-start gap-3 text-white">
+              <CheckIcon variant="violet" />
+              <span>30 giorni di affiancamento <strong>inclusi</strong> dopo il deploy</span>
+            </li>
+            <li class="flex items-start gap-3 text-white">
+              <CheckIcon variant="violet" />
+              <span>Se le ore non si vedono, <strong>rimborsiamo</strong> &mdash; senza acrobazie contrattuali</span>
+            </li>
+            <li class="flex items-start gap-3 text-white">
+              <CheckIcon variant="violet" />
+              <span>Niente abbonamenti perpetui, niente dipendenza dal fornitore</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ============================================================
+       TRUST & SECURITY
+       ============================================================ -->
+  <section class="section bg-violet-50/30">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Sicurezza e conformità"
+        title="La protezione dei dati è un vincolo di progetto, non un'opzione"
+        subtitle="Operiamo in settori regolamentati &mdash; recruitment, govtech, finance, healthcare. Ogni agente è progettato per stare dentro le regole, oggi e quando le regole cambieranno."
+      />
+      <TrustGrid items={trustItems} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PARTNERS
+       ============================================================ -->
+  <section class="section bg-white border-y border-ink-200">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Stack tecnologico"
+        title="Costruiamo sui modelli e sulle piattaforme migliori del mondo IA"
+        align="center"
+      />
+      <PartnersStrip partners={partners} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FORM / PARLIAMONE
+       ============================================================ -->
+  <section id="contact" class="section bg-violet-mesh">
+    <div class="container-soraia">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="lg:col-span-5 lg:sticky lg:top-32">
+          <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-violet-200 text-violet-700 text-xs font-semibold uppercase tracking-[0.14em] mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-violet-600"></span>
+            Parliamone
+          </p>
+          <h2 class="text-h1 md:text-display-3 font-bold tracking-tight text-ink-900 leading-[1.1]">
+            Pronto a vedere<br />quanto puoi recuperare?
+          </h2>
+          <p class="mt-5 text-body-lg text-ink-700 leading-relaxed">
+            Raccontaci la tua realtà operativa. Ti rispondiamo entro 24 ore con una proposta di assessment concreta, perimetrata sul tuo settore.
+          </p>
+          <ul class="mt-8 space-y-4">
+            <li class="flex items-start gap-3">
+              <CheckIcon variant="violet" />
+              <span class="text-ink-700"><strong class="text-ink-900">Assessment 2.000€</strong>, rimborsato se procedi</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <CheckIcon variant="violet" />
+              <span class="text-ink-700">Risposta entro <strong class="text-ink-900">24 ore</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <CheckIcon variant="violet" />
+              <span class="text-ink-700">Nessun impegno a procedere</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7">
+          <LeadForm client:load lang="it" source="home" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ASK AI (GEO)
+       ============================================================ -->
+  <AskAISection lang="it" />
 </Layout>
