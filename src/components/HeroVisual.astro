@@ -1,48 +1,76 @@
 ---
-// Soraia Agent Feed — live activity stream cycling between 3 client contexts.
-// Linkly-inspired but with softer rounded corners, icons per agent type, violet palette.
+// Soraia Agent Feed — 5 industry tabs, click to switch workflow.
+// Auto-cycles on init, pauses on user interaction.
 
-const contexts = [
+const industries = [
   {
-    client: "APraise",
-    flag: "🇮🇹",
-    role: "Recruitment agency · Milano",
-    target: "Anna R. · Senior Recruiter",
+    id: "hr",
+    label: "Recruiting & HR",
+    flag: "👥",
+    role: "Per recruiter, HR ops, agenzie di selezione",
     events: [
-      { agent: "SCREENING",  icon: "doc",     text: "847 CV analizzati · fit ranking completato" },
-      { agent: "ENRICHMENT", icon: "search",  text: "+LinkedIn · +email · +stack profilo" },
-      { agent: "QUALIFY",    icon: "check",   text: "47 candidati shortlisted · score >88%" },
-      { agent: "OUTREACH",   icon: "mail",    text: "Primo touch inviato · personalizzato" },
-      { agent: "SCHEDULE",   icon: "calendar",text: "12 colloqui prenotati · slot ATS" },
-      { agent: "ANALYTICS",  icon: "chart",   text: "19 giorni-uomo recuperati questa settimana" },
+      { agent: "SCREENING",  icon: "doc",      text: "847 CV analizzati · fit ranking JD-driven" },
+      { agent: "ENRICHMENT", icon: "search",   text: "+LinkedIn · +email · +stack tecnico" },
+      { agent: "QUALIFY",    icon: "check",    text: "47 candidati shortlisted · score >88%" },
+      { agent: "OUTREACH",   icon: "mail",     text: "Primo touch personalizzato · multi-lingua" },
+      { agent: "SCHEDULE",   icon: "calendar", text: "12 colloqui prenotati · auto sync ATS" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "19 giorni-uomo recuperati questa settimana" },
     ],
   },
   {
-    client: "Numeraria",
-    flag: "🇮🇹",
-    role: "Studio commercialisti · Piemonte",
-    target: "Marco D. · Junior Accountant",
+    id: "finance",
+    label: "Finance & Accounting",
+    flag: "💼",
+    role: "Per studi commercialisti, CFO, finance ops",
     events: [
-      { agent: "INTAKE",     icon: "doc",     text: "32 fatture lette · OCR + estrazione dati" },
-      { agent: "VALIDATE",   icon: "check",   text: "IVA + codici verificati · anomalie segnalate" },
-      { agent: "RECONCILE",  icon: "search",  text: "Riconciliazione bancaria · 218 movimenti" },
-      { agent: "REPORT",     icon: "chart",   text: "F24 generato · pronto per revisione" },
-      { agent: "NOTIFY",     icon: "mail",    text: "Client portal aggiornato · 8 clienti notificati" },
-      { agent: "ANALYTICS",  icon: "chart",   text: "€32.000/mese costi operativi recuperati" },
+      { agent: "INTAKE",     icon: "doc",      text: "32 fatture lette · OCR + estrazione dati" },
+      { agent: "VALIDATE",   icon: "check",    text: "IVA + codici verificati · anomalie segnalate" },
+      { agent: "RECONCILE",  icon: "search",   text: "Riconciliazione bancaria · 218 movimenti" },
+      { agent: "REPORT",     icon: "chart",    text: "F24 generato · pronto per revisione" },
+      { agent: "NOTIFY",     icon: "mail",     text: "Client portal aggiornato · 8 clienti notificati" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "€32.000/mese costi operativi recuperati" },
     ],
   },
   {
-    client: "KB&B",
-    flag: "🇩🇪",
-    role: "Marketing agency · Family brands",
-    target: "Sara B. · Content Lead",
+    id: "vc",
+    label: "Venture Capital",
+    flag: "📈",
+    role: "Per fondi VC/PE, family office, M&A",
     events: [
-      { agent: "BRIEF",      icon: "doc",     text: "Brief letto · keyword + tone of voice" },
-      { agent: "DRAFT",      icon: "search",  text: "Articolo 1.200 parole generato · SEO ok" },
-      { agent: "VISUAL",     icon: "chart",   text: "Cover image creata · 4 varianti social" },
-      { agent: "PUBLISH",    icon: "calendar",text: "Programmato Instagram + LinkedIn · CMS sync" },
-      { agent: "TRACK",      icon: "check",   text: "Performance monitorate · alert engagement" },
-      { agent: "ANALYTICS",  icon: "chart",   text: "7 ore risparmiate per articolo pubblicato" },
+      { agent: "INTAKE",     icon: "doc",      text: "14 deck letti · sintesi 1-pager generata" },
+      { agent: "ENRICHMENT", icon: "search",   text: "+Crunchbase · +PitchBook · +founder LinkedIn" },
+      { agent: "SCORE",      icon: "check",    text: "Scoring multi-criterio · top-quartile flagged" },
+      { agent: "DD",         icon: "doc",      text: "Due diligence room organizzata · 32 docs" },
+      { agent: "MONITOR",    icon: "calendar", text: "Portfolio KPI tracker · alerts settati" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "8 ore senior team risparmiate per deal" },
+    ],
+  },
+  {
+    id: "support",
+    label: "Customer Support",
+    flag: "🎧",
+    role: "Per CS teams, customer ops, helpdesk",
+    events: [
+      { agent: "TRIAGE",     icon: "search",   text: "127 ticket classificati · priorità assegnata" },
+      { agent: "DRAFT",      icon: "doc",      text: "Risposte preparate · tone match brand voice" },
+      { agent: "ROUTE",      icon: "mail",     text: "Smistato a team specializzato · context passato" },
+      { agent: "ESCALATE",   icon: "check",    text: "3 casi critici flaggati a senior · SLA tracker" },
+      { agent: "TRACK",      icon: "chart",    text: "Sentiment + SLA monitor real-time" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "First response time ridotto del 70%" },
+    ],
+  },
+  {
+    id: "sales",
+    label: "Sales & Marketing",
+    flag: "🎯",
+    role: "Per sales teams, growth, marketing ops",
+    events: [
+      { agent: "PROSPECT",   icon: "search",   text: "240 lead identificati · ICP match score" },
+      { agent: "ENRICHMENT", icon: "doc",      text: "+contatti · +tech stack · +intent signals" },
+      { agent: "QUALIFY",    icon: "check",    text: "BANT score · pipeline-ready filter" },
+      { agent: "OUTREACH",   icon: "mail",     text: "Sequence multi-canale personalizzata" },
+      { agent: "TRACK",      icon: "calendar", text: "Engagement + reply tracking · auto follow-up" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "Pipeline qualificato +42% trimestre" },
     ],
   },
 ];
@@ -57,66 +85,86 @@ const icons: Record<string, string> = {
 };
 ---
 
-<div class="agent-feed-soraia" aria-hidden="true">
-  <!-- Header -->
-  <div class="afs-header">
-    <span class="afs-dot"></span>
-    <span class="afs-label">Soraia · agent activity</span>
-    <span class="afs-time" data-feed-clock>09:32:14</span>
-  </div>
+<div class="agent-feed-soraia" aria-label="Soraia agents — live workflow per industry">
 
-  <!-- Client context -->
-  <div class="afs-context">
-    <div class="afs-client-row">
-      <span class="afs-client" data-client-name>—</span>
-      <span class="afs-flag" data-client-flag>—</span>
-    </div>
-    <p class="afs-role" data-client-role>—</p>
-    <p class="afs-target">
-      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align: -1px; margin-right: 4px;"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0113 0"/></svg>
-      Per <strong data-client-target>—</strong>
-    </p>
-  </div>
-
-  <!-- Events stream -->
-  <ol class="afs-events">
-    {[0,1,2,3,4,5].map((i) => (
-      <li class="afs-event" data-slot={i}>
-        <span class="afs-event-icon">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-        </span>
-        <div class="afs-event-body">
-          <span class="afs-agent"></span>
-          <span class="afs-text"></span>
-        </div>
-        <span class="afs-event-check">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </span>
-      </li>
+  <!-- Industry tabs -->
+  <div class="afs-tabs" role="tablist" aria-label="Industries">
+    {industries.map((ind, i) => (
+      <button
+        type="button"
+        class={`afs-tab ${i === 0 ? "is-active" : ""}`}
+        data-tab={ind.id}
+        role="tab"
+        aria-selected={i === 0 ? "true" : "false"}
+      >
+        <span class="afs-tab-flag">{ind.flag}</span>
+        <span class="afs-tab-label">{ind.label}</span>
+      </button>
     ))}
-  </ol>
-
-  <!-- Footer progress -->
-  <div class="afs-footer">
-    <div class="afs-progress"><span class="afs-progress-fill" data-feed-progress></span></div>
-    <span class="afs-time" data-feed-total>00:24</span>
   </div>
+
+  <!-- Feed card -->
+  <div class="afs-card">
+    <!-- Header -->
+    <div class="afs-header">
+      <span class="afs-dot"></span>
+      <span class="afs-header-label">Soraia · agent activity</span>
+      <span class="afs-time" data-feed-clock>—</span>
+    </div>
+
+    <!-- Industry context -->
+    <div class="afs-context">
+      <div class="afs-industry-row">
+        <span class="afs-industry-flag" data-industry-flag>—</span>
+        <span class="afs-industry-name" data-industry-name>—</span>
+      </div>
+      <p class="afs-industry-role" data-industry-role>—</p>
+    </div>
+
+    <!-- Events stream -->
+    <ol class="afs-events">
+      {[0,1,2,3,4,5].map((i) => (
+        <li class="afs-event" data-slot={i}>
+          <span class="afs-event-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+          </span>
+          <div class="afs-event-body">
+            <span class="afs-agent"></span>
+            <span class="afs-text"></span>
+          </div>
+          <span class="afs-event-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+        </li>
+      ))}
+    </ol>
+
+    <!-- Footer progress -->
+    <div class="afs-footer">
+      <div class="afs-progress"><span class="afs-progress-fill" data-feed-progress></span></div>
+      <span class="afs-time-mono" data-feed-total>00:24</span>
+    </div>
+  </div>
+
 </div>
 
-<script is:inline define:vars={{ contexts, icons }}>
+<script is:inline define:vars={{ industries, icons }}>
   (function () {
     const root = document.currentScript.previousElementSibling;
     if (!root) return;
 
+    const tabs = root.querySelectorAll(".afs-tab");
     const slots = root.querySelectorAll(".afs-event");
     const clockEl = root.querySelector("[data-feed-clock]");
-    const nameEl = root.querySelector("[data-client-name]");
-    const flagEl = root.querySelector("[data-client-flag]");
-    const roleEl = root.querySelector("[data-client-role]");
-    const targetEl = root.querySelector("[data-client-target]");
+    const nameEl = root.querySelector("[data-industry-name]");
+    const flagEl = root.querySelector("[data-industry-flag]");
+    const roleEl = root.querySelector("[data-industry-role]");
     const progressEl = root.querySelector("[data-feed-progress]");
 
-    let idx = 0;
+    let activeId = industries[0].id;
+    let cycleTimeout = null;
+    let userInteracted = false;
+    let stepTimeouts = [];
 
     function pad(n) { return n < 10 ? "0" + n : "" + n; }
     function fmtTime(d) { return pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds()); }
@@ -132,47 +180,79 @@ const icons: Record<string, string> = {
       progressEl.style.transform = "scaleX(0)";
     }
 
-    function renderCtx() {
-      const c = contexts[idx];
-      const now = new Date();
-      nameEl.textContent = c.client;
-      flagEl.textContent = c.flag;
-      roleEl.textContent = c.role;
-      targetEl.textContent = c.target;
-      clockEl.textContent = fmtTime(now);
+    function clearTimeouts() {
+      stepTimeouts.forEach(clearTimeout);
+      stepTimeouts = [];
+      if (cycleTimeout) { clearTimeout(cycleTimeout); cycleTimeout = null; }
+    }
 
+    function setActive(id) {
+      tabs.forEach((t) => {
+        const isActive = t.dataset.tab === id;
+        t.classList.toggle("is-active", isActive);
+        t.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+      activeId = id;
+    }
+
+    function renderIndustry(id, autoNext = false) {
+      const ind = industries.find((i) => i.id === id);
+      if (!ind) return;
+
+      clearTimeouts();
       clearSlots();
+      setActive(id);
 
-      const STEP_MS = 1100;
+      nameEl.textContent = ind.label;
+      flagEl.textContent = ind.flag;
+      roleEl.textContent = ind.role;
+      clockEl.textContent = fmtTime(new Date());
 
-      c.events.forEach((ev, i) => {
-        setTimeout(() => {
+      const STEP_MS = 950;
+
+      ind.events.forEach((ev, i) => {
+        const t = setTimeout(() => {
           const slot = slots[i];
           slot.querySelector(".afs-agent").textContent = ev.agent;
           slot.querySelector(".afs-text").textContent = ev.text;
           const svg = slot.querySelector(".afs-event-icon svg");
           if (svg && icons[ev.icon]) svg.innerHTML = icons[ev.icon];
           slot.classList.add("is-visible");
-          progressEl.style.transform = "scaleX(" + ((i + 1) / c.events.length) + ")";
+          progressEl.style.transform = "scaleX(" + ((i + 1) / ind.events.length) + ")";
         }, i * STEP_MS);
+        stepTimeouts.push(t);
       });
 
-      const TOTAL_MS = STEP_MS * c.events.length;
-      setTimeout(() => {
-        idx = (idx + 1) % contexts.length;
-        renderCtx();
-      }, TOTAL_MS + 3200);
+      // Auto-cycle to next industry only if user hasn't clicked
+      if (autoNext && !userInteracted) {
+        const TOTAL_MS = STEP_MS * ind.events.length;
+        cycleTimeout = setTimeout(() => {
+          if (!userInteracted) {
+            const idx = industries.findIndex((i) => i.id === id);
+            const next = industries[(idx + 1) % industries.length];
+            renderIndustry(next.id, true);
+          }
+        }, TOTAL_MS + 3500);
+      }
     }
 
+    // Tab click handler
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        userInteracted = true;
+        renderIndustry(tab.dataset.tab, false);
+      });
+    });
+
+    // Init
     const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) {
-      const c = contexts[0];
-      nameEl.textContent = c.client;
-      flagEl.textContent = c.flag;
-      roleEl.textContent = c.role;
-      targetEl.textContent = c.target;
+      const ind = industries[0];
+      nameEl.textContent = ind.label;
+      flagEl.textContent = ind.flag;
+      roleEl.textContent = ind.role;
       progressEl.style.transform = "scaleX(1)";
-      c.events.forEach((ev, i) => {
+      ind.events.forEach((ev, i) => {
         const slot = slots[i];
         slot.querySelector(".afs-agent").textContent = ev.agent;
         slot.querySelector(".afs-text").textContent = ev.text;
@@ -186,7 +266,7 @@ const icons: Record<string, string> = {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          renderCtx();
+          renderIndustry(industries[0].id, true);
           io.disconnect();
         }
       });
@@ -197,24 +277,70 @@ const icons: Record<string, string> = {
 
 <style>
   .agent-feed-soraia {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Industry tabs */
+  .afs-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+  }
+
+  .afs-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.85rem;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    font-family: var(--font-sans);
+    line-height: 1;
+  }
+  .afs-tab:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .afs-tab.is-active {
+    background: white;
+    color: var(--color-violet-900);
+    border-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+  .afs-tab-flag {
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  /* Card */
+  .afs-card {
     background: #FFFFFF;
     border: 1px solid var(--color-line);
     border-radius: 1.5rem;
     overflow: hidden;
     box-shadow:
       0 1px 2px rgba(0, 0, 0, 0.04),
-      0 24px 60px -28px rgba(137, 45, 156, 0.25),
-      0 32px 80px -32px rgba(137, 45, 156, 0.15);
+      0 24px 60px -28px rgba(137, 45, 156, 0.30),
+      0 32px 80px -32px rgba(137, 45, 156, 0.18);
     font-size: 13px;
     line-height: 1.5;
-    width: 100%;
-    max-width: 520px;
-    margin: 0 auto;
   }
 
-  /* Header dark */
+  /* Header */
   .afs-header {
-    background: linear-gradient(135deg, #1A1A1A 0%, #2A1530 100%);
+    background: linear-gradient(135deg, #2D0E36 0%, #4A1656 100%);
     color: white;
     padding: 0.85rem 1.25rem;
     display: flex;
@@ -229,56 +355,47 @@ const icons: Record<string, string> = {
     background: #17B26A;
     box-shadow: 0 0 0 0 rgba(23, 178, 106, 0.55);
     animation: afsPulse 1.8s ease-out infinite;
+    flex-shrink: 0;
   }
-  .afs-label { text-transform: uppercase; flex: 1; opacity: 0.92; }
-  .afs-time { opacity: 0.6; font-variant-numeric: tabular-nums; }
+  .afs-header-label { text-transform: uppercase; flex: 1; opacity: 0.92; }
+  .afs-header .afs-time { opacity: 0.6; font-variant-numeric: tabular-nums; }
 
   @keyframes afsPulse {
     0%   { box-shadow: 0 0 0 0 rgba(23, 178, 106, 0.55); }
     100% { box-shadow: 0 0 0 10px rgba(23, 178, 106, 0); }
   }
 
-  /* Client context */
+  /* Industry context */
   .afs-context {
     padding: 1.1rem 1.25rem 1rem;
     border-bottom: 1px solid var(--color-line);
-    background: linear-gradient(180deg, #FDFCFB 0%, #FFFFFF 100%);
   }
-  .afs-client-row {
+  .afs-industry-row {
     display: flex; align-items: center; gap: 0.55rem;
-    font-size: 16px; font-weight: 500; color: var(--color-ink);
+    font-size: 17px; font-weight: 500; color: var(--color-ink);
   }
-  .afs-flag { font-size: 14px; line-height: 1; }
-  .afs-role {
-    margin-top: 0.2rem;
-    font-size: 12px;
+  .afs-industry-flag {
+    font-size: 18px;
+    line-height: 1;
+  }
+  .afs-industry-role {
+    margin-top: 0.3rem;
+    font-size: 12.5px;
     color: var(--color-ink-soft);
     line-height: 1.4;
   }
-  .afs-target {
-    margin-top: 0.5rem;
-    font-size: 11.5px;
-    color: var(--color-violet-700);
-    background: var(--color-violet-50);
-    padding: 0.3rem 0.6rem;
-    border-radius: 0.5rem;
-    display: inline-flex;
-    align-items: center;
-    font-weight: 500;
-  }
-  .afs-target strong { font-weight: 600; margin-left: 3px; }
 
-  /* Events stream */
+  /* Events */
   .afs-events {
     list-style: none;
-    padding: 0.5rem 0;
+    padding: 0.6rem 0;
     margin: 0;
-    min-height: 280px;
+    min-height: 290px;
   }
   .afs-event {
     display: grid;
-    grid-template-columns: 28px 1fr 18px;
-    gap: 0.75rem;
+    grid-template-columns: 30px 1fr 18px;
+    gap: 0.8rem;
     align-items: center;
     padding: 0.6rem 1.25rem;
     opacity: 0;
@@ -290,7 +407,7 @@ const icons: Record<string, string> = {
     transform: translateY(0);
   }
   .afs-event-icon {
-    width: 28px; height: 28px;
+    width: 30px; height: 30px;
     border-radius: 0.625rem;
     background: linear-gradient(135deg, #892D9C 0%, #9F1AB1 100%);
     color: white;
@@ -330,7 +447,7 @@ const icons: Record<string, string> = {
   /* Footer */
   .afs-footer {
     border-top: 1px solid var(--color-line);
-    background: #FDFCFB;
+    background: #FAFAF8;
     padding: 0.75rem 1.25rem;
     display: flex;
     align-items: center;
@@ -350,9 +467,9 @@ const icons: Record<string, string> = {
     background: linear-gradient(90deg, #892D9C 0%, #9F1AB1 100%);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 1.1s ease;
+    transition: transform 0.9s ease;
   }
-  .afs-footer .afs-time {
+  .afs-time-mono {
     font-family: var(--font-mono);
     font-size: 11px;
     color: var(--color-ink-soft);
@@ -361,8 +478,9 @@ const icons: Record<string, string> = {
 
   /* Mobile */
   @media (max-width: 480px) {
-    .agent-feed-soraia { border-radius: 1.25rem; }
-    .afs-event { grid-template-columns: 24px 1fr 16px; padding: 0.5rem 1rem; }
-    .afs-event-icon { width: 24px; height: 24px; }
+    .afs-card { border-radius: 1.25rem; }
+    .afs-event { grid-template-columns: 26px 1fr 16px; padding: 0.5rem 1rem; }
+    .afs-event-icon { width: 26px; height: 26px; }
+    .afs-tab { font-size: 11.5px; padding: 0.35rem 0.7rem; }
   }
 </style>

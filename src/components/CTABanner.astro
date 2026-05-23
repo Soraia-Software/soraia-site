@@ -16,36 +16,35 @@ const { title, description, ctaText, ctaHref, avatarName, avatarRole, avatarSrc 
 
 <section class="section">
   <div class="container-soraia">
-    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700 p-10 md:p-16">
-      <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-32 opacity-40 float-slow" aria-hidden="true"></div>
-      <div class="orb orb-amber w-[300px] h-[300px] -bottom-20 left-1/4 opacity-25 float-slower" aria-hidden="true"></div>
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700 p-8 md:p-12 lg:p-14">
+      <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-32 opacity-30 float-slow" aria-hidden="true"></div>
 
-      <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div class="lg:col-span-8 reveal">
-          <h2 class="text-[2rem] md:text-[3rem] lg:text-[3.5rem] font-semibold text-white tracking-tight leading-[1.05] text-balance">
+          <h2 style="color: #fff; font-size: clamp(1.625rem, 2.5vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 500;" class="text-balance">
             {title}
           </h2>
           {description && (
-            <p class="mt-5 text-[17px] md:text-[19px] text-white/75 leading-relaxed max-w-2xl text-pretty">
+            <p style="color: rgba(255,255,255,0.78);" class="mt-4 text-[16px] md:text-[17px] leading-relaxed max-w-2xl text-pretty">
               {description}
             </p>
           )}
         </div>
 
-        <div class="lg:col-span-4 flex flex-col items-start lg:items-end gap-5 reveal reveal-delay-2">
+        <div class="lg:col-span-4 flex flex-col items-start lg:items-end gap-4 reveal reveal-delay-2">
           {avatarName && (
-            <div class="flex items-center gap-3.5">
-              <AvatarCircle name={avatarName} src={avatarSrc} size="lg" variant="lilac" />
+            <div class="flex items-center gap-3">
+              <AvatarCircle name={avatarName} src={avatarSrc} size="md" variant="lilac" />
               <div>
-                <p class="font-semibold text-white text-sm">{avatarName}</p>
-                {avatarRole && <p class="text-xs text-white/65">{avatarRole}</p>}
+                <p style="color: #fff;" class="font-medium text-[14px] leading-tight">{avatarName}</p>
+                {avatarRole && <p style="color: rgba(255,255,255,0.65);" class="text-[12px] leading-tight mt-0.5">{avatarRole}</p>}
               </div>
             </div>
           )}
-          <a href={ctaHref} class="btn !bg-white !text-violet-900 hover:!bg-amber hover:!text-ink-900 transition-colors">
+          <a href={ctaHref} class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
             {ctaText}
             <span class="btn-arrow">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14M13 5l7 7-7 7"/>
               </svg>
             </span>
