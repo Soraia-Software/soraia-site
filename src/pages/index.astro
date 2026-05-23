@@ -63,58 +63,61 @@ const partners = [
 const testimonials = [
   {
     quote:
-      "Soraia ha portato i nostri recruiter dal 60% di tempo su attività amministrative al 60% sul valore — closing e candidate experience. L'agente lavora, loro chiudono.",
-    name: "Jacopo Berti",
-    role: "CEO",
-    company: "APraise",
-  },
-  {
-    quote:
-      "Ci siamo trovati con €32.000 al mese di costi operativi recuperati. Non era nelle slide di una consulenza, era nei numeri di fine mese.",
-    name: "Massimo Cretier",
-    role: "Founder",
-    company: "Numeraria",
-  },
-  {
-    quote:
-      "In 4 settimane gli agenti erano live. Non abbiamo dovuto formare nessuno: il team ha smesso di fare quel lavoro, ha iniziato a fare cose nuove.",
-    name: "Stefano Cantamessa",
-    role: "Co-Founder",
-    company: "Aegis Group",
-  },
-  {
-    quote:
-      "Hanno costruito su misura, hanno spiegato cosa stavano facendo, ci hanno passato il codice. Nessuna sensazione di dipendenza dal fornitore.",
-    name: "Maximilien Brungs",
-    role: "CEO",
+      "Grazie a Soraia risparmiamo 7 ore su ogni articolo che pubblichiamo. Automatizzano i nostri contenuti dalla bozza ai social in un solo click.",
+    name: "Rolf Kosakowski",
+    role: "CEO & Founder",
     company: "KB&B Family Marketing",
+    photoSrc: "/testimonials/rolf-kosakowski.webp",
+  },
+  {
+    quote:
+      "Estremamente soddisfatti della collaborazione: hanno gestito un progetto complesso con chiarezza e consegnato sopra le aspettative.",
+    name: "Russell Fyfe",
+    role: "Head of Product",
+    company: "Rainplan",
+    photoSrc: "/testimonials/russell-fyfe.webp",
+  },
+  {
+    quote:
+      "Il nuovo sistema è come avere quattro recruiter in più nel team — senza il costo e la complessità. Estremamente soddisfatta della consulenza, dello sviluppo e del supporto continuo.",
+    name: "Gabriella Bruzzone",
+    role: "Founder",
+    company: "APraise",
+    photoSrc: "/testimonials/gabriella-bruzzone.webp",
+  },
+  {
+    quote:
+      "Provider giovani, professionali, seri. Tutto è chiaro e fluido. Li adoro.",
+    name: "Gianluca Di Donato",
+    role: "CEO & Founder",
+    company: "Utravel",
+    photoSrc: "/testimonials/gianluca-didonato.webp",
   },
 ];
 
 const team = [
-  { name: "Daniel Levis", role: "Co-Founder & CEO", flag: "🇮🇹" },
-  { name: "Davide Silvestri", role: "Co-Founder & CTO", flag: "🇮🇹" },
-  { name: "Eleonora Cogo", role: "Project Manager", flag: "🇮🇹" },
-  { name: "Narella Petrocco", role: "Project Manager + QA", flag: "🇮🇹" },
-  { name: "Veronica Pisana", role: "Linkly Lead", flag: "🇮🇹" },
-  { name: "Martina Rochstein", role: "Senior Developer", flag: "🇩🇪" },
-  { name: "Mohamed Mejri", role: "Senior Developer", flag: "🇹🇳" },
-  { name: "Lorenzo Barbaglia", role: "Senior Developer", flag: "🇮🇹" },
-  { name: "Bilel Abdelmoula", role: "Senior Developer", flag: "🇹🇳" },
-  { name: "Sebastian Geido", role: "Senior Developer", flag: "🇦🇷" },
-  { name: "Guillaume", role: "Mobile Developer", flag: "🇫🇷" },
-  { name: "Andrea Aschei", role: "Mobile Developer", flag: "🇮🇹" },
+  { name: "Daniel Levis", role: "Co-Founder & CEO", flag: "🇮🇹", photoSrc: "/team/daniel-levis.png" },
+  { name: "Davide Silvestri", role: "Co-Founder & CTO", flag: "🇮🇹", photoSrc: "/team/davide-silvestri.png" },
+  { name: "Eleonora Cogo", role: "Project Manager", flag: "🇮🇹", photoSrc: "/team/eleonora-cogo.png" },
+  { name: "Narella Petrocco", role: "Project Manager + QA", flag: "🇮🇹", photoSrc: "/team/narella-petrocco.png" },
+  { name: "Veronica Pisana", role: "Linkly Lead", flag: "🇮🇹", photoSrc: "/team/veronica-pisana.png" },
+  { name: "Martina Rochstein", role: "Senior Developer", flag: "🇩🇪", photoSrc: "/team/martina-rochstein.png" },
+  { name: "Mohamed Mejri", role: "Senior Developer", flag: "🇹🇳", photoSrc: "/team/mohamed-mejri.png" },
+  { name: "Lorenzo Barbaglia", role: "Senior Developer", flag: "🇮🇹", photoSrc: "/team/lorenzo-barbaglia.png" },
+  { name: "Bilel Abdelmoula", role: "Senior Developer", flag: "🇹🇳", photoSrc: "/team/bilel-abdelmoula.png" },
+  { name: "Sebastian Geido", role: "Senior Developer", flag: "🇦🇷", photoSrc: "/team/sebastian-geido.png" },
 ];
 
+// Coordinates calibrated for Wikimedia equirectangular world map projection
 const worldDots = [
-  { x: 50, y: 32, label: "Italia" },
-  { x: 47, y: 36, label: "Francia" },
-  { x: 46, y: 31, label: "UK" },
-  { x: 45, y: 38, label: "Spagna" },
-  { x: 20, y: 36, label: "USA" },
-  { x: 28, y: 78, label: "Argentina" },
-  { x: 53, y: 62, label: "Tunisia" },
-  { x: 47, y: 28, label: "Germania" },
+  { x: 53.5, y: 38, label: "Italia" },
+  { x: 50.5, y: 36, label: "Francia" },
+  { x: 50, y: 33, label: "UK" },
+  { x: 49, y: 39, label: "Spagna" },
+  { x: 53.5, y: 32, label: "Germania" },
+  { x: 29, y: 40, label: "USA" },
+  { x: 34, y: 76, label: "Argentina" },
+  { x: 52.5, y: 42, label: "Tunisia" },
 ];
 
 const faqs = [
@@ -197,11 +200,11 @@ const faqs = [
           </div>
 
           <div class="mt-12 flex items-center gap-4 fade-up fade-up-delay-4">
-            <div class="flex -space-x-2">
-              <AvatarCircle name="DL" size="sm" variant="lilac" />
-              <AvatarCircle name="DS" size="sm" variant="violet" />
-              <AvatarCircle name="EC" size="sm" variant="lilac" />
-              <AvatarCircle name="MR" size="sm" variant="ink" />
+            <div class="flex -space-x-3 hero-avatars">
+              <AvatarCircle name="Daniel Levis" src="/team/daniel-levis.png" size="sm" />
+              <AvatarCircle name="Davide Silvestri" src="/team/davide-silvestri.png" size="sm" />
+              <AvatarCircle name="Eleonora Cogo" src="/team/eleonora-cogo.png" size="sm" />
+              <AvatarCircle name="Martina Rochstein" src="/team/martina-rochstein.png" size="sm" />
             </div>
             <p class="text-sm text-violet-100/70 leading-snug">
               <strong class="text-white">30+ clienti</strong> tra Italia, Spagna, UK, USA<br/>
@@ -224,48 +227,7 @@ const faqs = [
   <ProofBar label="Si fidano di noi" logos={homeLogos} />
 
   <!-- ============================================================
-       3. CEO INTRO
-       ============================================================ -->
-  <section class="section bg-white">
-    <div class="container-soraia">
-      <div class="max-w-5xl mx-auto text-center">
-        <p class="eyebrow mb-6 mx-auto reveal">Il nostro approccio</p>
-        <h2 class="font-display text-[2.5rem] md:text-[4rem] font-semibold tracking-tight leading-[1.02] text-ink-900 text-balance reveal">
-          Velocità senza compromessi sulla qualità.
-        </h2>
-        <p class="mt-7 text-[17px] md:text-[19px] text-ink-600 leading-relaxed max-w-3xl mx-auto text-pretty reveal reveal-delay-1">
-          Operiamo su due fronti — <strong class="text-ink-900">le persone</strong> e <strong class="text-ink-900">i processi</strong>. Formiamo il team perché capisca cosa cambia, e costruiamo agenti IA che eseguono le attività ripetitive. Prima delivery in 4 settimane, codice tuo, nessuna dipendenza dal fornitore.
-        </p>
-
-        <!-- CEO card -->
-        <div class="mt-12 inline-flex flex-col items-center gap-5 reveal reveal-delay-2">
-          <div class="relative">
-            <AvatarCircle name="Daniel Levis" size="xl" variant="violet" />
-            <span class="absolute -bottom-1.5 -right-1.5 w-8 h-8 rounded-full bg-white border-2 border-ink-50 flex items-center justify-center text-base">🇮🇹</span>
-          </div>
-          <div>
-            <p class="font-display text-xl font-semibold text-ink-900">Daniel Levis</p>
-            <p class="text-sm text-ink-500 mt-0.5">Co-Founder & CEO · Biella, Italia</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       4. CTA BANNER — start with a free call
-       ============================================================ -->
-  <CTABanner
-    title="Inizia con una call gratuita con il nostro CEO."
-    description="20 minuti per capire insieme se ha senso fare l'AI Readiness Assessment. Nessun impegno, nessun pitch commerciale — solo una conversazione operativa."
-    ctaText="Prenota la call"
-    ctaHref="#contact"
-    avatarName="Daniel Levis"
-    avatarRole="Co-Founder & CEO"
-  />
-
-  <!-- ============================================================
-       5. COSA FACCIAMO — 2 pillars: Persone + Processi
+       3. COSA FACCIAMO — 2 pillars: Persone + Processi
        ============================================================ -->
   <section id="servizi" class="section bg-ink-50">
     <div class="container-soraia">
@@ -570,17 +532,22 @@ const faqs = [
   </section>
 
   <!-- ============================================================
-       9. FEATURED TESTIMONIAL
+       9. FEATURED TESTIMONIAL — Elisa Gnan (Numeraria)
        ============================================================ -->
   <section class="section bg-white">
     <div class="container-soraia">
       <div class="max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center reveal">
           <div class="md:col-span-4 flex justify-center md:justify-start">
-            <div class="relative">
-              <AvatarCircle name="Annamaria Russo" size="xl" variant="violet" />
-              <div class="absolute -inset-3 rounded-full border border-violet-200 -z-10"></div>
-              <div class="absolute -inset-6 rounded-full border border-violet-100 -z-10"></div>
+            <div class="relative w-48 h-48 md:w-56 md:h-56">
+              <img
+                src="/testimonials/elisa-gnan.png"
+                alt="Elisa Gnan"
+                loading="lazy"
+                class="absolute inset-0 w-full h-full rounded-full object-cover shadow-violet"
+              />
+              <div class="absolute -inset-3 rounded-full border border-violet-200"></div>
+              <div class="absolute -inset-6 rounded-full border border-violet-100"></div>
             </div>
           </div>
           <div class="md:col-span-8">
@@ -592,10 +559,10 @@ const faqs = [
               ))}
             </div>
             <p class="font-display text-[1.5rem] md:text-[2rem] font-semibold text-ink-900 leading-[1.2] text-balance">
-              "Avevamo un sistema in cui i nostri operatori passavano metà del tempo a smistare richieste. Oggi un agente IA le qualifica al primo contatto, riassume, decide a chi assegnarle. Il team fa il salto di qualità che cercavamo."
+              "La nuova piattaforma è intuitiva, veloce e su misura per noi. In pochi mesi abbiamo visto risparmi reali di tempo e costi, e tutti l'hanno adottata volentieri."
             </p>
-            <p class="mt-6 font-semibold text-ink-900">Annamaria Russo</p>
-            <p class="text-sm text-ink-500 mt-0.5">Operations Lead · Pro Tier</p>
+            <p class="mt-6 font-semibold text-ink-900">Elisa Gnan</p>
+            <p class="text-sm text-ink-500 mt-0.5">Consultant · Numeraria — Studio Commercialisti Piemonte</p>
           </div>
         </div>
       </div>
@@ -618,24 +585,36 @@ const faqs = [
   </section>
 
   <!-- ============================================================
-       11. SECOND FEATURED TESTIMONIAL
+       11. SECOND FEATURED TESTIMONIAL — Rolf Kosakowski (KB&B)
        ============================================================ -->
   <section class="section bg-white">
     <div class="container-soraia">
       <div class="max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center reveal">
           <div class="md:col-span-8 md:order-2">
+            <div class="flex gap-1 mb-5 text-amber">
+              {[1,2,3,4,5].map(() => (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
             <p class="font-display text-[1.5rem] md:text-[2rem] font-semibold text-ink-900 leading-[1.2] text-balance">
-              "Il mio sogno per quest'anno è diventato realtà: siamo felici di avere voi dalla nostra parte e questo è il tipo di prodotto che vogliamo costruire nelle nostre mani."
+              "Il mio desiderio per quest'anno si è avverato. Siamo felicissimi di avervi al nostro fianco e di avere questo tipo di prodotto nelle nostre mani."
             </p>
-            <p class="mt-6 font-semibold text-ink-900">Rolf Kowalewski</p>
-            <p class="text-sm text-ink-500 mt-0.5">CEO & Founder · KB&B Family Marketing</p>
+            <p class="mt-6 font-semibold text-ink-900">Rolf Kosakowski</p>
+            <p class="text-sm text-ink-500 mt-0.5">CEO & Founder · KB&B Family Marketing Experts</p>
           </div>
           <div class="md:col-span-4 md:order-1 flex justify-center md:justify-start">
-            <div class="relative">
-              <AvatarCircle name="Rolf Kowalewski" size="xl" variant="lilac" />
-              <div class="absolute -inset-3 rounded-full border border-violet-200 -z-10"></div>
-              <div class="absolute -inset-6 rounded-full border border-violet-100 -z-10"></div>
+            <div class="relative w-48 h-48 md:w-56 md:h-56">
+              <img
+                src="/testimonials/rolf-kosakowski.webp"
+                alt="Rolf Kosakowski"
+                loading="lazy"
+                class="absolute inset-0 w-full h-full rounded-full object-cover shadow-violet"
+              />
+              <div class="absolute -inset-3 rounded-full border border-violet-200"></div>
+              <div class="absolute -inset-6 rounded-full border border-violet-100"></div>
             </div>
           </div>
         </div>
@@ -713,4 +692,17 @@ const faqs = [
       <FAQ items={faqs} />
     </div>
   </section>
+
+  <!-- ============================================================
+       15. CTA FINALE — Call con il CEO (spostato in fondo)
+       ============================================================ -->
+  <CTABanner
+    title="Inizia con una call gratuita con il nostro CEO."
+    description="20 minuti per capire insieme se ha senso fare l'AI Readiness Assessment. Nessun impegno, nessun pitch commerciale — solo una conversazione operativa."
+    ctaText="Prenota la call"
+    ctaHref="#contact"
+    avatarName="Daniel Levis"
+    avatarRole="Co-Founder & CEO"
+    avatarSrc="/team/daniel-levis.png"
+  />
 </Layout>

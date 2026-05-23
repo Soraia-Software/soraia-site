@@ -536,3 +536,9 @@ h4, h5, h6 {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--color-violet-300), transparent);
 }
+
+/* Hero avatar group — ring effect for overlapping avatars */
+.hero-avatars > span {
+  border: 2px solid var(--color-violet-900);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
