@@ -121,6 +121,7 @@ const p = (path: string) => (lang === "en" ? "/en" + path : path);
         <p class="text-[11px] font-semibold uppercase tracking-[0.14em] mb-5" style="color: var(--color-ink-soft);">{labels.col_resources}</p>
         <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
           <li><a href={p("/check-up")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_scorecard}</a></li>
+          <li><a href={p("/case-studies")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_cases}</a></li>
           <li><a href={p("/downloads/ai-assessment-sample")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_sample}</a></li>
           <li><a href={p("/blog")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_blog}</a></li>
         </ul>
