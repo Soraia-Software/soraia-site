@@ -1,22 +1,9 @@
 ---
-interface Marker {
-  location: [number, number]; // lat, lng
-  size: number;
-}
-
 interface Props {
-  markers?: Marker[];
   size?: number;
 }
 
-const defaultMarkers: Marker[] = [
-  { location: [41.9, 12.5],   size: 0.10 },  // Europa (centered Italy)
-  { location: [39.8, -98.5],  size: 0.08 },  // USA
-  { location: [24.5, 54.4],   size: 0.06 },  // UAE
-  { location: [-25.3, 133.8], size: 0.05 },  // Australia
-];
-
-const { markers = defaultMarkers, size = 600 } = Astro.props;
+const { size = 600 } = Astro.props;
 ---
 
 <div class="soraia-globe-wrapper" data-globe-size={size}>
@@ -26,99 +13,105 @@ const { markers = defaultMarkers, size = 600 } = Astro.props;
   </div>
 </div>
 
-<script define:vars={{ markers }}>
-  import("cobe").then(({ default: createGlobe }) => {
-    const wrappers = document.querySelectorAll(".soraia-globe-wrapper");
-    wrappers.forEach((wrapper) => {
-      const canvas = wrapper.querySelector("[data-globe-canvas]");
-      if (!canvas) return;
+<script>
+  import createGlobe from "cobe";
 
-      let phi = 0;
-      let theta = 0.25;
-      let width = 0;
-      let height = 0;
-      let pointerInteracting = null;
-      let pointerInteractionMovement = 0;
-      let currentPhi = 0;
+  function initGlobe(wrapper) {
+    const canvas = wrapper.querySelector("[data-globe-canvas]");
+    if (!canvas) return;
 
-      const updateSize = () => {
-        const rect = wrapper.getBoundingClientRect();
-        width = rect.width;
-        height = rect.width; // square
-        canvas.style.width = width + "px";
-        canvas.style.height = height + "px";
-      };
-      updateSize();
+    let phi = 0;
+    const theta = 0.25;
+    let pointerInteracting = null;
+    let pointerMovement = 0;
+    let width = 0;
 
-      const globe = createGlobe(canvas, {
-        devicePixelRatio: window.devicePixelRatio || 2,
-        width: width * 2,
-        height: height * 2,
-        phi: 0,
-        theta: theta,
-        dark: 0,
-        diffuse: 1.2,
-        mapSamples: 16000,
-        mapBrightness: 5.5,
-        baseColor: [0.94, 0.93, 0.91],       // continents warm soft gray
-        markerColor: [74 / 255, 30 / 255, 92 / 255], // aubergine pin
-        glowColor: [0.93, 0.90, 0.94],       // subtle warm-violet glow
-        markers,
-        onRender: (state) => {
-          if (!pointerInteracting) {
-            phi += 0.0035;
-          }
-          state.phi = phi + pointerInteractionMovement;
-          state.theta = theta;
-          state.width = width * 2;
-          state.height = height * 2;
-          currentPhi = state.phi;
-        },
-      });
+    function measure() {
+      width = wrapper.getBoundingClientRect().width || 560;
+      canvas.style.width = width + "px";
+      canvas.style.height = width + "px";
+    }
+    measure();
 
-      // Fade in
-      requestAnimationFrame(() => {
-        canvas.style.opacity = "1";
-      });
+    const dpr = Math.min(window.devicePixelRatio || 2, 2);
 
-      // Drag to rotate
-      const onPointerDown = (e) => {
-        pointerInteracting = e.clientX - pointerInteractionMovement;
-        canvas.style.cursor = "grabbing";
-      };
-      const onPointerUp = () => {
-        pointerInteracting = null;
-        canvas.style.cursor = "grab";
-      };
-      const onPointerMove = (e) => {
-        if (pointerInteracting !== null) {
-          const delta = e.clientX - pointerInteracting;
-          pointerInteractionMovement = delta / 200;
-        }
-      };
-      const onTouchMove = (e) => {
-        if (pointerInteracting !== null && e.touches[0]) {
-          const delta = e.touches[0].clientX - pointerInteracting;
-          pointerInteractionMovement = delta / 100;
-        }
-      };
-
-      canvas.style.cursor = "grab";
-      canvas.addEventListener("pointerdown", onPointerDown);
-      window.addEventListener("pointerup", onPointerUp);
-      window.addEventListener("pointercancel", onPointerUp);
-      window.addEventListener("pointermove", onPointerMove);
-      canvas.addEventListener("touchmove", onTouchMove, { passive: true });
-
-      // Responsive
-      const ro = new ResizeObserver(() => {
-        updateSize();
-      });
-      ro.observe(wrapper);
+    const globe = createGlobe(canvas, {
+      devicePixelRatio: dpr,
+      width: width * dpr,
+      height: width * dpr,
+      phi: 0,
+      theta: theta,
+      dark: 0,
+      diffuse: 1.2,
+      mapSamples: 16000,
+      mapBrightness: 5.5,
+      baseColor: [0.94, 0.93, 0.91],
+      markerColor: [74 / 255, 30 / 255, 92 / 255],
+      glowColor: [0.93, 0.9, 0.94],
+      markers: [
+        { location: [41.9, 12.5], size: 0.10 },
+        { location: [39.8, -98.5], size: 0.08 },
+        { location: [24.5, 54.4], size: 0.06 },
+        { location: [-25.3, 133.8], size: 0.05 },
+      ],
     });
-  }).catch((err) => {
-    console.error("Globe load failed:", err);
-  });
+
+    function tick() {
+      if (pointerInteracting === null) {
+        phi += 0.0035;
+      }
+      globe.update({
+        phi: phi + pointerMovement,
+        theta: theta,
+        width: width * dpr,
+        height: width * dpr,
+      });
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    requestAnimationFrame(function fadeIn() {
+      canvas.style.opacity = "1";
+    });
+
+    canvas.style.cursor = "grab";
+
+    canvas.addEventListener("pointerdown", function (e) {
+      pointerInteracting = e.clientX - pointerMovement;
+      canvas.style.cursor = "grabbing";
+    });
+    window.addEventListener("pointerup", function () {
+      pointerInteracting = null;
+      canvas.style.cursor = "grab";
+    });
+    window.addEventListener("pointercancel", function () {
+      pointerInteracting = null;
+      canvas.style.cursor = "grab";
+    });
+    window.addEventListener("pointermove", function (e) {
+      if (pointerInteracting !== null) {
+        pointerMovement = (e.clientX - pointerInteracting) / 200;
+      }
+    });
+    canvas.addEventListener("touchmove", function (e) {
+      if (pointerInteracting !== null && e.touches[0]) {
+        pointerMovement = (e.touches[0].clientX - pointerInteracting) / 100;
+      }
+    }, { passive: true });
+
+    const ro = new ResizeObserver(measure);
+    ro.observe(wrapper);
+  }
+
+  function bootstrap() {
+    document.querySelectorAll(".soraia-globe-wrapper").forEach(initGlobe);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootstrap);
+  } else {
+    bootstrap();
+  }
 </script>
 
 <style is:global>
@@ -145,11 +138,10 @@ const { markers = defaultMarkers, size = 600 } = Astro.props;
     user-select: none;
     -webkit-user-select: none;
   }
-  /* Subtle radial fade at edges for editorial polish */
   .soraia-globe-fade {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(circle at center, transparent 55%, rgba(250, 250, 248, 0.4) 78%, var(--color-bg) 100%);
+    background: radial-gradient(circle at center, transparent 60%, rgba(250, 250, 248, 0.35) 82%, var(--color-bg) 100%);
   }
 </style>
