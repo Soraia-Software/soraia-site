@@ -66,11 +66,19 @@ const partners = [
 const testimonials = [
   {
     quote:
-      "Il nuovo sistema è come avere quattro recruiter in più nel team , senza il costo e la complessità.",
-    name: "Jacopo Castano",
-    role: "Managing Partner",
-    company: "APraise",
-    photoSrc: "/testimonials/jacopo-castano-apraise.png",
+      "Avevamo bisogno di un sistema che reggesse i picchi del casting senza ammazzare il team. Soraia ce l'ha consegnato in tempo, lo manutiene, e ci parla settimana per settimana.",
+    name: "Gabriella Bruzzone",
+    role: "Head of Operations",
+    company: "Stars Be Original",
+    photoSrc: "/testimonials/gabriella-bruzzone-stars.png",
+    project: "Stars Be Original",
+    sector: "Recruitment animazione",
+    problem:
+      "Registrazione candidati frammentata tra Excel, form esterni e ticketing manuale. Picchi del casting ingestibili, GDPR retention non conforme.",
+    action:
+      "Web app full-stack Xano + WeWeb con ticketing integrato, payment system Stripe, GDPR retention a 5 anni, migrazione dati esistenti senza downtime.",
+    resultMetric: "827 candidature processate in 1 settimana dopo il go-live",
+    resultBody: "Oggi sistema in maintenance: il team lavora sui candidati, non sull'infrastruttura.",
   },
   {
     quote:
@@ -79,14 +87,30 @@ const testimonials = [
     role: "Head of Operations",
     company: "CXL",
     photoSrc: "/testimonials/brian-dandelet-cxl.png",
+    project: "CXL — Expert onboarding",
+    sector: "Online education",
+    problem:
+      "Onboarding di ogni nuovo esperto per i corsi richiedeva 70+ ore di operations tra contratti, brief, materiali e accessi al portale.",
+    action:
+      "Workflow automatizzato end-to-end: dalla firma contratto all'esperto live sul portale, con intervento umano solo sui passaggi critici.",
+    resultMetric: "70 ore risparmiate per ogni nuovo esperto integrato",
+    resultBody: "Catalogo corsi scalato senza assumere nuove operations.",
   },
   {
     quote:
-      "Grazie a Soraia risparmiamo 7 ore su ogni articolo che pubblichiamo, dalla bozza ai social in un click.",
+      "Soraia ci ha portato dall'idea allo store in 4 settimane. Oggi cresciamo con sprint mensili leggeri, senza dover assumere un team mobile interno.",
     name: "Rolf Kosakowski",
-    role: "CEO & Founder",
-    company: "KB&B Family Marketing",
-    photoSrc: "/testimonials/rolf-kbb.png",
+    role: "Founder",
+    company: "StoryWonder",
+    photoSrc: "/testimonials/rolf-storywonder.png",
+    project: "StoryWonder — Mobile app",
+    sector: "Consumer mobile · EdTech",
+    problem:
+      "Volevano lanciare un'app mobile cross-platform iOS + Android in poche settimane, senza costruire un team interno e con budget chiaro.",
+    action:
+      "App nativa FlutterFlow + Firebase (auth, storage), Stripe per coin/payment, release diretta su Apple Store e Google Play, sprint mensili di evoluzione.",
+    resultMetric: "Live sugli store in 4 settimane · 4.500+ utenti",
+    resultBody: "Lighthouse project per la partnership Playmobil e il lancio europeo.",
   },
   {
     quote:
@@ -95,6 +119,14 @@ const testimonials = [
     role: "IT Manager",
     company: "LIFTT",
     photoSrc: "/testimonials/alberto-burzio-liftt.png",
+    project: "LIFTT — Deal flow automation",
+    sector: "Venture Capital · Tech transfer",
+    problem:
+      "Pipeline deal frammentata tra Airtable, email e file locali. Dedupe manuale, monthly report fatti a mano, email archiving non conforme.",
+    action:
+      "Sistema custom Airtable + Make: dedupe automatico, monthly report con charts auto-generati, email archiving completo (eml + allegati) su OneDrive.",
+    resultMetric: "Dalla cadenza weekly a quella monthly: tutto runs in autonomia",
+    resultBody: "Team LIFTT focused sul deal making, non sul data management.",
   },
 ];
 
@@ -494,7 +526,7 @@ const faqs = [
         align="center"
       />
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-6xl mx-auto">
         {testimonials.map((t) => (
           <TestimonialCard {...t} />
         ))}

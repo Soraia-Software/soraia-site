@@ -8,29 +8,79 @@ interface Props {
   company?: string;
   photoSrc?: string;
   rating?: number;
+  // optional case-study fields (for GEO/SEO + human scannability)
+  project?: string;
+  sector?: string;
+  problem?: string;
+  action?: string;
+  resultMetric?: string;
+  resultBody?: string;
 }
 
-const { quote, name, role, company, photoSrc, rating = 5 } = Astro.props;
+const {
+  quote,
+  name,
+  role,
+  company,
+  photoSrc,
+  rating = 5,
+  project,
+  sector,
+  problem,
+  action,
+  resultMetric,
+  resultBody,
+} = Astro.props;
+
+const hasCase = problem && action && (resultMetric || resultBody);
 ---
 
-<article class="card-editorial group flex flex-col gap-5 h-full reveal !p-7">
+<article class="card-editorial group flex flex-col gap-5 h-full reveal !p-7 md:!p-8">
+  {(project || sector) && (
+    <p class="text-[11px] font-medium tracking-[0.14em] uppercase" style="color: var(--color-ink-soft);">
+      {project}{project && sector && <span style="opacity: 0.5;"> · </span>}{sector}
+    </p>
+  )}
+
   <div class="flex items-center gap-1 text-amber">
     {Array.from({ length: rating }).map(() => (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
       </svg>
     ))}
   </div>
 
-  <p class="text-[15px] text-ink-700 leading-relaxed text-pretty flex-1">"{quote}"</p>
+  <p class="text-[15.5px] leading-relaxed text-pretty" style="color: var(--color-ink);">"{quote}"</p>
 
-  <footer class="flex items-center gap-3 pt-2 mt-auto">
+  <footer class="flex items-center gap-3">
     <AvatarCircle name={name} src={photoSrc} size="md" variant="violet" />
     <div>
-      <p class="font-semibold text-ink-900 text-sm leading-tight">{name}</p>
-      <p class="text-xs text-ink-500 mt-0.5 leading-tight">
-        {role}{company && <span class="text-ink-400"> · {company}</span>}
+      <p class="font-medium text-[14px] leading-tight" style="color: var(--color-ink);">{name}</p>
+      <p class="text-[12px] mt-0.5 leading-tight" style="color: var(--color-ink-soft);">
+        {role}{company && <span style="opacity: 0.7;"> · {company}</span>}
       </p>
     </div>
   </footer>
+
+  {hasCase && (
+    <div class="pt-5 mt-auto border-t border-line space-y-4">
+      <div>
+        <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-1.5" style="color: var(--color-ink-soft);">Problema</p>
+        <p class="text-[13.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{problem}</p>
+      </div>
+      <div>
+        <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-1.5" style="color: var(--color-ink-soft);">Soluzione</p>
+        <p class="text-[13.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{action}</p>
+      </div>
+      <div>
+        <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-1.5" style="color: var(--color-ink-soft);">Risultato</p>
+        {resultMetric && (
+          <p class="text-[15px] font-medium leading-snug" style="color: var(--color-brand); letter-spacing: -0.01em;">{resultMetric}</p>
+        )}
+        {resultBody && (
+          <p class="text-[13.5px] leading-relaxed text-pretty mt-1" style="color: var(--color-ink-muted);">{resultBody}</p>
+        )}
+      </div>
+    </div>
+  )}
 </article>
