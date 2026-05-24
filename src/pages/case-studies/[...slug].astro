@@ -2,6 +2,7 @@
 import Layout from "~/layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 import CTABanner from "~/components/CTABanner.astro";
+import AvatarCircle from "~/components/AvatarCircle.astro";
 
 export async function getStaticPaths() {
   const cases = await getCollection("caseStudies");
@@ -90,14 +91,9 @@ const jsonLd = {
     <section class="bg-white border-b border-line">
       <div class="container-soraia max-w-4xl py-14 md:py-20">
         <div class="flex flex-col md:flex-row gap-7 md:gap-10 items-start">
-          <img
-            src={study.data.stakeholder.photo}
-            alt={study.data.stakeholder.name}
-            loading="eager"
-            width="80"
-            height="80"
-            class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover flex-shrink-0"
-          />
+          <div class="flex-shrink-0">
+            <AvatarCircle name={study.data.stakeholder.name} src={study.data.stakeholder.photo || undefined} size="lg" variant="violet" />
+          </div>
           <div>
             <svg width="32" height="24" viewBox="0 0 32 24" fill="none" class="mb-4" style="color: var(--color-brand); opacity: 0.30;">
               <path d="M0 24V14.4c0-2.88.72-5.52 2.16-7.92C3.6 4.08 5.76 2.16 8.64.72L11.52 4.8c-1.92.96-3.36 2.16-4.32 3.6-.96 1.44-1.44 3-1.44 4.68v.96h6.24V24H0zm18.72 0V14.4c0-2.88.72-5.52 2.16-7.92C22.32 4.08 24.48 2.16 27.36.72L30.24 4.8c-1.92.96-3.36 2.16-4.32 3.6-.96 1.44-1.44 3-1.44 4.68v.96H30.72V24H18.72z" fill="currentColor"/>
