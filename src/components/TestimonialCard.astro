@@ -34,8 +34,8 @@ const {
   caseSlug,
 } = Astro.props;
 
-const hasCase = problem && action && (resultMetric || resultBody);
 const caseHref = caseSlug ? `/case-studies/${caseSlug}` : null;
+const resultPreview = resultMetric || null;
 ---
 
 <article class="card-editorial group flex flex-col gap-5 h-full reveal !p-7 md:!p-8">
@@ -53,9 +53,9 @@ const caseHref = caseSlug ? `/case-studies/${caseSlug}` : null;
     ))}
   </div>
 
-  <p class="text-[15.5px] leading-relaxed text-pretty" style="color: var(--color-ink);">"{quote}"</p>
+  <p class="text-[15.5px] leading-relaxed text-pretty flex-1" style="color: var(--color-ink);">"{quote}"</p>
 
-  <footer class="flex items-center gap-3">
+  <footer class="flex items-center gap-3 pt-1">
     <AvatarCircle name={name} src={photoSrc} size="md" variant="violet" />
     <div>
       <p class="font-medium text-[14px] leading-tight" style="color: var(--color-ink);">{name}</p>
@@ -65,28 +65,13 @@ const caseHref = caseSlug ? `/case-studies/${caseSlug}` : null;
     </div>
   </footer>
 
-  {hasCase && (
-    <div class="pt-5 mt-auto border-t border-line space-y-4">
-      <div>
-        <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-1.5" style="color: var(--color-ink-soft);">Problema</p>
-        <p class="text-[13.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{problem}</p>
-      </div>
-      <div>
-        <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-1.5" style="color: var(--color-ink-soft);">Soluzione</p>
-        <p class="text-[13.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{action}</p>
-      </div>
-      <div>
-        <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-1.5" style="color: var(--color-ink-soft);">Risultato</p>
-        {resultMetric && (
-          <p class="text-[15px] font-medium leading-snug" style="color: var(--color-brand); letter-spacing: -0.01em;">{resultMetric}</p>
-        )}
-        {resultBody && (
-          <p class="text-[13.5px] leading-relaxed text-pretty mt-1" style="color: var(--color-ink-muted);">{resultBody}</p>
-        )}
-      </div>
-
+  {(resultPreview || caseHref) && (
+    <div class="pt-5 mt-auto border-t border-line flex flex-wrap items-center justify-between gap-3">
+      {resultPreview && (
+        <p class="text-[13.5px] font-medium leading-snug" style="color: var(--color-brand); letter-spacing: -0.01em;">{resultPreview}</p>
+      )}
       {caseHref && (
-        <a href={caseHref} class="inline-flex items-center gap-1.5 text-[13px] font-medium pt-2 group/cta no-underline" style="color: var(--color-brand);">
+        <a href={caseHref} class="inline-flex items-center gap-1.5 text-[13px] font-medium group/cta no-underline" style="color: var(--color-brand);">
           Leggi il case study
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/cta:translate-x-1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
