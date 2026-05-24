@@ -95,4 +95,4 @@ Non perché siamo eroici, ma perché senza queste cose non possiamo nemmeno fare
 
 ---
 
-**Vuoi una valutazione del tuo caso specifico?** Lo facciamo nell'[AI Readiness Assessment €2.000](/ai-agents). Ti diciamo onestamente in quale livello ricadi e cosa serve fare. Oppure inizia con il [check-up 3 minuti](/check-up).
+**Vuoi una valutazione del tuo caso specifico?** Lo facciamo nell'[AI Readiness Assessment €2.000](/ai-agents) ([scarica un sample anonimo del report](/downloads/ai-assessment-sample)). Ti diciamo onestamente in quale livello ricadi e cosa serve fare. Oppure inizia con il [check-up 3 minuti](/check-up).

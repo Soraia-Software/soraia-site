@@ -19,7 +19,7 @@ faq:
   - q: "Qual è il prezzo minimo per un progetto AI serio in azienda?"
     a: "Sotto i <strong>€10.000</strong> totali, è difficile fare un agente IA custom serio (con baseline, build, deploy, 30gg hypercare). Sotto questa soglia trovi solo: (a) workflow molto piccoli (single automation Make/n8n con AI), (b) pilot superficiali che non vanno mai in produzione vera, (c) provider che vendono ore senza scope chiaro. Sweet spot reale per il primo agente: <strong>€15-35k</strong>."
   - q: "Quanto costa il primo AI Readiness Assessment?"
-    a: "<strong>€1.500-3.000</strong> per un assessment serio (1-2 settimane, baseline cronometrata, scope, ROI atteso, action plan). I provider seri lo offrono <strong>rimborsato se procedi</strong> con uno sprint. Soraia per esempio offre l'assessment a €1.900 con rimborso integrale se il cliente decide di procedere."
+    a: "<strong>€1.500-3.000</strong> per un assessment serio (1-2 settimane, baseline cronometrata, scope, ROI atteso, action plan). I provider seri lo offrono <strong>rimborsato se procedi</strong> con uno sprint. Soraia per esempio offre l'assessment a €1.900 con rimborso integrale se il cliente decide di procedere. <a href='/downloads/ai-assessment-sample'>Scarica un sample anonimo del report</a> per vedere esattamente cosa ricevi."
   - q: "Quanto costa un retainer continuativo dopo lo sprint iniziale?"
     a: "<strong>€3.000-15.000/mese</strong> a seconda di: scope (1 agente vs portfolio), criticità (SLA 24h vs best effort), numero di integrazioni, settore (regolamentato richiede più ore di compliance). Per una PMI media post-primo agente: <strong>€5-8k/mese</strong> è il range tipico."
   - q: "Modello fix price o time & material: cosa scegliere?"
@@ -55,7 +55,7 @@ Dato basato su benchmark interno Soraia + sentito da clienti che hanno valutato 
 
 **Tempo**: 1-2 settimane di consulenza.
 
-**Standard di mercato**: provider seri lo offrono **rimborsato se procedi** con uno sprint. Skin in the game per entrambe le parti. Soraia per esempio offre €1.900 rimborsato.
+**Standard di mercato**: provider seri lo offrono **rimborsato se procedi** con uno sprint. Skin in the game per entrambe le parti. Soraia per esempio offre €1.900 rimborsato. [Scarica un sample anonimo del report](/downloads/ai-assessment-sample) per vedere esattamente cosa ricevi al termine dell'assessment.
 
 **Provider che salta l'assessment**: red flag. Significa che ti venderà uno sprint senza capire i tuoi processi reali.
 

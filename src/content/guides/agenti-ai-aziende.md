@@ -111,7 +111,7 @@ Il processo standard che usiamo in Soraia. Replicabile da qualunque partner seri
 
 ### Fase 1 — Discovery & Baseline (1-2 settimane)
 
-Mappatura del processo attuale, cronometrazione del tempo umano su 10-20 task reali, identificazione dei bottleneck, definizione del **metric primario unico** (es. "ore/recruiter/settimana recuperate"). Output: AI Readiness Assessment con scope chiaro e ROI atteso quantificato.
+Mappatura del processo attuale, cronometrazione del tempo umano su 10-20 task reali, identificazione dei bottleneck, definizione del **metric primario unico** (es. "ore/recruiter/settimana recuperate"). Output: AI Readiness Assessment con scope chiaro e ROI atteso quantificato. [Scarica un sample anonimo del report](/downloads/ai-assessment-sample) per vedere cosa riceve un cliente al termine di questa fase.
 
 ### Fase 2 — Build (2-3 settimane)
 
