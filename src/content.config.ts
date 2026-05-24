@@ -14,4 +14,36 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+const caseStudies = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/case-studies" }),
+  schema: z.object({
+    title: z.string(),
+    client: z.string(),
+    sector: z.string(),
+    service: z.string(),                       // e.g. "Agente IA candidature"
+    pubDate: z.coerce.date(),
+    featured: z.boolean().default(false),
+    stakeholder: z.object({
+      name: z.string(),
+      role: z.string(),
+      photo: z.string(),
+    }),
+    heroQuote: z.string(),                     // longer quote shown in case-study hero
+    teaser: z.object({
+      problem: z.string(),
+      action: z.string(),
+      resultMetric: z.string(),
+      resultBody: z.string().optional(),
+    }),
+    stats: z.array(z.object({
+      value: z.string(),
+      label: z.string(),
+      sub: z.string().optional(),
+    })).default([]),
+    timeline: z.string().optional(),           // e.g. "4 settimane go-live + sprint mensili"
+    stack: z.array(z.string()).default([]),
+    related: z.array(z.string()).default([]),  // slugs of related case studies
+  }),
+});
+
+export const collections = { blog, caseStudies };

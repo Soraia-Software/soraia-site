@@ -1,0 +1,117 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const title = "Case Studies | Soraia";
+const description = "Agenti IA in produzione per PMI italiane ed europee. Stars Be Original, StoryWonder, CXL, LIFTT: quali processi abbiamo automatizzato, cosa abbiamo costruito, quali risultati.";
+
+const cases = (await getCollection("caseStudies")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const featured = cases.filter((c) => c.data.featured);
+const others = cases.filter((c) => !c.data.featured);
+---
+
+<Layout title={title} description={description} lang="it">
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
+    <div class="container-soraia pt-20 md:pt-28 pb-16 md:pb-20">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+        Case studies
+      </p>
+      <h1 class="text-balance max-w-3xl" style="font-size: clamp(2.25rem, 5vw + 1rem, 4rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+        Agenti IA in produzione. Numeri reali.
+      </h1>
+      <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
+        Quali processi abbiamo automatizzato per PMI italiane ed europee, cosa abbiamo costruito, quali risultati. Niente vanity metrics, solo agenti in produzione che gestiscono lavoro vero.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  {featured.length > 0 && (
+    <section class="section bg-white">
+      <div class="container-soraia">
+        <p class="eyebrow mb-8">In evidenza</p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          {featured.map((c) => (
+            <a href={`/case-studies/${c.id}`} class="card-editorial !p-8 md:!p-10 group no-underline flex flex-col transition-all hover:!-translate-y-1 hover:shadow-md">
+              <p class="text-[11px] font-medium tracking-[0.14em] uppercase mb-5" style="color: var(--color-ink-soft);">
+                {c.data.service} · {c.data.sector}
+              </p>
+              <h2 class="mb-4 text-balance" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 500;">
+                {c.data.client}
+              </h2>
+              <p class="text-[16px] leading-relaxed text-pretty mb-6 flex-1" style="color: var(--color-ink-muted);">
+                {c.data.teaser.problem}
+              </p>
+              <div class="pt-5 border-t border-line">
+                <p class="text-[11px] font-medium tracking-[0.14em] uppercase mb-2" style="color: var(--color-ink-soft);">Risultato</p>
+                <p class="text-[15px] font-medium leading-snug" style="color: var(--color-brand); letter-spacing: -0.01em;">{c.data.teaser.resultMetric}</p>
+              </div>
+              <span class="inline-flex items-center gap-1.5 text-sm font-medium mt-6" style="color: var(--color-brand);">
+                Leggi il case study
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ALL OTHERS -->
+  {others.length > 0 && (
+    <section class="bg-white" style="padding-bottom: 6rem;">
+      <div class="container-soraia">
+        <p class="eyebrow mb-8">Tutti i case study</p>
+        <ul class="divide-y divide-[color:var(--color-line)] border-t border-[color:var(--color-line)] max-w-5xl">
+          {others.map((c) => (
+            <li>
+              <a href={`/case-studies/${c.id}`} class="grid grid-cols-1 md:grid-cols-[220px_1fr_auto] gap-4 md:gap-8 py-7 group items-center">
+                <div>
+                  <p class="text-[11px] font-medium tracking-[0.14em] uppercase mb-1.5" style="color: var(--color-ink-soft);">{c.data.service}</p>
+                  <p class="text-[14px]" style="color: var(--color-ink-muted);">{c.data.sector}</p>
+                </div>
+                <div>
+                  <h3 class="mb-2 text-balance" style="font-size: 1.25rem; line-height: 1.25; letter-spacing: -0.015em; font-weight: 500;">{c.data.client}</h3>
+                  <p class="text-[15px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{c.data.teaser.problem}</p>
+                </div>
+                <div class="md:text-right">
+                  <p class="text-[14px] font-medium" style="color: var(--color-brand);">{c.data.teaser.resultMetric}</p>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="section bg-violet-mesh">
+    <div class="container-soraia text-center max-w-3xl mx-auto">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+        Hai un caso simile?
+      </p>
+      <h2 class="text-balance" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 2.75rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
+        Capiamo insieme se ha senso lavorare.
+      </h2>
+      <p class="mt-5 text-[17px] leading-relaxed" style="color: var(--color-ink-muted);">
+        20 minuti col CEO. Senza pitch, senza preventivi a sorpresa. Solo una conversazione operativa sui tuoi processi.
+      </p>
+      <div class="mt-9">
+        <a href="/parliamone" class="btn btn-primary">
+          20 min con Daniel
+          <span class="btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
