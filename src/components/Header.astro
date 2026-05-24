@@ -9,6 +9,7 @@ const labels = {
   it: {
     nav_servizi: "Servizi",
     nav_prodotti: "Prodotti",
+    nav_guide: "Guide",
     nav_cases: "Case studies",
     nav_blog: "Blog",
     nav_about: "Chi siamo",
@@ -20,6 +21,7 @@ const labels = {
   en: {
     nav_servizi: "Services",
     nav_prodotti: "Products",
+    nav_guide: "Guides",
     nav_cases: "Case studies",
     nav_blog: "Blog",
     nav_about: "About",
@@ -34,6 +36,7 @@ const homeHref = lang === "en" ? "/en/" : "/";
 const agentsHref = lang === "en" ? "/en/ai-agents" : "/ai-agents";
 const adoptionHref = lang === "en" ? "/en/ai-adoption" : "/ai-adoption";
 const prodottiHref = lang === "en" ? "/en/prodotti" : "/prodotti";
+const guideHref = lang === "en" ? "/en/guide" : "/guide";
 const casesHref = lang === "en" ? "/en/case-studies" : "/case-studies";
 const blogHref = lang === "en" ? "/en/blog" : "/blog";
 const aboutHref = lang === "en" ? "/en/chi-siamo" : "/chi-siamo";
@@ -135,6 +138,7 @@ const prodotti = [
         <li><a href={prodottiHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_prodotti}</a></li>
 
         <li><a href={casesHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_cases}</a></li>
+        <li><a href={guideHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_guide}</a></li>
         <li><a href={blogHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_blog}</a></li>
         <li><a href={aboutHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_about}</a></li>
         <li>
@@ -209,6 +213,7 @@ const prodotti = [
 
         <a href={prodottiHref} class="mobile-section__top">{labels.nav_prodotti}</a>
         <a href={casesHref} class="mobile-section__top">{labels.nav_cases}</a>
+        <a href={guideHref} class="mobile-section__top">{labels.nav_guide}</a>
         <a href={blogHref} class="mobile-section__top">{labels.nav_blog}</a>
         <a href={aboutHref} class="mobile-section__top">{labels.nav_about}</a>
         <a href={scorecardHref} class="mobile-section__top">{labels.nav_scorecard} <span class="text-[10px] font-semibold tracking-[0.1em] uppercase px-1.5 py-0.5 rounded-full ml-2" style="background: var(--color-violet-50, #F5EEF7); color: var(--color-brand);">{labels.badge_min}</span></a>
