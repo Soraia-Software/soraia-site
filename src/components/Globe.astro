@@ -1,0 +1,155 @@
+---
+interface Marker {
+  location: [number, number]; // lat, lng
+  size: number;
+}
+
+interface Props {
+  markers?: Marker[];
+  size?: number;
+}
+
+const defaultMarkers: Marker[] = [
+  { location: [41.9, 12.5],   size: 0.10 },  // Europa (centered Italy)
+  { location: [39.8, -98.5],  size: 0.08 },  // USA
+  { location: [24.5, 54.4],   size: 0.06 },  // UAE
+  { location: [-25.3, 133.8], size: 0.05 },  // Australia
+];
+
+const { markers = defaultMarkers, size = 600 } = Astro.props;
+---
+
+<div class="soraia-globe-wrapper" data-globe-size={size}>
+  <div class="soraia-globe-inner">
+    <canvas class="soraia-globe-canvas" data-globe-canvas></canvas>
+    <div class="soraia-globe-fade" aria-hidden="true"></div>
+  </div>
+</div>
+
+<script define:vars={{ markers }}>
+  import("cobe").then(({ default: createGlobe }) => {
+    const wrappers = document.querySelectorAll(".soraia-globe-wrapper");
+    wrappers.forEach((wrapper) => {
+      const canvas = wrapper.querySelector("[data-globe-canvas]");
+      if (!canvas) return;
+
+      let phi = 0;
+      let theta = 0.25;
+      let width = 0;
+      let height = 0;
+      let pointerInteracting = null;
+      let pointerInteractionMovement = 0;
+      let currentPhi = 0;
+
+      const updateSize = () => {
+        const rect = wrapper.getBoundingClientRect();
+        width = rect.width;
+        height = rect.width; // square
+        canvas.style.width = width + "px";
+        canvas.style.height = height + "px";
+      };
+      updateSize();
+
+      const globe = createGlobe(canvas, {
+        devicePixelRatio: window.devicePixelRatio || 2,
+        width: width * 2,
+        height: height * 2,
+        phi: 0,
+        theta: theta,
+        dark: 0,
+        diffuse: 1.2,
+        mapSamples: 16000,
+        mapBrightness: 5.5,
+        baseColor: [0.94, 0.93, 0.91],       // continents warm soft gray
+        markerColor: [74 / 255, 30 / 255, 92 / 255], // aubergine pin
+        glowColor: [0.93, 0.90, 0.94],       // subtle warm-violet glow
+        markers,
+        onRender: (state) => {
+          if (!pointerInteracting) {
+            phi += 0.0035;
+          }
+          state.phi = phi + pointerInteractionMovement;
+          state.theta = theta;
+          state.width = width * 2;
+          state.height = height * 2;
+          currentPhi = state.phi;
+        },
+      });
+
+      // Fade in
+      requestAnimationFrame(() => {
+        canvas.style.opacity = "1";
+      });
+
+      // Drag to rotate
+      const onPointerDown = (e) => {
+        pointerInteracting = e.clientX - pointerInteractionMovement;
+        canvas.style.cursor = "grabbing";
+      };
+      const onPointerUp = () => {
+        pointerInteracting = null;
+        canvas.style.cursor = "grab";
+      };
+      const onPointerMove = (e) => {
+        if (pointerInteracting !== null) {
+          const delta = e.clientX - pointerInteracting;
+          pointerInteractionMovement = delta / 200;
+        }
+      };
+      const onTouchMove = (e) => {
+        if (pointerInteracting !== null && e.touches[0]) {
+          const delta = e.touches[0].clientX - pointerInteracting;
+          pointerInteractionMovement = delta / 100;
+        }
+      };
+
+      canvas.style.cursor = "grab";
+      canvas.addEventListener("pointerdown", onPointerDown);
+      window.addEventListener("pointerup", onPointerUp);
+      window.addEventListener("pointercancel", onPointerUp);
+      window.addEventListener("pointermove", onPointerMove);
+      canvas.addEventListener("touchmove", onTouchMove, { passive: true });
+
+      // Responsive
+      const ro = new ResizeObserver(() => {
+        updateSize();
+      });
+      ro.observe(wrapper);
+    });
+  }).catch((err) => {
+    console.error("Globe load failed:", err);
+  });
+</script>
+
+<style is:global>
+  .soraia-globe-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    margin-inline: auto;
+    aspect-ratio: 1 / 1;
+  }
+  .soraia-globe-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .soraia-globe-canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    contain: layout paint size;
+    opacity: 0;
+    transition: opacity 600ms ease;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  /* Subtle radial fade at edges for editorial polish */
+  .soraia-globe-fade {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 55%, rgba(250, 250, 248, 0.4) 78%, var(--color-bg) 100%);
+  }
+</style>
