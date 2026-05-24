@@ -6,17 +6,17 @@ const { lang = "it" } = Astro.props;
 
 const t = {
   it: {
-    eyebrow: "GEO. Generative Engine Optimization",
+    eyebrow: "GEO · Generative Engine Optimization",
     title: "Chiedi a un'IA cosa pensa di Soraia",
     subtitle:
-      "I tuoi clienti chiedono già a ChatGPT, Claude e Perplexity quale partner IA scegliere. Apri una conversazione con loro su di noi, la risposta arriva direttamente dalle fonti pubbliche.",
+      "I tuoi clienti chiedono già a ChatGPT, Claude, Gemini e Perplexity quale partner IA scegliere. Apri una conversazione su di noi: la risposta arriva direttamente dalle fonti pubbliche.",
     ask: "Apri",
   },
   en: {
-    eyebrow: "GEO. Generative Engine Optimization",
+    eyebrow: "GEO · Generative Engine Optimization",
     title: "Ask an AI what it thinks of Soraia",
     subtitle:
-      "Your customers already ask ChatGPT, Claude, and Perplexity which AI partner to choose. Start a conversation about us, answers come straight from public sources.",
+      "Your customers already ask ChatGPT, Claude, Gemini and Perplexity which AI partner to choose. Start a conversation about us: answers come straight from public sources.",
     ask: "Open",
   },
 }[lang];
@@ -31,58 +31,66 @@ const assistants = [
   {
     name: "ChatGPT",
     href: `https://chatgpt.com/?q=${encoded}`,
-    accent: "from-emerald-700 to-emerald-600",
+    logo: "/logos/llms/chatgpt.webp",
   },
   {
     name: "Claude",
     href: `https://claude.ai/new?q=${encoded}`,
-    accent: "from-orange-600 to-amber-500",
+    logo: "/logos/llms/claude.svg",
+  },
+  {
+    name: "Gemini",
+    href: `https://gemini.google.com/app?q=${encoded}`,
+    logo: "/logos/llms/gemini.webp",
   },
   {
     name: "Perplexity",
     href: `https://www.perplexity.ai/?q=${encoded}`,
-    accent: "from-sky-700 to-cyan-500",
+    logo: "/logos/llms/perplexity.webp",
   },
 ];
 ---
 
-<section class="section bg-ink-900 relative overflow-hidden">
-  <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-violet-700/20 blur-3xl pointer-events-none"></div>
-  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-violet-600/15 blur-3xl pointer-events-none"></div>
-
+<section class="section relative overflow-hidden bg-hero-dark">
   <div class="container-soraia relative">
     <div class="max-w-3xl">
-      <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-600/20 border border-violet-600/30 text-violet-200 text-xs font-semibold uppercase tracking-[0.14em] mb-6">
-        <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: rgba(255,255,255,0.6);">
+        <span class="w-1 h-1 rounded-full bg-violet-400"></span>
         {t.eyebrow}
       </p>
-      <h2 class="text-h1 md:text-[2.25rem] md:text-[2.75rem] font-bold tracking-tight text-white leading-[1.1]">
+      <h2 class="text-balance" style="color: #fff; font-size: clamp(1.875rem, 3vw + 0.5rem, 2.75rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
         {t.title}
       </h2>
-      <p class="mt-5 text-body-lg text-white/70 leading-relaxed">
+      <p class="mt-5 text-[17px] leading-relaxed max-w-2xl" style="color: rgba(255,255,255,0.65);">
         {t.subtitle}
       </p>
     </div>
 
-    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
       {assistants.map((a) => (
         <a
           href={a.href}
           target="_blank"
           rel="noopener noreferrer"
-          class="group flex items-center justify-between gap-4 p-6 rounded-2xl bg-white/[0.04] border border-white/10 hover:bg-white/[0.08] hover:border-violet-400/40 transition-all"
+          class="group flex items-center justify-between gap-3 p-5 md:p-6 rounded-xl transition-all"
+          style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.10);"
         >
-          <div class="flex items-center gap-4">
-            <div class={`w-11 h-11 rounded-xl bg-gradient-to-br ${a.accent} flex items-center justify-center shadow-lg`}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-              </svg>
+          <div class="flex items-center gap-3.5 min-w-0">
+            <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0 p-1.5">
+              <img
+                src={a.logo}
+                alt={a.name}
+                loading="lazy"
+                width="28"
+                height="28"
+                class="w-full h-full object-contain"
+              />
             </div>
-            <span class="text-white font-semibold text-lg">{a.name}</span>
+            <span class="text-white font-medium text-[15px] truncate">{a.name}</span>
           </div>
-          <span class="inline-flex items-center gap-2 text-sm text-white/70 group-hover:text-violet-200 group-hover:gap-3 transition-all">
-            {t.ask}
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <span class="inline-flex items-center gap-1.5 text-[12px] font-medium transition-all flex-shrink-0" style="color: rgba(255,255,255,0.55);">
+            <span class="hidden md:inline">{t.ask}</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-0.5 transition-transform">
               <path d="M7 17L17 7M9 7h8v8"/>
             </svg>
           </span>
@@ -91,3 +99,12 @@ const assistants = [
     </div>
   </div>
 </section>
+
+<style>
+  /* hover lift effect with inline style fallback */
+  a.group:hover {
+    background: rgba(255,255,255,0.07) !important;
+    border-color: rgba(162, 118, 182, 0.40) !important;
+    transform: translateY(-2px);
+  }
+</style>

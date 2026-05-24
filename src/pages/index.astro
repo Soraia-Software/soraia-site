@@ -9,14 +9,6 @@ import HeroVisual from "~/components/HeroVisual.astro";
 import FAQ from "~/components/FAQ.astro";
 import PartnersStrip from "~/components/PartnersStrip.astro";
 import AskAISection from "~/components/AskAISection.astro";
-import { getCollection } from "astro:content";
-
-const blogPosts = (await getCollection("blog"))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
-function formatDate(d: Date) {
-  return d.toLocaleDateString("it-IT", { day: "numeric", month: "short", year: "numeric" });
-}
 
 const title = "Soraia. Portiamo gli Agenti IA nelle PMI Italiane";
 const description =
@@ -589,50 +581,6 @@ const faqs = [
             <p class="text-xs text-ink-400 mt-1 italic">Navily, la principale app europea per la prenotazione di porti turistici e ancoraggi nautici</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       9b. INSIGHTS / BLOG STRIP, visual rhythm break (dark premium)
-       ============================================================ -->
-  <section class="relative overflow-hidden bg-hero-dark">
-    <div class="container-soraia section">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 reveal">
-        <div class="max-w-2xl">
-          <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-5" style="color: rgba(255,255,255,0.6);">
-            <span class="w-1 h-1 rounded-full bg-violet-400"></span>
-            Blog & Insights
-          </p>
-          <h2 class="text-balance" style="color: #fff; font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
-            Pratico. Contrarian. Basato su 40+ progetti reali.
-          </h2>
-          <p class="mt-5 text-[16px] leading-relaxed max-w-xl" style="color: rgba(255,255,255,0.65);">
-            Senza AI hype, senza promesse magiche. Quello che funziona, e quello che non funziona, quando porti agenti IA in una PMI.
-          </p>
-        </div>
-        <a href="/blog" class="inline-flex items-center gap-2 text-[13px] font-medium tracking-[0.05em] self-start md:self-auto group" style="color: rgba(255,255,255,0.85);">
-          Tutti gli articoli
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 reveal">
-        {blogPosts.map((p) => (
-          <a href={`/blog/${p.id}`} class="group block p-7 rounded-2xl transition-all hover:-translate-y-0.5" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
-            <div class="flex items-center gap-3 text-[10px] font-medium tracking-[0.14em] uppercase mb-5" style="color: rgba(255,255,255,0.5);">
-              <time datetime={p.data.pubDate.toISOString()}>{formatDate(p.data.pubDate)}</time>
-              <span>·</span>
-              <span>{p.data.readMinutes ?? 5} min</span>
-            </div>
-            <h3 class="mb-3 text-balance transition-colors" style="color: #fff; font-size: 1.125rem; line-height: 1.25; letter-spacing: -0.015em; font-weight: 500;">{p.data.title}</h3>
-            <p class="text-[14px] leading-relaxed text-pretty mb-5" style="color: rgba(255,255,255,0.6);">{p.data.description}</p>
-            <span class="inline-flex items-center gap-1.5 text-[13px] font-medium" style="color: #C9A4D5;">
-              Leggi
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            </span>
-          </a>
-        ))}
       </div>
     </div>
   </section>
