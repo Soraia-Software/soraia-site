@@ -3,7 +3,7 @@ import Layout from "~/layouts/Layout.astro";
 import SectionHeader from "~/components/SectionHeader.astro";
 import ProofBar from "~/components/ProofBar.astro";
 import TestimonialCard from "~/components/TestimonialCard.astro";
-import Globe from "~/components/Globe.astro";
+import WorldMap from "~/components/WorldMap.astro";
 import CTABanner from "~/components/CTABanner.astro";
 import HeroVisual from "~/components/HeroVisual.astro";
 import FAQ from "~/components/FAQ.astro";
@@ -550,7 +550,7 @@ const faqs = [
         align="center"
       />
 
-      <Globe />
+      <WorldMap regions={worldRegions} />
 
       <!-- Region breakdown row -->
       <div class="mt-2 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 max-w-3xl mx-auto text-[13px]" style="color: var(--color-ink-muted);">

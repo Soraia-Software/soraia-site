@@ -8,11 +8,11 @@ interface CountryBreakdown {
 interface Region {
   x: number;          // percent left
   y: number;          // percent top
-  label: string;      // e.g. "Europe"
-  flag: string;       // primary flag emoji
-  total: number;      // total clients
+  label: string;
+  flag: string;
+  total: number;
   countries: CountryBreakdown[];
-  align?: "left" | "right" | "center";  // popup horizontal alignment
+  align?: "left" | "right" | "center";
 }
 
 interface Props {
@@ -23,11 +23,16 @@ const { regions } = Astro.props;
 ---
 
 <div class="world-map-wrapper">
-  <!-- Silhouette world map: SVG continents as soft filled shapes (editorial style) -->
-  <div class="world-map-fill" aria-hidden="true"></div>
-  <div class="world-map-stroke" aria-hidden="true"></div>
+  <img
+    src="/maps/world map.webp"
+    alt=""
+    aria-hidden="true"
+    loading="lazy"
+    class="world-map-img"
+    width="2400"
+    height="1100"
+  />
 
-  <!-- Region markers -->
   {regions.map((r) => (
     <div
       class="region-marker reveal"
@@ -37,7 +42,7 @@ const { regions } = Astro.props;
       <button
         type="button"
         class="region-dot"
-        aria-label={`${r.label}, ${r.total} clients`}
+        aria-label={`${r.label}, ${r.total} clienti`}
       >
         <span class="region-pulse"></span>
         <span class="region-core"></span>
@@ -66,43 +71,16 @@ const { regions } = Astro.props;
   .world-map-wrapper {
     position: relative;
     width: 100%;
-    max-width: 980px;
+    max-width: 1100px;
     margin-inline: auto;
-    aspect-ratio: 2 / 1;
   }
 
-  /* Solid soft-gray continents (editorial Stripe-style) */
-  .world-map-fill {
-    position: absolute;
-    inset: 0;
-    background: #E8E6E1;
-    -webkit-mask-image: url("/maps/world.svg");
-    -webkit-mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-image: url("/maps/world.svg");
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-  }
-
-  /* Optional finer dot texture overlay, very subtle */
-  .world-map-stroke {
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, rgba(31, 30, 28, 0.35) 0.5px, transparent 0.6px);
-    background-size: 4px 4px;
-    background-position: center;
-    -webkit-mask-image: url("/maps/world.svg");
-    -webkit-mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-image: url("/maps/world.svg");
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    opacity: 0.55;
-    mix-blend-mode: multiply;
+  .world-map-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   /* Region marker container */
@@ -112,7 +90,7 @@ const { regions } = Astro.props;
     z-index: 10;
   }
 
-  /* Pulsing dot button — refined, smaller, more editorial */
+  /* Pulsing dot button */
   .region-dot {
     position: relative;
     width: 14px;
@@ -130,14 +108,14 @@ const { regions } = Astro.props;
     position: absolute;
     inset: 0;
     border-radius: 9999px;
-    background: rgba(74, 30, 92, 0.18);
+    background: rgba(74, 30, 92, 0.20);
     animation: ping 2.8s var(--ease-out-quart) infinite;
   }
 
   .region-core {
     position: relative;
-    width: 9px;
-    height: 9px;
+    width: 10px;
+    height: 10px;
     border-radius: 9999px;
     background: #4A1E5C;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.95), 0 1px 3px rgba(42, 14, 54, 0.30);
@@ -157,24 +135,23 @@ const { regions } = Astro.props;
   /* Popup card, visible on hover/focus */
   .region-popup {
     position: absolute;
-    bottom: calc(100% + 16px);
+    bottom: calc(100% + 14px);
     left: 50%;
     transform: translateX(-50%) translateY(8px);
     min-width: 200px;
     max-width: 240px;
     background: white;
     border-radius: 14px;
-    border: 1px solid var(--color-ink-200);
-    padding: 16px 18px;
-    box-shadow: 0 12px 32px -8px rgba(10, 10, 11, 0.18), 0 24px 64px -16px rgba(137, 45, 156, 0.20);
+    border: 1px solid var(--color-line-strong);
+    padding: 14px 16px;
+    box-shadow: 0 12px 32px -8px rgba(10, 10, 11, 0.18);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.25s var(--ease-out-quart), transform 0.25s var(--ease-out-quart), visibility 0.25s;
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
     pointer-events: none;
     z-index: 20;
   }
 
-  /* Popup alignment variants for edge markers */
   .region-marker[data-align="left"] .region-popup {
     left: 0;
     transform: translateX(-12px) translateY(8px);
@@ -204,7 +181,6 @@ const { regions } = Astro.props;
     transform: translateX(12px) translateY(0);
   }
 
-  /* Arrow tail */
   .region-popup::after {
     content: "";
     position: absolute;
@@ -220,37 +196,36 @@ const { regions } = Astro.props;
   .region-marker[data-align="right"] .region-popup::after { left: auto; right: 16px; transform: none; }
 
   .region-popup-flag {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 9999px;
     background: var(--color-ink-50);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 19px;
     line-height: 1;
     margin-bottom: 8px;
-    box-shadow: 0 0 0 1px var(--color-ink-200);
+    box-shadow: 0 0 0 1px var(--color-line);
   }
 
   .region-popup-name {
-    font-family: var(--font-display);
-    font-weight: 600;
-    color: var(--color-ink-900);
-    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-ink);
+    font-size: 14.5px;
     line-height: 1.2;
     margin-bottom: 2px;
   }
 
   .region-popup-total {
     font-size: 12px;
-    color: var(--color-ink-500);
+    color: var(--color-ink-soft);
     font-weight: 500;
     margin-bottom: 10px;
   }
 
   .region-popup-list {
-    border-top: 1px solid var(--color-ink-100);
+    border-top: 1px solid var(--color-line);
     padding-top: 10px;
     margin: 0;
     list-style: none;
@@ -262,7 +237,7 @@ const { regions } = Astro.props;
     gap: 8px;
     padding: 3px 0;
     font-size: 12.5px;
-    color: var(--color-ink-700);
+    color: var(--color-ink-muted);
   }
 
   .popup-flag {
@@ -272,7 +247,7 @@ const { regions } = Astro.props;
   }
 
   .popup-text strong {
-    color: var(--color-ink-900);
-    font-weight: 600;
+    color: var(--color-ink);
+    font-weight: 500;
   }
 </style>
