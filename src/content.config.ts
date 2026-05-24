@@ -46,4 +46,24 @@ const caseStudies = defineCollection({
   }),
 });
 
-export const collections = { blog, caseStudies };
+const guides = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/guides" }),
+  schema: z.object({
+    title: z.string(),                       // <title> tag
+    h1: z.string().optional(),               // visible H1 (defaults to title if omitted)
+    description: z.string(),                 // <meta description>
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    author: z.string().default("Soraia"),
+    readMinutes: z.number(),
+    keywords: z.array(z.string()).default([]),
+    related: z.array(z.string()).default([]),
+    faq: z.array(z.object({
+      q: z.string(),
+      a: z.string(),
+    })).default([]),
+    featured: z.boolean().default(false),
+  }),
+});
+
+export const collections = { blog, caseStudies, guides };
