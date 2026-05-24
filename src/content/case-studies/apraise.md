@@ -41,7 +41,7 @@ related:
 
 ## Il contesto
 
-APraise è una boutique italiana di **executive search** che lavora su mandati senior per clienti enterprise (esempio noto: Luxottica). Il modello business è quello classico dell'executive search: poche posizioni aperte alla volta, ognuna molto qualificata, fee proporzionali alla seniority del placement, deadline strette imposte dal cliente finale.
+APraise è una boutique italiana di **executive search** che lavora su mandati senior per clienti enterprise. Il modello business è quello classico dell'executive search: poche posizioni aperte alla volta, ognuna molto qualificata, fee proporzionali alla seniority del placement, deadline strette imposte dal cliente finale.
 
 Il valore di APraise dipende dalla **velocità con cui può identificare e qualificare profili senior** che spesso non sono nel mercato attivo (passive candidates da scovare su LinkedIn, eventi di settore, network personale).
 
@@ -52,7 +52,7 @@ L'executive search ha caratteristiche operative che il software ATS generico non
 - **La maggior parte dei candidati arriva via sourcing attivo su LinkedIn**, non via candidatura spontanea. Il consulente passa ore a navigare profili LinkedIn target, copiando manualmente nome, ruolo, azienda, esperienza, formazione nell'ATS aziendale.
 - **Il matching JD↔candidato è fatto a memoria** dei consulenti senior che ricordano "ho avuto Mario Rossi sei mesi fa, è perfetto per questa posizione". Competenza preziosa ma non scalabile.
 - **Database frammentato** tra Excel (per i mandati attivi), tool ATS legacy (per lo storico), e LinkedIn (per il sourcing). Tre fonti di verità, zero matching cross-source.
-- **Su mandati enterprise** (es. Luxottica), un singolo cliente può richiedere 150+ candidati gestiti per posizione: senza tooling efficiente il funnel collassa.
+- **Su mandati enterprise**, un singolo cliente può richiedere 150+ candidati gestiti per posizione: senza tooling efficiente il funnel collassa.
 
 Risultato operativo: il consulente senior — figura costosa, che dovrebbe parlare con clienti e candidati — passava una **quota significativa del tempo in data entry manuale**.
 
@@ -72,7 +72,7 @@ Il consulente senior recupera ore al giorno per parlare con clienti e candidati.
 
 **1 click da LinkedIn al database** arricchito: ciò che prima richiedeva 3-5 minuti di copia-incolla manuale per profilo, oggi è 1 click + revisione di pochi secondi.
 
-**150+ candidati gestiti per posizione enterprise** (es. mandato Luxottica): il funnel di executive search funziona alla scala richiesta dai clienti di fascia alta.
+**150+ candidati gestiti per posizione enterprise**: il funnel di executive search funziona alla scala richiesta dai clienti di fascia alta.
 
 **Matching semantico via vector DB**: il consulente non deve più ricordare "chi sarebbe perfetto per questa posizione" — l'agente lo propone in autonomia con score motivato.
 
