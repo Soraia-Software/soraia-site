@@ -260,6 +260,77 @@ const faqs = [
   <PricingTwoSteps bg="ink-50" />
 
   <!-- ============================================================
+       COME COSTRUIAMO I TUOI AGENTI (sprint methodology)
+       ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Metodologia"
+        title="Come costruiamo i tuoi agenti IA."
+        subtitle="<strong>Sprint iterativi corti</strong>: ad ogni iterazione l'agente fa già qualcosa di utile in produzione. Niente progetti di 6 mesi che finiscono in un demo. Vedi valore già dalla prima settimana."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-14 items-center max-w-6xl mx-auto">
+        <!-- Sprint diagram -->
+        <figure class="m-0">
+          <div class="rounded-2xl overflow-hidden bg-ink-50 border border-line p-6 md:p-10">
+            <img
+              src="/agile/sprint.avif"
+              alt="Sprint iterativi: ogni ciclo consegna valore in produzione"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto block"
+            />
+          </div>
+          <figcaption class="mt-3 text-[12.5px] text-center" style="color: var(--color-ink-soft);">
+            Sprint iterativi, valore in produzione ad ogni ciclo.
+          </figcaption>
+        </figure>
+
+        <!-- Sprint steps -->
+        <div>
+          <ol class="space-y-5">
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand);">1</span>
+              <div>
+                <p class="font-medium text-[15.5px] mb-1.5" style="color: var(--color-ink);">Discovery + baseline (settimana 1)</p>
+                <p class="text-[14px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">Cronometriamo il processo target con il tuo team. Lock del <strong style="color: var(--color-ink);">metric primario unico</strong> (es. ore/persona/settimana recuperate). Senza baseline, niente garanzia.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand);">2</span>
+              <div>
+                <p class="font-medium text-[15.5px] mb-1.5" style="color: var(--color-ink);">Build dell'agente (settimane 2-3)</p>
+                <p class="text-[14px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">Prompt engineering, integrazione con i tuoi sistemi (CRM, ATS, gestionali), regole di escalation, audit log. Review settimanali con il tuo team operativo.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand);">3</span>
+              <div>
+                <p class="font-medium text-[15.5px] mb-1.5" style="color: var(--color-ink);">Shadow mode + training (settimana 4)</p>
+                <p class="text-[14px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">L'agente lavora in parallelo al team umano, senza ancora prendere decisioni autonome. Confronto output, fine-tuning sui criteri, formazione del team che lo supervisionerà.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-medium" style="background: var(--color-brand); color: white;">4</span>
+              <div>
+                <p class="font-medium text-[15.5px] mb-1.5" style="color: var(--color-ink);">Go-live + 30 giorni di hypercare</p>
+                <p class="text-[14px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">L'agente passa in produzione. Monitoring attivo Soraia per 30 giorni, fix immediati sui casi limite. Al giorno 30: <strong style="color: var(--color-ink);">misurazione finale vs baseline</strong>. Se non hai recuperato le ore promesse, non paghi lo sprint.</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="mt-8 inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>4 settimane al primo agente live. Iterazioni mensili dopo il go-live.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        FAQ
        ============================================================ -->
   <section class="section bg-white">
