@@ -35,6 +35,9 @@ stack:
   - "Vector database (semantic match)"
   - "Chrome Web Clipper custom"
   - "LinkedIn integration via clipper"
+screenshots:
+  - src: "/case-studies/apraise/01.avif"
+    caption: "Dashboard ATS APraise con feature Potential Match"
 related:
   - "talent-match"
   - "aegis"

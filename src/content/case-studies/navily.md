@@ -33,6 +33,15 @@ stack:
   - "Vision API (image moderation)"
   - "Pipeline custom enrichment"
   - "Integrazione backend Navily"
+screenshots:
+  - src: "/case-studies/navily/01.avif"
+    caption: "App Navily: porti turistici Mediterraneo"
+  - src: "/case-studies/navily/02.avif"
+    caption: "Recensioni e immagini utente moderate dall'agente"
+  - src: "/case-studies/navily/03.avif"
+    caption: "Dettaglio porto con dati arricchiti"
+  - src: "/case-studies/navily/04.avif"
+    caption: "Flusso prenotazione ormeggio"
 related:
   - "storywonder"
   - "stars-be-original"

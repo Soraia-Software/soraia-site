@@ -35,6 +35,15 @@ stack:
   - "Brevo (transactional email)"
   - "Stripe (payment animatori)"
   - "GPT-4o (agente di risposta)"
+screenshots:
+  - src: "/case-studies/stars-be-original/01.avif"
+    caption: "Form di candidatura Stars Be Original"
+  - src: "/case-studies/stars-be-original/02.avif"
+    caption: "Backoffice gestione candidati"
+  - src: "/case-studies/stars-be-original/03.avif"
+    caption: "Dettaglio profilo candidato con stato agente"
+  - src: "/case-studies/stars-be-original/04.avif"
+    caption: "Configurazione comunicazioni automatiche"
 related:
   - "cxl"
   - "liftt"

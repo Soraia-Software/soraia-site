@@ -50,6 +50,11 @@ const caseStudies = defineCollection({
     })).default([]),
     timeline: z.string().optional(),           // e.g. "4 settimane go-live + sprint mensili"
     stack: z.array(z.string()).default([]),
+    screenshots: z.array(z.object({
+      src: z.string(),
+      caption: z.string().optional(),
+      alt: z.string().optional(),
+    })).default([]),
     related: z.array(z.string()).default([]),  // slugs of related case studies
   }),
 });

@@ -117,13 +117,33 @@ const jsonLd = {
           <Content />
         </div>
 
-        <!-- Screenshot placeholder hint -->
-        <div class="mt-10 p-5 rounded-lg border border-dashed" style="border-color: var(--color-line-strong); background: var(--color-ink-50);">
-          <p class="text-[12px] font-medium uppercase tracking-[0.14em] mb-2" style="color: var(--color-ink-soft);">Screenshot da inserire</p>
-          <p class="text-[13px]" style="color: var(--color-ink-muted);">
-            Spazio riservato per 2-3 screenshot del prodotto / interfaccia agente per {study.data.client}. Da fornire dal cliente o dal team Soraia, poi inserire qui o nel body markdown.
-          </p>
-        </div>
+        {study.data.screenshots.length > 0 && (
+          <div class="mt-12">
+            <p class="text-[11px] font-medium tracking-[0.14em] uppercase mb-5" style="color: var(--color-ink-soft);">
+              {study.data.screenshots.length === 1 ? "Screenshot del prodotto" : "Screenshot del prodotto"}
+            </p>
+            <div class={`grid gap-4 md:gap-5 ${study.data.screenshots.length === 1 ? "grid-cols-1" : study.data.screenshots.length === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-2"}`}>
+              {study.data.screenshots.map((shot) => (
+                <figure class="m-0">
+                  <div class="overflow-hidden rounded-xl border border-line bg-ink-50">
+                    <img
+                      src={shot.src}
+                      alt={shot.alt || shot.caption || `Screenshot ${study.data.client}`}
+                      loading="lazy"
+                      decoding="async"
+                      class="w-full h-auto block"
+                    />
+                  </div>
+                  {shot.caption && (
+                    <figcaption class="mt-2.5 text-[12.5px] leading-snug text-pretty" style="color: var(--color-ink-soft);">
+                      {shot.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
 
