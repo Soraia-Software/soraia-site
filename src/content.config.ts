@@ -19,8 +19,16 @@ const caseStudies = defineCollection({
   schema: z.object({
     title: z.string(),
     client: z.string(),
+    clientLogo: z.string().optional(),         // path to /logos/clients/<x>.webp
     sector: z.string(),
     service: z.string(),                       // e.g. "Agente IA candidature"
+    industry: z.enum([
+      "recruitment-hr",
+      "consumer-education",
+      "finance-vc",
+      "sustainability",
+      "public-sector",
+    ]).default("recruitment-hr"),
     pubDate: z.coerce.date(),
     featured: z.boolean().default(false),
     stakeholder: z.object({

@@ -1,6 +1,8 @@
 ---
 title: "Numeraria — €32.000/mese risparmiati con agente IA gestione studio"
 client: "Numeraria"
+clientLogo: "/logos/clients/numeraria.webp"
+industry: "finance-vc"
 sector: "Studio paghe & contabilità"
 service: "Agente IA gestione preventivi e ore"
 pubDate: 2026-03-15

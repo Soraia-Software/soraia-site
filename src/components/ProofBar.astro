@@ -78,6 +78,14 @@ const doubled = [...logos, ...logos];
     /* mix-blend-mode helps any residual white halo from logo backgrounds disappear into the strip bg */
     mix-blend-mode: multiply;
   }
+
+  /* Square / padded source images look small vs wide logos in a fixed cell.
+     Scale up specific ones to match the perceived size of the others. */
+  .proofbar-cell .logo-img[src*="navily"],
+  .proofbar-cell .logo-img[src*="storywonder"] {
+    transform: scale(1.45);
+    transform-origin: center;
+  }
   .marquee:hover .proofbar-cell .logo-img,
   .proofbar-cell .logo-img:hover {
     filter: grayscale(0%) brightness(1);

@@ -1,6 +1,8 @@
 ---
 title: "Rainplan — Piattaforma AI per la gestione di climate parcel"
 client: "Rainplan"
+clientLogo: "/logos/clients/rainplan.webp"
+industry: "sustainability"
 sector: "Climate tech · Stormwater management"
 service: "Agente IA pipeline incentive climate"
 pubDate: 2026-03-20

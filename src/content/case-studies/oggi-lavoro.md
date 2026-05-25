@@ -1,6 +1,8 @@
 ---
 title: "Oggi Lavoro — Replatforming AI di 108.000 candidati"
 client: "Oggi Lavoro"
+clientLogo: "/logos/clients/oggilavoro.webp"
+industry: "recruitment-hr"
 sector: "Agenzia per il lavoro · Somministrazione"
 service: "Agente IA candidate search e matching"
 pubDate: 2026-05-10

@@ -1,6 +1,8 @@
 ---
 title: "LIFTT — Agente IA che gestisce il deal flow in autonomia"
 client: "LIFTT"
+clientLogo: "/logos/clients/liftt.webp"
+industry: "finance-vc"
 sector: "Venture Capital · Tech transfer"
 service: "Agente IA deal flow"
 pubDate: 2026-03-10

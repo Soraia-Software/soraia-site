@@ -1,6 +1,7 @@
 ---
 title: "Diplotools — Electra, piattaforma AI per la diplomazia internazionale"
 client: "Diplotools"
+industry: "public-sector"
 sector: "Diplomazia · Eventi governativi"
 service: "Agente IA gestione eventi diplomatici"
 pubDate: 2026-03-25

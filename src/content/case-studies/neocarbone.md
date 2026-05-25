@@ -1,6 +1,7 @@
 ---
 title: "Néo Carbone — Partnership delivery per scaleup climate canadese"
 client: "Néo Carbone"
+industry: "sustainability"
 sector: "Climate · Carbon partnership broker"
 service: "Agency-as-a-service multi-cliente"
 pubDate: 2026-02-28

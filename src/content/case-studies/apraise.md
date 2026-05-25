@@ -1,6 +1,8 @@
 ---
 title: "APraise — Agente IA ATS con Web Clipper LinkedIn per executive search"
 client: "APraise"
+clientLogo: "/logos/clients/apraise.webp"
+industry: "recruitment-hr"
 sector: "Executive search · Senior recruitment"
 service: "Agente IA ATS + Web Clipper candidati"
 pubDate: 2026-03-05

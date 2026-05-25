@@ -1,6 +1,8 @@
 ---
 title: "StoryWonder — Agente IA che genera 300.000+ storie per bambini"
 client: "StoryWonder"
+clientLogo: "/logos/clients/storywonder.webp"
+industry: "consumer-education"
 sector: "Consumer mobile · EdTech kids"
 service: "Agente IA storie personalizzate"
 pubDate: 2026-04-20

@@ -1,6 +1,8 @@
 ---
 title: "Talent Match — Agente IA matching candidati per recruitment spagnolo"
 client: "Talent Match"
+clientLogo: "/logos/clients/talentmatch.webp"
+industry: "recruitment-hr"
 sector: "Recruitment · Spagna"
 service: "Agente IA matching candidati"
 pubDate: 2026-04-02

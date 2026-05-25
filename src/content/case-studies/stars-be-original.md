@@ -1,6 +1,8 @@
 ---
 title: "Stars Be Original — Agente IA che gestisce 20.000+ candidati"
 client: "Stars Be Original"
+clientLogo: "/logos/clients/starsbeoriginal.webp"
+industry: "recruitment-hr"
 sector: "Recruitment animazione turistica"
 service: "Agente IA candidature"
 pubDate: 2026-04-15

@@ -1,6 +1,8 @@
 ---
 title: "Aegis Group — Piattaforma AI-nativa per 8 brand di recruitment"
 client: "Aegis Group"
+clientLogo: "/logos/clients/aegisgroup.webp"
+industry: "recruitment-hr"
 sector: "Recruitment multi-brand · HR"
 service: "Agente IA ATS unificato"
 pubDate: 2026-04-05
