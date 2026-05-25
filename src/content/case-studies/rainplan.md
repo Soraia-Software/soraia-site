@@ -36,8 +36,8 @@ stack:
   - "Stripe (payments)"
   - "Deel (HR)"
 related:
-  - "diplotools"
-  - "neocarbone"
+  - "startup-govtech"
+  - "liftt"
 ---
 
 ## Il contesto
