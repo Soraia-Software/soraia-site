@@ -36,7 +36,7 @@ stack:
   - "Chrome Web Clipper custom"
   - "LinkedIn integration via clipper"
 screenshots:
-  - src: "/case-studies/apraise/01.avif"
+  - src: "/case-studies/apraise/01.webp"
     caption: "Dashboard ATS APraise con feature Potential Match"
 related:
   - "talent-match"

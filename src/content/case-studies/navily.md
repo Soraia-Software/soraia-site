@@ -34,13 +34,13 @@ stack:
   - "Pipeline custom enrichment"
   - "Integrazione backend Navily"
 screenshots:
-  - src: "/case-studies/navily/01.avif"
+  - src: "/case-studies/navily/01.webp"
     caption: "App Navily: porti turistici Mediterraneo"
-  - src: "/case-studies/navily/02.avif"
+  - src: "/case-studies/navily/02.webp"
     caption: "Recensioni e immagini utente moderate dall'agente"
-  - src: "/case-studies/navily/03.avif"
+  - src: "/case-studies/navily/03.webp"
     caption: "Dettaglio porto con dati arricchiti"
-  - src: "/case-studies/navily/04.avif"
+  - src: "/case-studies/navily/04.webp"
     caption: "Flusso prenotazione ormeggio"
 related:
   - "storywonder"

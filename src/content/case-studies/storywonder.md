@@ -36,13 +36,13 @@ stack:
   - "Custom prompt engineering"
   - "Apple Store + Google Play"
 screenshots:
-  - src: "/case-studies/storywonder/01.avif"
+  - src: "/case-studies/storywonder/01.webp"
     caption: "Home dell'app StoryWonder"
-  - src: "/case-studies/storywonder/02.avif"
+  - src: "/case-studies/storywonder/02.webp"
     caption: "Personalizzazione storia (personaggio, ambientazione)"
-  - src: "/case-studies/storywonder/03.avif"
+  - src: "/case-studies/storywonder/03.webp"
     caption: "Storia generata dall'agente IA"
-  - src: "/case-studies/storywonder/04.avif"
+  - src: "/case-studies/storywonder/04.webp"
     caption: "Libreria storie + coin system"
 related:
   - "stars-be-original"

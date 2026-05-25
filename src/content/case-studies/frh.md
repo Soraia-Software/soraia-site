@@ -35,7 +35,7 @@ stack:
   - "Web Clipper custom"
   - "MailerLite + Brevo (transactional)"
 screenshots:
-  - src: "/case-studies/frh/01.avif"
+  - src: "/case-studies/frh/01.webp"
     caption: "Pipeline lead immobiliari automatizzata"
 related:
   - "navily"
