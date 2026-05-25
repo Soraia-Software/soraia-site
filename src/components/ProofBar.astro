@@ -27,7 +27,7 @@ const doubled = [...logos, ...logos];
     <div class="marquee-track">
       {doubled.map((logo, idx) => (
         <div
-          class="flex items-center shrink-0 px-4"
+          class="proofbar-cell shrink-0"
           aria-hidden={idx >= logos.length ? "true" : undefined}
           title={logo.name}
         >
@@ -37,7 +37,7 @@ const doubled = [...logos, ...logos];
               alt={logo.name}
               loading="lazy"
               decoding="async"
-              class="logo-img max-h-9 md:max-h-10 w-auto object-contain"
+              class="logo-img"
             />
           ) : (
             <span class="text-xl md:text-2xl font-semibold tracking-tight text-ink-400 hover:text-ink-900 transition-colors duration-300 whitespace-nowrap">
@@ -51,14 +51,35 @@ const doubled = [...logos, ...logos];
 </section>
 
 <style is:global>
-  /* Uniform premium treatment for client logos: grayscale, low contrast, full color on hover */
-  .logo-img {
+  /* Uniform bounding box per logo: same visual real estate for square / wide / tall logos */
+  .proofbar-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 60px;
+    padding: 0 0.5rem;
+    flex-shrink: 0;
+  }
+  @media (min-width: 768px) {
+    .proofbar-cell { width: 170px; height: 64px; }
+  }
+
+  /* Logo image: fits within cell, max constraints both dimensions */
+  .proofbar-cell .logo-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
     filter: grayscale(100%) brightness(0.55) contrast(1.1);
     opacity: 0.75;
     transition: filter 0.4s var(--ease-out-quart), opacity 0.4s var(--ease-out-quart);
+    /* mix-blend-mode helps any residual white halo from logo backgrounds disappear into the strip bg */
+    mix-blend-mode: multiply;
   }
-  .marquee:hover .logo-img,
-  .logo-img:hover {
+  .marquee:hover .proofbar-cell .logo-img,
+  .proofbar-cell .logo-img:hover {
     filter: grayscale(0%) brightness(1);
     opacity: 1;
   }
