@@ -385,12 +385,20 @@ const faqs = [
       z-index: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 1rem;
     }
+    /* Mobile: badge + meta inline (horizontal); Desktop: badge above meta (vertical) */
     .sprint-step-head {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 0.9rem;
+    }
+    @media (min-width: 1024px) {
+      .sprint-step-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.1rem;
+      }
     }
     .sprint-num {
       flex-shrink: 0;
@@ -406,18 +414,19 @@ const faqs = [
       font-weight: 500;
       font-size: 1rem;
       letter-spacing: -0.01em;
-      box-shadow: 0 0 0 6px rgba(255, 255, 255, 1); /* knock-out for connector */
+      /* knock-out: enlarge the white "halo" so the connector line cuts cleanly at the badge edge */
+      box-shadow: 0 0 0 8px white;
     }
     .sprint-num--milestone {
       background: var(--color-brand);
       border-color: var(--color-brand);
       color: white;
-      box-shadow: 0 0 0 6px white, 0 4px 14px -4px rgba(74, 30, 92, 0.40);
+      box-shadow: 0 0 0 8px white, 0 4px 14px -4px rgba(74, 30, 92, 0.40);
     }
     .sprint-step-meta {
       display: flex;
       flex-direction: column;
-      gap: 0.15rem;
+      gap: 0.25rem;
       min-width: 0;
     }
     .sprint-step-tag {
