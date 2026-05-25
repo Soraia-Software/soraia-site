@@ -267,68 +267,189 @@ const faqs = [
       <SectionHeader
         eyebrow="Metodologia"
         title="Come costruiamo i tuoi agenti IA."
-        subtitle="<strong>Sprint iterativi corti</strong>: ad ogni iterazione l'agente fa già qualcosa di utile in produzione. Niente progetti di 6 mesi che finiscono in un demo. Vedi valore già dalla prima settimana."
+        subtitle="<strong>Sprint iterativi corti</strong>: ad ogni iterazione l'agente fa già qualcosa di utile in produzione. Niente progetti di 6 mesi che finiscono in un demo: vedi valore già dalla prima settimana."
         align="center"
       />
 
-      <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-14 items-center max-w-6xl mx-auto">
-        <!-- Sprint diagram -->
-        <figure class="m-0">
-          <div class="rounded-2xl overflow-hidden bg-ink-50 border border-line p-6 md:p-10">
-            <img
-              src="/agile/sprint.webp"
-              alt="Sprint iterativi: ogni ciclo consegna valore in produzione"
-              loading="lazy"
-              decoding="async"
-              class="w-full h-auto block"
-            />
-          </div>
-          <figcaption class="mt-3 text-[12.5px] text-center" style="color: var(--color-ink-soft);">
-            Sprint iterativi, valore in produzione ad ogni ciclo.
-          </figcaption>
-        </figure>
+      <!-- Sprint diagram (hero visual, centered) -->
+      <figure class="m-0 mt-8 max-w-[900px] mx-auto">
+        <div class="rounded-2xl bg-ink-50 border border-line px-6 py-8 md:px-10 md:py-12">
+          <img
+            src="/agile/sprint.webp"
+            alt="Sprint iterativi: ogni ciclo consegna valore in produzione"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-auto block"
+          />
+        </div>
+        <figcaption class="mt-3.5 text-[12.5px] text-center" style="color: var(--color-ink-soft);">
+          Sprint iterativi: ad ogni ciclo l'agente è già in produzione.
+        </figcaption>
+      </figure>
 
-        <!-- Sprint steps -->
-        <div>
-          <ol class="space-y-5">
-            <li class="flex items-start gap-4">
-              <span class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand);">1</span>
-              <div>
-                <p class="font-medium text-[15.5px] mb-1.5" style="color: var(--color-ink);">Discovery + baseline (settimana 1)</p>
-                <p class="text-[14px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">Cronometriamo il processo target con il tuo team. Lock del <strong style="color: var(--color-ink);">metric primario unico</strong> (es. ore/persona/settimana recuperate). Senza baseline, niente garanzia.</p>
+      <!-- Sprint steps timeline 4-col -->
+      <div class="mt-14 md:mt-16 max-w-6xl mx-auto">
+        <ol class="sprint-timeline">
+          <li class="sprint-step">
+            <div class="sprint-step-head">
+              <span class="sprint-num">1</span>
+              <div class="sprint-step-meta">
+                <p class="sprint-step-tag">Settimana 1</p>
+                <p class="sprint-step-title">Discovery + baseline</p>
               </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand);">2</span>
-              <div>
-                <p class="font-medium text-[15.5px] mb-1.5" style="color: var(--color-ink);">Build dell'agente (settimane 2-3)</p>
-                <p class="text-[14px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">Prompt engineering, integrazione con i tuoi sistemi (CRM, ATS, gestionali), regole di escalation, audit log. Review settimanali con il tuo team operativo.</p>
+            </div>
+            <p class="sprint-step-body">Cronometriamo il processo target con il tuo team. Lock del <strong>metric primario unico</strong> (es. ore/persona/settimana recuperate). Senza baseline, niente garanzia.</p>
+          </li>
+          <li class="sprint-step">
+            <div class="sprint-step-head">
+              <span class="sprint-num">2</span>
+              <div class="sprint-step-meta">
+                <p class="sprint-step-tag">Settimane 2-3</p>
+                <p class="sprint-step-title">Build dell'agente</p>
               </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand);">3</span>
-              <div>
-                <p class="font-medium text-[15.5px] mb-1.5" style="color: var(--color-ink);">Shadow mode + training (settimana 4)</p>
-                <p class="text-[14px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">L'agente lavora in parallelo al team umano, senza ancora prendere decisioni autonome. Confronto output, fine-tuning sui criteri, formazione del team che lo supervisionerà.</p>
+            </div>
+            <p class="sprint-step-body">Prompt engineering, integrazione con i tuoi sistemi (CRM, ATS, gestionali), regole di escalation, audit log. Review settimanali con il tuo team operativo.</p>
+          </li>
+          <li class="sprint-step">
+            <div class="sprint-step-head">
+              <span class="sprint-num">3</span>
+              <div class="sprint-step-meta">
+                <p class="sprint-step-tag">Settimana 4</p>
+                <p class="sprint-step-title">Shadow mode + training</p>
               </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-medium" style="background: var(--color-brand); color: white;">4</span>
-              <div>
-                <p class="font-medium text-[15.5px] mb-1.5" style="color: var(--color-ink);">Go-live + 30 giorni di hypercare</p>
-                <p class="text-[14px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">L'agente passa in produzione. Monitoring attivo Soraia per 30 giorni, fix immediati sui casi limite. Al giorno 30: <strong style="color: var(--color-ink);">misurazione finale vs baseline</strong>. Se non hai recuperato le ore promesse, non paghi lo sprint.</p>
+            </div>
+            <p class="sprint-step-body">L'agente lavora in parallelo al team umano, senza ancora prendere decisioni autonome. Confronto output, fine-tuning sui criteri, formazione del team.</p>
+          </li>
+          <li class="sprint-step sprint-step--milestone">
+            <div class="sprint-step-head">
+              <span class="sprint-num sprint-num--milestone">4</span>
+              <div class="sprint-step-meta">
+                <p class="sprint-step-tag">Go-live + 30 gg</p>
+                <p class="sprint-step-title">Hypercare e misurazione</p>
               </div>
-            </li>
-          </ol>
+            </div>
+            <p class="sprint-step-body">L'agente passa in produzione. Monitoring attivo Soraia per 30 giorni, fix immediati sui casi limite. Al giorno 30: <strong>misurazione finale vs baseline</strong>. Se non hai recuperato le ore promesse, non paghi lo sprint.</p>
+          </li>
+        </ol>
 
-          <div class="mt-8 inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand);">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>4 settimane al primo agente live. Iterazioni mensili dopo il go-live.</span>
+        <div class="mt-12 flex justify-center">
+          <div class="inline-flex items-center gap-2.5 px-5 py-3 rounded-full text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand); border: 1px solid var(--color-violet-200);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span><strong>4 settimane</strong> al primo agente live · iterazioni mensili dopo il go-live</span>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <style is:global>
+    /* === Sprint timeline === */
+    .sprint-timeline {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+    }
+    @media (min-width: 768px) {
+      .sprint-timeline {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 2rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .sprint-timeline {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+      /* Connector line behind the badges, horizontal on desktop */
+      .sprint-timeline::before {
+        content: "";
+        position: absolute;
+        top: 22px;
+        left: 7%;
+        right: 7%;
+        height: 2px;
+        background: linear-gradient(to right,
+          var(--color-line-strong) 0%,
+          var(--color-violet-300) 50%,
+          var(--color-brand) 100%);
+        opacity: 0.5;
+        z-index: 0;
+      }
+    }
+    .sprint-step {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .sprint-step-head {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .sprint-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 9999px;
+      background: white;
+      border: 1.5px solid var(--color-violet-300);
+      color: var(--color-brand);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+      box-shadow: 0 0 0 6px rgba(255, 255, 255, 1); /* knock-out for connector */
+    }
+    .sprint-num--milestone {
+      background: var(--color-brand);
+      border-color: var(--color-brand);
+      color: white;
+      box-shadow: 0 0 0 6px white, 0 4px 14px -4px rgba(74, 30, 92, 0.40);
+    }
+    .sprint-step-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      min-width: 0;
+    }
+    .sprint-step-tag {
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-ink-soft);
+      line-height: 1.4;
+    }
+    .sprint-step-title {
+      font-size: 15.5px;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      font-weight: 500;
+      color: var(--color-ink);
+    }
+    .sprint-step-body {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--color-ink-muted);
+      margin: 0;
+      text-wrap: pretty;
+    }
+    .sprint-step-body strong {
+      color: var(--color-ink);
+      font-weight: 500;
+    }
+    .sprint-step--milestone .sprint-step-title {
+      color: var(--color-brand);
+    }
+  </style>
 
   <!-- ============================================================
        FAQ
