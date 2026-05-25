@@ -1,6 +1,7 @@
 ---
 title: "Néo Carbone — Partnership delivery per scaleup climate canadese"
 client: "Néo Carbone"
+clientLogo: "/logos/clients/neocarbone.webp"
 industry: "sustainability"
 sector: "Climate · Carbon partnership broker"
 service: "Agency-as-a-service multi-cliente"
