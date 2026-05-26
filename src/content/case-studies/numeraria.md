@@ -33,9 +33,6 @@ stack:
   - "WeWeb (frontend management)"
   - "OpenAI (generazione preventivi)"
   - "Export contabilità su sistemi esistenti"
-screenshots:
-  - src: "/case-studies/numeraria/01.png"
-    caption: "Dashboard gestione preventivi e ore Numeraria"
 related:
   - "cxl"
   - "liftt"
