@@ -49,12 +49,25 @@ const deliverables = [
   "Checklist connettori: cosa attivare, cosa disattivare, quando, con che permessi",
 ];
 
-const retainerFeatures = [
-  "Check-up mensile di gruppo (1h)",
-  "Call individuale di follow-up (30 min/mese)",
-  "Supporto async via chat ed email",
-  "Evoluzione continua delle skill aziendali condivise",
-  "Onboarding nuove persone che entrano nel team",
+const coachingPackages = [
+  {
+    hours: "10 ore",
+    rate: "120 €/ora",
+    total: "1.200 €",
+    when: "Pochi casi specifici da sbloccare nelle settimane successive al workshop.",
+  },
+  {
+    hours: "20 ore",
+    rate: "100 €/ora",
+    total: "2.000 €",
+    when: "Accompagnamento più sostenuto e distribuito su più persone del team.",
+  },
+  {
+    hours: "50 ore",
+    rate: "90 €/ora",
+    total: "4.500 €",
+    when: "Programma di consolidamento esteso, copre l'intero anno post-workshop.",
+  },
 ];
 
 const dontFeatures = [
@@ -381,39 +394,47 @@ const faqs = [
   </section>
 
   <!-- ============================================================
-       ADD-ON: RETAINER POST-ENGAGEMENT
+       ADD-ON: PACCHETTI COACHING ORARI
        ============================================================ -->
   <section class="section bg-ink-50">
     <div class="container-soraia max-w-5xl">
       <SectionHeader
         eyebrow="Add-on opzionale"
-        title="Retainer post-engagement."
-        subtitle="Dopo i 3 mesi di tutoraggio, opzione di prosecuzione mensile per consolidare l'adozione, integrare nuove skill aziendali ed evolvere i processi AI nel tempo. <strong>Tariffa flat per partecipante attivo</strong>, fatturazione mensile, nessun attrito contrattuale."
+        title="Pacchetto coaching."
+        subtitle="Disponibile in aggiunta a tutte le proposte. Ore di coaching individuali o in piccolo gruppo (max 5 persone), da spendere nei mesi successivi al workshop sulle persone che hanno bisogno di accompagnamento mirato. <strong>Tre tagli con tariffa oraria decrescente sul volume.</strong>"
       />
 
-      <div class="max-w-2xl mx-auto mb-12">
-        <article class="card-editorial reveal !p-8 md:!p-10 ring-2 ring-violet-200 bg-violet-50/30">
-          <div class="flex items-baseline justify-between mb-4">
-            <h3 class="text-xl font-semibold text-ink-900">Mese su mese</h3>
-            <span class="text-xs uppercase tracking-wider text-ink-500 font-semibold">Massima flessibilità</span>
-          </div>
-          <p class="text-[3rem] font-semibold text-ink-900 leading-none">€150<span class="text-base text-ink-500 font-normal"> /persona/mese</span></p>
-          <p class="text-[14px] text-ink-700 mt-4 leading-relaxed">Fatturazione mensile, disdetta con 30 giorni di preavviso. Nessun lock-in: continui finché ti serve, ti fermi quando vuoi.</p>
-        </article>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+        {coachingPackages.map((p, i) => (
+          <article class={`card-editorial relative reveal !p-7 flex flex-col ${i === 1 ? "ring-2 ring-violet-200 bg-violet-50/40" : ""}`}>
+            <div class="mb-5">
+              <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-2">Pacchetto</p>
+              <h3 class="text-[1.75rem] font-semibold text-ink-900 leading-none">{p.hours}</h3>
+              <p class="text-[13px] text-violet-700 mt-2 font-semibold">{p.rate}</p>
+            </div>
+
+            <div class="hairline mb-5"></div>
+
+            <div class="flex items-baseline gap-1.5 mb-4">
+              <span class="text-[2.25rem] font-semibold text-ink-900 leading-none">{p.total}</span>
+              <span class="text-[12px] text-ink-500">totale</span>
+            </div>
+
+            <p class="text-[14px] text-ink-700 leading-relaxed text-pretty flex-1">
+              <strong class="text-ink-900">Quando ha senso:</strong> {p.when}
+            </p>
+          </article>
+        ))}
       </div>
 
-      <div class="reveal">
-        <p class="eyebrow mb-5">Cosa include la tariffa</p>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          {retainerFeatures.map((f) => (
-            <li class="flex items-start gap-2.5 text-[14px] text-ink-700">
-              <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-violet-50 items-center justify-center">
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              </span>
-              <span>{f}</span>
-            </li>
-          ))}
-        </ul>
+      <div class="reveal mt-10 max-w-3xl mx-auto bg-white border border-ink-200 rounded-2xl p-7">
+        <p class="eyebrow mb-3">Cosa include la singola ora</p>
+        <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">
+          Sessione 1:1 o piccolo gruppo (max 5 persone) su casi d'uso individuali, deep dive su processi specifici dell'azienda, debugging skill, accompagnamento all'autonomia. Le ore sono <strong class="text-ink-900">company-wide</strong>: le "spende" chi ne ha bisogno nel team, non sono per-persona.
+        </p>
+        <p class="text-[13px] text-ink-500 leading-relaxed mt-4">
+          <strong class="text-ink-700">Condizioni.</strong> Il pacchetto è attivabile entro 3 mesi dalla fine del workshop. Una volta attivato, le ore sono utilizzabili entro 12 mesi. Fatturazione all'attivazione. Possibile acquistare più pacchetti o passare a una taglia superiore se il primo si esaurisce.
+        </p>
       </div>
     </div>
   </section>
