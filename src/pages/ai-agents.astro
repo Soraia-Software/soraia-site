@@ -187,6 +187,164 @@ const faqs = [
   </section>
 
   <!-- ============================================================
+       POSITIONING. 3 servizi + 3 trust blocks
+       ============================================================ -->
+  <section class="section bg-ink-50 relative overflow-hidden">
+    <div class="container-soraia">
+      <div class="max-w-4xl mx-auto text-center reveal">
+        <p class="eyebrow mb-5">Cosa costruiamo</p>
+        <h2 class="text-[2.25rem] md:text-[3.25rem] font-semibold tracking-tight text-ink-900 leading-[1.1] text-balance">
+          L'IA che funziona perché<br/>posiamo prima le fondamenta.
+        </h2>
+        <p class="mt-6 text-[16px] md:text-[17px] text-ink-600 leading-relaxed text-pretty max-w-2xl mx-auto">
+          Combiniamo strategia, data engineering e product development per consegnare soluzioni AI in produzione che muovono il P&amp;L.
+        </p>
+      </div>
+
+      <!-- 3 service categories with line-art icons -->
+      <div class="positioning-grid relative mt-14 md:mt-20 max-w-5xl mx-auto reveal reveal-delay-1">
+        <span class="plus-mark plus-tl" aria-hidden="true"></span>
+        <span class="plus-mark plus-tr" aria-hidden="true"></span>
+        <span class="plus-mark plus-bl" aria-hidden="true"></span>
+        <span class="plus-mark plus-br" aria-hidden="true"></span>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 py-12 md:py-16 px-6 md:px-10">
+          <div class="text-center">
+            <div class="mx-auto w-[88px] h-[88px] mb-7 flex items-center justify-center">
+              <svg width="88" height="88" viewBox="0 0 88 88" fill="none" stroke="#0A0A0A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="44" cy="44" r="34"/>
+                <circle cx="44" cy="44" r="23"/>
+                <circle cx="44" cy="44" r="12"/>
+                <circle cx="44" cy="44" r="3" fill="#0A0A0A"/>
+              </svg>
+            </div>
+            <h3 class="text-[1.25rem] md:text-[1.35rem] font-semibold text-ink-900 mb-3 tracking-tight">AI Agents</h3>
+            <p class="text-[14.5px] text-ink-600 leading-relaxed text-pretty max-w-[30ch] mx-auto">
+              Agenti conversazionali e vocali che automatizzano operations, processi interni e customer interactions.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="mx-auto w-[88px] h-[88px] mb-7 flex items-center justify-center">
+              <svg width="88" height="88" viewBox="0 0 88 88" fill="none" stroke="#0A0A0A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="44" cy="44" r="7"/>
+                {[...Array(12)].map((_, i) => {
+                  const angle = (i * 30 * Math.PI) / 180;
+                  const x1 = 44 + Math.cos(angle) * 14;
+                  const y1 = 44 + Math.sin(angle) * 14;
+                  const x2 = 44 + Math.cos(angle) * 34;
+                  const y2 = 44 + Math.sin(angle) * 34;
+                  return <line x1={x1} y1={y1} x2={x2} y2={y2} />;
+                })}
+              </svg>
+            </div>
+            <h3 class="text-[1.25rem] md:text-[1.35rem] font-semibold text-ink-900 mb-3 tracking-tight">AI Search Optimization</h3>
+            <p class="text-[14.5px] text-ink-600 leading-relaxed text-pretty max-w-[30ch] mx-auto">
+              Rendi il tuo brand, i tuoi prodotti e servizi visibili su ChatGPT, Claude, Perplexity e gli altri motori AI.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="mx-auto w-[88px] h-[88px] mb-7 flex items-center justify-center">
+              <svg width="88" height="88" viewBox="0 0 88 88" fill="none" stroke="#0A0A0A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M44 14 L70 28 L44 42 L18 28 Z"/>
+                <path d="M44 30 L70 44 L44 58 L18 44 Z"/>
+                <path d="M44 46 L70 60 L44 74 L18 60 Z"/>
+                <circle cx="44" cy="44" r="2" fill="#0A0A0A" stroke="none"/>
+              </svg>
+            </div>
+            <h3 class="text-[1.25rem] md:text-[1.35rem] font-semibold text-ink-900 mb-3 tracking-tight">AI Platform Engineering</h3>
+            <p class="text-[14.5px] text-ink-600 leading-relaxed text-pretty max-w-[30ch] mx-auto">
+              Infrastruttura scalabile per deployare, ottimizzare e governare le soluzioni AI in azienda.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRUST BLOCKS -->
+      <div class="mt-20 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 max-w-5xl mx-auto reveal reveal-delay-2">
+        <div>
+          <p class="text-[11px] uppercase tracking-[0.2em] font-semibold text-violet-700 mb-4">Data + AI</p>
+          <p class="text-[1.5rem] md:text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-ink-900 mb-4 text-balance">
+            Non ci fermiamo<br/>a un layer.
+          </p>
+          <p class="text-[14.5px] text-ink-600 leading-relaxed text-pretty">
+            Copriamo lo stack completo. Dall'architettura dati al training dei modelli, fino al deploy del prodotto AI: tutto integrato e in produzione nel tuo ambiente.
+          </p>
+        </div>
+        <div>
+          <p class="text-[11px] uppercase tracking-[0.2em] font-semibold text-violet-700 mb-4">Tech + Business</p>
+          <p class="text-[1.5rem] md:text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-ink-900 mb-4 text-balance">
+            Non solo tech.<br/>Quello che muove il P&amp;L.
+          </p>
+          <p class="text-[14.5px] text-ink-600 leading-relaxed text-pretty">
+            Da founder e operator di scale-up sappiamo cosa conta. Per questo andiamo veloci e ci concentriamo sull'impatto misurabile sul business.
+          </p>
+        </div>
+        <div>
+          <p class="text-[11px] uppercase tracking-[0.2em] font-semibold text-violet-700 mb-4">Sprint o presidio</p>
+          <p class="text-[1.5rem] md:text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-ink-900 mb-4 text-balance">
+            Niente team gonfi.<br/>Niente lock-in.
+          </p>
+          <p class="text-[14.5px] text-ink-600 leading-relaxed text-pretty">
+            Scegli il ritmo. Uno sprint focalizzato per sbloccare un bottleneck, o esperti full-time che presidiano la tua pipeline data &amp; AI end-to-end.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .positioning-grid {
+        position: relative;
+      }
+      .plus-mark {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .plus-mark::before,
+      .plus-mark::after {
+        content: "";
+        position: absolute;
+        background: #d4d4d8;
+      }
+      .plus-mark::before {
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        transform: translateY(-50%);
+      }
+      .plus-mark::after {
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        transform: translateX(-50%);
+      }
+      .plus-tl { top: 0; left: 0; transform: translate(-50%, -50%); }
+      .plus-tr { top: 0; right: 0; transform: translate(50%, -50%); }
+      .plus-bl { bottom: 0; left: 0; transform: translate(-50%, 50%); }
+      .plus-br { bottom: 0; right: 0; transform: translate(50%, 50%); }
+
+      .positioning-grid::before,
+      .positioning-grid::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #e4e4e7;
+        pointer-events: none;
+      }
+      .positioning-grid::before { top: 0; }
+      .positioning-grid::after { bottom: 0; }
+    </style>
+  </section>
+
+  <!-- ============================================================
        LE 4 AREE
        ============================================================ -->
   <section id="aree" class="section bg-white">
