@@ -1,5 +1,5 @@
 ---
-title: "Navily — Agente IA moderazione recensioni + enrichment dati nautici"
+title: "Navily, Agente IA moderazione recensioni + enrichment dati nautici"
 client: "Navily"
 clientLogo: "/logos/clients/navily.webp"
 industry: "consumer-education"
@@ -68,9 +68,9 @@ Risultato operativo: ore di lavoro umano del team prodotto bruciate ogni giorno 
 
 Soraia ha costruito un **agente IA multi-task** che gestisce tre flussi in parallelo:
 
-1. **Moderazione recensioni** — l'agente legge ogni nuova recensione, la valuta sui criteri editoriali Navily (autenticità segnali, qualità linguistica, conformità community guidelines, presenza di contenuti vietati), e propone approve/reject con score di confidence. Il team rivede solo i borderline.
-2. **Moderazione immagini** — l'agente analizza ogni immagine caricata: rileva contenuti inappropriati (NSFW, volti riconoscibili senza consenso, foto non pertinenti come selfie), valuta la qualità (sfocatura, framing, illuminazione), classifica per tipo (porto, ormeggio, servizio, vista panoramica).
-3. **Enrichment dati nautici** — quando un nuovo porto/ancoraggio viene aggiunto, l'agente cross-referenzia automaticamente fonti pubbliche (mappe nautiche, siti ufficiali dei marina, database pubblici) per completare i campi mancanti: profondità, tipo di fondale, servizi disponibili, contatti, range prezzi.
+1. **Moderazione recensioni**, l'agente legge ogni nuova recensione, la valuta sui criteri editoriali Navily (autenticità segnali, qualità linguistica, conformità community guidelines, presenza di contenuti vietati), e propone approve/reject con score di confidence. Il team rivede solo i borderline.
+2. **Moderazione immagini**, l'agente analizza ogni immagine caricata: rileva contenuti inappropriati (NSFW, volti riconoscibili senza consenso, foto non pertinenti come selfie), valuta la qualità (sfocatura, framing, illuminazione), classifica per tipo (porto, ormeggio, servizio, vista panoramica).
+3. **Enrichment dati nautici**, quando un nuovo porto/ancoraggio viene aggiunto, l'agente cross-referenzia automaticamente fonti pubbliche (mappe nautiche, siti ufficiali dei marina, database pubblici) per completare i campi mancanti: profondità, tipo di fondale, servizi disponibili, contatti, range prezzi.
 
 In tutti e tre i flussi, l'agente **non approva mai contenuti borderline in autonomia**: passa al team umano i casi a confidence intermedia. Sopra una certa soglia (chiara autenticità) approva direttamente; sotto una certa soglia (chiaro contenuto inappropriato) rigetta direttamente; in mezzo, escalation.
 
@@ -78,7 +78,7 @@ In tutti e tre i flussi, l'agente **non approva mai contenuti borderline in auto
 
 **70%+ di riduzione del tempo operativo** sul triage di recensioni, immagini ed enrichment. Numero dichiarato pubblicamente dal CEO Edouard Fiess.
 
-**Alta precisione mantenuta**: la qualità della community Navily non si è degradata con l'introduzione dell'agente — anzi, è migliorata grazie alla consistenza dei criteri applicati (l'agente non si stanca, non ha "giornate storte", applica gli stessi criteri al primo come al millesimo contenuto della giornata).
+**Alta precisione mantenuta**: la qualità della community Navily non si è degradata con l'introduzione dell'agente, anzi, è migliorata grazie alla consistenza dei criteri applicati (l'agente non si stanca, non ha "giornate storte", applica gli stessi criteri al primo come al millesimo contenuto della giornata).
 
 **Scalabilità sbloccata**: Navily può crescere la community e l'inventario porti senza moltiplicare il team di moderazione. Le ore liberate vanno su lavoro a valore aggiunto (prodotto, partnership, espansione mercati).
 

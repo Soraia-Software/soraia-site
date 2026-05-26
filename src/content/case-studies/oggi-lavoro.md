@@ -1,5 +1,5 @@
 ---
-title: "Oggi Lavoro — Replatforming AI di 108.000 candidati"
+title: "Oggi Lavoro, Replatforming AI di 108.000 candidati"
 client: "Oggi Lavoro"
 clientLogo: "/logos/clients/oggilavoro.webp"
 industry: "recruitment-hr"
@@ -13,7 +13,7 @@ stakeholder:
   photo: ""
 heroQuote: "Avevamo 108.000 candidati su uno stack enterprise legacy che faceva fatica anche solo a cercarli. Soraia sta costruendo la nuova piattaforma da zero, con un agente IA di search e matching che cambia il modo di lavorare dei nostri recruiter."
 teaser:
-  problem: "108.000 candidati gestiti su stack legacy frammentato (ARCA + M-Director + SMS separato), ricerca lenta, matching manuale, mobile non disponibile, OCR CV su sistemi separati."
+  problem: "108.000 candidati gestiti su stack legacy frammentato, ricerca lenta, matching manuale, mobile non disponibile, OCR CV su sistemi separati."
   action: "Replatforming completo con agente IA di candidate search (filtri booleani + distanza geografica + matching AI), Google Cloud Vision OCR su CV, mobile app planning, AI matching integrato."
   resultMetric: "108.000 candidati importati · piattaforma nuova in costruzione"
   resultBody: "Sprint dev 150h/mese in corso, transizione progressiva dal sistema legacy."
@@ -51,26 +51,26 @@ Il valore di Oggi Lavoro dipende dalla **velocità con cui trova il candidato gi
 
 Lo stato pre-Soraia era pesantemente legacy:
 
-- **ARCA** come gestionale principale (sistema enterprise legacy, robusto ma lento e poco flessibile).
-- **M-Director** come tool aggiuntivo per alcuni workflow.
+- **Gestionale enterprise legacy** come sistema principale (robusto ma lento e poco flessibile).
+- **Tool aggiuntivi** dedicati a workflow specifici.
 - **SMS separato** per le comunicazioni candidati.
 - **108.000 candidati** nel database, con ricerche lente (filtri base) e zero matching automatico.
 - **Niente mobile**: il recruiter sul campo (visita cliente, fiera, evento) non aveva accesso veloce al database.
 - **OCR CV** gestito su sistemi separati con accuracy variabile.
 
-Risultato operativo: il recruiter aveva accesso a un database ricco ma con strumenti di ricerca primitivi. Le posizioni più urgenti finivano gestite "a memoria" dei recruiter senior che ricordavano i candidati giusti — competenza preziosa ma non scalabile.
+Risultato operativo: il recruiter aveva accesso a un database ricco ma con strumenti di ricerca primitivi. Le posizioni più urgenti finivano gestite "a memoria" dei recruiter senior che ricordavano i candidati giusti, competenza preziosa ma non scalabile.
 
 ## Cosa sta facendo l'agente IA
 
 Soraia sta costruendo da zero la **nuova piattaforma Oggi Lavoro**, in transizione progressiva dal sistema legacy:
 
-1. **Frontend AI candidate search** — interfaccia recruiter completamente nuova: filtri booleani sui criteri (skill, esperienza, lingue, certificazioni), filtro per distanza geografica dalla sede cliente, AI matching che propone i candidati più rilevanti per ogni richiesta.
-2. **Google Cloud Vision OCR sui CV** — parsing strutturato dei nuovi CV in ingresso, accuracy molto superiore al sistema legacy. Skill, esperienze, lingue, certificazioni estratte automaticamente.
-3. **AI matching agente** — quando arriva una nuova richiesta cliente, l'agente scansiona il database e propone una shortlist motivata. Il recruiter rivede e contatta.
-4. **Mobile app in planning** — il recruiter sul campo potrà accedere al database, registrare nuovi contatti, attivare matching da smartphone.
-5. **Integrazione MailChimp** — campaign automation per candidate engagement, talent pool nurturing.
+1. **Frontend AI candidate search**, interfaccia recruiter completamente nuova: filtri booleani sui criteri (skill, esperienza, lingue, certificazioni), filtro per distanza geografica dalla sede cliente, AI matching che propone i candidati più rilevanti per ogni richiesta.
+2. **Google Cloud Vision OCR sui CV**, parsing strutturato dei nuovi CV in ingresso, accuracy molto superiore al sistema legacy. Skill, esperienze, lingue, certificazioni estratte automaticamente.
+3. **AI matching agente**, quando arriva una nuova richiesta cliente, l'agente scansiona il database e propone una shortlist motivata. Il recruiter rivede e contatta.
+4. **Mobile app in planning**, il recruiter sul campo potrà accedere al database, registrare nuovi contatti, attivare matching da smartphone.
+5. **Integrazione MailChimp**, campaign automation per candidate engagement, talent pool nurturing.
 
-Il sistema attuale (ARCA + M-Director) rimane operativo durante la transizione: la migrazione avviene per fasi, brand per brand del gruppo.
+Il sistema legacy attuale rimane operativo durante la transizione: la migrazione avviene per fasi, brand per brand del gruppo.
 
 ## I risultati attesi
 

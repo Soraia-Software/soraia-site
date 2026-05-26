@@ -1,5 +1,5 @@
 ---
-title: "Talent Match — Agente IA matching candidati per recruitment spagnolo"
+title: "Talent Match, Agente IA matching candidati per recruitment spagnolo"
 client: "Talent Match"
 clientLogo: "/logos/clients/talentmatch.webp"
 industry: "recruitment-hr"
@@ -51,7 +51,7 @@ Il valore di Talent Match dipende dalla **velocità con cui identifica i candida
 Il team operava su 3 stack diversi:
 
 - **Recruit CRM** come ATS principale, ma con limiti nel matching JD↔candidato (filtri booleani manuali, niente score AI).
-- **Tool di sourcing esterni** (LinkedIn Recruiter, alcuni job board) — dati che vivevano fuori dal CRM, da copiare a mano.
+- **Tool di sourcing esterni** (LinkedIn Recruiter, alcuni job board), dati che vivevano fuori dal CRM, da copiare a mano.
 - **Excel** per le shortlist da presentare al cliente.
 
 Risultato operativo: per ogni nuova posizione il recruiter passava **5-8 ore a sfogliare 150-250 candidati** dal CRM + scraping LinkedIn, copia-incolla informazioni, costruzione manuale della shortlist. La parte "selettiva" (le ultime 30 minuti su 10 candidati top) era la sola che generava valore. Le 7+ ore prima erano data entry mascherato.
@@ -62,11 +62,11 @@ In più: nessuna metric su quali candidati funzionavano nel lungo periodo (place
 
 Soraia ha costruito **Talent Match Platform**, un ATS/CRM custom che sostituisce lo stack precedente e include un agente IA dedicato al matching:
 
-1. **Ingestion automatica** — i CV arrivano via form di candidatura, email, LinkedIn (tramite Chrome Web Clipper custom che cattura il profilo in 1 click). OCR e parsing strutturato automatici via Google Cloud Vision.
-2. **Agente IA matching (Potential Match)** — per ogni JD aperto, l'agente legge i requirement, scansiona il database candidati, e produce uno **score motivato** (0-100) con le ragioni del match per ogni candidato.
-3. **Filtri booleani + distanza geografica** — Google Places API per match su località fattibili.
-4. **Kanban e semáforo pre-oportunidades** — vista visiva del pipeline per posizione.
-5. **Algoritmo v2** — dopo i primi 6 mesi di produzione, raffinamento dell'algoritmo Potential Match con criteri più precisi + cost optimization (model più economico per pass 1, modello più potente solo sui borderline).
+1. **Ingestion automatica**, i CV arrivano via form di candidatura, email, LinkedIn (tramite Chrome Web Clipper custom che cattura il profilo in 1 click). OCR e parsing strutturato automatici via Google Cloud Vision.
+2. **Agente IA matching (Potential Match)**, per ogni JD aperto, l'agente legge i requirement, scansiona il database candidati, e produce uno **score motivato** (0-100) con le ragioni del match per ogni candidato.
+3. **Filtri booleani + distanza geografica**, Google Places API per match su località fattibili.
+4. **Kanban e semáforo pre-oportunidades**, vista visiva del pipeline per posizione.
+5. **Algoritmo v2**, dopo i primi 6 mesi di produzione, raffinamento dell'algoritmo Potential Match con criteri più precisi + cost optimization (model più economico per pass 1, modello più potente solo sui borderline).
 
 Il recruiter umano interviene solo sui **5-10 candidati top** che l'agente ranka per primi. Le 7 ore di data entry sono sparite.
 

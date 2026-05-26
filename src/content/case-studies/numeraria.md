@@ -1,5 +1,5 @@
 ---
-title: "Numeraria — €32.000/mese risparmiati con agente IA gestione studio"
+title: "Numeraria, €32.000/mese risparmiati con agente IA gestione studio"
 client: "Numeraria"
 clientLogo: "/logos/clients/numeraria.webp"
 industry: "finance-vc"
@@ -60,10 +60,10 @@ Risultato: il management dello studio (figure senior, costose) passava una **quo
 
 Soraia ha costruito una piattaforma custom con un agente IA che gestisce **l'intero ciclo preventivo → affidamento → ore → fatturazione**:
 
-1. **Generazione preventivi automatica** — l'agente legge la richiesta cliente, propone le voci corrette dal catalogo Numeraria, calcola il preventivo strutturato con il livello tariffario giusto per ogni divisione. Il management approva o aggiusta, non scrive da zero.
-2. **Tracciamento affidamenti in real-time** — chi è assegnato a quale cliente, su quale parte del preventivo, con visibilità del management su saturazione del team.
-3. **Registrazione ore granulare** — il team registra le ore con voci precise (trasferta in azienda cliente, lavoro remoto, presenza in studio, voci speciali). L'agente valida e riconcilia.
-4. **Export per fatturazione** — fine mese, l'agente produce il report cliente-per-cliente per la fatturazione, con dettaglio voci.
+1. **Generazione preventivi automatica**, l'agente legge la richiesta cliente, propone le voci corrette dal catalogo Numeraria, calcola il preventivo strutturato con il livello tariffario giusto per ogni divisione. Il management approva o aggiusta, non scrive da zero.
+2. **Tracciamento affidamenti in real-time**, chi è assegnato a quale cliente, su quale parte del preventivo, con visibilità del management su saturazione del team.
+3. **Registrazione ore granulare**, il team registra le ore con voci precise (trasferta in azienda cliente, lavoro remoto, presenza in studio, voci speciali). L'agente valida e riconcilia.
+4. **Export per fatturazione**, fine mese, l'agente produce il report cliente-per-cliente per la fatturazione, con dettaglio voci.
 
 Il management interviene solo dove serve giudizio: approvazione preventivi speciali, riassegnazioni in caso di urgenze, validazione finale del report mensile.
 
@@ -73,7 +73,7 @@ Il management interviene solo dove serve giudizio: approvazione preventivi speci
 
 Il risparmio non è in licenze software o costi diretti: è il **tempo del management e dei senior** liberato da operations ripetitive e re-investito in lavoro a valore aggiunto (acquisizione clienti, consulenza strategica, supervisione qualità).
 
-**Multi-divisione gestita in modo unificato**: paghe, contabilità ordinaria, semplificata, consulenza — tutto nello stesso sistema, con voci tariffarie corrette per ogni divisione.
+**Multi-divisione gestita in modo unificato**: paghe, contabilità ordinaria, semplificata, consulenza, tutto nello stesso sistema, con voci tariffarie corrette per ogni divisione.
 
 **Tracking ore granulare** che prima richiedeva fogli Excel paralleli: oggi un'unica fonte di verità, in tempo reale.
 

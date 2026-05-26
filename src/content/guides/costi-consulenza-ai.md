@@ -25,7 +25,7 @@ faq:
   - q: "Modello fix price o time & material: cosa scegliere?"
     a: "Per il <strong>primo sprint</strong>: fix price con scope chiaro. Il rischio è del provider, non tuo. Per <strong>retainer ricorrenti</strong>: fix price mensile con bucket di ore (es. 'fino a 40h/mese inclusi, €100/h extra'). Time & material puro senza tetto è red flag: il rischio è tutto tuo e gli incentivi del provider sono disallineati."
   - q: "Esistono pricing % sui risparmi (savings-based)?"
-    a: "Sì ma rari. Modello: il provider non paga upfront, prende X% delle ore risparmiate misurate a 6/12 mesi. Funziona solo se: baseline è già misurata, il provider si fida del cliente sui dati, lo scope è limitato e ben definito. Per la maggior parte delle PMI italiane è troppo complesso operativamente — fix price con garanzia funziona meglio."
+    a: "Sì ma rari. Modello: il provider non paga upfront, prende X% delle ore risparmiate misurate a 6/12 mesi. Funziona solo se: baseline è già misurata, il provider si fida del cliente sui dati, lo scope è limitato e ben definito. Per la maggior parte delle PMI italiane è troppo complesso operativamente, fix price con garanzia funziona meglio."
   - q: "Come si misura il ROI di un agente IA?"
     a: "<strong>Framework standard</strong>: (1) Baseline cronometrata pre-agente (es. 8h/recruiter/settimana su screening); (2) Misurazione post-agente a 60-90 giorni; (3) Calcolo ore recuperate × costo orario × 12 mesi = ROI annuo; (4) Confronto con costo totale (sprint + retainer + adoption). ROI tipico atteso: <strong>3-10x in 12 mesi</strong> per processi ad alto volume ben perimetrati."
   - q: "Perché i prezzi tra provider variano così tanto (€5k vs €100k)?"
@@ -151,13 +151,13 @@ Il provider non paga upfront, prende X% delle ore risparmiate misurate a 6/12 me
 
 Decifrare un preventivo richiede capire dove vanno i soldi. I 5 driver principali:
 
-### Driver 1 — Profondità dell'assessment
+### Driver 1, Profondità dell'assessment
 
 L'assessment serio costa €1.500-3.000 perché richiede 30-50 ore di lavoro consulenziale (cronometrazione, interviste, redazione report). L'assessment "demo gratuita" non vale nulla.
 
 Provider che skippa o sottovaluta l'assessment risparmierà tempo upfront ma sbaglierà lo scope dello sprint, costandoti 2-5x in revisioni.
 
-### Driver 2 — Seniority del team
+### Driver 2, Seniority del team
 
 Tariffe orarie tipiche 2026 in Italia:
 
@@ -171,7 +171,7 @@ Tariffe orarie tipiche 2026 in Italia:
 
 **Il prezzo totale dipende molto dal mix**. Big4 partner che vende = junior che esegue è uno dei pattern più diffusi (e più costosi, perché il partner factura comunque le sue ore).
 
-### Driver 3 — Compliance richiesta
+### Driver 3, Compliance richiesta
 
 Settori regolamentati richiedono 30-50% di effort extra:
 
@@ -183,7 +183,7 @@ Settori regolamentati richiedono 30-50% di effort extra:
 
 Recruitment, finance, healthcare: aspettati prezzi 40% superiori a marketing o customer ops.
 
-### Driver 4 — Numero di integrazioni
+### Driver 4, Numero di integrazioni
 
 Ogni sistema esterno custom che l'agente deve interagire aggiunge effort:
 
@@ -193,7 +193,7 @@ Ogni sistema esterno custom che l'agente deve interagire aggiunge effort:
 
 **Domanda da fare prima del preventivo**: "Avete già integrato con il mio gestionale [X]?" Se no, aspettati prezzo extra.
 
-### Driver 5 — Modello operativo del provider
+### Driver 5, Modello operativo del provider
 
 Big4 hanno overhead alti (uffici, partner travel, marketing, legal in-house). Costo: 40-50% in più rispetto a uguale scope su agency snella.
 
@@ -203,7 +203,7 @@ Agency specializzate 100% remote (es. Soraia) hanno overhead minimi. Costo propo
 
 Senza misurazione di ROI, qualunque investimento AI è atto di fede. Il framework che funziona:
 
-### Step 1 — Baseline cronometrata pre-sprint
+### Step 1, Baseline cronometrata pre-sprint
 
 Cronometra il tempo umano speso sul processo target su 10-20 task reali. Esempio recruitment:
 
@@ -214,7 +214,7 @@ Cronometra il tempo umano speso sul processo target su 10-20 task reali. Esempio
 
 Questa è la baseline. Senza non puoi misurare il dopo.
 
-### Step 2 — Misurazione post-agente a 60-90 giorni
+### Step 2, Misurazione post-agente a 60-90 giorni
 
 Stessa cronometrazione dopo che l'agente è in produzione stabile. Esempio:
 
@@ -223,12 +223,12 @@ Stessa cronometrazione dopo che l'agente è in produzione stabile. Esempio:
 - 3 recruiter × 1.5h × 52 settimane = 234 ore/anno.
 - Costo annuo del processo: **€10.530**.
 
-### Step 3 — Calcolo ROI annuo
+### Step 3, Calcolo ROI annuo
 
 - Ore recuperate: 936 - 234 = **702 ore/anno**.
 - Risparmio annuo: 702 × €45 = **€31.590**.
 
-### Step 4 — Confronto con costo totale
+### Step 4, Confronto con costo totale
 
 Su un esempio di sprint recruitment standard:
 
@@ -242,7 +242,7 @@ Su un esempio di sprint recruitment standard:
 
 **Però mancano 3 dimensioni nel calcolo "solo ore"**:
 
-1. **Tempo a valore aggiunto del team**: le 702 ore liberate non spariscono — vanno su sourcing attivo, employer branding, closing migliore. Valore aggiunto del team su lavoro qualificato vale 3-5x il costo orario base.
+1. **Tempo a valore aggiunto del team**: le 702 ore liberate non spariscono, vanno su sourcing attivo, employer branding, closing migliore. Valore aggiunto del team su lavoro qualificato vale 3-5x il costo orario base.
 2. **Velocità di risposta candidati**: agente risponde in <1 minuto vs ore o giorni. Conversion rate aumenta del 20-40% (dato Soraia su clienti recruitment).
 3. **Scalabilità**: se i volumi di candidature raddoppiano (es. pic stagionale), non serve raddoppiare il team. Capacity sblocca crescita business.
 
@@ -266,9 +266,9 @@ Hai 3 preventivi sul tavolo. Come scegli senza farti incantare?
 
 Range tipico per PMI italiane 5-50M fatturato:
 
-- **0.5-1% fatturato/anno** — entry: 1 agente in produzione + foundation formazione + tool aziendale (ChatGPT Team).
-- **1-2% fatturato/anno** — sweet spot: 2-3 agenti in portfolio, retainer continuativo, formazione Business avanzato.
-- **>2% fatturato/anno** — enterprise: portfolio multi-agente, AI Adoption strutturata, team interno parziale.
+- **0.5-1% fatturato/anno**, entry: 1 agente in produzione + foundation formazione + tool aziendale (ChatGPT Team).
+- **1-2% fatturato/anno**, sweet spot: 2-3 agenti in portfolio, retainer continuativo, formazione Business avanzato.
+- **>2% fatturato/anno**, enterprise: portfolio multi-agente, AI Adoption strutturata, team interno parziale.
 
 Su €10M fatturato: budget 1% = **€100k/anno totale** (sprint + retainer + formazione + licenze) è quello che vediamo come "sweet spot" nei clienti Soraia che ottengono ROI 3-5x entro 12 mesi.
 

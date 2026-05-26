@@ -1,5 +1,5 @@
 ---
-title: "LIFTT — Agente IA che gestisce il deal flow in autonomia"
+title: "LIFTT, Agente IA che gestisce il deal flow in autonomia"
 client: "LIFTT"
 clientLogo: "/logos/clients/liftt.webp"
 industry: "finance-vc"
@@ -51,7 +51,7 @@ Il deal flow era cresciuto più velocemente dei processi che lo gestivano. Il te
 
 - **Airtable** come CRM centrale, con record duplicati dovuti a diverse fonti di ingest
 - **Email Outlook** come canale primario con i founder e i deal team, ma senza archiving strutturato
-- **File su OneDrive** per pitch deck, allegati, term sheet — senza link automatico al record Airtable
+- **File su OneDrive** per pitch deck, allegati, term sheet, senza link automatico al record Airtable
 - **Monthly report compilato a mano** ogni inizio mese (ore di lavoro umano)
 
 La conseguenza: dedupe manuale time-consuming (chi è già stato contattato? chi non lo è?), email che non risultavano archiviate quando serviva la due diligence (compliance issue), monthly report che era un compito da sospirare.
@@ -73,7 +73,7 @@ Il team umano interviene solo sui passaggi che richiedono giudizio: approvare un
 
 **Cadenza sync ridotta da weekly a monthly**: l'agente IA gestisce tutto il monitoring e l'aggiornamento dati in autonomia. Il team si sincronizza solo per decisioni strategiche.
 
-**100% email archiviate** con allegati e metadata su OneDrive — pronta per qualsiasi due diligence.
+**100% email archiviate** con allegati e metadata su OneDrive, pronta per qualsiasi due diligence.
 
 **Zero ore di dedupe manuale**: l'agente riconosce e unifica i duplicati, l'umano approva il merge in un click.
 

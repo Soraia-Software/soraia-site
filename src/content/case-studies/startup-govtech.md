@@ -1,5 +1,5 @@
 ---
-title: "Startup GovTech — Agente IA per la diplomazia internazionale (NDA)"
+title: "Startup GovTech, Agente IA per la diplomazia internazionale (NDA)"
 client: "Startup GovTech"
 industry: "public-sector"
 sector: "Diplomazia · Eventi governativi"
@@ -50,11 +50,11 @@ Il cliente è una società europea che fornisce strumenti software per la gestio
 
 La diplomazia ha regole molto strette che il software generalista non rispetta:
 
-- **Note verbali** — documenti formali scambiati tra Stati, con sintassi, intestazioni e formule rituali precise. Una virgola fuori posto può cambiare il significato politico.
-- **User restricted** — non tutti possono vedere tutto. Diversi livelli di accesso per consoli, ambasciatori, staff, controparti.
-- **Archive compliance** — ogni documento generato deve essere archiviato secondo le regole di conservazione documentale del settore (anni, formato, metadata).
-- **Multi-tenant per Stato cliente** — ogni governo cliente deve avere il proprio environment isolato, con i propri dati, le proprie regole, i propri utenti.
-- **Customer support tool** — il team del cliente deve poter supportare ogni Stato finale senza accedere a dati cross-tenant.
+- **Note verbali**, documenti formali scambiati tra Stati, con sintassi, intestazioni e formule rituali precise. Una virgola fuori posto può cambiare il significato politico.
+- **User restricted**, non tutti possono vedere tutto. Diversi livelli di accesso per consoli, ambasciatori, staff, controparti.
+- **Archive compliance**, ogni documento generato deve essere archiviato secondo le regole di conservazione documentale del settore (anni, formato, metadata).
+- **Multi-tenant per Stato cliente**, ogni governo cliente deve avere il proprio environment isolato, con i propri dati, le proprie regole, i propri utenti.
+- **Customer support tool**, il team del cliente deve poter supportare ogni Stato finale senza accedere a dati cross-tenant.
 
 Tutto questo è ben oltre ciò che un CRM generico o un SaaS off-the-shelf può fornire. Serviva una piattaforma custom.
 
@@ -62,11 +62,11 @@ Tutto questo è ben oltre ciò che un CRM generico o un SaaS off-the-shelf può 
 
 Soraia ha costruito una **piattaforma multi-tenant** per la gestione di eventi diplomatici, con un agente IA dedicato alla generazione delle note verbali:
 
-1. **Agente IA note verbali generator** — riceve in input il contesto dell'evento (Stati coinvolti, data, oggetto, lingua) e genera la nota verbale rispettando rigorosamente il protocollo diplomatico. Il team del cliente rivede, l'agente non firma mai documenti finali.
-2. **Multi-tenant architecture** — ogni Stato cliente ha il proprio environment isolato, con i propri utenti, dati, regole di accesso. Zero data leakage cross-tenant.
-3. **User restricted con SSO + OTP** — autenticazione enterprise-grade, livelli di accesso granulari (read-only, edit, admin), 2FA obbligatorio sui ruoli sensibili.
-4. **Archive integration** — ogni documento prodotto viene archiviato secondo le policy di retention del cliente, con metadata strutturati per audit e ricerca successiva.
-5. **Customer support tool** — il team del cliente può supportare ogni Stato finale da una console centralizzata, senza vedere dati che non gli spettano.
+1. **Agente IA note verbali generator**, riceve in input il contesto dell'evento (Stati coinvolti, data, oggetto, lingua) e genera la nota verbale rispettando rigorosamente il protocollo diplomatico. Il team del cliente rivede, l'agente non firma mai documenti finali.
+2. **Multi-tenant architecture**, ogni Stato cliente ha il proprio environment isolato, con i propri utenti, dati, regole di accesso. Zero data leakage cross-tenant.
+3. **User restricted con SSO + OTP**, autenticazione enterprise-grade, livelli di accesso granulari (read-only, edit, admin), 2FA obbligatorio sui ruoli sensibili.
+4. **Archive integration**, ogni documento prodotto viene archiviato secondo le policy di retention del cliente, con metadata strutturati per audit e ricerca successiva.
+5. **Customer support tool**, il team del cliente può supportare ogni Stato finale da una console centralizzata, senza vedere dati che non gli spettano.
 
 L'AI è uno strumento di **acceleration**, mai di sostituzione del giudizio diplomatico. Il funzionario rivede e firma, l'agente fa il drafting.
 

@@ -1,5 +1,5 @@
 ---
-title: "CXL — Agente IA che onboarda gli esperti in 70 ore in meno"
+title: "CXL, Agente IA che onboarda gli esperti in 70 ore in meno"
 client: "CXL"
 clientLogo: "/logos/clients/cxl.webp"
 industry: "consumer-education"

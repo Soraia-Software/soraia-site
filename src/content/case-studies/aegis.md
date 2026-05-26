@@ -1,5 +1,5 @@
 ---
-title: "Aegis Group — Piattaforma AI-nativa per 8 brand di recruitment"
+title: "Aegis Group, Piattaforma AI-nativa per 8 brand di recruitment"
 client: "Aegis Group"
 clientLogo: "/logos/clients/aegisgroup.webp"
 industry: "recruitment-hr"
@@ -11,10 +11,10 @@ stakeholder:
   name: "Vittorio Maiani"
   role: "Group Director"
   photo: ""
-heroQuote: "Avevamo 8 brand di recruitment, ognuno con il suo Excel, le sue regole, i suoi recruiter. Giacco — la piattaforma che Soraia ci ha consegnato — è oggi l'unica fonte di verità su 2.000+ candidati, con AI che fa parsing, dedup e matching in autonomia per tutte le divisioni."
+heroQuote: "Avevamo 8 brand di recruitment, ognuno con il suo Excel, le sue regole, i suoi recruiter. Jacko, la piattaforma che Soraia ci ha consegnato, è oggi l'unica fonte di verità su 2.000+ candidati, con AI che fa parsing, dedup e matching in autonomia per tutte le divisioni."
 teaser:
   problem: "8 brand di recruitment del gruppo (FSI, Green Talent, Geek&Job, Lobin, luxury fashion divisions) operavano su Excel + tool legacy, con workflow frammentati, duplicate entry tra brand, zero analytics unificate."
-  action: "ATS/CRM AI-nativo custom (Giacco) che sostituisce gli stack legacy: agente IA per CV extraction + parsing strutturato, deduplica cross-brand, matching candidato-posizione, workflow multi-divisione."
+  action: "ATS/CRM AI-nativo custom (Jacko) che sostituisce gli stack legacy: agente IA per CV extraction + parsing strutturato, deduplica cross-brand, matching candidato-posizione, workflow multi-divisione."
   resultMetric: "8 brand su un'unica piattaforma · 2.000+ candidati importati al go-live"
   resultBody: "Manager di brand diversi vedono per la prima volta lo stesso candidato senza data entry parallelo."
 stats:
@@ -60,13 +60,13 @@ In più: 8 manager di brand diversi che dovevano coordinarsi via email/Slack qua
 
 ## Cosa ha fatto l'agente IA
 
-Soraia ha costruito **Giacco**, una piattaforma ATS/CRM AI-nativa custom che sostituisce tutti i sistemi precedenti:
+Soraia ha costruito **Jacko**, una piattaforma ATS/CRM AI-nativa custom che sostituisce tutti i sistemi precedenti:
 
-1. **Agente IA di CV parsing** — riceve il CV (PDF, doc, immagine), estrae i dati strutturati con accuracy molto superiore al parsing manuale. Skill, esperienze, lingue, certificazioni, ruoli precedenti — tutto strutturato in 30 secondi.
-2. **Deduplica cross-brand automatica** — l'agente riconosce che "Mario Rossi, sviluppatore Java" già nel database di Geek&Job è lo stesso del CV appena arrivato nel pool FSI. Propone il merge, mantenendo la storia di interazione con entrambi i brand.
-3. **Matching candidato↔posizione cross-brand** — quando arriva una nuova candidatura, l'agente scansiona le posizioni aperte di tutti gli 8 brand e propone match rilevanti. Il candidato che si è proposto per "FSI - Operations Manager" potrebbe essere segnalato anche al brand "Lobin" che cerca un profilo simile.
-4. **Workflow multi-brand con permessi granulari** — ogni manager vede e gestisce i candidati del proprio brand, ma può collaborare con altri brand su candidati cross-funzionali.
-5. **Analytics unificate** — dashboard con metric su tutto il gruppo: candidati attivi, time-to-fill medio, conversion rate per brand, ROI per sourcing channel.
+1. **Agente IA di CV parsing**, riceve il CV (PDF, doc, immagine), estrae i dati strutturati con accuracy molto superiore al parsing manuale. Skill, esperienze, lingue, certificazioni, ruoli precedenti, tutto strutturato in 30 secondi.
+2. **Deduplica cross-brand automatica**, l'agente riconosce che "Mario Rossi, sviluppatore Java" già nel database di Geek&Job è lo stesso del CV appena arrivato nel pool FSI. Propone il merge, mantenendo la storia di interazione con entrambi i brand.
+3. **Matching candidato↔posizione cross-brand**, quando arriva una nuova candidatura, l'agente scansiona le posizioni aperte di tutti gli 8 brand e propone match rilevanti. Il candidato che si è proposto per "FSI - Operations Manager" potrebbe essere segnalato anche al brand "Lobin" che cerca un profilo simile.
+4. **Workflow multi-brand con permessi granulari**, ogni manager vede e gestisce i candidati del proprio brand, ma può collaborare con altri brand su candidati cross-funzionali.
+5. **Analytics unificate**, dashboard con metric su tutto il gruppo: candidati attivi, time-to-fill medio, conversion rate per brand, ROI per sourcing channel.
 
 I manager dei brand intervengono dove serve giudizio strategico: contatto candidato, interview, decisione finale. La parte operativa (parsing, dedup, prima qualifica) è gestita dall'agente.
 

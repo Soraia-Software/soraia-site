@@ -1,5 +1,5 @@
 ---
-title: "Rainplan — Piattaforma AI per la gestione di climate parcel"
+title: "Rainplan, Piattaforma AI per la gestione di climate parcel"
 client: "Rainplan"
 clientLogo: "/logos/clients/rainplan.webp"
 industry: "sustainability"
@@ -44,15 +44,15 @@ related:
 
 Rainplan è una piattaforma climate-tech statunitense che facilita l'accesso degli **property owner** (proprietari di terreni, edifici commerciali, parchi industriali) agli **incentive program** governativi e privati legati alla gestione delle acque piovane (stormwater) e ad altri progetti di mitigazione climatica.
 
-Il valore di Rainplan è la **velocità con cui un property owner può capire**: a quali incentive ha diritto, quanto può ricevere, come procedere — il tutto coordinato con multipli stakeholder (agenzie governative, provider tecnici, fund manager).
+Il valore di Rainplan è la **velocità con cui un property owner può capire**: a quali incentive ha diritto, quanto può ricevere, come procedere, il tutto coordinato con multipli stakeholder (agenzie governative, provider tecnici, fund manager).
 
 ## Il problema reale
 
 Il business di Rainplan ha 3 lati con esigenze molto diverse:
 
-- **Property owner** — vuole sapere velocemente se ha diritto a un incentive, quanto, in che tempi.
-- **Service provider** (engineering firm, contractor) — vuole vedere le opportunità di lavoro disponibili, fare bid, ottenere l'assegnazione.
-- **Agency** (governo locale, fund manager, partner) — vuole approvare/respingere i progetti rispettando le proprie regole.
+- **Property owner**, vuole sapere velocemente se ha diritto a un incentive, quanto, in che tempi.
+- **Service provider** (engineering firm, contractor), vuole vedere le opportunità di lavoro disponibili, fare bid, ottenere l'assegnazione.
+- **Agency** (governo locale, fund manager, partner), vuole approvare/respingere i progetti rispettando le proprie regole.
 
 Pre-Soraia, Rainplan gestiva questi 3 lati su **sistemi separati**: Bubble per il portale property owner, Airtable come "hub" dati, CRM separato per i provider, integrazioni manuali tra tutto. Risultato: ogni nuovo deal richiedeva data entry parallelo, ogni approvazione passava per mail tra stakeholder, ogni report era costruito a mano.
 
@@ -62,11 +62,11 @@ Russ Fyfe (founder) e il team hanno scelto Soraia come partner tecnologico di lu
 
 Negli ultimi 18 mesi, Soraia ha gradualmente sostituito lo stack frammentato con una **piattaforma unificata**:
 
-1. **Virtual Site Visit (VSV) + Virtual Site Consultation (VSC)** — il property owner carica le coordinate del proprio parcel, l'agente IA valuta automaticamente l'eligibility per gli incentive disponibili, propone un piano di intervento.
-2. **Incentive eligibility check** — regole di programma codificate, valutazione automatica su ogni nuovo parcel. Quello che prima era un check manuale di ore oggi è istantaneo.
-3. **Procurement board** — opportunità di lavoro visibili ai service provider, con bidding strutturato.
-4. **Hosted program templates** — ogni nuova agency cliente può configurare le proprie regole di incentive program senza richiedere sviluppo custom dedicato.
-5. **Migration completa da Bubble** (Q1 2025) — il portale principale è stato migrato a WeWeb + Xano per maggiore controllo, performance, scalabilità.
+1. **Virtual Site Visit (VSV) + Virtual Site Consultation (VSC)**, il property owner carica le coordinate del proprio parcel, l'agente IA valuta automaticamente l'eligibility per gli incentive disponibili, propone un piano di intervento.
+2. **Incentive eligibility check**, regole di programma codificate, valutazione automatica su ogni nuovo parcel. Quello che prima era un check manuale di ore oggi è istantaneo.
+3. **Procurement board**, opportunità di lavoro visibili ai service provider, con bidding strutturato.
+4. **Hosted program templates**, ogni nuova agency cliente può configurare le proprie regole di incentive program senza richiedere sviluppo custom dedicato.
+5. **Migration completa da Bubble** (Q1 2025), il portale principale è stato migrato a WeWeb + Xano per maggiore controllo, performance, scalabilità.
 6. **Airtable Hub mantenuto** come backbone dati per integrazioni con sistemi finanziari (Stripe, Deel).
 
 ## I risultati

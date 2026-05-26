@@ -1,5 +1,5 @@
 ---
-title: "French Riviera Househunting — Agente IA arricchimento lead immobiliari"
+title: "French Riviera Househunting, Agente IA arricchimento lead immobiliari"
 client: "French Riviera Househunting"
 clientLogo: "/logos/clients/frh.webp"
 industry: "consumer-education"
@@ -46,15 +46,15 @@ related:
 
 French Riviera Househunting è una **boutique real estate agency** specializzata in clienti high-end internazionali che cercano casa sulla Costa Azzurra (Nizza, Cannes, Monaco, Saint-Tropez). Il modello business è quello classico dell'agenzia di nicchia: pochi clienti per anno, ognuno con budget significativo e aspettative alte sul servizio personalizzato.
 
-Il valore di FRH dipende dalla **qualità della relazione con il singolo cliente**, non dal volume. Fabricio Carminati, founder, non vuole assumere un team di operations per gestire ogni nuovo lead in arrivo — vuole concentrarsi sul lavoro a valore aggiunto (selezione case, visite, negoziazione).
+Il valore di FRH dipende dalla **qualità della relazione con il singolo cliente**, non dal volume. Fabricio Carminati, founder, non vuole assumere un team di operations per gestire ogni nuovo lead in arrivo, vuole concentrarsi sul lavoro a valore aggiunto (selezione case, visite, negoziazione).
 
 ## Il problema reale
 
 I lead arrivavano da diverse fonti, ma con dati minimi:
 
-- **eBook download** dal sito (guida sull'acquisto in Costa Azzurra) — il visitatore lasciava email e nome, niente di più.
-- **Form contatti** del sito — qualche campo opzionale (budget, area di interesse), ma spesso lasciato vuoto.
-- **Referral inbound** via WhatsApp o email — testi liberi con dati incompleti.
+- **eBook download** dal sito (guida sull'acquisto in Costa Azzurra), il visitatore lasciava email e nome, niente di più.
+- **Form contatti** del sito, qualche campo opzionale (budget, area di interesse), ma spesso lasciato vuoto.
+- **Referral inbound** via WhatsApp o email, testi liberi con dati incompleti.
 
 Risultato operativo: per ogni nuovo lead, Fabricio doveva fare **research manuale individuale** prima del primo contatto:
 - Chi è questa persona? (search LinkedIn, ricerche pubbliche per capire profilo professionale, paese di residenza, segnali di liquidità)
@@ -68,8 +68,8 @@ Ore per ogni lead, su 50-100 lead/mese, equivaleva a una persona dedicata a temp
 Soraia ha costruito un agente IA di **arricchimento e qualifica lead** che fa il lavoro di profilazione in autonomia:
 
 1. **Riceve il lead** dal trigger eBook download / form / WhatsApp.
-2. **Enrichment cross-source** — scansiona LinkedIn, ricerche pubbliche, dati social pubblicamente accessibili per costruire il profilo del lead (ruolo professionale, paese, segnali di seniority).
-3. **Classificazione intent + budget** — sulla base dell'eBook scaricato (ognuno ha price point implicito), pattern di interazione, profilo professionale, l'agente stima il tier (browse / qualified / hot).
+2. **Enrichment cross-source**, scansiona LinkedIn, ricerche pubbliche, dati social pubblicamente accessibili per costruire il profilo del lead (ruolo professionale, paese, segnali di seniority).
+3. **Classificazione intent + budget**, sulla base dell'eBook scaricato (ognuno ha price point implicito), pattern di interazione, profilo professionale, l'agente stima il tier (browse / qualified / hot).
 4. **Crea dossier strutturato** nel CRM Airtable con tutti i campi pre-compilati: profilo, intent, score, suggested approach.
 5. **Attiva sequenza email** via MailerLite/Brevo, personalizzata per il tier del lead (browse → nurturing, qualified → invito alla chiamata, hot → diretto a Fabricio).
 

@@ -1,5 +1,5 @@
 ---
-title: "Stars Be Original — Agente IA che gestisce 20.000+ candidati"
+title: "Stars Be Original, Agente IA che gestisce 20.000+ candidati"
 client: "Stars Be Original"
 clientLogo: "/logos/clients/starsbeoriginal.webp"
 industry: "recruitment-hr"
@@ -57,7 +57,7 @@ Il business cresce sulla **velocità e qualità del casting**: rispondere veloce
 
 ## Il problema reale
 
-La crescita aveva fatto saltare il sistema precedente: registrazioni candidati frammentate tra Excel, Google Form, email manuali. Il team marketing — che doveva fare posizionamento, brand, partnership — passava intere giornate a:
+La crescita aveva fatto saltare il sistema precedente: registrazioni candidati frammentate tra Excel, Google Form, email manuali. Il team marketing, che doveva fare posizionamento, brand, partnership, passava intere giornate a:
 
 - Confermare le candidature ricevute
 - Chiedere documenti mancanti (CV, foto, video)
@@ -65,7 +65,7 @@ La crescita aveva fatto saltare il sistema precedente: registrazioni candidati f
 - Comunicare gli esiti (positivo, attesa, scartato) con il tono giusto per non bruciare il brand
 - Aggiornare lo stato del candidato manualmente
 
-Nel picco del casting (gennaio-aprile per la stagione estiva), arrivavano migliaia di domande in poche settimane. Molti candidati restavano senza risposta per giorni e si perdevano. Il GDPR retention non era conforme — dati conservati su fogli, senza policy chiara.
+Nel picco del casting (gennaio-aprile per la stagione estiva), arrivavano migliaia di domande in poche settimane. Molti candidati restavano senza risposta per giorni e si perdevano. Il GDPR retention non era conforme, dati conservati su fogli, senza policy chiara.
 
 ## Cosa ha fatto l'agente IA
 
@@ -85,7 +85,7 @@ Il tono di voce è stato addestrato sulle risposte storiche del team CMO, in mod
 
 **200.000+ comunicazioni** inviate dall'agente: media di 10 touch per candidato sul funnel completo.
 
-**Tempo di risposta medio sotto il minuto** dal momento della candidatura — vs ore o giorni del processo manuale.
+**Tempo di risposta medio sotto il minuto** dal momento della candidatura, vs ore o giorni del processo manuale.
 
 **Il team CMO ha riguadagnato la propria funzione strategica**: posizionamento, brand, partnership con i villaggi clienti. Le ore che prima andavano in operations oggi vanno in lavoro creativo.
 

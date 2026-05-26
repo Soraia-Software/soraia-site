@@ -25,7 +25,7 @@ faq:
   - q: "Come si misura se la formazione AI ha funzionato davvero?"
     a: "<strong>3 metriche concrete</strong>: (1) % del team che usa attivamente l'AI in workflow specifici a 60gg (target: 60-80%); (2) numero di workflow nuovi proposti dal team dopo la formazione (target: 5-15 per team 20p); (3) ore/persona/settimana recuperate dichiarate (verificare con campione cronometrato). Senza queste metriche, ogni formazione è 'andata bene' su carta."
   - q: "Il team senior non vuole usare l'AI: cosa fare?"
-    a: "Pattern visto 30+ volte. Soluzioni che funzionano: (1) <strong>iniziare dai middle manager</strong>, non dai senior — sono i primi adopter naturali e portano i senior; (2) <strong>workshop con caso d'uso loro</strong>, non casi astratti; (3) <strong>celebrare quick win pubblicamente</strong>; (4) <strong>NO mandate top-down</strong>. Sostituire 'devi usare l'AI' con 'mostriamo cosa si può fare'."
+    a: "Pattern visto 30+ volte. Soluzioni che funzionano: (1) <strong>iniziare dai middle manager</strong>, non dai senior, sono i primi adopter naturali e portano i senior; (2) <strong>workshop con caso d'uso loro</strong>, non casi astratti; (3) <strong>celebrare quick win pubblicamente</strong>; (4) <strong>NO mandate top-down</strong>. Sostituire 'devi usare l'AI' con 'mostriamo cosa si può fare'."
   - q: "Cosa deve coprire un programma di formazione AI Foundation serio?"
     a: "5 moduli minimi: (1) <strong>Cosa è AI, cosa non è</strong> (anti-hype, anti-paura); (2) <strong>Prompting efficace</strong> per i propri task; (3) <strong>Tool aziendale</strong> (ChatGPT/Copilot/Claude) sicuro e GDPR-compliant; (4) <strong>Workflow specifici del team</strong> con esempi concreti; (5) <strong>Limiti e guardrail</strong> (cosa NON usare, come gestire errori, escalation). Bonus: cenni AI Act."
   - q: "Posso fare la formazione AI in casa con risorse interne?"
@@ -52,7 +52,7 @@ La conclusione operativa: per ogni euro speso a costruire un agente IA, dovresti
 
 Non esiste "un corso AI universale". Esistono 3 livelli distinti, ciascuno con audience, contenuti, e modalità diverse.
 
-### Livello 1 — Foundation (per tutto il team)
+### Livello 1, Foundation (per tutto il team)
 
 **Target**: tutto il personale aziendale, indipendentemente dal ruolo.
 
@@ -66,7 +66,7 @@ Non esiste "un corso AI universale". Esistono 3 livelli distinti, ciascuno con a
 
 **Output atteso**: il team usa attivamente ChatGPT/Copilot/Claude per i propri task standard dopo 60 giorni. Adoption misurabile: 60-80% del team con almeno 1 uso AI/settimana.
 
-### Livello 2 — Business avanzato (per manager + power user)
+### Livello 2, Business avanzato (per manager + power user)
 
 **Target**: middle manager, team lead, power user di ogni funzione (HR, finance, marketing, sales, support).
 
@@ -80,7 +80,7 @@ Non esiste "un corso AI universale". Esistono 3 livelli distinti, ciascuno con a
 
 **Output atteso**: 5-15 workflow specifici proposti dal team dopo il corso, di cui 2-5 effettivamente implementati.
 
-### Livello 3 — Tecnico (per dev + tech team)
+### Livello 3, Tecnico (per dev + tech team)
 
 **Target**: developer, data engineer, IT, chiunque debba implementare o manutenere agenti AI nel codice o nelle integrazioni aziendali.
 
@@ -108,23 +108,23 @@ Non esiste "un corso AI universale". Esistono 3 livelli distinti, ciascuno con a
 
 I 5 moduli minimi (livello Foundation) che dovresti pretendere da qualunque partner:
 
-### Modulo 1 — Cosa è AI, cosa non è
+### Modulo 1, Cosa è AI, cosa non è
 
 Anti-hype e anti-paura. Smontare il mito "AI sostituirà il vostro lavoro" con dati reali (BLS, McKinsey, esempi PMI italiane). Smontare il mito "AI fa miracoli" con esempi concreti di errori AI (allucinazioni, bias, limiti contestuali).
 
-### Modulo 2 — Prompting efficace per i propri task
+### Modulo 2, Prompting efficace per i propri task
 
 Hands-on con i task reali dei partecipanti. Non "scriviamo un haiku", ma "scriviamo l'email di follow-up al cliente Y", "riassumiamo le 30 candidature ricevute oggi", "estraiamo i dati chiave da questo contratto PDF".
 
-### Modulo 3 — Tool aziendale sicuro
+### Modulo 3, Tool aziendale sicuro
 
 Quale tool usare (ChatGPT Team / Copilot / Claude Enterprise), come usarlo in modo GDPR-compliant (mai dati personali sensibili in input senza DPA, mai password, mai informazioni riservate clienti). Setup pratico account aziendale, login, condivisione team.
 
-### Modulo 4 — Workflow specifici del team
+### Modulo 4, Workflow specifici del team
 
 Sessione customizzata per ogni funzione aziendale: il team HR vede prompt + workflow per il loro lavoro, il team marketing vede i loro, il team finance i suoi. Non slide generiche, ma esempi sul lavoro reale del team.
 
-### Modulo 5 — Limiti, guardrail, escalation
+### Modulo 5, Limiti, guardrail, escalation
 
 Cosa NON usare l'AI per fare (decisioni finali su persone, contenuti legalmente vincolanti senza review, etc.). Come riconoscere un errore AI. Quando escalare a un umano. Cenni AI Act per il manager che deve essere consapevole.
 
@@ -175,7 +175,7 @@ La metrica ultima di business. Misurabile via:
 - Campione di 5-10 persone cronometrate su task specifici **pre-corso** e **60gg post-corso**.
 - Confronto media tempo task ricorrenti.
 
-Target: dipende dal livello — Foundation puntiamo a **3-5 ore/persona/settimana** recuperate sui task ripetitivi.
+Target: dipende dal livello, Foundation puntiamo a **3-5 ore/persona/settimana** recuperate sui task ripetitivi.
 
 ## Il team senior non vuole usare l'AI: cosa fare
 

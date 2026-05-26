@@ -1,5 +1,5 @@
 ---
-title: "StoryWonder — Agente IA che genera 300.000+ storie per bambini"
+title: "StoryWonder, Agente IA che genera 300.000+ storie per bambini"
 client: "StoryWonder"
 clientLogo: "/logos/clients/storywonder.webp"
 industry: "consumer-education"
@@ -86,7 +86,7 @@ Il prompt engineering dell'agente è la parte più delicata: garantire storie **
 
 **50.000+ utenti** registrati (in crescita, dato a fine 2025).
 
-**300.000+ storie generate** dall'agente IA dal lancio — ogni storia unica, mai vista prima.
+**300.000+ storie generate** dall'agente IA dal lancio, ogni storia unica, mai vista prima.
 
 **Lighthouse project per Playmobil**: l'integrazione StoryWonder + Playmobil è diventata il blueprint per future partnership brand → kids content.
 

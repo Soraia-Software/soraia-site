@@ -1,5 +1,5 @@
 ---
-title: "APraise — Agente IA ATS con Web Clipper LinkedIn per executive search"
+title: "APraise, Agente IA ATS con Web Clipper LinkedIn per executive search"
 client: "APraise"
 clientLogo: "/logos/clients/apraise.webp"
 industry: "recruitment-hr"
@@ -59,17 +59,17 @@ L'executive search ha caratteristiche operative che il software ATS generico non
 - **Database frammentato** tra Excel (per i mandati attivi), tool ATS legacy (per lo storico), e LinkedIn (per il sourcing). Tre fonti di verità, zero matching cross-source.
 - **Su mandati enterprise**, un singolo cliente può richiedere 150+ candidati gestiti per posizione: senza tooling efficiente il funnel collassa.
 
-Risultato operativo: il consulente senior — figura costosa, che dovrebbe parlare con clienti e candidati — passava una **quota significativa del tempo in data entry manuale**.
+Risultato operativo: il consulente senior, figura costosa, che dovrebbe parlare con clienti e candidati, passava una **quota significativa del tempo in data entry manuale**.
 
 ## Cosa ha fatto l'agente IA
 
 Soraia ha costruito **APraise ATS**, piattaforma custom che combina ingestion ultra-rapida + agente IA di matching:
 
-1. **Chrome Web Clipper custom** — il consulente naviga su LinkedIn, trova il profilo target, clicca l'estensione: in **1 click** il profilo viene catturato e inviato all'ATS.
-2. **Agente IA di parsing strutturato** — il profilo grezzo viene processato dall'agente che estrae dati strutturati con accuracy alta: ruolo attuale, esperienze precedenti, anni di seniority, skill, lingue, formazione, settori di esperienza.
-3. **Vector database per matching semantico** — ogni candidato e ogni JD vengono rappresentati come vettori; l'agente calcola la similarità e propone i match più rilevanti.
-4. **Feature Potential Match** — per ogni nuova posizione aperta, l'agente scansiona il database e produce una shortlist motivata con score. Il consulente rivede e contatta, l'agente non scrive mai messaggi al posto del consulente (giudizio relazionale = umano).
-5. **Workflow per cliente enterprise** — gestione di 150+ candidati per posizione su un singolo mandato, con stati strutturati (contattato / interview / shortlist / presentato / closed).
+1. **Chrome Web Clipper custom**, il consulente naviga su LinkedIn, trova il profilo target, clicca l'estensione: in **1 click** il profilo viene catturato e inviato all'ATS.
+2. **Agente IA di parsing strutturato**, il profilo grezzo viene processato dall'agente che estrae dati strutturati con accuracy alta: ruolo attuale, esperienze precedenti, anni di seniority, skill, lingue, formazione, settori di esperienza.
+3. **Vector database per matching semantico**, ogni candidato e ogni JD vengono rappresentati come vettori; l'agente calcola la similarità e propone i match più rilevanti.
+4. **Feature Potential Match**, per ogni nuova posizione aperta, l'agente scansiona il database e produce una shortlist motivata con score. Il consulente rivede e contatta, l'agente non scrive mai messaggi al posto del consulente (giudizio relazionale = umano).
+5. **Workflow per cliente enterprise**, gestione di 150+ candidati per posizione su un singolo mandato, con stati strutturati (contattato / interview / shortlist / presentato / closed).
 
 Il consulente senior recupera ore al giorno per parlare con clienti e candidati. La parte operativa è gestita dall'agente.
 
@@ -79,7 +79,7 @@ Il consulente senior recupera ore al giorno per parlare con clienti e candidati.
 
 **150+ candidati gestiti per posizione enterprise**: il funnel di executive search funziona alla scala richiesta dai clienti di fascia alta.
 
-**Matching semantico via vector DB**: il consulente non deve più ricordare "chi sarebbe perfetto per questa posizione" — l'agente lo propone in autonomia con score motivato.
+**Matching semantico via vector DB**: il consulente non deve più ricordare "chi sarebbe perfetto per questa posizione", l'agente lo propone in autonomia con score motivato.
 
 **15+ mesi di produzione continuativa** del sistema: indicatore di solidità operativa e di adattamento dell'agente ai workflow specifici di APraise.
 

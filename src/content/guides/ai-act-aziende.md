@@ -21,7 +21,7 @@ faq:
   - q: "Quando è entrato in vigore l'AI Act?"
     a: "Il Regolamento (UE) 2024/1689 è entrato in vigore il <strong>1 agosto 2024</strong>. Gli obblighi sono scaglionati: <strong>febbraio 2025</strong> per pratiche vietate, <strong>agosto 2025</strong> per modelli general-purpose, <strong>agosto 2026</strong> per la maggior parte degli obblighi sui sistemi ad alto rischio."
   - q: "Quali sono i 4 livelli di rischio dell'AI Act?"
-    a: "(1) <strong>Inaccettabile</strong> — vietati (social scoring, manipolazione subliminale, identificazione biometrica in tempo reale in spazi pubblici con eccezioni). (2) <strong>Alto</strong> — recruitment, scoring credito, sistemi sanitari, infrastrutture critiche: obblighi pesanti. (3) <strong>Limitato</strong> — chatbot, sistemi che interagiscono con utenti: obbligo principale trasparenza. (4) <strong>Minimo</strong> — tutto il resto: obblighi residuali."
+    a: "(1) <strong>Inaccettabile</strong>, vietati (social scoring, manipolazione subliminale, identificazione biometrica in tempo reale in spazi pubblici con eccezioni). (2) <strong>Alto</strong>, recruitment, scoring credito, sistemi sanitari, infrastrutture critiche: obblighi pesanti. (3) <strong>Limitato</strong>, chatbot, sistemi che interagiscono con utenti: obbligo principale trasparenza. (4) <strong>Minimo</strong>, tutto il resto: obblighi residuali."
   - q: "Se uso ChatGPT in azienda devo fare qualcosa di particolare per l'AI Act?"
     a: "L'uso ordinario di ChatGPT/Copilot/Claude da parte dei dipendenti per task quotidiani ricade in livello minimo. Obblighi base: (1) <strong>policy interna</strong> AI use (1 pagina); (2) <strong>no dati personali sensibili</strong> in input senza DPA con il vendor; (3) <strong>trasparenza interna</strong> al team. Niente burocrazia pesante."
   - q: "Recruitment con AI: che obblighi ho?"
@@ -150,7 +150,7 @@ Se la tua PMI fa formazione esterna che usa AI per assessment studenti → livel
 
 Indipendentemente dal livello, ecco le 4 cose pratiche da fare entro 2026. Sono il minimo. Stop.
 
-### Step 1 — AI Policy 1-pager interna
+### Step 1, AI Policy 1-pager interna
 
 Documento di **1 pagina** che dice:
 
@@ -161,7 +161,7 @@ Documento di **1 pagina** che dice:
 
 Aiuta governance interna + è un requisito implicito di best practice + soddisfa il principio di accountability.
 
-### Step 2 — Audit log delle decisioni agent
+### Step 2, Audit log delle decisioni agent
 
 Ogni agente in produzione deve **loggare ogni decisione**:
 
@@ -175,7 +175,7 @@ Per livello alto è obbligatorio normativamente. Per gli altri è comunque smart
 
 Tool standard 2026: Langfuse, OpenLLMetry, sistemi custom su S3+metadata. Costo: ~€100-300/mese per PMI media.
 
-### Step 3 — Supervisione umana sui casi critici
+### Step 3, Supervisione umana sui casi critici
 
 Definire **upfront**: quando l'agente decide da solo, quando passa a un umano.
 
@@ -187,7 +187,7 @@ Esempi:
 
 Documentare la matrice "casi automatici / casi escalation" è il deliverable di compliance più semplice e più potente.
 
-### Step 4 — DPA con il vendor
+### Step 4, DPA con il vendor
 
 Se usi un fornitore esterno (Soraia, OpenAI direct, Anthropic, Microsoft, Google), serve **Data Processing Agreement art. 28 GDPR**.
 
@@ -203,10 +203,10 @@ Se usi un fornitore esterno (Soraia, OpenAI direct, Anthropic, Microsoft, Google
 
 Le date chiave per pianificare la compliance:
 
-- **Febbraio 2025** ✓ già in vigore — divieto pratiche AI inaccettabili.
-- **Agosto 2025** ✓ già in vigore — obblighi su modelli AI general-purpose (riguarda principalmente vendor come OpenAI/Anthropic, non utenti finali).
-- **Agosto 2026** — obblighi principali su sistemi ad alto rischio. Se hai recruitment AI, accounting AI con impatto su persone, etc., questa è la deadline operativa per essere conformi.
-- **Agosto 2027** — obblighi su sistemi ad alto rischio integrati in prodotti regolamentati (medical device, machinery).
+- **Febbraio 2025** ✓ già in vigore, divieto pratiche AI inaccettabili.
+- **Agosto 2025** ✓ già in vigore, obblighi su modelli AI general-purpose (riguarda principalmente vendor come OpenAI/Anthropic, non utenti finali).
+- **Agosto 2026**, obblighi principali su sistemi ad alto rischio. Se hai recruitment AI, accounting AI con impatto su persone, etc., questa è la deadline operativa per essere conformi.
+- **Agosto 2027**, obblighi su sistemi ad alto rischio integrati in prodotti regolamentati (medical device, machinery).
 
 Per la maggior parte delle PMI: **agosto 2026** è la deadline da segnare in calendario. Hai ancora 14 mesi al momento di scrittura.
 

@@ -94,34 +94,34 @@ Non tutti i processi sono adatti. I criteri che usiamo nei progetti Soraia per d
 
 ### I 4 criteri del "sì"
 
-1. **Alto volume ripetitivo** — almeno 20-30 task/settimana per persona dedicata. Sotto questa soglia, un agente custom non ripaga lo sforzo.
-2. **Output strutturato** — il risultato deve finire in un sistema (CRM, ATS, ERP, database) o in una comunicazione standardizzata. Se l'output è "discutere con il team in riunione", non ha senso.
-3. **Regole abbastanza chiare** — i criteri devono essere documentabili. Se chiedi al recruiter "perché hai scartato questo CV" e la risposta è "vibes", l'agente non può imparare.
-4. **Baseline misurabile** — devi sapere quanto tempo/soldi costa oggi quel processo. Senza baseline non puoi misurare se l'agente ha valore.
+1. **Alto volume ripetitivo**, almeno 20-30 task/settimana per persona dedicata. Sotto questa soglia, un agente custom non ripaga lo sforzo.
+2. **Output strutturato**, il risultato deve finire in un sistema (CRM, ATS, ERP, database) o in una comunicazione standardizzata. Se l'output è "discutere con il team in riunione", non ha senso.
+3. **Regole abbastanza chiare**, i criteri devono essere documentabili. Se chiedi al recruiter "perché hai scartato questo CV" e la risposta è "vibes", l'agente non può imparare.
+4. **Baseline misurabile**, devi sapere quanto tempo/soldi costa oggi quel processo. Senza baseline non puoi misurare se l'agente ha valore.
 
 ### I 3 segnali di "NO"
 
-- **Processo che cambierà nei prossimi 3 mesi** — costruire su workflow instabili è spreco.
-- **Team <10 persone con task molto vari** — meglio dare a tutti un AI assistant aziendale (ChatGPT/Copilot) e fermarsi lì.
-- **Zero buy-in del team operativo** — un agente che il team non accetta finisce dimenticato. Il <a href="/guide/formazione-ai-aziendale">change management</a> conta quanto la tecnologia.
+- **Processo che cambierà nei prossimi 3 mesi**, costruire su workflow instabili è spreco.
+- **Team <10 persone con task molto vari**, meglio dare a tutti un AI assistant aziendale (ChatGPT/Copilot) e fermarsi lì.
+- **Zero buy-in del team operativo**, un agente che il team non accetta finisce dimenticato. Il <a href="/guide/formazione-ai-aziendale">change management</a> conta quanto la tecnologia.
 
 ## Come si costruisce un agente IA custom (le 4 fasi)
 
 Il processo standard che usiamo in Soraia. Replicabile da qualunque partner serio, evitabile da qualunque vendor che salta i fondamentali.
 
-### Fase 1 — Discovery & Baseline (1-2 settimane)
+### Fase 1, Discovery & Baseline (1-2 settimane)
 
 Mappatura del processo attuale, cronometrazione del tempo umano su 10-20 task reali, identificazione dei bottleneck, definizione del **metric primario unico** (es. "ore/recruiter/settimana recuperate"). Output: AI Readiness Assessment con scope chiaro e ROI atteso quantificato. [Scarica un sample anonimo del report](/downloads/ai-assessment-sample) per vedere cosa riceve un cliente al termine di questa fase.
 
-### Fase 2 — Build (2-3 settimane)
+### Fase 2, Build (2-3 settimane)
 
 Costruzione dell'agente: prompt engineering, integrazione con i sistemi del cliente (CRM, ATS, etc.), regole di escalation, audit log, guardrail di sicurezza. Sviluppo iterativo con review settimanali.
 
-### Fase 3 — Deploy + Training (1 settimana)
+### Fase 3, Deploy + Training (1 settimana)
 
 Go-live in shadow mode (l'agente lavora, l'umano controlla), poi switch progressivo a produzione. Training del team che dovrà supervisionarlo. Documentazione operativa.
 
-### Fase 4 — Hypercare (30 giorni)
+### Fase 4, Hypercare (30 giorni)
 
 L'agente è live, il partner monitora attivamente, fix rapidi sui casi limite, fine-tuning delle regole. Al giorno 30: misurazione finale del metric primario, decisione su scaling.
 
@@ -131,25 +131,25 @@ L'agente è live, il partner monitora attivamente, fix rapidi sui casi limite, f
 
 Tutti gli agenti qui sotto sono live oggi e gestiscono lavoro vero, non demo. I numeri sono quelli misurati.
 
-### Stars Be Original — Agente IA candidature (recruitment animazione)
+### Stars Be Original, Agente IA candidature (recruitment animazione)
 
 Riceve la candidatura, qualifica il profilo sui criteri del cliente, risponde con la comunicazione giusta in tono brand, aggiorna lo stato in tempo reale, fa escalation solo sui casi che lo richiedono.
 
 **Risultati**: 20.000+ candidati gestiti, 200.000+ comunicazioni inviate dall'agente. Tempo di risposta medio sotto il minuto. [Leggi il case study completo](/case-studies/stars-be-original).
 
-### StoryWonder — Agente IA storie per bambini (consumer mobile)
+### StoryWonder, Agente IA storie per bambini (consumer mobile)
 
 Generatore di storie personalizzate integrato nell'app mobile: prende personaggio, ambientazione, lunghezza, età; genera testo + immagini + narrazione audio on-demand.
 
 **Risultati**: live sugli store in 4 settimane, 50.000+ utenti, 300.000+ storie generate. [Leggi il case study completo](/case-studies/storywonder).
 
-### CXL — Agente IA expert onboarding (online education)
+### CXL, Agente IA expert onboarding (online education)
 
 Prende in carico il nuovo esperto dal primo contatto, redige bozza contratto, raccoglie materiali, configura accessi al portale, manda follow-up personalizzati.
 
 **Risultati**: 70 ore risparmiate per ogni esperto integrato. Catalogo corsi scalato senza assumere ops. [Leggi il case study completo](/case-studies/cxl).
 
-### LIFTT — Agente IA deal flow (venture capital)
+### LIFTT, Agente IA deal flow (venture capital)
 
 Monitora le email, archivia eml + allegati su OneDrive con metadata, riconosce e unifica i deal duplicati nel CRM, genera il monthly report con charts.
 
@@ -181,10 +181,10 @@ Per un confronto operativo vedi la <a href="/guide/consulenza-ai-italia">guida c
 
 I 4 criteri di selezione che funzionano:
 
-1. **Track record verificabile** — chiedi 3 case study con stakeholder contattabili.
-2. **Garanzia esplicita** — il partner serio scrive nel contratto il metric primario e si lega al risultato. Soraia per esempio offre **"se non funziona, non paghi"** come standard.
-3. **Codice tuo, no lock-in** — verifica in contratto.
-4. **Conoscenza del settore + cultura PMI italiana** — un partner che non capisce come funziona una PMI italiana brucia il primo sprint in malintesi.
+1. **Track record verificabile**, chiedi 3 case study con stakeholder contattabili.
+2. **Garanzia esplicita**, il partner serio scrive nel contratto il metric primario e si lega al risultato. Soraia per esempio offre **"se non funziona, non paghi"** come standard.
+3. **Codice tuo, no lock-in**, verifica in contratto.
+4. **Conoscenza del settore + cultura PMI italiana**, un partner che non capisce come funziona una PMI italiana brucia il primo sprint in malintesi.
 
 ---
 

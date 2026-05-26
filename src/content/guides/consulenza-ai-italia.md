@@ -176,14 +176,14 @@ Provider con almeno 2 di queste = scarta.
 
 Un buon preventivo di sprint AI dovrebbe contenere queste 8 sezioni:
 
-1. **Contesto** — sintesi del problema cliente (1 pagina), output dell'assessment.
-2. **Scope esatto** — cosa è dentro, cosa è fuori, eccezioni dell'agente vs escalation umana.
-3. **Metric primario** — un solo numero, target quantitativo, finestra di misurazione.
-4. **Timeline con milestone** — settimana 1 / 2 / 3 / 4 + 30gg hypercare.
-5. **Pricing split** — assessment / build / hypercare separati, totale chiaro, payment plan.
-6. **Team** — chi lavorerà sul progetto (nome + ruolo + dedicato vs part-time).
-7. **Clausola codice** — il codice è del cliente da quando, in quale formato, come avviene il transfer.
-8. **Allegati legali** — DPA art. 28 GDPR, accordo riservatezza, garanzia se applicabile.
+1. **Contesto**, sintesi del problema cliente (1 pagina), output dell'assessment.
+2. **Scope esatto**, cosa è dentro, cosa è fuori, eccezioni dell'agente vs escalation umana.
+3. **Metric primario**, un solo numero, target quantitativo, finestra di misurazione.
+4. **Timeline con milestone**, settimana 1 / 2 / 3 / 4 + 30gg hypercare.
+5. **Pricing split**, assessment / build / hypercare separati, totale chiaro, payment plan.
+6. **Team**, chi lavorerà sul progetto (nome + ruolo + dedicato vs part-time).
+7. **Clausola codice**, il codice è del cliente da quando, in quale formato, come avviene il transfer.
+8. **Allegati legali**, DPA art. 28 GDPR, accordo riservatezza, garanzia se applicabile.
 
 Preventivo che salta una di queste sezioni = chiedi chiarimento. Preventivo che ne salta 3+ = scarta.
 

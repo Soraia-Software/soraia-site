@@ -1,5 +1,5 @@
 ---
-title: "Néo Carbone — Partnership delivery per scaleup climate canadese"
+title: "Néo Carbone, Partnership delivery per scaleup climate canadese"
 client: "Néo Carbone"
 sector: "Climate · Carbon partnership broker"
 service: "Agency-as-a-service multi-cliente"
@@ -60,10 +60,10 @@ Le opzioni erano: (1) assumere un team interno, con costo fisso elevato; (2) tro
 
 Soraia + Néo Carbone hanno strutturato una **partnership delivery** dove Soraia diventa il braccio operativo certificato di Néo Carbone sui sub-clienti finali:
 
-1. **Soraia gestisce il delivery tecnico** — build iniziale, maintenance continuativa, hotfix, evoluzioni delle piattaforme dei sub-clienti.
-2. **Néo Carbone mantiene la relationship commerciale** — Gabriel rimane il punto di contatto principale dei sub-clienti, Soraia interviene tecnicamente sotto il brand Néo Carbone o in trasparenza, a seconda del cliente.
-3. **Commissioning sui clienti esistenti** — modello 15% commission sui clienti esistenti per 3 anni, allineamento incentivi di lungo periodo.
-4. **Stack consolidato** — Xano + WeWeb + Airtable come backbone, PandaDoc per contract automation, Brevo per transactional email, Circle per community management.
+1. **Soraia gestisce il delivery tecnico**, build iniziale, maintenance continuativa, hotfix, evoluzioni delle piattaforme dei sub-clienti.
+2. **Néo Carbone mantiene la relationship commerciale**, Gabriel rimane il punto di contatto principale dei sub-clienti, Soraia interviene tecnicamente sotto il brand Néo Carbone o in trasparenza, a seconda del cliente.
+3. **Commissioning sui clienti esistenti**, modello 15% commission sui clienti esistenti per 3 anni, allineamento incentivi di lungo periodo.
+4. **Stack consolidato**, Xano + WeWeb + Airtable come backbone, PandaDoc per contract automation, Brevo per transactional email, Circle per community management.
 
 Soraia non è "vendor" di Néo Carbone: è **partner certificato** che opera con autonomia tecnica e accountability diretta sui sub-clienti finali.
 
