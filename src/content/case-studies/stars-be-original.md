@@ -7,6 +7,9 @@ sector: "Recruitment animazione turistica"
 service: "Agente IA candidature"
 pubDate: 2026-04-15
 dimensioni: "11-50"
+videoTestimonial:
+  provider: youtube
+  id: "fRvC2mg4yT4"
 featured: true
 stakeholder:
   name: "Gabriella Bruzzone"

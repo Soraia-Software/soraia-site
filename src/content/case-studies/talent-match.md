@@ -7,6 +7,9 @@ sector: "Recruitment · Spagna"
 service: "Agente IA matching candidati"
 pubDate: 2026-04-02
 dimensioni: "1-10"
+videoTestimonial:
+  provider: youtube
+  id: "9WQi2BS3eAA"
 featured: true
 stakeholder:
   name: "Guillem Llacuna"

@@ -7,6 +7,9 @@ sector: "Climate tech · Stormwater management"
 service: "Agente IA pipeline incentive climate"
 pubDate: 2026-03-20
 dimensioni: "11-50"
+videoTestimonial:
+  provider: youtube
+  id: "KAOHAJ8RoVA"
 featured: false
 stakeholder:
   name: "Russ Fyfe"
