@@ -6,6 +6,7 @@ industry: "recruitment-hr"
 sector: "Agenzia per il lavoro · Somministrazione"
 service: "Agente IA candidate search e matching"
 pubDate: 2026-05-10
+dimensioni: "51-250"
 featured: false
 stakeholder:
   name: "Francesca Sorrentino"

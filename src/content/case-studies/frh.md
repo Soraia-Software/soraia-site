@@ -6,6 +6,7 @@ industry: "consumer-education"
 sector: "Real estate boutique · Costa Azzurra"
 service: "Agente IA arricchimento lead"
 pubDate: 2026-02-15
+dimensioni: "11-50"
 featured: false
 stakeholder:
   name: "Fabricio Carminati"

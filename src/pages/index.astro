@@ -2,13 +2,42 @@
 import Layout from "~/layouts/Layout.astro";
 import SectionHeader from "~/components/SectionHeader.astro";
 import ProofBar from "~/components/ProofBar.astro";
-import TestimonialCard from "~/components/TestimonialCard.astro";
 import WorldMap from "~/components/WorldMap.astro";
 import CTABanner from "~/components/CTABanner.astro";
 import HeroVisual from "~/components/HeroVisual.astro";
 import FAQ from "~/components/FAQ.astro";
 import PartnersStrip from "~/components/PartnersStrip.astro";
 import AskAISection from "~/components/AskAISection.astro";
+import CaseStudyCarousel from "~/components/CaseStudyCarousel.astro";
+import { getCollection } from "astro:content";
+
+// Pesca case studies featured + più recenti, mappa nel formato Jet card.
+const allCases = await getCollection("caseStudies");
+const photoMap: Record<string, string> = {
+  apraise: "/testimonials/jacopo-castano-apraise.png",
+  cxl: "/testimonials/brian-dandelet-cxl.png",
+  frh: "/testimonials/fabricio-carminati-frh.png",
+  liftt: "/testimonials/alberto-burzio-liftt.png",
+  navily: "/testimonials/edouard-fiess-navily.png",
+  rainplan: "/testimonials/amanda-potter-rainplan.png",
+  "stars-be-original": "/testimonials/gabriella-bruzzone-stars.png",
+  storywonder: "/testimonials/rolf-storywonder.png",
+};
+const carouselItems = allCases
+  .sort((a, b) => {
+    if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
+    return b.data.pubDate.getTime() - a.data.pubDate.getTime();
+  })
+  .slice(0, 9)
+  .map((c) => ({
+    slug: c.id,
+    client: c.data.client,
+    clientLogo: c.data.clientLogo,
+    quote: c.data.shortQuote || c.data.heroQuote.slice(0, 140) + (c.data.heroQuote.length > 140 ? "…" : ""),
+    dimensioni: c.data.dimensioni,
+    sector: c.data.sector,
+    cardImage: c.data.cardImage || photoMap[c.id],
+  }));
 
 const title = "Soraia. Portiamo gli Agenti IA nelle PMI Italiane";
 const description =
@@ -81,76 +110,6 @@ const partners = [
   { name: "Calendly", src: "/logos/tools/calendly.svg" },
 ];
 
-const testimonials = [
-  {
-    quote:
-      "L'agente IA risponde ai candidati al posto nostro, e lo fa meglio di noi: tempo di risposta sotto il minuto, tono di voce coerente, zero candidati che si perdono.",
-    name: "Gabriella Bruzzone",
-    role: "CMO",
-    company: "Stars Be Original",
-    photoSrc: "/testimonials/gabriella-bruzzone-stars.png",
-    caseSlug: "stars-be-original",
-    project: "Stars Be Original, Agente IA candidature",
-    sector: "Recruitment animazione",
-    problem:
-      "Migliaia di candidati al mese che si iscrivono al casting. Le risposte manuali a conferma, richiesta documenti, esiti audizione divoravano il tempo del team. Tempi di risposta lunghi, candidati persi a metà funnel.",
-    action:
-      "Agente IA dedicato che riceve la candidatura, qualifica il profilo sui criteri del cliente, risponde con la comunicazione giusta in tono brand (conferma, richiesta documenti, scheduling audizione, esito), aggiorna lo stato del candidato in tempo reale e fa escalation al team solo sui casi che lo richiedono.",
-    resultMetric: "20.000+ candidati gestiti · 200.000+ comunicazioni inviate dall'agente IA",
-    resultBody: "Il team marketing oggi pensa a posizionamento e creatività, non a rispondere alle mail una per una.",
-  },
-  {
-    quote:
-      "Siamo passati da zero a uno: l'agente IA fa il lavoro di un operations dedicato per ogni esperto che integriamo.",
-    name: "Brian Dandelet",
-    role: "Head of Operations",
-    company: "CXL",
-    photoSrc: "/testimonials/brian-dandelet-cxl.png",
-    caseSlug: "cxl",
-    project: "CXL, Agente IA expert onboarding",
-    sector: "Online education",
-    problem:
-      "Ogni nuovo esperto che si univa alla piattaforma richiedeva 70+ ore di lavoro umano tra contratti da preparare, brief da raccogliere, materiali da rivedere, accessi al portale da configurare e follow-up costanti.",
-    action:
-      "Agente IA che prende in carico il nuovo esperto dal primo contatto: redige la bozza di contratto, raccoglie e valida i materiali, configura gli accessi al portale, manda i follow-up personalizzati e passa al team umano solo i passaggi che richiedono firma o decisione strategica.",
-    resultMetric: "70 ore risparmiate per ogni esperto integrato",
-    resultBody: "Catalogo corsi scalato senza assumere nuove operations: l'agente assorbe ogni nuovo onboarding.",
-  },
-  {
-    quote:
-      "Soraia ci ha portato dall'idea allo store in 4 settimane. Oggi l'agente IA genera centinaia di migliaia di storie su misura per i nostri utenti, in autonomia.",
-    name: "Rolf Kosakowski",
-    role: "Founder",
-    company: "StoryWonder",
-    photoSrc: "/testimonials/rolf-storywonder.png",
-    caseSlug: "storywonder",
-    project: "StoryWonder, Agente IA storie per bambini",
-    sector: "Consumer mobile · EdTech",
-    problem:
-      "Volevano lanciare un'app cross-platform in cui ogni bambino potesse ricevere storie personalizzate (personaggi, ambientazione, lunghezza) generate dall'IA su misura. Da zero, in poche settimane, senza costruire un team mobile interno.",
-    action:
-      "App nativa FlutterFlow + Firebase con agente IA integrato che genera la storia on-demand a partire dagli input del genitore o del bambino. Coin/payment system Stripe, release diretta su Apple Store e Google Play, sprint mensili di evoluzione.",
-    resultMetric: "Live sugli store in 4 settimane · 50.000+ utenti · 300.000+ storie generate dall'IA",
-    resultBody: "Lighthouse project per la partnership Playmobil e il lancio europeo dell'app.",
-  },
-  {
-    quote:
-      "Partner altamente professionale e affidabile. L'agente IA gestisce in autonomia archiving, dedupe e reportistica: noi siamo tornati a fare deal.",
-    name: "Alberto Burzio",
-    role: "IT Manager",
-    company: "LIFTT",
-    photoSrc: "/testimonials/alberto-burzio-liftt.png",
-    caseSlug: "liftt",
-    project: "LIFTT, Agente IA deal flow",
-    sector: "Venture Capital · Tech transfer",
-    problem:
-      "Pipeline deal frammentata tra Airtable, email e file locali. Dedupe dei contatti fatto a mano, monthly report compilati riga per riga, email di startup non archiviate in modo conforme per la due diligence.",
-    action:
-      "Agente IA che monitora le email in arrivo, archivia in autonomia eml + allegati su OneDrive con metadata strutturati, riconosce e unifica i deal duplicati nel CRM, genera il monthly report con charts e raccomandazioni operative.",
-    resultMetric: "Dalla cadenza weekly a quella monthly: l'agente gestisce il deal flow in autonomia",
-    resultBody: "Team LIFTT focused sul deal making, non sul data management.",
-  },
-];
 
 // Regional dots. Europa raggruppata, altre regioni singole
 const worldRegions = [
@@ -538,21 +497,21 @@ const faqs = [
   </section>
 
   <!-- ============================================================
-       6. TESTIMONIALS GRID
+       6. CASE STUDY CAROUSEL (JetHR style)
        ============================================================ -->
   <section class="section bg-white">
     <div class="container-soraia">
-      <SectionHeader
-        eyebrow="Cosa dicono di noi"
-        title="Non prendere solo la nostra parola."
-        align="center"
-      />
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-6xl mx-auto">
-        {testimonials.map((t) => (
-          <TestimonialCard {...t} />
-        ))}
+      <div class="max-w-3xl mb-10 md:mb-12">
+        <p class="eyebrow mb-4">Cosa dicono di noi</p>
+        <h2 class="text-balance" style="font-size: clamp(2rem, 3vw + 0.5rem, 2.75rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500; color: var(--color-ink);">
+          Passa a Soraia.
+        </h2>
+        <p class="mt-4 text-[16px] md:text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+          40+ aziende hanno costruito agenti IA con noi. Tempo medio al primo agente in produzione: 4 settimane.
+        </p>
       </div>
+
+      <CaseStudyCarousel items={carouselItems} />
     </div>
   </section>
 

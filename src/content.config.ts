@@ -50,6 +50,14 @@ const caseStudies = defineCollection({
     })).default([]),
     timeline: z.string().optional(),           // e.g. "4 settimane go-live + sprint mensili"
     stack: z.array(z.string()).default([]),
+    dimensioni: z.enum(["1-10", "11-50", "51-250", "250+"]).optional(),
+    videoTestimonial: z.object({
+      provider: z.enum(["youtube", "vimeo"]),
+      id: z.string(),
+      poster: z.string().optional(),
+    }).optional(),
+    shortQuote: z.string().optional(),         // card-friendly shorter version of heroQuote
+    cardImage: z.string().optional(),          // photo used as card background (fallback: stakeholder photo)
     screenshots: z.array(z.object({
       src: z.string(),
       caption: z.string().optional(),

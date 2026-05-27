@@ -4,6 +4,7 @@ client: "Néo Carbone"
 sector: "Climate · Carbon partnership broker"
 service: "Agency-as-a-service multi-cliente"
 pubDate: 2026-02-28
+dimensioni: "1-10"
 featured: false
 stakeholder:
   name: "Gabriel Beaudoin"

@@ -6,6 +6,7 @@ industry: "consumer-education"
 sector: "Online education · Marketing training"
 service: "Agente IA expert onboarding"
 pubDate: 2026-03-20
+dimensioni: "11-50"
 featured: false
 stakeholder:
   name: "Brian Dandelet"

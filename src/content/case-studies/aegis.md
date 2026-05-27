@@ -6,6 +6,7 @@ industry: "recruitment-hr"
 sector: "Recruitment multi-brand · HR"
 service: "Agente IA ATS unificato"
 pubDate: 2026-04-05
+dimensioni: "51-250"
 featured: true
 stakeholder:
   name: "Vittorio Maiani"

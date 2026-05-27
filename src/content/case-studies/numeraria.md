@@ -6,6 +6,7 @@ industry: "finance-vc"
 sector: "Studio paghe & contabilità"
 service: "Agente IA gestione preventivi e ore"
 pubDate: 2026-03-15
+dimensioni: "11-50"
 featured: true
 stakeholder:
   name: "Delia Frigatti"

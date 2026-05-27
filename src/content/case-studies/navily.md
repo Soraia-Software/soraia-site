@@ -6,6 +6,7 @@ industry: "consumer-education"
 sector: "Consumer mobile · Travel & nautical"
 service: "Agente IA moderazione + enrichment"
 pubDate: 2026-03-08
+dimensioni: "11-50"
 featured: true
 stakeholder:
   name: "Edouard Fiess"

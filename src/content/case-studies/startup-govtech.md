@@ -5,6 +5,7 @@ industry: "public-sector"
 sector: "Diplomazia · Eventi governativi"
 service: "Agente IA gestione eventi diplomatici"
 pubDate: 2026-03-25
+dimensioni: "1-10"
 featured: false
 stakeholder:
   name: "Founder"

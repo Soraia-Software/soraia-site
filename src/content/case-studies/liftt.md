@@ -6,6 +6,7 @@ industry: "finance-vc"
 sector: "Venture Capital · Tech transfer"
 service: "Agente IA deal flow"
 pubDate: 2026-03-10
+dimensioni: "11-50"
 featured: false
 stakeholder:
   name: "Alberto Burzio"

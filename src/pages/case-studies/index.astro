@@ -1,6 +1,7 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import CaseStudyCardJet from "~/components/CaseStudyCardJet.astro";
 
 const title = "Case Studies | Soraia";
 const description = "Agenti IA in produzione per PMI italiane ed europee. Recruitment, consumer mobile, finance, climate, public sector: cosa abbiamo costruito e quali risultati.";
@@ -8,6 +9,22 @@ const description = "Agenti IA in produzione per PMI italiane ed europee. Recrui
 const cases = (await getCollection("caseStudies")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const photoMap: Record<string, string> = {
+  apraise: "/testimonials/jacopo-castano-apraise.png",
+  cxl: "/testimonials/brian-dandelet-cxl.png",
+  frh: "/testimonials/fabricio-carminati-frh.png",
+  liftt: "/testimonials/alberto-burzio-liftt.png",
+  navily: "/testimonials/edouard-fiess-navily.png",
+  rainplan: "/testimonials/amanda-potter-rainplan.png",
+  "stars-be-original": "/testimonials/gabriella-bruzzone-stars.png",
+  storywonder: "/testimonials/rolf-storywonder.png",
+};
+
+function cardQuote(c: typeof cases[number]): string {
+  const q = c.data.shortQuote || c.data.heroQuote;
+  return q.length > 140 ? q.slice(0, 137).trimEnd() + "…" : q;
+}
 
 // Industry filter taxonomy
 const industryFilters = [
@@ -57,40 +74,20 @@ const industryFilters = [
         ))}
       </div>
 
-      <!-- Case study grid (all cards, JS filters via data attr) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" data-case-grid>
+      <!-- Case study grid (JetHR-style cards, JS filters via data attr) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" data-case-grid>
         {cases.map((c) => (
-          <a
-            href={`/case-studies/${c.id}`}
-            class="cs-card group no-underline flex flex-col"
-            data-industry={c.data.industry}
-          >
-            <!-- Logo header -->
-            <div class="cs-card-logo">
-              {c.data.clientLogo ? (
-                <img src={c.data.clientLogo} alt={c.data.client} loading="lazy" decoding="async" />
-              ) : (
-                <span class="cs-card-logo-fallback">{c.data.client}</span>
-              )}
-            </div>
-
-            <!-- Body -->
-            <div class="cs-card-body">
-              <p class="cs-card-eyebrow">{c.data.service} · {c.data.sector}</p>
-              <h3 class="cs-card-title">{c.data.client}</h3>
-              <p class="cs-card-desc">{c.data.teaser.problem}</p>
-
-              <div class="cs-card-result">
-                <p class="cs-card-result-label">Risultato</p>
-                <p class="cs-card-result-metric">{c.data.teaser.resultMetric}</p>
-              </div>
-
-              <span class="cs-card-cta">
-                Leggi il case study
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cs-card-arrow"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </a>
+          <div class="cs-grid-item" data-industry={c.data.industry}>
+            <CaseStudyCardJet
+              href={`/case-studies/${c.id}`}
+              client={c.data.client}
+              clientLogo={c.data.clientLogo}
+              quote={cardQuote(c)}
+              dimensioni={c.data.dimensioni}
+              sector={c.data.sector}
+              cardImage={c.data.cardImage || photoMap[c.id]}
+            />
+          </div>
         ))}
       </div>
 
@@ -132,7 +129,7 @@ const industryFilters = [
       const emptyState = document.querySelector("[data-empty-state]");
       if (!bar || !grid) return;
 
-      const cards = grid.querySelectorAll(".cs-card");
+      const cards = grid.querySelectorAll(".cs-grid-item");
       const buttons = bar.querySelectorAll(".cs-filter");
 
       buttons.forEach((btn) => {

@@ -6,6 +6,7 @@ industry: "recruitment-hr"
 sector: "Recruitment animazione turistica"
 service: "Agente IA candidature"
 pubDate: 2026-04-15
+dimensioni: "11-50"
 featured: true
 stakeholder:
   name: "Gabriella Bruzzone"

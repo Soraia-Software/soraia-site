@@ -6,6 +6,7 @@ industry: "recruitment-hr"
 sector: "Executive search · Senior recruitment"
 service: "Agente IA ATS + Web Clipper candidati"
 pubDate: 2026-03-05
+dimensioni: "11-50"
 featured: false
 stakeholder:
   name: "Jacopo Castano"
