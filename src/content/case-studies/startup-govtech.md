@@ -10,7 +10,7 @@ featured: false
 stakeholder:
   name: "Founder"
   role: "Cliente sotto NDA"
-  photo: ""
+  photo: "/testimonials/govtech-startup.webp"
 heroQuote: "La reattività di Soraia ci ha permesso di consegnare la piattaforma ai nostri partner governativi nei tempi stretti che la diplomazia richiede. L'agente IA per le note verbali ha tolto giorni di lavoro al nostro team, mantenendo la precisione formale che il settore impone."
 teaser:
   problem: "Gestire eventi diplomatici multi-paese richiedeva coordinamento su sistemi separati per ogni governo cliente, con redazione manuale delle note verbali (documenti formali con regole strette) e archiviazione frammentata."
