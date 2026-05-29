@@ -14,7 +14,7 @@ featured: true
 stakeholder:
   name: "Gabriella Bruzzone"
   role: "CMO"
-  photo: "/testimonials/gabriella-bruzzone-stars.png"
+  photo: "/testimonials/gabriella-bruzzone-stars.webp"
 heroQuote: "L'agente IA risponde ai candidati al posto nostro, e lo fa meglio di noi: tempo di risposta sotto il minuto, tono di voce coerente, zero candidati che si perdono. Il team marketing oggi pensa a posizionamento e creatività, non a rispondere alle mail una per una."
 teaser:
   problem: "Migliaia di candidati al mese che si iscrivono al casting. Le risposte manuali a conferma, richiesta documenti, esiti audizione divoravano il tempo del team."

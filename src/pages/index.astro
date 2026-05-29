@@ -14,17 +14,17 @@ import { getCollection } from "astro:content";
 // Pesca case studies featured + più recenti, mappa nel formato Jet card.
 const allCases = await getCollection("caseStudies");
 const photoMap: Record<string, string> = {
-  aegis: "/testimonials/aegis_vittorio_maiani.png",
-  apraise: "/testimonials/jacopo-castano-apraise.png",
-  cxl: "/testimonials/brian-dandelet-cxl.png",
-  frh: "/testimonials/fabricio-carminati-frh.png",
-  liftt: "/testimonials/alberto-burzio-liftt.png",
-  navily: "/testimonials/edouard-fiess-navily.png",
-  numeraria: "/testimonials/elisa-gnan-numeraria.png",
-  "oggi-lavoro": "/testimonials/francesca-sorrentino-oggi-lavoro.png",
-  rainplan: "/testimonials/amanda-potter-rainplan.png",
-  "stars-be-original": "/testimonials/gabriella-bruzzone-stars.png",
-  storywonder: "/testimonials/rolf-storywonder.png",
+  aegis: "/testimonials/aegis_vittorio_maiani.webp",
+  apraise: "/testimonials/jacopo-castano-apraise.webp",
+  cxl: "/testimonials/brian-dandelet-cxl.webp",
+  frh: "/testimonials/fabricio-carminati-frh.webp",
+  liftt: "/testimonials/alberto-burzio-liftt.webp",
+  navily: "/testimonials/edouard-fiess-navily.webp",
+  numeraria: "/testimonials/elisa-gnan-numeraria.webp",
+  "oggi-lavoro": "/testimonials/francesca-sorrentino-oggi-lavoro.webp",
+  rainplan: "/testimonials/amanda-potter-rainplan.webp",
+  "stars-be-original": "/testimonials/gabriella-bruzzone-stars.webp",
+  storywonder: "/testimonials/rolf-storywonder.webp",
   "talent-match": "/testimonials/guillem-llacuna-talent-match.webp",
 };
 const carouselItems = allCases
@@ -573,7 +573,7 @@ const faqs = [
           <div class="md:col-span-4 flex justify-center md:justify-start">
             <div class="relative w-48 h-48 md:w-56 md:h-56">
               <img
-                src="/testimonials/edouard-fiess-navily.png"
+                src="/testimonials/edouard-fiess-navily.webp"
                 alt="Edouard Fiess"
                 loading="lazy"
                 class="absolute inset-0 w-full h-full rounded-full object-cover shadow-violet"

@@ -11,7 +11,7 @@ featured: false
 stakeholder:
   name: "Alberto Burzio"
   role: "IT Manager"
-  photo: "/testimonials/alberto-burzio-liftt.png"
+  photo: "/testimonials/alberto-burzio-liftt.webp"
 heroQuote: "Partner altamente professionale e affidabile. L'agente IA gestisce in autonomia archiving, dedupe e reportistica: noi siamo tornati a fare deal. Il team ha consegnato con velocità, precisione e piena trasparenza."
 teaser:
   problem: "Pipeline deal frammentata tra Airtable, email e file locali. Dedupe manuale, monthly report fatti a mano, email archiving non conforme."

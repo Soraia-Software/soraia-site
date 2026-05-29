@@ -11,7 +11,7 @@ featured: true
 stakeholder:
   name: "Elisa Gnan"
   role: "Consultant"
-  photo: "/testimonials/elisa-gnan-numeraria.png"
+  photo: "/testimonials/elisa-gnan-numeraria.webp"
 heroQuote: "Prima passavamo metà del mese a fare preventivi, registrare ore di lavoro, riconciliare affidamenti tra le divisioni. Oggi l'agente IA fa tutto in autonomia, e il numero che ci ha portato è €32.000 al mese di costo operativo evitato."
 teaser:
   problem: "Tracciamento granulare di preventivi, affidamenti e ore di lavoro multi-divisione gestito manualmente, con voci specifiche (trasferte, remoto, presenza) che facevano perdere ore al mese al management."

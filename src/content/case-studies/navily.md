@@ -11,7 +11,7 @@ featured: true
 stakeholder:
   name: "Edouard Fiess"
   role: "CEO & Co-Founder"
-  photo: "/testimonials/edouard-fiess-navily.png"
+  photo: "/testimonials/edouard-fiess-navily.webp"
 heroQuote: "Usare l'IA per moderare recensioni, immagini ed enrichment dei dati ci ha ridotto il tempo operativo di oltre il 70%, con alta precisione. Il team oggi si concentra sul prodotto, non sul triage manuale."
 teaser:
   problem: "Migliaia di recensioni e immagini utente da moderare prima della pubblicazione, dati su porti e ancoraggi spesso incompleti, ore di operations bruciate su task ripetitivi."

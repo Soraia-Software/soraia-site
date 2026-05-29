@@ -11,7 +11,7 @@ featured: false
 stakeholder:
   name: "Brian Dandelet"
   role: "Head of Operations"
-  photo: "/testimonials/brian-dandelet-cxl.png"
+  photo: "/testimonials/brian-dandelet-cxl.webp"
 heroQuote: "Siamo passati da zero a uno: l'agente IA fa il lavoro di un operations dedicato per ogni esperto che integriamo. Catalogo corsi scalato senza assumere nuove operations."
 teaser:
   problem: "Ogni nuovo esperto richiedeva 70+ ore di lavoro umano tra contratti, brief, materiali, accessi al portale e follow-up."

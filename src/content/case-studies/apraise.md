@@ -11,7 +11,7 @@ featured: false
 stakeholder:
   name: "Jacopo Castano"
   role: "Managing Partner"
-  photo: "/testimonials/jacopo-castano-apraise.png"
+  photo: "/testimonials/jacopo-castano-apraise.webp"
 heroQuote: "Il nuovo sistema è come avere quattro recruiter in più nel team, senza il costo e la complessità. Aggiungiamo un candidato in un click dal LinkedIn del nostro target, e l'agente IA lo qualifica e ce lo propone sulla giusta posizione."
 teaser:
   problem: "Executive search su profili senior: copia-incolla manuale dei profili LinkedIn nell'ATS, matching JD↔candidato fatto a memoria del consulente, database frammentato tra Excel e tool legacy."

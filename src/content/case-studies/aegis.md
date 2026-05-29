@@ -11,7 +11,7 @@ featured: true
 stakeholder:
   name: "Vittorio Maiani"
   role: "HR Operations Manager"
-  photo: "/testimonials/aegis_vittorio_maiani.png"
+  photo: "/testimonials/aegis_vittorio_maiani.webp"
 heroQuote: "350.000+ candidati prima sparsi tra vari excel e un gestionale vissuto come un peso. Oggi tutta la gestione candidato passa da un'unica piattaforma con agenti IA integrati."
 shortQuote: "350k+ candidati su un'unica piattaforma. Gli agenti IA fanno il lavoro operativo al posto nostro."
 teaser:

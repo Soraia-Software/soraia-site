@@ -11,7 +11,7 @@ featured: false
 stakeholder:
   name: "Francesca Sorrentino"
   role: "IT Manager"
-  photo: "/testimonials/francesca-sorrentino-oggi-lavoro.png"
+  photo: "/testimonials/francesca-sorrentino-oggi-lavoro.webp"
 heroQuote: "Avevamo 108.000 candidati su uno stack enterprise legacy che faceva fatica anche solo a cercarli. Soraia sta costruendo la nuova piattaforma da zero, con un agente IA di search e matching che cambia il modo di lavorare dei nostri recruiter."
 teaser:
   problem: "108.000 candidati gestiti su stack legacy frammentato, ricerca lenta, matching manuale, mobile non disponibile, OCR CV su sistemi separati."
