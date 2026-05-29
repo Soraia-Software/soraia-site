@@ -10,7 +10,7 @@ dimensioni: "51-250"
 featured: true
 stakeholder:
   name: "Vittorio Maiani"
-  role: "Group Director"
+  role: "HR Operations Manager"
   photo: "/testimonials/aegis_vittorio_maiani.png"
 heroQuote: "Avevamo 8 brand di recruitment, ognuno con il suo Excel, le sue regole, i suoi recruiter. Jacko, la piattaforma che Soraia ci ha consegnato, è oggi l'unica fonte di verità su 2.000+ candidati, con AI che fa parsing, dedup e matching in autonomia per tutte le divisioni."
 teaser:
