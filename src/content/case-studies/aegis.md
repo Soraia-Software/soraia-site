@@ -1,10 +1,10 @@
 ---
-title: "Aegis Group, Piattaforma AI-nativa per 8 brand di recruitment"
+title: "Aegis Group, piattaforma con agenti IA per le 7 lines di recruitment"
 client: "Aegis Group"
 clientLogo: "/logos/clients/aegisgroup.webp"
 industry: "recruitment-hr"
 sector: "Recruitment multi-brand · HR"
-service: "Agente IA ATS unificato"
+service: "Piattaforma recruitment con agenti IA integrati"
 pubDate: 2026-04-05
 dimensioni: "51-250"
 featured: true
@@ -12,27 +12,28 @@ stakeholder:
   name: "Vittorio Maiani"
   role: "HR Operations Manager"
   photo: "/testimonials/aegis_vittorio_maiani.png"
-heroQuote: "Avevamo 8 brand di recruitment, ognuno con il suo Excel, le sue regole, i suoi recruiter. Jacko, la piattaforma che Soraia ci ha consegnato, è oggi l'unica fonte di verità su 2.000+ candidati, con AI che fa parsing, dedup e matching in autonomia per tutte le divisioni."
+heroQuote: "350.000+ candidati prima sparsi tra vari excel e un gestionale vissuto come un peso. Oggi tutta la gestione candidato passa da un'unica piattaforma con agenti IA integrati."
+shortQuote: "350k+ candidati su un'unica piattaforma. Gli agenti IA fanno il lavoro operativo al posto nostro."
 teaser:
-  problem: "8 brand di recruitment del gruppo (FSI, Green Talent, Geek&Job, Lobin, luxury fashion divisions) operavano su Excel + tool legacy, con workflow frammentati, duplicate entry tra brand, zero analytics unificate."
-  action: "ATS/CRM AI-nativo custom (Jacko) che sostituisce gli stack legacy: agente IA per CV extraction + parsing strutturato, deduplica cross-brand, matching candidato-posizione, workflow multi-divisione."
-  resultMetric: "8 brand su un'unica piattaforma · 2.000+ candidati importati al go-live"
-  resultBody: "Manager di brand diversi vedono per la prima volta lo stesso candidato senza data entry parallelo."
+  problem: "Le 7 lines del gruppo (Aegis FSI, Human Capital, Four Corners, Greentalent, Value Stream, HyperSet, Glinters) lavoravano su excel sparsi più un gestionale legacy vissuto come peso. Tutta la gestione candidato, dalla ricezione CV alla presentazione cliente, era manuale. Zero analytics consolidate."
+  action: "Piattaforma recruitment custom con agenti IA integrati nel flusso operativo: parsing CV automatico, deduplica cross-brand, workflow multi-divisione, analytics consolidate. Sostituisce excel sparsi e il vecchio gestionale come unico punto di verità."
+  resultMetric: "350.000+ candidati su un'unica piattaforma · 7 lines allineate"
+  resultBody: "Il gestionale non è più vissuto come un peso. Gli agenti IA fanno il lavoro operativo, i recruiter tornano a fare i recruiter."
 stats:
-  - value: "8"
-    label: "Brand unificati"
-    sub: "in un'unica piattaforma"
-  - value: "2.066"
-    label: "Candidati importati"
-    sub: "al go-live (feb 2026)"
-  - value: "Cross-brand"
-    label: "Deduplica + matching"
-    sub: "agente IA in autonomia"
-timeline: "V1 launch febbraio 2026, oggi sviluppo continuo + nuove divisioni"
+  - value: "350k+"
+    label: "Candidati gestiti"
+    sub: "su un'unica piattaforma"
+  - value: "7"
+    label: "Lines del gruppo"
+    sub: "allineate sullo stesso sistema"
+  - value: "Agenti IA"
+    label: "Parsing CV + dedup"
+    sub: "in autonomia"
+timeline: "V1 in produzione febbraio 2026, sviluppo continuo per integrare più IA nei processi"
 stack:
   - "Xano (backend multi-tenant)"
   - "WeWeb (frontend recruiter)"
-  - "OpenAI (CV parsing + matching)"
+  - "OpenAI (CV parsing)"
   - "Anthropic (eval comparativa)"
   - "Multi-brand permissions layer custom"
 related:
@@ -43,46 +44,52 @@ related:
 
 ## Il contesto
 
-Aegis Group è un gruppo italiano di recruitment con 8 brand verticali distinti: FSI (industria), Green Talent (sustainability), Geek&Job (tech), Lobin, divisioni luxury fashion, e altri. Ogni brand ha il proprio team di manager, le proprie posizioni aperte, il proprio modo di lavorare il candidato.
+Aegis Group ("Driving business through people") è un gruppo italiano di Human Consulting con sede a Milano, articolato in 7 lines verticali:
 
-Il valore del gruppo dipende dalla **possibilità di sfruttare cross-brand i candidati**: un profilo che non si adatta a FSI potrebbe essere perfetto per Geek&Job, e viceversa. Ma per farlo serve una piattaforma unica.
+- **Aegis FSI**, financial services
+- **Human Capital**, HR organization development
+- **Four Corners**, luxury, fashion, beauty, design, lifestyle
+- **Greentalent**, energy & sustainability
+- **Value Stream**, industrial automation & manufacturing
+- **HyperSet**, technology & digital
+- **Glinters**, startup & scaleup
+
+Ogni line ha il proprio team, le proprie posizioni aperte, le proprie regole di lavoro sul candidato. Insieme, gestiscono un patrimonio di oltre **350.000 candidati**.
 
 ## Il problema reale
 
-Lo stato pre-Soraia (fine 2025) era frammentato:
+Lo stato pre-Soraia era frammentato e operativamente costoso:
 
-- **8 fogli Excel paralleli** (uno per brand), con sovrapposizioni e duplicati.
-- **Tool ATS legacy** usati da alcuni brand ma non da tutti, con dati che non comunicavano tra divisioni.
-- **CV ricevuti via email** parsati a mano dai manager, con accuracy variabile (errori su skill, ruoli, esperienza).
-- **Duplicate entry massiccia**: lo stesso candidato finiva in Excel di FSI + Excel di Geek&Job se aveva profilo borderline, ma con dati leggermente diversi (versioni CV diverse, note diverse).
-- **Zero analytics unificate**: impossibile vedere "quanti candidati ha il gruppo nei settori X", "quanti sono attivi negli ultimi 30 giorni", "quanto è il funnel medio per posizione".
+- **Dati sparsi tra vari excel**, con sovrapposizioni e duplicati impossibili da intercettare a mano.
+- **Gestionale legacy vissuto come un peso**: "che palle, devo riempire il gestionale", invece che uno strumento utile al lavoro quotidiano del recruiter.
+- **Tutta la gestione candidato manuale**, dalla ricezione del CV alla presentazione al cliente: parsing a mano, qualifica a mano, follow-up a mano.
+- **Zero analytics consolidate**: per produrre anche solo un dato base sul gruppo (candidati attivi, tempi medi, conversion rate) servivano ore di export ed incroci manuali tra file.
 
-In più: 8 manager di brand diversi che dovevano coordinarsi via email/Slack quando un candidato era "buono ma non per me". Inefficienza pura.
+Il risultato: senior recruiter e manager bruciavano tempo qualificato su operazioni di data entry e riconciliazione invece che su consulenza al candidato e al cliente.
 
-## Cosa ha fatto l'agente IA
+## Cosa abbiamo costruito
 
-Soraia ha costruito **Jacko**, una piattaforma ATS/CRM AI-nativa custom che sostituisce tutti i sistemi precedenti:
+Soraia ha costruito una **piattaforma recruitment custom con agenti IA integrati nel flusso operativo**, che sostituisce excel e vecchio gestionale come unica fonte di verità per tutte e 7 le lines del gruppo:
 
-1. **Agente IA di CV parsing**, riceve il CV (PDF, doc, immagine), estrae i dati strutturati con accuracy molto superiore al parsing manuale. Skill, esperienze, lingue, certificazioni, ruoli precedenti, tutto strutturato in 30 secondi.
-2. **Deduplica cross-brand automatica**, l'agente riconosce che "Mario Rossi, sviluppatore Java" già nel database di Geek&Job è lo stesso del CV appena arrivato nel pool FSI. Propone il merge, mantenendo la storia di interazione con entrambi i brand.
-3. **Matching candidato↔posizione cross-brand**, quando arriva una nuova candidatura, l'agente scansiona le posizioni aperte di tutti gli 8 brand e propone match rilevanti. Il candidato che si è proposto per "FSI - Operations Manager" potrebbe essere segnalato anche al brand "Lobin" che cerca un profilo simile.
-4. **Workflow multi-brand con permessi granulari**, ogni manager vede e gestisce i candidati del proprio brand, ma può collaborare con altri brand su candidati cross-funzionali.
-5. **Analytics unificate**, dashboard con metric su tutto il gruppo: candidati attivi, time-to-fill medio, conversion rate per brand, ROI per sourcing channel.
+1. **Agente IA di CV parsing**, riceve il CV (PDF, doc, immagine), estrae i dati strutturati con accuracy molto superiore al parsing manuale: skill, esperienze, lingue, certificazioni, ruoli precedenti, tutto in 30 secondi.
+2. **Deduplica cross-brand**, l'agente riconosce quando lo stesso profilo arriva da line diverse e propone il merge, mantenendo la storia di interazione con ogni divisione.
+3. **Workflow multi-brand con permessi granulari**, ogni manager vede e gestisce i candidati della propria line, con visibilità trasversale dove serve.
+4. **Analytics consolidate**, dashboard con metric su tutto il gruppo: candidati attivi, time-to-fill medio per posizione, conversion rate per line, breakdown per canale di sourcing. Niente più export Excel.
 
-I manager dei brand intervengono dove serve giudizio strategico: contatto candidato, interview, decisione finale. La parte operativa (parsing, dedup, prima qualifica) è gestita dall'agente.
+Il **matching automatico candidato↔posizione cross-line** è in roadmap: oggi i recruiter beneficiano già di parsing, dedup e visibilità unificata, ma il sistema non propone ancora autonomamente i match. È il prossimo step dell'integrazione IA.
 
 ## I risultati
 
-**8 brand del gruppo su un'unica piattaforma**: per la prima volta nella storia di Aegis, tutti i manager lavorano sullo stesso database con regole condivise.
+**350.000+ candidati su un'unica piattaforma**, tutti consultabili con la stessa interfaccia, con storico, note, stato pipeline coerente tra line diverse.
 
-**2.066 candidati importati e dedupplicati al go-live** (febbraio 2026): la migrazione dagli Excel precedenti ha fatto emergere centinaia di duplicati che prima erano invisibili.
+**7 lines allineate** sullo stesso sistema, ognuna con regole specifiche ma su un'infrastruttura comune.
 
-**Cross-brand discovery**: candidati che prima erano "incastrati" nel brand di prima registrazione oggi sono visibili a tutti i manager rilevanti, aumentando la probabilità di placement.
+**Gestionale non più vissuto come peso**: gli agenti IA assorbono il lavoro operativo (parsing, dedup, riconciliazione), restituendo al recruiter uno strumento effettivamente utile per il proprio lavoro.
 
-**Workflow standardizzati ma con personalizzazione per brand**: ogni divisione mantiene le proprie regole specifiche (es. luxury fashion ha criteri diversi da tech recruitment), ma il sottostrato è unico.
+**Analytics in tempo reale**, niente più ore di export e incroci di dati per produrre un numero.
 
-## Cosa è incluso oggi
+## Dove stiamo andando
 
-Sistema in produzione, status ACTIVE con sviluppo continuo. Sprint mensili di evoluzione (nuove integrazioni, ottimizzazioni AI matching, nuove divisioni del gruppo da onboardare).
+La piattaforma è in produzione e continuiamo a iterare con sprint regolari per **integrare sempre più IA nei processi precisi del gruppo** e liberare ulteriore tempo ai recruiter. Le prossime aree: matching automatico candidato↔posizione, contatto candidato assistito da agente, scoring dinamico delle pipeline.
 
-Aegis è uno dei case più ambiziosi del portfolio Soraia in termini di scope (multi-brand, multi-team, AI integrata in tutto il funnel recruitment) e di partnership strategica di lungo periodo con il cliente.
+Aegis è uno dei case più ambiziosi del portfolio Soraia in termini di scope (multi-line, multi-team, IA in tutto il funnel recruitment) e di partnership di lungo periodo con il cliente.
