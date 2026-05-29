@@ -6,7 +6,7 @@ industry: "recruitment-hr"
 sector: "Recruitment animazione turistica"
 service: "Agente IA candidature"
 pubDate: 2026-04-15
-dimensioni: "11-50"
+dimensioni: "250-1000"
 videoTestimonial:
   provider: youtube
   id: "fRvC2mg4yT4"

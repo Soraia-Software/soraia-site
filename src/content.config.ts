@@ -50,7 +50,7 @@ const caseStudies = defineCollection({
     })).default([]),
     timeline: z.string().optional(),           // e.g. "4 settimane go-live + sprint mensili"
     stack: z.array(z.string()).default([]),
-    dimensioni: z.enum(["1-10", "11-50", "51-250", "250+"]).optional(),
+    dimensioni: z.enum(["1-10", "11-50", "51-250", "250-1000", "1000+"]).optional(),
     videoTestimonial: z.object({
       provider: z.enum(["youtube", "vimeo"]),
       id: z.string(),

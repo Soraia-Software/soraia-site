@@ -6,7 +6,7 @@ industry: "recruitment-hr"
 sector: "Recruitment · Spagna"
 service: "Agente IA matching candidati"
 pubDate: 2026-04-02
-dimensioni: "1-10"
+dimensioni: "51-250"
 videoTestimonial:
   provider: youtube
   id: "9WQi2BS3eAA"

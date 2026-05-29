@@ -6,7 +6,7 @@ industry: "sustainability"
 sector: "Climate tech · Stormwater management"
 service: "Agente IA pipeline incentive climate"
 pubDate: 2026-03-20
-dimensioni: "11-50"
+dimensioni: "51-250"
 videoTestimonial:
   provider: youtube
   id: "KAOHAJ8RoVA"
