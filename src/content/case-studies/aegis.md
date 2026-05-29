@@ -11,7 +11,7 @@ featured: true
 stakeholder:
   name: "Vittorio Maiani"
   role: "Group Director"
-  photo: ""
+  photo: "/testimonials/aegis_vittorio_maiani.png"
 heroQuote: "Avevamo 8 brand di recruitment, ognuno con il suo Excel, le sue regole, i suoi recruiter. Jacko, la piattaforma che Soraia ci ha consegnato, è oggi l'unica fonte di verità su 2.000+ candidati, con AI che fa parsing, dedup e matching in autonomia per tutte le divisioni."
 teaser:
   problem: "8 brand di recruitment del gruppo (FSI, Green Talent, Geek&Job, Lobin, luxury fashion divisions) operavano su Excel + tool legacy, con workflow frammentati, duplicate entry tra brand, zero analytics unificate."
