@@ -139,13 +139,13 @@ const jsonLd = {
                 <div class="screenshots-row">
                   {study.data.screenshots.map((shot) => (
                     <figure class="screenshot-item m-0">
-                      <div class="overflow-hidden rounded-xl border border-line bg-ink-50">
+                      <div class="screenshot-frame overflow-hidden rounded-xl border border-line bg-ink-50 flex items-center justify-center">
                         <img
                           src={shot.src}
                           alt={shot.alt || shot.caption || `Screenshot ${study.data.client}`}
                           loading="lazy"
                           decoding="async"
-                          class="w-full h-auto block"
+                          class="max-w-full max-h-full object-contain"
                         />
                       </div>
                       {shot.caption && (
@@ -331,5 +331,9 @@ const jsonLd = {
   .screenshot-item {
     scroll-snap-align: start;
     min-width: 0;
+  }
+  .screenshot-frame {
+    aspect-ratio: 4 / 3;
+    width: 100%;
   }
 </style>
