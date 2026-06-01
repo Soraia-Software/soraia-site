@@ -12,8 +12,13 @@ interface Props {
 
 const { label, logos } = Astro.props;
 
-// Duplicate for seamless marquee loop
-const doubled = [...logos, ...logos];
+// Build seamless marquee track: ensure each "half" of the track is wide enough
+// to overflow the widest common viewport. With few logos (e.g. 4), we need
+// multiple repetitions per half so translateX(-50%) loops without visible gaps.
+const MIN_CELLS_PER_HALF = 8;
+const repeatsPerHalf = Math.max(1, Math.ceil(MIN_CELLS_PER_HALF / Math.max(1, logos.length)));
+const halfTrack = Array.from({ length: repeatsPerHalf }, () => logos).flat();
+const doubled = [...halfTrack, ...halfTrack];
 ---
 
 <section class="py-14 md:py-16 border-y border-ink-200 bg-white">
@@ -28,7 +33,7 @@ const doubled = [...logos, ...logos];
       {doubled.map((logo, idx) => (
         <div
           class="proofbar-cell shrink-0"
-          aria-hidden={idx >= logos.length ? "true" : undefined}
+          aria-hidden={idx >= halfTrack.length ? "true" : undefined}
           title={logo.name}
         >
           {logo.src ? (
