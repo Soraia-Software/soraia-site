@@ -448,9 +448,10 @@
 .marquee-track {
   display: flex;
   flex-shrink: 0;
-  gap: 3.5rem;
   animation: marquee 45s linear infinite;
-  padding-right: 3.5rem;
+}
+.marquee-track .proofbar-cell {
+  margin-right: 3.5rem;
 }
 
 .marquee:hover .marquee-track {

@@ -5,11 +5,12 @@ interface Props {
   metric: string;
   metricLabel: string;
   description: string;
+  logo?: string;
   href?: string;
   accent?: "violet" | "amber";
 }
 
-const { client, industry, metric, metricLabel, description, href } = Astro.props;
+const { client, industry, metric, metricLabel, description, logo, href } = Astro.props;
 const Tag = href ? "a" : "article";
 ---
 
@@ -18,9 +19,9 @@ const Tag = href ? "a" : "article";
   class={`card-editorial group flex flex-col gap-7 h-full reveal no-underline${href ? " case-card-link" : ""}`}
 >
   <header class="flex items-start justify-between gap-4">
-    <div>
+    <div class="min-w-0 flex-1">
       <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink-500">{industry}</p>
-      <h3 class="text-[1.875rem] md:text-[2.125rem] font-semibold mt-2 text-ink-900 leading-[0.95] tracking-tight">{client}</h3>
+      <h3 class="text-[1.75rem] md:text-[2rem] font-semibold mt-2 text-ink-900 leading-[0.95] tracking-tight">{client}</h3>
     </div>
     <span class="shrink-0 inline-flex w-11 h-11 rounded-full bg-ink-50 group-hover:bg-violet-600 transition-colors duration-300 items-center justify-center">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -29,6 +30,12 @@ const Tag = href ? "a" : "article";
       </svg>
     </span>
   </header>
+
+  {logo && (
+    <div class="case-card-logo">
+      <img src={logo} alt={`${client} logo`} loading="lazy" decoding="async" />
+    </div>
+  )}
 
   <div class="hairline"></div>
 
@@ -39,7 +46,7 @@ const Tag = href ? "a" : "article";
     <p class="mt-3 text-xs uppercase tracking-[0.16em] text-ink-500 font-semibold">{metricLabel}</p>
   </div>
 
-  <p class="text-[15px] text-ink-700 leading-relaxed text-pretty">{description}</p>
+  <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">{description}</p>
 </Tag>
 
 <style>
@@ -49,5 +56,24 @@ const Tag = href ? "a" : "article";
   .case-card-link:hover {
     transform: translateY(-3px);
     box-shadow: 0 14px 36px -14px rgba(74, 30, 92, 0.20);
+  }
+  .case-card-logo {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  .case-card-logo img {
+    max-height: 36px;
+    width: auto;
+    max-width: 60%;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.55) contrast(1.05);
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+    mix-blend-mode: multiply;
+  }
+  .case-card-link:hover .case-card-logo img {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
   }
 </style>

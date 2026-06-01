@@ -72,9 +72,9 @@ const processes = [
   },
   {
     number: "03",
-    title: "Lettura JD e shortlist",
+    title: "Matching job post-candidato",
     description:
-      "L'agente legge la richiesta del cliente, estrae requisiti, scansiona DB e LinkedIn, propone una shortlist ordinata. Il recruiter sceglie, non cerca.",
+      "L'agente legge il job post del cliente, estrae requisiti, scansiona DB e LinkedIn, propone una shortlist ordinata. Il recruiter sceglie, non cerca.",
     icon: "match" as const,
   },
   {
@@ -86,6 +86,13 @@ const processes = [
   },
   {
     number: "05",
+    title: "Trascrizione e analisi colloqui",
+    description:
+      "L'agente trascrive il colloquio in tempo reale, estrae punti chiave, allinea il profilo del candidato sui criteri della posizione, prepara il report di valutazione pronto per il cliente.",
+    icon: "transcript" as const,
+  },
+  {
+    number: "06",
     title: "Sviluppo nuovi clienti",
     description:
       "L'agente identifica aziende in hiring, qualifica il fit, prepara dossier pronti per il tuo team commerciale. Pipeline alimentata in continuo.",
@@ -96,29 +103,32 @@ const processes = [
 const cases = [
   {
     client: "APraise",
+    logo: "/logos/clients/apraise.webp",
     industry: "Executive search · 100k+ candidati",
     metric: "+19",
     metricLabel: "Giorni-uomo a settimana recuperati",
     description:
-      "Flussi IA su screening, contatto candidati e qualifica. €360.000 di costo operativo recuperati ogni anno, zero nuove assunzioni.",
+      "ATS custom con Chrome Web Clipper: 1 click dal profilo LinkedIn al database arricchito. L'agente IA fa parsing strutturato e qualifica. Come avere quattro recruiter in più nel team, senza il costo.",
     href: "/case-studies/apraise",
   },
   {
     client: "Stars Be Original",
+    logo: "/logos/clients/starsbeoriginal.webp",
     industry: "Recruiting turistico · 20k+ candidati",
     metric: "<1min",
     metricLabel: "Tempo di risposta candidato",
     description:
-      "Agente IA che risponde ai candidati al posto del team: tempo di risposta sotto il minuto, tono coerente, zero candidati persi nel funnel.",
+      "Agente IA dedicato che riceve la candidatura, qualifica il profilo, risponde con la comunicazione giusta in tono brand. 200.000+ comunicazioni inviate, zero candidati persi nel funnel.",
     href: "/case-studies/stars-be-original",
   },
   {
     client: "OggiLavoro",
+    logo: "/logos/clients/oggilavoro.webp",
     industry: "APL italiana · 1000+ persone",
     metric: "250k+",
     metricLabel: "Candidati liberati dallo stack legacy",
     description:
-      "Replatforming completo con agente IA di candidate search e matching. Mobile, OCR, integrazione comm tool email/SMS/WhatsApp. Sistema scalabile sull'intera agenzia.",
+      "Replatforming completo con agenti IA di candidate search e matching. OCR CV, mobile app, integrazione comm tool email/SMS/WhatsApp. Nuova piattaforma in costruzione, sistema scalabile.",
     href: "/case-studies/oggi-lavoro",
   },
 ];
