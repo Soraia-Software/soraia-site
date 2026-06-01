@@ -25,35 +25,12 @@ const products = [
       "Onboarding incluso, 1 ora di videochiamata",
     ],
   },
-  {
-    id: "sourcer",
-    name: "Sourcer",
-    tagline: "Chrome extension per recruiter B2B",
-    description: "Estensione Chrome che si integra con il vostro ATS o CRM recruitment. Permette di catturare candidati direttamente da LinkedIn, job boards e qualsiasi sito di settore, con arricchimento automatico (email professionale, telefono, esperienza, skill).",
-    status: "coming",
-    statusLabel: "In arrivo",
-    price: "TBD",
-    priceNote: "Disponibile da Q3 2026",
-    targets: ["Recruitment agencies", "Talent acquisition team", "Executive search", "Head hunter"],
-    url: "/parliamone?prodotto=sourcer",
-    external: false,
-    iconBgColor: "#4A1E5C",
-    iconPath: '<path d="M10 4h-4a2 2 0 0 0 -2 2v4c1.105 0 2 0.895 2 2c0 1.105 -0.895 2 -2 2v4a2 2 0 0 0 2 2h4c0 -1.105 0.895 -2 2 -2c1.105 0 2 0.895 2 2h4a2 2 0 0 0 2 -2v-4c-1.105 0 -2 -0.895 -2 -2c0 -1.105 0.895 -2 2 -2v-4a2 2 0 0 0 -2 -2h-4c0 1.105 -0.895 2 -2 2c-1.105 0 -2 -0.895 -2 -2z" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
-    iconViewBox: "0 0 24 24",
-    cta: "Tienimi aggiornato",
-    bullets: [
-      "1-click capture da LinkedIn, job boards, siti aziendali",
-      "Arricchimento candidato (email, telefono, skill, esperienza)",
-      "Integrazione ATS/CRM (Greenhouse, Bullhorn, Recruitee, custom)",
-      "Pensata per recruitment agencies italiane ed europee",
-    ],
-  },
 ];
 ---
 
 <Layout
   title="Prodotti · AI agents pronti all'uso di Soraia"
-  description="I prodotti AI di Soraia: Linkly per le fiere B2B, Sourcer per il recruitment B2B. Strumenti ready-to-use sviluppati per i mercati italiani ed europei."
+  description="I prodotti AI di Soraia: Linkly, il sistema di AI agents per fiere B2B. Strumenti ready-to-use sviluppati per i mercati italiani ed europei."
   lang="it"
 >
   <!-- Hero compact -->
@@ -72,7 +49,7 @@ const products = [
 
   <!-- Products grid -->
   <section class="container-soraia pb-24">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+    <div class="grid grid-cols-1 gap-5 md:gap-6 max-w-2xl">
       {products.map((p) => (
         <article id={p.id} class="card-editorial !p-7 md:!p-8 flex flex-col">
 
