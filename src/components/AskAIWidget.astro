@@ -1,0 +1,309 @@
+---
+// Floating widget sticky bottom-right: invita l'utente a chiedere a un'IA cosa pensa di Soraia.
+// Apre un popover con i 4 assistant principali. Persistente cross-page via localStorage.
+
+interface Props {
+  lang?: "it" | "en";
+}
+const { lang = "it" } = Astro.props;
+
+const t = {
+  it: {
+    pill: "Chiedi a un'IA su Soraia",
+    title: "Cosa pensa l'IA di Soraia?",
+    subtitle: "Apri una conversazione su un assistant IA. Le risposte arrivano dalle fonti pubbliche.",
+    close: "Chiudi",
+  },
+  en: {
+    pill: "Ask an AI about Soraia",
+    title: "What does AI think of Soraia?",
+    subtitle: "Open a conversation on an AI assistant. Answers come from public sources.",
+    close: "Close",
+  },
+}[lang];
+
+const query = lang === "it"
+  ? "Cosa fa Soraia (soraia.io)? È una buona scelta per portare agenti IA in una PMI italiana?"
+  : "What does Soraia (soraia.io) do? Is it a good choice for AI agents in a European SME?";
+const encoded = encodeURIComponent(query);
+
+const assistants = [
+  { name: "ChatGPT",    href: `https://chatgpt.com/?q=${encoded}`,            logo: "/logos/llms/chatgpt.webp" },
+  { name: "Claude",     href: `https://claude.ai/new?q=${encoded}`,           logo: "/logos/llms/claude.svg" },
+  { name: "Gemini",     href: `https://gemini.google.com/app?q=${encoded}`,   logo: "/logos/llms/gemini.webp" },
+  { name: "Perplexity", href: `https://www.perplexity.ai/?q=${encoded}`,      logo: "/logos/llms/perplexity.webp" },
+];
+---
+
+<div class="ask-ai-widget" data-ask-ai-widget>
+  <!-- Pill trigger (collapsed) -->
+  <button type="button" class="ask-ai-pill" data-ask-ai-open aria-label={t.pill}>
+    <span class="ask-ai-pill-sparkle" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/>
+        <path d="M19 14l.7 2.1L22 17l-2.3.9L19 20l-.7-2.1L16 17l2.3-.9z"/>
+      </svg>
+    </span>
+    <span class="ask-ai-pill-label">{t.pill}</span>
+  </button>
+
+  <!-- Popover (expanded) -->
+  <div class="ask-ai-popover" data-ask-ai-popover role="dialog" aria-label={t.title} hidden>
+    <div class="ask-ai-popover-head">
+      <div>
+        <p class="ask-ai-popover-title">{t.title}</p>
+        <p class="ask-ai-popover-subtitle">{t.subtitle}</p>
+      </div>
+      <button type="button" class="ask-ai-close" data-ask-ai-close aria-label={t.close}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="ask-ai-grid">
+      {assistants.map((a) => (
+        <a href={a.href} target="_blank" rel="noopener noreferrer" class="ask-ai-card" data-ask-ai-card>
+          <div class="ask-ai-card-logo">
+            <img src={a.logo} alt={a.name} loading="lazy" width="28" height="28" />
+          </div>
+          <span class="ask-ai-card-name">{a.name}</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="ask-ai-card-arrow">
+            <path d="M7 17L17 7M9 7h8v8"/>
+          </svg>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    const widget = document.querySelector("[data-ask-ai-widget]");
+    if (!widget) return;
+    const pill = widget.querySelector("[data-ask-ai-open]");
+    const popover = widget.querySelector("[data-ask-ai-popover]");
+    const closeBtn = widget.querySelector("[data-ask-ai-close]");
+
+    function open() {
+      popover.hidden = false;
+      widget.classList.add("is-open");
+      requestAnimationFrame(() => popover.classList.add("is-visible"));
+    }
+    function close() {
+      popover.classList.remove("is-visible");
+      widget.classList.remove("is-open");
+      setTimeout(() => { popover.hidden = true; }, 200);
+    }
+
+    pill.addEventListener("click", open);
+    closeBtn.addEventListener("click", close);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !popover.hidden) close();
+    });
+    // close on click outside
+    document.addEventListener("click", (e) => {
+      if (popover.hidden) return;
+      if (!widget.contains(e.target)) close();
+    });
+  })();
+</script>
+
+<style>
+  .ask-ai-widget {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 9999;
+    font-family: var(--font-sans);
+  }
+
+  /* Pill button (collapsed) */
+  .ask-ai-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.75rem 1.1rem;
+    background: linear-gradient(135deg, #4A1E5C 0%, #892D9C 100%);
+    color: #fff;
+    border: none;
+    border-radius: 9999px;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 8px 24px -6px rgba(74, 30, 92, 0.45), 0 2px 6px rgba(0, 0, 0, 0.10);
+    transition: transform 0.25s var(--ease-out-quart), box-shadow 0.25s var(--ease-out-quart);
+  }
+  .ask-ai-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px -6px rgba(74, 30, 92, 0.55), 0 4px 10px rgba(0, 0, 0, 0.14);
+  }
+  .ask-ai-pill-sparkle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.18);
+  }
+  .ask-ai-widget.is-open .ask-ai-pill {
+    opacity: 0;
+    transform: scale(0.92);
+    pointer-events: none;
+  }
+
+  /* Popover (expanded) */
+  .ask-ai-popover {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: min(360px, calc(100vw - 2.5rem));
+    background: #fff;
+    border: 1px solid var(--color-line, #e4e4e7);
+    border-radius: 1rem;
+    box-shadow: 0 24px 60px -16px rgba(74, 30, 92, 0.35), 0 8px 24px -8px rgba(0, 0, 0, 0.15);
+    padding: 1.1rem 1.1rem 1rem;
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+    transform-origin: bottom right;
+    transition: opacity 0.22s var(--ease-out-quart), transform 0.22s var(--ease-out-quart);
+  }
+  .ask-ai-popover.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  .ask-ai-popover-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+  }
+  .ask-ai-popover-title {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--color-ink, #0a0a0a);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .ask-ai-popover-subtitle {
+    font-size: 12.5px;
+    line-height: 1.4;
+    color: var(--color-ink-muted, #4b5563);
+    margin: 0.3rem 0 0;
+  }
+  .ask-ai-close {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 9999px;
+    border: none;
+    background: var(--color-ink-50, #f5f5f5);
+    color: var(--color-ink-soft, #6b7280);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.18s ease, color 0.18s ease;
+  }
+  .ask-ai-close:hover {
+    background: var(--color-ink-100, #e5e7eb);
+    color: var(--color-ink, #0a0a0a);
+  }
+  .ask-ai-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .ask-ai-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid var(--color-line, #e4e4e7);
+    border-radius: 0.6rem;
+    background: #fff;
+    color: var(--color-ink, #0a0a0a);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+    min-width: 0;
+  }
+  .ask-ai-card:hover {
+    border-color: var(--color-brand, #4A1E5C);
+    background: var(--color-violet-50, #FDF4FF);
+    transform: translateY(-1px);
+  }
+  .ask-ai-card-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    flex-shrink: 0;
+    border: 1px solid var(--color-line, #e4e4e7);
+  }
+  .ask-ai-card-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  .ask-ai-card-name {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ask-ai-card-arrow {
+    color: var(--color-ink-soft, #6b7280);
+    flex-shrink: 0;
+    transition: transform 0.18s ease, color 0.18s ease;
+  }
+  .ask-ai-card:hover .ask-ai-card-arrow {
+    color: var(--color-brand, #4A1E5C);
+    transform: translate(2px, -2px);
+  }
+
+  /* Mobile: smaller pill, raised to clear the sticky CTA bar */
+  @media (max-width: 768px) {
+    .ask-ai-widget {
+      right: 1rem;
+      bottom: 5rem;
+    }
+    .ask-ai-pill-label {
+      display: none;
+    }
+    .ask-ai-pill {
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      justify-content: center;
+    }
+    .ask-ai-pill-sparkle {
+      width: 24px;
+      height: 24px;
+      background: transparent;
+    }
+    .ask-ai-popover {
+      width: calc(100vw - 2rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ask-ai-pill,
+    .ask-ai-popover,
+    .ask-ai-card,
+    .ask-ai-card-arrow {
+      transition: none;
+    }
+  }
+</style>
