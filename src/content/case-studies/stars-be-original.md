@@ -56,7 +56,7 @@ related:
 
 ## Il contesto
 
-Stars Be Original è uno dei principali casting per animatori turistici tra Italia, Francia e villaggi internazionali. Parte del gruppo Drommer (CH), seleziona ogni anno migliaia di animatori, capi-animazione, performer e tecnici per la stagione estiva e invernale dei principali villaggi turistici europei.
+Stars Be Original è uno dei principali casting per animatori turistici tra Italia, Francia e villaggi internazionali. Seleziona ogni anno migliaia di animatori, capi-animazione, performer e tecnici per la stagione estiva e invernale dei principali villaggi turistici europei.
 
 Il business cresce sulla **velocità e qualità del casting**: rispondere veloce ai candidati giusti, scartare in modo professionale quelli non in linea, gestire audition online e in presenza, raccogliere documenti, contratti, dati GDPR-compliant per tutta la durata della stagione.
 
@@ -82,7 +82,7 @@ L'agente IA dedicato di Soraia gestisce **l'intero funnel candidato** senza inte
 4. **Aggiorna lo stato del candidato** in tempo reale nel CRM
 5. **Fa escalation al team umano** solo sui casi che lo richiedono: profili borderline, richieste atipiche, comunicazioni delicate
 
-Il tono di voce è stato addestrato sulle risposte storiche del team CMO, in modo che il candidato non senta la differenza tra "umano" e "agente". Il GDPR è gestito a livello di sistema: data retention a 5 anni, diritto all'oblio one-click, audit log immutabile.
+Il tono di voce è stato addestrato sulle risposte storiche del team in modo che il candidato non senta la differenza tra "umano" e "agente". Il GDPR è gestito a livello di sistema: data retention a 5 anni, diritto all'oblio one-click, audit log immutabile.
 
 ## I risultati
 
@@ -92,4 +92,4 @@ Il tono di voce è stato addestrato sulle risposte storiche del team CMO, in mod
 
 **Tempo di risposta medio sotto il minuto** dal momento della candidatura, vs ore o giorni del processo manuale.
 
-**Il team CMO ha riguadagnato la propria funzione strategica**: posizionamento, brand, partnership con i villaggi clienti. Le ore che prima andavano in operations oggi vanno in lavoro creativo.
+**Il team di recruitment ha riguadagnato la propria funzione strategica**: posizionamento, brand, partnership con i villaggi clienti. Le ore che prima andavano in operations oggi vanno in lavoro creativo.
