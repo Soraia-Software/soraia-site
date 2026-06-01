@@ -1,5 +1,5 @@
 ---
-title: "Oggi Lavoro, Replatforming AI di 108.000 candidati"
+title: "Oggi Lavoro, Replatforming AI di 250.000+ candidati"
 client: "Oggi Lavoro"
 clientLogo: "/logos/clients/oggilavoro.webp"
 industry: "recruitment-hr"
@@ -12,14 +12,15 @@ stakeholder:
   name: "Francesca Sorrentino"
   role: "IT Manager"
   photo: "/testimonials/francesca-sorrentino-oggi-lavoro.webp"
-heroQuote: "Avevamo 108.000 candidati su uno stack enterprise legacy che faceva fatica anche solo a cercarli. Soraia sta costruendo la nuova piattaforma da zero, con un agente IA di search e matching che cambia il modo di lavorare dei nostri recruiter."
+heroQuote: "250.000+ candidati bloccati su uno stack legacy che faceva fatica anche solo a cercarli. Oggi una nuova piattaforma con agente IA di search e matching che cambia il modo di lavorare dei recruiter."
+shortQuote: "250k+ candidati liberati da uno stack legacy. Nuova piattaforma con agente IA."
 teaser:
-  problem: "108.000 candidati gestiti su stack legacy frammentato, ricerca lenta, matching manuale, mobile non disponibile, OCR CV su sistemi separati."
+  problem: "250.000+ candidati gestiti su stack legacy frammentato, ricerca lenta, matching manuale, mobile non disponibile, OCR CV su sistemi separati."
   action: "Replatforming completo con agente IA di candidate search (filtri booleani + distanza geografica + matching AI), Google Cloud Vision OCR su CV, mobile app planning, AI matching integrato."
-  resultMetric: "108.000 candidati importati · piattaforma nuova in costruzione"
+  resultMetric: "250.000+ candidati importati · piattaforma nuova in costruzione"
   resultBody: "Sprint dev 150h/mese in corso, transizione progressiva dal sistema legacy."
 stats:
-  - value: "108.000"
+  - value: "250.000+"
     label: "Candidati importati"
     sub: "dallo stack legacy"
   - value: "150h"
@@ -55,7 +56,7 @@ Lo stato pre-Soraia era pesantemente legacy:
 - **Gestionale enterprise legacy** come sistema principale (robusto ma lento e poco flessibile).
 - **Tool aggiuntivi** dedicati a workflow specifici.
 - **SMS separato** per le comunicazioni candidati.
-- **108.000 candidati** nel database, con ricerche lente (filtri base) e zero matching automatico.
+- **250.000+ candidati** nel database, con ricerche lente (filtri base) e zero matching automatico.
 - **Niente mobile**: il recruiter sul campo (visita cliente, fiera, evento) non aveva accesso veloce al database.
 - **OCR CV** gestito su sistemi separati con accuracy variabile.
 
@@ -75,7 +76,7 @@ Il sistema legacy attuale rimane operativo durante la transizione: la migrazione
 
 ## I risultati attesi
 
-**108.000 candidati importati** dal sistema legacy nella nuova piattaforma, dedupplicati e arricchiti dall'AI parsing.
+**250.000+ candidati importati** dal sistema legacy nella nuova piattaforma, dedupplicati e arricchiti dall'AI parsing.
 
 **Sprint dev 150h/mese** attivi, con go-live progressivo della nuova piattaforma in 3-4 mesi dal kickoff.
 

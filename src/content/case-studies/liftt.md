@@ -12,7 +12,8 @@ stakeholder:
   name: "Alberto Burzio"
   role: "IT Manager"
   photo: "/testimonials/alberto-burzio-liftt.webp"
-heroQuote: "Partner altamente professionale e affidabile. L'agente IA gestisce in autonomia archiving, dedupe e reportistica: noi siamo tornati a fare deal. Il team ha consegnato con velocità, precisione e piena trasparenza."
+heroQuote: "L'agente IA gestisce in autonomia archiving, dedupe e reportistica del deal flow. Noi siamo tornati a fare deal."
+shortQuote: "Archiving, dedupe e report gestiti dall'IA. Noi torniamo a fare deal."
 teaser:
   problem: "Pipeline deal frammentata tra Airtable, email e file locali. Dedupe manuale, monthly report fatti a mano, email archiving non conforme."
   action: "Agente IA che monitora le email, archivia eml + allegati con metadata su OneDrive, unifica i deal duplicati nel CRM, genera il monthly report con charts in autonomia."

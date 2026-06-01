@@ -15,7 +15,8 @@ stakeholder:
   name: "Russ Fyfe"
   role: "Founder"
   photo: "/testimonials/russell-fyfe.webp"
-heroQuote: "Soraia ha costruito la spina dorsale di Rainplan negli ultimi 18 mesi: oggi la nostra piattaforma gestisce centinaia di parcel, multipli incentive program, e un workflow di approvazioni con molti stakeholder, tutto in autonomia."
+heroQuote: "Soraia ha costruito la spina dorsale di Rainplan in 18 mesi. Centinaia di parcel, incentive program multipli e approvazioni multi-stakeholder gestite in autonomia."
+shortQuote: "Spina dorsale Rainplan in 18 mesi. Parcel, incentive e approvazioni in autonomia."
 teaser:
   problem: "Workflow approval climate incentive per property owner multi-stakeholder, gestito su sistemi separati (CRM + Airtable + Bubble + tool incentive program) senza single source of truth."
   action: "Piattaforma unificata che gestisce VSV (Virtual Site Visit), VSC (Virtual Site Consultation), incentive eligibility check, procurement board, hosted program templates per ogni property owner."

@@ -12,7 +12,8 @@ stakeholder:
   name: "Fabricio Carminati"
   role: "Founder"
   photo: "/testimonials/fabricio-carminati-frh.webp"
-heroQuote: "Lavoriamo con clienti high-end internazionali che cercano casa sulla Costa Azzurra. L'agente IA arricchisce il profilo di ogni lead che entra dall'eBook download, lo qualifica, e mi prepara il dossier prima ancora che io legga il nome."
+heroQuote: "L'agente IA arricchisce il profilo di ogni lead high-end che entra dall'eBook download, lo qualifica e mi prepara il dossier prima ancora che io legga il nome."
+shortQuote: "Lead arricchiti, qualificati e dossier pronti prima che apra la mail."
 teaser:
   problem: "Lead da eBook download e form contatti che arrivavano con dati minimi (solo email/nome). Profilazione manuale per ogni cliente richiedeva ore di research individuale prima del primo contatto."
   action: "Agente IA che riceve il lead, fa enrichment cross-source (LinkedIn, ricerche pubbliche, social), classifica budget/intent, crea dossier strutturato nel CRM, attiva sequenza email personalizzata."

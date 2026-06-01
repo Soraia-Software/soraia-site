@@ -12,7 +12,8 @@ stakeholder:
   name: "Brian Dandelet"
   role: "Head of Operations"
   photo: "/testimonials/brian-dandelet-cxl.webp"
-heroQuote: "Siamo passati da zero a uno: l'agente IA fa il lavoro di un operations dedicato per ogni esperto che integriamo. Catalogo corsi scalato senza assumere nuove operations."
+heroQuote: "L'agente IA fa il lavoro di un operations dedicato per ogni esperto che integriamo. Catalogo corsi scalato senza assumere nuove operations."
+shortQuote: "70+ ore risparmiate per ogni esperto onboardato. Operations scalate senza assunzioni."
 teaser:
   problem: "Ogni nuovo esperto richiedeva 70+ ore di lavoro umano tra contratti, brief, materiali, accessi al portale e follow-up."
   action: "Agente IA che prende in carico il nuovo esperto dal primo contatto: redige la bozza di contratto, raccoglie materiali, configura accessi, manda follow-up personalizzati."

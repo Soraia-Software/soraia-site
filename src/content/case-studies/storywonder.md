@@ -15,7 +15,8 @@ stakeholder:
   name: "Rolf Kosakowski"
   role: "Founder"
   photo: "/testimonials/rolf-storywonder.webp"
-heroQuote: "Soraia ci ha portato dall'idea allo store in 4 settimane. Oggi l'agente IA genera centinaia di migliaia di storie su misura per i nostri utenti, in autonomia. Cresciamo con sprint mensili leggeri, senza dover assumere un team mobile interno."
+heroQuote: "Dall'idea allo store in 4 settimane. Oggi l'agente IA genera centinaia di migliaia di storie su misura per i nostri utenti, in autonomia."
+shortQuote: "Dall'idea allo store in 4 settimane. 300k+ storie su misura generate dall'agente IA."
 teaser:
   problem: "Volevano lanciare un'app cross-platform in cui ogni bambino ricevesse storie personalizzate generate dall'IA su misura. Da zero, in poche settimane, senza costruire un team mobile interno."
   action: "App nativa FlutterFlow + Firebase con agente IA integrato che genera la storia on-demand a partire dagli input del genitore o del bambino. Release diretta su Apple Store e Google Play."

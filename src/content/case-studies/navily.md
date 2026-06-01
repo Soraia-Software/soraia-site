@@ -12,7 +12,8 @@ stakeholder:
   name: "Edouard Fiess"
   role: "CEO & Co-Founder"
   photo: "/testimonials/edouard-fiess-navily.webp"
-heroQuote: "Usare l'IA per moderare recensioni, immagini ed enrichment dei dati ci ha ridotto il tempo operativo di oltre il 70%, con alta precisione. Il team oggi si concentra sul prodotto, non sul triage manuale."
+heroQuote: "L'IA modera recensioni, immagini e arricchisce i dati: -70% di tempo operativo, alta precisione. Il team torna sul prodotto, non sul triage manuale."
+shortQuote: "-70% tempo operativo su moderation ed enrichment. Il team torna sul prodotto."
 teaser:
   problem: "Migliaia di recensioni e immagini utente da moderare prima della pubblicazione, dati su porti e ancoraggi spesso incompleti, ore di operations bruciate su task ripetitivi."
   action: "Agente IA che modera recensioni e immagini sui criteri editoriali Navily, fa enrichment automatico dei dati nautici (porti, ancoraggi, servizi) da fonti pubbliche, fa escalation umana solo sui casi limite."

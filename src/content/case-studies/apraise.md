@@ -12,7 +12,8 @@ stakeholder:
   name: "Jacopo Castano"
   role: "Managing Partner"
   photo: "/testimonials/jacopo-castano-apraise.webp"
-heroQuote: "Il nuovo sistema è come avere quattro recruiter in più nel team, senza il costo e la complessità. Aggiungiamo un candidato in un click dal LinkedIn del nostro target, e l'agente IA lo qualifica e ce lo propone sulla giusta posizione."
+heroQuote: "100.000+ candidati in piattaforma. L'agente IA qualifica e propone sulla posizione giusta: è come avere quattro recruiter in più nel team, senza il costo."
+shortQuote: "100k+ candidati. Come avere 4 recruiter in più, senza il costo."
 teaser:
   problem: "Executive search su profili senior: copia-incolla manuale dei profili LinkedIn nell'ATS, matching JD↔candidato fatto a memoria del consulente, database frammentato tra Excel e tool legacy."
   action: "ATS custom con Chrome Web Clipper che cattura il profilo LinkedIn in 1 click, agente IA per parsing strutturato + matching via vector DB, feature Potential Match per ranking automatico sulla giusta posizione."

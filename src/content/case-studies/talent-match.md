@@ -15,7 +15,8 @@ stakeholder:
   name: "Guillem Llacuna"
   role: "Founder"
   photo: "/testimonials/guillem-llacuna-talent-match.webp"
-heroQuote: "Avevamo Recruit CRM, due tool di sourcing, qualche foglio Excel. Soraia ci ha consegnato una piattaforma unica con un agente IA che fa il matching JD↔candidato meglio dei nostri recruiter junior, e ora il team lavora solo sui 5-10 candidati top invece di sfogliarne 200."
+heroQuote: "150.000+ candidati prima sparsi tra Recruit CRM, tool di sourcing ed Excel. Oggi una piattaforma unica con agente IA che propone i 5-10 top, non 200 da sfogliare."
+shortQuote: "150k+ candidati su una piattaforma. L'IA propone i 5-10 top, non 200 da sfogliare."
 teaser:
   problem: "Stack frammentato (Recruit CRM + sourcing tools + Excel), zero matching automatico, recruiter che leggono manualmente 200+ candidati per posizione."
   action: "ATS/CRM custom con agente IA matching che ranka i candidati su ogni job description, Web Clipper Chrome per cattura LinkedIn, semaforo pre-oportunidades."
