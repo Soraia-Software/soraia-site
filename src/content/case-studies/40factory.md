@@ -73,6 +73,42 @@ Tre criteri hanno guidato la decisione:
 - **Email follow-up dal proprio dominio**: il lead riceve la mail da `@40-factory.com`, non da un dominio Linkly. Brand integrity preservata.
 - **Integrazione CRM nativa** + compliance GDPR/EU (DPA art. 28 incluso, infrastruttura EU): zero workaround tecnici, zero ansie legali.
 
+## Le obiezioni più comuni (e perché non hanno fermato 40Factory)
+
+Le aziende B2B che valutano Linkly arrivano spesso con le stesse quattro perplessità. Vale la pena affrontarle direttamente.
+
+### "Usiamo già l'app della fiera"
+
+Le app fornite dagli organizzatori cambiano ogni evento: interfacce diverse, login diversi, formati di export diversi. Sono poco intuitive, funzionano male sotto carico (proprio nei picchi di affluenza), e nessuna parla col tuo CRM. Risultato: tre fiere all'anno, tre sistemi da imparare, zero continuità storica sui contatti.
+
+**Linkly è un solo strumento, sempre uguale**, indipendente dalla fiera. La stessa interfaccia a Hannover Messe, a SPS Parma, a un evento privato a Milano. I dati confluiscono nello stesso CRM, con la stessa struttura, con lo stesso storico.
+
+### "Abbiamo già un sistema interno"
+
+Capita: una persona del team commerciale ha bricolato un foglio Excel con macro, o un sistemista interno ha messo insieme uno script. Funziona, ma non scala: nessuna AI di parsing, nessun enrichment automatico, nessun follow-up immediato, nessuna analytics consolidata.
+
+**Linkly è un prodotto, non un side-project**. Iterato su centinaia di feedback da aziende che vanno in fiera ogni mese. Setup zero-effort: ci pensa l'account manager Linkly. Il sistema interno costa 10x svilupparlo da zero per arrivare allo stesso livello, e dopo 6 mesi è già da rifare.
+
+### "I miei venditori non sono digitali, preferiscono carta e penna"
+
+Questa è la più comune. Il venditore in fiera ha le mani impegnate: parla, stringe mani, scambia biglietti, passa al prossimo prospect. Chiedergli di digitare nel CRM è irrealistico.
+
+**Con Linkly, l'unica cosa che deve fare il venditore è una foto del biglietto**. Non deve loggarsi, non deve compilare, non deve ricordare. Foto e via. Tutto il resto, parsing del biglietto, arricchimento dei dati, qualifica del lead, invio del follow-up, aggiornamento del CRM, lo fanno gli agenti IA orchestrati dall'account manager Linkly. Setup, configurazione, integrazione, è tutto a carico nostro. Il venditore continua a fare il venditore.
+
+### "Non mi serve, andiamo in fiera per branding"
+
+Anche se l'obiettivo dichiarato è branding e presenza, spendere decine di migliaia di euro in stand, allestimento e trasferte senza misurare cosa rientra è un peccato.
+
+Linkly non serve solo a recuperare contatti. Serve a **avere visibilità reale sulla fiera**:
+
+- Quante persone sono passate allo stand
+- Che ruoli e che aziende abbiamo incontrato
+- Qual è la demografia (settori, dimensioni, geografie) del pubblico effettivo dell'evento
+- Cosa hanno detto, su cosa hanno chiesto info
+- Quali clienti già attivi sono passati a salutare
+
+Con quei dati alla mano, alla fine della stagione fiere la decisione "questa fiera la rifaccio l'anno prossimo?" smette di essere una sensazione e diventa una scelta data-driven. È la stessa logica del branding: non puoi migliorare ciò che non misuri.
+
 ## Stato attuale
 
 Contratto + DPA firmati a maggio 2026. Setup tecnico in corso: configurazione DNS/SPF/DKIM per il dominio sender, integrazione CRM 40Factory, definizione dei criteri di qualifica per le prossime fiere in calendario. **Kickoff operativo a stagione fiere 2026** con Veronica Pisana (Soraia) come account owner.
