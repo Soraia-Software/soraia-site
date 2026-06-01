@@ -80,6 +80,20 @@ const allIndustries = [
       { agent: "ANALYTICS",  icon: "chart",    text: "Pipeline qualificato +42% trimestre" },
     ],
   },
+  {
+    id: "events",
+    label: "Event Management",
+    industryIcon: "ticket",
+    role: "Per chi va in fiera, esposizioni, eventi B2B",
+    events: [
+      { agent: "CAPTURE",    icon: "doc",      text: "134 biglietti scansionati · OCR badge + QR" },
+      { agent: "ENRICHMENT", icon: "search",   text: "+LinkedIn · +ruolo · +azienda · 25+ fonti" },
+      { agent: "QUALIFY",    icon: "check",    text: "89% del goal · ICP match dinamico per fiera" },
+      { agent: "ACTIVATE",   icon: "mail",     text: "Lead pusha tato nel CRM cliente · pronto sales" },
+      { agent: "OUTREACH",   icon: "mail",     text: "Follow-up dal dominio aziendale · in pochi secondi" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "Pipeline €1,6M · €284/lead · report executive" },
+    ],
+  },
 ];
 
 const industries = filter
@@ -99,6 +113,7 @@ const icons: Record<string, string> = {
   trending: `<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>`,
   headphones: `<path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>`,
   target: `<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>`,
+  ticket: `<path d="M3 7v2a2 2 0 0 1 0 4v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-4V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><line x1="13" y1="5" x2="13" y2="19"/>`,
 };
 ---
 

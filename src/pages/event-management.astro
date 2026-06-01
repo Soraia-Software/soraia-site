@@ -1,0 +1,391 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import CaseStudyCard from "~/components/CaseStudyCard.astro";
+import ProcessCard from "~/components/ProcessCard.astro";
+import ComparisonTable from "~/components/ComparisonTable.astro";
+import FAQ from "~/components/FAQ.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import HeroVisual from "~/components/HeroVisual.astro";
+
+const title = "Agenti IA per fiere ed eventi B2B | Linkly · Soraia";
+const description =
+  "Trasforma ogni fiera in pipeline misurabile. 6 agenti IA catturano i biglietti, qualificano i lead, attivano il CRM, mandano il follow-up dal tuo dominio. Setup zero-effort, canone annuale fisso.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Linkly, agenti IA per fiere ed eventi B2B. Soraia",
+    provider: {
+      "@type": "Organization",
+      name: "Soraia",
+      url: "https://www.soraia.io",
+    },
+    areaServed: "IT",
+    serviceType: "AI agents for trade fairs lead capture",
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "EUR",
+      price: "1900",
+      description: "Canone annuale Linkly early adopter €1.900 + IVA. Tutto incluso: scansioni illimitate, contatti arricchiti, consulente dedicato.",
+    },
+  },
+];
+
+const problems = [
+  {
+    title: "Biglietti accumulati in scatole",
+    description: "Tre giorni di fiera, centinaia di biglietti raccolti, foto sul telefono. Tutto in attesa di essere inserito nel CRM al rientro.",
+  },
+  {
+    title: "Follow-up partito dopo 9 giorni",
+    description: "Quando il lead riceve la mail, non ricorda più la conversazione. Stima di settore: il 60% dei contatti fieristici non viene mai recuperato.",
+  },
+  {
+    title: "Zero visibilità sull'evento",
+    description: "Speso decine di migliaia di euro in fiera. Quanti sono passati allo stand? Da che settori? Vale la pena tornare l'anno prossimo? Nessun dato.",
+  },
+];
+
+const processes = [
+  {
+    number: "01",
+    title: "Capture, OCR su biglietti e badge",
+    description:
+      "Il team allo stand fotografa il biglietto da visita, il badge fiera o il QR code. L'agente legge e struttura i dati in pochi secondi. Zero data entry manuale.",
+    icon: "screen" as const,
+  },
+  {
+    number: "02",
+    title: "Enrichment da 25+ fonti dati",
+    description:
+      "L'agente cross-referenzia LinkedIn, registri aziendali, fonti pubbliche. Email verificata, ruolo, telefono, info aziendali, tutto arricchito automaticamente.",
+    icon: "match" as const,
+  },
+  {
+    number: "03",
+    title: "Qualifica dinamica per fiera",
+    description:
+      "Form di qualifica generato sui tuoi criteri (settore, dimensione, fit prodotto, urgenza). L'agente compila in base alla conversazione, propone tier hot/warm/cold.",
+    icon: "compass" as const,
+  },
+  {
+    number: "04",
+    title: "Activation nel tuo CRM",
+    description:
+      "Contatto arricchito e qualificato spinto direttamente in HubSpot, Salesforce, Pipedrive, Zoho. Pronto per il team sales senza passaggi intermedi.",
+    icon: "outreach" as const,
+  },
+  {
+    number: "05",
+    title: "Outreach dal tuo dominio aziendale",
+    description:
+      "Email di follow-up personalizzata partita entro pochi secondi dalla chiusura della conversazione. Tono brand, CTA contestuale, mittente @tuodominio.it.",
+    icon: "calendar" as const,
+  },
+  {
+    number: "06",
+    title: "Analytics executive a fine evento",
+    description:
+      "Report pronto a chiusura fiera: lead per settore, costo per lead, pipeline stimata, conversion rate per giornata e per stand. Decisione data-driven sul prossimo anno.",
+    icon: "transcript" as const,
+  },
+];
+
+const cases = [
+  {
+    client: "40Factory",
+    industry: "Industrial IoT · Industria 4.0",
+    metric: "6",
+    metricLabel: "Agenti IA orchestrati",
+    description:
+      "Adozione di Linkly per la stagione fiere 2026. 6 agenti orchestrati che catturano, arricchiscono, qualificano e contattano ogni lead. Email follow-up dal dominio @40-factory.com in pochi secondi.",
+    href: "/case-studies/40factory",
+  },
+];
+
+const comparisonRows = [
+  { label: "Sistema utilizzato", values: ["App ufficiale fiera", "Sistema interno custom", "Linkly · Soraia"] as [string, string, string] },
+  { label: "Setup per evento", values: ["Onboarding ogni volta", "Sviluppo+manutenzione", "Zero, lo facciamo noi"] as [string, string, string] },
+  { label: "Continuità tra fiere", values: ["Nessuna", "Parziale", "Totale, un solo sistema"] as [string, string, string] },
+  { label: "AI enrichment & qualifica", values: ["No", "Raramente", "6 agenti integrati"] as [string, string, string] },
+  { label: "Follow-up dal tuo dominio", values: ["No", "Configurabile", "Sì, in pochi secondi"] as [string, string, string] },
+  { label: "Analytics evento", values: ["Export base", "Da costruire", "Report executive incluso"] as [string, string, string] },
+];
+
+const faqs = [
+  {
+    q: "Usiamo già l'app della fiera, perché Linkly in più?",
+    a: "Le app fornite dagli organizzatori cambiano a ogni evento, hanno interfacce diverse, non parlano col tuo CRM. Tre fiere all'anno, tre sistemi da imparare, zero continuità sui contatti. <strong>Linkly è uno strumento solo, sempre uguale</strong>, indipendente dalla fiera. I dati confluiscono nello stesso CRM con la stessa struttura.",
+  },
+  {
+    q: "Abbiamo già un sistema interno per gestire i contatti fiera. Vale la pena cambiare?",
+    a: "Sistemi interni risolvono in modo grezzo: nessuna AI di parsing, nessun enrichment automatico, nessun follow-up immediato. <strong>Linkly è un prodotto iterato su centinaia di feedback</strong> da aziende che vanno in fiera ogni mese. Setup zero-effort: ci pensa l'account manager Linkly. Sviluppare un sistema interno equivalente costa 10x.",
+  },
+  {
+    q: "Il mio team non è digitale, useranno davvero un'app?",
+    a: "L'unica cosa che deve fare il venditore in fiera è <strong>una foto del biglietto</strong>. Niente login, niente compilazione, niente CRM da imparare. Tutto il resto, parsing, enrichment, qualifica, invio follow-up, aggiornamento CRM, lo fanno gli agenti IA orchestrati dall'account manager Linkly. Setup, configurazione, integrazione, è tutto a carico nostro.",
+  },
+  {
+    q: "Andiamo in fiera per branding, non per recuperare contatti. Mi serve Linkly?",
+    a: "Linkly non serve solo a recuperare contatti. Serve a <strong>avere visibilità reale sulla fiera</strong>: quante persone sono passate allo stand, che ruoli, che settori, qual è la demografia del pubblico effettivo, quali clienti già attivi sono passati. Con quei dati alla mano, la decisione 'questa fiera la rifaccio l'anno prossimo?' diventa data-driven.",
+  },
+  {
+    q: "Come gestite GDPR e i dati raccolti in fiera?",
+    a: "Infrastruttura europea, DPA art. 28 incluso nel contratto. <strong>Nessun training sui tuoi dati</strong>, log completi di ogni operazione, data retention configurabile, diritto all'oblio one-click. Compliance gov-grade, validata su clienti enterprise.",
+  },
+  {
+    q: "Quanto costa davvero?",
+    a: "<strong>€1.900 + IVA / anno</strong> in offerta early adopter (€2.900 dal secondo anno). Tutto incluso: scansioni illimitate, 500 contatti arricchiti, 6 agenti AI attivi, consulente dedicato per setup ed eventi. Niente costi per evento, niente sorprese.",
+  },
+  {
+    q: "Si integra col mio CRM?",
+    a: "Integrazione nativa con <strong>HubSpot, Salesforce, Pipedrive, Zoho</strong>. Per CRM custom usiamo Zapier/Make come middleware. In ogni caso il lead arricchito e qualificato finisce dove deve finire, pronto per il team sales.",
+  },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+  <!-- ============================================================
+       HERO. Editorial premium, dark
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+        <div style="color: #fff;">
+          <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
+            <span class="w-1 h-1 rounded-full bg-amber"></span>
+            Event Management · AI Agents
+          </p>
+
+          <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+            Trasforma ogni fiera<br/>in pipeline misurabile.
+          </h1>
+
+          <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+            6 agenti IA catturano i biglietti, qualificano i lead, attivano il CRM, mandano il follow-up dal tuo dominio. Setup zero-effort, un canone annuale fisso. Funziona alla prima fiera.
+          </p>
+
+          <!-- GARANZIA BADGE -->
+          <div class="mt-6 inline-flex items-center gap-2 fade-up fade-up-delay-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
+            </svg>
+            <span class="text-[14px] font-medium" style="color: #F4B842;">Canone annuale fisso. Niente costi per evento.</span>
+          </div>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+            <a href="https://linkly.events/" target="_blank" rel="noopener" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+              Scopri Linkly
+              <span class="btn-arrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+            <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
+              Vedi il caso 40Factory
+            </a>
+          </div>
+
+          <!-- TRUST ROW -->
+          <div class="mt-12 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] fade-up fade-up-delay-4">
+            <div class="inline-flex items-center gap-2">
+              <span class="w-1 h-1 rounded-full bg-amber"></span>
+              <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">6 agenti IA</strong> orchestrati</span>
+            </div>
+            <div class="inline-flex items-center gap-2">
+              <span class="w-1 h-1 rounded-full bg-amber"></span>
+              <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">25+ fonti</strong> di enrichment dati</span>
+            </div>
+            <div class="inline-flex items-center gap-2">
+              <span class="w-1 h-1 rounded-full bg-amber"></span>
+              <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">GDPR + DPA</strong> art. 28 incluso</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: agent feed locked to events -->
+        <div class="hidden lg:flex justify-end fade-up fade-up-delay-3">
+          <HeroVisual filter="events" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST LINE (single client per ora)
+       ============================================================ -->
+  <section class="py-12 md:py-14 border-y border-ink-200 bg-white">
+    <div class="container-soraia text-center">
+      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 mb-4">
+        Già scelto da aziende B2B per la stagione fiere 2026
+      </p>
+      <p class="text-[16px]" style="color: var(--color-ink-muted);">
+        <a href="/case-studies/40factory" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">40Factory</a>
+        · Industrial IoT / Industria 4.0 · primo cliente Linkly attivato 2026
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROBLEMA
+       ============================================================ -->
+  <section id="problema" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Il problema"
+        title="Il post-fiera è il buco nero del funnel commerciale."
+        subtitle="Spendi decine di migliaia di euro in stand, allestimento, trasferte, persone. Poi torni in ufficio con una scatola di biglietti e qualche foto sul telefono. La metà finisce persa."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        {problems.map((p) => (
+          <article class="card-editorial reveal flex flex-col gap-3 !p-7">
+            <div class="w-9 h-9 rounded-lg bg-violet-50 text-violet-700 flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+              </svg>
+            </div>
+            <h3 class="font-medium text-ink leading-tight" style="font-size: 18px;">{p.title}</h3>
+            <p class="text-[15px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{p.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6 AGENTI
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="La soluzione"
+        title="6 agenti IA orchestrati. Il tuo team scatta foto, basta."
+        subtitle="Linkly è il sistema di Soraia dedicato a fiere ed eventi B2B. 6 agenti coprono l'intero ciclo post-fiera, dal biglietto al CRM al follow-up. Sopra di loro, un account manager umano dedicato."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {processes.map((p) => (
+          <ProcessCard {...p} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GARANZIA, editorial dark
+       ============================================================ -->
+  <section class="section bg-hero-dark relative overflow-hidden">
+    <div class="container-soraia relative z-10">
+      <div class="max-w-3xl reveal" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          Il nostro modello
+        </p>
+
+        <h2 style="color: #fff; font-size: clamp(2rem, 4vw + 0.5rem, 3rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;" class="text-balance">
+          Tutto incluso. Setup, agenti, supporto.<br/><span style="color: rgba(255,255,255,0.45);">Un canone annuale fisso, niente sorprese.</span>
+        </h2>
+
+        <p style="color: rgba(255,255,255,0.72);" class="mt-7 text-[17px] leading-relaxed max-w-2xl text-pretty">
+          €1.900 + IVA per il primo anno (early adopter), €2.900 dal secondo. Scansioni illimitate, 500 contatti arricchiti, 6 agenti AI attivi su ogni evento, consulente dedicato per setup ed eventi. Niente costi per evento, niente moduli da attivare.
+        </p>
+
+        <p style="color: rgba(255,255,255,0.55);" class="mt-4 text-[15px] leading-relaxed max-w-2xl text-pretty">
+          GDPR-compliant, infrastruttura europea, DPA art. 28 incluso. Integrazione nativa con HubSpot, Salesforce, Pipedrive, Zoho.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CASE STUDY
+       ============================================================ -->
+  <section id="cases" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Caso studio"
+        title="Linkly in azione su 40Factory."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        {cases.map((c) => (
+          <CaseStudyCard {...c} />
+        ))}
+      </div>
+
+      <p class="mt-10 text-center text-[14px]" style="color: var(--color-ink-muted);">
+        Linkly è il prodotto SaaS dedicato di Soraia. Vuoi vederlo dal vivo? <a href="https://linkly.events/" target="_blank" rel="noopener" style="color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">linkly.events</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPARISON
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Confronto"
+        title="App della fiera, sistema interno o Linkly."
+        subtitle="Le tre opzioni reali per gestire i lead da una fiera B2B. Solo una è progettata per scalare con te."
+        align="center"
+      />
+
+      <ComparisonTable
+        columns={["App della fiera", "Sistema interno", "Linkly · Soraia"]}
+        rows={comparisonRows}
+        highlightCol={2}
+      />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia max-w-3xl">
+      <SectionHeader
+        eyebrow="Domande"
+        title="Le obiezioni che ci sentiamo fare di solito."
+        align="center"
+      />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA finale
+       ============================================================ -->
+  <section class="section bg-violet-mesh">
+    <div class="container-soraia text-center max-w-3xl mx-auto">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 reveal" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full bg-violet-600"></span>
+        Prossimo passo
+      </p>
+
+      <h2 class="text-balance reveal" style="color: var(--color-ink); font-size: clamp(1.875rem, 3vw + 0.5rem, 2.75rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
+        Pronto a misurare le tue fiere?
+      </h2>
+
+      <p class="mt-5 text-[17px] leading-relaxed reveal reveal-delay-1" style="color: var(--color-ink-muted);">
+        Demo live di Linkly + setup tecnico personalizzato sui tuoi eventi 2026. 20 minuti, nessun impegno.
+      </p>
+
+      <div class="mt-10 reveal reveal-delay-2 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://linkly.events/" target="_blank" rel="noopener" class="btn btn-primary">
+          Scopri Linkly
+          <span class="btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="/parliamone" class="btn btn-secondary">
+          Parla con noi
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
