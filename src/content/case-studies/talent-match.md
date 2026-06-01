@@ -15,11 +15,11 @@ stakeholder:
   name: "Guillem Llacuna"
   role: "Founder"
   photo: "/testimonials/guillem-llacuna-talent-match.webp"
-heroQuote: "150.000+ candidati prima sparsi tra Recruit CRM, tool di sourcing ed Excel. Oggi una piattaforma unica con agente IA che propone i 5-10 top, non 200 da sfogliare."
+heroQuote: "150.000+ candidati prima sparsi tra ATS e CRM out of the shelf ed Excel. Oggi una piattaforma unica con agente IA che propone i 5-10 top, non 200 da sfogliare."
 shortQuote: "150k+ candidati su una piattaforma. L'IA propone i 5-10 top, non 200 da sfogliare."
 teaser:
-  problem: "Stack frammentato (Recruit CRM + sourcing tools + Excel), zero matching automatico, recruiter che leggono manualmente 200+ candidati per posizione."
-  action: "ATS/CRM custom con agente IA matching che ranka i candidati su ogni job description, Web Clipper Chrome per cattura LinkedIn, semaforo pre-oportunidades."
+  problem: "Stack frammentato (ATS e CRM out of the shelf + sourcing tools + Excel), zero matching automatico, recruiter che leggono manualmente 200+ candidati per posizione."
+  action: "ATS/CRM custom con agente IA matching che ranka i candidati su ogni job description, Web Clipper Chrome per cattura LinkedIn, Kanban per CRM."
   resultMetric: "6 mesi dev → produzione · algoritmo Potential Match v2 in autonomia"
   resultBody: "Il team lavora sui 5-10 candidati top per posizione invece di 200, con score motivato dall'agente."
 stats:
@@ -37,8 +37,6 @@ stack:
   - "Xano (backend)"
   - "WeWeb (frontend recruiter)"
   - "OpenAI / Anthropic (matching agent)"
-  - "Google Cloud Vision (CV OCR)"
-  - "Google Places API"
   - "Chrome Web Clipper custom"
 related:
   - "stars-be-original"
@@ -47,7 +45,7 @@ related:
 
 ## Il contesto
 
-Talent Match è una recruitment boutique catalana fondata da Jordi Valenzuela e Guillem Llacuna, focus su placement medio-alto in industria, finance e tech. Il modello è classico headhunter: poche posizioni aperte, alta qualità, fee fisse per posizione chiusa.
+Talent Match è una recruitment boutique catalana fondata da Jordi Valenzuela e Guillem Llacuna. Il modello è classico headhunter: poche posizioni aperte, alta qualità, fee fisse per posizione chiusa.
 
 Il valore di Talent Match dipende dalla **velocità con cui identifica i candidati giusti per ogni mandate**. Più tempo passa, più il cliente perde fiducia, più rischio che la posizione vada a un competitor.
 
@@ -55,7 +53,7 @@ Il valore di Talent Match dipende dalla **velocità con cui identifica i candida
 
 Il team operava su 3 stack diversi:
 
-- **Recruit CRM** come ATS principale, ma con limiti nel matching JD↔candidato (filtri booleani manuali, niente score AI).
+- **ATS e CRM out of the shelf** come sistema principale, ma con limiti nel matching JD↔candidato (filtri booleani manuali, niente score AI).
 - **Tool di sourcing esterni** (LinkedIn Recruiter, alcuni job board), dati che vivevano fuori dal CRM, da copiare a mano.
 - **Excel** per le shortlist da presentare al cliente.
 
@@ -65,12 +63,12 @@ In più: nessuna metric su quali candidati funzionavano nel lungo periodo (place
 
 ## Cosa ha fatto l'agente IA
 
-Soraia ha costruito **Talent Match Platform**, un ATS/CRM custom che sostituisce lo stack precedente e include un agente IA dedicato al matching:
+Soraia ha costruito **Braint**, un ATS/CRM custom che sostituisce lo stack precedente e include un agente IA dedicato al matching:
 
-1. **Ingestion automatica**, i CV arrivano via form di candidatura, email, LinkedIn (tramite Chrome Web Clipper custom che cattura il profilo in 1 click). OCR e parsing strutturato automatici via Google Cloud Vision.
+1. **Ingestion automatica**, i CV arrivano via form di candidatura, email, LinkedIn (tramite Chrome Web Clipper custom che cattura il profilo in 1 click). OCR e parsing strutturato automatici.
 2. **Agente IA matching (Potential Match)**, per ogni JD aperto, l'agente legge i requirement, scansiona il database candidati, e produce uno **score motivato** (0-100) con le ragioni del match per ogni candidato.
-3. **Filtri booleani + distanza geografica**, Google Places API per match su località fattibili.
-4. **Kanban e semáforo pre-oportunidades**, vista visiva del pipeline per posizione.
+3. **Filtri booleani + distanza geografica** per match su località fattibili.
+4. **Kanban per CRM**, vista visiva del pipeline per posizione.
 5. **Algoritmo v2**, dopo i primi 6 mesi di produzione, raffinamento dell'algoritmo Potential Match con criteri più precisi + cost optimization (model più economico per pass 1, modello più potente solo sui borderline).
 
 Il recruiter umano interviene solo sui **5-10 candidati top** che l'agente ranka per primi. Le 7 ore di data entry sono sparite.
