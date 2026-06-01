@@ -91,5 +91,3 @@ Il **matching automatico candidato↔posizione cross-line** è in roadmap: oggi 
 ## Dove stiamo andando
 
 La piattaforma è in produzione e continuiamo a iterare con sprint regolari per **integrare sempre più IA nei processi precisi del gruppo** e liberare ulteriore tempo ai recruiter. Le prossime aree: matching automatico candidato↔posizione, contatto candidato assistito da agente, scoring dinamico delle pipeline.
-
-Aegis è uno dei case più ambiziosi del portfolio Soraia in termini di scope (multi-line, multi-team, IA in tutto il funnel recruitment) e di partnership di lungo periodo con il cliente.
