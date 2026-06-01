@@ -1,0 +1,280 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import CaseStudyCardJet from "~/components/CaseStudyCardJet.astro";
+import ProcessCard from "~/components/ProcessCard.astro";
+import ComparisonTable from "~/components/ComparisonTable.astro";
+import FAQ from "~/components/FAQ.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import HeroVisual from "~/components/HeroVisual.astro";
+
+const title = "Agenti IA per Sales & Marketing Operations | Soraia";
+const description =
+  "Lead arricchiti, qualificati, contattati. Tutto in autonomia. L'agente fa enrichment cross-source, qualifica intent, manda outreach personalizzato. Il sales chiude solo lead caldi. Live in 4 settimane.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Agenti IA per Sales & Marketing. Soraia",
+    provider: { "@type": "Organization", name: "Soraia", url: "https://www.soraia.io" },
+    areaServed: "IT",
+    serviceType: "AI agents for sales and marketing operations",
+    offers: { "@type": "Offer", priceCurrency: "EUR", price: "2000", description: "Assessment iniziale €2.000, rimborsato se procedi con lo sprint." },
+  },
+];
+
+const problems = [
+  {
+    title: "Lead minimi che richiedono ore",
+    description: "Form download, eBook, webinar: entrano email + nome. Profilare ogni lead richiede 20-30 minuti di research su LinkedIn, ricerche pubbliche, segnali aziendali. Non scala.",
+  },
+  {
+    title: "Pipeline frammentata tra tool",
+    description: "Apollo per outreach, HubSpot per CRM, fogli Excel per shortlist, LinkedIn per messaggi diretti. Nessun sistema parla con gli altri. Dati che vivono in silos.",
+  },
+  {
+    title: "Outreach 'personalizzato' che non lo è",
+    description: "Sequence che cambiano solo il {{firstName}}. Tasso di risposta crollato. Senza personalizzazione vera (ruolo, azienda, segnale recente), niente reply, niente pipeline.",
+  },
+];
+
+const processes = [
+  {
+    number: "01",
+    title: "Prospect identification (ICP match)",
+    description: "L'agente scansiona fonti pubbliche e database, identifica aziende e profili che matchano il vostro ICP (settore, dimensione, segnali di hiring/funding/expansion). Niente più liste compre comprate.",
+    icon: "screen" as const,
+  },
+  {
+    number: "02",
+    title: "Enrichment cross-source",
+    description: "Per ogni lead: ruolo, azienda, settore, tech stack, intent signals recenti. Da LinkedIn, registri aziendali, dati di crescita pubblici, mentions news. Profilo completo in pochi secondi.",
+    icon: "match" as const,
+  },
+  {
+    number: "03",
+    title: "Qualifica dinamica (BANT, MEDDIC, custom)",
+    description: "L'agente applica il vostro framework di qualifica sui dati raccolti. Score motivato, tier hot/warm/cold, ragioni del match. Il sales riceve solo lead pronti alla conversazione.",
+    icon: "compass" as const,
+  },
+  {
+    number: "04",
+    title: "Outreach multi-canale personalizzato",
+    description: "Sequence email + LinkedIn + (opzionale) call task, con messaggi davvero contestuali: ruolo, azienda, segnale recente, link rilevante. Tasso di risposta multiplicato rispetto al sequence templated.",
+    icon: "outreach" as const,
+  },
+  {
+    number: "05",
+    title: "Tracking engagement + auto follow-up",
+    description: "Open, click, reply, meeting booked: tracciati per ogni lead. L'agente auto-adatta il follow-up sui segnali. Lead caldo? Notifica al sales con context. Lead freddo? Nurturing automatico.",
+    icon: "calendar" as const,
+  },
+  {
+    number: "06",
+    title: "Pipeline analytics + attribution",
+    description: "Dashboard real-time: pipeline per stage, conversion rate, costo per opportunity, attribution ai canali di sourcing. Niente più export Excel mensili per il management.",
+    icon: "transcript" as const,
+  },
+];
+
+const cases = [
+  {
+    slug: "frh",
+    client: "French Riviera Househunting",
+    quote: "L'agente IA arricchisce il profilo di ogni lead high-end che entra dall'eBook download, lo qualifica e mi prepara il dossier prima ancora che io legga il nome.",
+    dimensioni: "11-50",
+    sector: "Real estate boutique · Costa Azzurra",
+    cardImage: "/testimonials/fabricio-carminati-frh.webp",
+    stakeholder: { name: "Fabricio Carminati", role: "Founder" },
+  },
+];
+
+const comparisonRows = [
+  { label: "Costo", values: ["Per seat alto", "Per seat alto", "One-time + maintenance"] as [string, string, string] },
+  { label: "Personalizzazione vera", values: ["Template", "Template avanzati", "Contestuale per lead"] as [string, string, string] },
+  { label: "Enrichment incluso", values: ["Add-on a parte", "Limitato", "Da 25+ fonti, incluso"] as [string, string, string] },
+  { label: "Qualifica framework custom", values: ["No", "BANT base", "BANT/MEDDIC/vostro"] as [string, string, string] },
+  { label: "Dipendenza dal fornitore", values: ["Totale", "Totale", "Nessuna (codice vostro)"] as [string, string, string] },
+  { label: "Attribution analytics", values: ["Base", "Sì", "Custom dashboard"] as [string, string, string] },
+];
+
+const faqs = [
+  {
+    q: "Come gestite GDPR e dati personali dei lead?",
+    a: "Infrastruttura europea, log completi delle decisioni dell'agente, retention configurabile, opt-out e diritto all'oblio one-click. <strong>Nessun training sui vostri dati</strong>.",
+  },
+  {
+    q: "Si integra con HubSpot, Salesforce, Pipedrive, CRM custom?",
+    a: "Sì, integrazione nativa con i CRM più diffusi. Per CRM custom usiamo API/webhook o middleware Zapier/Make. In ogni caso il lead arricchito e qualificato finisce dove deve.",
+  },
+  {
+    q: "Funziona per outbound o solo inbound?",
+    a: "Entrambi. Per <strong>inbound</strong> l'agente arricchisce e qualifica ogni lead in arrivo prima del primo contatto. Per <strong>outbound</strong> l'agente identifica prospect via ICP match, fa enrichment, lancia sequence personalizzate.",
+  },
+  {
+    q: "Come addestrate il messaging brand?",
+    a: "Partiamo dalle vostre email/sequence più performanti. L'agente impara il vostro tono, struttura, tipologia di CTA. Validiamo con voi prima di mandare in produzione su volumi reali.",
+  },
+  {
+    q: "Quanto costa davvero?",
+    a: "Assessment <strong>€2.000</strong> (rimborsato). Sprint <strong>€10-50k</strong>. Garanzia: se l'agente non aumenta il tasso di risposta o non riduce il tempo di profilazione promesso, lavoriamo gratis finché non lo fa.",
+  },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+        <div style="color: #fff;">
+          <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
+            <span class="w-1 h-1 rounded-full bg-amber"></span>
+            Sales & Marketing · AI Agents
+          </p>
+          <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+            Lead arricchiti, qualificati,<br/>contattati. In autonomia.
+          </h1>
+          <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+            Enrichment cross-source da 25+ fonti, qualifica dinamica, outreach personalizzato multi-canale. Il sales riceve solo lead pronti. Live in 4 settimane.
+          </p>
+          <div class="mt-6 inline-flex items-center gap-2 fade-up fade-up-delay-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
+            </svg>
+            <span class="text-[14px] font-medium" style="color: #F4B842;">Se non funziona, non paghi. Garanzia inclusa.</span>
+          </div>
+          <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+            <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+              Richiedi assessment, €2.000
+              <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            </a>
+            <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">Vedi il caso FRH</a>
+          </div>
+          <div class="mt-12 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] fade-up fade-up-delay-4">
+            <div class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-amber"></span><span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">25+ fonti</strong> enrichment</span></div>
+            <div class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-amber"></span><span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">Multi-canale</strong> nativo</span></div>
+            <div class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-amber"></span><span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">GDPR</strong> compliant</span></div>
+          </div>
+        </div>
+        <div class="hidden lg:flex justify-end fade-up fade-up-delay-3">
+          <HeroVisual filter="sales" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-14 border-y border-ink-200 bg-white">
+    <div class="container-soraia text-center">
+      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 mb-4">Già scelto da boutique e SMB con sales consulenziale</p>
+      <p class="text-[16px]" style="color: var(--color-ink-muted);">
+        <a href="/case-studies/frh" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">French Riviera Househunting</a>
+        · Real estate boutique · cliente attivo con sourcing immobili via Chrome extension
+      </p>
+    </div>
+  </section>
+
+  <section id="problema" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Il problema"
+        title="Il sales team passa più tempo a profilare che a chiudere."
+        subtitle="Tool sales costano €200/mese a seat, ma il vero collo di bottiglia è altrove: research manuale per ogni lead, pipeline frammentata tra cinque tool, outreach 'personalizzato' che fa schifo."
+        align="center"
+      />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        {problems.map((p) => (
+          <article class="card-editorial reveal flex flex-col gap-3 !p-7">
+            <div class="w-9 h-9 rounded-lg bg-violet-50 text-violet-700 flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            </div>
+            <h3 class="font-medium text-ink leading-tight" style="font-size: 18px;">{p.title}</h3>
+            <p class="text-[15px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{p.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="La soluzione"
+        title="6 agenti IA che coprono il funnel da prospect a deal."
+        subtitle="Identificazione, enrichment, qualifica, outreach, tracking, analytics. Il sales umano interviene solo su lead pronti, con context completo e suggested approach."
+        align="center"
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {processes.map((p) => (<ProcessCard {...p} />))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-hero-dark relative overflow-hidden">
+    <div class="container-soraia relative z-10">
+      <div class="max-w-3xl reveal" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          La nostra garanzia
+        </p>
+        <h2 style="color: #fff; font-size: clamp(2rem, 4vw + 0.5rem, 3rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;" class="text-balance">
+          Pipeline qualificata in autonomia.<br/><span style="color: rgba(255,255,255,0.45);">Misurata in 4 settimane. O non paghi.</span>
+        </h2>
+        <p style="color: rgba(255,255,255,0.72);" class="mt-7 text-[17px] leading-relaxed max-w-2xl text-pretty">
+          Baseline misurata in assessment (tempo profilazione + tasso risposta + lead qualificati/settimana). Se l'agente non porta i numeri promessi, lavoriamo gratis finché non succede, oppure rimborsiamo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader eyebrow="Caso studio" title="Agenti IA in azione su FRH." align="center" />
+      <div class="max-w-md mx-auto">
+        <CaseStudyCardJet href={`/case-studies/${cases[0].slug}`} client={cases[0].client} quote={cases[0].quote} dimensioni={cases[0].dimensioni} sector={cases[0].sector} cardImage={cases[0].cardImage} />
+        <p class="mt-6 text-center text-[14px]" style="color: var(--color-ink-soft);">
+          <strong style="color: var(--color-ink); font-weight: 500;">{cases[0].stakeholder.name}</strong>, {cases[0].stakeholder.role} · {cases[0].client}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Confronto"
+        title="Perché agenti IA su misura, e non altro."
+        subtitle="Le tre opzioni reali per un team sales oggi."
+        align="center"
+      />
+      <ComparisonTable columns={["Apollo / Outreach SaaS", "HubSpot Sales AI", "Soraia agenti IA"]} rows={comparisonRows} highlightCol={2} />
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-soraia max-w-3xl">
+      <SectionHeader eyebrow="Domande" title="Quello che ci chiedono di solito." align="center" />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <section class="section bg-violet-mesh">
+    <div class="container-soraia text-center max-w-3xl mx-auto">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 reveal" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full bg-violet-600"></span>
+        Prossimo passo
+      </p>
+      <h2 class="text-balance reveal" style="color: var(--color-ink); font-size: clamp(1.875rem, 3vw + 0.5rem, 2.75rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
+        Scopri quante ore può recuperare il tuo sales team.
+      </h2>
+      <p class="mt-5 text-[17px] leading-relaxed reveal reveal-delay-1" style="color: var(--color-ink-muted);">
+        Assessment €2.000, rimborsato se procedi. 1-2 settimane dall'inizio al report.
+      </p>
+      <div class="mt-10 reveal reveal-delay-2">
+        <a href="/parliamone" class="btn btn-primary">
+          Richiedi assessment
+          <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

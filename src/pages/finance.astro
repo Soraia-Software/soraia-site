@@ -1,0 +1,280 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import CaseStudyCardJet from "~/components/CaseStudyCardJet.astro";
+import ProcessCard from "~/components/ProcessCard.astro";
+import ComparisonTable from "~/components/ComparisonTable.astro";
+import FAQ from "~/components/FAQ.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import HeroVisual from "~/components/HeroVisual.astro";
+
+const title = "Agenti IA per studi commercialisti e finance ops | Soraia";
+const description =
+  "Dal patchwork Excel al sistema unificato. Agenti IA che leggono fatture, riconciliano, generano report e fatturazione. Il management torna a fare consulenza al cliente. Live in 4 settimane.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Agenti IA per Finance & Accounting. Soraia",
+    provider: { "@type": "Organization", name: "Soraia", url: "https://www.soraia.io" },
+    areaServed: "IT",
+    serviceType: "AI agents for accounting firms and finance ops",
+    offers: { "@type": "Offer", priceCurrency: "EUR", price: "2000", description: "Assessment iniziale €2.000, rimborsato se procedi con lo sprint." },
+  },
+];
+
+const problems = [
+  {
+    title: "Excel paralleli che nessuno controlla",
+    description: "Preventivi, affidamenti, ore di lavoro registrate in fogli diversi, con voci diverse per divisione. Riconciliarli mensilmente è un lavoro umano costoso.",
+  },
+  {
+    title: "Il management fa data entry",
+    description: "Le figure senior dello studio passano ore a controllare ore, riconciliare affidamenti, ricostruire preventivi. Tempo qualificato bruciato in operations.",
+  },
+  {
+    title: "Zero analytics consolidate",
+    description: "Quanti clienti, in che divisione, con che marginalità? Per produrre un dato base servono ore di export e cross-reference manuale. Nessuna visione consolidata.",
+  },
+];
+
+const processes = [
+  {
+    number: "01",
+    title: "Generazione preventivi automatica",
+    description: "L'agente legge la richiesta cliente, propone le voci corrette dal catalogo studio, calcola il preventivo strutturato col livello tariffario giusto per divisione.",
+    icon: "screen" as const,
+  },
+  {
+    number: "02",
+    title: "Tracciamento affidamenti in real-time",
+    description: "Chi è assegnato a quale cliente, su quale parte del preventivo, con visibilità management su saturazione team. Niente più fogli condivisi paralleli.",
+    icon: "match" as const,
+  },
+  {
+    number: "03",
+    title: "Validazione ore granulare",
+    description: "Il team registra ore con voci precise (trasferta, remoto, presenza, voci speciali). L'agente valida, riconcilia, segnala anomalie automaticamente.",
+    icon: "calendar" as const,
+  },
+  {
+    number: "04",
+    title: "OCR fatture e estrazione dati",
+    description: "Fatture in arrivo (PDF, scan, foto) parsate dall'agente: importo, IVA, codici, fornitore, scadenza. Pronti per validazione e import contabile.",
+    icon: "transcript" as const,
+  },
+  {
+    number: "05",
+    title: "Export per fatturazione",
+    description: "Fine mese, l'agente produce report cliente-per-cliente con dettaglio voci, pronto per la fatturazione e per qualsiasi integrazione contabile esistente.",
+    icon: "outreach" as const,
+  },
+  {
+    number: "06",
+    title: "Analytics su saturazione team",
+    description: "Dashboard real-time: ore per cliente, marginalità per divisione, conversion rate preventivi, alert su clienti a rischio overrun.",
+    icon: "compass" as const,
+  },
+];
+
+const cases = [
+  {
+    slug: "numeraria",
+    client: "Numeraria",
+    quote: "Prima metà del mese tra preventivi, ore e riconciliazioni. Oggi gli agenti IA fanno tutto in autonomia, il team usa il sistema senza nemmeno accorgersene.",
+    dimensioni: "11-50",
+    sector: "Studio paghe & contabilità",
+    cardImage: "/testimonials/elisa-gnan-numeraria.webp",
+    stakeholder: { name: "Elisa Gnan", role: "Consultant" },
+  },
+];
+
+const comparisonRows = [
+  { label: "Costo", values: ["Basso", "Alto annuo", "Medio una tantum"] as [string, string, string] },
+  { label: "Tempo a regime", values: ["Subito", "6-12 mesi", "4 settimane"] as [string, string, string] },
+  { label: "Esegue task in autonomia", values: ["No", "Limitato", "Sì, end-to-end"] as [string, string, string] },
+  { label: "Custom sui tuoi processi", values: ["No", "Configurabile", "Costruito per te"] as [string, string, string] },
+  { label: "Dipendenza dal fornitore", values: ["Nessuna", "Totale", "Nessuna (codice tuo)"] as [string, string, string] },
+  { label: "Integrazione contabilità", values: ["Manuale", "Limitata", "Tutti i gestionali"] as [string, string, string] },
+];
+
+const faqs = [
+  {
+    q: "Come gestite GDPR e dati sensibili contabili?",
+    a: "Infrastruttura europea o on-premise sulla tua. <strong>Nessun training sui tuoi dati</strong>. Log di tutte le operazioni, retention configurabile, validato su studi italiani con clienti enterprise.",
+  },
+  {
+    q: "Si integra col mio gestionale (TeamSystem, Zucchetti, Fatture in Cloud, ecc.)?",
+    a: "Sì. Lavoriamo con i principali gestionali italiani via API o export programmatico. Se hai un sistema legacy, lo validiamo in assessment iniziale.",
+  },
+  {
+    q: "E se il team cambia o cresce?",
+    a: "Il sistema scala automaticamente: nuovi utenti, nuove divisioni, nuove voci tariffarie. <strong>Il codice è tuo</strong>, niente costi per ogni nuovo seat o modulo.",
+  },
+  {
+    q: "Quanto costa davvero?",
+    a: "Assessment <strong>€2.000</strong> (rimborsato se procedi). Sprint di costruzione <strong>€10-50k</strong> a seconda dei processi coperti. Garanzia: se gli agenti non recuperano le ore promesse, lavoriamo gratis fino a quando non lo fanno.",
+  },
+  {
+    q: "Cosa succede in 4 settimane?",
+    a: "<strong>Settimana 1:</strong> discovery + baseline con management. <strong>Settimane 2-3:</strong> build + integrazione gestionale. <strong>Settimana 4:</strong> deploy + training + prima misurazione. 30 giorni di affiancamento inclusi dopo go-live.",
+  },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+        <div style="color: #fff;">
+          <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
+            <span class="w-1 h-1 rounded-full bg-amber"></span>
+            Finance & Accounting · AI Agents
+          </p>
+          <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+            Dal patchwork Excel<br/>al sistema unificato.
+          </h1>
+          <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+            Agenti IA che leggono fatture, riconciliano ore, generano preventivi e fatturazione. Il management torna a fare consulenza al cliente, non data entry. Live in 4 settimane.
+          </p>
+          <div class="mt-6 inline-flex items-center gap-2 fade-up fade-up-delay-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
+            </svg>
+            <span class="text-[14px] font-medium" style="color: #F4B842;">Se non funziona, non paghi. Garanzia inclusa.</span>
+          </div>
+          <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+            <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+              Richiedi assessment, €2.000
+              <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            </a>
+            <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">Vedi il caso Numeraria</a>
+          </div>
+          <div class="mt-12 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] fade-up fade-up-delay-4">
+            <div class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-amber"></span><span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">4 settimane</strong> al primo agente live</span></div>
+            <div class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-amber"></span><span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">Metà mese</strong> di tempo restituito al management</span></div>
+            <div class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-amber"></span><span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">GDPR + audit log</strong> incluso</span></div>
+          </div>
+        </div>
+        <div class="hidden lg:flex justify-end fade-up fade-up-delay-3">
+          <HeroVisual filter="finance" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-14 border-y border-ink-200 bg-white">
+    <div class="container-soraia text-center">
+      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 mb-4">Già scelti da studi italiani</p>
+      <p class="text-[16px]" style="color: var(--color-ink-muted);">
+        <a href="/case-studies/numeraria" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">Numeraria</a>
+        · Studio paghe & contabilità multi-divisione · cliente attivo
+      </p>
+    </div>
+  </section>
+
+  <section id="problema" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Il problema"
+        title="Il management dello studio non fa più il management."
+        subtitle="Le figure senior, più costose, passano una quota significativa del tempo su data entry, riconciliazioni e produzione manuale di report. Quel tempo non finisce in fattura."
+        align="center"
+      />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        {problems.map((p) => (
+          <article class="card-editorial reveal flex flex-col gap-3 !p-7">
+            <div class="w-9 h-9 rounded-lg bg-violet-50 text-violet-700 flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            </div>
+            <h3 class="font-medium text-ink leading-tight" style="font-size: 18px;">{p.title}</h3>
+            <p class="text-[15px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{p.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="La soluzione"
+        title="6 agenti IA che coprono il ciclo preventivo → fatturazione."
+        subtitle="Lavoratori digitali che eseguono task end-to-end. Il team usa il sistema senza accorgersene, il management interviene solo dove serve giudizio."
+        align="center"
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {processes.map((p) => (<ProcessCard {...p} />))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-hero-dark relative overflow-hidden">
+    <div class="container-soraia relative z-10">
+      <div class="max-w-3xl reveal" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          La nostra garanzia
+        </p>
+        <h2 style="color: #fff; font-size: clamp(2rem, 4vw + 0.5rem, 3rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;" class="text-balance">
+          Metà del mese restituito al management.<br/><span style="color: rgba(255,255,255,0.45);">Misurato in 4 settimane. O non paghi.</span>
+        </h2>
+        <p style="color: rgba(255,255,255,0.72);" class="mt-7 text-[17px] leading-relaxed max-w-2xl text-pretty">
+          Baseline cronometrata insieme in assessment. Se non recuperiamo il tempo promesso, lavoriamo gratis finché non succede, oppure ti rimborsiamo lo sprint.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader eyebrow="Caso studio" title="Agenti IA in azione su Numeraria." align="center" />
+      <div class="max-w-md mx-auto">
+        <CaseStudyCardJet href={`/case-studies/${cases[0].slug}`} client={cases[0].client} quote={cases[0].quote} dimensioni={cases[0].dimensioni} sector={cases[0].sector} cardImage={cases[0].cardImage} />
+        <p class="mt-6 text-center text-[14px]" style="color: var(--color-ink-soft);">
+          <strong style="color: var(--color-ink); font-weight: 500;">{cases[0].stakeholder.name}</strong>, {cases[0].stakeholder.role} · {cases[0].client}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Confronto"
+        title="Perché agenti IA su misura, e non altro."
+        subtitle="Le tre opzioni reali per uno studio commercialista o un team finance oggi."
+        align="center"
+      />
+      <ComparisonTable columns={["Excel / gestionale legacy", "ERP enterprise", "Soraia agenti IA"]} rows={comparisonRows} highlightCol={2} />
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-soraia max-w-3xl">
+      <SectionHeader eyebrow="Domande" title="Quello che ci chiedono di solito." align="center" />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <section class="section bg-violet-mesh">
+    <div class="container-soraia text-center max-w-3xl mx-auto">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 reveal" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full bg-violet-600"></span>
+        Prossimo passo
+      </p>
+      <h2 class="text-balance reveal" style="color: var(--color-ink); font-size: clamp(1.875rem, 3vw + 0.5rem, 2.75rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
+        Scopri quanto tempo può recuperare il tuo studio.
+      </h2>
+      <p class="mt-5 text-[17px] leading-relaxed reveal reveal-delay-1" style="color: var(--color-ink-muted);">
+        Assessment €2.000, rimborsato se procedi. 1-2 settimane dall'inizio al report. Nessun impegno a procedere.
+      </p>
+      <div class="mt-10 reveal reveal-delay-2">
+        <a href="/parliamone" class="btn btn-primary">
+          Richiedi assessment
+          <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
