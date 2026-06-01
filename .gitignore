@@ -6,3 +6,6 @@ dist/
 .DS_Store
 *.log
 .wrangler/
+
+# Source photos (converted to public/team-events/)
+Team_events/
