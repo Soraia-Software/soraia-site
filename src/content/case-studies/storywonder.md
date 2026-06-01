@@ -6,7 +6,7 @@ industry: "consumer-education"
 sector: "Consumer mobile · EdTech kids"
 service: "Agente IA storie personalizzate"
 pubDate: 2026-04-20
-dimensioni: "1-10"
+dimensioni: "11-50"
 videoTestimonial:
   provider: youtube
   id: "znc3ceznQME"
