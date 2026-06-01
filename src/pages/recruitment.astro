@@ -6,6 +6,7 @@ import ProcessCard from "~/components/ProcessCard.astro";
 import ComparisonTable from "~/components/ComparisonTable.astro";
 import FAQ from "~/components/FAQ.astro";
 import SectionHeader from "~/components/SectionHeader.astro";
+import HeroVisual from "~/components/HeroVisual.astro";
 
 const title = "Agenti IA per agenzie di recruitment | Soraia";
 const description =
@@ -176,7 +177,8 @@ const faqs = [
        ============================================================ -->
   <section class="relative overflow-hidden bg-hero-dark">
     <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
-      <div class="max-w-[900px]" style="color: #fff;">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+      <div style="color: #fff;">
         <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
           <span class="w-1 h-1 rounded-full bg-amber"></span>
           Recruitment & HR · AI Agents
@@ -225,6 +227,12 @@ const faqs = [
             <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">GDPR + AI Act</strong> compliant</span>
           </div>
         </div>
+      </div>
+
+      <!-- RIGHT: agent feed locked to HR -->
+      <div class="hidden lg:flex justify-end fade-up fade-up-delay-3">
+        <HeroVisual filter="hr" />
+      </div>
       </div>
     </div>
   </section>

@@ -1,8 +1,15 @@
 ---
 // Soraia Agent Feed, 5 industry tabs, click to switch workflow.
 // Auto-cycles on init, pauses on user interaction.
+// Pass `filter` prop with an industry id to lock it to a single industry (no tabs, no cycling).
 
-const industries = [
+interface Props {
+  filter?: string;
+}
+
+const { filter } = Astro.props;
+
+const allIndustries = [
   {
     id: "hr",
     label: "Recruiting & HR",
@@ -75,6 +82,11 @@ const industries = [
   },
 ];
 
+const industries = filter
+  ? allIndustries.filter((i) => i.id === filter)
+  : allIndustries;
+const showTabs = !filter;
+
 const icons: Record<string, string> = {
   doc: `<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>`,
   mail: `<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>`,
@@ -92,23 +104,25 @@ const icons: Record<string, string> = {
 
 <div class="agent-feed-soraia" aria-label="Soraia agents, live workflow per industry">
 
-  <!-- Industry tabs -->
-  <div class="afs-tabs" role="tablist" aria-label="Industries">
-    {industries.map((ind, i) => (
-      <button
-        type="button"
-        class={`afs-tab ${i === 0 ? "is-active" : ""}`}
-        data-tab={ind.id}
-        role="tab"
-        aria-selected={i === 0 ? "true" : "false"}
-      >
-        <span class="afs-tab-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[ind.industryIcon]} />
-        </span>
-        <span class="afs-tab-label">{ind.label}</span>
-      </button>
-    ))}
-  </div>
+  {showTabs && (
+    <!-- Industry tabs -->
+    <div class="afs-tabs" role="tablist" aria-label="Industries">
+      {industries.map((ind, i) => (
+        <button
+          type="button"
+          class={`afs-tab ${i === 0 ? "is-active" : ""}`}
+          data-tab={ind.id}
+          role="tab"
+          aria-selected={i === 0 ? "true" : "false"}
+        >
+          <span class="afs-tab-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[ind.industryIcon]} />
+          </span>
+          <span class="afs-tab-label">{ind.label}</span>
+        </button>
+      ))}
+    </div>
+  )}
 
   <!-- Feed card -->
   <div class="afs-card">
