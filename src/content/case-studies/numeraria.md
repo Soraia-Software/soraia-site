@@ -1,5 +1,5 @@
 ---
-title: "Numeraria, €32.000/mese risparmiati con agente IA gestione studio"
+title: "Numeraria, agenti IA che automatizzano la gestione studio end-to-end"
 client: "Numeraria"
 clientLogo: "/logos/clients/numeraria.webp"
 industry: "finance-vc"
@@ -12,23 +12,23 @@ stakeholder:
   name: "Elisa Gnan"
   role: "Consultant"
   photo: "/testimonials/elisa-gnan-numeraria.webp"
-heroQuote: "Prima metà del mese tra preventivi, ore e riconciliazioni. Oggi l'agente IA fa tutto in autonomia: €32.000/mese di costo operativo evitato."
-shortQuote: "€32k/mese di costo operativo evitato. Preventivi, ore e riconciliazioni in autonomia."
+heroQuote: "Prima metà del mese tra preventivi, ore e riconciliazioni. Oggi gli agenti IA fanno tutto in autonomia, il team usa il sistema senza nemmeno accorgersene."
+shortQuote: "Preventivi, ore e riconciliazioni gestiti dagli agenti IA. Il team usa il sistema senza sforzo."
 teaser:
   problem: "Tracciamento granulare di preventivi, affidamenti e ore di lavoro multi-divisione gestito manualmente, con voci specifiche (trasferte, remoto, presenza) che facevano perdere ore al mese al management."
-  action: "Agente IA che gestisce il flusso end-to-end: genera preventivi su template, traccia gli affidamenti per cliente, riconcilia le ore inserite dal team, produce reportistica per la fatturazione."
-  resultMetric: "€32.000/mese di costo operativo risparmiato"
-  resultBody: "Il management dello studio dedica oggi quel tempo a clienti nuovi e consulenza strategica, non a riconciliare fogli Excel."
+  action: "Agenti IA integrati nella piattaforma che gestiscono il flusso end-to-end: generano preventivi su template, tracciano gli affidamenti per cliente, riconciliano le ore inserite dal team, producono reportistica per la fatturazione. Zero data entry manuale."
+  resultMetric: "Metà del mese restituito al management · automazione end-to-end"
+  resultBody: "Il tempo recuperato dal management va su clienti nuovi e consulenza strategica, non più a riconciliare Excel."
 stats:
-  - value: "€32k"
-    label: "Risparmiati/mese"
-    sub: "costo operativo"
+  - value: "Metà mese"
+    label: "Tempo liberato"
+    sub: "al management"
   - value: "Multi-divisione"
     label: "Voci tracciate"
     sub: "trasferte · remoto · presenza"
   - value: "End-to-end"
     label: "Preventivi → ore → fatturazione"
-    sub: "in un unico sistema"
+    sub: "automatizzato dagli agenti IA"
 timeline: "Sprint dev iniziale, oggi sistema in produzione + maintenance"
 stack:
   - "Xano (backend)"
@@ -56,31 +56,29 @@ Il flusso operativo viveva su un patchwork di Excel + tool legacy:
 - **Ore di lavoro** del team registrate in più posti con voci frammentate (trasferte vs remoto vs presenza in studio, lavoro su pratica specifica vs general overhead).
 - **Riconciliazione mensile** tra ore registrate, affidamenti previsti e fatturazione cliente: ore di lavoro umano del management ogni inizio mese.
 
-Risultato: il management dello studio (figure senior, costose) passava una **quota significativa del proprio tempo** a fare data management invece di consulenza ai clienti. Tradotto in costo operativo: decine di migliaia di euro al mese in tempo qualificato bruciato in operations.
+Risultato: il management dello studio (figure senior, costose) passava una **quota significativa del proprio tempo** a fare data management invece di consulenza ai clienti.
 
-## Cosa ha fatto l'agente IA
+## Cosa abbiamo costruito
 
-Soraia ha costruito una piattaforma custom con un agente IA che gestisce **l'intero ciclo preventivo → affidamento → ore → fatturazione**:
+Soraia ha costruito una piattaforma custom con **vari agenti IA integrati nel flusso operativo** che gestiscono l'intero ciclo preventivo → affidamento → ore → fatturazione:
 
-1. **Generazione preventivi automatica**, l'agente legge la richiesta cliente, propone le voci corrette dal catalogo Numeraria, calcola il preventivo strutturato con il livello tariffario giusto per ogni divisione. Il management approva o aggiusta, non scrive da zero.
-2. **Tracciamento affidamenti in real-time**, chi è assegnato a quale cliente, su quale parte del preventivo, con visibilità del management su saturazione del team.
-3. **Registrazione ore granulare**, il team registra le ore con voci precise (trasferta in azienda cliente, lavoro remoto, presenza in studio, voci speciali). L'agente valida e riconcilia.
-4. **Export per fatturazione**, fine mese, l'agente produce il report cliente-per-cliente per la fatturazione, con dettaglio voci.
+1. **Agente preventivi**, legge la richiesta cliente, propone le voci corrette dal catalogo Numeraria, calcola il preventivo strutturato con il livello tariffario giusto per ogni divisione. Il management approva o aggiusta, non scrive da zero.
+2. **Agente affidamenti**, traccia in real-time chi è assegnato a quale cliente, su quale parte del preventivo, con visibilità del management su saturazione del team.
+3. **Agente ore**, valida le ore registrate dal team con voci precise (trasferta in azienda cliente, lavoro remoto, presenza in studio, voci speciali) e le riconcilia automaticamente.
+4. **Agente fatturazione**, fine mese produce il report cliente-per-cliente pronto per la fatturazione, con dettaglio voci.
 
-Il management interviene solo dove serve giudizio: approvazione preventivi speciali, riassegnazioni in caso di urgenze, validazione finale del report mensile.
+Il design è pensato per **massima facilità d'uso**: i consulenti registrano ore in pochi tocchi, gli agenti fanno il lavoro pesante in background. Il management interviene solo dove serve giudizio: approvazione preventivi speciali, riassegnazioni in caso di urgenze, validazione finale del report mensile.
 
 ## I risultati
 
-**€32.000/mese di costo operativo risparmiato** dall'introduzione dell'agente IA. Numero pubblico citato dal cliente.
+**Metà del mese restituito al management**: il tempo che prima andava in data management oggi è investito in acquisizione clienti, consulenza strategica e supervisione qualità.
 
-Il risparmio non è in licenze software o costi diretti: è il **tempo del management e dei senior** liberato da operations ripetitive e re-investito in lavoro a valore aggiunto (acquisizione clienti, consulenza strategica, supervisione qualità).
+**Sistema usato senza sforzo dal team**: i consulenti non vivono la piattaforma come un peso. L'automazione degli agenti rende il data entry quasi invisibile, l'inserimento ore diventa abitudine in pochi secondi.
 
-**Multi-divisione gestita in modo unificato**: paghe, contabilità ordinaria, semplificata, consulenza, tutto nello stesso sistema, con voci tariffarie corrette per ogni divisione.
+**Multi-divisione gestita in modo unificato**: paghe, contabilità ordinaria, semplificata, consulenza, tutto nello stesso sistema con voci tariffarie corrette per ogni divisione.
 
 **Tracking ore granulare** che prima richiedeva fogli Excel paralleli: oggi un'unica fonte di verità, in tempo reale.
 
-## Cosa è incluso oggi
+## Dove stiamo andando
 
-Sistema in produzione, status ACTIVE. Maintenance + sprint puntuali quando emergono nuove esigenze (nuove voci di servizio, integrazioni contabili specifiche, dashboard custom per nuovi tipi di reporting).
-
-Numeraria è uno dei case studies più puliti del portfolio Soraia in termini di ROI quantificabile: €32k/mese × 12 mesi = ~€384k/anno di costo operativo evitato, su un investimento sprint che ha pagato per intero il proprio costo in meno di un trimestre.
+Sistema in produzione. Maintenance + sprint puntuali quando emergono nuove esigenze (nuove voci di servizio, integrazioni contabili specifiche, dashboard custom). Continuiamo a iterare per integrare ulteriori agenti IA che assorbano altri pezzi di operations e liberare ancora più tempo al team.
