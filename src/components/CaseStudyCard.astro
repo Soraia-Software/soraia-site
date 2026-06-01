@@ -5,13 +5,18 @@ interface Props {
   metric: string;
   metricLabel: string;
   description: string;
+  href?: string;
   accent?: "violet" | "amber";
 }
 
-const { client, industry, metric, metricLabel, description } = Astro.props;
+const { client, industry, metric, metricLabel, description, href } = Astro.props;
+const Tag = href ? "a" : "article";
 ---
 
-<article class="card-editorial group flex flex-col gap-7 h-full reveal">
+<Tag
+  {...(href ? { href } : {})}
+  class={`card-editorial group flex flex-col gap-7 h-full reveal no-underline${href ? " case-card-link" : ""}`}
+>
   <header class="flex items-start justify-between gap-4">
     <div>
       <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink-500">{industry}</p>
@@ -19,7 +24,7 @@ const { client, industry, metric, metricLabel, description } = Astro.props;
     </div>
     <span class="shrink-0 inline-flex w-11 h-11 rounded-full bg-ink-50 group-hover:bg-violet-600 transition-colors duration-300 items-center justify-center">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        class="text-ink-700 group-hover:text-white transition-colors duration-300">
+        class="text-ink-700 group-hover:text-white transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
         <path d="M7 17L17 7M9 7h8v8"/>
       </svg>
     </span>
@@ -28,11 +33,21 @@ const { client, industry, metric, metricLabel, description } = Astro.props;
   <div class="hairline"></div>
 
   <div class="flex-1 flex flex-col justify-end">
-    <p class="text-[3.5rem] md:text-[4.5rem] font-semibold leading-[0.9] tracking-[-0.04em] text-gradient-violet">
+    <p class="text-[3.25rem] md:text-[4rem] font-semibold leading-[0.9] tracking-[-0.04em] text-gradient-violet">
       {metric}
     </p>
     <p class="mt-3 text-xs uppercase tracking-[0.16em] text-ink-500 font-semibold">{metricLabel}</p>
   </div>
 
   <p class="text-[15px] text-ink-700 leading-relaxed text-pretty">{description}</p>
-</article>
+</Tag>
+
+<style>
+  .case-card-link {
+    transition: transform 0.3s var(--ease-out-quart), box-shadow 0.3s var(--ease-out-quart);
+  }
+  .case-card-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px -14px rgba(74, 30, 92, 0.20);
+  }
+</style>
