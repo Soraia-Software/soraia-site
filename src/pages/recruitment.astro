@@ -1,7 +1,7 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 import ProofBar from "~/components/ProofBar.astro";
-import CaseStudyCard from "~/components/CaseStudyCard.astro";
+import CaseStudyCardJet from "~/components/CaseStudyCardJet.astro";
 import ProcessCard from "~/components/ProcessCard.astro";
 import ComparisonTable from "~/components/ComparisonTable.astro";
 import FAQ from "~/components/FAQ.astro";
@@ -103,34 +103,31 @@ const processes = [
 
 const cases = [
   {
+    slug: "apraise",
     client: "APraise",
-    logo: "/logos/clients/apraise.webp",
-    industry: "Executive search · 100k+ candidati",
-    metric: "+19",
-    metricLabel: "Giorni-uomo a settimana recuperati",
-    description:
-      "ATS custom con Chrome Web Clipper: 1 click dal profilo LinkedIn al database arricchito. L'agente IA fa parsing strutturato e qualifica. Come avere quattro recruiter in più nel team, senza il costo.",
-    href: "/case-studies/apraise",
+    quote: "100.000+ candidati in piattaforma. L'agente IA qualifica e propone sulla posizione giusta.",
+    dimensioni: "11-50",
+    sector: "Executive search · Senior recruitment",
+    cardImage: "/testimonials/jacopo-castano-apraise.webp",
+    stakeholder: { name: "Jacopo Castano", role: "Managing Partner" },
   },
   {
+    slug: "stars-be-original",
     client: "Stars Be Original",
-    logo: "/logos/clients/starsbeoriginal.webp",
-    industry: "Recruiting turistico · 20k+ candidati",
-    metric: "<1min",
-    metricLabel: "Tempo di risposta candidato",
-    description:
-      "Agente IA dedicato che riceve la candidatura, qualifica il profilo, risponde con la comunicazione giusta in tono brand. 200.000+ comunicazioni inviate, zero candidati persi nel funnel.",
-    href: "/case-studies/stars-be-original",
+    quote: "L'agente IA risponde ai candidati al posto nostro, e lo fa meglio: <1 minuto di risposta, zero candidati persi.",
+    dimensioni: "250-1000",
+    sector: "Recruitment animazione turistica",
+    cardImage: "/testimonials/gabriella-bruzzone-stars.webp",
+    stakeholder: { name: "Gabriella Bruzzone", role: "CMO" },
   },
   {
+    slug: "oggi-lavoro",
     client: "OggiLavoro",
-    logo: "/logos/clients/oggilavoro.webp",
-    industry: "APL italiana · 1000+ persone",
-    metric: "250k+",
-    metricLabel: "Candidati liberati dallo stack legacy",
-    description:
-      "Replatforming completo con agenti IA di candidate search e matching. OCR CV, mobile app, integrazione comm tool email/SMS/WhatsApp. Nuova piattaforma in costruzione, sistema scalabile.",
-    href: "/case-studies/oggi-lavoro",
+    quote: "250.000+ candidati bloccati su uno stack legacy. Oggi una nuova piattaforma con agenti IA che cambia il modo di lavorare dei recruiter.",
+    dimensioni: "1000+",
+    sector: "Agenzia per il lavoro · Somministrazione",
+    cardImage: "/testimonials/francesca-sorrentino-oggi-lavoro.webp",
+    stakeholder: { name: "Francesca Sorrentino", role: "IT Manager" },
   },
 ];
 
@@ -330,9 +327,21 @@ const faqs = [
         align="center"
       />
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {cases.map((c) => (
-          <CaseStudyCard {...c} />
+          <div>
+            <CaseStudyCardJet
+              href={`/case-studies/${c.slug}`}
+              client={c.client}
+              quote={c.quote}
+              dimensioni={c.dimensioni}
+              sector={c.sector}
+              cardImage={c.cardImage}
+            />
+            <p class="mt-4 text-center text-[13px]" style="color: var(--color-ink-soft);">
+              <strong style="color: var(--color-ink); font-weight: 500;">{c.stakeholder.name}</strong> · {c.stakeholder.role}
+            </p>
+          </div>
         ))}
       </div>
 
