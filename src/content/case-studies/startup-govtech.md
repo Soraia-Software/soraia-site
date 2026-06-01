@@ -46,8 +46,6 @@ related:
 
 Il cliente è una società europea che fornisce strumenti software per la gestione di eventi diplomatici internazionali. Il cliente finale a sua volta è un attore istituzionale (ministero degli esteri, ambasciata, organizzazione internazionale) che deve coordinare riunioni, missioni, scambi formali tra Stati.
 
-È uno dei clienti storici Soraia: la collaborazione è iniziata nel 2024 ed è oggi uno dei rapporti più intensi del portfolio in termini di volume sprint.
-
 ## Il problema reale
 
 La diplomazia ha regole molto strette che il software generalista non rispetta:
@@ -81,9 +79,3 @@ L'AI è uno strumento di **acceleration**, mai di sostituzione del giudizio dipl
 **Riduzione del tempo per nota verbale** dal lavoro manuale al drafting AI-assistito: ore di tempo qualificato del team risparmiate per ogni evento gestito.
 
 **DPA amendment per nuovi Stati** gestiti come standard di onboarding: la compliance GDPR e settoriale è strutturata, non improvvisata.
-
-## Cosa è incluso oggi
-
-Sistema in produzione, status ACTIVE con uno dei volumi sprint più alti del portfolio Soraia (top-3 per intensità mensile).
-
-Il cliente è un esempio di partnership tech-as-a-service di lungo periodo: Soraia non ha consegnato un progetto chiuso, ma è il **partner tecnologico permanente**, che evolve la piattaforma in funzione delle esigenze dei nuovi Stati clienti.

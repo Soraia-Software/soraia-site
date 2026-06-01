@@ -84,9 +84,3 @@ Fabricio riceve direttamente il dossier qualificato sui lead "hot" e personalizz
 **Pipeline boutique scalata senza assumere**: la capacity di gestione lead è cresciuta senza dover aggiungere personale dedicato.
 
 **Tempo qualificato re-investito**: le ore prima spese in research vanno oggi su selezione property, visite con cliente, negoziazione.
-
-## Cosa è incluso oggi
-
-Sistema in maintenance: SLA mensile + sprint puntuali quando emergono nuove fonti di lead o cambi nelle policy dei tool esterni (es. update LinkedIn API). Stack snello e mantenibile.
-
-FRH è un esempio del pattern **"AI augmentation per boutique"**: piccola agenzia, pochi clienti high-value, agente IA che fa il lavoro non differenziante per liberare le ore del founder.

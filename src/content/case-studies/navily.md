@@ -83,9 +83,3 @@ In tutti e tre i flussi, l'agente **non approva mai contenuti borderline in auto
 **Alta precisione mantenuta**: la qualità della community Navily non si è degradata con l'introduzione dell'agente, anzi, è migliorata grazie alla consistenza dei criteri applicati (l'agente non si stanca, non ha "giornate storte", applica gli stessi criteri al primo come al millesimo contenuto della giornata).
 
 **Scalabilità sbloccata**: Navily può crescere la community e l'inventario porti senza moltiplicare il team di moderazione. Le ore liberate vanno su lavoro a valore aggiunto (prodotto, partnership, espansione mercati).
-
-## Cosa è incluso oggi
-
-Sistema in produzione con scaling continuo: nuovi flussi di moderazione vengono integrati nell'agente man mano che Navily espande feature (es. moderazione contenuti video, validation di check-in geo-locati, anti-fraud sui pagamenti).
-
-Navily è un esempio del pattern **"agente multi-task in produzione consumer-grade"**: stesso agente, multipli flussi, alta volume, qualità mantenuta.

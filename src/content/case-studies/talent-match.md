@@ -84,9 +84,3 @@ Il recruiter umano interviene solo sui **5-10 candidati top** che l'agente ranka
 **Algoritmo Potential Match v2 in autonomia**: dopo i primi 6 mesi di feedback dal team, Soraia ha raffinato l'algoritmo per più precisione e meno costo computazionale per chiamata. Ora l'agente costa meno per query e produce match più rilevanti.
 
 **Sistema in maintenance** con sprint mensili per nuove feature richieste dal team (es. integrazione con tool di sourcing aggiuntivi, nuove metric di placement success).
-
-## Cosa è incluso oggi
-
-Sistema in produzione, status ACTIVE. SLA mensile fisso + sprint dev quando emergono nuove esigenze.
-
-Talent Match è un esempio del modello "build + maintain + iterate" tipico Soraia: il primo sprint costruisce la foundation, i mesi successivi raffinano l'algoritmo sui dati reali del cliente.

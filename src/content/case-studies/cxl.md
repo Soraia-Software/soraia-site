@@ -82,9 +82,3 @@ L'agente è disponibile 24/7, parla con esperti in più fusi orari, mantiene ton
 **Catalogo corsi scalato senza assumere nuove operations**: la capacity di onboarding è oggi limitata solo dalla qualità degli esperti disponibili, non dalle ore di Brian e del team.
 
 **Tempo di go-live esperto ridotto**: dalla settimana al massimo qualche giorno, perché l'agente non aspetta finestre di disponibilità del team ops.
-
-## Cosa è incluso oggi
-
-Sistema oggi in produzione, status maintenance. Sprint puntuali quando emergono nuove fonti di esperti o nuove tipologie contrattuali.
-
-Case study citato pubblicamente su soraia.io con il consenso del cliente.

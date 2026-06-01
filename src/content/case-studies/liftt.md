@@ -80,9 +80,3 @@ Il team umano interviene solo sui passaggi che richiedono giudizio: approvare un
 **Zero ore di dedupe manuale**: l'agente riconosce e unifica i duplicati, l'umano approva il merge in un click.
 
 **Monthly report auto-generato** ogni inizio mese, con charts e raccomandazioni operative.
-
-## Cosa è incluso oggi
-
-Sistema in maintenance con SLA dedicato. Sprint puntuali quando emergono nuove esigenze (es. integrazione Outlook avanzata, nuovi tipi di alert, dashboard custom per il management).
-
-Soraia + LIFTT sono partner dal 2024: relazione di lungo periodo basata su monthly sync e zero sorprese.

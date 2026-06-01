@@ -84,9 +84,3 @@ Il consulente senior recupera ore al giorno per parlare con clienti e candidati.
 **Matching semantico via vector DB**: il consulente non deve più ricordare "chi sarebbe perfetto per questa posizione", l'agente lo propone in autonomia con score motivato.
 
 **15+ mesi di produzione continuativa** del sistema: indicatore di solidità operativa e di adattamento dell'agente ai workflow specifici di APraise.
-
-## Cosa è incluso oggi
-
-Sistema in produzione, status ACTIVE. SLA mensile fisso per maintenance + sprint puntuali quando emergono nuove esigenze (es. nuovi tipi di filtro, integrazioni con piattaforme aggiuntive, raffinamento del modello di matching).
-
-APraise è un esempio del modello "ingestion + matching" che Soraia applica a diversi clienti recruitment (Talent Match, Aegis, Stars Be Original): l'angolo specifico per APraise è l'estensione Chrome che riduce la barriera di sourcing al minimo possibile.

@@ -93,9 +93,3 @@ Il tono di voce è stato addestrato sulle risposte storiche del team CMO, in mod
 **Tempo di risposta medio sotto il minuto** dal momento della candidatura, vs ore o giorni del processo manuale.
 
 **Il team CMO ha riguadagnato la propria funzione strategica**: posizionamento, brand, partnership con i villaggi clienti. Le ore che prima andavano in operations oggi vanno in lavoro creativo.
-
-## Cosa è incluso oggi
-
-Sistema in **maintenance** con SLA mensile fisso. Sprint di sviluppo puntuali quando emergono nuove esigenze (es. integrazione Stripe per il payment animatori, nuovi canali di comunicazione, espansione su altri brand del gruppo).
-
-Soraia rimane il partner unico: niente passaggi di consegne, niente vendor multipli da coordinare.

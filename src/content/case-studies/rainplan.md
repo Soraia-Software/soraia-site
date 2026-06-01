@@ -83,9 +83,3 @@ Negli ultimi 18 mesi, Soraia ha gradualmente sostituito lo stack frammentato con
 **Pipeline multi-stakeholder in autonomia**: i workflow di approvazione tra property owner, provider e agency oggi avanzano senza intervento manuale del team Rainplan se non sui casi che richiedono giudizio.
 
 **Top-3 cliente per MRR** del portfolio Soraia, indicatore della profondità della partnership e del valore percepito dal cliente.
-
-## Cosa è incluso oggi
-
-Sistema in produzione, status ACTIVE con sprint mensili continui. La partnership è di tipo tech-as-a-service: Soraia è il backbone tecnologico che evolve la piattaforma in funzione delle nuove esigenze di Rainplan e dei suoi clienti agency.
-
-Rainplan è un esempio di **partnership multi-anno** che inizia con un primo sprint e cresce nel tempo, diventando il fornitore tecnologico unico di un prodotto B2B complesso.
