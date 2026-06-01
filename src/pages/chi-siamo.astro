@@ -8,28 +8,49 @@ import CTABanner from "~/components/CTABanner.astro";
 const title = "Chi siamo, AI Agency italiana per le PMI | Soraia";
 const description = "AI consultants 100% remote distribuiti tra Italia, Europa e Sudamerica. 40+ progetti consegnati, focus su PMI italiane, nessun lock-in tecnologico.";
 
+const valueIcons: Record<string, string> = {
+  // sparkles: AI with discernment
+  sparkles: '<path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/><path d="M19 14l.7 2.1L22 17l-2.3.9L19 20l-.7-2.1L16 17l2.3-.9z"/><path d="M5 19l.4 1.2L7 21l-1.6.4L5 23l-.4-1.6L3 21l1.6-.4z"/>',
+  // lightbulb: idea, soluzioni
+  lightbulb: '<path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.5.4.8 1 .8 1.6V18h6.4v-1.7c0-.6.3-1.2.8-1.6A7 7 0 0 0 12 2z"/>',
+  // users: people-first adoption
+  users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  // target: measure results
+  target: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+  // zap: speed
+  zap: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+  // compass: curiosity, learning, exploration
+  compass: '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>',
+};
+
 const values = [
   {
+    icon: "sparkles",
     title: "AI-first, ma con criterio.",
     body: "L'AI quando serve. I processi e le persone prima. Niente automazioni a tutti i costi: se un workflow funziona già, lo lasciamo stare.",
   },
   {
+    icon: "lightbulb",
     title: "Pensiamo soluzioni, non problemi.",
     body: "Sappiamo cosa si può fare oggi con l'AI. Conosciamo dove sono le limitazioni reali. Diciamo al cliente la verità prima del preventivo, non dopo la firma.",
   },
   {
+    icon: "users",
     title: "Adoption batte technology.",
     body: "Il miglior agente IA è quello che il team usa davvero. Per questo il 40% del nostro lavoro è training, change management, documentazione, non solo build.",
   },
   {
+    icon: "target",
     title: "Misuriamo i risultati.",
     body: "Baseline cronometrata prima dello sprint. Metric primario unico. 30 giorni di hypercare dopo il go-live. Senza numeri verificabili, nessuna garanzia è onesta.",
   },
   {
+    icon: "zap",
     title: "Velocità + qualità.",
     body: "Prima delivery in 4 settimane. Codice tuo dalla prima settimana. Niente abbonamenti perpetui, niente lock-in. Se vuoi internalizzare, ti diamo training e documenti.",
   },
   {
+    icon: "compass",
     title: "Curiosi, impariamo veloce.",
     body: "Lo stack AI evolve ogni mese. Investiamo tempo a testare modelli, framework, pattern nuovi prima di proporli al cliente. Il vantaggio competitivo è l'aggiornamento.",
   },
@@ -187,7 +208,7 @@ const faqs = [
         {values.map((v) => (
           <div class="bg-white p-8 md:p-9">
             <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-5" style="background: var(--color-brand-soft); color: var(--color-brand);">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={valueIcons[v.icon]} />
             </div>
             <h3 class="text-balance" style="font-size: 1.0625rem; line-height: 1.3; letter-spacing: -0.015em; font-weight: 500; color: var(--color-ink);">{v.title}</h3>
             <p class="mt-3 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{v.body}</p>
