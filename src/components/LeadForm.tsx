@@ -21,7 +21,7 @@ const labels = {
     submit: "Richiedi assessment",
     submitting: "Invio in corso…",
     success: "Ricevuto. Ti scriviamo entro 24 ore.",
-    error: "Qualcosa è andato storto. Scrivici a hello@soraia.io",
+    error: "Qualcosa è andato storto. Scrivici a info@soraia.io",
     privacy:
       "I tuoi dati restano riservati. Niente newsletter, niente terze parti.",
     range_1: "1–10 persone",
@@ -42,7 +42,7 @@ const labels = {
     submit: "Request assessment",
     submitting: "Sending…",
     success: "Got it. We'll reach out within 24 hours.",
-    error: "Something went wrong. Write to hello@soraia.io",
+    error: "Something went wrong. Write to info@soraia.io",
     privacy: "Your data stays private. No newsletter, no third parties.",
     range_1: "1–10 people",
     range_2: "11–50 people",
