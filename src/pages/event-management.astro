@@ -1,6 +1,6 @@
 ---
 import Layout from "~/layouts/Layout.astro";
-import CaseStudyCard from "~/components/CaseStudyCard.astro";
+import CaseStudyCardJet from "~/components/CaseStudyCardJet.astro";
 import ProcessCard from "~/components/ProcessCard.astro";
 import ComparisonTable from "~/components/ComparisonTable.astro";
 import FAQ from "~/components/FAQ.astro";
@@ -92,17 +92,15 @@ const processes = [
   },
 ];
 
-const cases = [
-  {
-    client: "40Factory",
-    industry: "Industrial IoT · Industria 4.0",
-    metric: "6",
-    metricLabel: "Agenti IA orchestrati",
-    description:
-      "Adozione di Linkly per la stagione fiere 2026. 6 agenti orchestrati che catturano, arricchiscono, qualificano e contattano ogni lead. Email follow-up dal dominio @40-factory.com in pochi secondi.",
-    href: "/case-studies/40factory",
-  },
-];
+const featuredCase = {
+  slug: "40factory",
+  client: "40Factory",
+  clientLogo: undefined,
+  quote: "Facciamo molte fiere all'anno e i contatti raccolti sono il nostro asset commerciale più importante. Linkly cattura, qualifica e contatta in autonomia ogni lead.",
+  dimensioni: "11-50",
+  sector: "Industrial IoT · Industria 4.0",
+  cardImage: "/testimonials/margherita-chifari-40factory.webp",
+};
 
 const comparisonRows = [
   { label: "Sistema utilizzato", values: ["App ufficiale fiera", "Sistema interno custom", "Linkly · Soraia"] as [string, string, string] },
@@ -311,10 +309,19 @@ const faqs = [
         align="center"
       />
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-        {cases.map((c) => (
-          <CaseStudyCard {...c} />
-        ))}
+      <div class="max-w-md mx-auto">
+        <CaseStudyCardJet
+          href={`/case-studies/${featuredCase.slug}`}
+          client={featuredCase.client}
+          clientLogo={featuredCase.clientLogo}
+          quote={featuredCase.quote}
+          dimensioni={featuredCase.dimensioni}
+          sector={featuredCase.sector}
+          cardImage={featuredCase.cardImage}
+        />
+        <p class="mt-6 text-center text-[14px]" style="color: var(--color-ink-soft);">
+          <strong style="color: var(--color-ink); font-weight: 500;">Margherita Chifari</strong>, Head of Sales · 40Factory
+        </p>
       </div>
 
       <p class="mt-10 text-center text-[14px]" style="color: var(--color-ink-muted);">
