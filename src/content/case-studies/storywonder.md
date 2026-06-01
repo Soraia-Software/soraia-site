@@ -95,12 +95,4 @@ Il prompt engineering dell'agente è la parte più delicata: garantire storie **
 
 **Lighthouse project per Playmobil**: l'integrazione StoryWonder + Playmobil è diventata il blueprint per future partnership brand → kids content.
 
-## Cosa è incluso oggi
-
-Sprint di sviluppo mensili (€1.500/mese baseline + bundle feature) + maintenance continua. Soraia gestisce:
-
-- Evoluzione prodotto (nuove feature richieste dal team Rolf)
-- Tuning continuo del prompt e dei filtri di sicurezza
-- Submission Apple/Google ad ogni release
-- Hotfix urgenti
-- Coordinamento con team di Marc Servais (lead dev freelance del cliente)
+Prova il prodotto live: [story-wonder.com](https://story-wonder.com/en/).
