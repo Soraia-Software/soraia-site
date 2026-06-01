@@ -36,6 +36,7 @@ function formatDate(d: Date) {
 // Fallback photo mapping: per i case study che hanno stakeholder.photo vuoto,
 // pesca dalla cartella /testimonials/ se esiste una foto matchante.
 const photoMap: Record<string, string> = {
+  "40factory": "/testimonials/margherita-chifari-40factory.webp",
   aegis: "/testimonials/aegis_vittorio_maiani.webp",
   apraise: "/testimonials/jacopo-castano-apraise.webp",
   cxl: "/testimonials/brian-dandelet-cxl.webp",
@@ -306,6 +307,7 @@ const jsonLd = {
               dimensioni: r.data.dimensioni,
               sector: r.data.sector,
               cardImage: r.data.cardImage || ({
+                "40factory": "/testimonials/margherita-chifari-40factory.webp",
                 aegis: "/testimonials/aegis_vittorio_maiani.webp",
                 apraise: "/testimonials/jacopo-castano-apraise.webp",
                 cxl: "/testimonials/brian-dandelet-cxl.webp",

@@ -11,6 +11,7 @@ const cases = (await getCollection("caseStudies")).sort(
 );
 
 const photoMap: Record<string, string> = {
+  "40factory": "/testimonials/margherita-chifari-40factory.webp",
   aegis: "/testimonials/aegis_vittorio_maiani.webp",
   apraise: "/testimonials/jacopo-castano-apraise.webp",
   cxl: "/testimonials/brian-dandelet-cxl.webp",
@@ -38,6 +39,7 @@ const industryFilters = [
   { id: "consumer-education",  label: "Consumer & Education",     count: cases.filter((c) => c.data.industry === "consumer-education").length },
   { id: "finance-vc",          label: "Finance & VC",             count: cases.filter((c) => c.data.industry === "finance-vc").length },
   { id: "sustainability",      label: "Sustainability",           count: cases.filter((c) => c.data.industry === "sustainability").length },
+  { id: "industrial-iot",      label: "Industrial & IoT",         count: cases.filter((c) => c.data.industry === "industrial-iot").length },
   { id: "public-sector",       label: "Public Sector",            count: cases.filter((c) => c.data.industry === "public-sector").length },
 ];
 ---
