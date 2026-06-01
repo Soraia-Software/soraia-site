@@ -109,8 +109,4 @@ Linkly non serve solo a recuperare contatti. Serve a **avere visibilità reale s
 
 Con quei dati alla mano, alla fine della stagione fiere la decisione "questa fiera la rifaccio l'anno prossimo?" smette di essere una sensazione e diventa una scelta data-driven. È la stessa logica del branding: non puoi migliorare ciò che non misuri.
 
-## Stato attuale
-
-Contratto + DPA firmati a maggio 2026. Setup tecnico in corso: configurazione DNS/SPF/DKIM per il dominio sender, integrazione CRM 40Factory, definizione dei criteri di qualifica per le prossime fiere in calendario. **Kickoff operativo a stagione fiere 2026** con Veronica Pisana (Soraia) come account owner.
-
 Linkly è il prodotto SaaS di Soraia dedicato a fiere ed eventi B2B. [Scopri come funziona su linkly.events →](https://linkly.events/)
