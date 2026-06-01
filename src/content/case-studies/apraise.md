@@ -16,7 +16,7 @@ heroQuote: "100.000+ candidati in piattaforma. L'agente IA qualifica e propone s
 shortQuote: "100k+ candidati. Come avere 4 recruiter in più, senza il costo."
 teaser:
   problem: "Executive search su profili senior: copia-incolla manuale dei profili LinkedIn nell'ATS, matching JD↔candidato fatto a memoria del consulente, database frammentato tra Excel e tool legacy."
-  action: "ATS custom con Chrome Web Clipper che cattura il profilo LinkedIn in 1 click, agente IA per parsing strutturato + matching via vector DB, feature Potential Match per ranking automatico sulla giusta posizione."
+  action: "ATS custom con Chrome Web Clipper che cattura il profilo LinkedIn in 1 click, agente IA per parsing strutturato, workflow per cliente enterprise (150+ candidati per posizione)."
   resultMetric: "1 click da LinkedIn al database arricchito · 150+ candidati gestiti per posizione enterprise"
   resultBody: "I consulenti senior si concentrano sui contatti e sulle conversazioni, non sul data entry."
 stats:
@@ -26,20 +26,19 @@ stats:
   - value: "150+"
     label: "Candidati per posizione"
     sub: "su clienti enterprise"
-  - value: "Vector DB"
-    label: "Matching JD↔candidato"
-    sub: "agente IA in autonomia"
+  - value: "Agente IA"
+    label: "Parsing strutturato"
+    sub: "in autonomia"
 timeline: "15+ mesi di produzione continuativa"
 stack:
   - "Xano (backend)"
   - "WeWeb (frontend consulente)"
-  - "OpenAI (parsing + matching)"
-  - "Vector database (semantic match)"
+  - "OpenAI (parsing strutturato)"
   - "Chrome Web Clipper custom"
   - "LinkedIn integration via clipper"
 screenshots:
   - src: "/case-studies/apraise/01.webp"
-    caption: "Dashboard ATS APraise con feature Potential Match"
+    caption: "Dashboard ATS APraise"
 related:
   - "talent-match"
   - "aegis"
@@ -69,9 +68,7 @@ Soraia ha costruito **APraise ATS**, piattaforma custom che combina ingestion ul
 
 1. **Chrome Web Clipper custom**, il consulente naviga su LinkedIn, trova il profilo target, clicca l'estensione: in **1 click** il profilo viene catturato e inviato all'ATS.
 2. **Agente IA di parsing strutturato**, il profilo grezzo viene processato dall'agente che estrae dati strutturati con accuracy alta: ruolo attuale, esperienze precedenti, anni di seniority, skill, lingue, formazione, settori di esperienza.
-3. **Vector database per matching semantico**, ogni candidato e ogni JD vengono rappresentati come vettori; l'agente calcola la similarità e propone i match più rilevanti.
-4. **Feature Potential Match**, per ogni nuova posizione aperta, l'agente scansiona il database e produce una shortlist motivata con score. Il consulente rivede e contatta, l'agente non scrive mai messaggi al posto del consulente (giudizio relazionale = umano).
-5. **Workflow per cliente enterprise**, gestione di 150+ candidati per posizione su un singolo mandato, con stati strutturati (contattato / interview / shortlist / presentato / closed).
+3. **Workflow per cliente enterprise**, gestione di 150+ candidati per posizione su un singolo mandato, con stati strutturati (contattato / interview / shortlist / presentato / closed).
 
 Il consulente senior recupera ore al giorno per parlare con clienti e candidati. La parte operativa è gestita dall'agente.
 
@@ -80,7 +77,5 @@ Il consulente senior recupera ore al giorno per parlare con clienti e candidati.
 **1 click da LinkedIn al database** arricchito: ciò che prima richiedeva 3-5 minuti di copia-incolla manuale per profilo, oggi è 1 click + revisione di pochi secondi.
 
 **150+ candidati gestiti per posizione enterprise**: il funnel di executive search funziona alla scala richiesta dai clienti di fascia alta.
-
-**Matching semantico via vector DB**: il consulente non deve più ricordare "chi sarebbe perfetto per questa posizione", l'agente lo propone in autonomia con score motivato.
 
 **15+ mesi di produzione continuativa** del sistema: indicatore di solidità operativa e di adattamento dell'agente ai workflow specifici di APraise.
