@@ -1,0 +1,383 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import CaseStudyCardJet from "~/components/CaseStudyCardJet.astro";
+import ProcessCard from "~/components/ProcessCard.astro";
+import ComparisonTable from "~/components/ComparisonTable.astro";
+import FAQ from "~/components/FAQ.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import HeroVisual from "~/components/HeroVisual.astro";
+import CTABanner from "~/components/CTABanner.astro";
+
+const title = "Agenti IA per Real Estate e Property Operations | Soraia";
+const description =
+  "Per agenzie immobiliari, property manager, real estate tech. Agenti che catturano immobili con 1 click, qualificano lead, generano dossier cliente, gestiscono approvazioni multi-stakeholder. Prima delivery in 4 settimane.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "AI Agents per Real Estate & Property Ops. Soraia",
+    provider: {
+      "@type": "Organization",
+      name: "Soraia",
+      url: "https://www.soraia.io",
+    },
+    areaServed: ["IT", "EU"],
+    serviceType: "AI agents for real estate operations and property management",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "AI Readiness Assessment",
+        priceCurrency: "EUR",
+        price: "2000",
+        description: "Assessment 1-2 settimane, rimborsato se procedi con lo sprint.",
+      },
+      {
+        "@type": "Offer",
+        name: "Co-Building Sprint",
+        priceCurrency: "EUR",
+        description: "Sprint €10-50k, prima delivery in 4 settimane.",
+      },
+    ],
+  },
+];
+
+const problems = [
+  {
+    title: "Immobili catturati a mano",
+    description: "Listing, scrap, Excel: ogni nuovo immobile richiede ore di copia-incolla per dati, foto, planimetrie, geolocalizzazione. Il consulente diventa data-entry.",
+  },
+  {
+    title: "Match cliente-immobile a memoria",
+    description: "Il consulente senior ricorda chi cerca cosa. Senza un sistema, il match è opportunistico: clienti dimenticati, immobili giusti proposti tardi.",
+  },
+  {
+    title: "Pipeline approvazioni infinita",
+    description: "Tra incentivi, autorizzazioni, controfirme di proprietari e amministratori, ogni operazione passa per email/PDF. Settimane perse, niente single source of truth.",
+  },
+];
+
+const processes = [
+  {
+    number: "01",
+    title: "Capture, immobile catturato da listing",
+    description:
+      "Da un URL di listing pubblico, l'agente estrae dati strutturati, foto, planimetria, indirizzo. Una scheda completa pronta nel CRM in pochi secondi.",
+    icon: "screen" as const,
+  },
+  {
+    number: "02",
+    title: "Enrichment, dati di contesto autonomi",
+    description:
+      "L'agente arricchisce con zoning, geolocalizzazione precisa, prezzo medio della zona, scuole/servizi, valutazione mercato. Decisioni informate senza ricerca manuale.",
+    icon: "match" as const,
+  },
+  {
+    number: "03",
+    title: "Match cliente-immobile su criteri",
+    description:
+      "Per ogni nuovo immobile, l'agente confronta il portfolio clienti attivi e propone i match con score di affinità. I clienti dormienti tornano in pipeline.",
+    icon: "compass" as const,
+  },
+  {
+    number: "04",
+    title: "Dossier comparativi per cliente",
+    description:
+      "L'agente genera dossier PDF con 3-5 proprietà selezionate sui criteri del cliente. Pronto da inviare via email, condividere sul portale, presentare di persona.",
+    icon: "outreach" as const,
+  },
+  {
+    number: "05",
+    title: "Pipeline approvazioni multi-stakeholder",
+    description:
+      "Ogni operazione (incentivo, autorizzazione, controfirma) ha uno status real-time. Niente più email perse, niente più 'aspetto che X firmi'.",
+    icon: "calendar" as const,
+  },
+  {
+    number: "06",
+    title: "Analytics portfolio e KPI",
+    description:
+      "Tracker portfolio: time-on-market per immobile, conversion-rate per consulente, valore pipeline. Alert quando un nuovo immobile matcha un cliente attivo.",
+    icon: "transcript" as const,
+  },
+];
+
+const featuredCases = [
+  {
+    slug: "frh",
+    client: "French Riviera Househunting",
+    clientLogo: "/logos/clients/frh.webp",
+    quote: "Due agenti IA: uno arricchisce e qualifica ogni lead, l'altro mi permette di catturare con un click gli immobili in target e assegnarli al cliente che li vede sul portale.",
+    dimensioni: "1-10",
+    sector: "Real estate boutique · Costa Azzurra",
+    cardImage: "/testimonials/fabricio-carminati-frh.webp",
+  },
+  {
+    slug: "rainplan",
+    client: "Rainplan",
+    clientLogo: "/logos/clients/rainplan.webp",
+    quote: "Soraia ha costruito la spina dorsale di Rainplan in 18 mesi. Centinaia di parcel, incentive program multipli e approvazioni multi-stakeholder gestite in autonomia.",
+    dimensioni: "51-250",
+    sector: "Climate tech · Stormwater management",
+    cardImage: "/testimonials/russell-fyfe.webp",
+  },
+];
+
+const comparisonRows = [
+  { label: "Capture immobile", values: ["Copia-incolla manuale", "Listing scraper", "1 click da listing + enrichment"] as [string, string, string] },
+  { label: "Match cliente-immobile", values: ["A memoria del consulente", "Filtri sul CRM", "Score automatico + alert"] as [string, string, string] },
+  { label: "Dossier cliente", values: ["Word/PDF manuali", "Template statici", "Generati su misura dall'agente"] as [string, string, string] },
+  { label: "Pipeline approvazioni", values: ["Email + PDF firma", "Excel condiviso", "Multi-stakeholder real-time"] as [string, string, string] },
+  { label: "Analytics portfolio", values: ["Niente", "Export base", "Tracker + alert in tempo reale"] as [string, string, string] },
+];
+
+const faqs = [
+  {
+    q: "Lavoriamo su mandati di pochi immobili di alto valore, non su volumi. Vale la pena?",
+    a: "Sì, anzi è dove gli agenti danno il ROI migliore. Su volumi bassi e alto valore, ogni ora del consulente senior pesa: <strong>liberarlo dal data entry e dal match a memoria</strong> significa più tempo su selezione e relazione, dove il valore si crea davvero. Vedi il caso <a href='/case-studies/frh'>French Riviera Househunting</a>.",
+  },
+  {
+    q: "Su quali sistemi si integra?",
+    a: "Salesforce, HubSpot, Pipedrive, Zoho, gestionali immobiliari custom (Idealista PRO, Casa.it agenzie, CRM proprietari). Per dossier e documenti: Notion, Airtable, Xano, GDrive. Se hai uno stack custom lo validiamo in assessment.",
+  },
+  {
+    q: "Quanto tempo per il primo agente in produzione?",
+    a: "<strong>4 settimane dal go</strong>. Settimana 1 discovery + baseline. Settimane 2-3 build (capture + enrichment + integrazione CRM). Settimana 4 deploy + training del team + prima misurazione. 30 giorni di hypercare inclusi.",
+  },
+  {
+    q: "Come gestite GDPR e dati clienti?",
+    a: "Agenti in ambiente cloud europeo o on-premise sulla tua infrastruttura. <strong>Nessun training sui tuoi dati</strong>. Log completi di ogni decisione dell'agente. DPA art. 28 incluso nel contratto.",
+  },
+  {
+    q: "Quanto costa?",
+    a: "Assessment €2.000 (rimborsato se procedi). Sprint €10-50k secondo complessità, prezzo definito in proposta dopo l'assessment. <strong>Paghi solo se sei soddisfatto</strong>: se al go-live + 30 giorni il target non è raggiunto, lavoriamo gratis fino a quando non succede.",
+  },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+        <div style="color: #fff;">
+          <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
+            <span class="w-1 h-1 rounded-full bg-amber"></span>
+            Property Ops · AI Agents
+          </p>
+
+          <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+            Immobili catturati,<br/>clienti matchati, dossier pronti.
+          </h1>
+
+          <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+            Agenti IA che catturano gli immobili con 1 click, propongono il match cliente, generano dossier su misura, gestiscono pipeline di approvazioni multi-stakeholder. Il consulente torna a fare il consulente.
+          </p>
+
+          <div class="mt-6 inline-flex items-center gap-2 fade-up fade-up-delay-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
+            </svg>
+            <span class="text-[14px] font-medium" style="color: #F4B842;">Paghi solo se sei soddisfatto. Garanzia inclusa.</span>
+          </div>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+            <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+              20 min con Daniel
+              <span class="btn-arrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+            <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
+              Vedi i case studies
+            </a>
+          </div>
+
+          <div class="mt-12 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] fade-up fade-up-delay-4">
+            <div class="inline-flex items-center gap-2">
+              <span class="w-1 h-1 rounded-full bg-amber"></span>
+              <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">1 click</strong> da listing a CRM</span>
+            </div>
+            <div class="inline-flex items-center gap-2">
+              <span class="w-1 h-1 rounded-full bg-amber"></span>
+              <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">Match automatico</strong> cliente-immobile</span>
+            </div>
+            <div class="inline-flex items-center gap-2">
+              <span class="w-1 h-1 rounded-full bg-amber"></span>
+              <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">Pipeline real-time</strong> multi-stakeholder</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden lg:flex justify-end fade-up fade-up-delay-3">
+          <HeroVisual filter="real-estate" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST LINE
+       ============================================================ -->
+  <section class="py-12 md:py-14 border-y border-ink-200 bg-white">
+    <div class="container-soraia text-center">
+      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 mb-4">
+        Già scelto da agenzie immobiliari e real estate tech
+      </p>
+      <p class="text-[16px]" style="color: var(--color-ink-muted);">
+        <a href="/case-studies/frh" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">French Riviera Househunting</a>
+        ·
+        <a href="/case-studies/rainplan" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">Rainplan</a>
+        · clienti attivi
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROBLEMA
+       ============================================================ -->
+  <section id="problema" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Il problema"
+        title="Il consulente immobiliare passa metà giornata facendo data entry."
+        subtitle="Capture immobili a mano, match cliente fatto a memoria, pipeline approvazioni che si trascinano per settimane via email e PDF. Il valore del consulente sta nella selezione e nella relazione, non nel copia-incolla."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        {problems.map((p) => (
+          <article class="card-editorial reveal flex flex-col gap-3 !p-7">
+            <div class="w-9 h-9 rounded-lg bg-violet-50 text-violet-700 flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+              </svg>
+            </div>
+            <h3 class="font-medium text-ink leading-tight" style="font-size: 18px;">{p.title}</h3>
+            <p class="text-[15px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{p.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6 PROCESSI
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="La soluzione"
+        title="6 agenti orchestrati sul ciclo completo Property Ops."
+        subtitle="Dall'immobile catturato al cliente che lo vede in dossier, fino all'approvazione finale. Ogni step coperto da un agente IA che dialoga con i tuoi sistemi esistenti."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {processes.map((p) => (
+          <ProcessCard {...p} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GARANZIA
+       ============================================================ -->
+  <section class="section bg-hero-dark relative overflow-hidden">
+    <div class="container-soraia relative z-10">
+      <div class="max-w-3xl reveal" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          La garanzia
+        </p>
+
+        <h2 style="color: #fff; font-size: clamp(2rem, 4vw + 0.5rem, 3rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;" class="text-balance">
+          Prima delivery in 4 settimane.<br/><span style="color: rgba(255,255,255,0.45);">Se l'agente non recupera le ore, lavoriamo gratis.</span>
+        </h2>
+
+        <p style="color: rgba(255,255,255,0.72);" class="mt-7 text-[17px] leading-relaxed max-w-2xl text-pretty">
+          Lo sprint ha un target chiaro fissato in assessment (es: <em>agente di capture immobili che recupera 5h/consulente/settimana</em>). Se al go-live + 30 giorni di hypercare il target non è raggiunto, lavoriamo gratis fino a quando non succede, oppure rimborsiamo lo sprint.
+        </p>
+
+        <p style="color: rgba(255,255,255,0.55);" class="mt-4 text-[15px] leading-relaxed max-w-2xl text-pretty">
+          Assessment €2.000, rimborsato se procedi. Sprint €10-50k, prezzo definito in proposta. Il codice è tuo dal primo giorno, niente abbonamenti perpetui.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CASE STUDIES
+       ============================================================ -->
+  <section id="cases" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Case studies"
+        title="Già in produzione su agenzie e real estate tech."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {featuredCases.map((c) => (
+          <CaseStudyCardJet
+            href={`/case-studies/${c.slug}`}
+            client={c.client}
+            clientLogo={c.clientLogo}
+            quote={c.quote}
+            dimensioni={c.dimensioni}
+            sector={c.sector}
+            cardImage={c.cardImage}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPARISON TABLE
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia max-w-5xl">
+      <SectionHeader
+        eyebrow="Confronto"
+        title="Cosa cambia rispetto al come si lavora oggi."
+        align="center"
+      />
+
+      <ComparisonTable
+        columns={["Status quo manuale", "CRM generico", "Soraia · Property Ops"]}
+        rows={comparisonRows}
+      />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia max-w-4xl">
+      <SectionHeader
+        eyebrow="Domande frequenti"
+        title="Quello che ci chiedono di solito."
+        align="center"
+      />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINALE
+       ============================================================ -->
+  <CTABanner
+    title="20 minuti col CEO. Senza pitch."
+    description="Capiamo insieme se ha senso fare l'AI Readiness Assessment sul tuo caso. Nessun impegno, nessuna vendita."
+    ctaText="20 min con Daniel"
+    ctaHref="/parliamone"
+    avatarName="Daniel Levis"
+    avatarRole="Co-Founder & CEO"
+    avatarSrc="/team/daniel-levis.png"
+  />
+</Layout>

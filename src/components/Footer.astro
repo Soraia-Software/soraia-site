@@ -23,6 +23,7 @@ const labels = {
     nav_finance: "Finance & Accounting",
     nav_sales: "Sales & Marketing",
     nav_support: "Customer Support",
+    nav_real_estate: "Real Estate",
     nav_events: "Event Management",
     nav_blog: "Blog & Insights",
     nav_sample: "Assessment di esempio",
@@ -50,6 +51,7 @@ const labels = {
     nav_finance: "Finance & Accounting",
     nav_sales: "Sales & Marketing",
     nav_support: "Customer Support",
+    nav_real_estate: "Real Estate",
     nav_events: "Event Management",
     nav_blog: "Blog & Insights",
     nav_sample: "Sample assessment",
@@ -116,6 +118,7 @@ const p = (path: string) => (lang === "en" ? "/en" + path : path);
           <li><a href={p("/finance")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_finance}</a></li>
           <li><a href={p("/sales-marketing")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_sales}</a></li>
           <li><a href={p("/customer-support")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_support}</a></li>
+          <li><a href={p("/real-estate")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_real_estate}</a></li>
           <li><a href={p("/event-management")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_events}</a></li>
         </ul>
       </div>

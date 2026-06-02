@@ -6,7 +6,7 @@ import FAQ from "~/components/FAQ.astro";
 
 const title = "AI Agents per i tuoi processi | Soraia";
 const description =
-  "Agenti IA su misura per cinque aree ad alto impatto delle PMI italiane. AI Readiness Assessment a 2.000€, Co-Building Sprint a 10–50k. Prima delivery in 4 settimane, paghi solo se sei soddisfatto.";
+  "Agenti IA su misura per sei aree ad alto impatto delle PMI italiane. AI Readiness Assessment a 2.000€, Co-Building Sprint a 10–50k. Prima delivery in 4 settimane, paghi solo se sei soddisfatto.";
 
 const areas = [
   {
@@ -21,7 +21,7 @@ const areas = [
       "Calendario colloqui autonomo (candidato + cliente + team)",
       "BD prospecting su aziende in hiring spike",
     ],
-    proof: "APraise: €360.000 risparmiati l'anno, 19 giorni-uomo a settimana liberati.",
+    proof: "APraise: 100k+ candidati gestiti dall'agente IA. Come avere 4 recruiter in più, senza il costo.",
     href: "/recruitment",
     available: true,
     icon: "users",
@@ -57,7 +57,7 @@ const areas = [
       "Outreach personalizzato a scala",
       "Reporting performance senza dashboards manuali",
     ],
-    proof: "KB&B: 750 ore liberate l'anno, 7 ore risparmiate su ogni articolo pubblicato.",
+    proof: "ILTEC: sito rifatto in 3 settimane, AI search optimized + AI agent per assistenza tecnica/commerciale dal QR code.",
     href: "/sales-marketing",
     available: true,
     icon: "chart",
@@ -75,7 +75,7 @@ const areas = [
       "Log e audit trail di ogni decisione",
       "Routing intelligente al team giusto",
     ],
-    proof: "Navily: -70% tempo di moderazione, accuracy mantenuta. Diplotools: compliance gov-grade.",
+    proof: "Navily: -70% tempo operativo su moderazione ed enrichment. Il team torna sul prodotto.",
     href: "/customer-support",
     available: true,
     icon: "shield",
@@ -99,6 +99,24 @@ const areas = [
     icon: "ticket",
     priceHint: "Linkly SaaS · €1.900/anno early adopter",
   },
+  {
+    eyebrow: "Property Ops",
+    title: "Real Estate Operations",
+    description:
+      "Per agenzie immobiliari, property manager, real estate tech. Agenti che catturano immobili, qualificano lead, generano dossier e gestiscono approvazioni multi-stakeholder.",
+    tasks: [
+      "Capture immobili da listing con 1 click",
+      "Enrichment immobile (zoning, geo, foto, planimetria)",
+      "Match automatico immobile-cliente sul portale",
+      "Dossier comparativi pronti per il cliente",
+      "Pipeline approvazioni multi-stakeholder",
+    ],
+    proof: "FRH: 2 agenti per lead qualificati + immobili catturati con 1 click. Rainplan: centinaia di parcel e approvazioni multi-stakeholder in autonomia.",
+    href: "/real-estate",
+    available: true,
+    icon: "building",
+    priceHint: "Sprint €10-50k · 4 settimane al go-live",
+  },
 ];
 
 const icons = {
@@ -107,6 +125,7 @@ const icons = {
   chart: `<path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 5-5"/>`,
   shield: `<path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>`,
   ticket: `<path d="M3 7v2a2 2 0 0 1 0 4v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-4V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><line x1="13" y1="5" x2="13" y2="19"/>`,
+  building: `<rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="22" x2="9" y2="18"/><line x1="15" y1="22" x2="15" y2="18"/><line x1="8" y1="6" x2="10" y2="6"/><line x1="14" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/>`,
 };
 
 const faqs = [

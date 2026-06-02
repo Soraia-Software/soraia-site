@@ -29,6 +29,8 @@ const caseStudies = defineCollection({
       "sustainability",
       "public-sector",
       "industrial-iot",
+      "sales-marketing",
+      "real-estate",
     ]).default("recruitment-hr"),
     pubDate: z.coerce.date(),
     featured: z.boolean().default(false),

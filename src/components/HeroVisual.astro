@@ -68,6 +68,20 @@ const allIndustries = [
     ],
   },
   {
+    id: "real-estate",
+    label: "Real Estate",
+    industryIcon: "building",
+    role: "Per agenzie immobiliari, property manager, real estate tech",
+    events: [
+      { agent: "CAPTURE",    icon: "doc",      text: "Immobile catturato da listing · scheda generata 1-click" },
+      { agent: "ENRICHMENT", icon: "search",   text: "+zoning · +geolocalizzazione · +foto · +planimetria" },
+      { agent: "MATCH",      icon: "check",    text: "Match cliente-immobile · score affinità portfolio" },
+      { agent: "DOSSIER",    icon: "doc",      text: "Dossier comparativo cliente · 5 proprietà selezionate" },
+      { agent: "APPROVAL",   icon: "calendar", text: "Pipeline multi-stakeholder · status real-time" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "Portfolio KPI tracker · alert match in tempo reale" },
+    ],
+  },
+  {
     id: "events",
     label: "Event Management",
     industryIcon: "ticket",
@@ -117,6 +131,7 @@ const icons: Record<string, string> = {
   headphones: `<path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>`,
   target: `<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>`,
   ticket: `<path d="M3 7v2a2 2 0 0 1 0 4v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-4V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><line x1="13" y1="5" x2="13" y2="19"/>`,
+  building: `<rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="22" x2="9" y2="18"/><line x1="15" y1="22" x2="15" y2="18"/><line x1="8" y1="6" x2="10" y2="6"/><line x1="14" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/>`,
 };
 ---
 
