@@ -17,6 +17,7 @@ const labels = {
     col_legal: "Legali",
     nav_agents: "AI Agents",
     nav_adoption: "AI Adoption",
+    nav_search_opt: "AI Search Optimization",
     nav_scorecard: "Check-up IA",
     nav_recruitment: "Recruiting & HR",
     nav_finance: "Finance & Accounting",
@@ -44,6 +45,7 @@ const labels = {
     col_legal: "Legal",
     nav_agents: "AI Agents",
     nav_adoption: "AI Adoption",
+    nav_search_opt: "AI Search Optimization",
     nav_scorecard: "Check-up IA",
     nav_recruitment: "Recruiting & HR",
     nav_finance: "Finance & Accounting",
@@ -105,6 +107,7 @@ const p = (path: string) => (lang === "en" ? "/en" + path : path);
         <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
           <li><a href={p("/ai-adoption")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_adoption}</a></li>
           <li><a href={p("/ai-agents")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_agents}</a></li>
+          <li><a href={p("/ai-search-optimization")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_search_opt}</a></li>
         </ul>
       </div>
 
