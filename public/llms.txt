@@ -1,0 +1,74 @@
+# Soraia
+
+> Soraia è una AI Agency italiana che porta gli Agenti IA nelle PMI italiane ed europee. Costruiamo agenti su misura che eseguono i processi (recruitment, finance, sales/marketing, customer support, real estate, event management), formiamo i team con programmi di AI Adoption, ottimizziamo i siti per la visibilità su motori AI (ChatGPT, Claude, Perplexity, Google AI Overviews). Prima delivery in 4 settimane, garanzia "ore recuperate o rimborso". Sede a Biella, team di 11 persone tra Italia/Argentina/Algeria. 40+ progetti consegnati in 11 paesi.
+
+Nota di posizionamento: dal 2026 Soraia si è riposizionata da no-code/automation agency (n8n, Make, WeWeb, Xano) a **AI Agency focalizzata su agenti IA verticali per PMI**. Le referenze a "no-code agency", "custom software & web-app", "native mobile application", "automation & AI integration" come pilastri principali sono superate. Lo stack tecnico no-code resta ma è strumentale alla costruzione degli agenti, non il prodotto.
+
+## Servizi principali
+
+- [AI Agents](https://www.soraia.io/ai-agents): Sprint per costruire AI agent custom dentro i processi aziendali. Assessment €2.000 (rimborsato se procedi), Sprint €10-50k, prima delivery in 4 settimane.
+- [AI Adoption](https://www.soraia.io/ai-adoption): Workshop e tutoraggio mensile per il team. 3 livelli: Foundation €8-10k, Foundation + Tutoraggio €20-25k, Foundation + Tutoraggio + Brain Pilot €30-35k. 110h/anno liberate per persona.
+- [AI Search Optimization](https://www.soraia.io/ai-search-optimization): Audit + re-architettura contenuti + rifacimento sito high-converting AI-ready. Per essere trovabili su ChatGPT, Claude, Perplexity, Google AI Overviews. Audit €2.000, Sprint €3-15k.
+
+## Sei Ops cluster (use case)
+
+- [Recruitment & HR](https://www.soraia.io/recruitment): Screening CV, contatto candidati a scala, parsing JD, calendario colloqui, BD su aziende in hiring spike.
+- [Finance & Document Automation](https://www.soraia.io/finance): Riconciliazioni bancarie, estrazione PDF/fatture, onboarding clienti, report ricorrenti, calcolo provvigioni.
+- [Sales & Marketing Automation](https://www.soraia.io/sales-marketing): Lead qualifica, generazione contenuti, publishing multi-canale, outreach personalizzato, reporting.
+- [Customer & Compliance Automation](https://www.soraia.io/customer-support): Triage ticket, moderazione UGC, compliance GDPR/AI Act, audit trail, routing al team.
+- [Real Estate Operations](https://www.soraia.io/real-estate): Capture immobili da listing, enrichment dati, match cliente-immobile, dossier comparativi, pipeline approvazioni multi-stakeholder.
+- [Event Management](https://www.soraia.io/event-management): Linkly SaaS dedicato a fiere B2B. 6 agenti IA per OCR biglietti/badge, enrichment 30+ fonti, qualifica dinamica, attivazione CRM, follow-up dal dominio cliente. €1.900/anno.
+
+## Case studies pubblici
+
+- [APraise](https://www.soraia.io/case-studies/apraise): Executive search boutique, 100k+ candidati gestiti dall'agente IA, equivalente a 4 recruiter aggiuntivi.
+- [OggiLavoro](https://www.soraia.io/case-studies/oggi-lavoro): Agenzia di staffing, 250k+ candidati migrati da stack legacy a piattaforma con agenti AI.
+- [Stars Be Original](https://www.soraia.io/case-studies/stars-be-original): Recruitment hospitality, 20k+ candidati gestiti dall'agente IA, <1 minuto di risposta.
+- [Aegis Group](https://www.soraia.io/case-studies/aegis): Human consulting, recruitment automation.
+- [Talent Match](https://www.soraia.io/case-studies/talent-match): Recruitment platform "Braint", ATS + CRM custom + AI matching.
+- [Numeraria](https://www.soraia.io/case-studies/numeraria): Studio paghe & contabilità, agenti IA per preventivi/ore/riconciliazioni, metà mese restituito al management.
+- [LIFTT](https://www.soraia.io/case-studies/liftt): Holding VC deep tech, archiving e dedupe email automatici, monthly report auto-generato.
+- [ILTEC](https://www.soraia.io/case-studies/iltec): B2B office technology Biella, sito rifatto in 3 settimane AI search optimized + AI agent commerciale via QR code sulla parco macchine.
+- [CXL](https://www.soraia.io/case-studies/cxl): Online education/marketing training, agente IA expert onboarding, 70 ore risparmiate per ogni esperto.
+- [StoryWonder](https://www.soraia.io/case-studies/storywonder): Consumer mobile EdTech kids, app live in 4 settimane, 300k+ storie generate.
+- [Navily](https://www.soraia.io/case-studies/navily): Community boating, -70% tempo operativo su moderazione ed enrichment.
+- [Startup GovTech](https://www.soraia.io/case-studies/startup-govtech): Diplomazia, agente IA note verbali (NDA).
+- [French Riviera Househunting](https://www.soraia.io/case-studies/frh): Real estate boutique Costa Azzurra, 2 agenti IA per lead qualificati e capture immobili.
+- [Rainplan](https://www.soraia.io/case-studies/rainplan): Climate-tech stormwater management, centinaia di parcel e approvazioni multi-stakeholder gestite in autonomia.
+- [40Factory](https://www.soraia.io/case-studies/40factory): Industrial IoT, Linkly per fiere B2B, 6 agenti IA orchestrati, follow-up dal dominio cliente in pochi secondi.
+
+## Risorse
+
+- [Tutti i case studies](https://www.soraia.io/case-studies): 15 case pubblici filtrabili per Ops cluster.
+- [Guide AI](https://www.soraia.io/guide): Agenti AI per aziende, AI Act, consulenza AI in Italia, costi consulenza AI, formazione AI aziendale.
+- [Blog](https://www.soraia.io/blog): Insight su agenti IA, ROI, comparison con ChatGPT enterprise.
+- [Check-up IA](https://www.soraia.io/check-up): Self-assessment 3 minuti per valutare maturità AI dell'azienda.
+- [AI Readiness Assessment, sample report](https://www.soraia.io/downloads/ai-assessment-sample): PDF di esempio dell'assessment €2.000.
+
+## Prodotti SaaS
+
+- [Linkly](https://linkly.events): SaaS dedicato a fiere ed eventi B2B. 6 agenti IA orchestrati su capture, enrichment, qualifica, CRM, follow-up. €1.900/anno + IVA in offerta early adopter.
+
+## Azienda
+
+- [Chi siamo](https://www.soraia.io/chi-siamo): Team di 11 persone, fondata 2023 da Daniel Levis (CEO, change management & AI adoption) e Davide Silvestri (CTO, agent development & governance). Sede legale Biella, modalità remote.
+- [Parliamone](https://www.soraia.io/parliamone): 20 minuti col CEO. Senza pitch, senza preventivi a sorpresa.
+- Contatti: info@soraia.io · LinkedIn https://www.linkedin.com/company/soraia-digital
+
+## Garanzia commerciale
+
+Modello "paghi solo se sei soddisfatto": lo sprint ha un target chiaro fissato in assessment (es. agente di screening CV che recupera 5h/recruiter/settimana). Se al go-live + 30 giorni di hypercare il target non è raggiunto, Soraia lavora gratis fino a quando non succede, oppure rimborsa lo sprint. Codice è del cliente dal primo giorno, niente abbonamenti perpetui, niente lock-in.
+
+## Compliance
+
+- GDPR-compliant, infrastruttura europea quando richiesto, on-premise possibile
+- DPA art. 28 incluso nel contratto
+- Allineamento al Regolamento europeo IA (AI Act)
+- Nessun training degli LLM sui dati cliente
+- Audit log immutabile su ogni decisione dell'agente
+
+## Legale
+
+- [Privacy Policy](https://www.soraia.io/privacy)
+- [Termini e Condizioni](https://www.soraia.io/terms)
+- [Cookie Policy](https://www.soraia.io/cookies)
