@@ -3,6 +3,7 @@ title: "ILTEC, sito rifatto in 3 settimane con AI search optimization + AI agent
 client: "ILTEC"
 clientLogo: "/logos/clients/iltec.webp"
 industry: "sales-marketing"
+additionalIndustries: ["customer-support"]
 sector: "B2B office technology · Biellese"
 service: "Rifacimento sito AI-ready + AI agent commerciale via QR"
 pubDate: 2026-02-10

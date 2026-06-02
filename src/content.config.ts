@@ -30,6 +30,14 @@ const caseStudies = defineCollection({
       "real-estate",
       "event-management",
     ]).default("recruitment-hr"),
+    additionalIndustries: z.array(z.enum([
+      "recruitment-hr",
+      "finance-vc",
+      "sales-marketing",
+      "customer-support",
+      "real-estate",
+      "event-management",
+    ])).default([]),  // case che ricadono in più Ops cluster (es. ILTEC: sales-marketing + customer-support)
     pubDate: z.coerce.date(),
     featured: z.boolean().default(false),
     stakeholder: z.object({

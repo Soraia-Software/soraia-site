@@ -32,15 +32,19 @@ function cardQuote(c: typeof cases[number]): string {
   return q.length > 140 ? q.slice(0, 137).trimEnd() + "…" : q;
 }
 
-// Industry filter taxonomy, allineata ai 6 Ops cluster del sito
+// Industry filter taxonomy, allineata ai 6 Ops cluster del sito.
+// Un case può appartenere a primary industry + additionalIndustries (es. ILTEC: sales-marketing + customer-support).
+const matchesIndustry = (c: typeof cases[number], id: string) =>
+  c.data.industry === id || (c.data.additionalIndustries || []).includes(id as any);
+
 const industryFilters = [
   { id: "all",                 label: "Tutti",              count: cases.length },
-  { id: "recruitment-hr",      label: "Recruitment & HR",   count: cases.filter((c) => c.data.industry === "recruitment-hr").length },
-  { id: "finance-vc",          label: "Finance & VC",       count: cases.filter((c) => c.data.industry === "finance-vc").length },
-  { id: "sales-marketing",     label: "Sales & Marketing",  count: cases.filter((c) => c.data.industry === "sales-marketing").length },
-  { id: "customer-support",    label: "Customer Support",   count: cases.filter((c) => c.data.industry === "customer-support").length },
-  { id: "real-estate",         label: "Real Estate",        count: cases.filter((c) => c.data.industry === "real-estate").length },
-  { id: "event-management",    label: "Event Management",   count: cases.filter((c) => c.data.industry === "event-management").length },
+  { id: "recruitment-hr",      label: "Recruitment & HR",   count: cases.filter((c) => matchesIndustry(c, "recruitment-hr")).length },
+  { id: "finance-vc",          label: "Finance & VC",       count: cases.filter((c) => matchesIndustry(c, "finance-vc")).length },
+  { id: "sales-marketing",     label: "Sales & Marketing",  count: cases.filter((c) => matchesIndustry(c, "sales-marketing")).length },
+  { id: "customer-support",    label: "Customer Support",   count: cases.filter((c) => matchesIndustry(c, "customer-support")).length },
+  { id: "real-estate",         label: "Real Estate",        count: cases.filter((c) => matchesIndustry(c, "real-estate")).length },
+  { id: "event-management",    label: "Event Management",   count: cases.filter((c) => matchesIndustry(c, "event-management")).length },
 ];
 ---
 
@@ -81,21 +85,25 @@ const industryFilters = [
         ))}
       </div>
 
-      <!-- Case study grid (JetHR-style cards, JS filters via data attr) -->
+      <!-- Case study grid (JetHR-style cards, JS filters via data attr).
+           data-industries = CSV (primary + additionalIndustries). Filter logic checks contains. -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" data-case-grid>
-        {cases.map((c) => (
-          <div class="cs-grid-item" data-industry={c.data.industry}>
-            <CaseStudyCardJet
-              href={`/case-studies/${c.id}`}
-              client={c.data.client}
-              clientLogo={c.data.clientLogo}
-              quote={cardQuote(c)}
-              dimensioni={c.data.dimensioni}
-              sector={c.data.sector}
-              cardImage={c.data.cardImage || photoMap[c.id]}
-            />
-          </div>
-        ))}
+        {cases.map((c) => {
+          const industries = [c.data.industry, ...(c.data.additionalIndustries || [])].join(",");
+          return (
+            <div class="cs-grid-item" data-industries={industries}>
+              <CaseStudyCardJet
+                href={`/case-studies/${c.id}`}
+                client={c.data.client}
+                clientLogo={c.data.clientLogo}
+                quote={cardQuote(c)}
+                dimensioni={c.data.dimensioni}
+                sector={c.data.sector}
+                cardImage={c.data.cardImage || photoMap[c.id]}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <!-- Empty state -->
@@ -151,7 +159,8 @@ const industryFilters = [
 
           let visibleCount = 0;
           cards.forEach((card) => {
-            const match = filter === "all" || card.dataset.industry === filter;
+            const industries = (card.dataset.industries || "").split(",");
+            const match = filter === "all" || industries.includes(filter);
             card.style.display = match ? "" : "none";
             if (match) visibleCount++;
           });
