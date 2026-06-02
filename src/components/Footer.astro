@@ -11,7 +11,7 @@ const labels = {
     tagline_big: "Agenti IA per le PMI Italiane.",
     tagline_small: "AI Adoption per i tuoi team. Costruiamo, formiamo, garantiamo.",
     col_solutions: "Soluzioni",
-    col_industries: "Settori",
+    col_industries: "Use case",
     col_resources: "Risorse",
     col_company: "Soraia",
     col_legal: "Legali",
@@ -21,9 +21,8 @@ const labels = {
     nav_scorecard: "Check-up IA",
     nav_recruitment: "Recruiting & HR",
     nav_finance: "Finance & Accounting",
-    nav_vc: "Venture Capital",
-    nav_support: "Customer Support",
     nav_sales: "Sales & Marketing",
+    nav_support: "Customer Support",
     nav_events: "Event Management",
     nav_blog: "Blog & Insights",
     nav_sample: "Assessment di esempio",
@@ -39,7 +38,7 @@ const labels = {
     tagline_big: "AI Agents for European SMEs.",
     tagline_small: "AI Adoption for your team. We build, train, guarantee.",
     col_solutions: "Solutions",
-    col_industries: "Industries",
+    col_industries: "Use case",
     col_resources: "Resources",
     col_company: "Soraia",
     col_legal: "Legal",
@@ -49,9 +48,8 @@ const labels = {
     nav_scorecard: "Check-up IA",
     nav_recruitment: "Recruiting & HR",
     nav_finance: "Finance & Accounting",
-    nav_vc: "Venture Capital",
-    nav_support: "Customer Support",
     nav_sales: "Sales & Marketing",
+    nav_support: "Customer Support",
     nav_events: "Event Management",
     nav_blog: "Blog & Insights",
     nav_sample: "Sample assessment",
@@ -116,9 +114,8 @@ const p = (path: string) => (lang === "en" ? "/en" + path : path);
         <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
           <li><a href={p("/recruitment")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_recruitment}</a></li>
           <li><a href={p("/finance")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_finance}</a></li>
-          <li><a href={p("/venture-capital")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_vc}</a></li>
-          <li><a href={p("/customer-support")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_support}</a></li>
           <li><a href={p("/sales-marketing")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_sales}</a></li>
+          <li><a href={p("/customer-support")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_support}</a></li>
           <li><a href={p("/event-management")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_events}</a></li>
         </ul>
       </div>

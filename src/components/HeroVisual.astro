@@ -9,6 +9,7 @@ interface Props {
 
 const { filter } = Astro.props;
 
+// Default feed shows 5 Ops cluster (no VC). VC resta accessibile via filter prop su /venture-capital.
 const allIndustries = [
   {
     id: "hr",
@@ -39,17 +40,17 @@ const allIndustries = [
     ],
   },
   {
-    id: "vc",
-    label: "Venture Capital",
-    industryIcon: "trending",
-    role: "Per fondi VC/PE, family office, M&A",
+    id: "sales",
+    label: "Sales & Marketing",
+    industryIcon: "target",
+    role: "Per sales teams, growth, marketing ops",
     events: [
-      { agent: "INTAKE",     icon: "doc",      text: "14 deck letti · sintesi 1-pager generata" },
-      { agent: "ENRICHMENT", icon: "search",   text: "+Crunchbase · +PitchBook · +founder LinkedIn" },
-      { agent: "SCORE",      icon: "check",    text: "Scoring multi-criterio · top-quartile flagged" },
-      { agent: "DD",         icon: "doc",      text: "Due diligence room organizzata · 32 docs" },
-      { agent: "MONITOR",    icon: "calendar", text: "Portfolio KPI tracker · alerts settati" },
-      { agent: "ANALYTICS",  icon: "chart",    text: "8 ore senior team risparmiate per deal" },
+      { agent: "PROSPECT",   icon: "search",   text: "240 lead identificati · ICP match score" },
+      { agent: "ENRICHMENT", icon: "doc",      text: "+contatti · +tech stack · +intent signals" },
+      { agent: "QUALIFY",    icon: "check",    text: "BANT score · pipeline-ready filter" },
+      { agent: "OUTREACH",   icon: "mail",     text: "Sequence multi-canale personalizzata" },
+      { agent: "TRACK",      icon: "calendar", text: "Engagement + reply tracking · auto follow-up" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "Pipeline qualificato +42% trimestre" },
     ],
   },
   {
@@ -67,20 +68,6 @@ const allIndustries = [
     ],
   },
   {
-    id: "sales",
-    label: "Sales & Marketing",
-    industryIcon: "target",
-    role: "Per sales teams, growth, marketing ops",
-    events: [
-      { agent: "PROSPECT",   icon: "search",   text: "240 lead identificati · ICP match score" },
-      { agent: "ENRICHMENT", icon: "doc",      text: "+contatti · +tech stack · +intent signals" },
-      { agent: "QUALIFY",    icon: "check",    text: "BANT score · pipeline-ready filter" },
-      { agent: "OUTREACH",   icon: "mail",     text: "Sequence multi-canale personalizzata" },
-      { agent: "TRACK",      icon: "calendar", text: "Engagement + reply tracking · auto follow-up" },
-      { agent: "ANALYTICS",  icon: "chart",    text: "Pipeline qualificato +42% trimestre" },
-    ],
-  },
-  {
     id: "events",
     label: "Event Management",
     industryIcon: "ticket",
@@ -94,11 +81,27 @@ const allIndustries = [
       { agent: "ANALYTICS",  icon: "chart",    text: "Pipeline €1,6M · €284/lead · report executive" },
     ],
   },
+  // Hidden dal feed di default. Solo via filter="vc" su /venture-capital.
+  {
+    id: "vc",
+    label: "Venture Capital",
+    industryIcon: "trending",
+    role: "Per fondi VC/PE, family office, M&A",
+    defaultHidden: true,
+    events: [
+      { agent: "INTAKE",     icon: "doc",      text: "14 deck letti · sintesi 1-pager generata" },
+      { agent: "ENRICHMENT", icon: "search",   text: "+Crunchbase · +PitchBook · +founder LinkedIn" },
+      { agent: "SCORE",      icon: "check",    text: "Scoring multi-criterio · top-quartile flagged" },
+      { agent: "DD",         icon: "doc",      text: "Due diligence room organizzata · 32 docs" },
+      { agent: "MONITOR",    icon: "calendar", text: "Portfolio KPI tracker · alerts settati" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "8 ore senior team risparmiate per deal" },
+    ],
+  },
 ];
 
 const industries = filter
   ? allIndustries.filter((i) => i.id === filter)
-  : allIndustries;
+  : allIndustries.filter((i) => !i.defaultHidden);
 const showTabs = !filter;
 
 const icons: Record<string, string> = {
