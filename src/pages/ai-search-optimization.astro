@@ -45,7 +45,11 @@ const icons = {
 const faqs = [
   {
     q: "Quanto costa un audit AI Search?",
-    a: "Audit standalone parte da <strong>2.500€ + IVA</strong>, consegna in 2 settimane. Include mappa visibility attuale su ChatGPT, Claude, Perplexity e Google AI Overviews, gap analysis sui primi 3-5 competitor, lista prioritaria di interventi.",
+    a: "<strong>€2.000 + IVA</strong>, consegna in 2 settimane. Include mappa visibility attuale su ChatGPT, Claude, Perplexity e Google AI Overviews, gap analysis sui primi 3-5 competitor, lista prioritaria di interventi. <strong>L'audit è rimborsato se procedi con lo sprint</strong>, quindi se andiamo avanti insieme paghi solo lo sprint.",
+  },
+  {
+    q: "Quanto costa lo sprint di ottimizzazione?",
+    a: "<strong>€3-15k secondo la complessità</strong>. €3-5k per re-architettura contenuti su sito esistente. €8-15k per rifacimento sito completo high converting + AI-ready. Tutto il prezzo definito in proposta dopo l'audit, no scope creep.",
   },
   {
     q: "Quanto tempo per vedere risultati sui motori AI?",
@@ -86,6 +90,21 @@ const jsonLd = [
       "Generative engine optimization (GEO). Visibility su ChatGPT, Claude, Perplexity, Google AI Overviews.",
     description:
       "Audit, re-architettura contenuti, rifacimento sito high converting e monitoring per essere trovabili sui motori di ricerca AI.",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "AI Search Audit",
+        priceCurrency: "EUR",
+        price: "2000",
+        description: "Audit visibility su ChatGPT, Claude, Perplexity, Google AI Overviews + gap analysis competitor. 2 settimane. Rimborsato se procedi con lo sprint.",
+      },
+      {
+        "@type": "Offer",
+        name: "AI Search Sprint",
+        priceCurrency: "EUR",
+        description: "Sprint €3-15k secondo complessità. Re-architettura contenuti o rifacimento sito high converting + AI-ready.",
+      },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -199,6 +218,132 @@ const jsonLd = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OFFERTA. 2 STEP PRICING
+       ============================================================ -->
+  <section id="come-iniziamo" class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Come iniziamo"
+        title="Due passi. Prezzo definito. Audit rimborsato se prosegui."
+        subtitle="Niente preventivi infiniti. Si parte da un audit chiaro a prezzo fisso, e si decide insieme se andare avanti."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <!-- STEP 01: AUDIT -->
+        <article class="card-editorial relative reveal !p-8 md:!p-10 flex flex-col">
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="text-[3rem] font-semibold text-ink-200 leading-none">01</span>
+            <span class="eyebrow">Punto di partenza</span>
+          </div>
+
+          <h3 class="text-[1.75rem] md:text-[2rem] font-semibold tracking-tight text-ink-900 leading-[1.1] mb-3">
+            AI Search Audit
+          </h3>
+          <p class="text-[15px] text-ink-700 leading-relaxed text-pretty mb-7 flex-1">
+            Mappiamo come ti citano oggi ChatGPT, Claude, Perplexity e Google AI Overviews per le query rilevanti del tuo settore. Gap analysis competitor, ranking per prompt, lista prioritaria di interventi.
+          </p>
+
+          <div class="hairline mb-6"></div>
+
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-1.5">Investimento</p>
+              <p class="text-2xl md:text-3xl font-semibold text-ink-900 leading-none">€2.000</p>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-1.5">Durata</p>
+              <p class="text-2xl md:text-3xl font-semibold text-ink-900 leading-none">2 sett.</p>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-3">Cosa porti via</p>
+            <ul class="space-y-2.5">
+              {[
+                "Mappa visibility attuale sui 4 principali motori AI",
+                "Gap analysis sui primi 3-5 competitor",
+                "Allucinazioni e citazioni errate da correggere",
+                "Lista prioritaria di interventi con stima impatto",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5 text-[14px] text-ink-700">
+                  <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-violet-50 items-center justify-center">
+                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+
+        <!-- STEP 02: SPRINT -->
+        <article class="relative reveal reveal-delay-1 rounded-2xl p-8 md:p-10 flex flex-col overflow-hidden bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700 text-white">
+          <div class="orb orb-violet w-[300px] h-[300px] -top-20 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
+          <div class="orb orb-amber w-[200px] h-[200px] -bottom-10 -left-10 opacity-25 float-slower" aria-hidden="true"></div>
+
+          <div class="relative flex flex-col h-full">
+            <div class="flex items-baseline justify-between gap-4 mb-6">
+              <div class="flex items-baseline gap-4">
+                <span class="text-[3rem] font-semibold text-white/20 leading-none">02</span>
+                <span class="eyebrow eyebrow-light">Costruiamo</span>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber/20 border border-amber/30 text-amber text-[10px] font-semibold uppercase tracking-[0.14em]">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber"></span>
+                Prezzo fisso
+              </span>
+            </div>
+
+            <h3 class="text-[1.75rem] md:text-[2rem] font-semibold tracking-tight text-white leading-[1.1] mb-3">
+              AI Search Sprint
+            </h3>
+            <p class="text-[15px] text-white/75 leading-relaxed text-pretty mb-7 flex-1">
+              Re-architettura contenuti o rifacimento sito completo high converting + AI-ready. Schema.org, semantic HTML, FAQ tematiche, structured data. Monitoring primi 3 mesi incluso. <strong class="text-white">Audit €2k rimborsato se procedi.</strong>
+            </p>
+
+            <div class="h-px bg-white/15 mb-6"></div>
+
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div>
+                <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-1.5">Investimento</p>
+                <p class="text-2xl md:text-3xl font-semibold text-white leading-none">€3–15k</p>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-1.5">Go-live</p>
+                <p class="text-2xl md:text-3xl font-semibold text-white leading-none">3–6 sett.</p>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-3">Cosa porti via</p>
+              <ul class="space-y-2.5">
+                {[
+                  "Re-architettura contenuti chiave (homepage, prodotti, FAQ)",
+                  "Schema.org + structured data sito-wide",
+                  "Eventuale rifacimento sito high converting (su scope alto)",
+                  "Monitoring dashboard primi 3 mesi inclusi",
+                  "Iterazioni mensili sui contenuti meno performanti",
+                ].map((item) => (
+                  <li class="flex items-start gap-2.5 text-[14px] text-white/90">
+                    <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-white/15 items-center justify-center">
+                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="text-center text-sm text-ink-500 mt-10 max-w-2xl mx-auto reveal">
+        Lo sprint parte solo dopo l'audit. L'audit è <strong class="text-ink-900">rimborsato se procedi</strong>, quindi se andiamo avanti insieme paghi solo lo sprint. Prezzo finale fissato in proposta, no scope creep.
+      </p>
     </div>
   </section>
 
