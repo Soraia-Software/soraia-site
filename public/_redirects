@@ -1,0 +1,97 @@
+# Redirects 301 dalla vecchia struttura Webflow alla nuova Astro.
+# Cloudflare Pages legge questo file automaticamente.
+# Sintassi: /from /to 301
+
+# ============================================================
+# CASE STUDIES (vecchi "projects" → nuovi "case-studies")
+# Mapping 1:1 dei top performer + catch-all
+# ============================================================
+/projects/how-we-helped-navily-cut-moderation-time-by-70-with-ai  /case-studies/navily  301
+/projects/how-we-saved-70-hours-per-expert-by-automating-onboarding-and-e-learning-content-creation-for-cxl  /case-studies/cxl  301
+/projects/how-we-helped-rainplan-cut-time-to-market-in-half-and-boost-product-team-morale  /case-studies/rainplan  301
+/projects/how-we-gave-a-recruitment-firm-19-extra-workdays-per-week--without-hiring-anyone  /case-studies/apraise  301
+/projects/how-we-helped-a-recruitment-company-save-eu-360k-every-year  /case-studies/apraise  301
+/projects/how-we-helped-an-accounting-firm-in-piedmont-save-eu32-000-per-month  /case-studies/numeraria  301
+/projects/how-we-helped-a-premium-real-estate-agency-boost-lead-quality-and-save-50-of-their-time  /case-studies/frh  301
+/projects/how-we-helped-a-family-focused-marketing-agency-save-750-hours-a-year-with-ai-powered-content-workflows  /case-studies  301
+/projects/how-we-helped-medinord-reduce-manual-efforts-in-their-medical-clinic-by-50-with-a-custom-ai-powered-crm  /case-studies  301
+/projects/*  /case-studies  301
+/projects  /case-studies  301
+
+# ============================================================
+# STATIC PAGES
+# ============================================================
+/about-us  /chi-siamo  301
+/contact  /parliamone  301
+/book-a-call  /parliamone  301
+/pricing  /ai-agents  301
+/workshop  /ai-adoption  301
+/blog  /blog  301
+/tech-stack  /  301
+/startup-lab  /  301
+/videos  /  301
+/agency-page  /  301
+
+# Legali
+/privacy-policy-76450928  /privacy  301
+/terms-conditions  /terms  301
+/cookie-policy  /cookies  301
+
+# ============================================================
+# SERVICES → AI AGENTS
+# ============================================================
+/services/*  /ai-agents  301
+/services  /ai-agents  301
+
+# ============================================================
+# TOOLS → PRODOTTI
+# ============================================================
+/tools/*  /prodotti  301
+/tools  /prodotti  301
+
+# ============================================================
+# AGENCY → AI AGENTS
+# ============================================================
+/agency/*  /ai-agents  301
+/agency  /ai-agents  301
+
+# ============================================================
+# BLOG OLD → BLOG NEW (no individual mapping, contenuti diversi)
+# ============================================================
+/blog/*  /blog  301
+
+# ============================================================
+# ITALIAN PREFIX (/it/* → strip prefix, italiano è default)
+# Pattern: more specific first, catch-all at end
+# ============================================================
+/it/projects/*  /case-studies  301
+/it/projects  /case-studies  301
+/it/services/*  /ai-agents  301
+/it/services  /ai-agents  301
+/it/tools/*  /prodotti  301
+/it/tools  /prodotti  301
+/it/agency/*  /ai-agents  301
+/it/agency  /ai-agents  301
+/it/blog/*  /blog  301
+/it/blog  /blog  301
+
+/it/about-us  /chi-siamo  301
+/it/contact  /parliamone  301
+/it/book-a-call  /parliamone  301
+/it/pricing  /ai-agents  301
+/it/workshop  /ai-adoption  301
+/it/videos  /  301
+/it/startup-lab  /  301
+
+/it/privacy-policy-76450928  /privacy  301
+/it/terms-conditions  /terms  301
+/it/cookie-policy  /cookies  301
+
+# Catch-all italiano (deve stare PER ULTIMO tra le regole /it)
+/it/*  /  301
+/it  /  301
+
+# ============================================================
+# URL MALFORMATI (one-off)
+# ============================================================
+/https-www-soraia-io-why-companies-always-fight-with-software-houses  /  301

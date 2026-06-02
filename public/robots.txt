@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block common asset/admin paths that don't need crawling
+Disallow: /downloads/
+Disallow: /_astro/
+
+Sitemap: https://www.soraia.io/sitemap-index.xml
