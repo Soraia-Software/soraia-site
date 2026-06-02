@@ -24,9 +24,9 @@ const labels = {
     error: "Qualcosa è andato storto. Scrivici a info@soraia.io",
     privacy:
       "I tuoi dati restano riservati. Niente newsletter, niente terze parti.",
-    range_1: "1–10 persone",
-    range_2: "11–50 persone",
-    range_3: "51–200 persone",
+    range_1: "1-10 persone",
+    range_2: "11-50 persone",
+    range_3: "51-200 persone",
     range_4: "200+ persone",
   },
   en: {
@@ -44,9 +44,9 @@ const labels = {
     success: "Got it. We'll reach out within 24 hours.",
     error: "Something went wrong. Write to info@soraia.io",
     privacy: "Your data stays private. No newsletter, no third parties.",
-    range_1: "1–10 people",
-    range_2: "11–50 people",
-    range_3: "51–200 people",
+    range_1: "1-10 people",
+    range_2: "11-50 people",
+    range_3: "51-200 people",
     range_4: "200+ people",
   },
 } as const;

@@ -185,7 +185,7 @@ Esempi:
 - **Accounting**: agente processa fatture sotto X€, umano review per anomalie >€10k.
 - **Support**: agente risponde a richieste standard, umano gestisce escalation negative o complesse.
 
-Documentare la matrice "casi automatici / casi escalation" è il deliverable di compliance più semplice e più potente.
+Documentare la matrice "casi automatici / casi escalation" è il deliverable di compliance più diretto e più potente.
 
 ### Step 4, DPA con il vendor
 
@@ -197,7 +197,7 @@ Se usi un fornitore esterno (Soraia, OpenAI direct, Anthropic, Microsoft, Google
 - Google ha DPA standard.
 - Soraia (e qualunque agency seria) la include nel contratto di sprint.
 
-**Senza DPA, ogni input di dati personali è violazione GDPR**. Step più semplice, spesso saltato per fretta.
+**Senza DPA, ogni input di dati personali è violazione GDPR**. Step più diretto, spesso saltato per fretta.
 
 ## Timing 2025-2026: cosa scade quando
 

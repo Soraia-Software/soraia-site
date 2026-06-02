@@ -160,7 +160,7 @@ Provider con almeno 2 di queste = scarta.
 
 **1. Demo solo "wow", zero numeri reali.** Ti mostrano un agente che funziona benissimo ma non ti dicono su quanti clienti reali è in produzione, o quante volte ha sbagliato.
 
-**2. "Costruiamo agenti AI in 24 ore con n8n/Make."** Per workflow molto semplici è plausibile. Per qualunque cosa abbia integrazioni serie + governance + compliance, è red flag.
+**2. "Costruiamo agenti AI in 24 ore con n8n/Make."** Per workflow molto fattibili è plausibile. Per qualunque cosa abbia integrazioni serie + governance + compliance, è red flag.
 
 **3. Non vogliono firmare DPA art. 28 GDPR.** Significa che la loro infrastruttura non è pronta. Pericoloso per i dati dei tuoi clienti.
 

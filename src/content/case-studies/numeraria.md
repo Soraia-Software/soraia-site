@@ -67,7 +67,7 @@ Soraia ha costruito una piattaforma custom con **vari agenti IA integrati nel fl
 3. **Agente ore**, valida le ore registrate dal team con voci precise (trasferta in azienda cliente, lavoro remoto, presenza in studio, voci speciali) e le riconcilia automaticamente.
 4. **Agente fatturazione**, fine mese produce il report cliente-per-cliente pronto per la fatturazione, con dettaglio voci.
 
-Il design è pensato per **massima facilità d'uso**: i consulenti registrano ore in pochi tocchi, gli agenti fanno il lavoro pesante in background. Il management interviene solo dove serve giudizio: approvazione preventivi speciali, riassegnazioni in caso di urgenze, validazione finale del report mensile.
+Il design è pensato per **massima usabilità**: i consulenti registrano ore in pochi tocchi, gli agenti fanno il lavoro pesante in background. Il management interviene solo dove serve giudizio: approvazione preventivi speciali, riassegnazioni in caso di urgenze, validazione finale del report mensile.
 
 ## I risultati
 

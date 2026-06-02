@@ -27,7 +27,7 @@ faq:
   - q: "Cosa succede se l'agente sbaglia?"
     a: "Un agente IA serio è progettato con <strong>escalation umana</strong> sui casi limite. L'agente decide solo nei casi ad alta confidenza; quando incerto passa a un umano. Inoltre tutto è loggato in audit log immutabile: ogni decisione è ricostruibile per debugging, compliance, fix."
   - q: "Posso costruirmi un agente da solo con strumenti no-code?"
-    a: "Sì, per workflow molto semplici (notifiche, sync tra 2 app). Per casi reali aziendali (integrazioni multiple, regole specifiche, governance, scalabilità) serve un partner che capisca anche il <strong>change management</strong>, non solo la parte tecnica. Il <a href='/guide/formazione-ai-aziendale'>formare il team sull'AI</a> è il 40% del successo."
+    a: "Sì, per workflow molto basici (notifiche, sync tra 2 app). Per casi reali aziendali (integrazioni multiple, regole specifiche, governance, scalabilità) serve un partner che capisca anche il <strong>change management</strong>, non solo la parte tecnica. Il <a href='/guide/formazione-ai-aziendale'>formare il team sull'AI</a> è il 40% del successo."
   - q: "Gli agenti IA rispettano il GDPR e l'AI Act?"
     a: "Se costruiti bene, sì. Servono: <strong>hosting UE</strong> per i dati personali, <strong>DPA art. 28</strong> con il vendor, <strong>audit log</strong> immutabile, <strong>DPIA</strong> per i processi che impattano persone (es. recruitment). Vedi la <a href='/guide/ai-act-aziende'>guida AI Act per aziende</a>."
   - q: "Il codice dell'agente è mio o resta del vendor?"
@@ -58,7 +58,7 @@ L'agente IA **fa il lavoro**, non assiste a farlo.
 | Chi attiva | Persona che chiede | Trigger sistema | Persona che chiede | Trigger sistema |
 | Chi decide | Persona (legge risposta) | Regole rigide | Persona (legge output) | L'agente (con escalation) |
 | Output | Testo in chat | Dato in sistema | Testo in chat | Azione in sistema + log |
-| Quando usarlo | Frontline support semplice | Sync prevedibili tra app | Boost produttività individuale | Eseguire processi ricorrenti complessi |
+| Quando usarlo | Frontline support basico | Sync prevedibili tra app | Boost produttività individuale | Eseguire processi ricorrenti complessi |
 
 ## I 4 tipi di agenti IA in azienda
 

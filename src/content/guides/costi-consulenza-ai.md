@@ -65,7 +65,7 @@ Dato basato su benchmark interno Soraia + sentito da clienti che hanno valutato 
 
 **Cosa influenza il prezzo**:
 
-- **Scope**: single workflow semplice (€10-15k) vs multi-step con integrazioni (€20-35k) vs complesso multi-agente (€35-50k+).
+- **Scope**: single workflow lineare (€10-15k) vs multi-step con integrazioni (€20-35k) vs complesso multi-agente (€35-50k+).
 - **Settore**: standard (marketing, customer ops) €10-25k vs regolamentato (recruitment, finance, healthcare) €25-50k (+30-50% per compliance e DPIA).
 - **Integrazioni**: ogni sistema esterno custom (CRM specifico, ATS legacy, gestionale italiano) aggiunge €5-15k.
 - **Time-to-live**: rush 2-3 settimane invece di 4-6 aggiunge ~30%.
