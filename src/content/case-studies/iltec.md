@@ -11,7 +11,8 @@ featured: false
 stakeholder:
   name: "Team commerciale ILTEC"
   role: "Vendite e assistenza tecnica"
-  photo: "/team/daniel-levis.png"
+  photo: "/testimonials/iltec.webp"
+cardImage: "/testimonials/iltec.webp"
 heroQuote: "Sito rifatto da zero in 3 settimane, ottimizzato per ChatGPT e Perplexity. Ogni stampante e fotocopiatrice ha un QR che attiva un agente IA per supporto tecnico e commerciale: zero tempo perso al telefono per il commerciale."
 shortQuote: "Sito AI-ready in 3 settimane + QR su ogni macchina che attiva un agente IA per supporto tecnico e commerciale."
 teaser:
