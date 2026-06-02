@@ -22,8 +22,7 @@ const areas = [
       "BD prospecting su aziende in hiring spike",
     ],
     proof: "APraise: 100k+ candidati gestiti dall'agente IA. Come avere 4 recruiter in più, senza il costo.",
-    href: "/case-studies/apraise",
-    sectorHref: "/recruitment",
+    href: "/recruitment",
     available: true,
     icon: "users",
     priceHint: "Sprint €10-50k · 4 settimane al go-live",
@@ -41,8 +40,7 @@ const areas = [
       "Calcolo competenze e provvigioni automatiche",
     ],
     proof: "Numeraria: metà mese restituito al management, multi-divisione unificata.",
-    href: "/case-studies/numeraria",
-    sectorHref: "/finance",
+    href: "/finance",
     available: true,
     icon: "briefcase",
     priceHint: "Sprint €10-50k · 4 settimane al go-live",
@@ -60,8 +58,7 @@ const areas = [
       "Reporting performance senza dashboards manuali",
     ],
     proof: "ILTEC: sito rifatto in 3 settimane, AI search optimized + AI agent per assistenza tecnica/commerciale dal QR code.",
-    href: "/case-studies/iltec",
-    sectorHref: "/sales-marketing",
+    href: "/sales-marketing",
     available: true,
     icon: "chart",
     priceHint: "Sprint €10-50k · 4 settimane al go-live",
@@ -79,8 +76,7 @@ const areas = [
       "Routing intelligente al team giusto",
     ],
     proof: "Navily: -70% tempo operativo su moderazione ed enrichment. Il team torna sul prodotto.",
-    href: "/case-studies/navily",
-    sectorHref: "/customer-support",
+    href: "/customer-support",
     available: true,
     icon: "shield",
     priceHint: "Sprint €10-50k · 4 settimane al go-live",
@@ -98,8 +94,7 @@ const areas = [
       "Analytics + demografia presenti allo stand",
     ],
     proof: "40Factory: 6 agenti orchestrati, follow-up dal dominio @40-factory.com in pochi secondi.",
-    href: "/case-studies/40factory",
-    sectorHref: "/event-management",
+    href: "/event-management",
     available: true,
     icon: "ticket",
     priceHint: "Linkly SaaS · €1.900/anno early adopter",
@@ -117,8 +112,7 @@ const areas = [
       "Pipeline approvazioni multi-stakeholder",
     ],
     proof: "FRH: 2 agenti per lead qualificati + immobili catturati con 1 click. Rainplan: centinaia di parcel e approvazioni multi-stakeholder in autonomia.",
-    href: "/case-studies/frh",
-    sectorHref: "/real-estate",
+    href: "/real-estate",
     available: true,
     icon: "building",
     priceHint: "Sprint €10-50k · 4 settimane al go-live",
@@ -510,19 +504,19 @@ const jsonLd = [
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                     <span class="text-[11.5px] font-semibold text-violet-700">{a.priceHint}</span>
                   </div>
-                  <p class="text-[13px] text-ink-600 leading-snug italic mb-4">
-                    {a.proof}
-                  </p>
-                  {a.available ? (
-                    <div class="flex items-center justify-between gap-4">
+                  <div class="flex items-center justify-between gap-4">
+                    <p class="text-[13px] text-ink-600 leading-snug italic">
+                      {a.proof}
+                    </p>
+                    {a.available ? (
                       <span class="shrink-0 text-sm font-semibold text-violet-700 inline-flex items-center gap-1">
-                        Vedi il caso
+                        Approfondisci
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                       </span>
-                    </div>
-                  ) : (
-                    <span class="shrink-0 text-[11px] font-semibold text-ink-400 uppercase tracking-wider">In arrivo</span>
-                  )}
+                    ) : (
+                      <span class="shrink-0 text-[11px] font-semibold text-ink-400 uppercase tracking-wider">In arrivo</span>
+                    )}
+                  </div>
                 </div>
               </div>
             </Tag>

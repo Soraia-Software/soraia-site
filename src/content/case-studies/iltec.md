@@ -5,8 +5,8 @@ clientLogo: "/logos/clients/iltec.webp"
 industry: "sales-marketing"
 sector: "B2B office technology · Biellese"
 service: "Rifacimento sito AI-ready + AI agent commerciale via QR"
-pubDate: 2026-05-30
-dimensioni: "51-250"
+pubDate: 2026-02-10
+dimensioni: "1-10"
 featured: false
 stakeholder:
   name: "Team commerciale ILTEC"
