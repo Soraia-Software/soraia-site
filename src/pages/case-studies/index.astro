@@ -32,15 +32,15 @@ function cardQuote(c: typeof cases[number]): string {
   return q.length > 140 ? q.slice(0, 137).trimEnd() + "…" : q;
 }
 
-// Industry filter taxonomy
+// Industry filter taxonomy, allineata ai 6 Ops cluster del sito
 const industryFilters = [
-  { id: "all",                 label: "Tutti",                    count: cases.length },
-  { id: "recruitment-hr",      label: "Recruitment & HR",         count: cases.filter((c) => c.data.industry === "recruitment-hr").length },
-  { id: "consumer-education",  label: "Consumer & Education",     count: cases.filter((c) => c.data.industry === "consumer-education").length },
-  { id: "finance-vc",          label: "Finance & VC",             count: cases.filter((c) => c.data.industry === "finance-vc").length },
-  { id: "sustainability",      label: "Sustainability",           count: cases.filter((c) => c.data.industry === "sustainability").length },
-  { id: "industrial-iot",      label: "Industrial & IoT",         count: cases.filter((c) => c.data.industry === "industrial-iot").length },
-  { id: "public-sector",       label: "Public Sector",            count: cases.filter((c) => c.data.industry === "public-sector").length },
+  { id: "all",                 label: "Tutti",              count: cases.length },
+  { id: "recruitment-hr",      label: "Recruitment & HR",   count: cases.filter((c) => c.data.industry === "recruitment-hr").length },
+  { id: "finance-vc",          label: "Finance & VC",       count: cases.filter((c) => c.data.industry === "finance-vc").length },
+  { id: "sales-marketing",     label: "Sales & Marketing",  count: cases.filter((c) => c.data.industry === "sales-marketing").length },
+  { id: "customer-support",    label: "Customer Support",   count: cases.filter((c) => c.data.industry === "customer-support").length },
+  { id: "real-estate",         label: "Real Estate",        count: cases.filter((c) => c.data.industry === "real-estate").length },
+  { id: "event-management",    label: "Event Management",   count: cases.filter((c) => c.data.industry === "event-management").length },
 ];
 ---
 

@@ -2,7 +2,7 @@
 title: "Navily, Agente IA moderazione recensioni + enrichment dati nautici"
 client: "Navily"
 clientLogo: "/logos/clients/navily.webp"
-industry: "consumer-education"
+industry: "customer-support"
 sector: "Consumer mobile · Travel & nautical"
 service: "Agente IA moderazione + enrichment"
 pubDate: 2026-03-08

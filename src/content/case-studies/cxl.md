@@ -2,7 +2,7 @@
 title: "CXL, Agente IA che onboarda gli esperti in 70 ore in meno"
 client: "CXL"
 clientLogo: "/logos/clients/cxl.webp"
-industry: "consumer-education"
+industry: "sales-marketing"
 sector: "Online education · Marketing training"
 service: "Agente IA expert onboarding"
 pubDate: 2026-03-20

@@ -24,13 +24,11 @@ const caseStudies = defineCollection({
     service: z.string(),                       // e.g. "Agente IA candidature"
     industry: z.enum([
       "recruitment-hr",
-      "consumer-education",
       "finance-vc",
-      "sustainability",
-      "public-sector",
-      "industrial-iot",
       "sales-marketing",
+      "customer-support",
       "real-estate",
+      "event-management",
     ]).default("recruitment-hr"),
     pubDate: z.coerce.date(),
     featured: z.boolean().default(false),

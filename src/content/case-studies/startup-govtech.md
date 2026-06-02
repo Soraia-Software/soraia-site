@@ -1,7 +1,7 @@
 ---
 title: "Startup GovTech, Agente IA per la diplomazia internazionale (NDA)"
 client: "Startup GovTech"
-industry: "public-sector"
+industry: "customer-support"
 sector: "Diplomazia · Eventi governativi"
 service: "Agente IA gestione eventi diplomatici"
 pubDate: 2026-03-25

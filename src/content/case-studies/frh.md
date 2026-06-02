@@ -2,7 +2,7 @@
 title: "French Riviera Househunting, agenti IA per lead enrichment e sourcing immobili"
 client: "French Riviera Househunting"
 clientLogo: "/logos/clients/frh.webp"
-industry: "consumer-education"
+industry: "real-estate"
 sector: "Real estate boutique · Costa Azzurra"
 service: "Agenti IA enrichment lead + sourcing immobili"
 pubDate: 2026-02-15
