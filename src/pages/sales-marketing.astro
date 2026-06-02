@@ -79,13 +79,14 @@ const processes = [
 
 const cases = [
   {
-    slug: "frh",
-    client: "French Riviera Househunting",
-    quote: "L'agente IA arricchisce il profilo di ogni lead high-end che entra dall'eBook download, lo qualifica e mi prepara il dossier prima ancora che io legga il nome.",
-    dimensioni: "11-50",
-    sector: "Real estate boutique · Costa Azzurra",
-    cardImage: "/testimonials/fabricio-carminati-frh.webp",
-    stakeholder: { name: "Fabricio Carminati", role: "Founder" },
+    slug: "iltec",
+    client: "ILTEC",
+    clientLogo: "/logos/clients/iltec.webp",
+    quote: "Sito rifatto da zero in 3 settimane, ottimizzato per ChatGPT e Perplexity. QR su ogni macchina che attiva un agente IA: supporto tecnico e commerciale 24/7.",
+    dimensioni: "51-250",
+    sector: "B2B office technology · Biellese",
+    cardImage: undefined,
+    stakeholder: { name: "Team commerciale ILTEC", role: "Vendite e assistenza" },
   },
 ];
 
@@ -148,7 +149,7 @@ const faqs = [
               Richiedi assessment, €2.000
               <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
             </a>
-            <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">Vedi il caso FRH</a>
+            <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">Vedi il caso ILTEC</a>
           </div>
           <div class="mt-12 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] fade-up fade-up-delay-4">
             <div class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-amber"></span><span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">25+ fonti</strong> enrichment</span></div>
@@ -165,10 +166,10 @@ const faqs = [
 
   <section class="py-12 md:py-14 border-y border-ink-200 bg-white">
     <div class="container-soraia text-center">
-      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 mb-4">Già scelto da boutique e SMB con sales consulenziale</p>
+      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 mb-4">Già scelto da PMI B2B con sales consulenziale</p>
       <p class="text-[16px]" style="color: var(--color-ink-muted);">
-        <a href="/case-studies/frh" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">French Riviera Househunting</a>
-        · Real estate boutique · cliente attivo con sourcing immobili via Chrome extension
+        <a href="/case-studies/iltec" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">ILTEC</a>
+        · B2B office technology · sito AI-ready + AI agent commerciale via QR
       </p>
     </div>
   </section>
@@ -228,9 +229,9 @@ const faqs = [
 
   <section id="cases" class="section bg-white">
     <div class="container-soraia">
-      <SectionHeader eyebrow="Caso studio" title="Agenti IA in azione su FRH." align="center" />
+      <SectionHeader eyebrow="Caso studio" title="Agenti IA in azione su ILTEC." align="center" />
       <div class="max-w-md mx-auto">
-        <CaseStudyCardJet href={`/case-studies/${cases[0].slug}`} client={cases[0].client} quote={cases[0].quote} dimensioni={cases[0].dimensioni} sector={cases[0].sector} cardImage={cases[0].cardImage} />
+        <CaseStudyCardJet href={`/case-studies/${cases[0].slug}`} client={cases[0].client} clientLogo={cases[0].clientLogo} quote={cases[0].quote} dimensioni={cases[0].dimensioni} sector={cases[0].sector} cardImage={cases[0].cardImage} />
         <p class="mt-6 text-center text-[14px]" style="color: var(--color-ink-soft);">
           <strong style="color: var(--color-ink); font-weight: 500;">{cases[0].stakeholder.name}</strong>, {cases[0].stakeholder.role} · {cases[0].client}
         </p>
