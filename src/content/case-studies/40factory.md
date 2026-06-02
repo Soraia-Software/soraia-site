@@ -1,6 +1,7 @@
 ---
 title: "40Factory, Linkly per lead generation da fiere B2B con 6 agenti IA"
 client: "40Factory"
+clientLogo: "/logos/clients/40factory.webp"
 industry: "industrial-iot"
 sector: "Industrial IoT · Industria 4.0"
 service: "Linkly, automazione lead capture da fiere"
