@@ -54,13 +54,8 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString(
     <!-- Theme -->
     <meta name="theme-color" content="#4A1E5C" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    />
+    <!-- Fonts self-hosted via @fontsource (importati in globals.css), niente CDN Google -->
+
 
     <!-- Favicon (placeholder) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
