@@ -5,9 +5,9 @@ import { getCollection } from "astro:content";
 const title = "Blog & Insights | Soraia";
 const description = "Pratico, contrarian, basato su 40+ progetti agenti IA reali. Niente AI hype, solo decisioni operative.";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = (await getCollection("blog"))
+  .filter((p) => p.data.lang === "it")
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const featured = posts.filter((p) => p.data.featured);
 const others = posts.filter((p) => !p.data.featured);

@@ -6,9 +6,9 @@ import CaseStudyCardJet from "~/components/CaseStudyCardJet.astro";
 const title = "Case Studies | Soraia";
 const description = "Agenti IA in produzione per PMI italiane ed europee. Recruitment, consumer mobile, finance, climate, public sector: cosa abbiamo costruito e quali risultati.";
 
-const cases = (await getCollection("caseStudies")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const cases = (await getCollection("caseStudies"))
+  .filter((c) => c.data.lang === "it")
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const photoMap: Record<string, string> = {
   "40factory": "/testimonials/margherita-chifari-40factory.webp",

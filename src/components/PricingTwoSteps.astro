@@ -1,18 +1,86 @@
 ---
 import SectionHeader from "./SectionHeader.astro";
+import { path } from "~/lib/i18n";
 
 interface Props {
   bg?: "white" | "ink-50";
+  lang?: "it" | "en";
 }
-const { bg = "white" } = Astro.props;
+const { bg = "white", lang = "it" } = Astro.props;
+
+const t = lang === "en"
+  ? {
+      eyebrow: "How we start",
+      title: "Two steps. Fixed price. Guarantee included.",
+      subtitle: "No 12-month roadmaps, no endless quotes. We start with a clear assessment and decide together whether to move forward.",
+      step1_eyebrow: "Starting point",
+      step1_desc: "We get into your real operations: we map the processes you run today, identify the bottlenecks, assess the tools you use, and hand you a concrete action plan.",
+      investment: "Investment",
+      duration: "Duration",
+      step1_duration: "1-2 wks",
+      walk_away: "What you walk away with",
+      step1_items: [
+        "A map of your operational processes",
+        "Bottlenecks identified and prioritized",
+        "An assessment of your current tool stack",
+        "A step-by-step operational action plan",
+      ],
+      sample: "See a sample report",
+      step2_eyebrow: "We build",
+      guarantee: "Guarantee",
+      step2_desc: 'We build the agents, integrate them into your systems, and train your team. First delivery in 4 weeks. <strong class="text-white">If it doesn\'t work, you don\'t pay.</strong>',
+      first_delivery: "First delivery",
+      step2_delivery: "4 wks",
+      step2_items: [
+        "AI agents live in production",
+        "Integration with your systems",
+        "Team training (AI Adoption included)",
+        "Your code, full documentation",
+        "30 days of post go-live hypercare",
+      ],
+      footer: 'The sprint only starts after the assessment. The assessment is <strong class="text-ink-900">refunded if you proceed</strong>, so if we move forward together, you only pay for the sprint.',
+    }
+  : {
+      eyebrow: "Come iniziamo",
+      title: "Due passi. Prezzo definito. Garanzia inclusa.",
+      subtitle: "Niente roadmap a 12 mesi, niente preventivi infiniti. Si parte da un assessment chiaro e si decide insieme se andare avanti.",
+      step1_eyebrow: "Punto di partenza",
+      step1_desc: "Entriamo nella tua operatività reale: mappiamo i processi che fai oggi, identifichiamo i bottleneck, valutiamo gli strumenti che usi, ti consegniamo un piano d'azione concreto.",
+      investment: "Investimento",
+      duration: "Durata",
+      step1_duration: "1-2 sett.",
+      walk_away: "Cosa porti via",
+      step1_items: [
+        "Mappa dei tuoi processi operativi",
+        "Bottleneck identificati con priorità",
+        "Valutazione dello stack tool attuale",
+        "Action plan operativo step-by-step",
+      ],
+      sample: "Vedi un sample del report",
+      step2_eyebrow: "Costruiamo",
+      guarantee: "Garanzia",
+      step2_desc: 'Costruiamo gli agenti, integriamo sui tuoi sistemi, formiamo il team. Prima delivery in 4 settimane. <strong class="text-white">Se non sei soddisfatto, non paghi.</strong>',
+      first_delivery: "Prima delivery",
+      step2_delivery: "4 sett.",
+      step2_items: [
+        "Agenti IA live in produzione",
+        "Integrazione con i tuoi sistemi",
+        "Formazione del team (AI Adoption inclusa)",
+        "Codice tuo, documentazione completa",
+        "30 giorni di hypercare post go-live",
+      ],
+      footer: "Lo sprint parte solo dopo l'assessment. L'assessment è <strong class=\"text-ink-900\">rimborsato se procedi</strong>, quindi se andiamo avanti insieme, paghi solo lo sprint.",
+    };
+
+const sampleHref = path("/downloads/ai-assessment-sample", lang);
 ---
 
 <section id="come-iniziamo" class={`section ${bg === "white" ? "bg-white" : "bg-ink-50"}`}>
   <div class="container-soraia">
     <SectionHeader
-      eyebrow="Come iniziamo"
-      title="Due passi. Prezzo definito. Garanzia inclusa."
-      subtitle="Niente roadmap a 12 mesi, niente preventivi infiniti. Si parte da un assessment chiaro e si decide insieme se andare avanti."
+      eyebrow={t.eyebrow}
+      title={t.title}
+      subtitle={t.subtitle}
       align="center"
     />
 
@@ -21,38 +89,33 @@ const { bg = "white" } = Astro.props;
       <article class="card-editorial relative reveal !p-8 md:!p-10 flex flex-col">
         <div class="flex items-baseline gap-4 mb-6">
           <span class="text-[3rem] font-semibold text-ink-200 leading-none">01</span>
-          <span class="eyebrow">Punto di partenza</span>
+          <span class="eyebrow">{t.step1_eyebrow}</span>
         </div>
 
         <h3 class="text-[1.75rem] md:text-[2rem] font-semibold tracking-tight text-ink-900 leading-[1.1] mb-3">
           AI Readiness Assessment
         </h3>
         <p class="text-[15px] text-ink-700 leading-relaxed text-pretty mb-7 flex-1">
-          Entriamo nella tua operatività reale: mappiamo i processi che fai oggi, identifichiamo i bottleneck, valutiamo gli strumenti che usi, ti consegniamo un piano d'azione concreto.
+          {t.step1_desc}
         </p>
 
         <div class="hairline mb-6"></div>
 
         <div class="grid grid-cols-2 gap-4 mb-6">
           <div>
-            <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-1.5">Investimento</p>
+            <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-1.5">{t.investment}</p>
             <p class="text-2xl md:text-3xl font-semibold text-ink-900 leading-none">€2.000</p>
           </div>
           <div>
-            <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-1.5">Durata</p>
-            <p class="text-2xl md:text-3xl font-semibold text-ink-900 leading-none">1-2 sett.</p>
+            <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-1.5">{t.duration}</p>
+            <p class="text-2xl md:text-3xl font-semibold text-ink-900 leading-none">{t.step1_duration}</p>
           </div>
         </div>
 
         <div>
-          <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-3">Cosa porti via</p>
+          <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-3">{t.walk_away}</p>
           <ul class="space-y-2.5">
-            {[
-              "Mappa dei tuoi processi operativi",
-              "Bottleneck identificati con priorità",
-              "Valutazione dello stack tool attuale",
-              "Action plan operativo step-by-step",
-            ].map((item) => (
+            {t.step1_items.map((item) => (
               <li class="flex items-start gap-2.5 text-[14px] text-ink-700">
                 <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-violet-50 items-center justify-center">
                   <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
@@ -62,11 +125,11 @@ const { bg = "white" } = Astro.props;
             ))}
           </ul>
 
-          <a href="/downloads/ai-assessment-sample" class="mt-6 inline-flex items-center gap-2 text-[13px] font-medium group" style="color: var(--color-brand);">
+          <a href={sampleHref} class="mt-6 inline-flex items-center gap-2 text-[13px] font-medium group" style="color: var(--color-brand);">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
             </svg>
-            Vedi un sample del report
+            {t.sample}
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -81,44 +144,36 @@ const { bg = "white" } = Astro.props;
           <div class="flex items-baseline justify-between gap-4 mb-6">
             <div class="flex items-baseline gap-4">
               <span class="text-[3rem] font-semibold text-white/20 leading-none">02</span>
-              <span class="eyebrow eyebrow-light">Costruiamo</span>
+              <span class="eyebrow eyebrow-light">{t.step2_eyebrow}</span>
             </div>
             <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber/20 border border-amber/30 text-amber text-[10px] font-semibold uppercase tracking-[0.14em]">
               <span class="w-1.5 h-1.5 rounded-full bg-amber"></span>
-              Garanzia
+              {t.guarantee}
             </span>
           </div>
 
           <h3 class="text-[1.75rem] md:text-[2rem] font-semibold tracking-tight text-white leading-[1.1] mb-3">
             Co-Building & Adoption Sprint
           </h3>
-          <p class="text-[15px] text-white/75 leading-relaxed text-pretty mb-7 flex-1">
-            Costruiamo gli agenti, integriamo sui tuoi sistemi, formiamo il team. Prima delivery in 4 settimane. <strong class="text-white">Se non sei soddisfatto, non paghi.</strong>
-          </p>
+          <p class="text-[15px] text-white/75 leading-relaxed text-pretty mb-7 flex-1" set:html={t.step2_desc}></p>
 
           <div class="h-px bg-white/15 mb-6"></div>
 
           <div class="grid grid-cols-2 gap-4 mb-6">
             <div>
-              <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-1.5">Investimento</p>
+              <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-1.5">{t.investment}</p>
               <p class="text-2xl md:text-3xl font-semibold text-white leading-none">€10-50k</p>
             </div>
             <div>
-              <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-1.5">Prima delivery</p>
-              <p class="text-2xl md:text-3xl font-semibold text-white leading-none">4 sett.</p>
+              <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-1.5">{t.first_delivery}</p>
+              <p class="text-2xl md:text-3xl font-semibold text-white leading-none">{t.step2_delivery}</p>
             </div>
           </div>
 
           <div>
-            <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-3">Cosa porti via</p>
+            <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-3">{t.walk_away}</p>
             <ul class="space-y-2.5">
-              {[
-                "Agenti IA live in produzione",
-                "Integrazione con i tuoi sistemi",
-                "Formazione del team (AI Adoption inclusa)",
-                "Codice tuo, documentazione completa",
-                "30 giorni di hypercare post go-live",
-              ].map((item) => (
+              {t.step2_items.map((item) => (
                 <li class="flex items-start gap-2.5 text-[14px] text-white/90">
                   <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-white/15 items-center justify-center">
                     <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
@@ -132,8 +187,6 @@ const { bg = "white" } = Astro.props;
       </article>
     </div>
 
-    <p class="text-center text-sm text-ink-500 mt-10 max-w-2xl mx-auto reveal">
-      Lo sprint parte solo dopo l'assessment. L'assessment è <strong class="text-ink-900">rimborsato se procedi</strong> , quindi se andiamo avanti insieme, paghi solo lo sprint.
-    </p>
+    <p class="text-center text-sm text-ink-500 mt-10 max-w-2xl mx-auto reveal" set:html={t.footer}></p>
   </div>
 </section>

@@ -16,6 +16,7 @@ interface Props {
   resultMetric?: string;
   resultBody?: string;
   caseSlug?: string;  // if present, footer becomes a link to /case-studies/<slug>
+  lang?: "it" | "en";
 }
 
 const {
@@ -32,10 +33,12 @@ const {
   resultMetric,
   resultBody,
   caseSlug,
+  lang = "it",
 } = Astro.props;
 
-const caseHref = caseSlug ? `/case-studies/${caseSlug}` : null;
+const caseHref = caseSlug ? `${lang === "en" ? "/en/case-studies/" : "/case-studies/"}${caseSlug}` : null;
 const resultPreview = resultMetric || null;
+const readCaseLabel = lang === "en" ? "Read the case study" : "Leggi il case study";
 ---
 
 <article class="card-editorial group flex flex-col gap-5 h-full reveal !p-7 md:!p-8">
@@ -72,7 +75,7 @@ const resultPreview = resultMetric || null;
       )}
       {caseHref && (
         <a href={caseHref} class="inline-flex items-center gap-1.5 text-[13px] font-medium group/cta no-underline" style="color: var(--color-brand);">
-          Leggi il case study
+          {readCaseLabel}
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/cta:translate-x-1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
       )}

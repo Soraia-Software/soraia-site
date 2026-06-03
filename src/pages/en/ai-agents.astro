@@ -1,0 +1,587 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import PricingTwoSteps from "~/components/PricingTwoSteps.astro";
+import FAQ from "~/components/FAQ.astro";
+
+const title = "AI Agents for Your Processes | Soraia";
+const description =
+  "Custom AI agents for six high-impact areas in SMEs. AI Readiness Assessment at €2,000, Co-Building Sprint at €10–50k. First delivery in 4 weeks — you only pay if you're satisfied.";
+
+const areas = [
+  {
+    eyebrow: "Talent Ops",
+    title: "Recruitment & HR",
+    description:
+      "For staffing agencies, temp agencies, and in-house recruiters. Agents that manage the candidate-to-client flow end-to-end and give hours back to high-value work.",
+    tasks: [
+      "Intelligent CV screening (JD fit, not keyword match)",
+      "Personalised candidate outreach at scale",
+      "JD parsing + automatic shortlist from your database",
+      "Autonomous interview scheduling (candidate + client + team)",
+      "BD prospecting on companies in hiring spikes",
+    ],
+    proof: "APraise: 100k+ candidates managed by the AI agent. Like having 4 extra recruiters — without the cost.",
+    href: "/en/recruitment",
+    available: true,
+    icon: "users",
+    priceHint: "Sprint €10–50k · 4 weeks to go-live",
+  },
+  {
+    eyebrow: "Finance Ops",
+    title: "Finance & Document Automation",
+    description:
+      "For accounting firms, SME CFOs, and finance teams. Agents handling reconciliations, document intake, report preparation, and invoicing.",
+    tasks: [
+      "Automated bank reconciliations",
+      "Data extraction from PDFs / invoices / contracts",
+      "Standardised client onboarding",
+      "Recurring report generation without copy-paste",
+      "Automatic fee and commission calculations",
+    ],
+    proof: "Numeraria: half a month returned to management, unified across multiple divisions.",
+    href: "/en/finance",
+    available: true,
+    icon: "briefcase",
+    priceHint: "Sprint €10–50k · 4 weeks to go-live",
+  },
+  {
+    eyebrow: "Revenue Ops",
+    title: "Sales & Marketing Automation",
+    description:
+      "For sales teams, marketing agencies, and content teams. Agents that qualify leads, generate and publish content, and feed the pipeline.",
+    tasks: [
+      "Lead qualification and data enrichment",
+      "Article and social content generation",
+      "Multi-channel publishing (LinkedIn, IG, blog)",
+      "Personalised outreach at scale",
+      "Performance reporting without manual dashboards",
+    ],
+    proof: "ILTEC: site rebuilt in 3 weeks, AI search optimised + AI agent for technical/commercial support via QR code.",
+    href: "/en/sales-marketing",
+    available: true,
+    icon: "chart",
+    priceHint: "Sprint €10–50k · 4 weeks to go-live",
+  },
+  {
+    eyebrow: "Customer Ops",
+    title: "Customer & Compliance Automation",
+    description:
+      "For customer ops, moderation, and compliance. Agents that triage requests, moderate user content, and maintain complete audit trails.",
+    tasks: [
+      "Automatic triage of tickets / requests / emails",
+      "UGC content moderation with >90% accuracy",
+      "Compliance checks (GDPR, AI Act, sector-specific)",
+      "Log and audit trail for every decision",
+      "Intelligent routing to the right team",
+    ],
+    proof: "Navily: -70% operational time on moderation and enrichment. The team gets back to the product.",
+    href: "/en/customer-support",
+    available: true,
+    icon: "shield",
+    priceHint: "Sprint €10–50k · 4 weeks to go-live",
+  },
+  {
+    eyebrow: "Event Ops",
+    title: "Event Management",
+    description:
+      "For trade show exhibitors and B2B event teams. 6 AI agents that capture business cards, qualify leads, and follow up from your domain.",
+    tasks: [
+      "OCR on business cards, badges, QR codes",
+      "Enrichment from 30+ data sources",
+      "Dynamic lead qualification per event",
+      "CRM activation in seconds",
+      "Analytics + demographic breakdown of stand visitors",
+    ],
+    proof: "40Factory: 6 orchestrated agents, follow-up from the @40-factory.com domain in seconds.",
+    href: "/en/event-management",
+    available: true,
+    icon: "ticket",
+    priceHint: "Linkly SaaS · €1,900/year early adopter",
+  },
+  {
+    eyebrow: "Property Ops",
+    title: "Real Estate Operations",
+    description:
+      "For real estate agencies, property managers, and real estate tech. Agents that capture listings, qualify leads, generate dossiers, and manage multi-stakeholder approvals.",
+    tasks: [
+      "1-click property capture from listings",
+      "Property enrichment (zoning, geo, photos, floor plans)",
+      "Automatic property-to-client matching on your portal",
+      "Comparative dossiers ready for the client",
+      "Multi-stakeholder approval pipeline",
+    ],
+    proof: "FRH: 2 agents for qualified leads + properties captured with 1 click. Rainplan: hundreds of parcels and multi-stakeholder approvals handled autonomously.",
+    href: "/en/real-estate",
+    available: true,
+    icon: "building",
+    priceHint: "Sprint €10–50k · 4 weeks to go-live",
+  },
+];
+
+const icons = {
+  users: `<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>`,
+  briefcase: `<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>`,
+  chart: `<path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 5-5"/>`,
+  shield: `<path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>`,
+  ticket: `<path d="M3 7v2a2 2 0 0 1 0 4v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-4V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><line x1="13" y1="5" x2="13" y2="19"/>`,
+  building: `<rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="22" x2="9" y2="18"/><line x1="15" y1="22" x2="15" y2="18"/><line x1="8" y1="6" x2="10" y2="6"/><line x1="14" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/>`,
+};
+
+const faqs = [
+  {
+    q: "What exactly is an \"AI agent\"?",
+    a: "An AI agent is software that performs tasks autonomously: it reads data, makes decisions, and acts on your systems (ATS, CRM, ERP). It's not ChatGPT suggesting answers — it's a digital worker that <strong>does the work</strong> on the processes you choose, instead of your team.",
+  },
+  {
+    q: "Which systems does it integrate with?",
+    a: "Bullhorn, Salesforce, Bee-Staffing, In-Recruiting, Odoo, Fatture in Cloud, HubSpot, Pipedrive, legacy Italian ERP systems, proprietary ATS. If you have a custom tool, we validate it during the assessment.",
+  },
+  {
+    q: "How long before we see results?",
+    a: "<strong>4 weeks from kick-off to the first agent in production.</strong> Week 1: discovery and baseline. Weeks 2–3: build. Week 4: deploy + team training + first measurement. <strong>30 days of hypercare included</strong> after go-live.",
+  },
+  {
+    q: "What do you mean by \"you only pay if you're satisfied\"?",
+    a: "The sprint has a clear target defined in the assessment (e.g. <em>a CV screening agent that recovers 5 hours/recruiter/week</em>). If the target isn't met at go-live + 30 days of hypercare, we work for free until it is — or we refund the sprint. <strong>No contract small print.</strong>",
+  },
+  {
+    q: "How do you handle GDPR, the AI Act, and sensitive data?",
+    a: "Agents run in a European cloud environment or on-premise on your infrastructure. <strong>No training on your data</strong>. Complete logs of every decision, external DPO for impact assessments, alignment with the EU AI Regulation.",
+  },
+  {
+    q: "What happens if I want to bring everything in-house later?",
+    a: "<strong>The code is yours from week one.</strong> Full documentation, team training if you want to manage independently. No perpetual subscriptions, no lock-in.",
+  },
+];
+
+const stripTags = (html: string) => html.replace(/<[^>]+>/g, "");
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "AI Agents for SMEs. Soraia",
+    provider: {
+      "@type": "Organization",
+      name: "Soraia",
+      url: "https://www.soraia.io",
+    },
+    areaServed: ["IT", "EU"],
+    serviceType: "Custom AI agents for SME processes",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "AI Readiness Assessment",
+        priceCurrency: "EUR",
+        price: "2000",
+        description: "1–2 week assessment, refunded if you proceed with the sprint.",
+      },
+      {
+        "@type": "Offer",
+        name: "Co-Building & Adoption Sprint",
+        priceCurrency: "EUR",
+        description: "Sprint €10–50k, first delivery in 4 weeks. You only pay if you're satisfied.",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: stripTags(f.a),
+      },
+    })),
+  },
+];
+---
+
+<Layout title={title} description={description} lang="en" jsonLd={jsonLd}>
+  <!-- ============================================================
+       HERO. Editorial premium AI Agents
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="max-w-[900px]" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          Processes · AI Agents
+        </p>
+
+        <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+          AI agents that run<br/>your processes.
+        </h1>
+
+        <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+          First delivery in 4 weeks. <strong style="color: #fff; font-weight: 500;">40+ SMEs</strong> already use our agents to recover <strong style="color: #fff; font-weight: 500;">5–19 hours per person per week</strong> — without hiring.
+        </p>
+
+        <!-- GUARANTEE BADGE -->
+        <div class="mt-6 inline-flex items-center gap-2 fade-up fade-up-delay-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+          <span class="text-[14px] font-medium" style="color: #F4B842;">You only pay if you're satisfied. Guarantee included.</span>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+          <a href="/en/contact" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            20 min with Daniel
+            <span class="btn-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="/en/downloads/ai-assessment-sample" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40 inline-flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download sample report
+          </a>
+        </div>
+
+        <!-- Anchor scroll to offer -->
+        <a href="#come-iniziamo" class="mt-6 inline-flex items-center gap-1.5 text-[13px] fade-up fade-up-delay-3" style="color: rgba(255,255,255,0.55);">
+          Or scroll to see the full offer
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12l-7 7-7-7M12 5v14"/></svg>
+        </a>
+
+        <!-- Trust strip -->
+        <div class="mt-10 pt-8 border-t fade-up fade-up-delay-3" style="border-color: rgba(255,255,255,0.12);">
+          <p class="text-[10px] uppercase tracking-[0.18em] mb-3" style="color: rgba(255,255,255,0.45);">They work with us</p>
+          <p class="text-[13.5px] leading-relaxed" style="color: rgba(255,255,255,0.7);">
+            40+ projects · 11 countries · APraise · Numeraria · LIFTT · Navily · OggiLavoro · Stars Be Original · 40Factory
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OFFER, 2 STEP PRICING
+       ============================================================ -->
+  <PricingTwoSteps bg="ink-50" lang="en" />
+
+  <!-- ============================================================
+       HOW WE BUILD YOUR AGENTS (sprint methodology)
+       ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Methodology"
+        title="How we build your AI agents."
+        subtitle="<strong>Short iterative sprints</strong>: at each iteration the agent is already doing something useful in production. No 6-month projects that end in a demo — you see value from week one."
+        align="center"
+      />
+
+      <!-- Sprint diagram (hero visual, centered) -->
+      <figure class="m-0 mt-8 max-w-[1180px] mx-auto">
+        <div class="rounded-2xl bg-ink-50 border border-line px-4 py-6 md:px-8 md:py-8">
+          <img
+            src="/agile/sprint.webp"
+            alt="Iterative sprints: each cycle delivers value in production"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-auto block"
+          />
+        </div>
+        <figcaption class="mt-3.5 text-[12.5px] text-center" style="color: var(--color-ink-soft);">
+          Iterative sprints: at each cycle the agent is already in production.
+        </figcaption>
+      </figure>
+
+      <!-- Sprint steps timeline 4-col -->
+      <div class="mt-14 md:mt-16 max-w-6xl mx-auto">
+        <ol class="sprint-timeline">
+          <li class="sprint-step">
+            <div class="sprint-step-head">
+              <span class="sprint-num">1</span>
+              <div class="sprint-step-meta">
+                <p class="sprint-step-tag">Week 1</p>
+                <p class="sprint-step-title">Discovery + baseline</p>
+              </div>
+            </div>
+            <p class="sprint-step-body">We time the target process with your team. We lock a single <strong>primary metric</strong> (e.g. hours/person/week recovered). No baseline, no guarantee.</p>
+          </li>
+          <li class="sprint-step">
+            <div class="sprint-step-head">
+              <span class="sprint-num">2</span>
+              <div class="sprint-step-meta">
+                <p class="sprint-step-tag">Weeks 2–3</p>
+                <p class="sprint-step-title">Agent build</p>
+              </div>
+            </div>
+            <p class="sprint-step-body">Prompt engineering, integration with your systems (CRM, ATS, ERP), escalation rules, audit log. Weekly reviews with your operational team.</p>
+          </li>
+          <li class="sprint-step">
+            <div class="sprint-step-head">
+              <span class="sprint-num">3</span>
+              <div class="sprint-step-meta">
+                <p class="sprint-step-tag">Week 4</p>
+                <p class="sprint-step-title">Shadow mode + training</p>
+              </div>
+            </div>
+            <p class="sprint-step-body">The agent works in parallel with the human team, without yet making autonomous decisions. Output comparison, fine-tuning on criteria, team training.</p>
+          </li>
+          <li class="sprint-step sprint-step--milestone">
+            <div class="sprint-step-head">
+              <span class="sprint-num sprint-num--milestone">4</span>
+              <div class="sprint-step-meta">
+                <p class="sprint-step-tag">Go-live + 30 days</p>
+                <p class="sprint-step-title">Hypercare & measurement</p>
+              </div>
+            </div>
+            <p class="sprint-step-body">The agent goes into production. Active Soraia monitoring for 30 days, immediate fixes on edge cases. On day 30: <strong>final measurement vs baseline</strong>. If you haven't recovered the promised hours, you don't pay for the sprint.</p>
+          </li>
+        </ol>
+
+        <div class="mt-12 flex justify-center">
+          <div class="inline-flex items-center gap-2.5 px-5 py-3 rounded-full text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand); border: 1px solid var(--color-violet-200);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span><strong>4 weeks</strong> to the first live agent · monthly iterations after go-live</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    /* === Sprint timeline === */
+    .sprint-timeline {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+    }
+    @media (min-width: 768px) {
+      .sprint-timeline {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 2rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .sprint-timeline {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+      /* Connector line behind the badges, horizontal on desktop */
+      .sprint-timeline::before {
+        content: "";
+        position: absolute;
+        top: 22px;
+        left: 7%;
+        right: 7%;
+        height: 2px;
+        background: linear-gradient(to right,
+          var(--color-line-strong) 0%,
+          var(--color-violet-300) 50%,
+          var(--color-brand) 100%);
+        opacity: 0.5;
+        z-index: 0;
+      }
+    }
+    .sprint-step {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    /* Mobile: badge + meta inline (horizontal); Desktop: badge above meta (vertical) */
+    .sprint-step-head {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    @media (min-width: 1024px) {
+      .sprint-step-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.1rem;
+      }
+    }
+    .sprint-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 9999px;
+      background: white;
+      border: 1.5px solid var(--color-violet-300);
+      color: var(--color-brand);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+      /* knock-out: enlarge the white "halo" so the connector line cuts cleanly at the badge edge */
+      box-shadow: 0 0 0 8px white;
+    }
+    .sprint-num--milestone {
+      background: var(--color-brand);
+      border-color: var(--color-brand);
+      color: white;
+      box-shadow: 0 0 0 8px white, 0 4px 14px -4px rgba(74, 30, 92, 0.40);
+    }
+    .sprint-step-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      min-width: 0;
+    }
+    .sprint-step-tag {
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-ink-soft);
+      line-height: 1.4;
+    }
+    .sprint-step-title {
+      font-size: 15.5px;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      font-weight: 500;
+      color: var(--color-ink);
+    }
+    .sprint-step-body {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--color-ink-muted);
+      margin: 0;
+      text-wrap: pretty;
+    }
+    .sprint-step-body strong {
+      color: var(--color-ink);
+      font-weight: 500;
+    }
+    .sprint-step--milestone .sprint-step-title {
+      color: var(--color-brand);
+    }
+  </style>
+
+  <!-- ============================================================
+       THE 6 AREAS (compressed, moved after methodology)
+       ============================================================ -->
+  <section id="areas" class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Sectors we work in"
+        title="Where agents produce ROI fastest."
+        subtitle="Six SME sectors where we have already delivered. Explore the vertical that interests you for task details and case studies."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {areas.map((a) => {
+          const Tag = a.available ? "a" : "div";
+          return (
+            <Tag
+              href={a.available ? a.href : undefined}
+              class={`card-editorial relative overflow-hidden group reveal !p-7 md:!p-8 flex flex-col no-underline ${a.available ? "hover:!-translate-y-1 hover:shadow-lg transition-all cursor-pointer" : ""}`}
+            >
+              <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-violet-100/60 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+              <div class="relative">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-violet-700 to-violet-500 flex items-center justify-center shadow-violet">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[a.icon]} />
+                  </div>
+                  <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-500">{a.eyebrow}</span>
+                </div>
+
+                <h3 class="text-[1.5rem] md:text-[1.75rem] font-semibold tracking-tight leading-[1.1] text-ink-900 mb-3">
+                  {a.title}
+                </h3>
+                <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty mb-5">{a.description}</p>
+
+                <div class="pt-4 border-t border-ink-200 mt-auto">
+                  <div class="flex items-center gap-2 mb-3 px-3 py-1.5 rounded-full bg-violet-50 w-fit">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    <span class="text-[11.5px] font-semibold text-violet-700">{a.priceHint}</span>
+                  </div>
+                  <div class="flex items-center justify-between gap-4">
+                    <p class="text-[13px] text-ink-600 leading-snug italic">
+                      {a.proof}
+                    </p>
+                    {a.available ? (
+                      <span class="shrink-0 text-sm font-semibold text-violet-700 inline-flex items-center gap-1">
+                        Learn more
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                      </span>
+                    ) : (
+                      <span class="shrink-0 text-[11px] font-semibold text-ink-400 uppercase tracking-wider">Coming soon</span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </Tag>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia max-w-4xl">
+      <SectionHeader
+        eyebrow="Frequently asked questions"
+        title="What people usually ask us."
+        align="center"
+      />
+      <FAQ items={faqs} lang="en" />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA DUAL. Call CEO + download report
+       ============================================================ -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia max-w-5xl">
+      <div class="reveal text-center max-w-2xl mx-auto mb-10">
+        <p class="eyebrow mb-5">Next step</p>
+        <h2 class="text-[2rem] md:text-[2.75rem] font-semibold tracking-tight text-ink-900 leading-[1.1] text-balance">
+          20 minutes with the CEO. No pitch.
+        </h2>
+        <p class="mt-5 text-[16px] md:text-[17px] text-ink-600 leading-relaxed text-pretty">
+          We figure out together whether an AI Readiness Assessment makes sense for your situation. No commitment, no sales call.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto reveal reveal-delay-1">
+        <a href="/en/contact" class="group rounded-2xl bg-ink-900 hover:bg-ink p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-xl no-underline">
+          <div class="flex items-start gap-4">
+            <img src="/team/daniel-levis.webp" alt="Daniel Levis" class="w-12 h-12 rounded-full object-cover ring-2 ring-violet-400/30" />
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] uppercase tracking-[0.16em] font-semibold mb-1" style="color: rgba(216,180,232,0.9);">Option 1 · Conversation</p>
+              <h3 class="text-[1.15rem] font-semibold text-white leading-tight mb-1">20 min with Daniel</h3>
+              <p class="text-[13.5px] leading-relaxed" style="color: rgba(255,255,255,0.7);">We figure out together whether it makes sense to work together. Zero pitch.</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-2 text-white group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <a href="/en/downloads/ai-assessment-sample" class="group rounded-2xl bg-white border border-line hover:border-violet-300 p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-lg no-underline">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-violet-50 flex items-center justify-center shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] uppercase tracking-[0.16em] font-semibold text-violet-700 mb-1">Option 2 · Resources</p>
+              <h3 class="text-[1.15rem] font-semibold text-ink-900 leading-tight mb-1">Download sample report</h3>
+              <p class="text-[13.5px] text-ink-600 leading-relaxed">See what an AI Readiness Assessment looks like. PDF, 22 pages.</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-2 text-violet-700 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

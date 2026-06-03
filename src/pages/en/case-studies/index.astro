@@ -1,0 +1,325 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import CaseStudyCardJet from "~/components/CaseStudyCardJet.astro";
+
+const bare = (id: string) => id.replace(/^en\//, "");
+
+const title = "Case Studies | Soraia";
+const description = "AI agents in production for Italian and European SMEs. Recruitment, consumer mobile, finance, climate, public sector: what we built and the results we delivered.";
+
+const cases = (await getCollection("caseStudies"))
+  .filter((c) => c.data.lang === "en")
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const photoMap: Record<string, string> = {
+  "40factory": "/testimonials/margherita-chifari-40factory.webp",
+  aegis: "/testimonials/aegis_vittorio_maiani.webp",
+  apraise: "/testimonials/jacopo-castano-apraise.webp",
+  cxl: "/testimonials/brian-dandelet-cxl.webp",
+  frh: "/testimonials/fabricio-carminati-frh.webp",
+  liftt: "/testimonials/alberto-burzio-liftt.webp",
+  navily: "/testimonials/edouard-fiess-navily.webp",
+  numeraria: "/testimonials/elisa-gnan-numeraria.webp",
+  "oggi-lavoro": "/testimonials/francesca-sorrentino-oggi-lavoro.webp",
+  rainplan: "/testimonials/amanda-potter-rainplan.webp",
+  "stars-be-original": "/testimonials/gabriella-bruzzone-stars.webp",
+  "startup-govtech": "/testimonials/govtech-startup.webp",
+  storywonder: "/testimonials/rolf-storywonder.webp",
+  "talent-match": "/testimonials/guillem-llacuna-talent-match.webp",
+};
+
+function cardQuote(c: typeof cases[number]): string {
+  const q = c.data.shortQuote || c.data.heroQuote;
+  return q.length > 140 ? q.slice(0, 137).trimEnd() + "…" : q;
+}
+
+const matchesIndustry = (c: typeof cases[number], id: string) =>
+  c.data.industry === id || (c.data.additionalIndustries || []).includes(id as any);
+
+const industryFilters = [
+  { id: "all",                 label: "All",                count: cases.length },
+  { id: "recruitment-hr",      label: "Recruitment & HR",   count: cases.filter((c) => matchesIndustry(c, "recruitment-hr")).length },
+  { id: "finance-vc",          label: "Finance & VC",       count: cases.filter((c) => matchesIndustry(c, "finance-vc")).length },
+  { id: "sales-marketing",     label: "Sales & Marketing",  count: cases.filter((c) => matchesIndustry(c, "sales-marketing")).length },
+  { id: "customer-support",    label: "Customer Support",   count: cases.filter((c) => matchesIndustry(c, "customer-support")).length },
+  { id: "real-estate",         label: "Real Estate",        count: cases.filter((c) => matchesIndustry(c, "real-estate")).length },
+  { id: "event-management",    label: "Event Management",   count: cases.filter((c) => matchesIndustry(c, "event-management")).length },
+];
+---
+
+<Layout title={title} description={description} lang="en" altHref="/case-studies">
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
+    <div class="container-soraia pt-20 md:pt-28 pb-16 md:pb-20">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+        Case studies
+      </p>
+      <h1 class="text-balance max-w-3xl" style="font-size: clamp(2.25rem, 5vw + 1rem, 4rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+        AI agents in production. Real numbers.
+      </h1>
+      <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
+        The processes we automated for Italian and European SMEs, what we built, and the results. No vanity metrics — just agents in production handling real work.
+      </p>
+    </div>
+  </section>
+
+  <!-- FILTER BAR + GRID -->
+  <section class="bg-white" style="padding-bottom: 5rem;">
+    <div class="container-soraia">
+
+      <div class="flex flex-wrap items-center gap-2 mt-12 mb-10" data-filter-bar>
+        {industryFilters.map((f, i) => (
+          <button
+            type="button"
+            class={`cs-filter ${i === 0 ? "is-active" : ""}`}
+            data-filter={f.id}
+            aria-pressed={i === 0 ? "true" : "false"}
+          >
+            <span>{f.label}</span>
+            <span class="cs-filter-count">{f.count}</span>
+          </button>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" data-case-grid>
+        {cases.map((c) => {
+          const industries = [c.data.industry, ...(c.data.additionalIndustries || [])].join(",");
+          return (
+            <div class="cs-grid-item" data-industries={industries}>
+              <CaseStudyCardJet
+                lang="en"
+                href={`/en/case-studies/${bare(c.id)}`}
+                client={c.data.client}
+                clientLogo={c.data.clientLogo}
+                quote={cardQuote(c)}
+                dimensioni={c.data.dimensioni}
+                sector={c.data.sector}
+                cardImage={c.data.cardImage || photoMap[bare(c.id)]}
+              />
+            </div>
+          );
+        })}
+      </div>
+
+      <div class="hidden text-center py-12" data-empty-state>
+        <p class="text-[15px]" style="color: var(--color-ink-muted);">No case study for this industry. Try another filter or <a href="/en/contact" style="color: var(--color-brand); text-decoration: underline;">talk to us</a> about your sector.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-violet-mesh">
+    <div class="container-soraia text-center max-w-3xl mx-auto">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+        Got a similar challenge?
+      </p>
+      <h2 class="text-balance" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 2.75rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
+        Let's figure out together if it makes sense to work.
+      </h2>
+      <p class="mt-5 text-[17px] leading-relaxed" style="color: var(--color-ink-muted);">
+        20 minutes with the CEO. No pitch, no surprise quotes. Just a practical conversation about your processes.
+      </p>
+      <div class="mt-9">
+        <a href="/en/contact" class="btn btn-primary">
+          20 min with Daniel
+          <span class="btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      const bar = document.querySelector("[data-filter-bar]");
+      const grid = document.querySelector("[data-case-grid]");
+      const emptyState = document.querySelector("[data-empty-state]");
+      if (!bar || !grid) return;
+
+      const cards = grid.querySelectorAll(".cs-grid-item");
+      const buttons = bar.querySelectorAll(".cs-filter");
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const filter = btn.dataset.filter;
+
+          buttons.forEach((b) => {
+            const active = b === btn;
+            b.classList.toggle("is-active", active);
+            b.setAttribute("aria-pressed", active ? "true" : "false");
+          });
+
+          let visibleCount = 0;
+          cards.forEach((card) => {
+            const industries = (card.dataset.industries || "").split(",");
+            const match = filter === "all" || industries.includes(filter);
+            card.style.display = match ? "" : "none";
+            if (match) visibleCount++;
+          });
+
+          emptyState.classList.toggle("hidden", visibleCount > 0);
+        });
+      });
+    })();
+  </script>
+
+  <style is:global>
+    .cs-filter {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 1rem;
+      border-radius: 9999px;
+      border: 1px solid var(--color-line-strong);
+      background: white;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-ink);
+      cursor: pointer;
+      transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+    }
+    .cs-filter:hover {
+      border-color: var(--color-brand);
+      color: var(--color-brand);
+    }
+    .cs-filter.is-active {
+      background: var(--color-brand);
+      border-color: var(--color-brand);
+      color: white;
+    }
+    .cs-filter-count {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 1px 6px;
+      border-radius: 9999px;
+      background: var(--color-ink-50);
+      color: var(--color-ink-soft);
+      min-width: 18px;
+      text-align: center;
+    }
+    .cs-filter.is-active .cs-filter-count {
+      background: rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.95);
+    }
+    .cs-filter:hover:not(.is-active) .cs-filter-count {
+      background: var(--color-brand-soft);
+      color: var(--color-brand);
+    }
+
+    .cs-card {
+      background: white;
+      border: 1px solid var(--color-line-strong);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+    }
+    .cs-card:hover {
+      border-color: var(--color-brand);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px -12px rgba(74, 30, 92, 0.16);
+    }
+
+    .cs-card-logo {
+      background: var(--color-ink-50);
+      border-bottom: 1px solid var(--color-line);
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 2rem;
+    }
+    .cs-card-logo img {
+      max-width: 70%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(100%) brightness(0.65) contrast(1.05);
+      opacity: 0.85;
+      transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+      mix-blend-mode: multiply;
+    }
+    .cs-card:hover .cs-card-logo img {
+      filter: grayscale(0%) brightness(1);
+      opacity: 1;
+    }
+    .cs-card-logo-fallback {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--color-ink);
+      opacity: 0.7;
+    }
+
+    .cs-card-body {
+      padding: 1.5rem 1.75rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .cs-card-eyebrow {
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--color-ink-soft);
+      margin-bottom: 0.85rem;
+      line-height: 1.4;
+    }
+    .cs-card-title {
+      font-size: 1.25rem;
+      line-height: 1.2;
+      letter-spacing: -0.018em;
+      font-weight: 500;
+      color: var(--color-ink);
+      margin-bottom: 0.7rem;
+    }
+    .cs-card-desc {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--color-ink-muted);
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+    .cs-card-result {
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-line);
+      margin-bottom: 1.15rem;
+    }
+    .cs-card-result-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-ink-soft);
+      margin-bottom: 0.4rem;
+    }
+    .cs-card-result-metric {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--color-brand);
+      letter-spacing: -0.005em;
+    }
+    .cs-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-brand);
+    }
+    .cs-card-arrow {
+      transition: transform 0.22s ease;
+    }
+    .cs-card:hover .cs-card-arrow {
+      transform: translateX(3px);
+    }
+  </style>
+</Layout>

@@ -1,0 +1,805 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import FAQ from "~/components/FAQ.astro";
+
+const title = "AI Adoption, training and change management | Soraia";
+const description =
+  "Hands-on workshop built around your team's real processes, monthly coaching, 110h/year freed per person. Payback in 7–11 weeks. Adopted by LIFTT, APraise, OggiLavoro, Numeraria, Stars Be Original.";
+
+const phases = [
+  {
+    num: "01",
+    name: "Kick-off scoping",
+    what: "Session with the internal sponsor and advanced users to map the real processes we'll bring into the workshop. Output: a custom workshop agenda built around your team's actual tasks.",
+    time: "2–4 hours",
+  },
+  {
+    num: "02",
+    name: "Batch workshop",
+    what: "We split the team into batches of <strong>max 10 people</strong>, N batches depending on team size. Topics: conscious use of company AI tools, standardised connectors (Drive, email, chat, CRM, ATS, ERP), shared company skills, 'AI safe use' policy. Same content for every batch, adaptive format to ensure engagement while keeping part of the operational team available during sessions.",
+    time: "2 days × 4h per batch",
+  },
+  {
+    num: "03",
+    name: "Wrap-up review",
+    what: "One session per batch, 1 month after the workshop. Circle format: each participant brings a real case, we review what's been applied, where people got stuck, and what needs consolidating.",
+    time: "2 hours per batch",
+  },
+];
+
+const deliverables = [
+  "Role-specific prompt pack with recurring tasks pre-built",
+  "Set of standardised company skills (delete protection, approval flow, connector management)",
+  "1-pager 'AI safe use' policy to circulate internally",
+  "Connector checklist: what to activate, what to deactivate, when, and with which permissions",
+];
+
+const coachingPackages = [
+  {
+    hours: "10 hours",
+    rate: "€120/hour",
+    total: "€1,200",
+    when: "A handful of specific cases to unblock in the weeks following the workshop.",
+  },
+  {
+    hours: "20 hours",
+    rate: "€100/hour",
+    total: "€2,000",
+    when: "More sustained support spread across multiple team members.",
+  },
+  {
+    hours: "50 hours",
+    rate: "€90/hour",
+    total: "€4,500",
+    when: "Extended consolidation programme covering the full year after the workshop.",
+  },
+];
+
+const dontFeatures = [
+  "Theory-heavy courses on AI's impact on society or the economy",
+  "Slides packed with generic tools, disconnected from your real processes",
+  "One-shot workshops with no follow-up — 70% of the content is forgotten within 2 weeks",
+];
+
+const faqs = [
+  {
+    q: "Who is this programme designed for?",
+    a: "For <strong>knowledge workers doing analytical, managerial, or creative work</strong>: Business Analysts, M&A, Project Managers, Recruiters, Account Managers, Content Creators, Operations, Customer Success. We work with teams of 10 to 50 people; above 50 we split into additional batches.",
+  },
+  {
+    q: "How long does the full programme take?",
+    a: "<strong>Foundation</strong>: ~6 weeks total (kick-off + 2 workshops over 2–3 weeks + wrap-up at 1 month). <strong>Foundation + Coaching</strong>: 4 months (Foundation + 3 months of support). <strong>Foundation + Brain Pilot</strong>: 4 months with dedicated coaching on the Brain.",
+  },
+  {
+    q: "Which AI tools do you work with?",
+    a: "<strong>We are AI-agnostic.</strong> We start from whatever your company has already chosen — any enterprise LLM (ChatGPT, Claude, Gemini, Copilot, Mistral, or others), any automation stack, any CRM/ATS/ERP. We don't sell new licences or ask you to switch providers. <strong>We teach your team to use well what they already use poorly — or don't use at all.</strong>",
+  },
+  {
+    q: "What is the Company Brain and why does it matter?",
+    a: "A lightweight framework (local folder + private repository) where each person accumulates their own knowledge about processes, clients, and projects. The company's chosen AI tool connects to it and becomes a 'personal intern' that knows the person's work and can handle delegated tasks. <strong>Already used internally at Soraia for over 6 months</strong> — framework ready to deploy.",
+  },
+  {
+    q: "In-person or remote workshop?",
+    a: "<strong>Default: in-person at your premises</strong>, because engagement is 3× higher and practical cases surface naturally. Remote delivery is possible for distributed teams with a specific setup (shorter sessions, async exercises between sessions). Travel within Italy is included in the setup fee.",
+  },
+  {
+    q: "How do you measure ROI?",
+    a: "<strong>Self-reported productivity tracking</strong>: baseline at kick-off, milestones at 1 and 3 months. <strong>Final review at 5 months</strong> with consolidated impact data and a forward roadmap. The conservative estimate is 30 minutes freed per day per person — at 220 working days = 110h/year/person × €50–80/h fully loaded.",
+  },
+  {
+    q: "What if adoption doesn't take off?",
+    a: "Proposals 2 and 3 include <strong>monthly coaching with accountability</strong> (assigned exercise, group check-up, 1:1 coaching): that's the difference between real adoption and a forgotten workshop. If adoption still hasn't kicked in after 2 months, we identify it then and adapt the method or the participants — we don't wait for the final review.",
+  },
+  {
+    q: "Do you have experience in my sector?",
+    a: "We have run similar programmes for clients in <strong>venture capital and financial services</strong> (LIFTT), <strong>recruitment</strong> (APraise, OggiLavoro, Stars Be Original), <strong>accounting</strong> (Numeraria), <strong>real estate</strong> (FRH, Rainplan), and <strong>tech</strong> (Navily, StoryWonder). The initial scoping always starts from your specific sector.",
+  },
+];
+
+const stripTags = (html: string) => html.replace(/<[^>]+>/g, "");
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "AI Adoption, training and change management",
+    provider: {
+      "@type": "Organization",
+      name: "Soraia",
+      url: "https://www.soraia.io",
+    },
+    areaServed: ["IT", "EU"],
+    serviceType: "AI training and change management for SMEs",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Foundation",
+        priceCurrency: "EUR",
+        description: "Kick-off + batch workshops + wrap-up. Team up to 20 people. €8–10k.",
+      },
+      {
+        "@type": "Offer",
+        name: "Foundation + Coaching",
+        priceCurrency: "EUR",
+        description: "Foundation + 3 months of monthly coaching and 1:1 coaching. €20–25k.",
+      },
+      {
+        "@type": "Offer",
+        name: "Foundation + Coaching + Brain Pilot",
+        priceCurrency: "EUR",
+        description: "Foundation + Coaching + Company Brain pilot for 5–6 advanced users. €30–35k.",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: stripTags(f.a),
+      },
+    })),
+  },
+];
+---
+
+<Layout title={title} description={description} lang="en" jsonLd={jsonLd}>
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="max-w-[900px]" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          People · AI Adoption
+        </p>
+
+        <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+          AI Adoption programmes<br/>that generate real productivity.
+        </h1>
+
+        <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+          Hands-on workshop built around your team's real processes, monthly coaching to guarantee adoption. <strong style="color: #fff; font-weight: 500;">110h/year freed per person</strong>, payback in 7–11 weeks.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+          <a href="/en/contact" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            20 min with Daniel
+            <span class="btn-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="#proposals" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
+            See the 3 proposals
+          </a>
+        </div>
+
+        <!-- Anchor scroll -->
+        <a href="#method" class="mt-6 inline-flex items-center gap-1.5 text-[13px] fade-up fade-up-delay-3" style="color: rgba(255,255,255,0.55);">
+          Or scroll to see the method
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12l-7 7-7-7M12 5v14"/></svg>
+        </a>
+
+        <!-- Trust strip -->
+        <div class="mt-10 pt-8 border-t fade-up fade-up-delay-3" style="border-color: rgba(255,255,255,0.12);">
+          <p class="text-[10px] uppercase tracking-[0.18em] mb-3" style="color: rgba(255,255,255,0.45);">They've already adopted the programme</p>
+          <p class="text-[13.5px] leading-relaxed" style="color: rgba(255,255,255,0.7);">
+            LIFTT · APraise · OggiLavoro · Numeraria · Stars Be Original · FRH · Rainplan · Navily · StoryWonder
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       IL PROBLEMA
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="The problem"
+        title="75% of employees use AI without their company knowing."
+        subtitle="Source: Microsoft Work Trend Index 2024. The real gap isn't the technology — it's <strong>structured adoption</strong>. Every team has a minority of advanced users building personal skills alongside a majority using AI like a chat window. The result: a productivity gap within the same team, no shared processes, and governance risks out of control."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <article class="card-editorial reveal !p-7 flex flex-col gap-4">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-violet-700 to-violet-500 flex items-center justify-center shadow-violet">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-ink-900 leading-tight">Team asymmetries</h3>
+            <p class="mt-2 text-[15px] text-ink-600 leading-relaxed text-pretty">Those who know how to use AI do three times as much. Those who don't fall behind. Average productivity doesn't rise — only the 2–3 power users' does.</p>
+          </div>
+        </article>
+
+        <article class="card-editorial reveal reveal-delay-1 !p-7 flex flex-col gap-4">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-violet-700 to-violet-500 flex items-center justify-center shadow-violet">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-ink-900 leading-tight">No governance</h3>
+            <p class="mt-2 text-[15px] text-ink-600 leading-relaxed text-pretty">"AI deleted the files" has happened at more than one company. You need skills with multi-step confirmation, approval workflows, and shared rules.</p>
+          </div>
+        </article>
+
+        <article class="card-editorial reveal reveal-delay-2 !p-7 flex flex-col gap-4">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-violet-700 to-violet-500 flex items-center justify-center shadow-violet">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-ink-900 leading-tight">Forgotten workshops</h3>
+            <p class="mt-2 text-[15px] text-ink-600 leading-relaxed text-pretty"><strong class="text-ink-900">70% of course content</strong> evaporates within 2 weeks without accountability. That's why our programmes include monthly coaching.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       IL METODO
+       ============================================================ -->
+  <section id="method" class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="The method"
+        title="Three phases. No slides — only your real cases."
+        subtitle="All proposals share the same methodological backbone. What changes is the depth and duration of post-workshop support."
+        align="center"
+      />
+
+      <ol class="adoption-timeline max-w-6xl mx-auto reveal">
+        {phases.map((p, i) => (
+          <li class={`adoption-step ${i === phases.length - 1 ? "adoption-step--milestone" : ""}`}>
+            <div class="adoption-step-head">
+              <span class={`adoption-num ${i === phases.length - 1 ? "adoption-num--milestone" : ""}`}>{p.num}</span>
+              <div class="adoption-step-meta">
+                <p class="adoption-step-tag">{p.time}</p>
+                <p class="adoption-step-title">{p.name}</p>
+              </div>
+            </div>
+            <p class="adoption-step-body"><Fragment set:html={p.what} /></p>
+          </li>
+        ))}
+      </ol>
+
+      <!-- Deliverable -->
+      <div class="mt-12 max-w-5xl mx-auto reveal">
+        <p class="eyebrow mb-5">Deliverables</p>
+        <h3 class="text-[1.5rem] md:text-[1.75rem] font-semibold text-ink-900 mb-6 leading-tight">What your team takes home.</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {deliverables.map((d) => (
+            <li class="flex items-start gap-3 p-4 rounded-xl bg-white border border-ink-200">
+              <span class="shrink-0 mt-0.5 inline-flex w-6 h-6 rounded-full bg-violet-50 items-center justify-center">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              </span>
+              <span class="text-[15px] text-ink-700 leading-relaxed">{d}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CHI TIENE IL WORKSHOP
+       ============================================================ -->
+  <section id="instructors" class="section bg-white border-t border-line">
+    <div class="container-soraia max-w-5xl">
+      <SectionHeader
+        eyebrow="Who runs the workshop"
+        title="Two co-founders in the room. Two complementary perspectives."
+        subtitle="Daniel leads the <strong>change management and AI adoption</strong> side: how to turn AI use into team-level productivity. Davide leads the <strong>agent development and technical governance</strong> side: connectors, company skills, safe use. The cases they bring into the workshop are cases they've lived with Soraia's clients."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto reveal">
+        <!-- Daniel Levis -->
+        <article class="card-editorial !p-7 md:!p-8 flex flex-col">
+          <div class="flex items-start gap-5 mb-5">
+            <div class="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-2xl overflow-hidden bg-ink-50 ring-1 ring-violet-100">
+              <img src="/team/daniel-levis.webp" alt="Daniel Levis, Co-Founder & CEO Soraia" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-[1.35rem] md:text-[1.5rem] font-semibold tracking-tight text-ink-900 leading-tight mb-1">Daniel Levis</h3>
+              <p class="text-[13.5px] text-violet-700 font-semibold mb-1">Co-Founder & CEO</p>
+              <p class="text-[12px] text-ink-500 uppercase tracking-[0.14em]">Change management · AI adoption</p>
+            </div>
+          </div>
+
+          <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty flex-1">
+            Former digital transformation consultant at groups including Reply, Accenture, and Alten, he has led the AI transformation of Italian SMEs in venture capital, recruitment, marketing, and finance. He has delivered AI Adoption programmes at ESCP Business School.
+          </p>
+        </article>
+
+        <!-- Davide Silvestri -->
+        <article class="card-editorial !p-7 md:!p-8 flex flex-col">
+          <div class="flex items-start gap-5 mb-5">
+            <div class="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-2xl overflow-hidden bg-ink-50 ring-1 ring-violet-100">
+              <img src="/team/davide-silvestri.webp" alt="Davide Silvestri, Co-Founder & CTO Soraia" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-[1.35rem] md:text-[1.5rem] font-semibold tracking-tight text-ink-900 leading-tight mb-1">Davide Silvestri</h3>
+              <p class="text-[13.5px] text-violet-700 font-semibold mb-1">Co-Founder & CTO</p>
+              <p class="text-[12px] text-ink-500 uppercase tracking-[0.14em]">Agent development · Governance</p>
+            </div>
+          </div>
+
+          <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty flex-1">
+            10+ years in technical project management, leadership, and backend architecture. In the workshop he covers the technical side: standardised connectors, company skills, safe use, and building real agents on the team's actual processes. Previously at Simon-Kucher, Amazon, Dott, and Satispay.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COSA NON FACCIAMO (moved before pricing for positioning)
+       ============================================================ -->
+  <section class="section bg-ink-900 relative overflow-hidden">
+    <div class="orb orb-violet w-[500px] h-[500px] -top-20 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
+
+    <div class="container-soraia relative z-10 max-w-4xl">
+      <p class="eyebrow eyebrow-light mb-6 reveal">What we DON'T do</p>
+      <h2 class="text-[2.5rem] md:text-[3.5rem] font-semibold tracking-tight text-white leading-[1.05] text-balance reveal mb-10">
+        We'll say it upfront, to avoid any misunderstanding.
+      </h2>
+
+      <ul class="space-y-4 reveal reveal-delay-1">
+        {dontFeatures.map((item) => (
+          <li class="flex items-start gap-4 pb-5 border-b border-white/10 last:border-b-0">
+            <span class="shrink-0 mt-1 inline-flex w-7 h-7 rounded-full bg-red-500/15 items-center justify-center">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            <span class="text-[16px] md:text-[17px] text-white/85 leading-relaxed">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3 PROPOSTE. PRICING
+       ============================================================ -->
+  <section id="proposals" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Three tiers"
+        title="Three proposals. Same foundation, different support."
+        subtitle="All include kick-off, workshop, and wrap-up. What changes is the depth of post-workshop follow-up — because that's where real adoption happens."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Proposta 1: Foundation -->
+        <article class="card-editorial relative reveal !p-8 flex flex-col">
+          <div class="mb-5">
+            <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-2">Proposal 1</p>
+            <h3 class="text-[1.5rem] md:text-[1.75rem] font-semibold text-ink-900 leading-tight">Foundation</h3>
+          </div>
+
+          <div class="flex items-baseline gap-1.5 mb-2">
+            <span class="text-[2.5rem] font-semibold text-ink-900 leading-none">€8–10k</span>
+          </div>
+          <p class="text-[12px] text-ink-500 mb-5">For teams up to 20 people</p>
+
+          <p class="text-[14px] text-ink-700 leading-relaxed mb-6 text-pretty flex-1">
+            <strong class="text-ink-900">When it makes sense:</strong> you need to level up baseline skills and secure AI usage without a long-term commitment.
+          </p>
+
+          <div class="hairline mb-5"></div>
+
+          <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-3">What's included</p>
+          <ul class="space-y-2 text-[14px] text-ink-700 mb-6">
+            {[
+              "Kick-off scoping (2–4h)",
+              "Batch workshops, max 10 people per batch (2 days × 4h per batch)",
+              "Wrap-up review at 1 month (2h per batch)",
+              "All concrete deliverables",
+            ].map((item) => (
+              <li class="flex items-start gap-2.5">
+                <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-violet-50 items-center justify-center">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a href="/en/contact" class="mt-auto btn btn-secondary !w-full !justify-center text-[14px]">
+            Talk about Foundation
+            <span class="btn-arrow">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </article>
+
+        <!-- Proposta 2: Foundation + Tutoraggio (RECOMMENDED) -->
+        <article class="relative reveal reveal-delay-1 rounded-2xl p-8 flex flex-col overflow-hidden bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700 text-white shadow-violet-lg">
+          <div class="orb orb-violet w-[300px] h-[300px] -top-20 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
+          <div class="orb orb-amber w-[200px] h-[200px] -bottom-10 -left-10 opacity-25 float-slower" aria-hidden="true"></div>
+
+          <div class="relative flex flex-col h-full">
+            <div class="absolute -top-2 -right-2">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber/30 border border-amber/50 text-amber text-[10px] font-semibold uppercase tracking-[0.14em]">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber"></span>
+                Recommended
+              </span>
+            </div>
+
+            <div class="mb-5">
+              <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-2">Proposal 2</p>
+              <h3 class="text-[1.5rem] md:text-[1.75rem] font-semibold text-white leading-tight">Foundation + Coaching</h3>
+            </div>
+
+            <div class="flex items-baseline gap-1.5 mb-2">
+              <span class="text-[2.5rem] font-semibold text-white leading-none">€20–25k</span>
+            </div>
+            <p class="text-[12px] text-white/60 mb-5">For teams up to 20 people, 3 months of coaching included</p>
+
+            <p class="text-[14px] text-white/85 leading-relaxed mb-6 text-pretty flex-1">
+              <strong class="text-white">When it makes sense:</strong> you want to guarantee real adoption over the 3 months following the workshop and generate measurable impact metrics for internal review.
+            </p>
+
+            <div class="h-px bg-white/15 mb-5"></div>
+
+            <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-3">Everything in Proposal 1, plus</p>
+            <ul class="space-y-2 text-[14px] text-white/90 mb-6">
+              {[
+                "Monthly group check-up (1h × 3)",
+                "1:1 coaching (30min/month × 3) for each person",
+                "Monthly exercise with accountability",
+                "Self-reported productivity tracking",
+                "Final review at 5 months with forward roadmap",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-white/15 items-center justify-center">
+                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a href="/en/contact" class="mt-auto btn !bg-white !text-violet-900 hover:!bg-violet-50 !w-full !justify-center text-[14px]">
+              Talk about Coaching
+              <span class="btn-arrow">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Proposta 3: Foundation + Tutoraggio + Brain Pilot -->
+        <article class="card-editorial relative reveal reveal-delay-2 !p-8 flex flex-col">
+          <div class="mb-5">
+            <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-2">Proposal 3</p>
+            <h3 class="text-[1.5rem] md:text-[1.75rem] font-semibold text-ink-900 leading-tight">Foundation + Coaching + Brain Pilot</h3>
+          </div>
+
+          <div class="flex items-baseline gap-1.5 mb-2">
+            <span class="text-[2.5rem] font-semibold text-ink-900 leading-none">€30–35k</span>
+          </div>
+          <p class="text-[12px] text-ink-500 mb-5">For teams up to 20 people + 4–6 pilot advanced users</p>
+
+          <p class="text-[14px] text-ink-700 leading-relaxed mb-6 text-pretty flex-1">
+            <strong class="text-ink-900">When it makes sense:</strong> you want to build lasting internal ownership. Not just skills in people's heads, but a knowledge infrastructure that grows with the team.
+          </p>
+
+          <div class="hairline mb-5"></div>
+
+          <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-3">Everything in Proposal 2, plus</p>
+          <ul class="space-y-2 text-[14px] text-ink-700 mb-6">
+            {[
+              "Personal Brain setup for 5–6 advanced users",
+              "Pre-configured company skills (tailored)",
+              "Dedicated Brain coaching (1.5h/month × 3)",
+              "Roadmap to extend to the full team",
+              "Soraia framework ready to deploy",
+            ].map((item) => (
+              <li class="flex items-start gap-2.5">
+                <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-violet-50 items-center justify-center">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a href="/en/contact" class="mt-auto btn btn-secondary !w-full !justify-center text-[14px]">
+            Talk about Brain Pilot
+            <span class="btn-arrow">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </article>
+      </div>
+
+      <!-- Scarcity badge -->
+      <div class="mt-10 reveal flex justify-center">
+        <div class="inline-flex items-center gap-2.5 px-5 py-3 rounded-full text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand); border: 1px solid var(--color-violet-200);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>We accept <strong>a maximum of 3 teams per quarter</strong> to maintain delivery quality · Next slots Q1 2026</span>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-ink-500 mt-8 max-w-3xl mx-auto reveal">
+        Pricing for teams up to 20 people. Above 20 people we split into additional batches and quote accordingly. All amounts exclude 22% VAT.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ADD-ON: PACCHETTI COACHING ORARI
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia max-w-5xl">
+      <SectionHeader
+        eyebrow="Optional add-on"
+        title="Coaching package."
+        subtitle="Available on top of any proposal. Individual or small-group coaching hours (max 5 people), to be used in the months following the workshop for team members who need targeted support. <strong>Three sizes with a decreasing hourly rate at higher volumes.</strong>"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+        {coachingPackages.map((p, i) => (
+          <article class={`card-editorial relative reveal !p-7 flex flex-col ${i === 1 ? "ring-2 ring-violet-200 bg-violet-50/40" : ""}`}>
+            <div class="mb-5">
+              <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-2">Package</p>
+              <h3 class="text-[1.75rem] font-semibold text-ink-900 leading-none">{p.hours}</h3>
+              <p class="text-[13px] text-violet-700 mt-2 font-semibold">{p.rate}</p>
+            </div>
+
+            <div class="hairline mb-5"></div>
+
+            <div class="flex items-baseline gap-1.5 mb-4">
+              <span class="text-[2.25rem] font-semibold text-ink-900 leading-none">{p.total}</span>
+              <span class="text-[12px] text-ink-500">total</span>
+            </div>
+
+            <p class="text-[14px] text-ink-700 leading-relaxed text-pretty flex-1">
+              <strong class="text-ink-900">When it makes sense:</strong> {p.when}
+            </p>
+          </article>
+        ))}
+      </div>
+
+      <div class="reveal mt-10 max-w-3xl mx-auto bg-white border border-ink-200 rounded-2xl p-7">
+        <p class="eyebrow mb-3">What a single hour includes</p>
+        <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">
+          1:1 session or small group (max 5 people) on individual use cases, deep dive into company-specific processes, skill debugging, and coaching towards autonomy. Hours are <strong class="text-ink-900">company-wide</strong>: whoever in the team needs them uses them — they are not per-person allocations.
+        </p>
+        <p class="text-[13px] text-ink-500 leading-relaxed mt-4">
+          <strong class="text-ink-700">Terms.</strong> The package can be activated within 3 months of the end of the workshop. Once activated, hours are valid for 12 months. Invoiced at activation. You can purchase multiple packages or upgrade to a larger size if the first runs out.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ROI
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="ROI"
+        title="Why the investment pays off."
+        subtitle="Conservative estimate based on 30 minutes freed per day per person with correct AI usage, 220 working days/year."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+        <div class="card-editorial reveal !p-8 text-center">
+          <p class="text-[3.5rem] font-semibold tracking-tight text-gradient-violet leading-none">110h</p>
+          <p class="mt-3 text-sm font-semibold text-ink-900">Time freed in year 1</p>
+          <p class="mt-1 text-xs text-ink-500">per person; team of 20 = ~2,200h/year</p>
+        </div>
+        <div class="card-editorial reveal reveal-delay-1 !p-8 text-center">
+          <p class="text-[3.5rem] font-semibold tracking-tight text-gradient-violet leading-none">€5.5–9k</p>
+          <p class="mt-3 text-sm font-semibold text-ink-900">Value generated in year 1</p>
+          <p class="mt-1 text-xs text-ink-500">per person, fully loaded €50–80/h</p>
+        </div>
+        <div class="card-editorial reveal reveal-delay-2 !p-8 text-center">
+          <p class="text-[3.5rem] font-semibold tracking-tight text-gradient-violet leading-none">7–11 <span class="text-2xl">wks</span></p>
+          <p class="mt-3 text-sm font-semibold text-ink-900">Payback on proposal 2</p>
+          <p class="mt-1 text-xs text-ink-500">team of 15–20 people</p>
+        </div>
+      </div>
+
+      <!-- Quote da cliente reale -->
+      <figure class="max-w-3xl mx-auto reveal reveal-delay-2">
+        <blockquote class="relative bg-ink-50 border border-line rounded-2xl p-8 md:p-10">
+          <svg class="absolute -top-3 -left-3 w-10 h-10 text-violet-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/>
+          </svg>
+          <p class="text-[16.5px] md:text-[17.5px] text-ink-900 leading-relaxed text-pretty font-medium mb-6">
+            "The programme changed the way the R&D team uses AI. Before, it was 2–3 people experimenting; today the whole team has shared skills and agentic workflows built on real processes. Daniel doesn't sell courses — he brings into the workshop cases he has lived."
+          </p>
+          <figcaption class="flex items-center gap-4">
+            <div class="w-11 h-11 rounded-full bg-violet-50 flex items-center justify-center text-violet-700 font-semibold">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+            </div>
+            <div>
+              <p class="text-[14.5px] font-semibold text-ink-900 leading-tight">LIFTT R&D Team</p>
+              <p class="text-[12.5px] text-ink-500">Deep-tech Venture Capital holding · Turin</p>
+            </div>
+          </figcaption>
+        </blockquote>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia max-w-4xl">
+      <SectionHeader
+        eyebrow="FAQ"
+        title="What people usually ask us."
+        align="center"
+      />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINALE DUAL. Call + vedi caso reale
+       ============================================================ -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia max-w-5xl">
+      <div class="reveal text-center max-w-2xl mx-auto mb-10">
+        <p class="eyebrow mb-5">Next step</p>
+        <h2 class="text-[2rem] md:text-[2.75rem] font-semibold tracking-tight text-ink-900 leading-[1.1] text-balance">
+          20 minutes with the CEO. No pitch.
+        </h2>
+        <p class="mt-5 text-[16px] md:text-[17px] text-ink-600 leading-relaxed text-pretty">
+          We'll work out together which of the 3 proposals makes sense for your team. No commitment, no sales process.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto reveal reveal-delay-1">
+        <a href="/en/contact" class="group rounded-2xl bg-ink-900 hover:bg-ink p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-xl no-underline">
+          <div class="flex items-start gap-4">
+            <img src="/team/daniel-levis.webp" alt="Daniel Levis" class="w-12 h-12 rounded-full object-cover ring-2 ring-violet-400/30" />
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] uppercase tracking-[0.16em] font-semibold mb-1" style="color: rgba(216,180,232,0.9);">Option 1 · Conversation</p>
+              <h3 class="text-[1.15rem] font-semibold text-white leading-tight mb-1">20 min with Daniel</h3>
+              <p class="text-[13.5px] leading-relaxed" style="color: rgba(255,255,255,0.7);">We'll figure out together whether it makes sense to work together. Zero pitch.</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-2 text-white group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <a href="/en/case-studies/liftt" class="group rounded-2xl bg-white border border-line hover:border-violet-300 p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-lg no-underline">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-violet-50 flex items-center justify-center shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] uppercase tracking-[0.16em] font-semibold text-violet-700 mb-1">Option 2 · Real case</p>
+              <h3 class="text-[1.15rem] font-semibold text-ink-900 leading-tight mb-1">See the LIFTT programme</h3>
+              <p class="text-[13.5px] text-ink-600 leading-relaxed">What happened after the workshop, what was measurable, what we learned.</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-2 text-violet-700 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    /* === Adoption timeline === */
+    .adoption-timeline {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 2.5rem 0 0;
+      position: relative;
+    }
+    @media (min-width: 1024px) {
+      .adoption-timeline {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .adoption-timeline::before {
+        content: "";
+        position: absolute;
+        top: 22px;
+        left: 8%;
+        right: 8%;
+        height: 2px;
+        background: linear-gradient(to right,
+          var(--color-line-strong) 0%,
+          var(--color-violet-300) 50%,
+          var(--color-brand) 100%);
+        opacity: 0.5;
+        z-index: 0;
+      }
+    }
+    .adoption-step {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .adoption-step-head {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    @media (min-width: 1024px) {
+      .adoption-step-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.1rem;
+      }
+    }
+    .adoption-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 9999px;
+      background: white;
+      border: 1.5px solid var(--color-violet-300);
+      color: var(--color-brand);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+      box-shadow: 0 0 0 8px var(--color-ink-50);
+    }
+    .adoption-num--milestone {
+      background: var(--color-brand);
+      border-color: var(--color-brand);
+      color: white;
+      box-shadow: 0 0 0 8px var(--color-ink-50), 0 4px 14px -4px rgba(74, 30, 92, 0.40);
+    }
+    .adoption-step-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      min-width: 0;
+    }
+    .adoption-step-tag {
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-ink-soft);
+      line-height: 1.4;
+    }
+    .adoption-step-title {
+      font-size: 15.5px;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      font-weight: 500;
+      color: var(--color-ink);
+    }
+    .adoption-step-body {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--color-ink-muted);
+      margin: 0;
+      text-wrap: pretty;
+    }
+    .adoption-step-body strong {
+      color: var(--color-ink);
+      font-weight: 500;
+    }
+    .adoption-step--milestone .adoption-step-title {
+      color: var(--color-brand);
+    }
+  </style>
+</Layout>

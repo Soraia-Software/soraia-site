@@ -1,0 +1,439 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import FAQ from "~/components/FAQ.astro";
+import CTABanner from "~/components/CTABanner.astro";
+
+const title = "AI Search Optimization | Soraia";
+const description =
+  "Get found on ChatGPT, Claude, Perplexity, Google AI Overviews. Audit, content re-architecture, high-converting site rebuild and monitoring for e-commerce, retail, B2B distribution.";
+
+const pillars = [
+  {
+    icon: "search",
+    title: "Visibility audit",
+    description:
+      "We map how ChatGPT, Claude, Perplexity and Google AI Overviews cite you today for the queries that matter in your sector. Competitor gap analysis, ranking by prompt, hallucinations to fix.",
+  },
+  {
+    icon: "layers",
+    title: "Content re-architecture",
+    description:
+      "Schema.org, semantic HTML, thematic FAQs. We rewrite your content to make it consumable by LLMs, keeping classic SEO and human UX fully intact.",
+  },
+  {
+    icon: "rocket",
+    title: "High-converting site rebuild",
+    description:
+      "A site built from scratch, optimised for both lead generation (multistep form, structured data, micro-conversions) and AI search. Delivered in 6–10 weeks on an Astro/Next.js + Cloudflare stack.",
+  },
+  {
+    icon: "pulse",
+    title: "Ongoing monitoring",
+    description:
+      "Monthly tracking of your ranking across AI search engines. Prompt-level ranking dashboard, hallucination alerts, monthly iterations on underperforming content.",
+  },
+];
+
+const icons = {
+  search: `<circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>`,
+  layers: `<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>`,
+  rocket: `<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>`,
+  pulse: `<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>`,
+};
+
+const faqs = [
+  {
+    q: "How much does an AI Search audit cost?",
+    a: "<strong>€2,000 + VAT</strong>, delivered in 2 weeks. Includes a current visibility map across ChatGPT, Claude, Perplexity and Google AI Overviews, gap analysis against your top 3–5 competitors, and a prioritised action list. <strong>The audit fee is credited if you proceed with the sprint</strong> — so if we move forward together, you only pay for the sprint.",
+  },
+  {
+    q: "How much does the optimisation sprint cost?",
+    a: "<strong>€3–15k depending on complexity</strong>. €3–5k for content re-architecture on an existing site. €8–15k for a full high-converting + AI-ready site rebuild. The final price is defined in the proposal after the audit — no scope creep.",
+  },
+  {
+    q: "How long until I see results on AI search engines?",
+    a: "It depends on domain authority. <strong>The first citations on Perplexity typically appear within 2–6 weeks</strong> of publishing re-architected content. ChatGPT and Google AI Overviews take 2–4 months to index at full pace. Monthly monitoring tracks every improvement.",
+  },
+  {
+    q: "Do I need to rebuild my entire site?",
+    a: "No. For most projects, a <strong>re-architecture of key content</strong> (homepage, product/service pages, FAQs, strategic blog posts) is enough — no infrastructure changes required. A full site rebuild is only recommended if you already have a redesign planned, or if your technical foundation is outdated (slow CMS, no SSR, no structured data).",
+  },
+  {
+    q: "Does it work for B2B?",
+    a: "Yes — in fact, it works best there. B2B decision-makers are <strong>increasingly using ChatGPT/Claude to shortlist suppliers</strong>: \"who are the top 3 X providers in Italy\". If you're not in the answer, you don't exist. See the <a href='https://www.iltecbiella.it/' target='_blank' rel='noopener'>ILTEC</a> case study.",
+  },
+  {
+    q: "What about classic SEO? Should I abandon it?",
+    a: "No. Classic SEO remains important, and <strong>our work improves it, not harms it</strong>. Semantic HTML, schema.org, and structured FAQs have always been SEO best practice — now LLMs need them too. We work in continuity with your existing SEO team, if you have one.",
+  },
+  {
+    q: "What do you mean by \"high-converting\"?",
+    a: "A site optimised to <strong>bring qualified leads to the form</strong>, not just to look good. Multistep form, structured data, social proof in key positions, tracked micro-conversions. Industry benchmark: <strong>conversion rate from 0.5–1% to 2–4%</strong> with this methodology.",
+  },
+];
+
+const stripTags = (html: string) => html.replace(/<[^>]+>/g, "");
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "AI Search Optimization. Soraia",
+    provider: {
+      "@type": "Organization",
+      name: "Soraia",
+      url: "https://www.soraia.io",
+    },
+    areaServed: ["IT", "EU"],
+    serviceType:
+      "Generative engine optimization (GEO). Visibility on ChatGPT, Claude, Perplexity, Google AI Overviews.",
+    description:
+      "Audit, content re-architecture, high-converting site rebuild and monitoring to get found on AI search engines.",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "AI Search Audit",
+        priceCurrency: "EUR",
+        price: "2000",
+        description: "Visibility audit across ChatGPT, Claude, Perplexity, Google AI Overviews + competitor gap analysis. 2 weeks. Credited if you proceed with the sprint.",
+      },
+      {
+        "@type": "Offer",
+        name: "AI Search Sprint",
+        priceCurrency: "EUR",
+        description: "Sprint €3–15k depending on complexity. Content re-architecture or full high-converting + AI-ready site rebuild.",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: stripTags(f.a),
+      },
+    })),
+  },
+];
+---
+
+<Layout title={title} description={description} lang="en" jsonLd={jsonLd}>
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="max-w-[900px]" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          Visibility · Generative Engine Optimization
+        </p>
+
+        <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+          Get found where your<br/>customers are searching.
+        </h1>
+
+        <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+          ChatGPT, Claude, Perplexity, Google AI Overviews. <strong style="color: #fff; font-weight: 500;">2026 searches no longer run through Google alone.</strong> For businesses selling online, visibility on AI search engines is what classic SEO was a decade ago.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+          <a href="/en/contact" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            20 min with Daniel
+            <span class="btn-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="#audit" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
+            See what we include
+          </a>
+        </div>
+
+        <p class="mt-6 text-[13px] fade-up fade-up-delay-3" style="color: rgba(255,255,255,0.55);">
+          For: <strong style="color: rgba(255,255,255,0.85); font-weight: 500;">e-commerce, retail, B2B distribution, marketplaces, professional services</strong> with meaningful organic traffic.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROBLEMA
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia max-w-5xl">
+      <div class="max-w-3xl mb-12 reveal">
+        <p class="eyebrow mb-5">The problem</p>
+        <h2 class="text-[2rem] md:text-[2.75rem] font-semibold tracking-tight text-ink-900 leading-[1.1] text-balance">
+          Your B2B customer's first touchpoint is no longer Google.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 reveal reveal-delay-1">
+        <div class="bg-white rounded-xl p-7 border border-line">
+          <p class="text-[2.5rem] md:text-[3rem] font-semibold tracking-tight text-violet-700 leading-none mb-4">60%</p>
+          <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">
+            of Google searches in 2025 are <strong class="text-ink-900">zero-click</strong>: users find the answer without visiting any site. AI Overviews are accelerating this trend.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-7 border border-line">
+          <p class="text-[2.5rem] md:text-[3rem] font-semibold tracking-tight text-violet-700 leading-none mb-4">+1,300%</p>
+          <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">
+            growth in referral traffic from ChatGPT to websites in 2025. <strong class="text-ink-900">Perplexity, Claude, Gemini</strong> are following the same curve.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-7 border border-line">
+          <p class="text-[2.5rem] md:text-[3rem] font-semibold tracking-tight text-violet-700 leading-none mb-4">3</p>
+          <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">
+            average citations per LLM response. If you're not in those 3, <strong class="text-ink-900">you don't exist</strong> for someone who just asked the AI for advice.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COSA INCLUDIAMO
+       ============================================================ -->
+  <section id="audit" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="What we include"
+        title="Four modules. Pick what you need."
+        subtitle="You can start with the audit alone, or go all the way to a full site rebuild. Modular — no forced bundles."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {pillars.map((p) => (
+          <div class="card-editorial !p-8 md:!p-10 reveal">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-700 to-violet-500 flex items-center justify-center shadow-violet mb-5">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[p.icon]} />
+            </div>
+            <h3 class="text-[1.35rem] md:text-[1.5rem] font-semibold tracking-tight text-ink-900 leading-tight mb-3">{p.title}</h3>
+            <p class="text-[15px] text-ink-700 leading-relaxed text-pretty">{p.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OFFERTA. 2 STEP PRICING
+       ============================================================ -->
+  <section id="come-iniziamo" class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="How we start"
+        title="Two steps. Fixed price. Audit credited if you continue."
+        subtitle="No endless proposals. We start with a clear fixed-price audit, then decide together whether to go further."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <!-- STEP 01: AUDIT -->
+        <article class="card-editorial relative reveal !p-8 md:!p-10 flex flex-col">
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="text-[3rem] font-semibold text-ink-200 leading-none">01</span>
+            <span class="eyebrow">Starting point</span>
+          </div>
+
+          <h3 class="text-[1.75rem] md:text-[2rem] font-semibold tracking-tight text-ink-900 leading-[1.1] mb-3">
+            AI Search Audit
+          </h3>
+          <p class="text-[15px] text-ink-700 leading-relaxed text-pretty mb-7 flex-1">
+            We map how ChatGPT, Claude, Perplexity and Google AI Overviews cite you today for the queries that matter in your sector. Competitor gap analysis, ranking by prompt, prioritised action list.
+          </p>
+
+          <div class="hairline mb-6"></div>
+
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-1.5">Investment</p>
+              <p class="text-2xl md:text-3xl font-semibold text-ink-900 leading-none">€2,000</p>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-1.5">Duration</p>
+              <p class="text-2xl md:text-3xl font-semibold text-ink-900 leading-none">2 wks.</p>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-3">What you take away</p>
+            <ul class="space-y-2.5">
+              {[
+                "Current visibility map across the 4 main AI search engines",
+                "Gap analysis against your top 3–5 competitors",
+                "Hallucinations and incorrect citations to fix",
+                "Prioritised action list with estimated impact",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5 text-[14px] text-ink-700">
+                  <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-violet-50 items-center justify-center">
+                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+
+        <!-- STEP 02: SPRINT -->
+        <article class="relative reveal reveal-delay-1 rounded-2xl p-8 md:p-10 flex flex-col overflow-hidden bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700 text-white">
+          <div class="orb orb-violet w-[300px] h-[300px] -top-20 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
+          <div class="orb orb-amber w-[200px] h-[200px] -bottom-10 -left-10 opacity-25 float-slower" aria-hidden="true"></div>
+
+          <div class="relative flex flex-col h-full">
+            <div class="flex items-baseline justify-between gap-4 mb-6">
+              <div class="flex items-baseline gap-4">
+                <span class="text-[3rem] font-semibold text-white/20 leading-none">02</span>
+                <span class="eyebrow eyebrow-light">We build</span>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber/20 border border-amber/30 text-amber text-[10px] font-semibold uppercase tracking-[0.14em]">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber"></span>
+                Fixed price
+              </span>
+            </div>
+
+            <h3 class="text-[1.75rem] md:text-[2rem] font-semibold tracking-tight text-white leading-[1.1] mb-3">
+              AI Search Sprint
+            </h3>
+            <p class="text-[15px] text-white/75 leading-relaxed text-pretty mb-7 flex-1">
+              Content re-architecture or full high-converting + AI-ready site rebuild. Schema.org, semantic HTML, thematic FAQs, structured data. First 3 months of monitoring included. <strong class="text-white">€2k audit fee credited if you proceed.</strong>
+            </p>
+
+            <div class="h-px bg-white/15 mb-6"></div>
+
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div>
+                <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-1.5">Investment</p>
+                <p class="text-2xl md:text-3xl font-semibold text-white leading-none">€3–15k</p>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-1.5">Go-live</p>
+                <p class="text-2xl md:text-3xl font-semibold text-white leading-none">3–6 wks.</p>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-3">What you take away</p>
+              <ul class="space-y-2.5">
+                {[
+                  "Re-architecture of key content (homepage, products, FAQs)",
+                  "Schema.org + structured data site-wide",
+                  "Optional full high-converting site rebuild (for larger scope)",
+                  "Monitoring dashboard — first 3 months included",
+                  "Monthly iterations on underperforming content",
+                ].map((item) => (
+                  <li class="flex items-start gap-2.5 text-[14px] text-white/90">
+                    <span class="shrink-0 mt-1 inline-flex w-4 h-4 rounded-full bg-white/15 items-center justify-center">
+                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="text-center text-sm text-ink-500 mt-10 max-w-2xl mx-auto reveal">
+        The sprint only starts after the audit. The audit is <strong class="text-ink-900">credited if you proceed</strong> — so if we move forward together, you only pay for the sprint. Final price fixed in the proposal, no scope creep.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       USE CASE ILTEC
+       ============================================================ -->
+  <section class="section bg-violet-50/40 relative overflow-hidden border-t border-violet-100">
+    <div class="container-soraia">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
+        <div class="lg:col-span-7 reveal">
+          <p class="eyebrow mb-5">Use case · ILTEC</p>
+          <h2 class="text-[2rem] md:text-[2.75rem] font-semibold tracking-tight text-ink-900 leading-[1.1] text-balance mb-5">
+            B2B office technology.<br class="hidden md:block"/>40+ years, 800+ clients.
+          </h2>
+          <p class="text-[16px] md:text-[17px] text-ink-700 leading-relaxed text-pretty mb-6">
+            Site rebuilt from scratch in 3 weeks. <strong class="text-ink-900">High-converting</strong> on the lead form (multistep + structured data) and <strong class="text-ink-900">optimised for AI search</strong>: schema.org, semantic HTML, thematic FAQs, LLM-consumable content.
+          </p>
+          <p class="text-[15px] text-ink-700 leading-relaxed text-pretty mb-8">
+            Result: visibility on ChatGPT and Perplexity for sector-relevant searches within a few months, and a lead form conversion rate triple that of the previous site.
+          </p>
+
+          <a href="https://www.iltecbiella.it/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-[14.5px] font-semibold text-violet-700 hover:gap-3 transition-all">
+            Visit iltecbiella.it
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="lg:col-span-5 reveal reveal-delay-1">
+          <a href="https://www.iltecbiella.it/" target="_blank" rel="noopener" class="block group no-underline">
+            <div class="rounded-2xl overflow-hidden bg-white shadow-violet-lg ring-1 ring-violet-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+              <div class="flex items-center gap-2 px-4 py-3 bg-ink-50 border-b border-ink-200">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                <span class="ml-3 text-[12px] text-ink-500 font-mono truncate">iltecbiella.it</span>
+              </div>
+              <div class="p-7 md:p-8">
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                  <div>
+                    <p class="text-[1.75rem] font-semibold text-violet-700 leading-none mb-1">3x</p>
+                    <p class="text-[11px] text-ink-500 uppercase tracking-wider">CR form</p>
+                  </div>
+                  <div>
+                    <p class="text-[1.75rem] font-semibold text-violet-700 leading-none mb-1">3w</p>
+                    <p class="text-[11px] text-ink-500 uppercase tracking-wider">Go-live</p>
+                  </div>
+                  <div>
+                    <p class="text-[1.75rem] font-semibold text-violet-700 leading-none mb-1">AI</p>
+                    <p class="text-[11px] text-ink-500 uppercase tracking-wider">Ready</p>
+                  </div>
+                </div>
+                <div class="flex gap-4 text-[11px] uppercase tracking-wider text-ink-500 font-semibold pt-4 border-t border-ink-100">
+                  <span>B2B</span>
+                  <span class="text-ink-300">·</span>
+                  <span>Office Tech</span>
+                  <span class="text-ink-300">·</span>
+                  <span>Biella</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia max-w-4xl">
+      <SectionHeader
+        eyebrow="Frequently asked questions"
+        title="What people usually ask us."
+        align="center"
+      />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINALE
+       ============================================================ -->
+  <CTABanner
+    title="20 minutes with the CEO. No pitch."
+    description="We figure out together whether an AI Search audit makes sense for your site. No commitment, no sales."
+    ctaText="20 min with Daniel"
+    ctaHref="/en/contact"
+    avatarName="Daniel Levis"
+    avatarRole="Co-Founder & CEO"
+    avatarSrc="/team/daniel-levis.webp"
+  />
+</Layout>

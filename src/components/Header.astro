@@ -1,9 +1,13 @@
 ---
+import { path, localizePath, type Lang } from "~/lib/i18n";
+
 interface Props {
-  lang?: "it" | "en";
+  lang?: Lang;
+  /** URL of the current page in the other language (for the switcher). */
+  altHref?: string;
 }
 
-const { lang = "it" } = Astro.props;
+const { lang = "it", altHref } = Astro.props;
 
 const labels = {
   it: {
@@ -17,6 +21,8 @@ const labels = {
     cta: "20 min con Daniel",
     badge_min: "3 min",
     coming_soon: "In arrivo",
+    open_menu: "Apri menu",
+    close_menu: "Chiudi menu",
   },
   en: {
     nav_servizi: "Services",
@@ -29,23 +35,24 @@ const labels = {
     cta: "20 min with Daniel",
     badge_min: "3 min",
     coming_soon: "Coming soon",
+    open_menu: "Open menu",
+    close_menu: "Close menu",
   },
 }[lang];
 
 const homeHref = lang === "en" ? "/en/" : "/";
-const agentsHref = lang === "en" ? "/en/ai-agents" : "/ai-agents";
-const adoptionHref = lang === "en" ? "/en/ai-adoption" : "/ai-adoption";
-const searchOptHref = lang === "en" ? "/en/ai-search-optimization" : "/ai-search-optimization";
-const prodottiHref = lang === "en" ? "/en/prodotti" : "/prodotti";
-const guideHref = lang === "en" ? "/en/guide" : "/guide";
-const casesHref = lang === "en" ? "/en/case-studies" : "/case-studies";
-const blogHref = lang === "en" ? "/en/blog" : "/blog";
-const aboutHref = lang === "en" ? "/en/chi-siamo" : "/chi-siamo";
-const scorecardHref = lang === "en" ? "/en/check-up" : "/check-up";
-const otherLang = lang === "it" ? "en" : "it";
-const otherHref = otherLang === "en"
-  ? Astro.url.pathname === "/" ? "/en/" : `/en${Astro.url.pathname}`
-  : Astro.url.pathname.replace(/^\/en/, "") || "/";
+const agentsHref = path("/ai-agents", lang);
+const adoptionHref = path("/ai-adoption", lang);
+const searchOptHref = path("/ai-search-optimization", lang);
+const prodottiHref = path("/prodotti", lang);
+const guideHref = path("/guide", lang);
+const casesHref = path("/case-studies", lang);
+const blogHref = path("/blog", lang);
+const aboutHref = path("/chi-siamo", lang);
+const scorecardHref = path("/check-up", lang);
+const contactHref = path("/parliamone", lang);
+const otherLang: Lang = lang === "it" ? "en" : "it";
+const otherHref = altHref ?? localizePath(Astro.url.pathname, otherLang);
 
 const servizi = [
   {
@@ -167,7 +174,7 @@ const prodotti = [
         <button
           type="button"
           class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-md hover:bg-ink-100"
-          aria-label="Apri menu"
+          aria-label={labels.open_menu}
           data-mobile-trigger
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -176,7 +183,7 @@ const prodotti = [
             <line x1="3" y1="18" x2="21" y2="18"/>
           </svg>
         </button>
-        <a href="/parliamone" class="btn btn-primary !py-2.5 !px-4 text-[13px]">
+        <a href={contactHref} class="btn btn-primary !py-2.5 !px-4 text-[13px]">
           {labels.cta}
           <span class="btn-arrow">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -199,7 +206,7 @@ const prodotti = [
     <aside class="mobile-drawer__panel" role="dialog" aria-label="Menu">
       <div class="flex items-center justify-between p-5 border-b border-ink-200/60">
         <span class="text-[16px] font-semibold tracking-tight">Soraia</span>
-        <button type="button" class="w-9 h-9 inline-flex items-center justify-center rounded-md hover:bg-ink-100" data-mobile-close aria-label="Chiudi menu">
+        <button type="button" class="w-9 h-9 inline-flex items-center justify-center rounded-md hover:bg-ink-100" data-mobile-close aria-label={labels.close_menu}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"/>
             <line x1="6" y1="6" x2="18" y2="18"/>
@@ -230,7 +237,7 @@ const prodotti = [
       </nav>
 
       <div class="p-5 border-t border-ink-200/60">
-        <a href="/parliamone" class="btn btn-primary w-full justify-center text-[14px]">{labels.cta}</a>
+        <a href={contactHref} class="btn btn-primary w-full justify-center text-[14px]">{labels.cta}</a>
       </div>
     </aside>
   </div>

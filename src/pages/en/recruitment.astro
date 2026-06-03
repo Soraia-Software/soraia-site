@@ -1,0 +1,417 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import ProofBar from "~/components/ProofBar.astro";
+import CaseStudyCardJet from "~/components/CaseStudyCardJet.astro";
+import ProcessCard from "~/components/ProcessCard.astro";
+import ComparisonTable from "~/components/ComparisonTable.astro";
+import FAQ from "~/components/FAQ.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import HeroVisual from "~/components/HeroVisual.astro";
+
+const title = "AI Agents for Recruitment Agencies | Soraia";
+const description =
+  "Take your recruiters from 60% admin work to 60% time spent closing. Custom AI agents, live in 4 weeks. If it doesn't work, you don't pay.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "AI Agents for Recruitment. Soraia",
+    provider: {
+      "@type": "Organization",
+      name: "Soraia",
+      url: "https://www.soraia.io",
+    },
+    areaServed: "IT",
+    serviceType: "AI agents for recruitment agencies",
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "EUR",
+      price: "2000",
+      description: "Initial assessment €2,000, refunded if you proceed with the sprint.",
+    },
+  },
+];
+
+const recruitmentLogos = [
+  { name: "APraise", src: "/logos/clients/apraise.webp" },
+  { name: "OggiLavoro", src: "/logos/clients/oggilavoro.webp" },
+  { name: "Aegis Group", src: "/logos/clients/aegisgroup.webp" },
+  { name: "Talent Match", src: "/logos/clients/talentmatch.webp" },
+  { name: "Stars Be Original", src: "/logos/clients/starsbeoriginal.webp" },
+];
+
+const problems = [
+  {
+    title: "Endless manual screening",
+    description: "70% of CVs get rejected. But someone has to read them all. Your most expensive recruiters are burning their mornings on it.",
+  },
+  {
+    title: "Candidates who don't reply",
+    description: "Outreach to candidates with a 5% response rate. Manual personalisation is unsustainable; basic automations burn your brand.",
+  },
+  {
+    title: "An ATS that solves nothing",
+    description: "Same features as every competitor, growing monthly subscriptions, your data held hostage by the vendor. Zero differentiation.",
+  },
+];
+
+const processes = [
+  {
+    number: "01",
+    title: "Intelligent CV screening",
+    description:
+      "The agent evaluates every CV against the job description — not just keywords. It ranks by fit, rejects with reasoning, and feeds your ATS.",
+    icon: "screen" as const,
+  },
+  {
+    number: "02",
+    title: "Candidate outreach at scale",
+    description:
+      "Personalised first contact for every role, multi-touch follow-up, qualification of replies. Recruiters receive only warm candidates.",
+    icon: "outreach" as const,
+  },
+  {
+    number: "03",
+    title: "Job post-to-candidate matching",
+    description:
+      "The agent reads the client's job post, extracts requirements, scans your DB and LinkedIn, and proposes a ranked shortlist. The recruiter chooses — not searches.",
+    icon: "match" as const,
+  },
+  {
+    number: "04",
+    title: "Automatic interview scheduling",
+    description:
+      "Coordinates availability between candidate, client, and team. Confirmations, reminders, rescheduling. Zero back-and-forth emails.",
+    icon: "calendar" as const,
+  },
+  {
+    number: "05",
+    title: "Interview transcription and analysis",
+    description:
+      "The agent transcribes the interview in real time, extracts key points, maps the candidate's profile against the position criteria, and prepares the evaluation report — ready for the client.",
+    icon: "transcript" as const,
+  },
+  {
+    number: "06",
+    title: "New business development",
+    description:
+      "The agent identifies companies that are hiring, qualifies the fit, and prepares dossiers ready for your commercial team. Pipeline fed continuously.",
+    icon: "compass" as const,
+  },
+];
+
+const cases = [
+  {
+    slug: "apraise",
+    client: "APraise",
+    quote: "100,000+ candidates in the platform. The AI agent qualifies and matches them to the right position.",
+    dimensioni: "11-50",
+    sector: "Executive search · Senior recruitment",
+    cardImage: "/testimonials/jacopo-castano-apraise.webp",
+    stakeholder: { name: "Jacopo Castano", role: "Managing Partner" },
+  },
+  {
+    slug: "stars-be-original",
+    client: "Stars Be Original",
+    quote: "The AI agent replies to candidates on our behalf — and does it better: <1 minute response time, zero candidates lost.",
+    dimensioni: "250-1000",
+    sector: "Tourism entertainment recruitment",
+    cardImage: "/testimonials/gabriella-bruzzone-stars.webp",
+    stakeholder: { name: "Gabriella Bruzzone", role: "CMO" },
+  },
+  {
+    slug: "oggi-lavoro",
+    client: "OggiLavoro",
+    quote: "250,000+ candidates locked in a legacy stack. Today a new platform with AI agents that transforms how recruiters work.",
+    dimensioni: "1000+",
+    sector: "Staffing agency · Temporary employment",
+    cardImage: "/testimonials/francesca-sorrentino-oggi-lavoro.webp",
+    stakeholder: { name: "Francesca Sorrentino", role: "IT Manager" },
+  },
+];
+
+const comparisonRows = [
+  { label: "Cost", values: ["Low", "High annual", "Mid one-off"] as [string, string, string] },
+  { label: "Time to live", values: ["Immediate", "3–6 months", "4 weeks"] as [string, string, string] },
+  { label: "Executes tasks autonomously", values: ["No", "Limited", "Yes, end-to-end"] as [string, string, string] },
+  { label: "Tailored to your processes", values: ["No", "Configurable", "Built for you"] as [string, string, string] },
+  { label: "Vendor dependency", values: ["None", "Total", "None (your code)"] as [string, string, string] },
+  { label: "Guaranteed hours recovered", values: ["No", "No", "Yes, or refund"] as [string, string, string] },
+];
+
+const faqs = [
+  {
+    q: "How do you handle GDPR and candidate data?",
+    a: "Agents run in a European cloud environment or directly on your infrastructure. Full operation logs, configurable retention, <strong>no training on your data</strong>.",
+  },
+  {
+    q: "Does it integrate with the ATS we already use?",
+    a: "Yes. We work with Bullhorn, Bee-Staffing, Salesforce, In-Recruiting, and proprietary ATS platforms. If you use a specific tool, we validate it during the assessment.",
+  },
+  {
+    q: "What about local languages and markets?",
+    a: "Yes. Agents are natively multilingual. We already work with Italian agencies (OggiLavoro), Spanish (Talent Match), and international (APraise, Aegis Group).",
+  },
+  {
+    q: "What if I later want to manage everything in-house?",
+    a: "The code is yours from week one. Full documentation, team training if you want to internalise. <strong>No dependency, no monthly licence.</strong>",
+  },
+  {
+    q: "What does it actually cost?",
+    a: "Assessment <strong>€2,000</strong> (refunded if you proceed with the sprint). Build sprint <strong>€10–50k</strong> depending on how many processes are covered. Guarantee: if the agents don't recover the promised hours, we refund.",
+  },
+  {
+    q: "What exactly happens in 4 weeks?",
+    a: "<strong>Week 1:</strong> discovery with your team, baseline measured. <strong>Weeks 2–3:</strong> agent build and integration. <strong>Week 4:</strong> production deploy, team training, first measurement. 30 days of post-deploy support included.",
+  },
+];
+---
+
+<Layout title={title} description={description} lang="en" jsonLd={jsonLd}>
+  <!-- ============================================================
+       HERO. Editorial premium, dark
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+      <div style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          Recruitment & HR · AI Agents
+        </p>
+
+        <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+          Your recruiters from 60% admin<br/>to 60% selling.
+        </h1>
+
+        <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+          We build AI agents that handle the repetitive work — CV screening, candidate outreach, JD parsing, interview scheduling. Recruiters close. Live in 4 weeks.
+        </p>
+
+        <!-- GUARANTEE BADGE -->
+        <div class="mt-6 inline-flex items-center gap-2 fade-up fade-up-delay-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+          <span class="text-[14px] font-medium" style="color: #F4B842;">If it doesn't work, you don't pay. Guarantee included.</span>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+          <a href="/en/contact" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            Request assessment, €2,000
+            <span class="btn-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
+            See the results
+          </a>
+        </div>
+
+        <!-- TRUST ROW -->
+        <div class="mt-12 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] fade-up fade-up-delay-4">
+          <div class="inline-flex items-center gap-2">
+            <span class="w-1 h-1 rounded-full bg-amber"></span>
+            <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">4 weeks</strong> to first agent live</span>
+          </div>
+          <div class="inline-flex items-center gap-2">
+            <span class="w-1 h-1 rounded-full bg-amber"></span>
+            <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">5–8h</strong> per recruiter per week</span>
+          </div>
+          <div class="inline-flex items-center gap-2">
+            <span class="w-1 h-1 rounded-full bg-amber"></span>
+            <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">GDPR + AI Act</strong> compliant</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: agent feed locked to HR -->
+      <div class="hidden lg:flex justify-end fade-up fade-up-delay-3">
+        <HeroVisual filter="hr" lang="en" />
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROOF BAR
+       ============================================================ -->
+  <ProofBar
+    label="Trusted by recruitment agencies in Italy, Spain, and the UK"
+    logos={recruitmentLogos}
+  />
+
+  <!-- ============================================================
+       PROBLEM
+       ============================================================ -->
+  <section id="problema" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="The problem"
+        title="More than half of your recruiters' time generates no revenue."
+        subtitle="You already know it. Your competitors noticed too — and bought ChatGPT Enterprise licences. But you want hours freed up in month 1, not a 12-month roadmap."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        {problems.map((p) => (
+          <article class="card-editorial reveal flex flex-col gap-3 !p-7">
+            <div class="w-9 h-9 rounded-lg bg-violet-50 text-violet-700 flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+              </svg>
+            </div>
+            <h3 class="font-medium text-ink leading-tight" style="font-size: 18px;">{p.title}</h3>
+            <p class="text-[15px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{p.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5 PROCESSES
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="The solution"
+        title="5 processes where agents deliver freed hours from week 4."
+        subtitle="Not software your team has to learn. Digital workers that execute tasks end-to-end, making context-aware decisions the way a senior recruiter would."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {processes.map((p) => (
+          <ProcessCard {...p} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GUARANTEE, editorial dark, sober
+       ============================================================ -->
+  <section class="section bg-hero-dark relative overflow-hidden">
+    <div class="container-soraia relative z-10">
+      <div class="max-w-3xl reveal" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          Our guarantee
+        </p>
+
+        <h2 style="color: #fff; font-size: clamp(2rem, 4vw + 0.5rem, 3rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;" class="text-balance">
+          5–8 hours per recruiter per week.<br/><span style="color: rgba(255,255,255,0.45);">Recovered in 4 weeks. Or you don't pay.</span>
+        </h2>
+
+        <p style="color: rgba(255,255,255,0.72);" class="mt-7 text-[17px] leading-relaxed max-w-2xl text-pretty">
+          We measure it against the baseline defined together in the assessment. If we don't hit it, we work for free until we do — or we refund the sprint.
+        </p>
+
+        <p style="color: rgba(255,255,255,0.55);" class="mt-4 text-[15px] leading-relaxed max-w-2xl text-pretty">
+          It works because we define the baseline, scope, and measurement method together. No surprises, no contractual loopholes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CASE STUDIES
+       ============================================================ -->
+  <section id="cases" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Case studies"
+        title="What we've already built for agencies like yours."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {cases.map((c) => (
+          <div>
+            <CaseStudyCardJet
+              href={`/en/case-studies/${c.slug}`}
+              client={c.client}
+              quote={c.quote}
+              dimensioni={c.dimensioni}
+              sector={c.sector}
+              cardImage={c.cardImage}
+              lang="en"
+            />
+            <p class="mt-4 text-center text-[13px]" style="color: var(--color-ink-soft);">
+              <strong style="color: var(--color-ink); font-weight: 500;">{c.stakeholder.name}</strong> · {c.stakeholder.role}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <p class="mt-10 text-center text-[14px]" style="color: var(--color-ink-muted);">
+        Other recruitment clients include: <a href="/en/case-studies/aegis" style="color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">Aegis Group</a> (350k+ candidates, 7-line holding) and <a href="/en/case-studies/talent-match" style="color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">Talent Match</a> (Spanish group, 150k+ candidates).
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPARISON
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Comparison"
+        title="Why custom AI agents, and not something else."
+        subtitle="The three options on the table for a recruitment agency today. Only one is designed around your reality."
+        align="center"
+      />
+
+      <ComparisonTable
+        columns={["ChatGPT / Copilot", "ATS with built-in AI", "Soraia AI agents"]}
+        rows={comparisonRows}
+        highlightCol={2}
+      />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia max-w-3xl">
+      <SectionHeader
+        eyebrow="Questions"
+        title="What people usually ask us."
+        align="center"
+      />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Final CTA → /en/contact (sober)
+       ============================================================ -->
+  <section class="section bg-violet-mesh">
+    <div class="container-soraia text-center max-w-3xl mx-auto">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 reveal" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full bg-violet-600"></span>
+        Next step
+      </p>
+
+      <h2 class="text-balance reveal" style="color: var(--color-ink); font-size: clamp(1.875rem, 3vw + 0.5rem, 2.75rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
+        Find out how many hours your team can recover.
+      </h2>
+
+      <p class="mt-5 text-[17px] leading-relaxed reveal reveal-delay-1" style="color: var(--color-ink-muted);">
+        Assessment €2,000, refunded if you proceed. 1–2 weeks from kick-off to report. No commitment to continue.
+      </p>
+
+      <div class="mt-10 reveal reveal-delay-2">
+        <a href="/en/contact" class="btn btn-primary">
+          Request assessment
+          <span class="btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

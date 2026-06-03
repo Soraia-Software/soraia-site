@@ -11,6 +11,7 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     readMinutes: z.number().optional(),
     featured: z.boolean().default(false),
+    lang: z.enum(["it", "en"]).default("it"),  // EN entries live in the en/ subfolder
   }),
 });
 
@@ -72,7 +73,8 @@ const caseStudies = defineCollection({
       caption: z.string().optional(),
       alt: z.string().optional(),
     })).default([]),
-    related: z.array(z.string()).default([]),  // slugs of related case studies
+    related: z.array(z.string()).default([]),  // bare slugs of related case studies (same in IT/EN)
+    lang: z.enum(["it", "en"]).default("it"),  // EN entries live in the en/ subfolder
   }),
 });
 
@@ -93,6 +95,7 @@ const guides = defineCollection({
       a: z.string(),
     })).default([]),
     featured: z.boolean().default(false),
+    lang: z.enum(["it", "en"]).default("it"),  // EN entries live in the en/ subfolder
   }),
 });
 

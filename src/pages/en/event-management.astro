@@ -1,0 +1,399 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import CaseStudyCardJet from "~/components/CaseStudyCardJet.astro";
+import ProcessCard from "~/components/ProcessCard.astro";
+import ComparisonTable from "~/components/ComparisonTable.astro";
+import FAQ from "~/components/FAQ.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import HeroVisual from "~/components/HeroVisual.astro";
+
+const title = "AI Agents for Trade Shows & B2B Events | Linkly · Soraia";
+const description =
+  "Turn every trade show into measurable pipeline. 6 AI agents capture badges, qualify leads, activate your CRM, and send follow-ups from your domain. Zero-effort setup, fixed annual fee.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Linkly, AI agents for trade shows and B2B events. Soraia",
+    provider: {
+      "@type": "Organization",
+      name: "Soraia",
+      url: "https://www.soraia.io",
+    },
+    areaServed: "IT",
+    serviceType: "AI agents for trade fairs lead capture",
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "EUR",
+      price: "1900",
+      description: "Linkly early-adopter annual fee €1,900 + VAT. Everything included: unlimited scans, enriched contacts, dedicated account manager.",
+    },
+  },
+];
+
+const problems = [
+  {
+    title: "Business cards piling up in boxes",
+    description: "Three days at a trade show, hundreds of cards collected, photos on your phone. All waiting to be entered into the CRM once you're back.",
+  },
+  {
+    title: "Follow-up sent 9 days later",
+    description: "By the time the lead gets your email, they no longer remember the conversation. Industry estimate: 60% of trade-show contacts are never followed up.",
+  },
+  {
+    title: "Zero visibility into the event",
+    description: "You spent tens of thousands on the stand. How many people stopped by? From which sectors? Is it worth going back next year? No data.",
+  },
+];
+
+const processes = [
+  {
+    number: "01",
+    title: "Capture — OCR on business cards and badges",
+    description:
+      "Your stand team photographs the business card, event badge, or QR code. The agent reads and structures the data in seconds. Zero manual data entry.",
+    icon: "screen" as const,
+  },
+  {
+    number: "02",
+    title: "Enrichment from 25+ data sources",
+    description:
+      "The agent cross-references LinkedIn, company registries, and public sources. Verified email, role, phone number, and company details — all enriched automatically.",
+    icon: "match" as const,
+  },
+  {
+    number: "03",
+    title: "Dynamic qualification per event",
+    description:
+      "A qualification form generated against your criteria (sector, size, product fit, urgency). The agent fills it in based on the conversation and proposes hot/warm/cold tiers.",
+    icon: "compass" as const,
+  },
+  {
+    number: "04",
+    title: "Activation in your CRM",
+    description:
+      "The enriched, qualified contact is pushed directly into HubSpot, Salesforce, Pipedrive, or Zoho. Ready for the sales team with no intermediate steps.",
+    icon: "outreach" as const,
+  },
+  {
+    number: "05",
+    title: "Outreach from your company domain",
+    description:
+      "A personalised follow-up email sent within seconds of closing the conversation. Brand tone, contextual CTA, sent from @yourdomain.com.",
+    icon: "calendar" as const,
+  },
+  {
+    number: "06",
+    title: "Executive analytics at event close",
+    description:
+      "Report ready at show close: leads by sector, cost per lead, estimated pipeline, conversion rate by day and by stand. Data-driven decision for next year.",
+    icon: "transcript" as const,
+  },
+];
+
+const featuredCase = {
+  slug: "40factory",
+  client: "40Factory",
+  clientLogo: "/logos/clients/40factory.webp",
+  quote: "We attend many trade shows a year and the contacts we collect are our most important commercial asset. Linkly captures, qualifies, and reaches out to every lead autonomously.",
+  dimensioni: "11-50",
+  sector: "Industrial IoT · Industry 4.0",
+  cardImage: "/testimonials/margherita-chifari-40factory.webp",
+};
+
+const comparisonRows = [
+  { label: "System used", values: ["Official show app", "Custom in-house system", "Linkly · Soraia"] as [string, string, string] },
+  { label: "Setup per event", values: ["Onboarding every time", "Dev + maintenance", "Zero — we handle it"] as [string, string, string] },
+  { label: "Continuity across shows", values: ["None", "Partial", "Full — one single system"] as [string, string, string] },
+  { label: "AI enrichment & qualification", values: ["No", "Rarely", "6 integrated agents"] as [string, string, string] },
+  { label: "Follow-up from your domain", values: ["No", "Configurable", "Yes, within seconds"] as [string, string, string] },
+  { label: "Event analytics", values: ["Basic export", "Build it yourself", "Executive report included"] as [string, string, string] },
+];
+
+const faqs = [
+  {
+    q: "We already use the show's official app — why add Linkly?",
+    a: "Apps provided by organisers change with every event, have different interfaces, and don't talk to your CRM. Three shows a year means three systems to learn and zero contact continuity. <strong>Linkly is a single tool, always the same</strong>, independent of the show. All data flows into the same CRM with the same structure.",
+  },
+  {
+    q: "We already have an in-house system for managing trade-show contacts. Is it worth switching?",
+    a: "In-house systems are rough fixes: no AI parsing, no automatic enrichment, no immediate follow-up. <strong>Linkly is a product iterated on hundreds of pieces of feedback</strong> from companies that attend shows every month. Zero-effort setup — your Linkly account manager handles everything. Building an equivalent in-house system costs 10×.",
+  },
+  {
+    q: "My team isn't very digital — will they actually use an app?",
+    a: "The only thing your sales rep needs to do at the show is <strong>take a photo of the card</strong>. No login, no form filling, no CRM to learn. Everything else — parsing, enrichment, qualification, follow-up, CRM update — is handled by AI agents orchestrated by your Linkly account manager. Setup, configuration, and integration are entirely on us.",
+  },
+  {
+    q: "We go to shows for brand awareness, not lead capture. Do I need Linkly?",
+    a: "Linkly isn't just about capturing leads. It's about <strong>having real visibility into the event</strong>: how many people visited your stand, their roles, their sectors, the actual audience demographics, which existing customers stopped by. With that data, the decision 'should we go back to this show next year?' becomes data-driven.",
+  },
+  {
+    q: "How do you handle GDPR and data collected at shows?",
+    a: "European infrastructure, Art. 28 DPA included in the contract. <strong>No training on your data</strong>, full operation logs, configurable data retention, one-click right to erasure. Gov-grade compliance, validated with enterprise clients.",
+  },
+  {
+    q: "What does it actually cost?",
+    a: "<strong>€1,900 + VAT / year</strong> as an early-adopter offer (€2,900 from year two). Everything included: unlimited scans, 500 enriched contacts, 6 active AI agents, dedicated consultant for setup and events. No per-event fees, no surprises.",
+  },
+  {
+    q: "Does it integrate with my CRM?",
+    a: "Native integration with <strong>HubSpot, Salesforce, Pipedrive, Zoho</strong>. For custom CRMs we use Zapier/Make as middleware. Either way, the enriched, qualified lead lands exactly where it needs to — ready for the sales team.",
+  },
+];
+---
+
+<Layout title={title} description={description} lang="en" jsonLd={jsonLd}>
+  <!-- ============================================================
+       HERO. Editorial premium, dark
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+        <div style="color: #fff;">
+          <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
+            <span class="w-1 h-1 rounded-full bg-amber"></span>
+            Event Management · AI Agents
+          </p>
+
+          <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+            Turn every trade show<br/>into measurable pipeline.
+          </h1>
+
+          <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+            6 AI agents capture badges, qualify leads, activate your CRM, and send follow-ups from your domain. Zero-effort setup, one fixed annual fee. Works from your very first show.
+          </p>
+
+          <!-- GARANZIA BADGE -->
+          <div class="mt-6 inline-flex items-center gap-2 fade-up fade-up-delay-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
+            </svg>
+            <span class="text-[14px] font-medium" style="color: #F4B842;">Fixed annual fee. No per-event costs.</span>
+          </div>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+            <a href="https://linkly.events/" target="_blank" rel="noopener" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+              Discover Linkly
+              <span class="btn-arrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+            <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
+              See the 40Factory case study
+            </a>
+          </div>
+
+          <!-- TRUST ROW -->
+          <div class="mt-12 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] fade-up fade-up-delay-4">
+            <div class="inline-flex items-center gap-2">
+              <span class="w-1 h-1 rounded-full bg-amber"></span>
+              <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">6 AI agents</strong> orchestrated</span>
+            </div>
+            <div class="inline-flex items-center gap-2">
+              <span class="w-1 h-1 rounded-full bg-amber"></span>
+              <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">25+ sources</strong> for data enrichment</span>
+            </div>
+            <div class="inline-flex items-center gap-2">
+              <span class="w-1 h-1 rounded-full bg-amber"></span>
+              <span style="color: rgba(216,180,232,0.8);"><strong style="color: #fff; font-weight: 500;">GDPR + DPA</strong> Art. 28 included</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: agent feed locked to events -->
+        <div class="hidden lg:flex justify-end fade-up fade-up-delay-3">
+          <HeroVisual filter="events" lang="en" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST LINE (single client per ora)
+       ============================================================ -->
+  <section class="py-12 md:py-14 border-y border-ink-200 bg-white">
+    <div class="container-soraia text-center">
+      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 mb-4">
+        Already chosen by B2B companies for the 2026 trade-show season
+      </p>
+      <p class="text-[16px]" style="color: var(--color-ink-muted);">
+        <a href="/en/case-studies/40factory" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">40Factory</a>
+        · Industrial IoT / Industry 4.0 · first Linkly client activated 2026
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROBLEMA
+       ============================================================ -->
+  <section id="problema" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="The problem"
+        title="The post-show period is the black hole of the commercial funnel."
+        subtitle="You spend tens of thousands on your stand, fit-out, travel, and people. Then you come back to the office with a box of business cards and a few photos on your phone. Half of it ends up lost."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        {problems.map((p) => (
+          <article class="card-editorial reveal flex flex-col gap-3 !p-7">
+            <div class="w-9 h-9 rounded-lg bg-violet-50 text-violet-700 flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+              </svg>
+            </div>
+            <h3 class="font-medium text-ink leading-tight" style="font-size: 18px;">{p.title}</h3>
+            <p class="text-[15px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{p.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6 AGENTI
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="The solution"
+        title="6 orchestrated AI agents. Your team takes photos — that's it."
+        subtitle="Linkly is Soraia's dedicated system for trade shows and B2B events. 6 agents cover the entire post-show cycle, from badge to CRM to follow-up. Above them, a dedicated human account manager."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {processes.map((p) => (
+          <ProcessCard {...p} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GARANZIA, editorial dark
+       ============================================================ -->
+  <section class="section bg-hero-dark relative overflow-hidden">
+    <div class="container-soraia relative z-10">
+      <div class="max-w-3xl reveal" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          Our model
+        </p>
+
+        <h2 style="color: #fff; font-size: clamp(2rem, 4vw + 0.5rem, 3rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;" class="text-balance">
+          Everything included. Setup, agents, support.<br/><span style="color: rgba(255,255,255,0.45);">One fixed annual fee, no surprises.</span>
+        </h2>
+
+        <p style="color: rgba(255,255,255,0.72);" class="mt-7 text-[17px] leading-relaxed max-w-2xl text-pretty">
+          €1,900 + VAT for the first year (early adopter), €2,900 from year two. Unlimited scans, 500 enriched contacts, 6 active AI agents on every event, dedicated consultant for setup and events. No per-event fees, no modules to activate.
+        </p>
+
+        <p style="color: rgba(255,255,255,0.55);" class="mt-4 text-[15px] leading-relaxed max-w-2xl text-pretty">
+          GDPR-compliant, European infrastructure, Art. 28 DPA included. Native integration with HubSpot, Salesforce, Pipedrive, Zoho.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CASE STUDY
+       ============================================================ -->
+  <section id="cases" class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Case study"
+        title="Linkly in action at 40Factory."
+        align="center"
+      />
+
+      <div class="max-w-md mx-auto">
+        <CaseStudyCardJet
+          href={`/en/case-studies/${featuredCase.slug}`}
+          client={featuredCase.client}
+          clientLogo={featuredCase.clientLogo}
+          quote={featuredCase.quote}
+          dimensioni={featuredCase.dimensioni}
+          sector={featuredCase.sector}
+          cardImage={featuredCase.cardImage}
+          lang="en"
+        />
+        <p class="mt-6 text-center text-[14px]" style="color: var(--color-ink-soft);">
+          <strong style="color: var(--color-ink); font-weight: 500;">Margherita Chifari</strong>, Head of Sales · 40Factory
+        </p>
+      </div>
+
+      <p class="mt-10 text-center text-[14px]" style="color: var(--color-ink-muted);">
+        Linkly is Soraia's dedicated SaaS product. Want to see it live? <a href="https://linkly.events/" target="_blank" rel="noopener" style="color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">linkly.events</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPARISON
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Comparison"
+        title="Show app, in-house system, or Linkly."
+        subtitle="The three real options for managing leads from a B2B trade show. Only one is designed to scale with you."
+        align="center"
+      />
+
+      <ComparisonTable
+        columns={["Show app", "In-house system", "Linkly · Soraia"]}
+        rows={comparisonRows}
+        highlightCol={2}
+      />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia max-w-3xl">
+      <SectionHeader
+        eyebrow="Questions"
+        title="The objections we usually hear."
+        align="center"
+      />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA finale
+       ============================================================ -->
+  <section class="section bg-violet-mesh">
+    <div class="container-soraia text-center max-w-3xl mx-auto">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 reveal" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full bg-violet-600"></span>
+        Next step
+      </p>
+
+      <h2 class="text-balance reveal" style="color: var(--color-ink); font-size: clamp(1.875rem, 3vw + 0.5rem, 2.75rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
+        Ready to measure your trade shows?
+      </h2>
+
+      <p class="mt-5 text-[17px] leading-relaxed reveal reveal-delay-1" style="color: var(--color-ink-muted);">
+        Live Linkly demo + custom technical setup for your 2026 events. 20 minutes, no commitment.
+      </p>
+
+      <div class="mt-10 reveal reveal-delay-2 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://linkly.events/" target="_blank" rel="noopener" class="btn btn-primary">
+          Discover Linkly
+          <span class="btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="/en/contact" class="btn btn-secondary">
+          Talk to us
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

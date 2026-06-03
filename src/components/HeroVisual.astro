@@ -5,9 +5,10 @@
 
 interface Props {
   filter?: string;
+  lang?: "it" | "en";
 }
 
-const { filter } = Astro.props;
+const { filter, lang = "it" } = Astro.props;
 
 // Default feed shows 5 Ops cluster (no VC). VC resta accessibile via filter prop su /venture-capital.
 const allIndustries = [
@@ -113,9 +114,113 @@ const allIndustries = [
   },
 ];
 
+// English feed (same structure, translated role + event text).
+const allIndustriesEn = [
+  {
+    id: "hr",
+    label: "Recruiting & HR",
+    industryIcon: "users",
+    role: "For recruiters, HR ops, staffing agencies",
+    events: [
+      { agent: "SCREENING",  icon: "doc",      text: "847 CVs analyzed · JD-driven fit ranking" },
+      { agent: "ENRICHMENT", icon: "search",   text: "+LinkedIn · +email · +tech stack" },
+      { agent: "QUALIFY",    icon: "check",    text: "47 candidates shortlisted · score >88%" },
+      { agent: "OUTREACH",   icon: "mail",     text: "Personalized first touch · multi-language" },
+      { agent: "SCHEDULE",   icon: "calendar", text: "12 interviews booked · auto ATS sync" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "19 person-days recovered this week" },
+    ],
+  },
+  {
+    id: "finance",
+    label: "Finance & Accounting",
+    industryIcon: "briefcase",
+    role: "For accounting firms, CFOs, finance ops",
+    events: [
+      { agent: "INTAKE",     icon: "doc",      text: "32 invoices read · OCR + data extraction" },
+      { agent: "VALIDATE",   icon: "check",    text: "VAT + codes verified · anomalies flagged" },
+      { agent: "RECONCILE",  icon: "search",   text: "Bank reconciliation · 218 transactions" },
+      { agent: "REPORT",     icon: "chart",    text: "Tax filing generated · ready for review" },
+      { agent: "NOTIFY",     icon: "mail",     text: "Client portal updated · 8 clients notified" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "€32,000/month operating costs recovered" },
+    ],
+  },
+  {
+    id: "sales",
+    label: "Sales & Marketing",
+    industryIcon: "target",
+    role: "For sales teams, growth, marketing ops",
+    events: [
+      { agent: "PROSPECT",   icon: "search",   text: "240 leads identified · ICP match score" },
+      { agent: "ENRICHMENT", icon: "doc",      text: "+contacts · +tech stack · +intent signals" },
+      { agent: "QUALIFY",    icon: "check",    text: "BANT score · pipeline-ready filter" },
+      { agent: "OUTREACH",   icon: "mail",     text: "Personalized multi-channel sequence" },
+      { agent: "TRACK",      icon: "calendar", text: "Engagement + reply tracking · auto follow-up" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "Qualified pipeline +42% this quarter" },
+    ],
+  },
+  {
+    id: "support",
+    label: "Customer Support",
+    industryIcon: "headphones",
+    role: "For CS teams, customer ops, helpdesk",
+    events: [
+      { agent: "TRIAGE",     icon: "search",   text: "127 tickets classified · priority assigned" },
+      { agent: "DRAFT",      icon: "doc",      text: "Replies drafted · tone matched to brand voice" },
+      { agent: "ROUTE",      icon: "mail",     text: "Routed to specialized team · context passed" },
+      { agent: "ESCALATE",   icon: "check",    text: "3 critical cases flagged to senior · SLA tracker" },
+      { agent: "TRACK",      icon: "chart",    text: "Sentiment + SLA monitor real-time" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "First response time cut by 70%" },
+    ],
+  },
+  {
+    id: "real-estate",
+    label: "Real Estate",
+    industryIcon: "building",
+    role: "For real estate agencies, property managers, proptech",
+    events: [
+      { agent: "CAPTURE",    icon: "doc",      text: "Property captured from listing · 1-click sheet generated" },
+      { agent: "ENRICHMENT", icon: "search",   text: "+zoning · +geolocation · +photos · +floor plan" },
+      { agent: "MATCH",      icon: "check",    text: "Client-property match · portfolio affinity score" },
+      { agent: "DOSSIER",    icon: "doc",      text: "Comparative client dossier · 5 properties selected" },
+      { agent: "APPROVAL",   icon: "calendar", text: "Multi-stakeholder pipeline · real-time status" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "Portfolio KPI tracker · real-time match alerts" },
+    ],
+  },
+  {
+    id: "events",
+    label: "Event Management",
+    industryIcon: "ticket",
+    role: "For exhibitors, trade shows, B2B events",
+    events: [
+      { agent: "CAPTURE",    icon: "doc",      text: "134 badges scanned · OCR badge + QR" },
+      { agent: "ENRICHMENT", icon: "search",   text: "+LinkedIn · +role · +company · 25+ sources" },
+      { agent: "QUALIFY",    icon: "check",    text: "89% of goal · dynamic ICP match per show" },
+      { agent: "ACTIVATE",   icon: "mail",     text: "Lead pushed into client CRM · sales-ready" },
+      { agent: "OUTREACH",   icon: "mail",     text: "Follow-up from company domain · in seconds" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "Pipeline €1.6M · €284/lead · executive report" },
+    ],
+  },
+  {
+    id: "vc",
+    label: "Venture Capital",
+    industryIcon: "trending",
+    role: "For VC/PE funds, family offices, M&A",
+    defaultHidden: true,
+    events: [
+      { agent: "INTAKE",     icon: "doc",      text: "14 decks read · 1-pager summary generated" },
+      { agent: "ENRICHMENT", icon: "search",   text: "+Crunchbase · +PitchBook · +founder LinkedIn" },
+      { agent: "SCORE",      icon: "check",    text: "Multi-criteria scoring · top-quartile flagged" },
+      { agent: "DD",         icon: "doc",      text: "Due diligence room organized · 32 docs" },
+      { agent: "MONITOR",    icon: "calendar", text: "Portfolio KPI tracker · alerts set" },
+      { agent: "ANALYTICS",  icon: "chart",    text: "8 senior-team hours saved per deal" },
+    ],
+  },
+];
+
+const source = lang === "en" ? allIndustriesEn : allIndustries;
 const industries = filter
-  ? allIndustries.filter((i) => i.id === filter)
-  : allIndustries.filter((i) => !i.defaultHidden);
+  ? source.filter((i) => i.id === filter)
+  : source.filter((i) => !i.defaultHidden);
 const showTabs = !filter;
 
 const icons: Record<string, string> = {

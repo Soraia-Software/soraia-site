@@ -4,7 +4,7 @@ import { getCollection, render } from "astro:content";
 import CTABanner from "~/components/CTABanner.astro";
 
 export async function getStaticPaths() {
-  const guides = await getCollection("guides");
+  const guides = (await getCollection("guides")).filter((g) => g.data.lang === "it");
   return guides.map((g) => ({
     params: { slug: g.id },
     props: { guide: g },
@@ -17,7 +17,7 @@ const { Content, headings } = await render(guide);
 // Filter only H2 for TOC
 const toc = headings.filter((h) => h.depth === 2);
 
-const allGuides = await getCollection("guides");
+const allGuides = (await getCollection("guides")).filter((g) => g.data.lang === "it");
 const related = (guide.data.related || [])
   .map((slug) => allGuides.find((g) => g.id === slug))
   .filter(Boolean)

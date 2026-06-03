@@ -1,0 +1,282 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+import CTABanner from "~/components/CTABanner.astro";
+import { GUIDE_SLUG_MAP, reverseMap } from "~/lib/i18n";
+
+const bare = (id: string) => id.replace(/^en\//, "");
+const EN_TO_IT_GUIDE = reverseMap(GUIDE_SLUG_MAP);
+
+export async function getStaticPaths() {
+  const guides = (await getCollection("guides")).filter((g) => g.data.lang === "en");
+  return guides.map((g) => ({
+    params: { slug: g.id.replace(/^en\//, "") },
+    props: { guide: g },
+  }));
+}
+
+const { guide } = Astro.props;
+const slug = bare(guide.id);
+const { Content, headings } = await render(guide);
+
+const toc = headings.filter((h) => h.depth === 2);
+
+const allGuides = (await getCollection("guides")).filter((g) => g.data.lang === "en");
+const related = (guide.data.related || [])
+  .map((s) => allGuides.find((g) => bare(g.id) === s))
+  .filter(Boolean)
+  .slice(0, 3);
+
+function formatDate(d: Date) {
+  return d.toLocaleDateString("en-US", { day: "numeric", month: "long", year: "numeric" });
+}
+
+const title = guide.data.title;
+const description = guide.data.description;
+const h1 = guide.data.h1 || guide.data.title;
+const itSlug = EN_TO_IT_GUIDE[slug];
+const altHref = itSlug ? `/guide/${itSlug}` : "/guide";
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: h1,
+  description,
+  datePublished: guide.data.pubDate.toISOString(),
+  dateModified: (guide.data.updatedDate || guide.data.pubDate).toISOString(),
+  author: { "@type": "Organization", name: "Soraia", url: "https://www.soraia.io" },
+  publisher: {
+    "@type": "Organization",
+    name: "Soraia",
+    logo: { "@type": "ImageObject", url: "https://www.soraia.io/logos/soraia-full.svg" },
+  },
+  keywords: guide.data.keywords.join(", "),
+};
+
+const faqJsonLd = guide.data.faq.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: guide.data.faq.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+} : null;
+
+const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
+---
+
+<Layout title={title} description={description} lang="en" jsonLd={jsonLd} altHref={altHref}>
+  <article>
+    <section class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
+      <div class="container-soraia pt-16 md:pt-20 pb-12 md:pb-14">
+        <nav class="flex items-center gap-2 text-[13px] mb-8 flex-wrap" style="color: var(--color-ink-soft);">
+          <a href="/en/" class="hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">Home</a>
+          <span>›</span>
+          <a href="/en/guide" class="hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">Guides</a>
+          <span>›</span>
+          <span style="color: var(--color-ink-muted);">{guide.data.title}</span>
+        </nav>
+
+        <div class="max-w-3xl">
+          <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-5" style="color: var(--color-ink-soft);">
+            <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+            Guide · {guide.data.readMinutes} min read
+          </p>
+          <h1 class="text-balance" style="font-size: clamp(2rem, 4vw + 0.5rem, 3rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+            {h1}
+          </h1>
+          <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
+            {description}
+          </p>
+          <div class="mt-7 flex flex-wrap items-center gap-3 text-[12.5px]" style="color: var(--color-ink-soft);">
+            <span>{guide.data.author}</span>
+            <span style="opacity: 0.4;">·</span>
+            <span>Published {formatDate(guide.data.pubDate)}</span>
+            {guide.data.updatedDate && (
+              <>
+                <span style="opacity: 0.4;">·</span>
+                <span>Updated {formatDate(guide.data.updatedDate)}</span>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white">
+      <div class="container-soraia py-12 md:py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_240px] gap-12 lg:gap-16">
+
+          <div class="max-w-3xl prose-soraia">
+            <Content />
+          </div>
+
+          {toc.length > 0 && (
+            <aside class="lg:sticky lg:top-24 lg:self-start order-first lg:order-last">
+              <div class="lg:border-l lg:border-line lg:pl-6">
+                <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-4" style="color: var(--color-ink-soft);">In this guide</p>
+                <ul class="space-y-2.5 text-[13.5px] leading-snug">
+                  {toc.map((h) => (
+                    <li>
+                      <a href={`#${h.slug}`} class="hover:text-[color:var(--color-brand)] transition-colors" style="color: var(--color-ink-muted);">{h.text}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
+          )}
+        </div>
+      </div>
+    </section>
+
+    {guide.data.faq.length > 0 && (
+      <section class="bg-ink-50 border-y border-line">
+        <div class="container-soraia max-w-3xl py-14 md:py-20">
+          <p class="eyebrow mb-3">Frequently asked questions</p>
+          <h2 class="mb-8 text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">
+            What people usually ask us.
+          </h2>
+
+          <div class="space-y-3">
+            {guide.data.faq.map((f) => (
+              <details class="group border border-line rounded-xl bg-white overflow-hidden">
+                <summary class="cursor-pointer list-none px-6 py-5 flex items-center justify-between gap-4 select-none">
+                  <span class="font-medium text-[15.5px]" style="color: var(--color-ink);">{f.q}</span>
+                  <span class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: var(--color-ink-50);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-ink-muted);"><path d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-5 -mt-1 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);" set:html={f.a}></div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {related.length > 0 && (
+      <section class="bg-white border-b border-line">
+        <div class="container-soraia py-14 md:py-20">
+          <p class="eyebrow mb-8">Keep reading</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 max-w-6xl">
+            {related.map((g) => (
+              <a href={`/en/guide/${bare(g.id)}`} class="card-editorial !p-7 group no-underline flex flex-col transition-all hover:!-translate-y-0.5 hover:shadow-md">
+                <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-4" style="color: var(--color-ink-soft);">Guide · {g.data.readMinutes} min</p>
+                <h3 class="mb-3 text-balance" style="font-size: 1.0625rem; line-height: 1.25; letter-spacing: -0.015em; font-weight: 500;">{g.data.title}</h3>
+                <p class="text-[13.5px] leading-relaxed text-pretty flex-1" style="color: var(--color-ink-muted);">{g.data.description}</p>
+                <span class="inline-flex items-center gap-1.5 text-[13px] font-medium mt-5" style="color: var(--color-brand);">
+                  Read the guide
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <CTABanner
+      title="Want an opinion on your case?"
+      description="20 minutes with the CEO to figure out together whether it makes sense. No commitment, no pitch: just a practical conversation about your processes."
+      ctaText="20 min with Daniel"
+      ctaHref="/en/contact"
+      avatarName="Daniel Levis"
+      avatarRole="Co-Founder & CEO"
+      avatarSrc="/team/daniel-levis.webp"
+    />
+  </article>
+</Layout>
+
+<style is:global>
+  .prose-soraia {
+    color: var(--color-ink);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .prose-soraia > * + * { margin-top: 1.15em; }
+  .prose-soraia > h2 + *,
+  .prose-soraia > h3 + * { margin-top: 0.6em; }
+
+  .prose-soraia h2 {
+    font-size: clamp(1.5rem, 2vw + 0.5rem, 1.875rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin-top: 2.5em;
+    margin-bottom: 0.6em;
+    color: var(--color-ink);
+    scroll-margin-top: 6rem;
+  }
+  .prose-soraia h3 {
+    font-size: 1.1875rem;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    color: var(--color-ink);
+    scroll-margin-top: 6rem;
+  }
+  .prose-soraia p { color: var(--color-ink); }
+  .prose-soraia strong { font-weight: 600; color: var(--color-ink); }
+  .prose-soraia em { color: var(--color-ink); }
+  .prose-soraia a {
+    color: var(--color-brand);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .prose-soraia a:hover { opacity: 0.7; }
+  .prose-soraia ul, .prose-soraia ol {
+    padding-left: 1.4em;
+    color: var(--color-ink);
+  }
+  .prose-soraia ul { list-style: disc; }
+  .prose-soraia ol { list-style: decimal; }
+  .prose-soraia li { margin: 0.4em 0; }
+  .prose-soraia li::marker { color: var(--color-ink-soft); }
+  .prose-soraia li > p { display: inline; }
+  .prose-soraia hr {
+    border: none;
+    border-top: 1px solid var(--color-line);
+    margin-block: 2.5em;
+  }
+  .prose-soraia blockquote {
+    border-left: 3px solid var(--color-brand);
+    padding-left: 1.25em;
+    margin-left: 0;
+    color: var(--color-ink-muted);
+    font-style: italic;
+  }
+  .prose-soraia code {
+    background: var(--color-ink-50);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+  .prose-soraia table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+    margin: 1.5em 0;
+  }
+  .prose-soraia table th,
+  .prose-soraia table td {
+    text-align: left;
+    padding: 0.7em 0.85em;
+    border-bottom: 1px solid var(--color-line);
+    vertical-align: top;
+  }
+  .prose-soraia table th {
+    font-weight: 500;
+    color: var(--color-ink);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-ink-soft);
+    border-bottom: 1px solid var(--color-line-strong);
+  }
+  .prose-soraia table td { color: var(--color-ink); }
+</style>

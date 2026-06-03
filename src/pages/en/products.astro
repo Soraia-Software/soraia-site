@@ -1,0 +1,135 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const products = [
+  {
+    id: "linkly",
+    name: "Linkly",
+    tagline: "The AI agents system for B2B trade shows",
+    description: "Six specialised AI agents that handle every contact collected at a trade show: capture, enrichment, qualification, CRM activation, automated follow-up, and executive reporting. Orchestrated by a dedicated Linkly consultant.",
+    status: "active",
+    statusLabel: "Available",
+    price: "€1,900 + VAT / year",
+    priceNote: "2026 early adopter offer",
+    targets: ["Manufacturing", "F&B", "Fashion", "Marine", "Pharma", "Retail"],
+    url: "https://linkly.events",
+    external: true,
+    iconBgColor: "#016F54",
+    iconPath: '<rect x="268" y="711" width="249" height="463" rx="124.5" transform="rotate(-90 268 711)" stroke="white" stroke-width="70" fill="none"/><rect x="517" y="711" width="249" height="463" rx="124.5" transform="rotate(-180 517 711)" stroke="white" stroke-width="70" fill="none"/>',
+    iconViewBox: "0 0 960 960",
+    cta: "Go to Linkly website",
+    bullets: [
+      "6 end-to-end AI agents (capture → follow-up)",
+      "Integrates with any CRM (HubSpot, Salesforce, popular ERPs)",
+      "EU infrastructure, GDPR compliant, DPA Art. 28",
+      "Onboarding included, 1-hour video call",
+    ],
+  },
+];
+---
+
+<Layout
+  title="Products · Soraia's ready-to-use AI agents"
+  description="Soraia's AI products: Linkly, the AI agents system for B2B trade shows. Ready-to-use tools built for Italian and European markets."
+  lang="en"
+>
+  <!-- Hero compact -->
+  <section class="container-soraia pt-16 md:pt-20 pb-10">
+    <p class="text-[11px] font-medium tracking-[0.15em] uppercase mb-5" style="color: var(--color-ink-soft);">
+      <span class="inline-block w-1 h-1 rounded-full align-middle mr-2" style="background: var(--color-brand);"></span>
+      Products
+    </p>
+    <h1 class="text-balance" style="font-size: clamp(2rem, 4vw + 0.5rem, 3.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+      Soraia's AI products, ready to use.
+    </h1>
+    <p class="mt-6 max-w-2xl text-[17px] md:text-[18px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+      Not just consulting. Soraia also builds vertical SaaS products for recurring B2B problems. Every product starts from a real pain point encountered with our clients, and becomes a standalone system.
+    </p>
+  </section>
+
+  <!-- Products grid -->
+  <section class="container-soraia pb-24">
+    <div class="grid grid-cols-1 gap-5 md:gap-6 max-w-2xl">
+      {products.map((p) => (
+        <article id={p.id} class="card-editorial !p-7 md:!p-8 flex flex-col">
+
+          <!-- Header row: icon + name + status -->
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div class="flex items-center gap-3.5">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={`background: ${p.iconBgColor}`}>
+                <svg viewBox={p.iconViewBox} class="w-7 h-7" set:html={p.iconPath} />
+              </div>
+              <div>
+                <h2 style="font-size: 1.5rem; line-height: 1.1; letter-spacing: -0.02em; font-weight: 500; color: var(--color-ink);">{p.name}</h2>
+                <p class="mt-1 text-[12px] font-medium uppercase tracking-[0.1em]" style="color: var(--color-ink-soft);">{p.tagline}</p>
+              </div>
+            </div>
+            {p.status === "coming" && (
+              <span class="text-[10px] font-medium uppercase tracking-[0.12em] px-2.5 py-1 rounded-full flex-shrink-0" style="background: var(--color-ink-100); color: var(--color-ink-muted);">
+                {p.statusLabel}
+              </span>
+            )}
+            {p.status === "active" && (
+              <span class="text-[10px] font-medium uppercase tracking-[0.12em] px-2.5 py-1 rounded-full flex-shrink-0 inline-flex items-center gap-1.5" style="background: rgba(23, 178, 106, 0.10); color: #117C4A;">
+                <span class="w-1.5 h-1.5 rounded-full" style="background: #17B26A;"></span>
+                {p.statusLabel}
+              </span>
+            )}
+          </div>
+
+          <!-- Description -->
+          <p class="text-[14.5px] leading-relaxed text-pretty mb-5" style="color: var(--color-ink-muted);">{p.description}</p>
+
+          <!-- Bullets compact -->
+          <ul class="space-y-2 mb-5">
+            {p.bullets.map((b) => (
+              <li class="flex items-start gap-2.5 text-[13.5px] leading-snug" style="color: var(--color-ink);">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-brand);">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+
+          <!-- Targets chips -->
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            {p.targets.map((t) => (
+              <span class="text-[11px] px-2 py-0.5 rounded" style="background: var(--color-ink-50); color: var(--color-ink-muted); border: 1px solid var(--color-line);">{t}</span>
+            ))}
+          </div>
+
+          <!-- Price + CTA pinned bottom -->
+          <div class="mt-auto pt-5 border-t flex items-end justify-between gap-4" style="border-color: var(--color-line);">
+            <div>
+              <p class="text-[16px] font-medium tracking-tight" style="color: var(--color-ink);">{p.price}</p>
+              <p class="text-[11.5px] mt-0.5" style="color: var(--color-ink-soft);">{p.priceNote}</p>
+            </div>
+            <a href={p.url} target={p.external ? "_blank" : undefined} rel={p.external ? "noopener noreferrer" : undefined} class="btn btn-primary !py-2.5 !px-4 text-[13px] inline-flex">
+              {p.cta}
+              {p.external ? (
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              ) : (
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 5l7 7-7 7"/>
+                </svg>
+              )}
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Closing note -->
+    <div class="mt-12 max-w-3xl">
+      <p class="text-[14px] leading-relaxed" style="color: var(--color-ink-muted);">
+        We are building more vertical products around recurring B2B problems we encounter in our consulting projects. If you have a specific use case in mind for your industry, <a href="/en/contact" class="underline underline-offset-4" style="color: var(--color-brand);">let's talk</a>.
+      </p>
+    </div>
+  </section>
+
+</Layout>

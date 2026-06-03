@@ -1,0 +1,496 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import WorldMap from "~/components/WorldMap.astro";
+import FAQ from "~/components/FAQ.astro";
+import CTABanner from "~/components/CTABanner.astro";
+
+const title = "About us, Italian AI Agency for SMEs | Soraia";
+const description = "100% remote AI consultants distributed across Italy, Europe, and South America. 40+ projects delivered, focus on Italian SMEs, no technology lock-in.";
+
+const valueIcons: Record<string, string> = {
+  // sparkles: AI with discernment
+  sparkles: '<path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/><path d="M19 14l.7 2.1L22 17l-2.3.9L19 20l-.7-2.1L16 17l2.3-.9z"/><path d="M5 19l.4 1.2L7 21l-1.6.4L5 23l-.4-1.6L3 21l1.6-.4z"/>',
+  // lightbulb: idea, solutions
+  lightbulb: '<path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.5.4.8 1 .8 1.6V18h6.4v-1.7c0-.6.3-1.2.8-1.6A7 7 0 0 0 12 2z"/>',
+  // users: people-first adoption
+  users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  // target: measure results
+  target: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+  // zap: speed
+  zap: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+  // compass: curiosity, learning, exploration
+  compass: '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>',
+};
+
+const values = [
+  {
+    icon: "sparkles",
+    title: "AI-first, but with judgment.",
+    body: "AI when it's needed. Processes and people come first. No automation for its own sake: if a workflow already works, we leave it alone.",
+  },
+  {
+    icon: "lightbulb",
+    title: "We think in solutions, not problems.",
+    body: "We know what AI can do today. We know where the real limitations are. We tell clients the truth before the quote, not after the contract is signed.",
+  },
+  {
+    icon: "users",
+    title: "Adoption beats technology.",
+    body: "The best AI agent is the one the team actually uses. That's why 40% of our work is training, change management, and documentation — not just building.",
+  },
+  {
+    icon: "target",
+    title: "We measure results.",
+    body: "Timed baseline before the sprint. A single primary metric. 30 days of hypercare after go-live. Without verifiable numbers, no guarantee is honest.",
+  },
+  {
+    icon: "zap",
+    title: "Speed + quality.",
+    body: "First delivery in 4 weeks. Your code from week one. No perpetual subscriptions, no lock-in. If you want to bring it in-house, we give you training and documentation.",
+  },
+  {
+    icon: "compass",
+    title: "Curious, fast learners.",
+    body: "The AI stack evolves every month. We invest time testing new models, frameworks, and patterns before proposing them to clients. Competitive advantage is staying current.",
+  },
+];
+
+const founders = [
+  {
+    name: "Daniel Levis",
+    role: "Co-Founder & CEO",
+    photo: "/team/daniel-levis.avif",
+    bio: "Over 10 years across IT and management consulting. Daniel leads the commercial side, change management, and adoption across 40+ delivered projects. Firmly believes that the value of AI for an SME depends 70% on how you introduce it to the team — not which model you pick.",
+    education: ["Politecnico di Torino", "ESCP"],
+    companies: ["Reply", "Accenture", "Alten", "Satispay"],
+  },
+  {
+    name: "Davide Silvestri",
+    role: "Co-Founder & CTO",
+    photo: "/team/davide-silvestri.avif",
+    bio: "Over 10 years in technical project management, technical leadership, and backend architecture. Davide leads Soraia's technical stack: ensuring code quality, agent performance, and solution scalability. Architectural owner of the portfolio's most complex projects.",
+    education: ["Politecnico di Torino", "ESCP"],
+    companies: ["Simon-Kucher", "Amazon", "Dott", "Satispay"],
+  },
+];
+
+const teamEvents = [
+  { src: "/team-events/soraia-retreat-biella.webp",                          caption: "Soraia Retreat in Biella" },
+  { src: "/team-events/ai-summit-paris-2025.webp",                           caption: "AI Summit Paris 2025, meeting with the CEO of Xano (AI governance partner)" },
+  { src: "/team-events/ai-workshop-roma-2026.webp",                          caption: "AI workshop in Rome, 2026" },
+  { src: "/team-events/escp-hackathon-jury-2025.webp",                       caption: "ESCP Hackathon, jury 2025" },
+  { src: "/team-events/escp-hackathon-speech.webp",                          caption: "ESCP Hackathon, keynote speech" },
+  { src: "/team-events/escp-ai-workshop-students-2025.webp",                 caption: "AI Workshop with ESCP students, 2025" },
+  { src: "/team-events/escp-zero-to-startup-2026-a.webp",                    caption: "Course 'From Zero to Startup', ESCP 2026" },
+  { src: "/team-events/sponsor-nel-mondo-venire-biella-2025-a.webp",         caption: "Sponsor of 'Nel Mondo a Venire', Biella 2025" },
+  { src: "/team-events/sponsor-nel-mondo-venire-biella-2025-b.webp",         caption: "Sponsor of 'Nel Mondo a Venire', Biella 2025" },
+];
+
+const worldRegions = [
+  {
+    x: 50.5, y: 36,
+    label: "Europe",
+    flag: "🇪🇺",
+    total: 28,
+    countries: [
+      { flag: "🇮🇹", name: "Italy", count: 12 },
+      { flag: "🇨🇭", name: "Switzerland", count: 3 },
+      { flag: "🇫🇷", name: "France", count: 3 },
+      { flag: "🇬🇧", name: "UK", count: 3 },
+      { flag: "🇪🇸", name: "Spain", count: 2 },
+      { flag: "🇳🇱", name: "Netherlands", count: 2 },
+      { flag: "🇩🇪", name: "Germany", count: 2 },
+      { flag: "🇵🇹", name: "Portugal", count: 1 },
+    ],
+    align: "right" as const,
+  },
+  { x: 23, y: 40,  label: "United States",   flag: "🇺🇸", total: 7, countries: [{ flag: "🇺🇸", name: "USA", count: 7 }], align: "left" as const },
+  { x: 60, y: 49,  label: "UAE",              flag: "🇦🇪", total: 4, countries: [{ flag: "🇦🇪", name: "UAE", count: 4 }] },
+  { x: 84, y: 71,  label: "Australia",        flag: "🇦🇺", total: 2, countries: [{ flag: "🇦🇺", name: "Australia", count: 2 }], align: "right" as const },
+];
+
+const faqs = [
+  {
+    q: "Who is behind Soraia?",
+    a: "Soraia was founded in 2023 by <strong>Daniel Levis</strong> (CEO, change management & AI adoption) and <strong>Davide Silvestri</strong> (CTO, backend architecture & AI engineering). Today we are a team of <strong>11 people</strong> distributed across Italy, Argentina, and Algeria. Registered in Biella, working 100% remote.",
+  },
+  {
+    q: "Why are all roles called 'AI Consultant'?",
+    a: "Because at Soraia every team member works directly with the client across every phase: discovery, build, deploy, adoption. We don't separate developers from consultants from PMs. <strong>AI is a cross-functional discipline</strong>, not a technical silo — and this model works better for SMEs.",
+  },
+  {
+    q: "How many projects have you delivered?",
+    a: "<strong>40+ projects</strong> delivered across 11 countries. 30% in Italy, the rest distributed across Europe, the USA, the UAE, and Australia. Main sectors: recruiting & HR, finance & accounting, venture capital, real estate, customer support, sales operations.",
+  },
+  {
+    q: "Are there any open positions?",
+    a: "We grow mainly through internal referrals. If you have experience in AI engineering, change management, or customer-facing consulting, reach out at <a href='mailto:info@soraia.io' style='color: var(--color-brand); text-decoration: underline;'>info@soraia.io</a> with a short profile. We always reply, even if just to say no.",
+  },
+  {
+    q: "Where are you based and how do you work?",
+    a: "<strong>Registered office in Biella</strong> (Via Losana 13, 13900 Biella). Delivery <strong>100% remote</strong>: no corporate offices, no inflated costs in the quote. But for the phases that require human contact — <strong>AI Readiness Assessment</strong> (2 days onsite to analyse processes in the field) and <strong>AI Adoption workshops</strong> (always at the client's premises) — we come to you. Change management doesn't happen over Zoom.",
+  },
+];
+---
+
+<Layout title={title} description={description} lang="en">
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
+    <div class="container-soraia pt-20 md:pt-28 pb-16 md:pb-20">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+        About us
+      </p>
+      <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-start">
+        <div>
+          <h1 class="text-balance" style="font-size: clamp(2.25rem, 5vw + 1rem, 4rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+            Speed without sacrificing quality.
+          </h1>
+          <p class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-xl text-pretty" style="color: var(--color-ink-muted);">
+            We are a <strong style="color: var(--color-ink); font-weight: 500;">team of AI consultants</strong> 100% remote, distributed across Italy, Europe, and South America. We build AI agents that SMEs actually use — because it's not enough for the software to work, it has to be adopted by the team.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-x-7 gap-y-3 text-[14px]" style="color: var(--color-ink-muted);">
+            <div class="inline-flex items-center gap-2">
+              <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+              <span><strong style="color: var(--color-ink); font-weight: 500;">40+ projects</strong> delivered</span>
+            </div>
+            <div class="inline-flex items-center gap-2">
+              <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+              <span><strong style="color: var(--color-ink); font-weight: 500;">11 countries</strong> served</span>
+            </div>
+            <div class="inline-flex items-center gap-2">
+              <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+              <span><strong style="color: var(--color-ink); font-weight: 500;">100% remote</strong>, based in Biella</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Founders photo -->
+        <div class="relative">
+          <div class="grid grid-cols-2 gap-4 lg:gap-5">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-violet-100 relative">
+              <img src="/team/daniel-levis.avif" alt="Daniel Levis" loading="eager" width="380" height="475" class="w-full h-full object-cover" />
+              <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4" style="background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);">
+                <p class="text-white text-[13px] md:text-[14px] font-medium leading-tight">Daniel Levis</p>
+                <p class="text-white/70 text-[11px] md:text-[12px] leading-tight mt-0.5">CEO</p>
+              </div>
+            </div>
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-violet-100 relative mt-8 lg:mt-10">
+              <img src="/team/davide-silvestri.avif" alt="Davide Silvestri" loading="eager" width="380" height="475" class="w-full h-full object-cover" />
+              <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4" style="background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);">
+                <p class="text-white text-[13px] md:text-[14px] font-medium leading-tight">Davide Silvestri</p>
+                <p class="text-white/70 text-[11px] md:text-[12px] leading-tight mt-0.5">CTO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOUNDERS
+       ============================================================ -->
+  <section class="section bg-ink-50 border-y border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="The founders"
+        title="Daniel and Davide."
+        subtitle="Co-founders since 2023, with complementary profiles: commercial & change management on one side, tech leadership & AI engineering on the other. Background in high-level consulting and tech scaleups."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {founders.map((f) => (
+          <article class="card-editorial !p-8 md:!p-10 flex flex-col">
+            <div class="flex items-center gap-5 mb-7">
+              <img src={f.photo} alt={f.name} loading="lazy" width="80" height="80" class="w-20 h-20 rounded-full object-cover" />
+              <div>
+                <h3 style="font-size: 1.375rem; line-height: 1.2; letter-spacing: -0.02em; font-weight: 500; color: var(--color-ink);">{f.name}</h3>
+                <p class="mt-1 text-[14px]" style="color: var(--color-ink-soft);">{f.role}</p>
+              </div>
+            </div>
+            <p class="text-[15px] leading-relaxed text-pretty flex-1" style="color: var(--color-ink-muted);">{f.bio}</p>
+            <div class="mt-7 pt-6 border-t border-line space-y-3">
+              <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <p class="text-[10px] font-medium tracking-[0.14em] uppercase w-[78px] flex-shrink-0" style="color: var(--color-ink-soft);">Education</p>
+                {f.education.map((e, i) => (
+                  <>
+                    {i > 0 && <span class="text-[11px]" style="color: var(--color-ink-soft);">·</span>}
+                    <span class="text-[13px] font-medium" style="color: var(--color-ink);">{e}</span>
+                  </>
+                ))}
+              </div>
+              <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <p class="text-[10px] font-medium tracking-[0.14em] uppercase w-[78px] flex-shrink-0" style="color: var(--color-ink-soft);">Experience</p>
+                {f.companies.map((c, i) => (
+                  <>
+                    {i > 0 && <span class="text-[11px]" style="color: var(--color-ink-soft);">·</span>}
+                    <span class="text-[13px] font-medium" style="color: var(--color-ink);">{c}</span>
+                  </>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EVENTS & MOMENTS (gallery)
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Events & moments"
+        title="Where we've been, what we've built."
+        subtitle="Workshops, hackathons, retreats, sponsorships. A selection of the moments when the Soraia team stepped away from the screen to share knowledge and build community."
+        align="center"
+      />
+
+      <div class="events-carousel" data-events-carousel>
+        <div class="events-track" data-events-track>
+          {teamEvents.map((e) => (
+            <figure class="event-card m-0">
+              <div class="event-frame relative w-full overflow-hidden rounded-xl border border-line bg-ink-50">
+                <img
+                  src={e.src}
+                  alt={e.caption}
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <figcaption class="mt-3.5 text-[14px] leading-snug text-pretty" style="color: var(--color-ink-soft);">
+                {e.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div class="events-controls mt-8 flex gap-3 justify-center">
+          <button type="button" class="events-btn" data-events-scroll="prev" aria-label="Previous event">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          </button>
+          <button type="button" class="events-btn" data-events-scroll="next" aria-label="Next event">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <script is:inline>
+        document.querySelectorAll("[data-events-scroll]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const dir = btn.getAttribute("data-events-scroll");
+            const track = document.querySelector("[data-events-track]");
+            if (!track) return;
+            const firstItem = track.querySelector(".event-card");
+            const step = firstItem ? firstItem.offsetWidth + 20 : track.clientWidth * 0.8;
+            track.scrollBy({ left: dir === "next" ? step : -step, behavior: "smooth" });
+          });
+        });
+      </script>
+
+      <p class="text-center mt-14 text-[14px]" style="color: var(--color-ink-muted);">
+        We're growing. Open positions? Write to us at <a href="mailto:info@soraia.io" class="underline underline-offset-4" style="color: var(--color-brand);">info@soraia.io</a>
+      </p>
+    </div>
+
+    <style is:global>
+      .events-carousel {
+        position: relative;
+        max-width: none;
+        margin: 0;
+      }
+      .events-track {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 88%;
+        gap: 1.5rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding-bottom: 0.75rem;
+      }
+      .events-track::-webkit-scrollbar { display: none; }
+      .events-track .event-card {
+        scroll-snap-align: start;
+        min-width: 0;
+      }
+      @media (min-width: 640px) {
+        .events-track { grid-auto-columns: 62%; gap: 1.75rem; }
+      }
+      @media (min-width: 1024px) {
+        .events-track { grid-auto-columns: 48%; gap: 2rem; }
+      }
+      .events-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 9999px;
+        border: 1px solid var(--color-line, #e4e4e7);
+        background: white;
+        color: var(--color-ink, #0a0a0a);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .events-btn:hover {
+        background: var(--color-ink-50, #f5f5f5);
+        border-color: var(--color-ink, #0a0a0a);
+        transform: translateY(-1px);
+      }
+      .event-card .event-frame {
+        aspect-ratio: 3 / 4;
+      }
+    </style>
+  </section>
+
+  <!-- ============================================================
+       VALUES (moved below events)
+       ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="What drives us"
+        title="The principles that hold us together."
+        subtitle="Six values we use to make hard decisions: when to say no to a project, when to add or remove an agent, how to communicate with the client. Not slogans — operational criteria."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px max-w-6xl mx-auto" style="background: var(--color-line); border: 1px solid var(--color-line); border-radius: 1.25rem; overflow: hidden;">
+        {values.map((v) => (
+          <div class="bg-white p-8 md:p-9">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-5" style="background: var(--color-brand-soft); color: var(--color-brand);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={valueIcons[v.icon]} />
+            </div>
+            <h3 class="text-balance" style="font-size: 1.0625rem; line-height: 1.3; letter-spacing: -0.015em; font-weight: 500; color: var(--color-ink);">{v.title}</h3>
+            <p class="mt-3 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{v.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW WE WORK
+       ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="How we work"
+        title="Fully remote by default. On-site when the value demands it."
+        subtitle="Day-to-day delivery is 100% remote: no corporate offices, no inflated costs landing in the quote. When an in-person meeting is what's needed, we come to you."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+        <article class="card-editorial !p-8 md:!p-9">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-6" style="background: var(--color-brand-soft); color: var(--color-brand);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="text-balance" style="font-size: 1.25rem; line-height: 1.25; letter-spacing: -0.02em; font-weight: 500; color: var(--color-ink);">
+            100% remote delivery
+          </h3>
+          <p class="mt-3 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+            Build, deploy, hypercare, and post-go-live support are all managed remotely. Tools designed for async collaboration, no pointless calls. Team distributed across Italy, Argentina, and Algeria, covering the full European working day.
+          </p>
+        </article>
+
+        <article class="card-editorial !p-8 md:!p-9">
+          <div class="w-11 h-11 rounded-lg flex items-center justify-center mb-6" style="background: var(--color-brand-soft); color: var(--color-brand);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="text-balance" style="font-size: 1.25rem; line-height: 1.25; letter-spacing: -0.02em; font-weight: 500; color: var(--color-ink);">
+            On-site when it counts
+          </h3>
+          <p class="mt-3 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+            <strong style="color: var(--color-ink); font-weight: 500;">AI Readiness Assessment</strong>: 2 days onsite to analyse processes in the field, not over a shared screen. <strong style="color: var(--color-ink); font-weight: 500;">AI Adoption workshop</strong>: always at the client's premises, never remote — because change management means looking people in the eye.
+          </p>
+          <a href="/en/downloads/ai-assessment-sample" class="mt-4 inline-flex items-center gap-1.5 text-[13px] font-medium group" style="color: var(--color-brand);">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            View a sample assessment report
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GLOBAL REACH
+       ============================================================ -->
+  <section class="section bg-ink-50 border-y border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Global reach"
+        title="Italian company. Clients worldwide."
+        subtitle="Team <strong>full-remote based in Italy</strong>, but we work with <strong>40+ clients</strong> distributed across Europe, the United States, the UAE, and Australia."
+        align="center"
+      />
+
+      <WorldMap regions={worldRegions} />
+
+      <!-- Region breakdown row -->
+      <div class="mt-2 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 max-w-3xl mx-auto text-[13px]" style="color: var(--color-ink-muted);">
+        {worldRegions.map((r, i) => (
+          <>
+            {i > 0 && <span style="color: var(--color-ink-soft); opacity: 0.6;">·</span>}
+            <span class="inline-flex items-center gap-2">
+              <span class="text-[14px] leading-none">{r.flag}</span>
+              <span><strong style="color: var(--color-ink); font-weight: 500;">{r.total}</strong> {r.label}</span>
+            </span>
+          </>
+        ))}
+      </div>
+
+      <div class="mt-14 grid grid-cols-3 gap-px bg-ink-200 rounded-3xl overflow-hidden max-w-4xl mx-auto reveal">
+        <div class="bg-white p-7 md:p-9 text-center">
+          <p class="text-[2.5rem] md:text-[3.5rem] font-medium tracking-tight leading-none" style="color: var(--color-brand);">40+</p>
+          <p class="mt-3 text-[13px] font-medium text-ink-900">Projects delivered</p>
+        </div>
+        <div class="bg-white p-7 md:p-9 text-center">
+          <p class="text-[2.5rem] md:text-[3.5rem] font-medium tracking-tight leading-none" style="color: var(--color-brand);">11</p>
+          <p class="mt-3 text-[13px] font-medium text-ink-900">Countries served</p>
+        </div>
+        <div class="bg-white p-7 md:p-9 text-center">
+          <p class="text-[2.5rem] md:text-[3.5rem] font-medium tracking-tight leading-none" style="color: var(--color-brand);">4 wks.</p>
+          <p class="mt-3 text-[13px] font-medium text-ink-900">To first live agent</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section bg-white">
+    <div class="container-soraia max-w-4xl">
+      <SectionHeader
+        eyebrow="Frequently asked questions"
+        title="What people usually ask us."
+        align="center"
+      />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA
+       ============================================================ -->
+  <CTABanner
+    title="20 minutes with the CEO. No pitch."
+    description="We figure out together whether it makes sense to work together. No commitment, no surprise quotes: just an operational conversation about your processes."
+    ctaText="20 min with Daniel"
+    ctaHref="/en/contact"
+    avatarName="Daniel Levis"
+    avatarRole="Co-Founder & CEO"
+    avatarSrc="/team/daniel-levis.webp"
+  />
+</Layout>

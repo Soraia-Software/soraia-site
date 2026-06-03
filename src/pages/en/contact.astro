@@ -1,0 +1,127 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import LeadForm from "~/components/LeadForm.tsx";
+import AvatarCircle from "~/components/AvatarCircle.astro";
+import ProofBar from "~/components/ProofBar.astro";
+
+const title = "Let's talk, contact us | Soraia";
+const description =
+  "Tell us about your operations. We'll get back to you within 24 hours with a concrete AI Readiness Assessment proposal, scoped to your context.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Let's talk. Soraia",
+  url: "https://www.soraia.io/en/contact",
+};
+
+// Mini proof bar, only 6 key logos to keep focus on the form
+const proofLogos = [
+  { name: "APraise", src: "/logos/clients/apraise.webp" },
+  { name: "OggiLavoro", src: "/logos/clients/oggilavoro.webp" },
+  { name: "Aegis Group", src: "/logos/clients/aegisgroup.webp" },
+  { name: "KB&B", src: "/logos/clients/kbb.webp" },
+  { name: "CXL", src: "/logos/clients/cxl.webp" },
+  { name: "Rainplan", src: "/logos/clients/rainplan.webp" },
+];
+---
+
+<Layout title={title} description={description} lang="en" jsonLd={jsonLd}>
+  <!-- ============================================================
+       HERO + FORM
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-violet-mesh">
+    <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
+    <div class="orb orb-lilac w-[400px] h-[400px] -bottom-20 -left-20 opacity-40 float-slower" aria-hidden="true"></div>
+
+    <div class="container-soraia pt-16 md:pt-24 pb-16 md:pb-20 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <!-- LEFT: Hero copy + guarantee + CEO card -->
+        <div class="lg:col-span-5 lg:sticky lg:top-32">
+          <p class="eyebrow mb-6 fade-up">Let's talk</p>
+
+          <h1 class="text-[2.75rem] sm:text-[3.5rem] md:text-[4rem] font-semibold tracking-tight text-ink-900 leading-[1.02] text-balance fade-up fade-up-delay-1">
+            Shall we talk about your processes?
+          </h1>
+
+          <p class="mt-6 text-[18px] md:text-[19px] text-ink-700 leading-relaxed text-pretty fade-up fade-up-delay-2 max-w-lg">
+            Tell us about your operations. We'll get back to you within 24 hours with a concrete assessment proposal, scoped to your context.
+          </p>
+
+          <!-- GUARANTEE, more prominent -->
+          <div class="mt-7 p-5 rounded-2xl bg-gradient-to-br from-violet-700 to-violet-600 text-white fade-up fade-up-delay-3 max-w-md shadow-violet">
+            <div class="flex items-center gap-3 mb-2">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
+              </svg>
+              <p class="text-lg font-semibold text-white">Guarantee included</p>
+            </div>
+            <p class="text-[14px] text-white/90 leading-relaxed">
+              If at go-live the agent doesn't recover the promised hours, we work for free until it does, or we refund the sprint. <strong class="text-amber">No contractual fine print.</strong>
+            </p>
+          </div>
+
+          <ul class="mt-7 space-y-3 fade-up fade-up-delay-3">
+            {[
+              "Assessment €2,000, refunded if you proceed",
+              "Response within 24 hours",
+              "No commitment to proceed",
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-600 items-center justify-center">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                <span class="text-[15px] text-ink-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <!-- CEO card -->
+          <div class="mt-8 p-5 rounded-2xl bg-white border border-ink-200 shadow-sm fade-up fade-up-delay-4 max-w-md">
+            <div class="flex items-center gap-4">
+              <AvatarCircle name="Daniel Levis" src="/team/daniel-levis.webp" size="lg" />
+              <div>
+                <p class="font-semibold text-ink-900 text-[15px] leading-tight">Daniel Levis</p>
+                <p class="text-sm text-ink-500 mt-0.5">Co-Founder & CEO</p>
+                <p class="text-xs text-ink-500 mt-1.5 leading-snug">
+                  I personally respond to all enquiries within 24 hours.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form + mini testimonial -->
+        <div class="lg:col-span-7 fade-up fade-up-delay-2">
+          <LeadForm client:load lang="en" source="parliamone" />
+
+          <!-- Mini testimonial below the form -->
+          <div class="mt-8 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-ink-200 reveal reveal-delay-2">
+            <div class="flex gap-1 mb-3 text-amber">
+              {[1,2,3,4,5].map(() => (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
+            <p class="text-[15px] text-ink-700 leading-relaxed italic mb-4">
+              "The new system is like having four extra recruiters on the team, without the cost and complexity. Extremely satisfied with the consultancy and the ongoing support."
+            </p>
+            <div class="flex items-center gap-3">
+              <img src="/testimonials/jacopo-castano-apraise.webp" alt="Jacopo Castano" loading="lazy" class="w-10 h-10 rounded-full object-cover" />
+              <div>
+                <p class="text-[13px] font-semibold text-ink-900 leading-tight">Jacopo Castano</p>
+                <p class="text-xs text-ink-500 leading-tight">Managing Partner · APraise</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROOF BAR, mini, for credibility
+       ============================================================ -->
+  <ProofBar label="40+ clients in 11 countries · Including" logos={proofLogos} />
+</Layout>

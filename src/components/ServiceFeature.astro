@@ -13,9 +13,21 @@ interface Props {
   ctaHref?: string;
   reverse?: boolean;
   variant?: "phone" | "dashboard" | "code";
+  lang?: "it" | "en";
 }
 
-const { eyebrow, title, description, bullets, ctaText, ctaHref, reverse = false, variant = "dashboard" } = Astro.props;
+const { eyebrow, title, description, bullets, ctaText, ctaHref, reverse = false, variant = "dashboard", lang = "it" } = Astro.props;
+const m = lang === "en"
+  ? {
+      agent_active: "Agent active", screening: "CV screening in progress",
+      agent: "Agent", active: "Active", processed: "Processed", qualified: "Qualified",
+      code_c1: "// → 847 processed, 47 shortlisted", code_c2: "// → 4 hours of work recovered",
+    }
+  : {
+      agent_active: "Agente attivo", screening: "Screening CV in corso",
+      agent: "Agente", active: "Attivo", processed: "Elaborati", qualified: "Qualificati",
+      code_c1: "// → 847 elaborati, 47 in shortlist", code_c2: "// → 4 ore di lavoro recuperate",
+    };
 ---
 
 <div class={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
@@ -66,8 +78,8 @@ const { eyebrow, title, description, bullets, ctaText, ctaHref, reverse = false,
               <span>●●●</span>
             </div>
             <div class="rounded-xl bg-violet-50 p-3 mt-2">
-              <p class="text-[11px] text-violet-700 font-semibold uppercase tracking-wider">Agente attivo</p>
-              <p class="text-sm font-semibold text-ink-900 mt-1">Screening CV in corso</p>
+              <p class="text-[11px] text-violet-700 font-semibold uppercase tracking-wider">{m.agent_active}</p>
+              <p class="text-sm font-semibold text-ink-900 mt-1">{m.screening}</p>
               <div class="mt-2 h-1.5 rounded-full bg-violet-200 overflow-hidden">
                 <div class="h-full w-3/4 bg-gradient-to-r from-violet-700 to-violet-500 rounded-full"></div>
               </div>
@@ -100,21 +112,21 @@ const { eyebrow, title, description, bullets, ctaText, ctaHref, reverse = false,
             <div class="p-5 space-y-4">
               <div class="flex items-center justify-between">
                 <div>
-                  <p class="text-[10px] uppercase tracking-wider text-ink-500 font-semibold">Agente</p>
+                  <p class="text-[10px] uppercase tracking-wider text-ink-500 font-semibold">{m.agent}</p>
                   <p class="text-lg font-semibold text-ink-900">CV Screening Pipeline</p>
                 </div>
                 <span class="px-2.5 py-1 rounded-full bg-success/10 text-success text-[11px] font-semibold uppercase tracking-wider flex items-center gap-1.5">
                   <span class="w-1.5 h-1.5 rounded-full bg-success animate-pulse"></span>
-                  Attivo
+                  {m.active}
                 </span>
               </div>
               <div class="grid grid-cols-3 gap-2">
                 <div class="rounded-lg bg-violet-50 p-3">
-                  <p class="text-[10px] uppercase text-violet-700 font-semibold">Elaborati</p>
+                  <p class="text-[10px] uppercase text-violet-700 font-semibold">{m.processed}</p>
                   <p class="text-2xl font-semibold text-violet-700 mt-0.5">847</p>
                 </div>
                 <div class="rounded-lg bg-ink-50 p-3">
-                  <p class="text-[10px] uppercase text-ink-500 font-semibold">Qualificati</p>
+                  <p class="text-[10px] uppercase text-ink-500 font-semibold">{m.qualified}</p>
                   <p class="text-2xl font-semibold text-ink-900 mt-0.5">203</p>
                 </div>
                 <div class="rounded-lg bg-amber-soft p-3">
@@ -159,8 +171,8 @@ const { eyebrow, title, description, bullets, ctaText, ctaHref, reverse = false,
 &#125;);
 
 <span class="text-violet-400">const</span> <span class="text-amber">results</span> = <span class="text-violet-400">await</span> screener.run();
-<span class="text-white/40">// → 847 elaborati, 47 in shortlist</span>
-<span class="text-white/40">// → 4 ore di lavoro recuperate</span>
+<span class="text-white/40">{m.code_c1}</span>
+<span class="text-white/40">{m.code_c2}</span>
 
 ats.push(<span class="text-amber">results</span>.shortlist);
 slack.notify(team, <span class="text-amber">results</span>.summary);</code></pre>

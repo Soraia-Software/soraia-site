@@ -1,6 +1,8 @@
 ---
+import { path as i18nPath, GUIDE_SLUG_MAP, type Lang } from "~/lib/i18n";
+
 interface Props {
-  lang?: "it" | "en";
+  lang?: Lang;
 }
 const { lang = "it" } = Astro.props;
 
@@ -34,6 +36,9 @@ const labels = {
     terms: "Termini",
     cookies: "Cookie",
     rights: "Tutti i diritti riservati.",
+    guides_label: "Guide AI",
+    checkup_cta: "Fai il check-up, 3 min",
+    featured_guides: "Guide AI in evidenza",
   },
   en: {
     tagline_big: "AI Agents for European SMEs.",
@@ -62,11 +67,23 @@ const labels = {
     terms: "Terms",
     cookies: "Cookies",
     rights: "All rights reserved.",
+    guides_label: "AI Guides",
+    checkup_cta: "Take the check-up, 3 min",
+    featured_guides: "Featured AI guides",
   },
 }[lang];
 
 const homeHref = lang === "en" ? "/en/" : "/";
-const p = (path: string) => (lang === "en" ? "/en" + path : path);
+const p = (route: string) => i18nPath(route, lang);
+const guideHref = (itSlug: string) =>
+  lang === "en" ? `/en/guide/${GUIDE_SLUG_MAP[itSlug]}` : `/guide/${itSlug}`;
+const featuredGuides = [
+  { slug: "agenti-ai-aziende", it: "Agenti AI per Aziende", en: "AI Agents for Business" },
+  { slug: "consulenza-ai-italia", it: "Consulenza AI Italia", en: "AI Consulting Italy" },
+  { slug: "formazione-ai-aziendale", it: "Formazione AI Aziendale", en: "Corporate AI Training" },
+  { slug: "ai-act-aziende", it: "AI Act per Aziende", en: "AI Act for Business" },
+  { slug: "costi-consulenza-ai", it: "Costi Consulenza AI", en: "AI Consulting Costs" },
+];
 ---
 
 <footer class="bg-ink-50 border-t border-line" style="background: #F2F1ED;">
@@ -86,14 +103,14 @@ const p = (path: string) => (lang === "en" ? "/en" + path : path);
       </p>
 
       <div class="mt-9 flex flex-col sm:flex-row gap-3">
-        <a href="/parliamone" class="btn btn-primary">
+        <a href={p("/parliamone")} class="btn btn-primary">
           {labels.nav_contact}
           <span class="btn-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </span>
         </a>
         <a href={p("/check-up")} class="btn btn-secondary">
-          Fai il check-up, 3 min
+          {labels.checkup_cta}
         </a>
       </div>
     </div>
@@ -128,7 +145,7 @@ const p = (path: string) => (lang === "en" ? "/en" + path : path);
         <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
           <li><a href={p("/check-up")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_scorecard}</a></li>
           <li><a href={p("/case-studies")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_cases}</a></li>
-          <li><a href={p("/guide")} class="link-underline-anim hover:opacity-80 transition-opacity">Guide AI</a></li>
+          <li><a href={p("/guide")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.guides_label}</a></li>
           <li><a href={p("/downloads/ai-assessment-sample")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_sample}</a></li>
           <li><a href={p("/blog")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_blog}</a></li>
         </ul>
@@ -139,7 +156,7 @@ const p = (path: string) => (lang === "en" ? "/en" + path : path);
         <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
           <li><a href={p("/")} class="link-underline-anim hover:opacity-80 transition-opacity">Home</a></li>
           <li><a href={p("/chi-siamo")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_about}</a></li>
-          <li><a href="/parliamone" class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_contact}</a></li>
+          <li><a href={p("/parliamone")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_contact}</a></li>
           <li><a href="mailto:info@soraia.io" class="link-underline-anim hover:opacity-80 transition-opacity">info@soraia.io</a></li>
           <li><a href="https://www.linkedin.com/company/soraia-digital" target="_blank" rel="noopener" class="link-underline-anim hover:opacity-80 transition-opacity">LinkedIn ↗</a></li>
         </ul>
@@ -159,17 +176,14 @@ const p = (path: string) => (lang === "en" ? "/en" + path : path);
 
     <!-- Guide AI in evidenza strip -->
     <div class="py-7">
-      <p class="text-[11px] font-semibold uppercase tracking-[0.14em] mb-4" style="color: var(--color-ink-soft);">Guide AI in evidenza</p>
+      <p class="text-[11px] font-semibold uppercase tracking-[0.14em] mb-4" style="color: var(--color-ink-soft);">{labels.featured_guides}</p>
       <div class="flex flex-col items-start gap-y-2 lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-5 text-[13.5px]" style="color: var(--color-ink);">
-        <a href={p("/guide/agenti-ai-aziende")} class="link-underline-anim hover:opacity-80 transition-opacity">Agenti AI per Aziende</a>
-        <span class="hidden lg:inline" style="color: var(--color-ink-soft); opacity: 0.4;">·</span>
-        <a href={p("/guide/consulenza-ai-italia")} class="link-underline-anim hover:opacity-80 transition-opacity">Consulenza AI Italia</a>
-        <span class="hidden lg:inline" style="color: var(--color-ink-soft); opacity: 0.4;">·</span>
-        <a href={p("/guide/formazione-ai-aziendale")} class="link-underline-anim hover:opacity-80 transition-opacity">Formazione AI Aziendale</a>
-        <span class="hidden lg:inline" style="color: var(--color-ink-soft); opacity: 0.4;">·</span>
-        <a href={p("/guide/ai-act-aziende")} class="link-underline-anim hover:opacity-80 transition-opacity">AI Act per Aziende</a>
-        <span class="hidden lg:inline" style="color: var(--color-ink-soft); opacity: 0.4;">·</span>
-        <a href={p("/guide/costi-consulenza-ai")} class="link-underline-anim hover:opacity-80 transition-opacity">Costi Consulenza AI</a>
+        {featuredGuides.map((g, i) => (
+          <>
+            {i > 0 && <span class="hidden lg:inline" style="color: var(--color-ink-soft); opacity: 0.4;">·</span>}
+            <a href={guideHref(g.slug)} class="link-underline-anim hover:opacity-80 transition-opacity">{lang === "en" ? g.en : g.it}</a>
+          </>
+        ))}
       </div>
     </div>
 

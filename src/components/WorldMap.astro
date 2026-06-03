@@ -17,9 +17,11 @@ interface Region {
 
 interface Props {
   regions: Region[];
+  lang?: "it" | "en";
 }
 
-const { regions } = Astro.props;
+const { regions, lang = "it" } = Astro.props;
+const clientsLabel = lang === "en" ? "clients" : "clienti";
 ---
 
 <div class="world-map-wrapper">
@@ -42,7 +44,7 @@ const { regions } = Astro.props;
       <button
         type="button"
         class="region-dot"
-        aria-label={`${r.label}, ${r.total} clienti`}
+        aria-label={`${r.label}, ${r.total} ${clientsLabel}`}
       >
         <span class="region-pulse"></span>
         <span class="region-core"></span>
@@ -51,7 +53,7 @@ const { regions } = Astro.props;
       <div class="region-popup">
         <div class="region-popup-flag">{r.flag}</div>
         <p class="region-popup-name">{r.label}</p>
-        <p class="region-popup-total">{r.total} clienti</p>
+        <p class="region-popup-total">{r.total} {clientsLabel}</p>
         {r.countries.length > 1 && (
           <ul class="region-popup-list">
             {r.countries.map((c) => (

@@ -13,10 +13,15 @@ interface Item {
 
 interface Props {
   items: Item[];
+  lang?: "it" | "en";
 }
 
-const { items } = Astro.props;
+const { items, lang = "it" } = Astro.props;
 const uid = `carousel-${Math.random().toString(36).slice(2, 9)}`;
+const base = lang === "en" ? "/en/case-studies/" : "/case-studies/";
+const t = lang === "en"
+  ? { prev: "Previous case", next: "Next case" }
+  : { prev: "Caso precedente", next: "Caso successivo" };
 ---
 
 <div class="case-carousel" data-carousel={uid}>
@@ -24,7 +29,8 @@ const uid = `carousel-${Math.random().toString(36).slice(2, 9)}`;
     {items.map((it) => (
       <div class="case-carousel-item">
         <CaseStudyCardJet
-          href={`/case-studies/${it.slug}`}
+          lang={lang}
+          href={`${base}${it.slug}`}
           client={it.client}
           clientLogo={it.clientLogo}
           quote={it.quote}
@@ -42,7 +48,7 @@ const uid = `carousel-${Math.random().toString(36).slice(2, 9)}`;
       class="case-carousel-btn"
       data-dir="prev"
       data-target={uid}
-      aria-label="Caso precedente"
+      aria-label={t.prev}
     >
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M19 12H5M12 5l-7 7 7 7"/>
@@ -53,7 +59,7 @@ const uid = `carousel-${Math.random().toString(36).slice(2, 9)}`;
       class="case-carousel-btn"
       data-dir="next"
       data-target={uid}
-      aria-label="Caso successivo"
+      aria-label={t.next}
     >
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M5 12h14M12 5l7 7-7 7"/>

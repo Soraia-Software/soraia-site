@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
 import AskAIWidget from "~/components/AskAIWidget.astro";
+import { localizePath, path as i18nPath } from "~/lib/i18n";
 
 interface Props {
   title: string;
@@ -11,6 +12,10 @@ interface Props {
   canonical?: string;
   lang?: "it" | "en";
   jsonLd?: Record<string, any> | Record<string, any>[];
+  /** Explicit URL of this page in the OTHER language. Pass on content detail
+   *  pages whose slug differs across languages (guides, blog). When omitted,
+   *  the alternate is derived from the path via localizePath(). */
+  altHref?: string;
 }
 
 const {
@@ -20,10 +25,20 @@ const {
   canonical,
   lang = "it",
   jsonLd,
+  altHref,
 } = Astro.props;
 
 const siteUrl = "https://www.soraia.io";
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
+
+// hreflang alternates (it / en / x-default)
+const otherLang = lang === "it" ? "en" : "it";
+const otherPath = altHref ?? localizePath(Astro.url.pathname, otherLang);
+const itPath = lang === "it" ? Astro.url.pathname : otherPath;
+const enPath = lang === "en" ? Astro.url.pathname : otherPath;
+const itUrl = new URL(itPath, siteUrl).toString();
+const enUrl = new URL(enPath, siteUrl).toString();
+const contactHref = i18nPath("/parliamone", lang);
 ---
 
 <!DOCTYPE html>
@@ -37,6 +52,11 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString(
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
 
+    <!-- hreflang alternates -->
+    <link rel="alternate" hreflang="it" href={itUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={itUrl} />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
@@ -44,6 +64,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString(
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, siteUrl).toString()} />
     <meta property="og:locale" content={lang === "it" ? "it_IT" : "en_US"} />
+    <meta property="og:locale:alternate" content={lang === "it" ? "en_US" : "it_IT"} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -70,7 +91,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString(
     }
   </head>
   <body class="min-h-screen flex flex-col antialiased">
-    <Header lang={lang} />
+    <Header lang={lang} altHref={otherPath} />
     <main class="flex-1">
       <slot />
     </main>
@@ -81,8 +102,8 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString(
 
     <!-- Sticky mobile CTA bottom, visible only on mobile, hidden when /parliamone is the current path -->
     <div id="sticky-cta" class="md:hidden fixed bottom-0 left-0 right-0 z-40 px-4 pb-3 pt-2 transition-transform duration-300" style="background: linear-gradient(180deg, rgba(250,250,248,0) 0%, rgba(250,250,248,0.95) 30%, #FAFAF8 100%);">
-      <a href="/parliamone" class="btn btn-primary w-full !justify-center shadow-lg">
-        20 min con Daniel
+      <a href={contactHref} class="btn btn-primary w-full !justify-center shadow-lg">
+        {lang === "en" ? "20 min with Daniel" : "20 min con Daniel"}
         <span class="btn-arrow">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </span>
@@ -94,7 +115,8 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString(
       (function() {
         const cta = document.getElementById("sticky-cta");
         if (!cta) return;
-        if (window.location.pathname.startsWith("/parliamone")) {
+        const p = window.location.pathname;
+        if (p.startsWith("/parliamone") || p.startsWith("/en/contact")) {
           cta.style.display = "none";
           return;
         }
