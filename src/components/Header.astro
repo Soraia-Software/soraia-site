@@ -187,9 +187,14 @@ const prodotti = [
       </div>
     </nav>
   </div>
+</header>
 
-  <!-- Mobile drawer -->
-  <div class="mobile-drawer md:hidden" data-mobile-drawer aria-hidden="true">
+<!-- Mobile drawer — rendered OUTSIDE <header> on purpose. The header has
+     backdrop-blur (backdrop-filter), which makes it the containing block for
+     any position:fixed descendant. If the drawer lived inside, inset:0 would
+     resolve to the ~64px header bar instead of the viewport, collapsing it
+     into a thin scrollable strip at the top. -->
+<div class="mobile-drawer md:hidden" data-mobile-drawer aria-hidden="true">
     <div class="mobile-drawer__overlay" data-mobile-close></div>
     <aside class="mobile-drawer__panel" role="dialog" aria-label="Menu">
       <div class="flex items-center justify-between p-5 border-b border-ink-200/60">
@@ -229,7 +234,6 @@ const prodotti = [
       </div>
     </aside>
   </div>
-</header>
 
 <style>
   /* =============================================================
