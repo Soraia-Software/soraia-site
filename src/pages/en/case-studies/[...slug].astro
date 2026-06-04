@@ -7,7 +7,7 @@ import CaseStudyCarousel from "~/components/CaseStudyCarousel.astro";
 const bare = (id: string) => id.replace(/^en\//, "");
 
 export async function getStaticPaths() {
-  const cases = (await getCollection("caseStudies")).filter((c) => c.data.lang === "en");
+  const cases = (await getCollection("caseStudies")).filter((c) => c.data.lang === "en" && !c.data.draft);
   return cases.map((c) => ({
     params: { slug: c.id.replace(/^en\//, "") },
     props: { study: c },
@@ -18,7 +18,7 @@ const { study } = Astro.props;
 const slug = bare(study.id);
 const { Content } = await render(study);
 
-const allCases = (await getCollection("caseStudies")).filter((c) => c.data.lang === "en");
+const allCases = (await getCollection("caseStudies")).filter((c) => c.data.lang === "en" && !c.data.draft);
 const explicitRelated = (study.data.related || [])
   .map((s) => allCases.find((c) => bare(c.id) === s))
   .filter(Boolean);

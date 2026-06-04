@@ -35,7 +35,6 @@ Nota di posizionamento: dal 2026 Soraia si è riposizionata da no-code/automatio
 - [Startup GovTech](https://www.soraia.io/case-studies/startup-govtech): Diplomazia, agente IA note verbali (NDA).
 - [French Riviera Househunting](https://www.soraia.io/case-studies/frh): Real estate boutique Costa Azzurra, 2 agenti IA per lead qualificati e capture immobili.
 - [Rainplan](https://www.soraia.io/case-studies/rainplan): Climate-tech stormwater management, centinaia di parcel e approvazioni multi-stakeholder gestite in autonomia.
-- [40Factory](https://www.soraia.io/case-studies/40factory): Industrial IoT, Linkly per fiere B2B, 6 agenti IA orchestrati, follow-up dal dominio cliente in pochi secondi.
 
 ## Risorse
 

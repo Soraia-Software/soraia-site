@@ -75,6 +75,7 @@ const caseStudies = defineCollection({
     })).default([]),
     related: z.array(z.string()).default([]),  // bare slugs of related case studies (same in IT/EN)
     lang: z.enum(["it", "en"]).default("it"),  // EN entries live in the en/ subfolder
+    draft: z.boolean().default(false),         // hidden everywhere when true (e.g. awaiting client approval)
   }),
 });
 

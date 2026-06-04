@@ -12,7 +12,7 @@ import CaseStudyCarousel from "~/components/CaseStudyCarousel.astro";
 import { getCollection } from "astro:content";
 
 // Fetch featured + most recent case studies, map to Jet card format.
-const allCases = await getCollection("caseStudies");
+const allCases = (await getCollection("caseStudies")).filter((c) => c.data.lang === "en" && !c.data.draft);
 const photoMap: Record<string, string> = {
   "40factory": "/testimonials/margherita-chifari-40factory.webp",
   aegis: "/testimonials/aegis_vittorio_maiani.webp",
@@ -80,7 +80,6 @@ const homeLogos = [
   { name: "Liftt", src: "/logos/clients/liftt.webp" },
   { name: "Navily", src: "/logos/clients/navily.webp" },
   { name: "French Riviera Househunting", src: "/logos/clients/frh.webp" },
-  { name: "40Factory", src: "/logos/clients/40factory.webp" },
   { name: "ILTEC", src: "/logos/clients/iltec.webp" },
 ];
 

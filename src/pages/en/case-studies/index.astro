@@ -9,7 +9,7 @@ const title = "Case Studies | Soraia";
 const description = "AI agents in production for Italian and European SMEs. Recruitment, consumer mobile, finance, climate, public sector: what we built and the results we delivered.";
 
 const cases = (await getCollection("caseStudies"))
-  .filter((c) => c.data.lang === "en")
+  .filter((c) => c.data.lang === "en" && !c.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const photoMap: Record<string, string> = {

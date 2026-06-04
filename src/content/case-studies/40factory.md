@@ -1,5 +1,6 @@
 ---
 title: "40Factory, Linkly per lead generation da fiere B2B con 6 agenti IA"
+draft: true   # hidden pending client approval — set to false to publish
 client: "40Factory"
 clientLogo: "/logos/clients/40factory.webp"
 industry: "event-management"

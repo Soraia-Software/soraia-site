@@ -92,6 +92,10 @@ const processes = [
   },
 ];
 
+// 40Factory case is hidden pending client approval. Flip to true to re-enable
+// (also set draft:false in src/content/case-studies/40factory.md + en/40factory.md).
+const show40Factory = false;
+
 const featuredCase = {
   slug: "40factory",
   client: "40Factory",
@@ -179,9 +183,11 @@ const faqs = [
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
               </span>
             </a>
-            <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
-              See the 40Factory case study
-            </a>
+            {show40Factory && (
+              <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
+                See the 40Factory case study
+              </a>
+            )}
           </div>
 
           <!-- TRUST ROW -->
@@ -210,19 +216,21 @@ const faqs = [
   </section>
 
   <!-- ============================================================
-       TRUST LINE (single client per ora)
+       TRUST LINE — hidden pending 40Factory approval
        ============================================================ -->
-  <section class="py-12 md:py-14 border-y border-ink-200 bg-white">
-    <div class="container-soraia text-center">
-      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 mb-4">
-        Already chosen by B2B companies for the 2026 trade-show season
-      </p>
-      <p class="text-[16px]" style="color: var(--color-ink-muted);">
-        <a href="/en/case-studies/40factory" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">40Factory</a>
-        · Industrial IoT / Industry 4.0 · first Linkly client activated 2026
-      </p>
-    </div>
-  </section>
+  {show40Factory && (
+    <section class="py-12 md:py-14 border-y border-ink-200 bg-white">
+      <div class="container-soraia text-center">
+        <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 mb-4">
+          Already chosen by B2B companies for the 2026 trade-show season
+        </p>
+        <p class="text-[16px]" style="color: var(--color-ink-muted);">
+          <a href="/en/case-studies/40factory" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">40Factory</a>
+          · Industrial IoT / Industry 4.0 · first Linkly client activated 2026
+        </p>
+      </div>
+    </section>
+  )}
 
   <!-- ============================================================
        PROBLEMA
@@ -299,37 +307,39 @@ const faqs = [
   </section>
 
   <!-- ============================================================
-       CASE STUDY
+       CASE STUDY — hidden pending 40Factory approval
        ============================================================ -->
-  <section id="cases" class="section bg-white">
-    <div class="container-soraia">
-      <SectionHeader
-        eyebrow="Case study"
-        title="Linkly in action at 40Factory."
-        align="center"
-      />
-
-      <div class="max-w-md mx-auto">
-        <CaseStudyCardJet
-          href={`/en/case-studies/${featuredCase.slug}`}
-          client={featuredCase.client}
-          clientLogo={featuredCase.clientLogo}
-          quote={featuredCase.quote}
-          dimensioni={featuredCase.dimensioni}
-          sector={featuredCase.sector}
-          cardImage={featuredCase.cardImage}
-          lang="en"
+  {show40Factory && (
+    <section id="cases" class="section bg-white">
+      <div class="container-soraia">
+        <SectionHeader
+          eyebrow="Case study"
+          title="Linkly in action at 40Factory."
+          align="center"
         />
-        <p class="mt-6 text-center text-[14px]" style="color: var(--color-ink-soft);">
-          <strong style="color: var(--color-ink); font-weight: 500;">Margherita Chifari</strong>, Head of Sales · 40Factory
+
+        <div class="max-w-md mx-auto">
+          <CaseStudyCardJet
+            href={`/en/case-studies/${featuredCase.slug}`}
+            client={featuredCase.client}
+            clientLogo={featuredCase.clientLogo}
+            quote={featuredCase.quote}
+            dimensioni={featuredCase.dimensioni}
+            sector={featuredCase.sector}
+            cardImage={featuredCase.cardImage}
+            lang="en"
+          />
+          <p class="mt-6 text-center text-[14px]" style="color: var(--color-ink-soft);">
+            <strong style="color: var(--color-ink); font-weight: 500;">Margherita Chifari</strong>, Head of Sales · 40Factory
+          </p>
+        </div>
+
+        <p class="mt-10 text-center text-[14px]" style="color: var(--color-ink-muted);">
+          Linkly is Soraia's dedicated SaaS product. Want to see it live? <a href="https://linkly.events/" target="_blank" rel="noopener" style="color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">linkly.events</a>
         </p>
       </div>
-
-      <p class="mt-10 text-center text-[14px]" style="color: var(--color-ink-muted);">
-        Linkly is Soraia's dedicated SaaS product. Want to see it live? <a href="https://linkly.events/" target="_blank" rel="noopener" style="color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">linkly.events</a>
-      </p>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- ============================================================
        COMPARISON
