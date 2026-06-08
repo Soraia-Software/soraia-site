@@ -1,0 +1,503 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import PricingTwoSteps from "~/components/PricingTwoSteps.astro";
+import FAQ from "~/components/FAQ.astro";
+
+const title = "Sviluppo software custom: web app, mobile, CRM | Soraia";
+const description =
+  "Web app, app mobile, CRM e tool interni su misura per digitalizzare e ottimizzare i tuoi processi. Scoping a 2.000€, build sprint a 10-50k. Primo rilascio in 4 settimane, codice tuo dal primo giorno.";
+
+const areas = [
+  {
+    eyebrow: "Web",
+    title: "Web app su misura",
+    description:
+      "Dashboard, portali clienti, SaaS verticali e gestionali web costruiti sul tuo flusso di lavoro, non su un template.",
+    examples: "Portali clienti · dashboard operative · SaaS B2B",
+    icon: "web",
+  },
+  {
+    eyebrow: "Mobile",
+    title: "App mobile",
+    description:
+      "App iOS e Android (native o cross-platform) per i team sul campo e per i tuoi clienti. Online e offline.",
+    examples: "App per agenti sul campo · app cliente · PWA",
+    icon: "mobile",
+  },
+  {
+    eyebrow: "Internal Tools",
+    title: "CRM e tool interni",
+    description:
+      "CRM su misura e strumenti operativi che si adattano ai tuoi processi, invece di costringerti dentro un software generico.",
+    examples: "CRM verticali · back-office · tool di data-entry",
+    icon: "crm",
+  },
+  {
+    eyebrow: "Process Ops",
+    title: "Digitalizzazione processi",
+    description:
+      "Sostituiamo Excel, carta ed email con flussi digitali: approvazioni, stati, notifiche, audit trail. Meno errori, più velocità.",
+    examples: "Workflow approvazioni · gestione pratiche · checklist digitali",
+    icon: "process",
+  },
+  {
+    eyebrow: "Integrazioni",
+    title: "Integrazioni & API",
+    description:
+      "Colleghiamo i sistemi che già usi (CRM, ERP, gestionali) con API e sincronizzazioni custom. Un dato unico, niente doppio inserimento.",
+    examples: "Sync CRM ↔ ERP · API custom · webhook & automazioni",
+    icon: "integration",
+  },
+  {
+    eyebrow: "Replatforming",
+    title: "Replatforming legacy",
+    description:
+      "Migriamo da stack obsoleti a un'infrastruttura moderna e scalabile, in modo progressivo, senza fermare l'operatività.",
+    examples: "Migrazione da legacy · refactoring · cloud europeo",
+    icon: "replatform",
+  },
+];
+
+const icons = {
+  web: `<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="5.5" cy="6.5" r="0.6"/><circle cx="8" cy="6.5" r="0.6"/>`,
+  mobile: `<rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="10.5" y1="18.5" x2="13.5" y2="18.5"/>`,
+  crm: `<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>`,
+  process: `<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/>`,
+  integration: `<path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>`,
+  replatform: `<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>`,
+};
+
+const faqs = [
+  {
+    q: "Che differenza c'è con un'agenzia di sviluppo classica?",
+    a: "Partiamo dal processo, non dalle feature. Mappiamo come lavori, costruiamo solo ciò che serve davvero e rilasciamo a sprint corti, così vedi il software in produzione in settimane, non in mesi. <strong>Il codice è tuo dal primo giorno.</strong>",
+  },
+  {
+    q: "Con quali tecnologie sviluppate?",
+    a: "Stack moderno e pragmatico: web app (React, Astro, Node), mobile (React Native, Flutter), backend e database su infrastruttura cloud europea. Scegliamo la tecnologia in base al problema, non alle mode, e ci integriamo con i gestionali e i CRM che già usi.",
+  },
+  {
+    q: "Quanto tempo per il primo rilascio?",
+    a: "<strong>4 settimane dal kick-off al primo rilascio in produzione.</strong> Sviluppiamo a sprint con demo settimanali: ad ogni iterazione c'è qualcosa di usabile, niente big bang dopo 6 mesi.",
+  },
+  {
+    q: "Il codice resta nostro?",
+    a: "<strong>Sì, dal primo commit.</strong> Repository tuo, documentazione completa, e se vuoi formiamo il tuo team per gestirlo in autonomia. Nessun lock-in, nessun abbonamento perpetuo obbligatorio.",
+  },
+  {
+    q: "Vi integrate con i nostri sistemi attuali?",
+    a: "Sì. Lavoriamo con CRM, ERP e gestionali (anche italiani legacy) via API, database o file. Se non c'è un'API, troviamo comunque il modo di collegarci. L'obiettivo è un dato unico, senza doppio inserimento.",
+  },
+  {
+    q: "Fate manutenzione ed evoluzione dopo il rilascio?",
+    a: "Sì. 30 giorni di hypercare inclusi dopo il go-live, poi sprint di evoluzione mensili opzionali. Restiamo partner tecnologico finché ti serve, senza vincoli.",
+  },
+];
+
+const stripTags = (html) => html.replace(/<[^>]+>/g, "");
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Sviluppo software custom. Soraia",
+    provider: {
+      "@type": "Organization",
+      name: "Soraia",
+      url: "https://www.soraia.io",
+    },
+    areaServed: ["IT", "EU"],
+    serviceType: "Custom software, web app, mobile app and internal tools development for SMEs",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Discovery & Scoping",
+        priceCurrency: "EUR",
+        price: "2000",
+        description: "Scoping 1-2 settimane, rimborsato se procedi con lo sviluppo.",
+      },
+      {
+        "@type": "Offer",
+        name: "Build Sprint",
+        priceCurrency: "EUR",
+        description: "Sviluppo 10-50k, primo rilascio in 4 settimane. Codice tuo dal primo giorno.",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: stripTags(f.a),
+      },
+    })),
+  },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="max-w-[900px]" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          Processi · Software custom
+        </p>
+
+        <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+          Software su misura che<br/>digitalizza i tuoi processi.
+        </h1>
+
+        <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+          Web app, app mobile, CRM e tool interni costruiti attorno al tuo modo di lavorare. Primo rilascio in poche settimane, sprint iterativi, <strong style="color: #fff; font-weight: 500;">codice tuo dal primo giorno</strong>.
+        </p>
+
+        <!-- BADGE -->
+        <div class="mt-6 inline-flex items-center gap-2 fade-up fade-up-delay-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+          <span class="text-[14px] font-medium" style="color: #F4B842;">Codice tuo dal primo giorno. Zero lock-in.</span>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+          <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            20 min con Daniel
+            <span class="btn-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="/case-studies" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
+            Guarda i nostri lavori
+          </a>
+        </div>
+
+        <!-- Anchor scroll to offerta -->
+        <a href="#come-iniziamo" class="mt-6 inline-flex items-center gap-1.5 text-[13px] fade-up fade-up-delay-3" style="color: rgba(255,255,255,0.55);">
+          Oppure scorri per vedere come lavoriamo
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12l-7 7-7-7M12 5v14"/></svg>
+        </a>
+
+        <!-- Trust strip -->
+        <div class="mt-10 pt-8 border-t fade-up fade-up-delay-3" style="border-color: rgba(255,255,255,0.12);">
+          <p class="text-[10px] uppercase tracking-[0.18em] mb-3" style="color: rgba(255,255,255,0.45);">Costruito da noi</p>
+          <p class="text-[13.5px] leading-relaxed" style="color: rgba(255,255,255,0.7);">
+            40+ progetti · 11 paesi · piattaforme, web app e tool interni in produzione · Talent Match · Rainplan · Navily · ILTEC
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OFFERTA, 2 STEP PRICING
+       ============================================================ -->
+  <PricingTwoSteps variant="software" bg="ink-50" />
+
+  <!-- ============================================================
+       COME SVILUPPIAMO (sprint methodology)
+       ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Metodologia"
+        title="Come sviluppiamo il tuo software."
+        subtitle="<strong>Sprint iterativi corti</strong>: ad ogni ciclo rilasciamo qualcosa di usabile. Niente progetti di 6 mesi che finiscono in una demo, vedi il software crescere settimana dopo settimana."
+        align="center"
+      />
+
+      <!-- Sprint diagram -->
+      <figure class="m-0 mt-8 max-w-[1180px] mx-auto">
+        <div class="rounded-2xl bg-ink-50 border border-line px-4 py-6 md:px-8 md:py-8">
+          <img
+            src="/agile/sprint.webp"
+            alt="Sprint iterativi: ogni ciclo consegna software in produzione"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-auto block"
+          />
+        </div>
+        <figcaption class="mt-3.5 text-[12.5px] text-center" style="color: var(--color-ink-soft);">
+          Sprint iterativi: ad ogni ciclo c'è qualcosa di usabile in produzione.
+        </figcaption>
+      </figure>
+
+      <!-- Sprint steps timeline 4-col -->
+      <div class="mt-14 md:mt-16 max-w-6xl mx-auto">
+        <ol class="sprint-timeline">
+          <li class="sprint-step">
+            <div class="sprint-step-head">
+              <span class="sprint-num">1</span>
+              <div class="sprint-step-meta">
+                <p class="sprint-step-tag">Settimana 1</p>
+                <p class="sprint-step-title">Discovery + scoping</p>
+              </div>
+            </div>
+            <p class="sprint-step-body">Mappiamo il processo da digitalizzare con il tuo team. Definiamo <strong>specifiche funzionali, architettura</strong> e il perimetro del primo rilascio. Senza scope chiaro, niente stima affidabile.</p>
+          </li>
+          <li class="sprint-step">
+            <div class="sprint-step-head">
+              <span class="sprint-num">2</span>
+              <div class="sprint-step-meta">
+                <p class="sprint-step-tag">Settimane 2-3</p>
+                <p class="sprint-step-title">Build a sprint</p>
+              </div>
+            </div>
+            <p class="sprint-step-body">Sviluppo iterativo con demo settimanali. Integrazione con i tuoi sistemi (CRM, ERP, gestionali). Codice tuo dal primo commit, repository condiviso.</p>
+          </li>
+          <li class="sprint-step">
+            <div class="sprint-step-head">
+              <span class="sprint-num">3</span>
+              <div class="sprint-step-meta">
+                <p class="sprint-step-tag">Settimana 4</p>
+                <p class="sprint-step-title">UAT + training</p>
+              </div>
+            </div>
+            <p class="sprint-step-body">Test con utenti reali del tuo team, fix sui casi limite, formazione di chi userà il software ogni giorno.</p>
+          </li>
+          <li class="sprint-step sprint-step--milestone">
+            <div class="sprint-step-head">
+              <span class="sprint-num sprint-num--milestone">4</span>
+              <div class="sprint-step-meta">
+                <p class="sprint-step-tag">Go-live + 30 gg</p>
+                <p class="sprint-step-title">Go-live e hypercare</p>
+              </div>
+            </div>
+            <p class="sprint-step-body">Il software passa in produzione. Monitoring e <strong>fix immediati per 30 giorni</strong>. Poi sprint di evoluzione mensili, opzionali, finché ti serve.</p>
+          </li>
+        </ol>
+
+        <div class="mt-12 flex justify-center">
+          <div class="inline-flex items-center gap-2.5 px-5 py-3 rounded-full text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand); border: 1px solid var(--color-violet-200);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span><strong>4 settimane</strong> al primo rilascio · sprint mensili dopo il go-live</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    /* === Sprint timeline === */
+    .sprint-timeline {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+    }
+    @media (min-width: 768px) {
+      .sprint-timeline {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 2rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .sprint-timeline {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+      .sprint-timeline::before {
+        content: "";
+        position: absolute;
+        top: 22px;
+        left: 7%;
+        right: 7%;
+        height: 2px;
+        background: linear-gradient(to right,
+          var(--color-line-strong) 0%,
+          var(--color-violet-300) 50%,
+          var(--color-brand) 100%);
+        opacity: 0.5;
+        z-index: 0;
+      }
+    }
+    .sprint-step {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .sprint-step-head {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    @media (min-width: 1024px) {
+      .sprint-step-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.1rem;
+      }
+    }
+    .sprint-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 9999px;
+      background: white;
+      border: 1.5px solid var(--color-violet-300);
+      color: var(--color-brand);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+      box-shadow: 0 0 0 8px white;
+    }
+    .sprint-num--milestone {
+      background: var(--color-brand);
+      border-color: var(--color-brand);
+      color: white;
+      box-shadow: 0 0 0 8px white, 0 4px 14px -4px rgba(74, 30, 92, 0.40);
+    }
+    .sprint-step-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      min-width: 0;
+    }
+    .sprint-step-tag {
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-ink-soft);
+      line-height: 1.4;
+    }
+    .sprint-step-title {
+      font-size: 15.5px;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      font-weight: 500;
+      color: var(--color-ink);
+    }
+    .sprint-step-body {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--color-ink-muted);
+      margin: 0;
+      text-wrap: pretty;
+    }
+    .sprint-step-body strong {
+      color: var(--color-ink);
+      font-weight: 500;
+    }
+    .sprint-step--milestone .sprint-step-title {
+      color: var(--color-brand);
+    }
+  </style>
+
+  <!-- ============================================================
+       COSA COSTRUIAMO
+       ============================================================ -->
+  <section id="cosa-costruiamo" class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Cosa costruiamo"
+        title="Software che lavora come lavori tu."
+        subtitle="Dalla web app al tool interno: costruiamo solo ciò che serve ai tuoi processi, e lo rilasciamo a pezzi usabili."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {areas.map((a) => (
+          <div class="card-editorial relative overflow-hidden group reveal !p-7 md:!p-8 flex flex-col">
+            <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-violet-100/60 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+            <div class="relative">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-violet-700 to-violet-500 flex items-center justify-center shadow-violet">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[a.icon]} />
+                </div>
+                <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-500">{a.eyebrow}</span>
+              </div>
+
+              <h3 class="text-[1.5rem] md:text-[1.75rem] font-semibold tracking-tight leading-[1.1] text-ink-900 mb-3">
+                {a.title}
+              </h3>
+              <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty mb-5">{a.description}</p>
+
+              <div class="pt-4 border-t border-ink-200 mt-auto">
+                <p class="text-[12.5px] leading-snug" style="color: var(--color-ink-soft);">
+                  <span class="font-semibold" style="color: var(--color-ink);">Esempi:</span> {a.examples}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section bg-ink-50">
+    <div class="container-soraia max-w-4xl">
+      <SectionHeader
+        eyebrow="Domande frequenti"
+        title="Quello che ci chiedono di solito."
+        align="center"
+      />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINALE DUAL
+       ============================================================ -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia max-w-5xl">
+      <div class="reveal text-center max-w-2xl mx-auto mb-10">
+        <p class="eyebrow mb-5">Prossimo passo</p>
+        <h2 class="text-[2rem] md:text-[2.75rem] font-semibold tracking-tight text-ink-900 leading-[1.1] text-balance">
+          20 minuti col CEO. Senza pitch.
+        </h2>
+        <p class="mt-5 text-[16px] md:text-[17px] text-ink-600 leading-relaxed text-pretty">
+          Capiamo insieme cosa ha senso costruire sul tuo caso e come. Nessun impegno, nessuna vendita.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto reveal reveal-delay-1">
+        <a href="/parliamone" class="group rounded-2xl bg-ink-900 hover:bg-ink p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-xl no-underline">
+          <div class="flex items-start gap-4">
+            <img src="/team/daniel-levis.webp" alt="Daniel Levis" class="w-12 h-12 rounded-full object-cover ring-2 ring-violet-400/30" />
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] uppercase tracking-[0.16em] font-semibold mb-1" style="color: rgba(216,180,232,0.9);">Opzione 1 · Conversazione</p>
+              <h3 class="text-[1.15rem] font-semibold text-white leading-tight mb-1">20 min con Daniel</h3>
+              <p class="text-[13.5px] leading-relaxed" style="color: rgba(255,255,255,0.7);">Capiamo insieme se ha senso lavorare insieme. Zero pitch.</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-2 text-white group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <a href="/case-studies" class="group rounded-2xl bg-white border border-line hover:border-violet-300 p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-lg no-underline">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-violet-50 flex items-center justify-center shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 5-5"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] uppercase tracking-[0.16em] font-semibold text-violet-700 mb-1">Opzione 2 · Esempi reali</p>
+              <h3 class="text-[1.15rem] font-semibold text-ink-900 leading-tight mb-1">Guarda i case study</h3>
+              <p class="text-[13.5px] text-ink-600 leading-relaxed">Piattaforme, web app e tool che abbiamo costruito per altri.</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-2 text-violet-700 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

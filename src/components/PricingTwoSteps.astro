@@ -5,11 +5,13 @@ import { path } from "~/lib/i18n";
 interface Props {
   bg?: "white" | "ink-50";
   lang?: "it" | "en";
+  variant?: "ai" | "software";
 }
-const { bg = "white", lang = "it" } = Astro.props;
+const { bg = "white", lang = "it", variant = "ai" } = Astro.props;
 
-const t = lang === "en"
-  ? {
+const copy = {
+  ai: {
+    en: {
       eyebrow: "How we start",
       title: "Two steps. Fixed price. Guarantee included.",
       subtitle: "No 12-month roadmaps, no endless quotes. We start with a clear assessment and decide together whether to move forward.",
@@ -39,8 +41,8 @@ const t = lang === "en"
         "30 days of post go-live hypercare",
       ],
       footer: 'The sprint only starts after the assessment. The assessment is <strong class="text-ink-900">refunded if you proceed</strong>, so if we move forward together, you only pay for the sprint.',
-    }
-  : {
+    },
+    it: {
       eyebrow: "Come iniziamo",
       title: "Due passi. Prezzo definito. Garanzia inclusa.",
       subtitle: "Niente roadmap a 12 mesi, niente preventivi infiniti. Si parte da un assessment chiaro e si decide insieme se andare avanti.",
@@ -70,8 +72,78 @@ const t = lang === "en"
         "30 giorni di hypercare post go-live",
       ],
       footer: "Lo sprint parte solo dopo l'assessment. L'assessment è <strong class=\"text-ink-900\">rimborsato se procedi</strong>, quindi se andiamo avanti insieme, paghi solo lo sprint.",
-    };
+    },
+  },
+  software: {
+    en: {
+      eyebrow: "How we start",
+      title: "Two steps. Fixed price. Your code.",
+      subtitle: "No endless quotes, no 12-month projects. We start with clear scoping and decide together what to build — with a first release in a few weeks.",
+      step1_eyebrow: "Starting point",
+      step1_desc: "We get into your real processes: we map how you work today, define the functional spec and architecture, and hand you a concrete development plan with estimate and roadmap.",
+      investment: "Investment",
+      duration: "Duration",
+      step1_duration: "1-2 wks",
+      walk_away: "What you walk away with",
+      step1_items: [
+        "A map of the processes to digitalize",
+        "Functional spec + technical architecture",
+        "A sprint-based release roadmap",
+        "A clear estimate of timeline and cost",
+      ],
+      sample: "",
+      step2_eyebrow: "We build",
+      guarantee: "Guarantee",
+      step2_desc: 'We build in iterative sprints, integrate with your systems, ship to production, and train your team. First release in 4 weeks. <strong class="text-white">Your code from day one, zero lock-in.</strong>',
+      first_delivery: "First release",
+      step2_delivery: "4 wks",
+      step2_items: [
+        "Web app / mobile / internal tools in production",
+        "Integration with your systems (CRM, ERP, line-of-business)",
+        "Your code and full documentation",
+        "Iterative sprints with weekly demos",
+        "30 days of post go-live hypercare",
+      ],
+      footer: 'The build only starts after scoping. The scoping is <strong class="text-ink-900">refunded if you proceed</strong>, so if we move forward together, you only pay for the build.',
+    },
+    it: {
+      eyebrow: "Come iniziamo",
+      title: "Due passi. Prezzo definito. Codice tuo.",
+      subtitle: "Niente preventivi infiniti né progetti di 12 mesi. Si parte da uno scoping chiaro e si decide insieme cosa costruire, con un primo rilascio in poche settimane.",
+      step1_eyebrow: "Punto di partenza",
+      step1_desc: "Entriamo nei tuoi processi reali: mappiamo come lavori oggi, definiamo le specifiche funzionali e l'architettura, ti consegniamo un piano di sviluppo concreto con stima e roadmap.",
+      investment: "Investimento",
+      duration: "Durata",
+      step1_duration: "1-2 sett.",
+      walk_away: "Cosa porti via",
+      step1_items: [
+        "Mappa dei processi da digitalizzare",
+        "Specifica funzionale + architettura tecnica",
+        "Roadmap di rilascio a sprint",
+        "Stima chiara di tempi e costi",
+      ],
+      sample: "",
+      step2_eyebrow: "Costruiamo",
+      guarantee: "Garanzia",
+      step2_desc: 'Sviluppiamo a sprint iterativi, integriamo sui tuoi sistemi, rilasciamo in produzione e formiamo il team. Primo rilascio in 4 settimane. <strong class="text-white">Codice tuo dal primo giorno, zero lock-in.</strong>',
+      first_delivery: "Primo rilascio",
+      step2_delivery: "4 sett.",
+      step2_items: [
+        "Web app / mobile / tool interni in produzione",
+        "Integrazione con i tuoi sistemi (CRM, ERP, gestionali)",
+        "Codice e documentazione completa, tuoi",
+        "Sprint iterativi con demo settimanali",
+        "30 giorni di hypercare post go-live",
+      ],
+      footer: "Lo sprint parte solo dopo lo scoping. Lo scoping è <strong class=\"text-ink-900\">rimborsato se procedi</strong>, quindi se andiamo avanti insieme, paghi solo lo sviluppo.",
+    },
+  },
+}[variant][lang];
 
+const t = copy;
+const stepNames = variant === "software"
+  ? { step1: "Discovery & Scoping", step2: "Build Sprint" }
+  : { step1: "AI Readiness Assessment", step2: "Co-Building & Adoption Sprint" };
 const sampleHref = path("/downloads/ai-assessment-sample", lang);
 ---
 
@@ -93,7 +165,7 @@ const sampleHref = path("/downloads/ai-assessment-sample", lang);
         </div>
 
         <h3 class="text-[1.75rem] md:text-[2rem] font-semibold tracking-tight text-ink-900 leading-[1.1] mb-3">
-          AI Readiness Assessment
+          {stepNames.step1}
         </h3>
         <p class="text-[15px] text-ink-700 leading-relaxed text-pretty mb-7 flex-1">
           {t.step1_desc}
@@ -125,13 +197,15 @@ const sampleHref = path("/downloads/ai-assessment-sample", lang);
             ))}
           </ul>
 
-          <a href={sampleHref} class="mt-6 inline-flex items-center gap-2 text-[13px] font-medium group" style="color: var(--color-brand);">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            {t.sample}
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
+          {t.sample && (
+            <a href={sampleHref} class="mt-6 inline-flex items-center gap-2 text-[13px] font-medium group" style="color: var(--color-brand);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              {t.sample}
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          )}
         </div>
       </article>
 
@@ -153,7 +227,7 @@ const sampleHref = path("/downloads/ai-assessment-sample", lang);
           </div>
 
           <h3 class="text-[1.75rem] md:text-[2rem] font-semibold tracking-tight text-white leading-[1.1] mb-3">
-            Co-Building & Adoption Sprint
+            {stepNames.step2}
           </h3>
           <p class="text-[15px] text-white/75 leading-relaxed text-pretty mb-7 flex-1" set:html={t.step2_desc}></p>
 

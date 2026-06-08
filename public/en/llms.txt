@@ -9,6 +9,7 @@ Positioning note: from 2026 Soraia has repositioned from a no-code/automation ag
 - [AI Agents](https://www.soraia.io/en/ai-agents): Sprint to build custom AI agents inside business processes. Assessment €2,000 (refunded if you proceed), Sprint €10–50k, first delivery in 4 weeks.
 - [AI Adoption](https://www.soraia.io/en/ai-adoption): Workshops and monthly mentoring for the team. 3 tiers: Foundation €8–10k, Foundation + Mentoring €20–25k, Foundation + Mentoring + Brain Pilot €30–35k. 110 hours/year freed per person.
 - [AI Search Optimization](https://www.soraia.io/en/ai-search-optimization): Audit + content re-architecture + high-converting AI-ready website rebuild. To be found on ChatGPT, Claude, Perplexity, Google AI Overviews. Audit €2,000, Sprint €3–15k.
+- [Custom Software](https://www.soraia.io/en/software-development): Custom web apps, mobile apps, CRMs and internal tools to digitalize and optimize processes. Same model as the AI agents: Scoping €2,000 (refunded if you proceed), Build Sprint €10–50k, first release in 4 weeks, client owns the code from day one.
 
 ## Six Ops Clusters (Use Cases)
 

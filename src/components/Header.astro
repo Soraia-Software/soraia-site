@@ -44,6 +44,7 @@ const homeHref = lang === "en" ? "/en/" : "/";
 const agentsHref = path("/ai-agents", lang);
 const adoptionHref = path("/ai-adoption", lang);
 const searchOptHref = path("/ai-search-optimization", lang);
+const softwareHref = path("/software-development", lang);
 const prodottiHref = path("/prodotti", lang);
 const guideHref = path("/guide", lang);
 const casesHref = path("/case-studies", lang);
@@ -70,6 +71,14 @@ const servizi = [
       ? "Sprint to ship one production-ready agent in your workflow"
       : "Sprint per costruire un AI agent custom dentro i vostri processi",
     iconPath: '<path d="M9 7l-2 -2l-2 2l2 2z" /><path d="M19 5l-2 -2l-2 2l2 2z" /><path d="M5 21h14" /><path d="M9 21v-8a3 3 0 0 1 6 0v8" /><path d="M12 13v8" />',
+  },
+  {
+    href: softwareHref,
+    title: "Custom Software",
+    subtitle: lang === "en"
+      ? "Custom web apps, mobile apps, CRMs & internal tools for your processes"
+      : "Web app, app mobile, CRM e tool interni su misura per i tuoi processi",
+    iconPath: '<path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" />',
   },
   {
     href: searchOptHref,
