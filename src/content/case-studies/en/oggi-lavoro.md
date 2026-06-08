@@ -1,5 +1,6 @@
 ---
 title: "Oggi Lavoro, AI agents to manage 250,000+ candidates"
+draft: true   # hidden pending client approval — set to false to publish
 client: "Oggi Lavoro"
 clientLogo: "/logos/clients/oggilavoro.webp"
 industry: "recruitment-hr"

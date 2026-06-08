@@ -22,7 +22,6 @@ Nota di posizionamento: dal 2026 Soraia si è riposizionata da no-code/automatio
 ## Case studies pubblici
 
 - [APraise](https://www.soraia.io/case-studies/apraise): Executive search boutique, 100k+ candidati gestiti dall'agente IA, equivalente a 4 recruiter aggiuntivi.
-- [OggiLavoro](https://www.soraia.io/case-studies/oggi-lavoro): Agenzia di staffing, 250k+ candidati migrati da stack legacy a piattaforma con agenti AI.
 - [Stars Be Original](https://www.soraia.io/case-studies/stars-be-original): Recruitment hospitality, 20k+ candidati gestiti dall'agente IA, <1 minuto di risposta.
 - [Aegis Group](https://www.soraia.io/case-studies/aegis): Human consulting, recruitment automation.
 - [Talent Match](https://www.soraia.io/case-studies/talent-match): Recruitment platform "Braint", ATS + CRM custom + AI matching.
