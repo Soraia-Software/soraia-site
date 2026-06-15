@@ -1,0 +1,41 @@
+---
+import Layout from "~/layouts/Layout.astro";
+// Served by Cloudflare Pages as 404.html for any unmatched route → real 404
+// status (fixes the previous soft-404 that returned the homepage with 200).
+---
+
+<Layout
+  title="Pagina non trovata (404) | Soraia"
+  description="La pagina che cerchi non esiste o è stata spostata."
+  lang="it"
+>
+  <section class="section bg-white">
+    <div class="container-soraia max-w-2xl mx-auto text-center" style="padding-block: clamp(5rem, 10vw, 8rem);">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+        Errore 404
+      </p>
+
+      <h1 class="text-balance" style="font-size: clamp(2.25rem, 5vw + 1rem, 3.5rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+        Questa pagina non esiste.
+      </h1>
+
+      <p class="mt-5 text-[17px] md:text-[18px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+        Il link potrebbe essere vecchio o errato. Torna alla home o vai dritto ai contenuti più utili.
+        <br />
+        <span class="text-[15px]" style="opacity: 0.8;">Page not found — the link may be outdated. Head back home or jump to the useful stuff.</span>
+      </p>
+
+      <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+        <a href="/" class="btn btn-primary">
+          Torna alla home
+          <span class="btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="/case-studies/" class="btn btn-secondary">Case studies</a>
+        <a href="/parliamone/" class="btn btn-secondary">Parliamone</a>
+      </div>
+    </div>
+  </section>
+</Layout>

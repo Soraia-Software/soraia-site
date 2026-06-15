@@ -31,11 +31,13 @@ const {
 const siteUrl = "https://www.soraia.io";
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
 
-// hreflang alternates (it / en / x-default)
+// hreflang alternates (it / en / x-default). Normalize to trailing slash so
+// the alternates match the canonical convention (no duplicate-URL signals).
+const withSlash = (p: string) => (p === "/" || p.endsWith("/") ? p : p + "/");
 const otherLang = lang === "it" ? "en" : "it";
-const otherPath = altHref ?? localizePath(Astro.url.pathname, otherLang);
-const itPath = lang === "it" ? Astro.url.pathname : otherPath;
-const enPath = lang === "en" ? Astro.url.pathname : otherPath;
+const otherPath = withSlash(altHref ?? localizePath(Astro.url.pathname, otherLang));
+const itPath = withSlash(lang === "it" ? Astro.url.pathname : otherPath);
+const enPath = withSlash(lang === "en" ? Astro.url.pathname : otherPath);
 const itUrl = new URL(itPath, siteUrl).toString();
 const enUrl = new URL(enPath, siteUrl).toString();
 const contactHref = i18nPath("/parliamone", lang);
