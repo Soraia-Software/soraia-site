@@ -44,16 +44,25 @@
 /services  /ai-agents/  301
 
 # ============================================================
-# TOOLS → PRODOTTI
+# TOOLS → PRODOTTI  (anche il vecchio refuso Webflow "/too/")
 # ============================================================
 /tools/*  /prodotti/  301
 /tools  /prodotti/  301
+/too/*  /prodotti/  301
+/too  /prodotti/  301
 
 # ============================================================
 # AGENCY → AI AGENTS
 # ============================================================
 /agency/*  /ai-agents/  301
 /agency  /ai-agents/  301
+
+# ============================================================
+# FRANCESE (sito FR mai migrato) + pagine form vecchie → HOME
+# ============================================================
+/fr/*  /  301
+/fr  /  301
+/thank-you  /  301
 
 # ============================================================
 # BLOG: nessuna regola /blog/* — il nuovo sito usa /blog/<post> per
@@ -73,6 +82,8 @@
 /it/services  /ai-agents/  301
 /it/tools/*  /prodotti/  301
 /it/tools  /prodotti/  301
+/it/too/*  /prodotti/  301
+/it/too  /prodotti/  301
 /it/agency/*  /ai-agents/  301
 /it/agency  /ai-agents/  301
 /it/blog/*  /blog/  301
