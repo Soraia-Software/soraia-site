@@ -1,6 +1,7 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
+import { BLOG_SLUG_MAP } from "~/lib/i18n";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog")).filter((p) => p.data.lang === "it");
@@ -24,9 +25,10 @@ function formatDate(d: Date) {
 
 const title = `${post.data.title} | Soraia`;
 const description = post.data.description;
+const altHref = BLOG_SLUG_MAP[post.id] ? `/en/blog/${BLOG_SLUG_MAP[post.id]}` : "/en/blog";
 ---
 
-<Layout title={title} description={description} lang="it">
+<Layout title={title} description={description} lang="it" altHref={altHref}>
   <article>
     <!-- ============================================================
          HERO POST

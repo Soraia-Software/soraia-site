@@ -2,6 +2,7 @@
 import Layout from "~/layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 import CTABanner from "~/components/CTABanner.astro";
+import { GUIDE_SLUG_MAP } from "~/lib/i18n";
 
 export async function getStaticPaths() {
   const guides = (await getCollection("guides")).filter((g) => g.data.lang === "it");
@@ -60,9 +61,10 @@ const faqJsonLd = guide.data.faq.length > 0 ? {
 } : null;
 
 const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
+const altHref = GUIDE_SLUG_MAP[guide.id] ? `/en/guide/${GUIDE_SLUG_MAP[guide.id]}` : "/en/guide";
 ---
 
-<Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd} altHref={altHref}>
   <article>
     <!-- ============================================================
          HERO
