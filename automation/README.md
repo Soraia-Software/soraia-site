@@ -1,0 +1,32 @@
+# Automated blog engine
+
+A `generate → gate → human-review → publish` pipeline that produces 1–2 genuinely
+useful, bilingual (IT/EN) posts per week from a documented content-gap backlog.
+**Quality and safety over volume.** Nothing auto-publishes today.
+
+## Pieces in this folder
+- `blog-topics.json` — the versioned topic backlog. Status flow: `parked → todo → drafted → published` (or `rejected`). Only `todo` items get written; the author never reuses `drafted`/`published` (anti-duplication).
+- `system-prompt.md` — the canonical generation prompt (brand voice, the verifiable-metric corpus, structure, anti-duplication rules, self-grade). Used by the author script **and** for any post written by hand. Edit voice rules here only.
+
+## How a post goes live
+1. Pick a `todo` topic from `blog-topics.json`.
+2. Generate IT + EN drafts with `system-prompt.md` → write `src/content/blog/<slug>.md` (`draft: true`) and `src/content/blog/en/<slug-en>.md` (`draft: true`, native rewrite).
+3. Add the IT/EN pair to `BLOG_SLUG_MAP` in `src/lib/i18n.ts`. For cornerstone posts, append the `llms.txt` line in both locales.
+4. **Human review** in `astro dev` (drafts render in dev, are stripped from prod builds & sitemap). Verify every metric against `public/llms.txt` / published case studies, check voice, flip `draft: true → false` in BOTH files.
+5. Commit/merge to `main` → the `deploy.yml` Action builds + `wrangler pages deploy`s. (Until the Cloudflare secrets exist, deploy with `npm run build && npx wrangler pages deploy dist --project-name=soraia-site --branch=main`.)
+
+## Roadmap
+- **Phase 0 (done)** — blog schema gains `draft` / `faq` / `keywords` / `updatedDate` / `h1` / `ogImage`; drafts hidden in prod (visible in dev); Article + FAQPage JSON-LD on blog posts; `deploy.yml`.
+- **Phase 1 (MVP)** — hand-author the first 2-3 posts from this prompt to lock the voice.
+- **Phase 2** — `automation/author.mjs` + `.github/workflows/draft.yml` (weekly cron): generates IT+EN, opens a "Draft: …" PR; five adversarial quality-gate judges (fact/hallucination, originality, brand-voice, structure/SEO/schema, GEO-citability) run in CI on the PR. Human still flips `draft:false`.
+- **Phase 3** — `topic-radar.yml`: GSC striking-distance/gap queries + Serper SERP/PAA + Claude web-search GEO check → scored candidates appended here via PR. Weekly GSC + biweekly GEO-citation measurement.
+
+## Secrets (GitHub → Settings → Secrets and variables → Actions)
+- `CLOUDFLARE_API_TOKEN` — scoped **Account › Cloudflare Pages › Edit** (never the Global key).
+- `CLOUDFLARE_ACCOUNT_ID` — `7accb3afddfafa68d9fcaad27a128222`.
+- `ANTHROPIC_API_KEY` — for Phase 2 (`author.mjs`) only.
+
+## Guardrails (non-negotiable)
+- Human flips `draft:false`; nothing publishes unreviewed in MVP. In Phase 2, "auto-publish" = publish only if ALL five quality gates pass, else hold for a human.
+- Cadence ceiling 1–2 posts/week, topics only from the gap list — avoids Google "scaled content abuse".
+- Every number traceable to the site. Never link/cite `40factory` or `oggi-lavoro` (draft, pending client approval).

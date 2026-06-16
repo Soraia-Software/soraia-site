@@ -6,7 +6,7 @@ const title = "Blog & Insights | Soraia";
 const description = "Pratico, contrarian, basato su 40+ progetti agenti IA reali. Niente AI hype, solo decisioni operative.";
 
 const posts = (await getCollection("blog"))
-  .filter((p) => p.data.lang === "it")
+  .filter((p) => p.data.lang === "it" && (import.meta.env.DEV || !p.data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const featured = posts.filter((p) => p.data.featured);

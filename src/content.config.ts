@@ -12,6 +12,12 @@ const blog = defineCollection({
     readMinutes: z.number().optional(),
     featured: z.boolean().default(false),
     lang: z.enum(["it", "en"]).default("it"),  // EN entries live in the en/ subfolder
+    draft: z.boolean().default(false),          // hidden in prod (kill-switch + staging); visible in dev
+    h1: z.string().optional(),                  // visible H1, defaults to title
+    updatedDate: z.coerce.date().optional(),    // → JSON-LD dateModified (freshness signal)
+    keywords: z.array(z.string()).default([]),  // 2-5 target keywords
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),  // → FAQPage schema (GEO)
+    ogImage: z.string().optional(),             // per-post OG image; falls back to /og/default.png
   }),
 });
 

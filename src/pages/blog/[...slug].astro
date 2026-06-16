@@ -4,7 +4,7 @@ import { getCollection, render } from "astro:content";
 import { BLOG_SLUG_MAP } from "~/lib/i18n";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog")).filter((p) => p.data.lang === "it");
+  const posts = (await getCollection("blog")).filter((p) => p.data.lang === "it" && (import.meta.env.DEV || !p.data.draft));
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -15,7 +15,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 
 const allPosts = (await getCollection("blog"))
-  .filter((p) => p.data.lang === "it")
+  .filter((p) => p.data.lang === "it" && (import.meta.env.DEV || !p.data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const related = allPosts.filter((p) => p.id !== post.id).slice(0, 2);
 
@@ -25,10 +25,33 @@ function formatDate(d: Date) {
 
 const title = `${post.data.title} | Soraia`;
 const description = post.data.description;
+const h1 = post.data.h1 || post.data.title;
 const altHref = BLOG_SLUG_MAP[post.id] ? `/en/blog/${BLOG_SLUG_MAP[post.id]}` : "/en/blog";
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: post.data.title,
+  description,
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate || post.data.pubDate).toISOString(),
+  author: {
+    "@type": post.data.author === "Soraia" ? "Organization" : "Person",
+    name: post.data.author,
+    url: "https://www.soraia.io/chi-siamo",
+  },
+  publisher: { "@type": "Organization", name: "Soraia", logo: { "@type": "ImageObject", url: "https://www.soraia.io/logos/soraia-full.svg" } },
+  keywords: post.data.keywords.join(", "),
+};
+const faqJsonLd = post.data.faq.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: post.data.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+} : null;
+const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
 ---
 
-<Layout title={title} description={description} lang="it" altHref={altHref}>
+<Layout title={title} description={description} lang="it" altHref={altHref} jsonLd={jsonLd}>
   <article>
     <!-- ============================================================
          HERO POST
@@ -47,7 +70,7 @@ const altHref = BLOG_SLUG_MAP[post.id] ? `/en/blog/${BLOG_SLUG_MAP[post.id]}` : 
           <span>{post.data.author}</span>
         </div>
         <h1 class="text-balance" style="font-size: clamp(1.875rem, 4vw + 0.5rem, 3rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
-          {post.data.title}
+          {h1}
         </h1>
         <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
           {post.data.description}
@@ -63,6 +86,28 @@ const altHref = BLOG_SLUG_MAP[post.id] ? `/en/blog/${BLOG_SLUG_MAP[post.id]}` : 
         <div class="prose-soraia">
           <Content />
         </div>
+
+        {post.data.faq.length > 0 && (
+          <div class="mt-14 pt-10 border-t border-line">
+            <p class="eyebrow mb-3">Domande frequenti</p>
+            <h2 class="mb-8 text-balance" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">
+              Quello che ci chiedono di solito.
+            </h2>
+            <div class="space-y-3">
+              {post.data.faq.map((f) => (
+                <details class="group border border-line rounded-xl bg-white overflow-hidden">
+                  <summary class="cursor-pointer list-none px-6 py-5 flex items-center justify-between gap-4 select-none">
+                    <span class="font-medium text-[15.5px]" style="color: var(--color-ink);">{f.q}</span>
+                    <span class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: var(--color-ink-50);">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-ink-muted);"><path d="M12 5v14M5 12h14"/></svg>
+                    </span>
+                  </summary>
+                  <div class="px-6 pb-5 -mt-1 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);" set:html={f.a}></div>
+                </details>
+              ))}
+            </div>
+          </div>
+        )}
 
         {post.data.tags?.length > 0 && (
           <div class="mt-12 pt-8 border-t border-line flex flex-wrap gap-2">
