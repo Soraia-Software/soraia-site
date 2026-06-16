@@ -29,7 +29,7 @@ faq:
   - q: "How long does it take to get off the spreadsheet?"
     a: "With our model the first useful delivery lands in 4 weeks, not six months. We start with a roughly €2,000 scoping (refunded if you proceed) to check the case holds, then a build sprint. And if the agreed target isn't hit 30 days after go-live, we work for free until it is, or we refund."
 lang: "en"
-draft: true
+draft: false
 ---
 
 Almost every SME I meet has one Excel spreadsheet holding up a critical chunk of the business. The pricing. The jobs. The team's hours. The commissions. One person built it years ago, and now ten people live off it.

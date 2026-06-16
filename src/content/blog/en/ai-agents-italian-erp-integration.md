@@ -32,7 +32,7 @@ faq:
   - q: "What about compliance? The ERP holds sensitive data."
     a: "That's exactly why the agent doesn't replace the ERP or its controls. It works with least-privilege access, EU hosting when required, and a <strong>GDPR art. 28 DPA</strong> included in the contract. No LLM training on your data. Every decision is logged and reconstructable."
 lang: "en"
-draft: true
+draft: false
 ---
 
 ## In short

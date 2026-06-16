@@ -29,7 +29,7 @@ faq:
   - q: "Quanto serve per uscire dal foglio Excel?"
     a: "Con il nostro modello la prima delivery utile arriva in 4 settimane, non in sei mesi. Partiamo da uno scoping da circa €2.000 (rimborsato se procedi) per capire se il caso regge, poi uno sprint di build. E se il target concordato non viene raggiunto a 30 giorni dal go-live, lavoriamo gratis fino a quando non succede oppure rimborsiamo."
 lang: "it"
-draft: true
+draft: false
 ---
 
 Quasi ogni PMI che incontro ha un foglio Excel che regge un pezzo critico dell'azienda. Il pricing. Le commesse. Le ore del team. Le provvigioni. Lo ha costruito una persona, anni fa, e ora ci campano in dieci.

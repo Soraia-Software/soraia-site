@@ -32,7 +32,7 @@ faq:
   - q: "E la compliance? Il gestionale contiene dati sensibili."
     a: "Per questo l'agente non sostituisce il gestionale né i suoi controlli. Lavora con accessi minimi, hosting UE quando richiesto e <strong>DPA art. 28 GDPR</strong> incluso nel contratto. Nessun training degli LLM sui tuoi dati. Ogni decisione è loggata e ricostruibile."
 lang: "it"
-draft: true
+draft: false
 ---
 
 ## In sintesi
