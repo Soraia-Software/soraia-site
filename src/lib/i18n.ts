@@ -30,6 +30,9 @@ export const BLOG_SLUG_MAP: Record<string, string> = {
   "agenti-ia-vs-chatgpt-enterprise": "ai-agents-vs-chatgpt-enterprise",
   "ai-act-pmi-italiane": "eu-ai-act-for-smes",
   "come-misurare-roi-agente-ia": "how-to-measure-ai-agent-roi",
+  "software-su-misura-o-saas": "custom-software-vs-saas",
+  "agenti-ia-gestionali-teamsystem-zucchetti-odoo": "ai-agents-italian-erp-integration",
+  "smettere-di-gestire-i-processi-su-excel": "stop-running-your-business-on-spreadsheets",
 };
 
 export function reverseMap(map: Record<string, string>): Record<string, string> {
