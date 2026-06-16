@@ -130,7 +130,7 @@
   },
   {
     "id": "5-segnali-processo-da-automatizzare",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "5-segnali-processo-da-automatizzare",
     "slug_en": "5-signs-a-process-is-ready-to-automate",
@@ -158,7 +158,7 @@
     "sources": [
       "gap-list"
     ],
-    "drafted_at": null
+    "drafted_at": "2026-06-16"
   },
   {
     "id": "change-management-anti-pattern",
