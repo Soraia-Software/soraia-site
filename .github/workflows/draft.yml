@@ -41,6 +41,10 @@ jobs:
         if: steps.author.outputs.drafted == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
+          # Uses a scoped PAT (BLOG_BOT_TOKEN) so PR creation works even though the org
+          # disables write for the default GITHUB_TOKEN. Falls back to github.token if
+          # you instead enable "Allow Actions to create PRs" + write at the org level.
+          token: ${{ secrets.BLOG_BOT_TOKEN || github.token }}
           branch: blog/${{ steps.author.outputs.slug }}
           base: main
           title: "Draft: ${{ steps.author.outputs.title }}"
