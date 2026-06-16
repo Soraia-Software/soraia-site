@@ -1,6 +1,6 @@
 ---
 title: "Which processes to automate: 5 signs yes, 2 no"
-description: "An operational checklist for a COO: the 5 signs that show which processes to automate in your company and the 2 that say stop. No hype, with practical cut-offs."
+description: "An operational checklist for a COO: the 5 signs that show which processes to automate and the 2 that say stop. With practical cut-offs, no hype."
 pubDate: 2026-06-16
 author: "Daniel Levis"
 tags:
@@ -16,15 +16,15 @@ readMinutes: 6
 featured: false
 faq:
   - q: "What's the first process to automate in an SME?"
-    a: "The one that's high-volume, repetitive and rule-based. Volume + repetition + structured output = ideal candidate. As a rough cut-off, above <strong>20-30 repetitive tasks per week per person</strong> automation starts to pay off. Always start from a timed baseline, not a hallway opinion."
+    a: "The one that's high-volume, repetitive and rule-based. Volume + repetition + structured output = ideal candidate. As a rule of thumb from our experience, above <strong>20-30 repetitive tasks per week per person</strong> automation starts to pay off. Always start from a timed baseline, not a hallway opinion."
   - q: "How do I know a process should NOT be automated?"
     a: "Two signs stop everything: the process will change in the next 3 months, or every case is an exception requiring human judgement. Automating an unstable workflow is waste; automating judgement where there are no rules produces hard-to-audit errors."
   - q: "Do I need an AI agent or just simple automation?"
     a: "If the task is deterministic (move data, apply fixed rules), classic automation is enough. If it requires understanding unstructured text, domain context or ranking decisions, you need an <a href=\"/en/ai-agents\">AI agent</a>. The line is the level of interpretation required."
   - q: "How long to get the first automated process live?"
-    a: "With Soraia the first delivery is in <strong>4 weeks</strong>, followed by 30 days of hypercare. The constraint isn't technical but scope: the clearer the perimeter, the faster and more measurable the delivery."
+    a: "With Soraia the first delivery is in <strong>4 weeks</strong>. The constraint isn't technical but scope: the clearer the perimeter, the faster and more measurable the delivery."
 lang: "en"
-draft: true
+draft: false
 ---
 
 # Which processes to automate: 5 signs yes, 2 no
@@ -35,7 +35,7 @@ This is the operational checklist we use in the first calls with a COO. No FOMO:
 
 **In short:**
 - A process is ready for automation when it's high-volume, repetitive, rule-based, with structured output and a measurable baseline.
-- Practical cut-off: above **20-30 repetitive tasks per week per person** automation starts to pay off.
+- As a rule of thumb (from our experience): above **~20-30 repetitive tasks per week per person** automation starts to pay off.
 - Two signs say do NOT automate: the process will change within 3 months, or every case is an exception requiring human judgement.
 - Without a timed baseline, any savings estimate is an opinion, not a number.
 - At Navily, automating moderation and enrichment cut **−70% of operational time**: all 5 "yes" signs were present.
@@ -46,7 +46,7 @@ This is the operational checklist we use in the first calls with a COO. No FOMO:
 
 If one person repeats the same task dozens of times a week, it's the first candidate. The value of automation grows with volume.
 
-**Practical cut-off**: under 10 tasks/week, it's often not worth the sprint. Above 20-30, yes.
+**Rule of thumb** (from our experience, not a market stat): under ~10 tasks/week it's rarely worth the sprint; above ~20-30, yes.
 
 ### 2. Clear rules (even if complex)
 
@@ -56,7 +56,7 @@ If the answer is "it depends, you pick it up over time", the process isn't ready
 
 ### 3. Structured output that flows into your systems
 
-The best processes to automate produce something that lands in a CRM, ATS, ERP or management software (TeamSystem, Zucchetti, Odoo). Ticket triage, invoice parsing, CV screening, lead enrichment.
+The best processes to automate produce something that lands in a CRM, ATS, ERP or management software (e.g. TeamSystem, Zucchetti, Odoo). Ticket triage, invoice parsing, CV screening, lead enrichment.
 
 If the output is manual copy-paste between tools, you're paying a person to shuttle data. That's exactly the work an [AI agent](/en/ai-agents) removes.
 
@@ -94,8 +94,8 @@ Result: **−70% operational time** on moderation and enrichment. No magic, just
 
 Run this exercise on 3-4 processes: score each against the 5 "yes" signs and check the 2 "no" ones. The process with the most "yes", zero "no" and the easiest baseline to measure is your first sprint.
 
-If you want help with the scoring, the 3-minute [check-up](/en/contact) gives you a first read.
+If you want help with the scoring, the 3-minute [check-up](/en/check-up) gives you a first read.
 
 ## CTA
 
-Want to figure out which of your processes goes first? [Talk to us](/en/contact) or see how we worked on high-volume processes with our [AI agents](/en/ai-agents).
+Want to figure out which of your processes goes first? [Take the check-up](/en/check-up) (3 minutes) or see how we worked on high-volume processes with our [AI agents](/en/ai-agents).

@@ -1,6 +1,6 @@
 ---
 title: "Quali processi automatizzare in azienda: 5 segnali sì, 2 no"
-description: "Checklist operativa per un COO: i 5 segnali che dicono quali processi automatizzare in azienda e i 2 che dicono di fermarsi. Senza hype, con i cut-off pratici."
+description: "Checklist operativa per il COO: i 5 segnali che dicono quali processi automatizzare in azienda e i 2 che dicono di fermarsi. Con cut-off pratici."
 pubDate: 2026-06-16
 author: "Daniel Levis"
 tags:
@@ -16,15 +16,15 @@ readMinutes: 6
 featured: false
 faq:
   - q: "Qual è il primo processo da automatizzare in una PMI?"
-    a: "Quello ad alto volume, ripetitivo e con regole chiare. Volume + ripetitività + output strutturato = candidato ideale. Indicativamente sopra i <strong>20-30 task ripetitivi a settimana per persona</strong> l'automazione inizia a ripagarsi. Parti sempre da una baseline cronometrata, non da un'opinione raccontata in riunione."
+    a: "Quello ad alto volume, ripetitivo e con regole chiare. Volume + ripetitività + output strutturato = candidato ideale. Come regola pratica, dalla nostra esperienza, oltre i <strong>20-30 task ripetitivi a settimana per persona</strong> l'automazione inizia a ripagarsi. Parti sempre da una baseline cronometrata, non da un'opinione raccontata in riunione."
   - q: "Come capisco se un processo NON va automatizzato?"
     a: "Due segnali fermano tutto: il processo cambierà nei prossimi 3 mesi, oppure ogni caso è un'eccezione che richiede giudizio umano. Automatizzare un workflow instabile è uno spreco; automatizzare il giudizio dove non ci sono regole produce errori difficili da auditare."
   - q: "Serve un agente IA o basta un'automazione semplice?"
     a: "Se il task è deterministico (sposta dati, applica regole fisse) basta un'automazione classica. Se richiede comprensione di testo non strutturato, contesto di dominio o decisioni ranking, serve un <a href=\"/ai-agents\">agente IA</a>. Il confine è il livello di interpretazione richiesto."
   - q: "Quanto ci vuole a portare live il primo processo automatizzato?"
-    a: "Con Soraia la prima delivery è in <strong>4 settimane</strong>, seguita da 30 giorni di hypercare. Il vincolo non è tecnico ma di scope: più il perimetro è chiaro, più la delivery è veloce e misurabile."
+    a: "Con Soraia la prima delivery è in <strong>4 settimane</strong>. Il vincolo non è tecnico ma di scope: più il perimetro è chiaro, più la delivery è veloce e misurabile."
 lang: "it"
-draft: true
+draft: false
 ---
 
 # Quali processi automatizzare in azienda: 5 segnali sì, 2 no
@@ -35,7 +35,7 @@ Questa è la checklist operativa che usiamo nelle prime call con un COO. Niente 
 
 **In breve:**
 - Un processo è pronto per l'automazione quando è ad alto volume, ripetitivo, con regole chiare, output strutturato e una baseline misurabile.
-- Il cut-off pratico: oltre **20-30 task ripetitivi a settimana per persona** l'automazione inizia a ripagarsi.
+- Come regola pratica (dalla nostra esperienza): oltre **~20-30 task ripetitivi a settimana per persona** l'automazione inizia a ripagarsi.
 - Due segnali dicono di NON automatizzare: il processo cambierà entro 3 mesi, oppure ogni caso è un'eccezione che richiede giudizio umano.
 - Senza baseline cronometrata, ogni stima di risparmio è un'opinione, non un numero.
 - Su Navily l'automazione di moderazione ed enrichment ha tagliato il **−70% del tempo operativo**: tutti e 5 i segnali "sì" erano presenti.
@@ -46,7 +46,7 @@ Questa è la checklist operativa che usiamo nelle prime call con un COO. Niente 
 
 Se una persona ripete lo stesso task decine di volte a settimana, è il primo candidato. Il valore dell'automazione cresce col volume.
 
-**Cut-off pratico**: sotto i 10 task/settimana, spesso non vale lo sprint. Sopra i 20-30, sì.
+**Regola pratica** (dalla nostra esperienza, non un dato di mercato): sotto i ~10 task a settimana raramente vale lo sprint; sopra i ~20-30, sì.
 
 ### 2. Regole chiare (anche se complesse)
 
@@ -56,7 +56,7 @@ Se invece la risposta è "dipende, si capisce col tempo", il processo non è anc
 
 ### 3. Output strutturato che va nei tuoi sistemi
 
-I processi migliori da automatizzare producono qualcosa che finisce in un CRM, ATS, ERP o gestionale (TeamSystem, Zucchetti, Odoo). Triage ticket, parsing fatture, screening CV, enrichment lead.
+I processi migliori da automatizzare producono qualcosa che finisce in un CRM, ATS, ERP o gestionale (es. TeamSystem, Zucchetti, Odoo). Triage ticket, parsing fatture, screening CV, enrichment lead.
 
 Se l'output è copia-incolla manuale tra strumenti, stai pagando una persona per fare la spola. È esattamente il lavoro che un [agente IA](/ai-agents) elimina.
 
