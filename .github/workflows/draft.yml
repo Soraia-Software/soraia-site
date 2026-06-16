@@ -1,0 +1,49 @@
+name: Blog draft (AI author)
+
+# Weekly: pick the first `todo` topic from automation/blog-topics.json, generate a
+# bilingual draft (draft:true) with Claude, and open a "Draft: …" PR. Never publishes
+# — a human reviews, flips draft:false, and merges (deploy.yml then ships it).
+# Requires the ANTHROPIC_API_KEY repo secret. Optional repo variable AUTHOR_MODEL
+# (default claude-opus-4-8; set claude-sonnet-4-6 for steady-state cost).
+
+on:
+  schedule:
+    - cron: "0 4 * * 1" # Mondays 06:00 Europe/Rome (04:00 UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: blog-draft
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Generate draft
+        id: author
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AUTHOR_MODEL: ${{ vars.AUTHOR_MODEL }}
+        run: node automation/author.mjs
+
+      - name: Open draft PR
+        if: steps.author.outputs.drafted == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: blog/${{ steps.author.outputs.slug }}
+          base: main
+          title: "Draft: ${{ steps.author.outputs.title }}"
+          body: ${{ steps.author.outputs.prbody }}
+          commit-message: "Blog draft: ${{ steps.author.outputs.slug }} (draft:true)"
+          delete-branch: true

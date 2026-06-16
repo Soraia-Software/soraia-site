@@ -1,7 +1,7 @@
 [
   {
     "id": "custom-software-vs-saas",
-    "status": "todo",
+    "status": "published",
     "archetype": "pillar",
     "slug_it": "software-su-misura-o-saas",
     "slug_en": "custom-software-vs-saas",
@@ -10,17 +10,31 @@
     "primaryKeyword": "software su misura o saas",
     "targetPersona": "COO / IT buyer PMI",
     "supportingCaseStudy": "talent-match",
-    "internalLinkTargets": ["/software-development", "/ai-agents", "/case-studies/talent-match", "/guide/costi-consulenza-ai"],
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/case-studies/talent-match",
+      "/guide/costi-consulenza-ai"
+    ],
     "dedupNotes": "Net-new. Le guide coprono costi/consulenza/AI Act ma non il framework build-vs-buy per gestionali/web app.",
     "freshnessExpiry": null,
     "score": 80,
-    "subScores": { "intent": 0.9, "biz": 1.0, "winnability": 0.8, "freshness": 0.5, "geo": 0.85 },
-    "sources": ["gap-list", "service:software-development"],
-    "drafted_at": null
+    "subScores": {
+      "intent": 0.9,
+      "biz": 1,
+      "winnability": 0.8,
+      "freshness": 0.5,
+      "geo": 0.85
+    },
+    "sources": [
+      "gap-list",
+      "service:software-development"
+    ],
+    "drafted_at": "2026-06-16"
   },
   {
     "id": "agenti-ia-gestionali-italiani",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "agenti-ia-gestionali-teamsystem-zucchetti-odoo",
     "slug_en": "ai-agents-italian-erp-integration",
@@ -29,17 +43,30 @@
     "primaryKeyword": "integrare agenti ia gestionale",
     "targetPersona": "IT buyer / CFO",
     "supportingCaseStudy": "numeraria",
-    "internalLinkTargets": ["/software-development", "/finance", "/case-studies/numeraria", "/guide/agenti-ai-aziende"],
+    "internalLinkTargets": [
+      "/software-development",
+      "/finance",
+      "/case-studies/numeraria",
+      "/guide/agenti-ai-aziende"
+    ],
     "dedupNotes": "Net-new tecnico. Nessuna pagina copre l'integrazione coi gestionali italiani.",
     "freshnessExpiry": null,
     "score": 78,
-    "subScores": { "intent": 0.9, "biz": 1.0, "winnability": 0.9, "freshness": 0.5, "geo": 0.7 },
-    "sources": ["gap-list"],
-    "drafted_at": null
+    "subScores": {
+      "intent": 0.9,
+      "biz": 1,
+      "winnability": 0.9,
+      "freshness": 0.5,
+      "geo": 0.7
+    },
+    "sources": [
+      "gap-list"
+    ],
+    "drafted_at": "2026-06-16"
   },
   {
     "id": "digitalizzare-processi-excel",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "opinion",
     "slug_it": "smettere-di-gestire-i-processi-su-excel",
     "slug_en": "stop-running-your-business-on-spreadsheets",
@@ -48,13 +75,25 @@
     "primaryKeyword": "digitalizzare processi aziendali excel",
     "targetPersona": "CEO / COO PMI",
     "supportingCaseStudy": "oggi-lavoro",
-    "internalLinkTargets": ["/software-development", "/ai-adoption", "/check-up"],
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-adoption",
+      "/check-up"
+    ],
     "dedupNotes": "Net-new. Angolo opinione su digitalizzazione processi; non coperto dalle guide. NB: oggi-lavoro è draft → non linkare finché non approvato.",
     "freshnessExpiry": null,
     "score": 72,
-    "subScores": { "intent": 0.8, "biz": 0.9, "winnability": 0.8, "freshness": 0.4, "geo": 0.8 },
-    "sources": ["gap-list"],
-    "drafted_at": null
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.9,
+      "winnability": 0.8,
+      "freshness": 0.4,
+      "geo": 0.8
+    },
+    "sources": [
+      "gap-list"
+    ],
+    "drafted_at": "2026-06-16"
   },
   {
     "id": "agenti-ia-settori-regolamentati",
@@ -67,17 +106,31 @@
     "primaryKeyword": "agenti ia settori regolamentati",
     "targetPersona": "CFO / Compliance",
     "supportingCaseStudy": "aegis",
-    "internalLinkTargets": ["/ai-agents", "/finance", "/guide/ai-act-aziende", "/case-studies/aegis"],
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/finance",
+      "/guide/ai-act-aziende",
+      "/case-studies/aegis"
+    ],
     "dedupNotes": "Distinto dalla guida AI Act (generale): angolo operativo settoriale. Verificare overlap < 0.8.",
     "freshnessExpiry": "2026-08-31",
     "score": 76,
-    "subScores": { "intent": 0.8, "biz": 1.0, "winnability": 0.7, "freshness": 0.7, "geo": 0.85 },
-    "sources": ["gap-list", "AI-Act-Aug-2026"],
+    "subScores": {
+      "intent": 0.8,
+      "biz": 1,
+      "winnability": 0.7,
+      "freshness": 0.7,
+      "geo": 0.85
+    },
+    "sources": [
+      "gap-list",
+      "AI-Act-Aug-2026"
+    ],
     "drafted_at": null
   },
   {
     "id": "5-segnali-processo-da-automatizzare",
-    "status": "parked",
+    "status": "todo",
     "archetype": "how-to",
     "slug_it": "5-segnali-processo-da-automatizzare",
     "slug_en": "5-signs-a-process-is-ready-to-automate",
@@ -86,12 +139,25 @@
     "primaryKeyword": "quali processi automatizzare azienda",
     "targetPersona": "COO / Head of Ops",
     "supportingCaseStudy": "navily",
-    "internalLinkTargets": ["/ai-agents", "/customer-support", "/case-studies/navily", "/check-up"],
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/customer-support",
+      "/case-studies/navily",
+      "/check-up"
+    ],
     "dedupNotes": "Net-new checklist operativa. Non sovrappone al ROI framework (guida/post esistente).",
     "freshnessExpiry": null,
     "score": 74,
-    "subScores": { "intent": 0.85, "biz": 0.9, "winnability": 0.85, "freshness": 0.4, "geo": 0.8 },
-    "sources": ["gap-list"],
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.9,
+      "winnability": 0.85,
+      "freshness": 0.4,
+      "geo": 0.8
+    },
+    "sources": [
+      "gap-list"
+    ],
     "drafted_at": null
   },
   {
@@ -105,12 +171,24 @@
     "primaryKeyword": "perché falliscono progetti automazione",
     "targetPersona": "CEO / sponsor interno",
     "supportingCaseStudy": "liftt",
-    "internalLinkTargets": ["/ai-adoption", "/ai-agents", "/case-studies/liftt"],
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/ai-agents",
+      "/case-studies/liftt"
+    ],
     "dedupNotes": "Net-new. Angolo change-management; la guida formazione copre il 'come formare', non gli anti-pattern di progetto.",
     "freshnessExpiry": null,
     "score": 71,
-    "subScores": { "intent": 0.75, "biz": 0.9, "winnability": 0.8, "freshness": 0.4, "geo": 0.8 },
-    "sources": ["gap-list"],
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.9,
+      "winnability": 0.8,
+      "freshness": 0.4,
+      "geo": 0.8
+    },
+    "sources": [
+      "gap-list"
+    ],
     "drafted_at": null
   },
   {
@@ -124,12 +202,24 @@
     "primaryKeyword": "crm su misura o standard",
     "targetPersona": "Head of Sales / COO",
     "supportingCaseStudy": "talent-match",
-    "internalLinkTargets": ["/software-development", "/sales-marketing", "/case-studies/talent-match"],
+    "internalLinkTargets": [
+      "/software-development",
+      "/sales-marketing",
+      "/case-studies/talent-match"
+    ],
     "dedupNotes": "Net-new, sotto-caso del build-vs-buy ma verticale CRM. Tenere distinto dal pillar custom-software-vs-saas.",
     "freshnessExpiry": null,
     "score": 70,
-    "subScores": { "intent": 0.85, "biz": 0.95, "winnability": 0.75, "freshness": 0.4, "geo": 0.75 },
-    "sources": ["gap-list"],
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.95,
+      "winnability": 0.75,
+      "freshness": 0.4,
+      "geo": 0.75
+    },
+    "sources": [
+      "gap-list"
+    ],
     "drafted_at": null
   }
 ]

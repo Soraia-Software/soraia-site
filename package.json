@@ -22,6 +22,7 @@
     "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.104.2",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "typescript": "^5.7.0"

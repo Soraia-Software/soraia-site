@@ -1,0 +1,48 @@
+name: Blog quality gates
+
+# Runs the 5 adversarial gates (fact-check, originality, brand-voice, SEO/structure,
+# GEO-citability) on any PR touching blog content, posts a scorecard comment, and
+# fails the check if any gate fails. Advisory: a human can still merge after addressing
+# (or consciously overriding) the findings. Requires ANTHROPIC_API_KEY.
+
+on:
+  pull_request:
+    paths:
+      - "src/content/blog/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Run quality gates
+        id: gates
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GATE_MODEL: ${{ vars.GATE_MODEL }}
+        run: node automation/quality-gates.mjs
+
+      - name: Post scorecard comment
+        if: always() && hashFiles('automation/.gate-report.md') != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr comment "${{ github.event.pull_request.number }}" --body-file automation/.gate-report.md --repo "${{ github.repository }}"
+
+      - name: Enforce gate result
+        if: steps.gates.outcome == 'failure'
+        run: |
+          echo "::error::One or more blog quality gates failed — see the scorecard comment on the PR."
+          exit 1
