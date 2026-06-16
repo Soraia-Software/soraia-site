@@ -30,7 +30,7 @@ faq:
   - q: "Posso partire da un SaaS e passare al custom dopo?"
     a: "Sì, ed è spesso la strada giusta. Parti dal SaaS per validare il processo, misuri dove perdi tempo e dove i workaround si moltiplicano, poi costruisci su misura solo il pezzo che ti fa male. È esattamente il percorso di chi ci arriva dopo 2 anni di Excel attaccati con lo scotch."
 lang: "it"
-draft: true
+draft: false
 ---
 
 Arriva quasi sempre nello stesso modo: "Abbiamo un SaaS che usiamo per metà, tre fogli Excel per il resto, e nessuno sa più dove sta il dato vero."

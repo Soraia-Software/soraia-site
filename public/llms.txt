@@ -41,6 +41,7 @@ Nota di posizionamento: dal 2026 Soraia si è riposizionata da no-code/automatio
 - [Tutti i case studies](https://www.soraia.io/case-studies): 15 case pubblici filtrabili per Ops cluster.
 - [Guide AI](https://www.soraia.io/guide): Agenti AI per aziende, AI Act, consulenza AI in Italia, costi consulenza AI, formazione AI aziendale.
 - [Blog](https://www.soraia.io/blog): Insight su agenti IA, ROI, comparison con ChatGPT enterprise.
+- [Software su misura o SaaS](https://www.soraia.io/blog/software-su-misura-o-saas/): I 4 criteri (processo core, costo totale a 2-3 anni, lock-in, lifecycle) per decidere tra build e buy senza pentirsene.
 - [Check-up IA](https://www.soraia.io/check-up): Self-assessment 3 minuti per valutare maturità AI dell'azienda.
 - [AI Readiness Assessment, sample report](https://www.soraia.io/downloads/ai-assessment-sample): PDF di esempio dell'assessment €2.000.
 

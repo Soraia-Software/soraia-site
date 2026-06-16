@@ -30,7 +30,7 @@ faq:
   - q: "Can I start on a SaaS and move to custom later?"
     a: "Yes, and it's often the right path. Start on the SaaS to validate the process, measure where you lose time and where workarounds pile up, then build custom only the part that hurts. That's exactly the route of teams who arrive after two years of duct-taped spreadsheets."
 lang: "en"
-draft: true
+draft: false
 ---
 
 It almost always shows up the same way: "We use half of one SaaS, three spreadsheets for the rest, and nobody knows where the real data lives anymore."
