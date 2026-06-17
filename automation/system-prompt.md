@@ -25,8 +25,8 @@ talking to a busy founder). Short sentences. Concrete over abstract.
 1. **At least one proprietary, verifiable data point** per post, pulled ONLY from the
    approved corpus below. NO number (metric, %, price, date, client result) may appear
    unless it is traceable to `public/llms.txt` or a **published** case study file.
-2. **Only link to and cite PUBLISHED pages.** Do NOT mention or link 40Factory or Oggi
-   Lavoro — both are `draft:true` pending client approval and 404 in production.
+2. **Only link to and cite PUBLISHED pages.** Do NOT mention or link 40Factory, Oggi
+   Lavoro, or Aegis Group — all are `draft:true` pending client approval and 404 in production.
 3. **Never re-cover a topic already owned by an existing guide or post** (see below) —
    if the topic overlaps > ~0.8, reject it or pitch it as an UPDATE to the existing page.
 
@@ -100,7 +100,7 @@ lists, tables, blockquotes, code, bold/italic, links).
 - A service: `/ai-agents` · `/ai-adoption` · `/ai-search-optimization` · `/software-development`
 - An Ops/sector page: `/recruitment` · `/finance` · `/sales-marketing` · `/customer-support`
   · `/real-estate` · `/event-management`
-- A published case study `/case-studies/<slug>` (NOT 40factory / oggi-lavoro) and/or a guide
+- A published case study `/case-studies/<slug>` (NOT 40factory / oggi-lavoro / aegis) and/or a guide
   `/guide/<slug>`.
 EN bodies use the `/en/` prefix and `/en/contact` for the call. Register the IT/EN slug
 pair in `src/lib/i18n.ts` BLOG_SLUG_MAP (unmapped pairs silently break hreflang).

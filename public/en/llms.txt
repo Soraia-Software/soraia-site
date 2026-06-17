@@ -24,7 +24,6 @@ Positioning note: from 2026 Soraia has repositioned from a no-code/automation ag
 
 - [APraise](https://www.soraia.io/en/case-studies/apraise): Executive search boutique, 100,000+ candidates managed by the AI agent, equivalent to 4 additional recruiters.
 - [Stars Be Original](https://www.soraia.io/en/case-studies/stars-be-original): Hospitality recruitment, 20,000+ candidates managed by the AI agent, <1 minute response time.
-- [Aegis Group](https://www.soraia.io/en/case-studies/aegis): Human consulting, recruitment automation.
 - [Talent Match](https://www.soraia.io/en/case-studies/talent-match): Recruitment platform "Braint", custom ATS + CRM + AI matching.
 - [Numeraria](https://www.soraia.io/en/case-studies/numeraria): Payroll & accounting firm, AI agents for quotes/hours/reconciliations, half a month given back to management.
 - [LIFTT](https://www.soraia.io/en/case-studies/liftt): Deep tech VC holding, automated email archiving and deduplication, auto-generated monthly report.
@@ -38,7 +37,7 @@ Positioning note: from 2026 Soraia has repositioned from a no-code/automation ag
 
 ## Resources
 
-- [All case studies](https://www.soraia.io/en/case-studies): 15 public cases filterable by Ops cluster.
+- [All case studies](https://www.soraia.io/en/case-studies): 12 public cases filterable by Ops cluster.
 - [AI Guides](https://www.soraia.io/en/guide): AI agents for business, AI Act, AI consulting in Italy, AI consulting costs, corporate AI training.
   - [AI Agents for Business](https://www.soraia.io/en/guide/ai-agents-for-business)
   - [AI Act for Business](https://www.soraia.io/en/guide/ai-act-for-business)

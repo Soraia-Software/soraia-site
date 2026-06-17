@@ -105,12 +105,12 @@
     "cluster": "ai-agents",
     "primaryKeyword": "agenti ia settori regolamentati",
     "targetPersona": "CFO / Compliance",
-    "supportingCaseStudy": "aegis",
+    "supportingCaseStudy": "numeraria",
     "internalLinkTargets": [
       "/ai-agents",
       "/finance",
       "/guide/ai-act-aziende",
-      "/case-studies/aegis"
+      "/case-studies/numeraria"
     ],
     "dedupNotes": "Distinto dalla guida AI Act (generale): angolo operativo settoriale. Verificare overlap < 0.8.",
     "freshnessExpiry": "2026-08-31",

@@ -24,7 +24,6 @@ Nota di posizionamento: dal 2026 Soraia si è riposizionata da no-code/automatio
 
 - [APraise](https://www.soraia.io/case-studies/apraise): Executive search boutique, 100k+ candidati gestiti dall'agente IA, equivalente a 4 recruiter aggiuntivi.
 - [Stars Be Original](https://www.soraia.io/case-studies/stars-be-original): Recruitment hospitality, 20k+ candidati gestiti dall'agente IA, <1 minuto di risposta.
-- [Aegis Group](https://www.soraia.io/case-studies/aegis): Human consulting, recruitment automation.
 - [Talent Match](https://www.soraia.io/case-studies/talent-match): Recruitment platform "Braint", ATS + CRM custom + AI matching.
 - [Numeraria](https://www.soraia.io/case-studies/numeraria): Studio paghe & contabilità, agenti IA per preventivi/ore/riconciliazioni, metà mese restituito al management.
 - [LIFTT](https://www.soraia.io/case-studies/liftt): Holding VC deep tech, archiving e dedupe email automatici, monthly report auto-generato.
@@ -38,7 +37,7 @@ Nota di posizionamento: dal 2026 Soraia si è riposizionata da no-code/automatio
 
 ## Risorse
 
-- [Tutti i case studies](https://www.soraia.io/case-studies): 15 case pubblici filtrabili per Ops cluster.
+- [Tutti i case studies](https://www.soraia.io/case-studies): 12 case pubblici filtrabili per Ops cluster.
 - [Guide AI](https://www.soraia.io/guide): Agenti AI per aziende, AI Act, consulenza AI in Italia, costi consulenza AI, formazione AI aziendale.
 - [Blog](https://www.soraia.io/blog): Insight su agenti IA, ROI, comparison con ChatGPT enterprise.
 - [Software su misura o SaaS](https://www.soraia.io/blog/software-su-misura-o-saas/): I 4 criteri (processo core, costo totale a 2-3 anni, lock-in, lifecycle) per decidere tra build e buy senza pentirsene.

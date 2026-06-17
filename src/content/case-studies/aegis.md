@@ -1,6 +1,7 @@
 ---
 title: "Aegis Group, piattaforma con agenti IA per le 7 lines di recruitment"
 client: "Aegis Group"
+draft: true
 clientLogo: "/logos/clients/aegisgroup.webp"
 industry: "recruitment-hr"
 sector: "Recruitment multi-brand · HR"
