@@ -9,3 +9,6 @@ dist/
 
 # Source photos (converted to public/team-events/)
 Team_events/
+
+# Raw photo originals (HEIC etc.) — not served, kept local
+_source-photos/
