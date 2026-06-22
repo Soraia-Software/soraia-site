@@ -97,7 +97,7 @@
   },
   {
     "id": "agenti-ia-settori-regolamentati",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "pillar",
     "slug_it": "agenti-ia-settori-regolamentati",
     "slug_en": "ai-agents-in-regulated-sectors",
@@ -126,7 +126,7 @@
       "gap-list",
       "AI-Act-Aug-2026"
     ],
-    "drafted_at": null
+    "drafted_at": "2026-06-22"
   },
   {
     "id": "5-segnali-processo-da-automatizzare",
