@@ -97,7 +97,7 @@
   },
   {
     "id": "agenti-ia-settori-regolamentati",
-    "status": "parked",
+    "status": "todo",
     "archetype": "pillar",
     "slug_it": "agenti-ia-settori-regolamentati",
     "slug_en": "ai-agents-in-regulated-sectors",
