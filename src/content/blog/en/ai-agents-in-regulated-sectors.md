@@ -21,7 +21,7 @@ faq:
   - q: "Can an AI agent make autonomous decisions in banking or insurance?"
     a: "No, not on decisions that affect people (granting credit, pricing policies, claims). The AI Act classifies these as <strong>high risk</strong>: documented human oversight on the final decision is mandatory. The agent can pre-process, score, prepare the file, but the sign-off stays human."
   - q: "What changes with the AI Act in force from August 2026?"
-    a: "Obligations for high-risk systems (credit scoring, life/health insurance systems, clinical triage) become fully applicable. That means documented risk assessment, full decision logging, human oversight and record retention. See our <a href=\"/en/guide/ai-act-aziende\">AI Act guide</a> for the full picture."
+    a: "Obligations for high-risk systems (credit scoring, life/health insurance systems, clinical triage) become fully applicable. That means documented risk assessment, full decision logging, human oversight and record retention. See our <a href=\"/en/guide/ai-act-for-business\">AI Act guide</a> for the full picture."
   - q: "Can I use an AI agent for document automation in a regulated sector?"
     a: "Yes, and it's usually the safest starting point. OCR on invoices, reconciliations, PDF data extraction, recurring reports are <strong>minimal risk</strong>: they don't decide on people. That's the Numeraria case, where automation gave back roughly half a month to management."
   - q: "Where do the data need to live to stay compliant?"
@@ -29,7 +29,7 @@ faq:
   - q: "When does an AI agent NOT make sense in a regulated sector?"
     a: "When the process requires a legally binding decision with no room for human oversight, or when the data needed can't leave a closed perimeter without a proper DPIA. In those cases you fix governance first, then automate. Never the other way around."
 lang: "en"
-draft: true
+draft: false
 ---
 
 Every month the same email lands from a CFO at a bank or an insurer: *"We want to use AI agents, but our compliance officer says no to everything."*
@@ -52,7 +52,7 @@ Put bluntly: the exact same agent can be perfectly legal or banned, depending on
 
 ## The question that decides everything: who bears the output?
 
-The AI Act sorts systems into four risk levels (we mapped them in detail in our [AI Act guide for businesses](/en/guide/ai-act-aziende)). For regulated sectors the operational boundary is a single one.
+The AI Act sorts systems into four risk levels (we mapped them in detail in our [AI Act guide for businesses](/en/guide/ai-act-for-business)). For regulated sectors the operational boundary is a single one.
 
 **If the agent decides or significantly influences a person** — granting a mortgage, setting a policy premium, accepting a claim, triaging a patient — you're in **high risk**. Full stop. No shortcuts.
 
@@ -114,4 +114,4 @@ We include these by default in our [AI Agents](/en/ai-agents) sprints, not out o
 - When the data can't leave a closed perimeter and there's no DPIA → fix governance first.
 - When you have no measured baseline → without knowing what the task costs today, you can't know whether the agent makes sense.
 
-Want to know which level your specific case falls into? [Let's talk](/en/contact) (20 minutes, no pitch) or take the [3-minute check-up](/check-up).
+Want to know which level your specific case falls into? [Let's talk](/en/contact) (20 minutes, no pitch) or take the [3-minute check-up](/en/check-up).

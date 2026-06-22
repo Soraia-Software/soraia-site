@@ -29,7 +29,7 @@ faq:
   - q: "Quando NON conviene un agente IA in un settore regolamentato?"
     a: "Quando il processo richiede una decisione legalmente vincolante senza margine di supervisione umana, o quando il dato necessario non può uscire da un perimetro chiuso senza una DPIA seria. In quei casi prima si sistema la governance, poi si automatizza. Mai il contrario."
 lang: "it"
-draft: true
+draft: false
 ---
 
 Ogni mese arriva la stessa email da un CFO di una banca o di un'assicurazione: *"Vogliamo usare gli agenti IA, ma il nostro compliance officer dice di no a tutto."*
