@@ -27,6 +27,7 @@ export const GUIDE_SLUG_MAP: Record<string, string> = {
   "formazione-ai-aziendale": "corporate-ai-training",
 };
 export const BLOG_SLUG_MAP: Record<string, string> = {
+  "ai-act-recruiting-selezione-personale-alto-rischio": "ai-act-recruitment-high-risk-compliance",
   "agenti-ia-settori-regolamentati": "ai-agents-in-regulated-sectors",
   "5-segnali-processo-da-automatizzare": "5-signs-a-process-is-ready-to-automate",
   "agenti-ia-vs-chatgpt-enterprise": "ai-agents-vs-chatgpt-enterprise",
