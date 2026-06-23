@@ -224,7 +224,7 @@
   },
   {
     "id": "ai-act-recruiting-selezione-personale",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "ai-act-recruiting-selezione-personale-alto-rischio",
     "slug_en": "ai-act-recruitment-high-risk-compliance",
@@ -255,7 +255,7 @@
       "https://aipolicy.it/linee-guida-ai-act-alto-rischio-classificazione/"
     ],
     "discovered_at": "2026-06-23",
-    "drafted_at": null
+    "drafted_at": "2026-06-23"
   },
   {
     "id": "chatbot-agente-ia-trasparenza-art50",
