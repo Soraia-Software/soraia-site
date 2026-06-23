@@ -1,0 +1,52 @@
+name: Topic radar (discovery)
+
+# Monthly: Claude + web search discovers recent news/keywords/questions in Soraia's
+# domains, scores candidate topics, dedupes against the backlog, and appends the
+# survivors to automation/blog-topics.json as `status:"parked"` via a PR. Never writes
+# posts and never sets `todo` — a human reviews the PR and promotes a candidate to
+# `todo` (which draft.yml then drafts). Requires ANTHROPIC_API_KEY (web search is billed).
+
+on:
+  schedule:
+    - cron: "0 5 1 * *" # 1st of month, 07:00 Europe/Rome (05:00 UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: topic-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Discover topics
+        id: radar
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AUTHOR_MODEL: ${{ vars.AUTHOR_MODEL }}
+          RADAR_MAX_TOPICS: ${{ vars.RADAR_MAX_TOPICS }}
+        run: node automation/topic-radar.mjs
+
+      - name: Open candidates PR
+        if: steps.radar.outputs.added == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          # Same scoped PAT as draft.yml so the PR triggers downstream checks.
+          token: ${{ secrets.BLOG_BOT_TOKEN || github.token }}
+          branch: blog/topic-radar
+          base: main
+          title: "${{ steps.radar.outputs.title }}"
+          body: ${{ steps.radar.outputs.prbody }}
+          commit-message: "Topic radar: append parked candidate topics"
+          delete-branch: true

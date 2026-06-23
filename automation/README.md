@@ -7,6 +7,9 @@ useful, bilingual (IT/EN) posts per week from a documented content-gap backlog.
 ## Pieces in this folder
 - `blog-topics.json` — the versioned topic backlog. Status flow: `parked → todo → drafted → published` (or `rejected`). Only `todo` items get written; the author never reuses `drafted`/`published` (anti-duplication).
 - `system-prompt.md` — the canonical generation prompt (brand voice, the verifiable-metric corpus, structure, anti-duplication rules, self-grade). Used by the author script **and** for any post written by hand. Edit voice rules here only.
+- `author.mjs` — picks the first `todo` topic, generates the bilingual draft (`draft:true`), opens a "Draft: …" PR. Run by `draft.yml` (weekly Mon cron).
+- `quality-gates.mjs` — 5 adversarial judges (fact-check, originality, brand-voice, seo-structure, geo-citability) that score a draft PR. Run by `quality-gates.yml`.
+- `topic-radar.mjs` — Phase 3 discovery agent: Claude + web search finds recent news/keywords/questions, scores + dedupes candidate topics, appends survivors as `status:"parked"`. Run by `topic-radar.yml` (monthly cron). **Refills the backlog so the queue never silently runs dry.** Never writes posts, never sets `todo` — a human reviews the PR and promotes a candidate to `todo`.
 
 ## How a post goes live
 1. Pick a `todo` topic from `blog-topics.json`.
@@ -19,7 +22,8 @@ useful, bilingual (IT/EN) posts per week from a documented content-gap backlog.
 - **Phase 0 (done)** — blog schema gains `draft` / `faq` / `keywords` / `updatedDate` / `h1` / `ogImage`; drafts hidden in prod (visible in dev); Article + FAQPage JSON-LD on blog posts; `deploy.yml`.
 - **Phase 1 (MVP)** — hand-author the first 2-3 posts from this prompt to lock the voice.
 - **Phase 2** — `automation/author.mjs` + `.github/workflows/draft.yml` (weekly cron): generates IT+EN, opens a "Draft: …" PR; five adversarial quality-gate judges (fact/hallucination, originality, brand-voice, structure/SEO/schema, GEO-citability) run in CI on the PR. Human still flips `draft:false`.
-- **Phase 3** — `topic-radar.yml`: GSC striking-distance/gap queries + Serper SERP/PAA + Claude web-search GEO check → scored candidates appended here via PR. Weekly GSC + biweekly GEO-citation measurement.
+- **Phase 3 (done, dependency-light)** — `automation/topic-radar.mjs` + `.github/workflows/topic-radar.yml` (monthly cron): Claude + the `web_search`/`web_fetch` server tools discover recent news/keywords/questions, score candidates against the backlog rubric, dedupe vs the backlog + owned guide themes, validate every `supportingCaseStudy`/link against real published routes, and append survivors as `status:"parked"` via PR. Needs only `ANTHROPIC_API_KEY` (web search is billed). Tune volume with the optional `RADAR_MAX_TOPICS` repo variable (default 5).
+- **Phase 3+ (later)** — richer signals when keys are provisioned: GSC striking-distance/gap queries + Serper SERP/PAA, plus biweekly GEO-citation measurement.
 
 ## Secrets (GitHub → Settings → Secrets and variables → Actions)
 - `CLOUDFLARE_API_TOKEN` — scoped **Account › Cloudflare Pages › Edit** (never the Global key).
