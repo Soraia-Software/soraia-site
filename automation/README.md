@@ -33,4 +33,4 @@ useful, bilingual (IT/EN) posts per week from a documented content-gap backlog.
 ## Guardrails (non-negotiable)
 - Human flips `draft:false`; nothing publishes unreviewed in MVP. In Phase 2, "auto-publish" = publish only if ALL five quality gates pass, else hold for a human.
 - Cadence ceiling 1–2 posts/week, topics only from the gap list — avoids Google "scaled content abuse".
-- Every number traceable to the site. Never link/cite `40factory` or `oggi-lavoro` (draft, pending client approval).
+- Every number traceable to the site. Never link/cite `oggi-lavoro` or `aegis` (draft, pending client approval).

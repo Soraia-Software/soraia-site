@@ -84,7 +84,7 @@ const system = [
   "",
   "HARD RULES:",
   "1. Propose ONLY genuinely new angles. Reject anything that overlaps > ~0.8 with the existing backlog or with these OWNED themes (already covered by guides/posts): " + OWNED_THEMES.join("; ") + ".",
-  "2. supportingCaseStudy MUST be one of these PUBLISHED slugs or null: " + [...PUBLISHED_CS].join(", ") + ". NEVER reference 40factory, oggi-lavoro, or aegis (hidden/draft).",
+  "2. supportingCaseStudy MUST be one of these PUBLISHED slugs or null: " + [...PUBLISHED_CS].join(", ") + ". NEVER reference oggi-lavoro or aegis (hidden/draft).",
   "3. internalLinkTargets MUST be chosen ONLY from these real published routes: " + [...VALID_ROUTES].join(", ") + ".",
   "4. Every topic must map to a real SMB search intent with business value — no vanity/hype topics. Italian primary keyword.",
   "5. Ground freshness in what you actually found on the web; put the source URLs in `sources`. Set `freshnessExpiry` (YYYY-MM-DD) for time-sensitive topics, else null.",

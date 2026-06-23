@@ -94,7 +94,7 @@ const user = [
   "VOICE ANCHORS (existing posts — match tone, length, structure):",
   anchors,
   "",
-  "SOURCE OF TRUTH for every number/claim (public/llms.txt) — invent nothing, never cite 40factory, oggi-lavoro or aegis (draft, 404):",
+  "SOURCE OF TRUTH for every number/claim (public/llms.txt) — invent nothing, never cite oggi-lavoro or aegis (draft, 404):",
   llms,
   "",
   "Return ONLY the JSON object from your instructions (frontmatter_it, it_body, frontmatter_en, en_body, slug_it, slug_en, blog_slug_map_entry, llms_txt_line_it?, llms_txt_line_en?). Do NOT include pubDate/lang/draft in the frontmatter objects. No code fences, no prose outside the JSON.",
