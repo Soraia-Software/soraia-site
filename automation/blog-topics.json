@@ -224,7 +224,7 @@
   },
   {
     "id": "ai-act-recruiting-selezione-personale",
-    "status": "parked",
+    "status": "todo",
     "archetype": "how-to",
     "slug_it": "ai-act-recruiting-selezione-personale-alto-rischio",
     "slug_en": "ai-act-recruitment-high-risk-compliance",
