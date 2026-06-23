@@ -21,27 +21,27 @@ faq:
   - q: "Is using AI to screen CVs really 'high-risk' under the AI Act?"
     a: "Yes. Annex III of the Regulation classifies as <strong>high-risk</strong> AI systems used for selection, screening, evaluation and decisions that significantly affect hiring or promotion. Automated CV filtering falls inside. This doesn't ban the use: it imposes specific obligations (human oversight, notice, logs, risk assessment)."
   - q: "What obligations kick in from August 2026 for AI in recruitment?"
-    a: "Five main ones: <strong>effective human oversight</strong> on decisions, <strong>candidate notice</strong> that AI is involved, <strong>immutable logging</strong> of every decision, a <strong>documented risk assessment</strong> (linked to a GDPR DPIA) and record retention. Add the art. 28 DPA with your provider."
+    a: "Five main ones: <strong>effective human oversight</strong> on decisions, <strong>candidate notice</strong> that AI is involved, <strong>immutable logging</strong> of every decision, a <strong>documented risk assessment</strong> (linked to a GDPR DPIA) and record retention. Add the art. 28 DPA with your provider. Note: systems already in use before 2 August 2026 get a longer transition window; for a new project the reference date is August 2026."
   - q: "If I buy an ATS with built-in AI, is liability the vendor's?"
     a: "No, not entirely. The vendor is the 'provider', but you who use it are the <strong>deployer</strong> with your own duties: ensuring human oversight, informing candidates, keeping logs, using it within scope. Get in writing what the vendor covers and what stays with you."
   - q: "What fines does the AI Act provide?"
-    a: "For serious breaches the AI Act allows fines up to <strong>EUR 35 million or 7% of worldwide annual turnover</strong>, whichever is higher. For high-risk obligations the thresholds are lower but still significant. SMEs benefit from proportionality and reduced caps."
+    a: "The AI Act (Regulation (EU) 2024/1689, art. 99) sets several tiers. For prohibited practices, fines reach up to <strong>EUR 35 million or 7% of worldwide turnover</strong>; for breaching the obligations on high-risk systems — the tier that applies to recruitment — up to <strong>EUR 15 million or 3% of worldwide annual turnover</strong>, whichever is higher. SMEs benefit from proportionality and reduced caps."
   - q: "Do I have to stop using AI in recruitment to stay compliant?"
     a: "No. AI remains allowed for high-risk screening, provided you meet the obligations. The compliant pattern is: the agent <strong>filters and ranks</strong>, the human recruiter always signs the decision, every step is logged and candidates are informed. That's exactly how we work on recruitment projects."
 lang: "en"
-draft: true
+draft: false
 ---
 
-From August 2026 the AI Act is fully applicable to high-risk uses. And if you use AI to screen CVs or evaluate candidates, you're inside it: the **AI Act on staff selection** classifies it as a high-risk system.
+From 2 August 2026 the AI Act's obligations for high-risk systems placed on the market kick in. And if you use AI to screen CVs or evaluate candidates, you're inside it: the **AI Act on staff selection** classifies it as a high-risk system.
 
-This isn't the general AI Act guide (that's in our [AI Act for companies guide](/en/guide/ai-act-aziende)). Here we cover only the HR/recruitment angle, where the obligations are heaviest for an SME.
+This isn't the general AI Act guide (that's in our [AI Act for companies guide](/en/guide/ai-act-for-business)). Here we cover only the HR/recruitment angle, where the obligations are heaviest for an SME.
 
 **In short:**
 
 - Annex III of the AI Act classifies AI for staff selection, screening and evaluation as a **high-risk system**: not banned, but bound to specific obligations.
 - The concrete duties for the user (the *deployer*) are five: **effective human oversight, candidate notice, immutable logging, documented risk assessment, record retention**.
 - Even if you buy an ATS with built-in AI, part of the liability stays with you: the vendor is the *provider*, you are the *deployer*.
-- Fines for serious breaches reach up to **EUR 35 million or 7% of worldwide turnover**.
+- Fines for breaching the high-risk system obligations (the tier that applies to recruitment) reach up to **EUR 15 million or 3% of worldwide annual turnover**.
 - The compliant pattern doesn't require giving up AI: the agent filters and ranks, **the human recruiter always signs**, everything is logged and candidates are informed.
 
 ## Why CV screening is 'high-risk'

@@ -1,6 +1,6 @@
 ---
-title: "AI Act e selezione del personale: cosa fare prima di agosto 2026"
-description: "L'AI Act classifica l'IA per la selezione del personale come sistema ad alto rischio. I 5 obblighi concreti (sorveglianza umana, informativa, log) per non rischiare multe."
+title: "AI Act e selezione del personale: gli obblighi 2026"
+description: "L'AI Act classifica l'IA per la selezione del personale come sistema ad alto rischio. I 5 obblighi (sorveglianza, informativa, log) per non rischiare multe."
 pubDate: 2026-06-23
 author: "Daniel Levis"
 tags:
@@ -21,18 +21,18 @@ faq:
   - q: "Usare l'IA per fare screening dei CV è davvero 'alto rischio' secondo l'AI Act?"
     a: "Sì. L'Allegato III del Regolamento classifica come <strong>alto rischio</strong> i sistemi IA usati per selezione, screening, valutazione e decisioni che influenzano significativamente assunzioni o avanzamenti. Il filtro automatico dei CV ricade dentro. Questo non vieta l'uso: impone obblighi specifici (sorveglianza umana, informativa, log, risk assessment)."
   - q: "Quali obblighi scattano da agosto 2026 per chi usa IA nel recruiting?"
-    a: "I principali sono cinque: <strong>sorveglianza umana effettiva</strong> sulle decisioni, <strong>informativa ai candidati</strong> che l'IA è coinvolta, <strong>logging immutabile</strong> di ogni decisione, un <strong>risk assessment documentato</strong> (con DPIA GDPR collegata) e la conservazione dei record. Va aggiunto il DPA art. 28 con il fornitore."
+    a: "I principali sono cinque: <strong>sorveglianza umana effettiva</strong> sulle decisioni, <strong>informativa ai candidati</strong> che l'IA è coinvolta, <strong>logging immutabile</strong> di ogni decisione, un <strong>risk assessment documentato</strong> (con DPIA GDPR collegata) e la conservazione dei record. Va aggiunto il DPA art. 28 con il fornitore. Nota: i sistemi già in uso prima del 2 agosto 2026 hanno una finestra di adeguamento più lunga; per un nuovo progetto la data di riferimento è agosto 2026."
   - q: "Se compro un software ATS con IA integrata, la responsabilità è del vendor?"
     a: "No, non tutta. Il fornitore è il 'provider', ma tu che lo usi sei il <strong>deployer</strong> e hai obblighi tuoi: garantire la sorveglianza umana, informare i candidati, conservare i log, usarlo nei limiti previsti. Verifica per iscritto cosa copre il vendor e cosa resta a te."
   - q: "Quali sono le multe previste dall'AI Act?"
-    a: "Per le violazioni gravi l'AI Act prevede sanzioni fino a <strong>35 milioni di euro o il 7% del fatturato annuo mondiale</strong>, a seconda di quale sia maggiore. Per gli obblighi sui sistemi ad alto rischio le soglie sono inferiori ma comunque significative. Per le PMI sono previste proporzionalità e massimali ridotti."
+    a: "L'AI Act (Regolamento UE 2024/1689, art. 99) prevede più fasce. Per le pratiche vietate si arriva fino a <strong>35 milioni di euro o il 7% del fatturato mondiale</strong>; per la violazione degli obblighi sui sistemi ad alto rischio — la fascia che riguarda il recruiting — fino a <strong>15 milioni di euro o il 3% del fatturato mondiale annuo</strong>, a seconda di quale sia maggiore. Per le PMI sono previste proporzionalità e massimali ridotti."
   - q: "Devo smettere di usare l'IA nel recruiting per essere conforme?"
     a: "No. L'IA resta permessa per lo screening ad alto rischio, a patto di rispettare gli obblighi. Il pattern conforme è: l'agente <strong>filtra e ordina</strong>, il recruiter umano firma sempre la decisione, ogni passaggio è loggato e i candidati sono informati. È esattamente come lavoriamo nei progetti recruitment."
 lang: "it"
-draft: true
+draft: false
 ---
 
-Da agosto 2026 l'AI Act è pienamente applicabile agli usi ad alto rischio. E se usi l'IA per fare screening dei CV o valutare candidati, ci sei dentro: l'**ai act selezione del personale** la classifica come sistema ad alto rischio.
+Dal 2 agosto 2026 scattano gli obblighi dell'AI Act per i sistemi ad alto rischio immessi sul mercato. E se usi l'IA per fare screening dei CV o valutare candidati, ci sei dentro: l'**ai act selezione del personale** la classifica come sistema ad alto rischio.
 
 Non è la guida generale all'AI Act (quella la trovi nella [guida AI Act per aziende](/guide/ai-act-aziende)). Qui parliamo solo dell'angolo HR/recruiting, dove gli obblighi sono i più pesanti per una PMI.
 
@@ -41,7 +41,7 @@ Non è la guida generale all'AI Act (quella la trovi nella [guida AI Act per azi
 - L'Allegato III dell'AI Act classifica l'IA per selezione, screening e valutazione del personale come **sistema ad alto rischio**: non è vietata, ma vincolata a obblighi specifici.
 - Gli obblighi concreti per chi la usa (il *deployer*) sono cinque: **sorveglianza umana effettiva, informativa ai candidati, logging immutabile, risk assessment documentato, conservazione record**.
 - Anche se compri un ATS con IA integrata, una parte della responsabilità resta tua: il vendor è il *provider*, tu sei il *deployer*.
-- Le sanzioni per le violazioni gravi arrivano fino a **35 milioni di euro o il 7% del fatturato mondiale**.
+- Le sanzioni per la violazione degli obblighi sui sistemi ad alto rischio (la fascia che riguarda il recruiting) arrivano fino a **15 milioni di euro o il 3% del fatturato mondiale annuo**.
 - Il pattern conforme non richiede di rinunciare all'IA: l'agente filtra e ordina, **il recruiter umano firma sempre**, tutto è loggato e i candidati sono informati.
 
 ## Perché lo screening CV è 'alto rischio'
