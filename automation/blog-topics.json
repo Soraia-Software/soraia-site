@@ -221,5 +221,179 @@
       "gap-list"
     ],
     "drafted_at": null
+  },
+  {
+    "id": "ai-act-recruiting-selezione-personale",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "ai-act-recruiting-selezione-personale-alto-rischio",
+    "slug_en": "ai-act-recruitment-high-risk-compliance",
+    "title_hint": "Usare l'IA per selezionare il personale dopo agosto 2026: perché è 'alto rischio' (e cosa serve per non prendere multe)",
+    "cluster": "compliance",
+    "primaryKeyword": "ai act selezione del personale",
+    "targetPersona": "Head of HR / COO",
+    "supportingCaseStudy": "apraise",
+    "internalLinkTargets": [
+      "/recruitment",
+      "/guide/ai-act-aziende",
+      "/case-studies/apraise"
+    ],
+    "dedupNotes": "Non è la guida generale 'AI Act per aziende' (owned): è l'angolo verticale HR/recruiting, che l'Allegato III classifica come sistema ad alto rischio con obblighi specifici (sorveglianza umana, informativa ai candidati, log). Non si sovrappone a 'agenti-ia-settori-regolamentati' (banking/insurance/sanità) né al pillar recruitment.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 82,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.85,
+      "winnability": 0.7,
+      "freshness": 0.95,
+      "geo": 0.85
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.besttechpartner.ai/2026/02/20/ai-act-risorse-umane-guida-operativa-alla-conformita-2026/",
+      "https://www.tomshw.it/aioperator/usare-ai-recruiting-multe-sanzioni-ai-act-gdpr-decreto-trasparenza",
+      "https://aipolicy.it/linee-guida-ai-act-alto-rischio-classificazione/"
+    ],
+    "discovered_at": "2026-06-23",
+    "drafted_at": null
+  },
+  {
+    "id": "chatbot-agente-ia-trasparenza-art50",
+    "status": "parked",
+    "archetype": "news-reaction",
+    "slug_it": "obbligo-trasparenza-chatbot-agente-ia-art-50",
+    "slug_en": "ai-act-chatbot-transparency-art50",
+    "title_hint": "Dal 2 agosto 2026 il tuo chatbot deve dire che è un'IA: cosa cambia (davvero) per l'assistenza clienti",
+    "cluster": "compliance",
+    "primaryKeyword": "obbligo trasparenza chatbot ai act",
+    "targetPersona": "COO / Head of Customer Support",
+    "supportingCaseStudy": "navily",
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/guide/ai-act-aziende"
+    ],
+    "dedupNotes": "Angolo operativo e datato (Art. 50 trasparenza + Digital Omnibus di giugno 2026) sui sistemi conversazionali e contenuti sintetici, distinto dalla guida generale AI Act. Tocca direttamente gli agenti IA di customer support/moderazione di Soraia: nessun post backlog copre disclosure, watermarking e audit trail per chatbot.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 78,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.8,
+      "winnability": 0.7,
+      "freshness": 0.95,
+      "geo": 0.85
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.agendadigitale.eu/sicurezza/obblighi-di-trasparenza-ai-act-cosa-devono-fare-le-aziende-dal-2-agosto-2026/",
+      "https://www.certifico.com/full-plus/ai-act-obblighi-per-le-imprese-dal-02-agosto-2026",
+      "https://truescreen.io/articles/eu-ai-act-transparency-obligations-businesses/"
+    ],
+    "discovered_at": "2026-06-23",
+    "drafted_at": null
+  },
+  {
+    "id": "ai-search-visibilita-pmi-geo",
+    "status": "parked",
+    "archetype": "pillar",
+    "slug_it": "farsi-citare-da-chatgpt-perplexity-pmi-geo",
+    "slug_en": "geo-get-cited-by-ai-search-smb",
+    "title_hint": "Come farsi citare da ChatGPT, Perplexity e Google AI Overviews: la GEO spiegata a una PMI (senza fuffa)",
+    "cluster": "ai-search",
+    "primaryKeyword": "farsi citare da chatgpt azienda",
+    "targetPersona": "CMO / CEO",
+    "supportingCaseStudy": "iltec",
+    "internalLinkTargets": [
+      "/ai-search-optimization",
+      "/case-studies/iltec",
+      "/software-development"
+    ],
+    "dedupNotes": "Tema GEO/AI-search assente dal blog e dalle guide owned (che coprono agenti, AI Act, consulenza, costi, formazione). È il funnel naturale del servizio AI Search Optimization e ad altissima citabilità verbatim dai motori AI; non duplica 'agenti IA vs ChatGPT Enterprise'.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 75,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.85,
+      "winnability": 0.55,
+      "freshness": 0.7,
+      "geo": 0.9
+    },
+    "sources": [
+      "topic-radar",
+      "https://noonic.com/risorse/guide/geo-vs-seo-ottimizzare-chatgpt-perplexity",
+      "https://www.everestinnovation.it/seo-google-ai-overviews-guida-2026/",
+      "https://www.gianlucalorenzini.com/generative-engine-optimization-guida/"
+    ],
+    "discovered_at": "2026-06-23",
+    "drafted_at": null
+  },
+  {
+    "id": "outbound-b2b-agente-ia-qualifica-lead",
+    "status": "parked",
+    "archetype": "opinion",
+    "slug_it": "outbound-b2b-2026-agente-ia-qualifica-lead",
+    "slug_en": "b2b-outbound-2026-ai-agent-lead-qualification",
+    "title_hint": "L'outbound B2B 'a freddo' non funziona più nel 2026: cosa fa al suo posto un agente IA che qualifica i lead",
+    "cluster": "sales-marketing",
+    "primaryKeyword": "agente ia qualifica lead b2b",
+    "targetPersona": "Head of Sales / CMO",
+    "supportingCaseStudy": "frh",
+    "internalLinkTargets": [
+      "/sales-marketing",
+      "/ai-agents",
+      "/case-studies/frh"
+    ],
+    "dedupNotes": "Verticale sales mai trattato nel backlog (che è su build-vs-buy, gestionali, Excel, automazione generica). Cavalca il trend 2026 'la lead gen classica è morta' con un angolo operativo su qualifica/arricchimento lead via agente IA; non si sovrappone a CRM su misura (parked) né ai temi owned.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 73,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.8,
+      "winnability": 0.6,
+      "freshness": 0.75,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://lamilano.it/tecnologia/outbound-b2b-nel-2026-perche-la-lead-generation-classica-non-funziona-piu-e-cosa-sta-prendendo-il-suo-posto/",
+      "https://www.escagency.it/migliori-agenzie-di-lead-generation-b2b-in-italia-2026-classificazione-ai-driven/"
+    ],
+    "discovered_at": "2026-06-23",
+    "drafted_at": null
+  },
+  {
+    "id": "fatturazione-elettronica-2026-automazione-finance",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "fatturazione-elettronica-2026-automazione-dati-fatture",
+    "slug_en": "e-invoicing-2026-invoice-data-automation",
+    "title_hint": "Fatturazione elettronica per tutti dal 2026: smetti di reinserire i dati a mano (estrazione e riconciliazione con agenti IA)",
+    "cluster": "process-automation",
+    "primaryKeyword": "automazione dati fatture elettroniche",
+    "targetPersona": "CFO / Head of Administration",
+    "supportingCaseStudy": "numeraria",
+    "internalLinkTargets": [
+      "/finance",
+      "/ai-agents",
+      "/case-studies/numeraria"
+    ],
+    "dedupNotes": "Fatturazione elettronica e document automation (estrazione PDF/fatture, riconciliazioni) non sono coperte da backlog né owned themes. Usa l'hook normativo (obbligo esteso a tutti i forfettari dal 2026) per portare al caso Numeraria e al cluster Finance; distinto da 'digitalizzare-processi-excel' che resta generico.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 71,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.7,
+      "winnability": 0.6,
+      "freshness": 0.9,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.fattureincloud.it/guida-fatturazione-elettronica-forfettario/obbligo-fattura-elettronica/",
+      "https://www.regime-forfettario.it/regime-forfettario-e-fatturazione-elettronica-novita-tecniche-e-consigli-operativi-per-il-2026/",
+      "https://www.neosperience.com/blog/contabilita-automazione-documenti-ai"
+    ],
+    "discovered_at": "2026-06-23",
+    "drafted_at": null
   }
 ]
