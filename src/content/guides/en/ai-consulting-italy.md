@@ -19,7 +19,7 @@ related:
 faq:
   - q: "How much does AI consulting cost in Italy?"
     a: "Typical 2026 ranges: <strong>initial assessment €1,500–3,000</strong>, build sprint <strong>€10,000–50,000</strong>, ongoing retainer <strong>€3,000–15,000/month</strong>. Rates vary by scope, regulated sector (recruitment, finance), and number of integrations. For the full breakdown see the <a href='/en/guide/ai-consulting-costs'>guide on AI consulting costs</a>."
-  - q: "Big4 or specialist agency — which is better?"
+  - q: "Big4 or specialist agency, which is better?"
     a: "For an Italian SME with 10–200 employees, a specialist agency almost always wins: <strong>4 weeks vs 6–12 months</strong>, price 1/3–1/10, direct CEO-to-CEO accountability (at the Big4 you deal with a junior). The Big4 make sense for multi-country, multi-stakeholder enterprise projects with heavy compliance requirements."
   - q: "Is it better to go with an Italian or a foreign partner?"
     a: "Italian wins for: understanding Italian SMEs (family governance, informal decision-making), Italian GDPR/AI Act compliance, time zone alignment, and language on operational team calls. Foreign wins for: very cutting-edge tech projects, price in LATAM/Eastern Europe regions (with coordination trade-offs)."
@@ -32,7 +32,7 @@ faq:
   - q: "How many AI consultancies should I talk to before choosing?"
     a: "<strong>3 comparisons</strong> is the sweet spot. Fewer than 2 and you have no benchmark. More than 4 and you start getting confused and dragging out the decision. Aim for 1 Big4, 1 specialist agency, and 1 indie/freelance to get the full triangle."
   - q: "What happens if the AI consulting engagement fails?"
-    a: "It depends on the contract. Without an explicit guarantee: you pay for the time spent regardless. With a 'no result, no fee' guarantee (e.g. Soraia): you don't pay for the sprint, or you receive a full refund. <strong>Check this clause before signing</strong> — it's the single most important item in the contract."
+    a: "It depends on the contract. Without an explicit guarantee: you pay for the time spent regardless. With a 'no result, no fee' guarantee (e.g. Soraia): you don't pay for the sprint, or you receive a full refund. <strong>Check this clause before signing</strong>, it's the single most important item in the contract."
 ---
 
 In Italy in 2026, demand for AI consulting has exploded: in 18 months, hundreds of "AI agencies", consultants, and freelancers have emerged promising to bring artificial intelligence into businesses. Quality varies enormously, promises are often unsustainable, and a SME CEO has about 30 minutes to figure out who is worth their time and who is not.
@@ -113,7 +113,7 @@ After evaluating dozens of pitches and delivering just as many projects, these a
 
 ### 1. Verifiable Track Record (Not Marketing Slides)
 
-Ask for **3 case studies with contactable stakeholders**. A credible provider gives them to you immediately. A weak one sends generic PDFs — "we've worked with major brands" — with no names.
+Ask for **3 case studies with contactable stakeholders**. A credible provider gives them to you immediately. A weak one sends generic PDFs, "we've worked with major brands", with no names.
 
 Direct verification: call 1–2 of those clients. A 15-minute conversation tells you everything: did they deliver results? Is the relationship solid? Would they work together again?
 
@@ -134,7 +134,7 @@ A credible provider proposes a **paid assessment** (€1,500–3,000) that is **
 - You pay for something of concrete value (a report that's yours to keep even if you don't proceed).
 - The refund aligns incentives: the provider won't sell you a sprint that doesn't make sense, because doing so would cost them a serious client.
 
-A provider who runs free demos without an assessment wants to sell at all costs — and usually isn't worth it.
+A provider who runs free demos without an assessment wants to sell at all costs, and usually isn't worth it.
 
 ### 4. Your Code, No Lock-In
 
@@ -143,11 +143,11 @@ Check the contract: **who owns the agent's code?**
 - Credible provider: the code belongs to the client from week one. If you want to internalize later, they provide training and documentation.
 - Weak provider: the code remains the provider's property and you pay a growing annual "subscription" to access it.
 
-The second model is disguised lock-in. Avoid it. Soraia, for example, transfers the code from week one — this is a market standard you should demand.
+The second model is disguised lock-in. Avoid it. Soraia, for example, transfers the code from week one, this is a market standard you should demand.
 
 ### 5. Understanding Italian SME Culture
 
-A provider who doesn't understand how an Italian SME operates — family governance, informal decisions, real budgets under €100k, monthly cash-flow pressure — will burn the first sprint in misunderstandings.
+A provider who doesn't understand how an Italian SME operates, family governance, informal decisions, real budgets under €100k, monthly cash-flow pressure, will burn the first sprint in misunderstandings.
 
 Useful questions during the selection process:
 
@@ -157,15 +157,15 @@ Useful questions during the selection process:
 
 ## The 7 Red Flags to Avoid
 
-A provider with at least 2 of these — walk away.
+A provider with at least 2 of these, walk away.
 
 **1. "Wow" demos only, zero real numbers.** They show you an agent that works perfectly but won't tell you how many real clients are running it in production, or how often it fails.
 
-**2. "We build AI agents in 24 hours with n8n/Make."** For very straightforward workflows, this may be plausible. For anything with serious integrations, governance, or compliance — it's a red flag.
+**2. "We build AI agents in 24 hours with n8n/Make."** For very straightforward workflows, this may be plausible. For anything with serious integrations, governance, or compliance, it's a red flag.
 
 **3. They refuse to sign a GDPR Art. 28 DPA.** This means their infrastructure is not ready. This puts your clients' data at risk.
 
-**4. Hosting exclusively in the US, no EU option.** For many sectors (HR, finance, healthcare), GDPR requires EU hosting or specific transfer agreements. A provider who says "it's not a problem" without explaining how — it is a problem.
+**4. Hosting exclusively in the US, no EU option.** For many sectors (HR, finance, healthcare), GDPR requires EU hosting or specific transfer agreements. A provider who says "it's not a problem" without explaining how, it is a problem.
 
 **5. 100% time-and-material pricing with no cap.** They sell hours with no commitment to results. All the risk sits with you.
 
@@ -177,22 +177,22 @@ A provider with at least 2 of these — walk away.
 
 A solid AI sprint quote should contain these 8 sections:
 
-1. **Context** — a summary of the client's problem (1 page), output of the assessment.
-2. **Exact scope** — what's in, what's out, when the agent handles something vs when it escalates to a human.
-3. **Primary metric** — one single number, a quantitative target, a measurement window.
-4. **Timeline with milestones** — week 1 / 2 / 3 / 4 + 30-day hypercare.
-5. **Split pricing** — assessment / build / hypercare itemised separately, clear total, payment plan.
-6. **Team** — who will work on the project (name + role + dedicated vs part-time).
-7. **Code clause** — from when the code belongs to the client, in what format, and how the transfer happens.
-8. **Legal annexes** — GDPR Art. 28 DPA, confidentiality agreement, guarantee where applicable.
+1. **Context**, a summary of the client's problem (1 page), output of the assessment.
+2. **Exact scope**, what's in, what's out, when the agent handles something vs when it escalates to a human.
+3. **Primary metric**, one single number, a quantitative target, a measurement window.
+4. **Timeline with milestones**, week 1 / 2 / 3 / 4 + 30-day hypercare.
+5. **Split pricing**, assessment / build / hypercare itemised separately, clear total, payment plan.
+6. **Team**, who will work on the project (name + role + dedicated vs part-time).
+7. **Code clause**, from when the code belongs to the client, in what format, and how the transfer happens.
+8. **Legal annexes**, GDPR Art. 28 DPA, confidentiality agreement, guarantee where applicable.
 
-A quote that skips one of these sections — ask for clarification. A quote that skips 3 or more — walk away.
+A quote that skips one of these sections, ask for clarification. A quote that skips 3 or more, walk away.
 
 ## How to Choose in Practice
 
 The process that works for an Italian SME with 10–200 employees:
 
-1. **Define the priority use case** (e.g. "recruitment candidate screening"). Don't ask for "general AI consulting" — it can't be evaluated.
+1. **Define the priority use case** (e.g. "recruitment candidate screening"). Don't ask for "general AI consulting", it can't be evaluated.
 2. **Talk to 3 providers** (1 Big4 for a sanity check, 2 specialist agencies). Skip freelancers if this is your first agent.
 3. **Run a paid assessment with the one you're most convinced by**. €1,500–3,000 is an investment, not a cost.
 4. **Compare the assessment outputs** if you ran 2. The one that's more operational, with a measured baseline, wins.
@@ -205,7 +205,7 @@ Full disclosure: this guide is written by Soraia, an Italian AI agency 100% focu
 
 **1. €1,900 assessment, refunded if you proceed.** Skin in the game on both sides.
 
-**2. "If it doesn't work, you don't pay" guarantee written into the contract.** This is not marketing — it is an operational clause with a primary metric and a measurement window.
+**2. "If it doesn't work, you don't pay" guarantee written into the contract.** This is not marketing, it is an operational clause with a primary metric and a measurement window.
 
 **3. Client code from week one.** Zero lock-in. If you want to internalize later, we provide training and documentation.
 

@@ -46,7 +46,7 @@ Honest answer: the compliance officer is right about some things and wrong about
 
 ## What "AI agent in a regulated sector" means
 
-An AI agent in a regulated sector is a software system that runs tasks autonomously (reads, evaluates, acts) inside an organization subject to sector-specific rules — banking, insurance, healthcare — where automated decisions are constrained by the AI Act, GDPR and supervisory regulation. The key distinction isn't technical: it's who bears the effect of the decision.
+An AI agent in a regulated sector is a software system that runs tasks autonomously (reads, evaluates, acts) inside an organization subject to sector-specific rules, banking, insurance, healthcare, where automated decisions are constrained by the AI Act, GDPR and supervisory regulation. The key distinction isn't technical: it's who bears the effect of the decision.
 
 Put bluntly: the exact same agent can be perfectly legal or banned, depending on what it decides and on whom.
 
@@ -54,9 +54,9 @@ Put bluntly: the exact same agent can be perfectly legal or banned, depending on
 
 The AI Act sorts systems into four risk levels (we mapped them in detail in our [AI Act guide for businesses](/en/guide/ai-act-for-business)). For regulated sectors the operational boundary is a single one.
 
-**If the agent decides or significantly influences a person** — granting a mortgage, setting a policy premium, accepting a claim, triaging a patient — you're in **high risk**. Full stop. No shortcuts.
+**If the agent decides or significantly influences a person**, granting a mortgage, setting a policy premium, accepting a claim, triaging a patient, you're in **high risk**. Full stop. No shortcuts.
 
-**If the agent works on documents, data and internal processes** without deciding on people — reconciliations, invoice extraction, reports, archiving — you're in **minimal risk**.
+**If the agent works on documents, data and internal processes** without deciding on people, reconciliations, invoice extraction, reports, archiving, you're in **minimal risk**.
 
 This single criterion settles 80% of the compliance officer's doubts.
 
@@ -90,11 +90,11 @@ Here the data is sensitive under GDPR and many diagnostic-support systems fall i
 
 ## The practical case: where safe automation always starts
 
-The lowest-risk entry point, in any regulated sector, is internal document automation — exactly the ground our [finance and document automation](/en/finance) work covers.
+The lowest-risk entry point, in any regulated sector, is internal document automation, exactly the ground our [finance and document automation](/en/finance) work covers.
 
 At [Numeraria](/en/case-studies/numeraria), a payroll and accounting firm working inside tight compliance constraints, AI agents handle quotes, hours and reconciliations. Result: roughly **half a month given back to management**. No decisions on people, no binding output to third parties: minimal risk, immediate value.
 
-That's the model we recommend: start from low-risk document automation, build the governance, and only then — if needed — assess the high-risk level with all the safeguards.
+That's the model we recommend: start from low-risk document automation, build the governance, and only then, if needed, assess the high-risk level with all the safeguards.
 
 ## The non-negotiable foundations
 

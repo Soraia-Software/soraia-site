@@ -25,7 +25,7 @@ faq:
   - q: "Se compro un software ATS con IA integrata, la responsabilità è del vendor?"
     a: "No, non tutta. Il fornitore è il 'provider', ma tu che lo usi sei il <strong>deployer</strong> e hai obblighi tuoi: garantire la sorveglianza umana, informare i candidati, conservare i log, usarlo nei limiti previsti. Verifica per iscritto cosa copre il vendor e cosa resta a te."
   - q: "Quali sono le multe previste dall'AI Act?"
-    a: "L'AI Act (Regolamento UE 2024/1689, art. 99) prevede più fasce. Per le pratiche vietate si arriva fino a <strong>35 milioni di euro o il 7% del fatturato mondiale</strong>; per la violazione degli obblighi sui sistemi ad alto rischio — la fascia che riguarda il recruiting — fino a <strong>15 milioni di euro o il 3% del fatturato mondiale annuo</strong>, a seconda di quale sia maggiore. Per le PMI sono previste proporzionalità e massimali ridotti."
+    a: "L'AI Act (Regolamento UE 2024/1689, art. 99) prevede più fasce. Per le pratiche vietate si arriva fino a <strong>35 milioni di euro o il 7% del fatturato mondiale</strong>; per la violazione degli obblighi sui sistemi ad alto rischio, la fascia che riguarda il recruiting, fino a <strong>15 milioni di euro o il 3% del fatturato mondiale annuo</strong>, a seconda di quale sia maggiore. Per le PMI sono previste proporzionalità e massimali ridotti."
   - q: "Devo smettere di usare l'IA nel recruiting per essere conforme?"
     a: "No. L'IA resta permessa per lo screening ad alto rischio, a patto di rispettare gli obblighi. Il pattern conforme è: l'agente <strong>filtra e ordina</strong>, il recruiter umano firma sempre la decisione, ogni passaggio è loggato e i candidati sono informati. È esattamente come lavoriamo nei progetti recruitment."
 lang: "it"
@@ -50,7 +50,7 @@ L'AI Act non guarda alla tecnologia, guarda all'**impatto sulle persone**. L'All
 
 Un agente che legge 500 CV e ti restituisce una shortlist ranking ricade qui. Non perché "decida" da solo, ma perché **influenza** una decisione che riguarda la vita lavorativa di una persona. È questo il criterio.
 
-Attenzione al malinteso più comune: "ma noi l'output lo controlla un umano". Bene, è necessario — ma da solo non ti tira fuori dall'alto rischio. Riduce il rischio operativo, non cambia la classificazione.
+Attenzione al malinteso più comune: "ma noi l'output lo controlla un umano". Bene, è necessario, ma da solo non ti tira fuori dall'alto rischio. Riduce il rischio operativo, non cambia la classificazione.
 
 ## I 5 obblighi concreti per il deployer
 
@@ -64,7 +64,7 @@ I candidati devono sapere che un sistema IA è coinvolto nel processo. In Italia
 
 ### 3. Logging immutabile
 
-Ogni decisione dell'agente va loggata: input ricevuto, regole applicate, output prodotto, eventuale escalation a un umano. Deve essere **immutabile** e conservato. Senza log, non puoi rispondere alla domanda "perché questo candidato è stato escluso?" — e quella domanda, prima o poi, arriva.
+Ogni decisione dell'agente va loggata: input ricevuto, regole applicate, output prodotto, eventuale escalation a un umano. Deve essere **immutabile** e conservato. Senza log, non puoi rispondere alla domanda "perché questo candidato è stato escluso?", e quella domanda, prima o poi, arriva.
 
 ### 4. Risk assessment documentato (+ DPIA)
 
@@ -90,12 +90,12 @@ Nei progetti recruitment trattiamo sempre lo screening come alto rischio. Concre
 - Informativa ai candidati e DPIA come deliverable.
 - Hosting UE e DPA art. 28 nel contratto.
 
-È lo stesso schema con cui in [APraise](/case-studies/apraise) l'agente ha gestito 100k+ candidati — equivalente a 4 recruiter aggiuntivi — senza mai prendere da solo la decisione finale. Volume gestito dall'IA, decisione in mano all'umano: è proprio questo che tiene insieme efficienza e conformità.
+È lo stesso schema con cui in [APraise](/case-studies/apraise) l'agente ha gestito 100k+ candidati, equivalente a 4 recruiter aggiuntivi, senza mai prendere da solo la decisione finale. Volume gestito dall'IA, decisione in mano all'umano: è proprio questo che tiene insieme efficienza e conformità.
 
 Vuoi capire dove ricade il tuo processo e cosa ti manca? Guarda i nostri use case [Recruitment & HR](/recruitment) o [parliamone](/parliamone) 20 minuti, senza pitch.
 
 ## Quando NON ti serve un progetto custom
 
-Onestà: se assumi 5 persone l'anno e leggi i CV a mano, **non ti serve un agente di screening** — e quindi non ti serve nemmeno questa compliance pesante. L'alto rischio scatta quando l'IA entra nel processo. Se il volume è basso, il rischio operativo non giustifica né l'agente né il suo apparato di governance.
+Onestà: se assumi 5 persone l'anno e leggi i CV a mano, **non ti serve un agente di screening**, e quindi non ti serve nemmeno questa compliance pesante. L'alto rischio scatta quando l'IA entra nel processo. Se il volume è basso, il rischio operativo non giustifica né l'agente né il suo apparato di governance.
 
 Questo cambia sopra le decine di candidature a posizione: lì l'IA fa la differenza, e va fatta a norma.

@@ -22,17 +22,17 @@ faq:
   - q: "Onsite, online, or hybrid: what works best?"
     a: "<strong>Onsite wins for the Foundation level</strong> (mindset change requires physical presence) and for intensive adoption workshops. <strong>Online works well for the Technical level</strong> (developers are comfortable with remote learning). <strong>Hybrid (onsite kick-off + online follow-up) is the sweet spot</strong> for 3-6 month programmes."
   - q: "How long does knowledge transfer last after an AI course?"
-    a: "If training is <strong>theory-only</strong>: 4-6 weeks before 70% is forgotten. If training includes <strong>hands-on work on the client's real processes</strong> plus 30/60/90-day follow-up: adoption remains sustainable long-term. The difference is enormous — transfer depends on practice, not slides."
+    a: "If training is <strong>theory-only</strong>: 4-6 weeks before 70% is forgotten. If training includes <strong>hands-on work on the client's real processes</strong> plus 30/60/90-day follow-up: adoption remains sustainable long-term. The difference is enormous, transfer depends on practice, not slides."
   - q: "How do you measure whether AI training actually worked?"
     a: "<strong>3 concrete metrics</strong>: (1) % of the team actively using AI in specific workflows at 60 days (target: 60-80%); (2) number of new workflows proposed by the team after training (target: 5-15 for a 20-person team); (3) declared hours saved per person per week (verify with a timed sample). Without these metrics, every training programme 'went well' on paper."
-  - q: "Senior staff don't want to use AI — what should you do?"
-    a: "A pattern seen 30+ times. Solutions that work: (1) <strong>start with middle managers</strong>, not senior staff — they are natural early adopters and bring the seniors along; (2) <strong>run workshops using their own use cases</strong>, not abstract ones; (3) <strong>celebrate quick wins publicly</strong>; (4) <strong>NO top-down mandates</strong>. Replace 'you must use AI' with 'let us show you what's possible'."
+  - q: "Senior staff don't want to use AI, what should you do?"
+    a: "A pattern seen 30+ times. Solutions that work: (1) <strong>start with middle managers</strong>, not senior staff, they are natural early adopters and bring the seniors along; (2) <strong>run workshops using their own use cases</strong>, not abstract ones; (3) <strong>celebrate quick wins publicly</strong>; (4) <strong>NO top-down mandates</strong>. Replace 'you must use AI' with 'let us show you what's possible'."
   - q: "What must a serious Foundation AI training programme cover?"
     a: "5 minimum modules: (1) <strong>What AI is and what it isn't</strong> (anti-hype, anti-fear); (2) <strong>Effective prompting</strong> for your own tasks; (3) <strong>Company AI tool</strong> (ChatGPT/Copilot/Claude) used safely and GDPR-compliantly; (4) <strong>Team-specific workflows</strong> with concrete examples; (5) <strong>Limits and guardrails</strong> (what NOT to use AI for, how to handle errors, escalation). Bonus: an introduction to the AI Act."
   - q: "Can I run AI training in-house with internal resources?"
     a: "Yes, if you have: (1) someone in the company with AI experience AND teaching ability AND dedicated time (rare); (2) workflows already mapped and best practices documented. For the <strong>first serious adoption round</strong> in a company, an external partner plus internal knowledge transfer is 3-5x faster and less risky."
   - q: "How long does it take to train a team of 20 people?"
-    a: "<strong>Foundation</strong>: 1-2 intensive days + 30 days of follow-up. <strong>Advanced Business</strong>: 3-5 days spread over 4-8 weeks. <strong>Full programme with adoption monitoring</strong>: 3-6 months. The critical part is not workshop time — it is the <strong>post-workshop follow-up</strong>: without it, training decays within the first 4 weeks."
+    a: "<strong>Foundation</strong>: 1-2 intensive days + 30 days of follow-up. <strong>Advanced Business</strong>: 3-5 days spread over 4-8 weeks. <strong>Full programme with adoption monitoring</strong>: 3-6 months. The critical part is not workshop time, it is the <strong>post-workshop follow-up</strong>: without it, training decays within the first 4 weeks."
 ---
 
 70% of AI projects inside companies fail not because of technical limitations, but because **the team does not adopt the tool**. You can build the most sophisticated agent in the world: if your recruiters, accountants, and support agents don't actually use it in their daily work, the value is zero.
@@ -53,7 +53,7 @@ The operational conclusion: for every euro spent building an AI agent, you shoul
 
 There is no single "universal AI course". There are 3 distinct levels, each with a different audience, content, and delivery format.
 
-### Level 1 — Foundation (for the whole team)
+### Level 1, Foundation (for the whole team)
 
 **Target**: all company staff, regardless of role.
 
@@ -67,7 +67,7 @@ There is no single "universal AI course". There are 3 distinct levels, each with
 
 **Expected output**: the team actively uses ChatGPT/Copilot/Claude for their standard tasks after 60 days. Measurable adoption: 60-80% of the team with at least 1 AI use per week.
 
-### Level 2 — Advanced Business (for managers and power users)
+### Level 2, Advanced Business (for managers and power users)
 
 **Target**: middle managers, team leads, power users across every function (HR, finance, marketing, sales, support).
 
@@ -81,9 +81,9 @@ There is no single "universal AI course". There are 3 distinct levels, each with
 
 **Expected output**: 5-15 specific workflows proposed by the team after the course, of which 2-5 are actually implemented.
 
-### Level 3 — Technical (for developers and the tech team)
+### Level 3, Technical (for developers and the tech team)
 
-**Target**: developers, data engineers, IT staff — anyone who needs to build or maintain AI agents in code or company integrations.
+**Target**: developers, data engineers, IT staff, anyone who needs to build or maintain AI agents in code or company integrations.
 
 **Goal**: teach advanced prompt engineering, LLM model integration via API, RAG (retrieval-augmented generation), fine-tuning, agent orchestration, governance, and audit logging.
 
@@ -109,23 +109,23 @@ There is no single "universal AI course". There are 3 distinct levels, each with
 
 The 5 minimum modules (Foundation level) you should demand from any partner:
 
-### Module 1 — What AI Is and What It Isn't
+### Module 1, What AI Is and What It Isn't
 
 Anti-hype and anti-fear. Dismantle the myth "AI will replace your job" with real data (BLS, McKinsey, Italian SMB examples). Dismantle the myth "AI performs miracles" with concrete examples of AI failures (hallucinations, bias, contextual limitations).
 
-### Module 2 — Effective Prompting for Your Own Tasks
+### Module 2, Effective Prompting for Your Own Tasks
 
 Hands-on work with participants' real tasks. Not "let's write a haiku", but "let's write the follow-up email to client Y", "let's summarise the 30 applications received today", "let's extract the key data from this PDF contract".
 
-### Module 3 — Safe Use of the Company AI Tool
+### Module 3, Safe Use of the Company AI Tool
 
 Which tool to use (ChatGPT Team / Copilot / Claude Enterprise), how to use it in a GDPR-compliant way (never input sensitive personal data without a DPA, no passwords, no confidential client information). Practical setup of company accounts, login, and team sharing.
 
-### Module 4 — Team-Specific Workflows
+### Module 4, Team-Specific Workflows
 
-A session customised for each business function: the HR team sees prompts and workflows for their work, the marketing team sees theirs, the finance team sees theirs. No generic slides — examples built around the team's actual work.
+A session customised for each business function: the HR team sees prompts and workflows for their work, the marketing team sees theirs, the finance team sees theirs. No generic slides, examples built around the team's actual work.
 
-### Module 5 — Limits, Guardrails, and Escalation
+### Module 5, Limits, Guardrails, and Escalation
 
 What NOT to use AI for (final decisions about people, legally binding content without review, etc.). How to recognise an AI error. When to escalate to a human. An introduction to the AI Act for managers who need to be aware.
 
@@ -178,7 +178,7 @@ The ultimate business metric. Measurable via:
 
 Target: varies by level; for Foundation we aim for **3-5 hours per person per week** recovered on repetitive tasks.
 
-## Senior Staff Don't Want to Use AI — What to Do
+## Senior Staff Don't Want to Use AI, What to Do
 
 A classic pattern at Italian SMBs: middle management (aged 30-45) is enthusiastic; senior staff (aged 50-65) feel threatened or think "this isn't for me".
 
@@ -190,7 +190,7 @@ Solutions that work (tested across 30+ Soraia clients):
 
 **3. Celebrate quick wins publicly.** "Marco saved 8 hours this week using the screening agent." Public recognition in team meetings. More effective than any course.
 
-**4. NEVER use top-down mandates.** "From Monday everyone must use AI" is the perfect way to generate resistance. Replace it with "let us show you what's possible — you choose what to adopt".
+**4. NEVER use top-down mandates.** "From Monday everyone must use AI" is the perfect way to generate resistance. Replace it with "let us show you what's possible, you choose what to adopt".
 
 ## How Soraia Handles AI Adoption
 

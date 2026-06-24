@@ -16,13 +16,13 @@ stakeholder:
   name: "Gabriella Bruzzone"
   role: "CMO"
   photo: "/testimonials/gabriella-bruzzone-stars.webp"
-heroQuote: "The AI agent handles applicants for us — and does it better: <1-minute response time, consistent tone, zero candidates lost."
+heroQuote: "The AI agent handles applicants for us, and does it better: <1-minute response time, consistent tone, zero candidates lost."
 shortQuote: "20k+ applicants managed by the AI agent. <1-minute response time, zero dropped."
 teaser:
-  problem: "Thousands of applicants registering for casting every month. Manual responses — confirmations, document requests, audition results — were consuming the team's entire day."
+  problem: "Thousands of applicants registering for casting every month. Manual responses, confirmations, document requests, audition results, were consuming the team's entire day."
   action: "A dedicated AI agent that receives each application, qualifies the profile, responds with the right message in the brand's tone, updates status in real time, and only escalates the cases that truly need a human."
   resultMetric: "20,000+ applicants managed · 200,000+ communications sent by the agent"
-  resultBody: "The marketing team now focuses on positioning and creative work — not answering emails one by one."
+  resultBody: "The marketing team now focuses on positioning and creative work, not answering emails one by one."
 stats:
   - value: "20,000+"
     label: "Applicants managed"
@@ -67,7 +67,7 @@ The business runs on **speed and casting quality**: respond fast to the right ca
 
 ## The real problem
 
-Growth had broken the old system: candidate registrations scattered across Excel sheets, Google Forms, and manual emails. The marketing team — whose job was positioning, brand, and partnerships — was spending entire days:
+Growth had broken the old system: candidate registrations scattered across Excel sheets, Google Forms, and manual emails. The marketing team, whose job was positioning, brand, and partnerships, was spending entire days:
 
 - Confirming received applications
 - Chasing missing documents (CVs, photos, videos)
@@ -75,7 +75,7 @@ Growth had broken the old system: candidate registrations scattered across Excel
 - Communicating outcomes (accepted, waitlisted, rejected) in a tone that wouldn't damage the brand
 - Manually updating each candidate's status
 
-At peak casting season (January–April for the summer season), thousands of applications came in within just a few weeks. Many candidates went days without a reply and disappeared. GDPR retention wasn't compliant — data was sitting in spreadsheets with no clear policy.
+At peak casting season (January–April for the summer season), thousands of applications came in within just a few weeks. Many candidates went days without a reply and disappeared. GDPR retention wasn't compliant, data was sitting in spreadsheets with no clear policy.
 
 ## What the AI agent did
 
@@ -91,7 +91,7 @@ The tone of voice was trained on the team's historical responses so that candida
 
 ## Results
 
-**20,000+ applicants managed** by the AI agent since go-live (and growing — the system is live in production today).
+**20,000+ applicants managed** by the AI agent since go-live (and growing, the system is live in production today).
 
 **200,000+ communications** sent by the agent: an average of 10 touchpoints per candidate across the full funnel.
 

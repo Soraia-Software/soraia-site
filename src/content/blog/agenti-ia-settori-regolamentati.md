@@ -46,7 +46,7 @@ Risposta onesta: il compliance officer ha ragione su alcune cose e torto su altr
 
 ## Cosa significa "agente IA in settore regolamentato"
 
-Un agente IA in settore regolamentato è un sistema software che esegue task in autonomia (legge, valuta, agisce) dentro un'organizzazione soggetta a regole specifiche di settore — banking, insurance, sanità — dove le decisioni automatizzate sono vincolate da AI Act, GDPR e normativa di vigilanza. La distinzione chiave non è tecnica: è chi subisce l'effetto della decisione.
+Un agente IA in settore regolamentato è un sistema software che esegue task in autonomia (legge, valuta, agisce) dentro un'organizzazione soggetta a regole specifiche di settore, banking, insurance, sanità, dove le decisioni automatizzate sono vincolate da AI Act, GDPR e normativa di vigilanza. La distinzione chiave non è tecnica: è chi subisce l'effetto della decisione.
 
 Detto in modo brutale: lo stesso identico agente può essere perfettamente legale o vietato, a seconda di cosa decide e su chi.
 
@@ -54,9 +54,9 @@ Detto in modo brutale: lo stesso identico agente può essere perfettamente legal
 
 L'AI Act classifica i sistemi in quattro livelli di rischio (li abbiamo mappati in dettaglio nella [guida AI Act per aziende](/guide/ai-act-aziende)). Per i settori regolamentati il confine operativo è uno solo.
 
-**Se l'agente decide o influenza significativamente una persona** — concedere un mutuo, fissare il premio di una polizza, accettare un claim, fare triage di un paziente — sei in **rischio alto**. Punto. Niente scorciatoie.
+**Se l'agente decide o influenza significativamente una persona**, concedere un mutuo, fissare il premio di una polizza, accettare un claim, fare triage di un paziente, sei in **rischio alto**. Punto. Niente scorciatoie.
 
-**Se l'agente lavora su documenti, dati e processi interni** senza decidere su persone — riconciliazioni, estrazione fatture, report, archiviazione — sei in **rischio minimo**.
+**Se l'agente lavora su documenti, dati e processi interni** senza decidere su persone, riconciliazioni, estrazione fatture, report, archiviazione, sei in **rischio minimo**.
 
 Questo unico criterio risolve l'80% dei dubbi del compliance officer.
 
@@ -90,11 +90,11 @@ Qui i dati sono sensibili ai sensi del GDPR e molti sistemi di supporto diagnost
 
 ## Il caso pratico: dove parte sempre l'automazione sicura
 
-Il punto di ingresso meno rischioso, in qualsiasi settore regolamentato, è l'automazione documentale interna — esattamente il terreno del nostro lavoro su [finance e document automation](/finance).
+Il punto di ingresso meno rischioso, in qualsiasi settore regolamentato, è l'automazione documentale interna, esattamente il terreno del nostro lavoro su [finance e document automation](/finance).
 
 Su [Numeraria](/case-studies/numeraria), studio di paghe e contabilità che lavora dentro vincoli di compliance stringenti, gli agenti IA gestiscono preventivi, ore e riconciliazioni. Risultato: circa **metà mese restituito al management**. Nessuna decisione su persone, nessun output vincolante verso terzi: rischio minimo, valore immediato.
 
-È il modello che consigliamo: si parte dall'automazione documentale a basso rischio, si costruisce la governance, e solo dopo — se serve — si valuta il livello alto con tutte le tutele.
+È il modello che consigliamo: si parte dall'automazione documentale a basso rischio, si costruisce la governance, e solo dopo, se serve, si valuta il livello alto con tutte le tutele.
 
 ## Le fondamenta non negoziabili
 

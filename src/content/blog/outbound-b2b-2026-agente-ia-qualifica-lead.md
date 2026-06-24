@@ -20,7 +20,7 @@ faq:
   - q: "L'outbound a freddo è davvero morto nel 2026?"
     a: "No, ma il volume puro rende molto meno. Le caselle sono sature e i filtri sempre più aggressivi. Quello che funziona è meno contatti, ma molto più qualificati e arricchiti. Un <strong>agente IA che qualifica i lead</strong> sposta il lavoro a monte: arriva al venditore solo chi ha senso contattare."
   - q: "Cosa fa concretamente un agente IA per la qualifica lead?"
-    a: "Un agente IA per la qualifica lead esegue un flusso in 4 passi: 1) <strong>Trigger</strong> — riceve un nuovo lead da form, lista importata o segnale di intent; 2) <strong>Enrichment</strong> — arricchisce il contatto da più fonti (dimensione azienda, settore, ruolo, segnali di crescita); 3) <strong>Scoring</strong> — applica le tue regole di scoring, non un punteggio generico, per dire chi è in target; 4) <strong>Routing</strong> — passa al venditore solo i lead sopra soglia, con un dossier già pronto, mentre i lead sotto soglia vengono scartati o messi in nurturing, senza occupare tempo umano."
+    a: "Un agente IA per la qualifica lead esegue un flusso in 4 passi: 1) <strong>Trigger</strong>, riceve un nuovo lead da form, lista importata o segnale di intent; 2) <strong>Enrichment</strong>, arricchisce il contatto da più fonti (dimensione azienda, settore, ruolo, segnali di crescita); 3) <strong>Scoring</strong>, applica le tue regole di scoring, non un punteggio generico, per dire chi è in target; 4) <strong>Routing</strong>, passa al venditore solo i lead sopra soglia, con un dossier già pronto, mentre i lead sotto soglia vengono scartati o messi in nurturing, senza occupare tempo umano."
   - q: "Quando NON serve un agente per la qualifica lead?"
     a: "Se fai meno di 30-40 lead a settimana e il tuo ciclo è basato su poche trattative enterprise dove ogni contatto è già curato a mano, un agente non sposta l'ago. Lì serve un buon venditore, non automazione. Lo diciamo chiaramente prima di partire."
   - q: "L'arricchimento automatico dei lead è conforme al GDPR?"
@@ -50,7 +50,7 @@ Il punto è che il lavoro che conta non è il contatto. È la **qualifica** che 
 
 ## Cosa fa al suo posto un agente che qualifica i lead
 
-> **Cos'è un agente IA che qualifica i lead?** Un agente IA che qualifica i lead è un esecutore di processo che fa trigger → enrichment → scoring → routing, passando al venditore solo i lead sopra soglia con un dossier già pronto — senza tempo umano speso in ricerca o data entry.
+> **Cos'è un agente IA che qualifica i lead?** Un agente IA che qualifica i lead è un esecutore di processo che fa trigger → enrichment → scoring → routing, passando al venditore solo i lead sopra soglia con un dossier già pronto, senza tempo umano speso in ricerca o data entry.
 
 Un agente IA non è un altro tool di invio massivo. È un esecutore di processo. Riceve un trigger e lavora.
 
@@ -58,7 +58,7 @@ Nel caso della qualifica lead, il flusso è questo:
 
 1. **Trigger**: nuovo lead da form, lista importata, o segnale di intent.
 2. **Enrichment**: l'agente recupera dati da più fonti (dimensione azienda, settore, ruolo, segnali di crescita) e completa il profilo.
-3. **Scoring**: applica le *tue* regole — non un punteggio generico — per dire chi è in target e chi no.
+3. **Scoring**: applica le *tue* regole, non un punteggio generico, per dire chi è in target e chi no.
 4. **Routing**: passa al venditore solo i lead sopra soglia, con un dossier già pronto. Gli altri vanno in nurturing o vengono scartati.
 
 Il risultato non è "più lead". È **meno lead che arrivano al venditore, ma quelli giusti**, già contestualizzati. Il tempo che prima andava in ricerca e data entry torna in conversazioni di vendita.

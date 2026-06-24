@@ -65,7 +65,7 @@
 /thank-you  /  301
 
 # ============================================================
-# BLOG: nessuna regola /blog/* — il nuovo sito usa /blog/<post> per
+# BLOG: nessuna regola /blog/*, il nuovo sito usa /blog/<post> per
 # articoli REALI. Una catch-all /blog/* redirigeva (per errore) i post
 # reali su /blog. I vecchi URL Webflow non mappati cadono su 404 (corretto).
 # Se servono redirect 1:1 da vecchi slug blog, aggiungerli QUI sopra,

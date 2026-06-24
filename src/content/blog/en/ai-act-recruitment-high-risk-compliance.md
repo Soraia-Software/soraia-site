@@ -25,7 +25,7 @@ faq:
   - q: "If I buy an ATS with built-in AI, is liability the vendor's?"
     a: "No, not entirely. The vendor is the 'provider', but you who use it are the <strong>deployer</strong> with your own duties: ensuring human oversight, informing candidates, keeping logs, using it within scope. Get in writing what the vendor covers and what stays with you."
   - q: "What fines does the AI Act provide?"
-    a: "The AI Act (Regulation (EU) 2024/1689, art. 99) sets several tiers. For prohibited practices, fines reach up to <strong>EUR 35 million or 7% of worldwide turnover</strong>; for breaching the obligations on high-risk systems — the tier that applies to recruitment — up to <strong>EUR 15 million or 3% of worldwide annual turnover</strong>, whichever is higher. SMEs benefit from proportionality and reduced caps."
+    a: "The AI Act (Regulation (EU) 2024/1689, art. 99) sets several tiers. For prohibited practices, fines reach up to <strong>EUR 35 million or 7% of worldwide turnover</strong>; for breaching the obligations on high-risk systems, the tier that applies to recruitment, up to <strong>EUR 15 million or 3% of worldwide annual turnover</strong>, whichever is higher. SMEs benefit from proportionality and reduced caps."
   - q: "Do I have to stop using AI in recruitment to stay compliant?"
     a: "No. AI remains allowed for high-risk screening, provided you meet the obligations. The compliant pattern is: the agent <strong>filters and ranks</strong>, the human recruiter always signs the decision, every step is logged and candidates are informed. That's exactly how we work on recruitment projects."
 lang: "en"
@@ -50,7 +50,7 @@ The AI Act doesn't look at the technology, it looks at the **impact on people**.
 
 An agent reading 500 CVs and returning a ranked shortlist falls here. Not because it "decides" alone, but because it **influences** a decision affecting a person's working life. That's the criterion.
 
-Watch the most common misconception: "but our output is reviewed by a human". Good, that's necessary — but on its own it doesn't pull you out of high-risk. It reduces operational risk, it doesn't change the classification.
+Watch the most common misconception: "but our output is reviewed by a human". Good, that's necessary, but on its own it doesn't pull you out of high-risk. It reduces operational risk, it doesn't change the classification.
 
 ## The 5 concrete obligations for the deployer
 
@@ -64,7 +64,7 @@ Candidates must know an AI system is involved in the process. In Italy this also
 
 ### 3. Immutable logging
 
-Every agent decision must be logged: input received, rules applied, output produced, any escalation to a human. It must be **immutable** and retained. Without logs you can't answer "why was this candidate excluded?" — and that question, sooner or later, arrives.
+Every agent decision must be logged: input received, rules applied, output produced, any escalation to a human. It must be **immutable** and retained. Without logs you can't answer "why was this candidate excluded?", and that question, sooner or later, arrives.
 
 ### 4. Documented risk assessment (+ DPIA)
 
@@ -90,12 +90,12 @@ On recruitment projects we always treat screening as high-risk. Concretely:
 - Candidate notice and DPIA as deliverables.
 - EU hosting and art. 28 DPA in the contract.
 
-It's the same scheme with which, in [APraise](/en/case-studies/apraise), the agent handled 100k+ candidates — equivalent to 4 extra recruiters — without ever taking the final decision alone. Volume handled by AI, decision in human hands: that's exactly what holds efficiency and compliance together.
+It's the same scheme with which, in [APraise](/en/case-studies/apraise), the agent handled 100k+ candidates, equivalent to 4 extra recruiters, without ever taking the final decision alone. Volume handled by AI, decision in human hands: that's exactly what holds efficiency and compliance together.
 
 Want to understand where your process falls and what you're missing? Look at our [Recruitment & HR](/en/recruitment) use cases or [let's talk](/en/contact) for 20 minutes, no pitch.
 
 ## When you DON'T need a custom project
 
-Honestly: if you hire 5 people a year and read CVs by hand, **you don't need a screening agent** — and so you don't need this heavy compliance apparatus either. High-risk kicks in when AI enters the process. If volume is low, operational risk doesn't justify either the agent or its governance overhead.
+Honestly: if you hire 5 people a year and read CVs by hand, **you don't need a screening agent**, and so you don't need this heavy compliance apparatus either. High-risk kicks in when AI enters the process. If volume is low, operational risk doesn't justify either the agent or its governance overhead.
 
 This changes above dozens of applications per role: there AI makes the difference, and it must be done by the book.

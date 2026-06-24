@@ -66,7 +66,7 @@ function toItPath(pathname: string): string {
 /**
  * Map any current pathname to its equivalent in `target` language, applying
  * the top-level slug map. NOTE: for content detail pages whose slug differs
- * across languages (guides, blog), pass an explicit `altHref` instead — those
+ * across languages (guides, blog), pass an explicit `altHref` instead, those
  * routes compute it from the content slug maps.
  */
 export function localizePath(pathname: string, target: Lang): string {

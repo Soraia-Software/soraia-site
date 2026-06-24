@@ -1,5 +1,5 @@
 ---
-title: "40Factory — Linkly per lead generation da fiere B2B"
+title: "40Factory, Linkly per lead generation da fiere B2B"
 draft: false
 client: "40Factory"
 clientLogo: "/logos/clients/40factory.webp"
@@ -59,11 +59,11 @@ Il risultato: diverse ore di lavoro manuale per raccogliere, inserire e riportar
 
 40Factory ha adottato Linkly, una soluzione sviluppata dal team di Soraia che orchestra 5 agenti IA dedicati al ciclo pre, durante e post-fiera completo:
 
-1. **Capture Agent** — OCR su biglietti da visita, badge fiera e QR code. Lo stand operativo fotografa, l'agente legge e struttura i dati.
-2. **Enrichment Agent** — cross-referenzia 30+ fonti dati (LinkedIn, registri aziendali, fonti pubbliche) per arricchire ogni contatto con e-mail verificata, ruolo, telefono, info aziendali.
-3. **Qualification Agent** — propone form di qualifica generato dinamicamente sui criteri 40Factory (settore, dimensione aziendale, fit prodotto MAT/Wilson/Sentra, urgenza).
-4. **Activation Agent** — invia il contatto arricchito e qualificato direttamente nel CRM commerciale di 40Factory, già pronto per il team sales.
-5. **Analytics Agent** — produce il report executive a chiusura evento: lead per settore, costo per lead, pipeline stimata, conversion rate per giornata e per stand, demografia delle persone presenti alla fiera e passate dallo stand.
+1. **Capture Agent**, OCR su biglietti da visita, badge fiera e QR code. Lo stand operativo fotografa, l'agente legge e struttura i dati.
+2. **Enrichment Agent**, cross-referenzia 30+ fonti dati (LinkedIn, registri aziendali, fonti pubbliche) per arricchire ogni contatto con e-mail verificata, ruolo, telefono, info aziendali.
+3. **Qualification Agent**, propone form di qualifica generato dinamicamente sui criteri 40Factory (settore, dimensione aziendale, fit prodotto MAT/Wilson/Sentra, urgenza).
+4. **Activation Agent**, invia il contatto arricchito e qualificato direttamente nel CRM commerciale di 40Factory, già pronto per il team sales.
+5. **Analytics Agent**, produce il report executive a chiusura evento: lead per settore, costo per lead, pipeline stimata, conversion rate per giornata e per stand, demografia delle persone presenti alla fiera e passate dallo stand.
 
 Sopra i 5 agenti, un consulente Linkly dedicato segue setup ed eventi per garantire qualità del dato e adattamento alle dinamiche specifiche di ogni fiera.
 
@@ -95,7 +95,7 @@ Linkly è un prodotto, non un side-project. Iterato su centinaia di feedback da 
 
 Questa è la più comune. Il commerciale in fiera ha le mani impegnate: parla, stringe mani, scambia biglietti, passa al prossimo prospect. Chiedergli di digitare nel CRM è irrealistico.
 
-Con Linkly, l'unica cosa che deve fare la persona in fiera è una foto del biglietto. Non deve loggarsi, non deve compilare, non deve ricordare. Foto e via. Tutto il resto — parsing del biglietto, arricchimento dei dati, qualifica del lead, invio del follow-up, aggiornamento del CRM — lo fanno gli agenti IA orchestrati dall'account manager Linkly. Setup, configurazione, integrazione, è tutto a carico nostro. Il commerciale continua a fare il commerciale.
+Con Linkly, l'unica cosa che deve fare la persona in fiera è una foto del biglietto. Non deve loggarsi, non deve compilare, non deve ricordare. Foto e via. Tutto il resto, parsing del biglietto, arricchimento dei dati, qualifica del lead, invio del follow-up, aggiornamento del CRM, lo fanno gli agenti IA orchestrati dall'account manager Linkly. Setup, configurazione, integrazione, è tutto a carico nostro. Il commerciale continua a fare il commerciale.
 
 ### "Non mi serve, andiamo in fiera per branding"
 

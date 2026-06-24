@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 const bare = (id: string) => id.replace(/^en\//, "");
 
 const title = "Blog & Insights | Soraia";
-const description = "Practical, contrarian, grounded in 40+ real AI agent projects. No AI hype — just operational decisions.";
+const description = "Practical, contrarian, grounded in 40+ real AI agent projects. No AI hype, just operational decisions.";
 
 const posts = (await getCollection("blog"))
   .filter((p) => p.data.lang === "en" && (import.meta.env.DEV || !p.data.draft))
@@ -30,7 +30,7 @@ function formatDate(d: Date) {
         Practical. Contrarian. Grounded in 40+ real projects.
       </h1>
       <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
-        No AI hype, no magic promises. Just operational decisions on bringing AI agents into SMEs — what works, what doesn't, and why.
+        No AI hype, no magic promises. Just operational decisions on bringing AI agents into SMEs, what works, what doesn't, and why.
       </p>
     </div>
   </section>

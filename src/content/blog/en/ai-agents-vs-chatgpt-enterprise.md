@@ -13,7 +13,7 @@ The question almost always comes up on the second call: *"so why isn't it enough
 
 Honest answer: **sometimes it is**. And in those cases, I tell the client. Soraia doesn't win by selling agents where they're not needed.
 
-But they are needed — often. Here are the 3 criteria we use to decide.
+But they are needed, often. Here are the 3 criteria we use to decide.
 
 ## Criterion 1. Who executes the task
 
@@ -27,7 +27,7 @@ If the task has high volume and the output always feeds into your own systems (C
 
 ## Criterion 2. How specific is the context
 
-ChatGPT is a generalist. It knows everything — except your business.
+ChatGPT is a generalist. It knows everything, except your business.
 
 A custom agent knows:
 - Your products / your sector / your brand voice
@@ -40,7 +40,7 @@ A custom agent knows:
 
 ## Criterion 3. Governance and auditability
 
-ChatGPT Enterprise has audit logs — but at the chat level. You know *that* someone asked something, not *how the decision was reached*.
+ChatGPT Enterprise has audit logs, but at the chat level. You know *that* someone asked something, not *how the decision was reached*.
 
 For regulated sectors (recruitment with GDPR on candidates, finance requiring audit trails, govtech with gov-grade compliance), that's not enough.
 
@@ -60,7 +60,7 @@ For 60% of Italian SMBs, the best answer is: **both**.
 - **ChatGPT/Copilot/Claude business** for 70% of the team on variable tasks: research, drafting, summarising, analysis.
 - **2–3 custom agents** on high-volume processes with structured output.
 
-That's exactly what we do at Soraia: your team uses the enterprise LLM you already have. We build agents on top of that stack — we don't ask you to switch providers.
+That's exactly what we do at Soraia: your team uses the enterprise LLM you already have. We build agents on top of that stack, we don't ask you to switch providers.
 
 ## When NOT to build agents
 

@@ -61,7 +61,7 @@ C'è sempre quella persona. Sa dove cliccare, conosce i bug, sa quale campo non 
 
 Il giorno che va in pensione o cambia azienda, il sapere se ne va con lei. Non è documentato da nessuna parte: è conoscenza tribale nella testa di una persona.
 
-Questo è il segnale di sostituzione più forte di tutti. Non perché il software sia vecchio — il vecchio funziona — ma perché hai un **single point of failure umano** su un processo core.
+Questo è il segnale di sostituzione più forte di tutti. Non perché il software sia vecchio, il vecchio funziona, ma perché hai un **single point of failure umano** su un processo core.
 
 ## Lock-in: misuralo in giorni, non in euro
 
@@ -85,7 +85,7 @@ Il big bang "buttiamo tutto e ricominciamo" è il modo più sicuro per spendere 
 
 Sostituisci quando: il rischio key-person è alto, l'onboarding costa più di quanto puoi permetterti, i workaround manuali drenano ore misurate ogni settimana.
 
-E quasi sempre conviene partire da un pezzo, non da tutto. Con [ILTEC](/case-studies/iltec), B2B di office technology a Biella, non abbiamo rifatto i loro sistemi interni: abbiamo aggiunto lo strato che mancava — sito AI search optimized in 3 settimane e un agente commerciale via QR code sul parco macchine. Si parte dal punto che fa più male.
+E quasi sempre conviene partire da un pezzo, non da tutto. Con [ILTEC](/case-studies/iltec), B2B di office technology a Biella, non abbiamo rifatto i loro sistemi interni: abbiamo aggiunto lo strato che mancava, sito AI search optimized in 3 settimane e un agente commerciale via QR code sul parco macchine. Si parte dal punto che fa più male.
 
 Lo stesso modello vale per un tool interno custom: [scoping](/software-development) €2.000 (rimborsato se procedi), build sprint €10-50k, primo rilascio in 4 settimane, codice tuo dal primo giorno. Niente abbonamento perpetuo, niente nuovo lock-in al posto del vecchio.
 
@@ -93,6 +93,6 @@ E prima di scrivere codice, spesso il guadagno più rapido è togliere la conosc
 
 ## Il primo passo concreto
 
-Misura il costo reale del tuo gestionale oggi: ore di onboarding, ore perse in workaround, dipendenza da una persona. Quel numero ti dice se la sostituzione ha senso — o se basta svecchiare un modulo.
+Misura il costo reale del tuo gestionale oggi: ore di onboarding, ore perse in workaround, dipendenza da una persona. Quel numero ti dice se la sostituzione ha senso, o se basta svecchiare un modulo.
 
 Se vuoi un occhio esterno onesto, [parliamone](/parliamone): 20 minuti, niente pitch. Oppure parti dal [check-up](/check-up).

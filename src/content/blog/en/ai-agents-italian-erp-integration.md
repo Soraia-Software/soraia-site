@@ -67,7 +67,7 @@ It's the preferable pattern, but even here the rule is **least privilege**. The 
 
 Many real installations don't expose useful APIs. They do expose scheduled exports (CSV, XML, fixed-width files) and equally structured import channels.
 
-Here the agent works on the **file**, not the system: it takes the export, applies its rules, and produces a valid import ready for official loading. Less elegant, but robust and predictable — and it's exactly how the accounting office already thinks.
+Here the agent works on the **file**, not the system: it takes the export, applies its rules, and produces a valid import ready for official loading. Less elegant, but robust and predictable, and it's exactly how the accounting office already thinks.
 
 ### 3. Read-only database + custom layer (the defensive case)
 
@@ -87,7 +87,7 @@ In all three cases the golden rule is the same: **the ERP stays the authority ov
 
 [Numeraria](/en/case-studies/numeraria) is a multi-division payroll and accounting firm. Its management spent the first half of every month on quotes, assignments, hours and reconciliations across a patchwork of Excel and legacy tools.
 
-The AI agents we built run the cycle end-to-end: they generate quotes from templates, track assignments, validate hours with precise line items (travel, remote, on-site), and produce the monthly billing-ready report. The key point for this article: the **export to the existing accounting systems** is part of the design. We didn't ask them to switch tools — we made the output land where it was needed.
+The AI agents we built run the cycle end-to-end: they generate quotes from templates, track assignments, validate hours with precise line items (travel, remote, on-site), and produce the monthly billing-ready report. The key point for this article: the **export to the existing accounting systems** is part of the design. We didn't ask them to switch tools, we made the output land where it was needed.
 
 Result: **roughly half the month given back to the management**, who now spend it on new clients and advisory instead of reconciling spreadsheets.
 
@@ -99,7 +99,7 @@ Result: **roughly half the month given back to the management**, who now spend i
 4. **Keep the ERP as the authority** over the data and the agent as the orchestrator around it, with a separate audit log.
 5. **Demand that the code is yours** from day one: no lock-in, no perpetual subscriptions.
 
-For a well-scoped workflow, the first agent goes live in **4 weeks**. Integration is rarely the bottleneck — the data and the rules are, and we clarify those first.
+For a well-scoped workflow, the first agent goes live in **4 weeks**. Integration is rarely the bottleneck, the data and the rules are, and we clarify those first.
 
 ---
 

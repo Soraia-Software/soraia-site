@@ -61,7 +61,7 @@ There's always that one person. They know where to click, they know the bugs, th
 
 The day they retire or change jobs, the knowledge leaves with them. It's documented nowhere: it's tribal knowledge inside one person's head.
 
-This is the strongest replacement signal of all. Not because the software is old — old works — but because you have a **human single point of failure** on a core process.
+This is the strongest replacement signal of all. Not because the software is old, old works, but because you have a **human single point of failure** on a core process.
 
 ## Lock-in: measure it in days, not euros
 
@@ -85,7 +85,7 @@ The "throw it all out and start over" big bang is the surest way to spend triple
 
 Replace when: key-person risk is high, onboarding costs more than you can afford, manual workarounds drain measured hours every week.
 
-And it's almost always better to start with one piece, not everything. With [ILTEC](/en/case-studies/iltec), a B2B office technology firm in Biella, we didn't rebuild their internal systems: we added the missing layer — an AI search optimized site in 3 weeks and a sales agent via QR code on their machine fleet. You start at the point that hurts most.
+And it's almost always better to start with one piece, not everything. With [ILTEC](/en/case-studies/iltec), a B2B office technology firm in Biella, we didn't rebuild their internal systems: we added the missing layer, an AI search optimized site in 3 weeks and a sales agent via QR code on their machine fleet. You start at the point that hurts most.
 
 The same model applies to an internal custom tool: [scoping](/en/software-development) €2,000 (refunded if you proceed), build sprint €10-50k, first release in 4 weeks, your code from day one. No perpetual subscription, no new lock-in replacing the old one.
 
@@ -93,6 +93,6 @@ And before writing code, often the fastest win is getting the tribal knowledge o
 
 ## The concrete first step
 
-Measure what your ERP really costs today: onboarding hours, hours lost in workarounds, dependence on one person. That number tells you whether replacement makes sense — or whether modernising one module is enough.
+Measure what your ERP really costs today: onboarding hours, hours lost in workarounds, dependence on one person. That number tells you whether replacement makes sense, or whether modernising one module is enough.
 
 If you want an honest outside view, [let's talk](/en/contact): 20 minutes, no pitch. Or start with the [check-up](/en/check-up).

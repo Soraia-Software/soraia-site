@@ -26,7 +26,7 @@ faq:
   - q: "Fixed price or time & material: which should I choose?"
     a: "For the <strong>first sprint</strong>: fixed price with a clear scope. The overrun risk sits with the provider, not you. For <strong>ongoing retainers</strong>: fixed monthly price with an hour bucket (e.g. 'up to 40 h/month included, €100/h extra'). Pure time & material with no ceiling is a red flag: all the risk falls on you and the provider's incentives are misaligned."
   - q: "Do savings-based (% of savings) pricing models exist?"
-    a: "Yes, but they are rare. The model: the provider charges nothing upfront and takes X% of the hours saved as measured at 6 or 12 months. It only works if: the baseline is already measured, the provider trusts the client's data, and the scope is limited and well defined. For most SMBs this is operationally too complex — a fixed-price model with a performance guarantee works better."
+    a: "Yes, but they are rare. The model: the provider charges nothing upfront and takes X% of the hours saved as measured at 6 or 12 months. It only works if: the baseline is already measured, the provider trusts the client's data, and the scope is limited and well defined. For most SMBs this is operationally too complex, a fixed-price model with a performance guarantee works better."
   - q: "How is the ROI of an AI agent measured?"
     a: "<strong>Standard framework</strong>: (1) Timed baseline before the agent (e.g. 8 h/recruiter/week on screening); (2) Post-agent measurement at 60–90 days; (3) Hours recovered × hourly cost × 12 months = annual ROI; (4) Comparison against total cost (sprint + retainer + adoption). Typical expected ROI: <strong>3–10x in 12 months</strong> for high-volume, well-scoped processes."
   - q: "Why do prices vary so much between providers (€5,000 vs €100,000)?"
@@ -56,7 +56,7 @@ Data based on Soraia's internal benchmark plus feedback from clients who evaluat
 
 **Timeline**: 1–2 weeks of consulting.
 
-**Market standard**: serious providers offer it **refunded if you proceed** with a sprint — skin in the game for both sides. Soraia, for example, charges €1,900 with a full refund. [Download an anonymised sample report](/en/downloads/ai-assessment-sample) to see exactly what you receive at the end of the assessment.
+**Market standard**: serious providers offer it **refunded if you proceed** with a sprint, skin in the game for both sides. Soraia, for example, charges €1,900 with a full refund. [Download an anonymised sample report](/en/downloads/ai-assessment-sample) to see exactly what you receive at the end of the assessment.
 
 **Provider that skips the assessment**: red flag. It means they will sell you a sprint without understanding your real processes.
 
@@ -116,13 +116,13 @@ The provider quotes a fixed price for a defined scope. E.g. "€25,000 for a rec
 
 **Disadvantages**: if the scope changes mid-project, every modification is a separate change request.
 
-**When to use it**: **always for the first sprint**. If the provider refuses a fixed price, that is a red flag — they are transferring the risk to you.
+**When to use it**: **always for the first sprint**. If the provider refuses a fixed price, that is a red flag, they are transferring the risk to you.
 
 ### 2. Time & material (T&M)
 
 The provider invoices hours worked × rate. E.g. €120/h senior, €60/h junior, billed monthly.
 
-**Advantages**: total flexibility — you pay for what you use.
+**Advantages**: total flexibility, you pay for what you use.
 
 **Disadvantages**: zero predictability; the provider's incentive is to log more hours.
 
@@ -152,13 +152,13 @@ The provider charges nothing upfront and takes X% of the hours saved as measured
 
 Decoding a quote requires understanding where the money goes. The 5 main drivers:
 
-### Driver 1 — Assessment depth
+### Driver 1, Assessment depth
 
 A serious assessment costs €1,500–3,000 because it requires 30–50 hours of consulting work (process timing, interviews, report writing). A "free demo" assessment is worth nothing.
 
 A provider that skips or undervalues the assessment saves time upfront but will get the sprint scope wrong, costing you 2–5x in revisions.
 
-### Driver 2 — Team seniority
+### Driver 2, Team seniority
 
 Typical 2026 hourly rates:
 
@@ -170,9 +170,9 @@ Typical 2026 hourly rates:
 - Senior freelancer: €80–150/h.
 - Freelancer (Eastern Europe / LATAM): €30–70/h.
 
-**The total price depends heavily on the mix.** Big 4 partner sells the deal → junior executes it is one of the most common patterns — and among the most expensive, because the partner's hours are billed regardless.
+**The total price depends heavily on the mix.** Big 4 partner sells the deal → junior executes it is one of the most common patterns, and among the most expensive, because the partner's hours are billed regardless.
 
-### Driver 3 — Compliance requirements
+### Driver 3, Compliance requirements
 
 Regulated sectors require 30–50% extra effort:
 
@@ -184,7 +184,7 @@ Regulated sectors require 30–50% extra effort:
 
 Recruitment, finance, healthcare: expect prices 40% higher than marketing or customer ops.
 
-### Driver 4 — Number of integrations
+### Driver 4, Number of integrations
 
 Each custom external system the agent must interact with adds effort:
 
@@ -194,7 +194,7 @@ Each custom external system the agent must interact with adds effort:
 
 **Question to ask before getting a quote**: "Have you already integrated with my ERP system [X]?" If not, expect an extra cost.
 
-### Driver 5 — Provider's operating model
+### Driver 5, Provider's operating model
 
 Big 4 firms carry high overhead (offices, partner travel, marketing, in-house legal). Cost: 40–50% more than the equivalent scope from a lean agency.
 
@@ -204,7 +204,7 @@ Specialist agencies that are 100% remote (e.g. Soraia) have minimal overhead. Th
 
 Without ROI measurement, any AI investment is an act of faith. The framework that works:
 
-### Step 1 — Timed baseline before the sprint
+### Step 1, Timed baseline before the sprint
 
 Time the human effort spent on the target process across 10–20 real tasks. Recruitment example:
 
@@ -215,7 +215,7 @@ Time the human effort spent on the target process across 10–20 real tasks. Rec
 
 This is the baseline. Without it, you cannot measure the "after".
 
-### Step 2 — Post-agent measurement at 60–90 days
+### Step 2, Post-agent measurement at 60–90 days
 
 Same timing exercise after the agent has been in stable production. Example:
 
@@ -224,12 +224,12 @@ Same timing exercise after the agent has been in stable production. Example:
 - 3 recruiters × 1.5 h × 52 weeks = 234 hours/year.
 - Annual cost of the process: **€10,530**.
 
-### Step 3 — Annual ROI calculation
+### Step 3, Annual ROI calculation
 
 - Hours recovered: 936 − 234 = **702 hours/year**.
 - Annual saving: 702 × €45 = **€31,590**.
 
-### Step 4 — Comparison against total cost
+### Step 4, Comparison against total cost
 
 Using a standard recruitment sprint as an example:
 
@@ -243,7 +243,7 @@ Using a standard recruitment sprint as an example:
 
 **But 3 dimensions are missing from the "hours only" calculation**:
 
-1. **High-value time for the team**: the 702 freed hours do not disappear — they go into active sourcing, employer branding, and better closing. The team's value-added output on skilled work is worth 3–5x the base hourly cost.
+1. **High-value time for the team**: the 702 freed hours do not disappear, they go into active sourcing, employer branding, and better closing. The team's value-added output on skilled work is worth 3–5x the base hourly cost.
 2. **Candidate response speed**: the agent responds in <1 minute vs. hours or days. Conversion rates increase by 20–40% (Soraia data across recruitment clients).
 3. **Scalability**: if application volumes double (e.g. seasonal peak), you do not need to double the team. Unlocked capacity enables business growth.
 

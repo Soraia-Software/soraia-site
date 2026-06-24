@@ -20,7 +20,7 @@ faq:
   - q: "Is cold outbound really dead in 2026?"
     a: "No, but pure volume returns much less. Inboxes are saturated and filters increasingly aggressive. What works is fewer contacts, but far more qualified and enriched. An <strong>AI agent that qualifies leads</strong> moves the work upstream: only people worth contacting reach the rep."
   - q: "What does an AI lead-qualification agent actually do?"
-    a: "An AI lead-qualification agent runs a 4-step flow: 1) <strong>Trigger</strong> — it receives a new lead from a form, imported list or intent signal; 2) <strong>Enrichment</strong> — it enriches the contact from multiple sources (company size, sector, role, growth signals); 3) <strong>Scoring</strong> — it applies your scoring rules, not a generic score, to say who's in target; 4) <strong>Routing</strong> — it passes the rep only leads above threshold, with a ready dossier, while below-threshold leads are discarded or put in nurturing, without using human time."
+    a: "An AI lead-qualification agent runs a 4-step flow: 1) <strong>Trigger</strong>, it receives a new lead from a form, imported list or intent signal; 2) <strong>Enrichment</strong>, it enriches the contact from multiple sources (company size, sector, role, growth signals); 3) <strong>Scoring</strong>, it applies your scoring rules, not a generic score, to say who's in target; 4) <strong>Routing</strong>, it passes the rep only leads above threshold, with a ready dossier, while below-threshold leads are discarded or put in nurturing, without using human time."
   - q: "When do you NOT need a lead-qualification agent?"
     a: "If you handle fewer than 30-40 leads a week and run a few enterprise deals where every contact is already hand-curated, an agent won't move the needle. There you need a good rep, not automation. We say so plainly before starting."
   - q: "Is automated lead enrichment GDPR-compliant?"
@@ -50,7 +50,7 @@ The point is that the work that matters isn't the contact. It's the **qualificat
 
 ## What an agent that qualifies leads does instead
 
-> **What is an AI lead-qualification agent?** An AI lead-qualification agent is a process executor that does trigger → enrichment → scoring → routing, passing the rep only above-threshold leads with a ready dossier — without human time spent on research or data entry.
+> **What is an AI lead-qualification agent?** An AI lead-qualification agent is a process executor that does trigger → enrichment → scoring → routing, passing the rep only above-threshold leads with a ready dossier, without human time spent on research or data entry.
 
 An AI agent isn't another mass-send tool. It's a process executor. It receives a trigger and works.
 
@@ -58,7 +58,7 @@ For lead qualification, the flow is:
 
 1. **Trigger**: new lead from a form, imported list, or intent signal.
 2. **Enrichment**: the agent pulls data from multiple sources (company size, sector, role, growth signals) and completes the profile.
-3. **Scoring**: it applies *your* rules — not a generic score — to say who's in target and who isn't.
+3. **Scoring**: it applies *your* rules, not a generic score, to say who's in target and who isn't.
 4. **Routing**: it passes the rep only leads above threshold, with a ready dossier. The rest go to nurturing or are discarded.
 
 The result isn't "more leads". It's **fewer leads reaching the rep, but the right ones**, already contextualized. Time that used to go into research and data entry returns to sales conversations.

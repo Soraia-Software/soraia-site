@@ -54,7 +54,7 @@ Deal flow had outgrown the processes managing it. The team was living across:
 
 - **CRM** as the central system, riddled with duplicate records from multiple ingestion sources
 - **Outlook email** as the primary channel with founders and deal teams, but with no structured archiving
-- **OneDrive files** for pitch decks, attachments, and term sheets — with no automatic link to CRM records
+- **OneDrive files** for pitch decks, attachments, and term sheets, with no automatic link to CRM records
 - **A monthly report compiled by hand** at the start of each month (hours of human work)
 
 The fallout: time-consuming manual deduplication (has this person been contacted? Have they not?), emails that couldn't be found when due diligence required them (compliance issue), and a monthly report that everyone dreaded.

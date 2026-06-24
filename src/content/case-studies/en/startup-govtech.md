@@ -45,17 +45,17 @@ related:
 
 ## Context
 
-The client is a European company providing software tools for the management of international diplomatic events. Their end customers are institutional actors — ministries of foreign affairs, embassies, international organisations — that need to coordinate meetings, missions, and formal exchanges between states.
+The client is a European company providing software tools for the management of international diplomatic events. Their end customers are institutional actors, ministries of foreign affairs, embassies, international organisations, that need to coordinate meetings, missions, and formal exchanges between states.
 
 ## The Real Problem
 
 Diplomacy operates under rules that off-the-shelf software simply doesn't handle:
 
 - **Verbal notes**, formal documents exchanged between states, with precise syntax, headings, and ritual formulas. A misplaced comma can change the political meaning.
-- **Restricted users** — not everyone can see everything. Different access levels for consuls, ambassadors, staff, and counterparts.
-- **Archive compliance** — every document generated must be archived according to the sector's document retention rules (years, format, metadata).
-- **Per-client-state multi-tenancy** — each government client must have its own isolated environment, with its own data, rules, and users.
-- **Customer support tooling** — the client's team must be able to support each end-state without accessing cross-tenant data.
+- **Restricted users**, not everyone can see everything. Different access levels for consuls, ambassadors, staff, and counterparts.
+- **Archive compliance**, every document generated must be archived according to the sector's document retention rules (years, format, metadata).
+- **Per-client-state multi-tenancy**, each government client must have its own isolated environment, with its own data, rules, and users.
+- **Customer support tooling**, the client's team must be able to support each end-state without accessing cross-tenant data.
 
 All of this is well beyond what a generic CRM or off-the-shelf SaaS can provide. A custom platform was the only answer.
 
@@ -63,11 +63,11 @@ All of this is well beyond what a generic CRM or off-the-shelf SaaS can provide.
 
 Soraia built a **multi-tenant platform** for diplomatic event management, with a dedicated AI agent for verbal note generation:
 
-1. **AI verbal notes generator** — takes event context as input (states involved, date, subject, language) and generates the verbal note in strict compliance with diplomatic protocol. The client's team reviews it; the agent never signs final documents.
-2. **Multi-tenant architecture** — each government client has its own isolated environment, with its own users, data, and access rules. Zero cross-tenant data leakage.
-3. **Restricted users with SSO + OTP** — enterprise-grade authentication, granular access levels (read-only, edit, admin), mandatory 2FA on sensitive roles.
-4. **Archive integration** — every document produced is archived according to the client's retention policies, with structured metadata for audit and future retrieval.
-5. **Customer support tooling** — the client's team can support each end-state from a centralised console, without seeing data that isn't theirs to see.
+1. **AI verbal notes generator**, takes event context as input (states involved, date, subject, language) and generates the verbal note in strict compliance with diplomatic protocol. The client's team reviews it; the agent never signs final documents.
+2. **Multi-tenant architecture**, each government client has its own isolated environment, with its own users, data, and access rules. Zero cross-tenant data leakage.
+3. **Restricted users with SSO + OTP**, enterprise-grade authentication, granular access levels (read-only, edit, admin), mandatory 2FA on sensitive roles.
+4. **Archive integration**, every document produced is archived according to the client's retention policies, with structured metadata for audit and future retrieval.
+5. **Customer support tooling**, the client's team can support each end-state from a centralised console, without seeing data that isn't theirs to see.
 
 AI is a tool for **acceleration**, never a replacement for diplomatic judgement. The official reviews and signs; the agent handles the drafting.
 
@@ -75,7 +75,7 @@ AI is a tool for **acceleration**, never a replacement for diplomatic judgement.
 
 **Scaling to multiple government clients** without multiplying team hours: each new state is added as a tenant with no dedicated deployment required.
 
-**Responsiveness explicitly praised** by the founder: in a sector — diplomacy — where timelines are often long and vendors slow, Soraia's speed was called out as a genuine differentiator.
+**Responsiveness explicitly praised** by the founder: in a sector, diplomacy, where timelines are often long and vendors slow, Soraia's speed was called out as a genuine differentiator.
 
 **Reduction in time per verbal note** from manual drafting to AI-assisted drafting: hours of qualified team time saved for every event handled.
 

@@ -45,6 +45,7 @@ const agentsHref = path("/ai-agents", lang);
 const adoptionHref = path("/ai-adoption", lang);
 const searchOptHref = path("/ai-search-optimization", lang);
 const softwareHref = path("/software-development", lang);
+const offerHref = path("/offerta-team-dedicato", lang);
 const prodottiHref = path("/prodotti", lang);
 const guideHref = path("/guide", lang);
 const casesHref = path("/case-studies", lang);
@@ -56,6 +57,14 @@ const otherLang: Lang = lang === "it" ? "en" : "it";
 const otherHref = altHref ?? localizePath(Astro.url.pathname, otherLang);
 
 const servizi = [
+  {
+    href: offerHref,
+    title: lang === "en" ? "Generational change" : "Cambio generazionale",
+    subtitle: lang === "en"
+      ? "Dedicated team to modernize your software in a month, zero risk"
+      : "Team dedicato per modernizzare i software in un mese, a rischio zero",
+    iconPath: '<path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" /><path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />',
+  },
   {
     href: adoptionHref,
     title: "AI Adoption",

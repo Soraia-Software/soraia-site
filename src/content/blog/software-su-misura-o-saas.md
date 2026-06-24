@@ -56,7 +56,7 @@ Prima domanda, e la più importante.
 
 Se il processo è un **commodity** (mandare email, emettere fatture elettroniche, gestire ferie e presenze), un SaaS lo fa meglio di qualsiasi build custom, perché ci lavorano centinaia di ingegneri di un vendor specializzato. Costruirlo su misura è bruciare budget per reinventare una ruota già perfetta.
 
-Se invece il processo **è** il modo in cui guadagni — il matching candidato-posizione di una boutique di recruitment, il pricing dinamico, la pratica che il tuo studio gestisce in modo unico — allora il SaaS generico ti costringe dentro il suo flusso, e tu ci infili sopra Excel e workaround. Lì il custom paga.
+Se invece il processo **è** il modo in cui guadagni, il matching candidato-posizione di una boutique di recruitment, il pricing dinamico, la pratica che il tuo studio gestisce in modo unico, allora il SaaS generico ti costringe dentro il suo flusso, e tu ci infili sopra Excel e workaround. Lì il custom paga.
 
 **Cut-off pratico:** se il tuo team ha costruito 3+ workaround per far fare al SaaS qualcosa che il prodotto non prevede, il processo non è commodity. È core, e meriti uno strumento che lo segua.
 
@@ -87,7 +87,7 @@ Costruire su misura un processo che cambierà tra sei mesi è uno spreco. Qui il
 
 Ma c'è un punto di svolta. Quando il processo si è stabilizzato, ha alto volume e il SaaS ti costringe in un flusso che non è il tuo, il custom diventa l'investimento ovvio.
 
-È esattamente la storia di [Talent Match](/case-studies/talent-match). Operava su uno stack frammentato — ATS e CRM off-the-shelf più Excel per le shortlist — con i recruiter che sfogliavano i candidati a mano, posizione per posizione. Il processo era core e stabile: la piattaforma custom **Braint** lo ha rimesso in un solo posto, con un agente IA che ranka i candidati e lascia al recruiter solo i top match motivati. In produzione in 6 mesi, partendo dal caos.
+È esattamente la storia di [Talent Match](/case-studies/talent-match). Operava su uno stack frammentato, ATS e CRM off-the-shelf più Excel per le shortlist, con i recruiter che sfogliavano i candidati a mano, posizione per posizione. Il processo era core e stabile: la piattaforma custom **Braint** lo ha rimesso in un solo posto, con un agente IA che ranka i candidati e lascia al recruiter solo i top match motivati. In produzione in 6 mesi, partendo dal caos.
 
 ## Quando NON costruire su misura
 
@@ -96,8 +96,8 @@ Te lo dico in faccia se mi chiami:
 - **Processo ancora in movimento** → SaaS configurabile finché non si stabilizza, poi rivaluti.
 - **Volume basso** → se quel processo lo tocchi due volte al mese, anche il foglio Excel va bene. Non sovra-ingegnerizzare.
 
-Per il resto — processo core, stabile, ad alto volume, con un SaaS che ti sta stretto — il [software su misura](/software-development) è l'investimento che a due anni ti ringrazi di aver fatto. E spesso il pezzo che fa più male è automatizzabile con un [agente IA](/ai-agents) sopra la piattaforma, non solo digitalizzabile.
+Per il resto, processo core, stabile, ad alto volume, con un SaaS che ti sta stretto, il [software su misura](/software-development) è l'investimento che a due anni ti ringrazi di aver fatto. E spesso il pezzo che fa più male è automatizzabile con un [agente IA](/ai-agents) sopra la piattaforma, non solo digitalizzabile.
 
 Una nota di metodo: prima di decidere, misura. Senza una baseline di quanto costa oggi il processo (in ore, in errori, in workaround), "il custom conviene" resta un'opinione. Se vuoi i numeri prima di spendere, parti dalla [guida ai costi della consulenza AI](/guide/costi-consulenza-ai).
 
-Lo facciamo da Biella, su 40+ progetti consegnati in 11 paesi, con la stessa garanzia di sempre: **paghi solo se funziona**. Il target è scritto nel contratto, e se non lo raggiungiamo, lavoriamo gratis fino a quando non succede oppure rimborsiamo. Se vuoi capire da che parte stai, [parliamone](/parliamone) — 20 minuti, senza pitch — oppure fai il [check-up](/check-up).
+Lo facciamo da Biella, su 40+ progetti consegnati in 11 paesi, con la stessa garanzia di sempre: **paghi solo se funziona**. Il target è scritto nel contratto, e se non lo raggiungiamo, lavoriamo gratis fino a quando non succede oppure rimborsiamo. Se vuoi capire da che parte stai, [parliamone](/parliamone), 20 minuti, senza pitch, oppure fai il [check-up](/check-up).

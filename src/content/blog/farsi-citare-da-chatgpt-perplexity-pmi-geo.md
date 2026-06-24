@@ -47,13 +47,13 @@ La domanda non è più "sono in prima pagina?". È: **l'AI mi nomina quando un m
 
 ## Cos'è la GEO
 
-La Generative Engine Optimization è l'insieme di pratiche editoriali e tecniche per far sì che un motore AI generativo — ChatGPT, Claude, Perplexity, Google AI Overviews — estragga il tuo contenuto e **nomini la tua azienda** come fonte quando risponde a una domanda. L'obiettivo non è una posizione in una lista di link, ma essere la fonte citata dentro la risposta sintetica.
+La Generative Engine Optimization è l'insieme di pratiche editoriali e tecniche per far sì che un motore AI generativo, ChatGPT, Claude, Perplexity, Google AI Overviews, estragga il tuo contenuto e **nomini la tua azienda** come fonte quando risponde a una domanda. L'obiettivo non è una posizione in una lista di link, ma essere la fonte citata dentro la risposta sintetica.
 
 È un canale nuovo, ma il funnel è vecchio: qualcuno ha un problema, fa una domanda, riceve dei nomi, sceglie. È solo cambiato chi dà i nomi.
 
 ## SEO e GEO: cosa cambia davvero
 
-Le basi si sovrappongono — contenuto chiaro, sito veloce, struttura pulita, autorevolezza. Ma i segnali che spostano l'ago sono diversi.
+Le basi si sovrappongono, contenuto chiaro, sito veloce, struttura pulita, autorevolezza. Ma i segnali che spostano l'ago sono diversi.
 
 - **SEO**: ottimizzi per un ranking di link cliccabili. Il successo è un click sul tuo sito.
 - **GEO**: ottimizzi per essere **estratto e citato dentro una risposta**, spesso senza click. Il successo è il tuo nome nella risposta.
@@ -96,4 +96,4 @@ Apri Perplexity e fai la domanda che farebbe un tuo cliente ideale. Vedi il tuo 
 
 ---
 
-Vuoi sapere quanto sei già citabile dai motori AI? Parti dall'[audit AI Search Optimization](/ai-search-optimization), oppure [parliamone in 20 minuti](/parliamone) — senza pitch.
+Vuoi sapere quanto sei già citabile dai motori AI? Parti dall'[audit AI Search Optimization](/ai-search-optimization), oppure [parliamone in 20 minuti](/parliamone), senza pitch.

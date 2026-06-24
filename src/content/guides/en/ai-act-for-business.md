@@ -18,7 +18,7 @@ related:
   - "ai-consulting-costs"
 faq:
   - q: "Does the AI Act apply to European SMEs?"
-    a: "Yes, but proportionately. The majority of SMEs fall into <strong>limited or minimal risk</strong>. Substantive obligations are limited to 4 concrete steps (audit log, policy, DPA, human oversight on critical cases). The fines up to 7% of turnover circulating in scaremongering emails apply to serious violations involving high-risk systems — not ordinary use of ChatGPT in the office."
+    a: "Yes, but proportionately. The majority of SMEs fall into <strong>limited or minimal risk</strong>. Substantive obligations are limited to 4 concrete steps (audit log, policy, DPA, human oversight on critical cases). The fines up to 7% of turnover circulating in scaremongering emails apply to serious violations involving high-risk systems, not ordinary use of ChatGPT in the office."
   - q: "When did the AI Act come into force?"
     a: "Regulation (EU) 2024/1689 came into force on <strong>1 August 2024</strong>. Obligations are phased: <strong>February 2025</strong> for prohibited practices, <strong>August 2025</strong> for general-purpose AI models, <strong>August 2026</strong> for most obligations on high-risk systems."
   - q: "What are the 4 risk levels of the AI Act?"
@@ -87,7 +87,7 @@ Everything else: spam filters, recommendation systems, internal process optimisa
 
 Obligations: general principles of transparency and fair use. No heavy compliance required.
 
-**Does this affect your SME?** Yes — for the majority of everyday use cases. **Good news**: zero bureaucracy required.
+**Does this affect your SME?** Yes, for the majority of everyday use cases. **Good news**: zero bureaucracy required.
 
 ### Summary table
 
@@ -151,7 +151,7 @@ If your SME provides external training that uses AI for student assessment → h
 
 Regardless of risk level, here are the 4 practical things to do before 2026. This is the minimum. Full stop.
 
-### Step 1 — Internal AI policy (1 page)
+### Step 1, Internal AI policy (1 page)
 
 A **1-page document** stating:
 
@@ -162,7 +162,7 @@ A **1-page document** stating:
 
 Supports internal governance, is an implicit best-practice requirement, and satisfies the accountability principle.
 
-### Step 2 — Audit log for agent decisions
+### Step 2, Audit log for agent decisions
 
 Every agent in production must **log every decision**:
 
@@ -176,7 +176,7 @@ For high-risk systems this is a regulatory requirement. For others it is smart r
 
 Standard 2026 tooling: Langfuse, OpenLLMetry, custom systems on S3 + metadata. Cost: ~€100–300/month for an average SME.
 
-### Step 3 — Human oversight on critical cases
+### Step 3, Human oversight on critical cases
 
 Define **upfront**: when the agent decides autonomously, and when it escalates to a human.
 
@@ -188,7 +188,7 @@ Examples:
 
 Documenting the "automatic cases / escalation cases" matrix is the most direct and most powerful compliance deliverable.
 
-### Step 4 — DPA with the vendor
+### Step 4, DPA with the vendor
 
 If you use an external provider (Soraia, OpenAI direct, Anthropic, Microsoft, Google), you need a **Data Processing Agreement under Art. 28 GDPR**.
 
@@ -198,16 +198,16 @@ If you use an external provider (Soraia, OpenAI direct, Anthropic, Microsoft, Go
 - Google has a standard DPA.
 - Soraia (and any serious agency) includes it in the sprint contract.
 
-**Without a DPA, every input of personal data is a GDPR violation.** The most direct step — and the one most often skipped in a rush.
+**Without a DPA, every input of personal data is a GDPR violation.** The most direct step, and the one most often skipped in a rush.
 
 ## Timeline 2025–2026: what expires when
 
 Key dates to plan your compliance:
 
-- **February 2025** ✓ already in force — prohibition of unacceptable AI practices.
-- **August 2025** ✓ already in force — obligations for general-purpose AI models (mainly affects vendors like OpenAI/Anthropic, not end users).
-- **August 2026** — main obligations for high-risk systems. If you have recruitment AI, accounting AI with impact on individuals, etc., this is the operational deadline for compliance.
-- **August 2027** — obligations for high-risk systems embedded in regulated products (medical devices, machinery).
+- **February 2025** ✓ already in force, prohibition of unacceptable AI practices.
+- **August 2025** ✓ already in force, obligations for general-purpose AI models (mainly affects vendors like OpenAI/Anthropic, not end users).
+- **August 2026**, main obligations for high-risk systems. If you have recruitment AI, accounting AI with impact on individuals, etc., this is the operational deadline for compliance.
+- **August 2027**, obligations for high-risk systems embedded in regulated products (medical devices, machinery).
 
 For most SMEs: **August 2026** is the date to mark in the calendar. At time of writing, you have 14 months.
 
@@ -237,7 +237,7 @@ When an AI consultant tells you these things, it is a red flag:
 
 **"You are legally required to appoint an AI Officer."** False for SMEs. The AI Act does not mandate the appointment of a dedicated role.
 
-**"You need €50,000 worth of compliance work to be covered under the AI Act."** For most SMEs, the 4 basic steps cost €2–5k in one-off consulting — not €50k.
+**"You need €50,000 worth of compliance work to be covered under the AI Act."** For most SMEs, the 4 basic steps cost €2–5k in one-off consulting, not €50k.
 
 **"The AI Act bans the use of ChatGPT in business."** False. Business use of ChatGPT is minimal risk; an internal policy is enough.
 

@@ -9,7 +9,7 @@ featured: true
 lang: "en"
 ---
 
-The most important question a CEO asks before signing off on an AI sprint isn't "how much does it cost" — it's "**how will I know it's working**".
+The most important question a CEO asks before signing off on an AI sprint isn't "how much does it cost", it's "**how will I know it's working**".
 
 And this is where most AI integrators go quiet, because measuring the ROI of an agent is genuinely hard if you haven't laid the right groundwork first.
 
@@ -52,7 +52,7 @@ Multiple metrics = no metric. Pick one, measure before and after, decide whether
 ## 4. The measurement window
 
 - **Pre-sprint (1 week)**: timed baseline
-- **Week 1 after deploy**: shadow mode — the agent runs but a human reviews everything
+- **Week 1 after deploy**: shadow mode, the agent runs but a human reviews everything
 - **Weeks 2–4**: live, with escalation paths active
 - **30-day hypercare period**: the real window for the final measurement
 
@@ -62,7 +62,7 @@ Measuring before day 30 means measuring noise. The adoption curve needs time to 
 
 When the four pieces above are in place, you can make a concrete ROI commitment. That's exactly what we do with our **"hours recovered or your money back" guarantee**: the primary metric target is written into the contract, measured against the baseline we define together, and evaluated 30 days after go-live.
 
-If we don't hit the target, we work for free or refund the sprint. Not because we're being heroic — because we've built the measurement system that makes it verifiable.
+If we don't hit the target, we work for free or refund the sprint. Not because we're being heroic, because we've built the measurement system that makes it verifiable.
 
 ---
 

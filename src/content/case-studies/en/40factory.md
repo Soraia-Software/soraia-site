@@ -1,5 +1,5 @@
 ---
-title: "40Factory — Linkly for B2B trade show lead generation"
+title: "40Factory, Linkly for B2B trade show lead generation"
 draft: false
 client: "40Factory"
 clientLogo: "/logos/clients/40factory.webp"
@@ -92,13 +92,13 @@ It happens: someone on the sales team has cobbled together an Excel sheet with m
 
 **Linkly is a product, not a side project**. Iterated on hundreds of rounds of feedback from companies that go to trade shows every month. Zero-effort setup: your Linkly account manager handles it. Building the same thing in-house costs 10x more, and six months later it already needs rebuilding.
 
-### "My sales reps aren't digital — they prefer pen and paper"
+### "My sales reps aren't digital, they prefer pen and paper"
 
 This is the most common one. The rep on the show floor has their hands full: talking, shaking hands, exchanging cards, moving on to the next prospect. Asking them to type into a CRM is unrealistic.
 
 **With Linkly, the only thing the person at the show has to do is take a photo of the business card**. No login, no form to fill out, nothing to remember. Photo and done. Everything else, parsing the card, enriching the data, qualifying the lead, sending the follow-up, updating the CRM, is handled by the AI agents orchestrated by the Linkly account manager. Setup, configuration, integration: all on us. The sales rep keeps doing what they do best.
 
-### "We don't need it — we go to shows for branding"
+### "We don't need it, we go to shows for branding"
 
 Even when the stated goal is branding and visibility, spending tens of thousands of euros on stands, fit-out, and travel without measuring what comes back is a missed opportunity.
 

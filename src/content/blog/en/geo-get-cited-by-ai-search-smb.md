@@ -20,7 +20,7 @@ featured: false
 h1: "How to get cited by ChatGPT, Perplexity and Google AI Overviews: GEO explained to an SMB"
 faq:
   - q: "What is GEO (Generative Engine Optimization)?"
-    a: "GEO is the set of practices that get ChatGPT, Claude, Perplexity and Google AI Overviews to <strong>cite your company</strong> in their answers. It doesn't aim for a Google ranking — it aims to be the source the AI engine extracts and names when a user asks a question in your field."
+    a: "GEO is the set of practices that get ChatGPT, Claude, Perplexity and Google AI Overviews to <strong>cite your company</strong> in their answers. It doesn't aim for a Google ranking, it aims to be the source the AI engine extracts and names when a user asks a question in your field."
   - q: "What's the difference between SEO and GEO?"
     a: "SEO optimizes for a ranking of clickable links. GEO optimizes to be <strong>extracted and cited inside a synthesized answer</strong>, often without a click. The technical basics overlap (clear content, clean structure, authority), but the signals that matter shift: self-contained answers, verifiable data, verbatim citability."
   - q: "Can an SMB really get cited by AI engines?"
@@ -40,20 +40,20 @@ The question is no longer "am I on page one?". It's: **does the AI name me when 
 **In short:**
 
 - GEO (Generative Engine Optimization) is getting ChatGPT, Claude, Perplexity and Google AI Overviews to **cite your company** as a source in their answers.
-- It doesn't replace SEO — it changes which signals matter. AI engines reward content that is **self-contained, verifiable and citable verbatim**, not just domains with the most backlinks.
+- It doesn't replace SEO, it changes which signals matter. AI engines reward content that is **self-contained, verifiable and citable verbatim**, not just domains with the most backlinks.
 - For a niche SMB, getting cited is often **easier** than ranking on Google: specificity wins, not budget size.
-- The first step isn't writing more — it's figuring out **whether you're already citable**. At Soraia it starts with a €2,000 audit.
+- The first step isn't writing more, it's figuring out **whether you're already citable**. At Soraia it starts with a €2,000 audit.
 - Real case: for **ILTEC** we rebuilt the site AI search optimized in 3 weeks, paired with a commercial AI agent.
 
 ## What GEO is
 
-Generative Engine Optimization is the set of editorial and technical practices that get a generative AI engine — ChatGPT, Claude, Perplexity, Google AI Overviews — to extract your content and **name your company** as a source when answering a question. The goal isn't a slot in a list of links, but being the source cited inside the synthesized answer.
+Generative Engine Optimization is the set of editorial and technical practices that get a generative AI engine, ChatGPT, Claude, Perplexity, Google AI Overviews, to extract your content and **name your company** as a source when answering a question. The goal isn't a slot in a list of links, but being the source cited inside the synthesized answer.
 
 It's a new channel, but an old funnel: someone has a problem, asks a question, gets some names, picks one. Only who hands out the names has changed.
 
 ## SEO vs GEO: what actually changes
 
-The basics overlap — clear content, fast site, clean structure, authority. But the signals that move the needle differ.
+The basics overlap, clear content, fast site, clean structure, authority. But the signals that move the needle differ.
 
 - **SEO**: you optimize for a ranking of clickable links. Success is a click on your site.
 - **GEO**: you optimize to be **extracted and cited inside an answer**, often without a click. Success is your name in the answer.
@@ -96,4 +96,4 @@ Open Perplexity and ask the question your ideal customer would ask. Do you see y
 
 ---
 
-Want to know how citable you already are by AI engines? Start with the [AI Search Optimization audit](/en/ai-search-optimization), or [let's talk for 20 minutes](/en/contact) — no pitch.
+Want to know how citable you already are by AI engines? Start with the [AI Search Optimization audit](/en/ai-search-optimization), or [let's talk for 20 minutes](/en/contact), no pitch.

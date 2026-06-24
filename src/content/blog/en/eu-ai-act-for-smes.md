@@ -46,13 +46,13 @@ This keeps us **between high risk (AI-assisted) and limited risk (human always i
 
 ## Finance & Accounting: Minimal Risk When Done Right
 
-Agents that read invoices, run OCR, validate VAT, generate reports — **minimal risk**. No autonomous decisions impacting people; purely internal automation.
+Agents that read invoices, run OCR, validate VAT, generate reports, **minimal risk**. No autonomous decisions impacting people; purely internal automation.
 
 Main obligation: internal transparency (the team must know the agent is AI-driven).
 
 ## Sales & Marketing: Limited
 
-Agents handling personalised outreach, lead scoring, email drafting — **limited risk**. If the output goes to an external contact (e.g. an automated follow-up email), you need:
+Agents handling personalised outreach, lead scoring, email drafting, **limited risk**. If the output goes to an external contact (e.g. an automated follow-up email), you need:
 
 - An indication that it was generated with AI assistance (where appropriate)
 - The ability for the recipient to request human intervention

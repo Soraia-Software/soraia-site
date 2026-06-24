@@ -16,7 +16,7 @@ stakeholder:
 heroQuote: "The AI agent does the work of a dedicated ops person for every expert we onboard. Course catalog scaled without hiring new operations."
 shortQuote: "70+ hours saved per expert onboarded. Operations scaled without new hires."
 teaser:
-  problem: "Every new expert required 70+ hours of manual work — contracts, briefs, materials, portal access, and follow-ups."
+  problem: "Every new expert required 70+ hours of manual work, contracts, briefs, materials, portal access, and follow-ups."
   action: "An AI agent that takes ownership of the new expert from first contact: drafts the contract, collects materials, sets up access, sends personalized follow-ups."
   resultMetric: "70 hours saved per expert onboarded"
   resultBody: "Course catalog scaled without hiring new operations: the agent absorbs every new onboarding."
@@ -71,7 +71,7 @@ Soraia built an AI agent that **takes ownership of the entire expert onboarding*
 3. **Sends the content brief** to the expert and collects materials (syllabus, slides, video sample)
 4. **Validates materials** against CXL's quality criteria
 5. **Configures portal access** via API
-6. **Sends personalized follow-ups** in brand tone — never pushy, always contextual to the expert's current status
+6. **Sends personalized follow-ups** in brand tone, never pushy, always contextual to the expert's current status
 7. **Hands off to the human team** only the steps that require a legal signature, a strategic decision, or a sensitive conversation
 
 The agent is available 24/7, communicates with experts across multiple time zones, maintains a consistent tone, never gets tired, and never drops a follow-up.
@@ -80,6 +80,6 @@ The agent is available 24/7, communicates with experts across multiple time zone
 
 **70 hours saved per expert onboarded.** Measured by comparing human time pre-agent vs. post-agent across the same set of tasks.
 
-**Course catalog scaled without hiring new operations**: onboarding capacity is now limited only by the quality of available experts — not by Brian's and the team's hours.
+**Course catalog scaled without hiring new operations**: onboarding capacity is now limited only by the quality of available experts, not by Brian's and the team's hours.
 
 **Expert go-live time cut**: from weeks down to a matter of days, because the agent doesn't wait for ops team availability windows.

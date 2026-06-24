@@ -34,7 +34,7 @@ Positioning note: from 2026 Soraia has repositioned from a no-code/automation ag
 - [Startup GovTech](https://www.soraia.io/en/case-studies/startup-govtech): Diplomacy, AI agent for verbal notes (NDA).
 - [French Riviera Househunting](https://www.soraia.io/en/case-studies/frh): Real estate boutique on the French Riviera, 2 AI agents for qualified lead generation and property capture.
 - [Rainplan](https://www.soraia.io/en/case-studies/rainplan): Climate-tech stormwater management, hundreds of parcels and multi-stakeholder approvals handled autonomously.
-- [40Factory](https://www.soraia.io/en/case-studies/40factory): Industrial IoT / Industry 4.0, Linkly for B2B trade-show lead generation — 5 AI agents for capture, enrichment, qualification, CRM activation and follow-up.
+- [40Factory](https://www.soraia.io/en/case-studies/40factory): Industrial IoT / Industry 4.0, Linkly for B2B trade-show lead generation, 5 AI agents for capture, enrichment, qualification, CRM activation and follow-up.
 
 ## Resources
 

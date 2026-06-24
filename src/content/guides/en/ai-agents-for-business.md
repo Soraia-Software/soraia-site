@@ -36,7 +36,7 @@ faq:
     a: "It depends on the contract. Soraia, for example, transfers code ownership to the client from week one, with no lock-in. If you want to bring development in-house later, Soraia provides training and documentation. Always check this clause before signing a sprint."
 ---
 
-80% of SMEs evaluating AI conflate three distinct things: **chatbots**, **automation**, and **AI agents**. The difference is not semantic — it determines who does the work, who makes the decisions, and where the result ends up.
+80% of SMEs evaluating AI conflate three distinct things: **chatbots**, **automation**, and **AI agents**. The difference is not semantic, it determines who does the work, who makes the decisions, and where the result ends up.
 
 This guide clarifies what an AI agent actually is in a business context, when it makes sense to build one, how to evaluate a partner, and showcases 4 real examples live in production today at European SMEs.
 
@@ -51,7 +51,7 @@ An **AI agent** is a software system that:
 
 Different from a **chatbot** (which responds to a person asking something), different from **Make/Zapier automation** (which runs if-this-then-that rules but without language or judgment), different from an **AI assistant** like ChatGPT/Copilot (which assists a human doing their work).
 
-The AI agent **does the work** — it doesn't assist with it.
+The AI agent **does the work**, it doesn't assist with it.
 
 ### Quick comparison
 
@@ -96,34 +96,34 @@ Not every process is a good fit. The criteria we use on Soraia projects to say "
 
 ### The 4 "yes" criteria
 
-1. **High repetitive volume** — at least 20–30 tasks/week per dedicated person. Below this threshold, a custom agent doesn't justify the investment.
-2. **Structured output** — the result must land in a system (CRM, ATS, ERP, database) or in a standardised communication. If the output is "discuss in a team meeting", it doesn't make sense.
-3. **Reasonably clear rules** — criteria must be documentable. If you ask a recruiter "why did you reject this CV?" and the answer is "gut feeling", the agent cannot learn.
-4. **Measurable baseline** — you need to know how much time and money the process costs today. Without a baseline, you cannot assess whether the agent is delivering value.
+1. **High repetitive volume**, at least 20–30 tasks/week per dedicated person. Below this threshold, a custom agent doesn't justify the investment.
+2. **Structured output**, the result must land in a system (CRM, ATS, ERP, database) or in a standardised communication. If the output is "discuss in a team meeting", it doesn't make sense.
+3. **Reasonably clear rules**, criteria must be documentable. If you ask a recruiter "why did you reject this CV?" and the answer is "gut feeling", the agent cannot learn.
+4. **Measurable baseline**, you need to know how much time and money the process costs today. Without a baseline, you cannot assess whether the agent is delivering value.
 
 ### The 3 "no" signals
 
-- **Process that will change in the next 3 months** — building on unstable workflows is waste.
-- **Team of fewer than 10 people with highly varied tasks** — better to give everyone a business AI assistant (ChatGPT/Copilot) and stop there.
-- **Zero buy-in from the operational team** — an agent the team doesn't accept gets forgotten. <a href="/en/guide/corporate-ai-training">Change management</a> matters as much as the technology.
+- **Process that will change in the next 3 months**, building on unstable workflows is waste.
+- **Team of fewer than 10 people with highly varied tasks**, better to give everyone a business AI assistant (ChatGPT/Copilot) and stop there.
+- **Zero buy-in from the operational team**, an agent the team doesn't accept gets forgotten. <a href="/en/guide/corporate-ai-training">Change management</a> matters as much as the technology.
 
 ## How a custom AI agent is built (the 4 phases)
 
 The standard process we use at Soraia. Replicable by any serious partner; a red flag whenever a vendor skips the fundamentals.
 
-### Phase 1 — Discovery & Baseline (1–2 weeks)
+### Phase 1, Discovery & Baseline (1–2 weeks)
 
 Map the current process, time human effort across 10–20 real tasks, identify bottlenecks, define the **single primary metric** (e.g. "recruiter hours/week recovered"). Output: an AI Readiness Assessment with a clear scope and quantified expected ROI. [Download an anonymised sample report](/en/downloads/ai-assessment-sample) to see what a client receives at the end of this phase.
 
-### Phase 2 — Build (2–3 weeks)
+### Phase 2, Build (2–3 weeks)
 
 Build the agent: prompt engineering, integration with the client's systems (CRM, ATS, etc.), escalation rules, audit log, safety guardrails. Iterative development with weekly reviews.
 
-### Phase 3 — Deploy + Training (1 week)
+### Phase 3, Deploy + Training (1 week)
 
 Go-live in shadow mode (the agent runs, humans check), then a gradual switch to full production. Training for the team responsible for supervising it. Operational documentation.
 
-### Phase 4 — Hypercare (30 days)
+### Phase 4, Hypercare (30 days)
 
 The agent is live; the partner actively monitors, applies rapid fixes to edge cases, and fine-tunes rules. At day 30: final measurement of the primary metric, decision on scaling.
 
@@ -133,25 +133,25 @@ The agent is live; the partner actively monitors, applies rapid fixes to edge ca
 
 All the agents below are live today and handling real work, not demos. The numbers are measured results.
 
-### Stars Be Original — AI recruitment agent (animation)
+### Stars Be Original, AI recruitment agent (animation)
 
 Receives applications, qualifies profiles against the client's criteria, responds with the right communication in brand tone, updates status in real time, and escalates only the cases that require it.
 
 **Results**: 20,000+ candidates handled, 200,000+ communications sent by the agent. Average response time under one minute. [Read the full case study](/en/case-studies/stars-be-original).
 
-### StoryWonder — AI children's story agent (consumer mobile)
+### StoryWonder, AI children's story agent (consumer mobile)
 
 Personalised story generator integrated into the mobile app: takes character, setting, length, and age; generates text + images + audio narration on demand.
 
 **Results**: live on app stores in 4 weeks, 50,000+ users, 300,000+ stories generated. [Read the full case study](/en/case-studies/storywonder).
 
-### CXL — AI expert onboarding agent (online education)
+### CXL, AI expert onboarding agent (online education)
 
 Takes ownership of a new expert from first contact, drafts the contract, collects materials, configures portal access, and sends personalised follow-ups.
 
 **Results**: 70 hours saved per expert onboarded. Course catalogue scaled without hiring additional ops staff. [Read the full case study](/en/case-studies/cxl).
 
-### LIFTT — AI deal flow agent (venture capital)
+### LIFTT, AI deal flow agent (venture capital)
 
 Monitors emails, archives .eml files and attachments on OneDrive with metadata, identifies and deduplicates deals in the CRM, generates the monthly report with charts.
 
@@ -161,7 +161,7 @@ Monitors emails, archives .eml files and attachments on OneDrive with metadata, 
 
 Seen dozens of times across Soraia's 40+ projects. All avoidable once you know what to watch for.
 
-**1. Skipping the baseline.** "We think it'll save us 50%" is not a baseline — it's an opinion. Without a timed pre-agent data point, the post-agent result is impossible to evaluate.
+**1. Skipping the baseline.** "We think it'll save us 50%" is not a baseline, it's an opinion. Without a timed pre-agent data point, the post-agent result is impossible to evaluate.
 
 **2. Scope creep.** The agent starts for "CV screening in recruitment" and two months later is being pushed to handle payroll too. This is how 70% of AI projects fail.
 
@@ -183,10 +183,10 @@ For an operational comparison, see the <a href="/en/guide/ai-consulting-italy">A
 
 The 4 selection criteria that work:
 
-1. **Verifiable track record** — ask for 3 case studies with contactable stakeholders.
-2. **Explicit guarantee** — a serious partner writes the primary metric into the contract and ties themselves to the outcome. Soraia, for example, offers **"if it doesn't work, you don't pay"** as standard.
-3. **Your code, no lock-in** — check this in the contract.
-4. **Sector knowledge and SME culture** — a partner who doesn't understand how an SME actually operates will burn the first sprint on misunderstandings.
+1. **Verifiable track record**, ask for 3 case studies with contactable stakeholders.
+2. **Explicit guarantee**, a serious partner writes the primary metric into the contract and ties themselves to the outcome. Soraia, for example, offers **"if it doesn't work, you don't pay"** as standard.
+3. **Your code, no lock-in**, check this in the contract.
+4. **Sector knowledge and SME culture**, a partner who doesn't understand how an SME actually operates will burn the first sprint on misunderstandings.
 
 ---
 
