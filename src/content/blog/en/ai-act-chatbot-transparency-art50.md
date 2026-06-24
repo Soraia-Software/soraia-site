@@ -23,8 +23,8 @@ faq:
     a: "Text, images, audio and video generated or manipulated by AI must be marked in a machine-readable way (watermarking / metadata) and flagged to the user when the content is meant to inform the public. Disclosure in the interface alone isn't enough: it must be technically verifiable."
   - q: "Is a simple 'you're talking to a virtual assistant' label enough?"
     a: "For the limited-risk tier, often yes, as long as the disclosure is visible at the start of the interaction and the user can request a human. But without an <strong>audit trail</strong> proving when and how the notice was shown, you have no evidence in an inspection. Disclosure must be logged, not just displayed."
-  - q: "Does the June 2026 Digital Omnibus change the deadlines?"
-    a: "The mid-2026 simplification package aims to cut documentation burdens for SMEs, but Article 50 transparency obligations remain the baseline. Plan against the firm date (2 August 2026) and adjust if and when official derogations land, not before."
+  - q: "Does the AI Digital Omnibus change the deadlines?"
+    a: "The AI Digital Omnibus, approved by the European Parliament in June 2026, aims to cut documentation burdens for SMEs, but Article 50 transparency obligations remain the baseline. Plan against the firm date (2 August 2026) and adjust if and when official derogations land, not before."
   - q: "Who's responsible, me or the chatbot vendor?"
     a: "Both, on different levels. The vendor must make disclosure and watermarking possible; you, as the deployer, are responsible for turning them on and keeping the evidence. Make sure your contract and <strong>GDPR Art. 28 DPA</strong> spell out who does what."
 lang: "en"
@@ -40,7 +40,7 @@ The part few people mention: writing it on screen isn't enough. You have to be a
 - From **2 August 2026** every public-facing chatbot, voicebot or conversational agent must inform the user it's an AI (Art. 50 AI Act, limited risk).
 - AI-generated content (text, images, audio, video) meant to inform the public must be marked in a machine-readable way (watermarking / metadata).
 - Disclosure isn't just a label in the interface: without an **audit trail** proving when it was shown, you have no evidence in an inspection.
-- The **June 2026 Digital Omnibus** aims to simplify documentation burdens for SMEs, but Art. 50 stays the baseline: plan against the firm date.
+- The **AI Digital Omnibus** (approved by the European Parliament in June 2026) aims to simplify documentation burdens for SMEs, but Art. 50 stays the baseline: plan against the firm date.
 - Shared responsibility: the vendor enables disclosure and watermarking, you as deployer turn them on and keep the evidence.
 
 ## What Article 50 actually says
@@ -51,7 +51,7 @@ The AI Act places client-facing chatbots in the **limited-risk** tier. The main 
 2. **Marking synthetic content.** Text, images, audio or video generated or manipulated by AI, when it informs the public, must be flagged and marked with machine-readable metadata.
 3. **Reasonable exceptions.** You don't need to repeat the notice if it's obvious from context, but the burden of proving obviousness is on you.
 
-The theoretical maximum fine is high, but for SMEs the real risk isn't the penalty: it's reaching an inspection (or a customer complaint) with no proof of what the bot showed and when.
+Breaching the transparency obligations falls in the tier up to EUR 15 million or 3% of worldwide annual turnover (Art. 99, Regulation (EU) 2024/1689) — not the top ceiling, which is reserved for prohibited practices. But for SMEs the real risk isn't the penalty: it's reaching an inspection (or a customer complaint) with no proof of what the bot showed and when.
 
 ## The typical mistake: disclosure with no proof
 
@@ -95,7 +95,7 @@ If your bot is frontline and takes decisions or sends content to customers, howe
 3. **Set up watermarking** of synthetic content at the system level.
 4. **Check the Art. 28 DPA** with your vendor: who enables what, who keeps the evidence.
 
-For the full picture of AI Act obligations by risk tier, start with the [AI Act guide for SMEs](/en/guide/ai-act-aziende). If instead you already have a support agent in production and want to know whether it's compliant, let's look at it together.
+For the full picture of AI Act obligations by risk tier, start with the [AI Act guide for SMEs](/en/guide/ai-act-for-business). If instead you already have a support agent in production and want to know whether it's compliant, let's look at it together.
 
 ---
 
