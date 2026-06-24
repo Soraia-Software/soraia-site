@@ -86,3 +86,45 @@ jobs:
             echo "merge not ready; retry in 10s"; sleep 10
           done
           echo "::error::auto-publish merge failed after retries"; exit 1
+
+  # Auto-correct on red: runs only if `gates` FAILED, AUTOPUBLISH is on, and this is a
+  # bot draft branch. Reads the latest gate findings, applies minimal fixes with Claude,
+  # and pushes them — which re-triggers the gates (→ autopublish on green, or another
+  # autofix). Capped at MAX_AUTOFIX attempts (default 3); after that it hands to a human.
+  autofix:
+    needs: gates
+    if: ${{ always() && needs.gates.result == 'failure' && vars.AUTOPUBLISH == 'true' && startsWith(github.head_ref, 'blog/') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.BLOG_BOT_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Auto-correct gate failures
+        env:
+          GH_TOKEN: ${{ secrets.BLOG_BOT_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AUTHOR_MODEL: ${{ vars.AUTHOR_MODEL }}
+        run: |
+          PR="${{ github.event.pull_request.number }}"
+          MAX="${{ vars.MAX_AUTOFIX }}"; MAX="${MAX:-3}"
+          n=$(git log --oneline | grep -c "Auto-fix attempt" || true)
+          if [ "$n" -ge "$MAX" ]; then
+            gh pr comment "$PR" --body "🛑 Auto-fix gave up after $n attempt(s) — leaving this PR for a human. See the latest gate scorecard above (the remaining issue may not be fixable by editing, e.g. topic overlap)." --repo "${{ github.repository }}"
+            exit 0
+          fi
+          files=$(gh pr view "$PR" --repo "${{ github.repository }}" --json files -q '.files[].path' | grep -E '^src/content/blog/[^/]+\.md$' || true)
+          [ -z "$files" ] && { echo "no IT blog files in PR; nothing to fix"; exit 0; }
+          gh api "repos/${{ github.repository }}/issues/$PR/comments" --jq 'sort_by(.created_at) | last | .body' > "$RUNNER_TEMP/findings.md"
+          FINDINGS_FILE="$RUNNER_TEMP/findings.md" node automation/fix-gates.mjs $files
+          if git diff --quiet; then echo "fixer made no changes (likely unfixable by edit); leaving for human"; exit 0; fi
+          git config user.name "soraia-blog-bot"
+          git config user.email "162421143+danlevsoraia94@users.noreply.github.com"
+          git commit -am "Auto-fix attempt $((n+1)): address gate findings"
+          git push origin HEAD:"${{ github.head_ref }}"
