@@ -27,7 +27,7 @@ faq:
   - q: "How do I reduce key-person risk on the ERP?"
     a: "Document the processes, cut the steps that rely on tribal knowledge, and move the know-how out of one person's head into a tool anyone can use. A tool with a clear interface and guided flows is the most direct way to remove the single point of failure."
 lang: "en"
-draft: true
+draft: false
 ---
 
 The ERP has been there for fifteen years. It works. But there's exactly one person who really knows how to use it, the interface is from 2009, and every new hire takes three months to become productive.

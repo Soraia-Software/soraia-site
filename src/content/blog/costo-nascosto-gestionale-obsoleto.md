@@ -27,7 +27,7 @@ faq:
   - q: "Come riduco il rischio key-person sul gestionale?"
     a: "Documenta i processi, riduci i passaggi che richiedono conoscenza tribale e sposta il sapere dalla testa di una persona a uno strumento usabile da chiunque. Un tool con interfaccia chiara e flussi guidati è il modo più diretto per togliere il single point of failure."
 lang: "it"
-draft: true
+draft: false
 ---
 
 Il gestionale c'è da quindici anni. Funziona. Però c'è una sola persona che lo sa usare davvero, l'interfaccia è del 2009 e ogni nuovo assunto ci mette tre mesi a diventare autonomo.
