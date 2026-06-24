@@ -10,6 +10,7 @@
 
 import { readFileSync, existsSync, writeFileSync, readdirSync } from "node:fs";
 import Anthropic from "@anthropic-ai/sdk";
+import { normalizeDashes } from "./house-style.mjs";
 
 const DRY = process.argv.includes("--dry-run");
 const MODEL = process.env.AUTHOR_MODEL || "claude-opus-4-8"; // fixing needs a capable model
@@ -104,10 +105,12 @@ for (const itPath of files) {
   if (!out.it_md || !/^---/.test(out.it_md.trim())) die("Model returned no valid it_md");
   if (!/^draft:\s*true\b/m.test(out.it_md)) die("Refusing to write: it_md lost `draft: true` (safety)");
 
-  writeFileSync(itPath, out.it_md.endsWith("\n") ? out.it_md : out.it_md + "\n");
+  // Normalize typographic dashes deterministically so the `house-style` gate clears on the
+  // next run even if the model reintroduced one while fixing other findings.
+  writeFileSync(itPath, normalizeDashes(out.it_md.endsWith("\n") ? out.it_md : out.it_md + "\n"));
   if (enPath && out.en_md && /^---/.test(out.en_md.trim())) {
     if (!/^draft:\s*true\b/m.test(out.en_md)) die("Refusing to write: en_md lost `draft: true` (safety)");
-    writeFileSync(enPath, out.en_md.endsWith("\n") ? out.en_md : out.en_md + "\n");
+    writeFileSync(enPath, normalizeDashes(out.en_md.endsWith("\n") ? out.en_md : out.en_md + "\n"));
   }
   console.log("✓ fixes applied:", (out.changes || []).join(" | ") || "(none reported)");
 }

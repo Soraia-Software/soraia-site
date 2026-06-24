@@ -3,7 +3,7 @@
 // recent news / keywords / questions in Soraia's domains, scores candidate blog
 // topics against the same rubric used in blog-topics.json, dedupes them against the
 // existing backlog and the owned guides, and APPENDS the survivors as `status:"parked"`.
-// It never writes posts and never sets `todo` — a human reviews the PR, then promotes
+// It never writes posts and never sets `todo`, a human reviews the PR, then promotes
 // a parked candidate to `todo` (which the weekly author then drafts). Run by
 // .github/workflows/topic-radar.yml. Requires ANTHROPIC_API_KEY (web search is billed).
 //
@@ -74,10 +74,10 @@ if (DRY) {
 
 // ---- context for the model ----
 const llms = readFileSync("public/llms.txt", "utf8");
-const backlogDigest = topics.map((t) => `- [${t.status}] ${t.id} — kw:"${t.primaryKeyword}" — ${t.title_hint}`).join("\n");
+const backlogDigest = topics.map((t) => `- [${t.status}] ${t.id}, kw:"${t.primaryKeyword}", ${t.title_hint}`).join("\n");
 
 const system = [
-  "You are Soraia's SEO/GEO topic scout. Soraia is an Italian AI agency that builds vertical AI agents, custom software, and AI-search optimization for Italian & European SMBs (CEO/COO/CFO/Head of Ops, 10–200 people).",
+  "You are Soraia's SEO/GEO topic scout. Soraia is an Italian AI agency that builds vertical AI agents, custom software, and AI-search optimization for Italian & European SMBs (CEO/COO/CFO/Head of Ops, 10-200 people).",
   "Your job: use web_search (and web_fetch on promising pages) to find what these decision-makers are searching, reading, and worrying about RIGHT NOW, then propose NEW blog topics that fill gaps in Soraia's backlog and rank well for SEO + AI-search (GEO) citability.",
   "",
   "Domains to scout (recent = last ~6 months, prefer time-sensitive angles): AI agents for SMBs; business-process automation; integrating AI with Italian gestionali/ERP (TeamSystem, Zucchetti, Odoo); custom software vs SaaS / build-vs-buy; the EU AI Act (fully applicable from August 2026) and GDPR for SMBs; finance/recruitment/sales/customer-support automation; fatturazione elettronica; AI adoption & change management in SMBs.",
@@ -86,16 +86,17 @@ const system = [
   "1. Propose ONLY genuinely new angles. Reject anything that overlaps > ~0.8 with the existing backlog or with these OWNED themes (already covered by guides/posts): " + OWNED_THEMES.join("; ") + ".",
   "2. supportingCaseStudy MUST be one of these PUBLISHED slugs or null: " + [...PUBLISHED_CS].join(", ") + ". NEVER reference oggi-lavoro or aegis (hidden/draft).",
   "3. internalLinkTargets MUST be chosen ONLY from these real published routes: " + [...VALID_ROUTES].join(", ") + ".",
-  "4. Every topic must map to a real SMB search intent with business value — no vanity/hype topics. Italian primary keyword.",
+  "4. Every topic must map to a real SMB search intent with business value, no vanity/hype topics. Italian primary keyword.",
   "5. Ground freshness in what you actually found on the web; put the source URLs in `sources`. Set `freshnessExpiry` (YYYY-MM-DD) for time-sensitive topics, else null.",
+  "6. Write every topic field (title_hint, dedupNotes, keywords) in plain ASCII: use the hyphen '-' only, never a typographic, em or en dash. House style is enforced downstream.",
   "",
-  "Score each candidate with subScores in [0,1] — intent (search demand + buyer intent), biz (revenue relevance to Soraia), winnability (can a focused post realistically rank, given competition), freshness, geo (likelihood of being cited verbatim by ChatGPT/Claude/Perplexity). `score` = round(100 * (0.25*intent + 0.30*biz + 0.20*winnability + 0.10*freshness + 0.15*geo)).",
+  "Score each candidate with subScores in [0,1], intent (search demand + buyer intent), biz (revenue relevance to Soraia), winnability (can a focused post realistically rank, given competition), freshness, geo (likelihood of being cited verbatim by ChatGPT/Claude/Perplexity). `score` = round(100 * (0.25*intent + 0.30*biz + 0.20*winnability + 0.10*freshness + 0.15*geo)).",
 ].join("\n");
 
 const user = [
   `Research the web now, then propose up to ${MAX_NEW} NEW topics. Today is ${TODAY}.`,
   "",
-  "EXISTING BACKLOG (do not duplicate — dedupe on theme + keyword):",
+  "EXISTING BACKLOG (do not duplicate, dedupe on theme + keyword):",
   backlogDigest,
   "",
   "PUBLISHED CORPUS / source of truth for numbers & links (public/llms.txt):",
@@ -188,12 +189,12 @@ for (const c of raw) {
 }
 
 kept.sort((a, b) => b.score - a.score);
-for (const [id, why] of dropped) console.log(`  – dropped ${id}: ${why}`);
+for (const [id, why] of dropped) console.log(`, dropped ${id}: ${why}`);
 
 if (kept.length === 0) {
   console.log("No new valid candidates this run. Nothing appended.");
   ghOutput({ added: "false", count: "0" });
-  stepSummary(`### Topic radar — no new candidates\n${out.research_summary || ""}\n\nProposed ${raw.length}, all dropped (dupes/invalid).`);
+  stepSummary(`### Topic radar, no new candidates\n${out.research_summary || ""}\n\nProposed ${raw.length}, all dropped (dupes/invalid).`);
   process.exit(0);
 }
 
@@ -201,11 +202,11 @@ topics.push(...kept);
 writeFileSync(TOPICS, JSON.stringify(topics, null, 2) + "\n");
 console.log(`✓ appended ${kept.length} parked candidate(s) to ${TOPICS}`);
 
-const list = kept.map((t) => `- **${t.id}** (score ${t.score}, ${t.cluster}) — ${t.title_hint}\n  - kw: \`${t.primaryKeyword}\` · persona: ${t.targetPersona} · links: ${t.internalLinkTargets.join(", ")}${t.freshnessExpiry ? ` · fresh until ${t.freshnessExpiry}` : ""}`).join("\n");
+const list = kept.map((t) => `- **${t.id}** (score ${t.score}, ${t.cluster}), ${t.title_hint}\n  - kw: \`${t.primaryKeyword}\` · persona: ${t.targetPersona} · links: ${t.internalLinkTargets.join(", ")}${t.freshnessExpiry ? ` · fresh until ${t.freshnessExpiry}` : ""}`).join("\n");
 const prBody = [
   `Topic radar found **${kept.length}** new candidate topic(s), appended as \`status: "parked"\` (nothing drafts yet).`,
   "",
-  `**What changed:** \`automation/blog-topics.json\` only — ${kept.length} parked entries. No posts written.`,
+  `**What changed:** \`automation/blog-topics.json\` only, ${kept.length} parked entries. No posts written.`,
   "",
   "### Research summary",
   out.research_summary || "(none)",
@@ -217,5 +218,5 @@ const prBody = [
   "Review the angles + sources below. To publish one, flip its `status` to `\"todo\"` (then the weekly author drafts it), or set `\"rejected\"` to discard. Leave as `\"parked\"` to keep for later.",
 ].join("\n");
 ghOutput({ added: "true", count: String(kept.length), title: `Topic radar: ${kept.length} new candidate topic(s)`, prbody: prBody });
-stepSummary(`### Topic radar — ${kept.length} new parked candidate(s)\n${list}`);
+stepSummary(`### Topic radar, ${kept.length} new parked candidate(s)\n${list}`);
 console.log("✓ done");

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Five adversarial quality gates for a blog draft, run as a CI check on the PR.
+// Quality gates for a blog draft, run as a CI check on the PR: one deterministic check
+// (house-style, no API) + five adversarial LLM gates graded by Claude.
 // Reads the changed IT blog file(s) (+ EN counterpart), grades each with Claude,
 // writes a scorecard to GITHUB_STEP_SUMMARY and automation/.gate-report.md (posted
 // to the PR by the workflow), and exits non-zero if any hard gate fails.
@@ -10,6 +11,7 @@
 import { readFileSync, existsSync, writeFileSync, appendFileSync, readdirSync } from "node:fs";
 import { execSync } from "node:child_process";
 import Anthropic from "@anthropic-ai/sdk";
+import { FANCY_DASH } from "./house-style.mjs";
 
 const MODEL = process.env.GATE_MODEL || "claude-sonnet-4-6";
 const client = new Anthropic();
@@ -92,6 +94,29 @@ function metrics(src, label) {
   return `${label}: title=${title.length} chars, meta description=${desc.length} chars, FAQ items=${faq}, body=${words} words, internal links=${links.length} (${valid.length} resolve to published routes)`;
 }
 
+// Deterministic house-style gate (no API call): the whole site is ASCII-hyphen only, so a
+// draft must not contain a typographic dash — em dash (U+2014), en dash (U+2013), horizontal
+// bar (U+2015) or minus sign (U+2212). Catches AI-tell punctuation before it ships, in the
+// frontmatter (title/description/FAQ) and body alike. The author + autofix normalize on
+// write, so this is the backstop for hand-written posts or any normalization gap.
+function dashGate(it, en) {
+  const hits = [];
+  for (const [label, src] of [["IT", it], ["EN", en]]) {
+    if (!src) continue;
+    src.split("\n").forEach((ln, i) => {
+      if (FANCY_DASH.test(ln)) hits.push(`${label} line ${i + 1}: ${ln.trim().slice(0, 88)}`);
+    });
+  }
+  return {
+    g: "house-style",
+    pass: hits.length === 0,
+    score: hits.length === 0 ? 10 : 0,
+    issues: hits.length
+      ? ["House style is ASCII-hyphen only. Replace every em dash, en dash, horizontal bar or minus sign with a hyphen (in ranges, e.g. 10-50k) or a comma/colon/full stop (in prose). Offending lines:", ...hits]
+      : [],
+  };
+}
+
 const files = changedFiles();
 if (!files.length) { console.log("No changed blog .md files — nothing to gate."); process.exit(0); }
 
@@ -114,7 +139,7 @@ for (const itPath of files) {
   const measured = `MEASURED METRICS (authoritative — use these EXACT counts, do NOT recount):\n${metrics(it, "IT")}\n${metrics(en, "EN")}\n\n`;
   const article = (measured + `IT FILE (${itPath}):\n${it}\n\nEN FILE:\n${en || "(not found)"}`).slice(0, 28000);
 
-  const verdicts = await Promise.all(LENSES.map(async (l) => {
+  const llmVerdicts = await Promise.all(LENSES.map(async (l) => {
     try {
       const r = await client.messages.create({
         model: MODEL, max_tokens: 1200,
@@ -125,6 +150,8 @@ for (const itPath of files) {
       return { g: l.g, ...v };
     } catch (e) { return { g: l.g, pass: false, score: 0, issues: ["API error: " + (e?.message || e)] }; }
   }));
+  // Deterministic house-style gate runs first (free, no API), then the LLM lenses.
+  const verdicts = [dashGate(it, en), ...llmVerdicts];
 
   for (const v of verdicts) {
     const icon = v.pass ? "✅" : "❌";

@@ -9,6 +9,7 @@
 
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from "node:fs";
 import Anthropic from "@anthropic-ai/sdk";
+import { normalizeDashes } from "./house-style.mjs";
 
 const DRY = process.argv.includes("--dry-run");
 const MODEL = process.env.AUTHOR_MODEL || "claude-opus-4-8"; // set to claude-sonnet-4-6 for steady-state cost
@@ -121,8 +122,10 @@ for (const k of ["frontmatter_it", "it_body", "frontmatter_en", "en_body"]) if (
 // force slugs from the topic so files + slug map stay consistent
 art.slug_it = topic.slug_it; art.slug_en = topic.slug_en;
 
-writeFileSync(itPath, mdFile(art.frontmatter_it, "it", art.it_body));
-writeFileSync(enPath, mdFile(art.frontmatter_en, "en", art.en_body));
+// House style: strip any typographic dash the model emitted before writing (matches the
+// deterministic `house-style` quality gate, so drafts pass it on the first run).
+writeFileSync(itPath, normalizeDashes(mdFile(art.frontmatter_it, "it", art.it_body)));
+writeFileSync(enPath, normalizeDashes(mdFile(art.frontmatter_en, "en", art.en_body)));
 console.log("✓ wrote", itPath, "+", enPath);
 
 // register slug pair in BLOG_SLUG_MAP (idempotent)

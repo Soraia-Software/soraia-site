@@ -412,7 +412,7 @@
       "/ai-adoption",
       "/case-studies/iltec"
     ],
-    "dedupNotes": "Brief cliente (cambio generazionale): il costo reale del software legacy nelle PMI industriali — difficile da usare, onboarding lento e costoso, e soprattutto rischio key-person (se l'unica persona che sa usarlo se ne va, sei bloccato), piu lock-in del fornitore. Quando conviene svecchiare/sostituire vs tenere. NON e il post 'integrare agenti IA col gestionale' (quello mette l'IA sopra il gestionale esistente); qui il focus e sostituire lo strumento obsoleto. Focus PMI manifatturiere, distretto biellese.",
+    "dedupNotes": "Brief cliente (cambio generazionale): il costo reale del software legacy nelle PMI industriali, difficile da usare, onboarding lento e costoso, e soprattutto rischio key-person (se l'unica persona che sa usarlo se ne va, sei bloccato), piu lock-in del fornitore. Quando conviene svecchiare/sostituire vs tenere. NON e il post 'integrare agenti IA col gestionale' (quello mette l'IA sopra il gestionale esistente); qui il focus e sostituire lo strumento obsoleto. Focus PMI manifatturiere, distretto biellese.",
     "freshnessExpiry": null,
     "score": 79,
     "subScores": {

@@ -10,7 +10,9 @@ and goes live with no human step (a failed gate still holds the PR for a human).
 - `blog-topics.json` — the versioned topic backlog. Status flow: `parked → todo → drafted → published` (or `rejected`). Only `todo` items get written; the author never reuses `drafted`/`published` (anti-duplication).
 - `system-prompt.md` — the canonical generation prompt (brand voice, the verifiable-metric corpus, structure, anti-duplication rules, self-grade). Used by the author script **and** for any post written by hand. Edit voice rules here only.
 - `author.mjs` — picks the first `todo` topic, generates the bilingual draft (`draft:true`), opens a "Draft: …" PR. Run by `draft.yml` (Mon & Thu cron → 2 posts/week).
-- `quality-gates.mjs` — 5 adversarial judges (fact-check, originality, brand-voice, seo-structure, geo-citability) that score a draft PR. Run by `quality-gates.yml`.
+- `quality-gates.mjs` — 1 deterministic check (house-style: ASCII-hyphen only, no typographic/em dashes) + 5 adversarial judges (fact-check, originality, brand-voice, seo-structure, geo-citability) that score a draft PR. Run by `quality-gates.yml`.
+- `house-style.mjs` — single source of truth for the punctuation house style (`FANCY_DASH` detector + `normalizeDashes`), shared by the gate, the author and the autofix so the rule can't drift.
+- `fix-gates.mjs` — the autofix: when gates fail, Claude applies minimal targeted edits and the result is written back dash-normalized. Run by the `autofix` job in `quality-gates.yml`.
 - `topic-radar.mjs` — Phase 3 discovery agent: Claude + web search finds recent news/keywords/questions, scores + dedupes candidate topics, appends survivors as `status:"parked"`. Run by `topic-radar.yml` (bi-weekly cron, 1st & 15th; `RADAR_MAX_TOPICS=6` → up to 12 candidates/month, ≥8 floor, to sustain 2 posts/week). **Refills the backlog so the queue never silently runs dry.** Never writes posts, never sets `todo` — a human reviews the PR and promotes a candidate to `todo`.
 
 ## How a post goes live
