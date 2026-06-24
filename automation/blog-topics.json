@@ -329,7 +329,7 @@
   },
   {
     "id": "outbound-b2b-agente-ia-qualifica-lead",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "opinion",
     "slug_it": "outbound-b2b-2026-agente-ia-qualifica-lead",
     "slug_en": "b2b-outbound-2026-ai-agent-lead-qualification",
@@ -359,7 +359,7 @@
       "https://www.escagency.it/migliori-agenzie-di-lead-generation-b2b-in-italia-2026-classificazione-ai-driven/"
     ],
     "discovered_at": "2026-06-23",
-    "drafted_at": null
+    "drafted_at": "2026-06-24"
   },
   {
     "id": "fatturazione-elettronica-2026-automazione-finance",
