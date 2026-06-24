@@ -47,7 +47,7 @@ The part few people mention: writing it on screen isn't enough. You have to be a
 
 The AI Act places client-facing chatbots in the **limited-risk** tier. The main obligation is one: transparency. Three concrete things.
 
-1. **Conversational disclosure.** The user must know, clearly and at the start of the interaction, that they're talking to an AI and not a human operator.
+1. **Conversational disclosure.** The user must know, clearly and at the start of the interaction, that they're talking to an AI. In practice: a notice in the bot's first message (not buried in the T&Cs), a persistent label in the chat header, and a visible option to switch to a human operator.
 2. **Marking synthetic content.** Text, images, audio or video generated or manipulated by AI, when it informs the public, must be flagged and marked with machine-readable metadata.
 3. **Reasonable exceptions.** You don't need to repeat the notice if it's obvious from context, but the burden of proving obviousness is on you.
 
@@ -64,13 +64,15 @@ If tomorrow a customer claims they never knew they were talking to an AI, or an 
 - whether and when the user requested a human operator;
 - which content was AI-generated and with what marking.
 
+In practice every interaction produces an append-only record with fixed fields — `timestamp`, `session_id`, `disclosure_shown`, `disclosure_text_version`, `human_handoff_requested`, `ai_generated_content_ids`, `watermark_method`. That's what becomes evidence before an authority or a customer, not an interface screenshot. The screenshot shows how it looks today; the log proves how it looked that day, to that user.
+
 This is exactly the same immutable audit trail we put by default on our [customer & compliance automation](/en/customer-support) agents. Not because we're heroic: without it, we can't work on regulated processes.
 
 ## Content watermarking: the underrated part
 
 All the attention goes to the chatbot, but Article 50 also hits the **synthetic content** you publish. Generated replies sent by email, automated summaries, support materials: if they inform the public and are AI-generated, they must be marked.
 
-"Machine-readable" marking (metadata, not just a label) is the technical part that on-screen disclosure doesn't cover. It has to be set at the system level, at the source, not added by hand.
+"Machine-readable" marking isn't a label: it's provenance metadata inside the file, at the source. The reference standard is **C2PA / Content Credentials** (adopted by Adobe, Microsoft, OpenAI): it embeds who generated the media — "AI-generated", model, timestamp — verifiable by a machine even after download or sharing. For text and automated emails, the signal must be set at the system level (headers, CMS or ERP metadata), not stuck on by hand message by message.
 
 ## A concrete case: moderation and content
 

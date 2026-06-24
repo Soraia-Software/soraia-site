@@ -47,7 +47,7 @@ La parte che pochi raccontano: non basta scriverlo a schermo. Serve poterlo *dim
 
 L'AI Act mette i chatbot client-facing nel **rischio limitato**. L'obbligo principale è uno: trasparenza. Tre cose concrete.
 
-1. **Disclosure conversazionale.** L'utente deve sapere, in modo chiaro e all'inizio dell'interazione, che parla con un'IA e non con un operatore umano.
+1. **Disclosure conversazionale.** L'utente deve sapere, in modo chiaro e all'inizio dell'interazione, che parla con un'IA. In pratica: avviso nel primo messaggio del bot (non sepolto nei T&C), etichetta persistente nell'header della chat e un'opzione visibile per passare a un operatore umano.
 2. **Marcatura dei contenuti sintetici.** Testi, immagini, audio o video generati o manipolati dall'IA, quando informano il pubblico, vanno segnalati e marcati con metadata leggibili da una macchina.
 3. **Eccezioni ragionevoli.** Non serve ripetere l'avviso se è ovvio dal contesto, ma l'onere di dimostrare l'ovvietà è tuo.
 
@@ -64,13 +64,15 @@ Se domani un cliente sostiene di non aver mai saputo di parlare con un'IA, o un'
 - se e quando l'utente ha chiesto un operatore umano;
 - quali contenuti sono stati generati dall'IA e con quale marcatura.
 
+In pratica ogni interazione produce un record append-only con campi fissi — `timestamp`, `session_id`, `disclosure_shown`, `disclosure_text_version`, `human_handoff_requested`, `ai_generated_content_ids`, `watermark_method`. È questo che diventa evidenza davanti a un'autorità o a un cliente, non lo screenshot dell'interfaccia. Lo screenshot mostra com'è oggi; il log dimostra com'era quel giorno, a quell'utente.
+
 Questo è esattamente lo stesso audit trail immutabile che mettiamo di default sui nostri agenti di [customer & compliance automation](/customer-support). Non perché siamo eroici: senza, non possiamo lavorare su processi regolamentati.
 
 ## Watermarking dei contenuti: la parte sottovalutata
 
 L'attenzione va tutta al chatbot, ma l'Art. 50 colpisce anche i **contenuti sintetici** che pubblichi. Risposte generate inviate via email, riepiloghi automatici, materiali di supporto: se informano il pubblico e sono generati dall'IA, vanno marcati.
 
-La marcatura "machine-readable" (metadata, non solo una scritta) è la parte tecnica che la disclosure a schermo non copre. Va impostata a livello di sistema, alla fonte, non aggiunta a mano.
+La marcatura "machine-readable" non è una scritta: è un metadato di provenienza dentro il file, alla fonte. Lo standard di riferimento è **C2PA / Content Credentials** (adottato da Adobe, Microsoft, OpenAI): incorpora nel media chi l'ha generato — "AI-generated", modello, timestamp — verificabile da una macchina anche dopo il download o la condivisione. Per i testi e le email automatiche il segnale va impostato a livello di sistema (header, metadata del CMS o del gestionale), non appiccicato a mano messaggio per messaggio.
 
 ## Un caso concreto: moderazione e contenuti
 
