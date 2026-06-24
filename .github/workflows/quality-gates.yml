@@ -79,8 +79,10 @@ jobs:
             git commit -am "Auto-publish: all gates passed, draft:false [skip ci]"
             git push origin HEAD:"${{ github.head_ref }}"
           fi
+          # Explicit subject/body so the flip commit's "[skip ci]" doesn't leak into the
+          # squash-merge message (which would skip deploy.yml on the push to main).
           for i in 1 2 3 4 5; do
-            if gh pr merge "${{ github.event.pull_request.number }}" --squash --delete-branch --repo "${{ github.repository }}"; then exit 0; fi
+            if gh pr merge "$PR" --squash --delete-branch --subject "Auto-publish blog post (PR #$PR, all gates passed)" --body "" --repo "${{ github.repository }}"; then exit 0; fi
             echo "merge not ready; retry in 10s"; sleep 10
           done
           echo "::error::auto-publish merge failed after retries"; exit 1
