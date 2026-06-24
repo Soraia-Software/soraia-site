@@ -395,5 +395,99 @@
     ],
     "discovered_at": "2026-06-23",
     "drafted_at": null
+  },
+  {
+    "id": "costo-gestionale-legacy-sostituire",
+    "status": "todo",
+    "archetype": "opinion",
+    "slug_it": "costo-nascosto-gestionale-obsoleto",
+    "slug_en": "hidden-cost-of-legacy-business-software",
+    "title_hint": "Il costo nascosto del gestionale che nessuno vuole più usare (e quando sostituirlo)",
+    "cluster": "custom-software",
+    "primaryKeyword": "sostituire gestionale obsoleto",
+    "targetPersona": "Titolare / COO / IT manager PMI",
+    "supportingCaseStudy": "iltec",
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-adoption",
+      "/case-studies/iltec"
+    ],
+    "dedupNotes": "Brief cliente (cambio generazionale): il costo reale del software legacy nelle PMI industriali — difficile da usare, onboarding lento e costoso, e soprattutto rischio key-person (se l'unica persona che sa usarlo se ne va, sei bloccato), piu lock-in del fornitore. Quando conviene svecchiare/sostituire vs tenere. NON e il post 'integrare agenti IA col gestionale' (quello mette l'IA sopra il gestionale esistente); qui il focus e sostituire lo strumento obsoleto. Focus PMI manifatturiere, distretto biellese.",
+    "freshnessExpiry": null,
+    "score": 79,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.95,
+      "winnability": 0.8,
+      "freshness": 0.5,
+      "geo": 0.8
+    },
+    "sources": [
+      "user-brief:cambio-generazionale"
+    ],
+    "drafted_at": null
+  },
+  {
+    "id": "software-moderni-attrarre-trattenere-talenti",
+    "status": "todo",
+    "archetype": "opinion",
+    "slug_it": "software-aziendali-attrarre-trattenere-talenti",
+    "slug_en": "modern-tools-attract-retain-talent",
+    "title_hint": "Gli strumenti che usi decidono chi resta: software moderni per attrarre e trattenere i giovani",
+    "cluster": "process-automation",
+    "primaryKeyword": "software aziendali attrarre talenti",
+    "targetPersona": "CEO / HR PMI",
+    "supportingCaseStudy": "iltec",
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-adoption",
+      "/recruitment"
+    ],
+    "dedupNotes": "Brief cliente (cambio generazionale): angolo employer-branding/retention. Le nuove generazioni si aspettano strumenti usabili e moderni; gestionali obsoleti, processi su carta ed Excel allontanano i talenti e rallentano l'onboarding. Il software moderno come leva di attrazione e retention del personale. Distinto dal post sul costo del legacy (qui il focus sono le persone/il talento, non il TCO dello strumento).",
+    "freshnessExpiry": null,
+    "score": 75,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.85,
+      "winnability": 0.8,
+      "freshness": 0.5,
+      "geo": 0.8
+    },
+    "sources": [
+      "user-brief:cambio-generazionale"
+    ],
+    "drafted_at": null
+  },
+  {
+    "id": "cambio-generazionale-pmi-industriali-biella",
+    "status": "todo",
+    "archetype": "opinion",
+    "slug_it": "cambio-generazionale-pmi-industriali-digitalizzazione",
+    "slug_en": "generational-change-industrial-smb-digitalization",
+    "title_hint": "Cambio generazionale nelle PMI industriali: cosa digitalizzare quando entra la nuova generazione",
+    "cluster": "process-automation",
+    "primaryKeyword": "cambio generazionale azienda digitalizzazione",
+    "targetPersona": "Titolare / nuova generazione PMI manifatturiera",
+    "supportingCaseStudy": "iltec",
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-adoption",
+      "/case-studies/iltec",
+      "/guide/formazione-ai-aziendale"
+    ],
+    "dedupNotes": "Brief cliente (cambio generazionale): passaggio generazionale nelle PMI manifatturiere (es. distretto industriale/tessile biellese). Cosa si aspetta la nuova generazione (digitale, niente carta/Excel, UX moderna), cosa modernizzare per primo, come gestire il change management tra vecchia e nuova guardia senza bloccare la produzione. Distinto da change-management-anti-pattern (li = perche falliscono i progetti di automazione).",
+    "freshnessExpiry": null,
+    "score": 76,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.9,
+      "winnability": 0.8,
+      "freshness": 0.55,
+      "geo": 0.8
+    },
+    "sources": [
+      "user-brief:cambio-generazionale"
+    ],
+    "drafted_at": null
   }
 ]
