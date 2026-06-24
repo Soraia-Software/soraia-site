@@ -294,7 +294,7 @@
   },
   {
     "id": "ai-search-visibilita-pmi-geo",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "pillar",
     "slug_it": "farsi-citare-da-chatgpt-perplexity-pmi-geo",
     "slug_en": "geo-get-cited-by-ai-search-smb",
@@ -325,7 +325,7 @@
       "https://www.gianlucalorenzini.com/generative-engine-optimization-guida/"
     ],
     "discovered_at": "2026-06-23",
-    "drafted_at": null
+    "drafted_at": "2026-06-24"
   },
   {
     "id": "outbound-b2b-agente-ia-qualifica-lead",
