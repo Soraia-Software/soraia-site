@@ -1,6 +1,6 @@
 name: Topic radar (discovery)
 
-# Monthly: Claude + web search discovers recent news/keywords/questions in Soraia's
+# Bi-weekly (1st & 15th): Claude + web search discovers recent news/keywords/questions in Soraia's
 # domains, scores candidate topics, dedupes against the backlog, and appends the
 # survivors to automation/blog-topics.json as `status:"parked"` via a PR. Never writes
 # posts and never sets `todo` — a human reviews the PR and promotes a candidate to
@@ -8,7 +8,7 @@ name: Topic radar (discovery)
 
 on:
   schedule:
-    - cron: "0 5 1 * *" # 1st of month, 07:00 Europe/Rome (05:00 UTC)
+    - cron: "0 5 1,15 * *" # 1st & 15th, 07:00 Europe/Rome (05:00 UTC) — keeps the queue stocked for 2 posts/week
   workflow_dispatch:
 
 permissions:

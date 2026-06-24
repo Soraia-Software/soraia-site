@@ -1,6 +1,6 @@
 name: Blog draft (AI author)
 
-# Weekly: pick the first `todo` topic from automation/blog-topics.json, generate a
+# Twice weekly (Mon & Thu) → 2 posts/week: pick the first `todo` topic from automation/blog-topics.json, generate a
 # bilingual draft (draft:true) with Claude, and open a "Draft: …" PR. Never publishes
 # — a human reviews, flips draft:false, and merges (deploy.yml then ships it).
 # Requires the ANTHROPIC_API_KEY repo secret. Optional repo variable AUTHOR_MODEL
@@ -8,7 +8,7 @@ name: Blog draft (AI author)
 
 on:
   schedule:
-    - cron: "0 4 * * 1" # Mondays 06:00 Europe/Rome (04:00 UTC)
+    - cron: "0 4 * * 1,4" # Mondays & Thursdays 06:00 Europe/Rome (04:00 UTC) — 2 posts/week
   workflow_dispatch:
 
 permissions:
