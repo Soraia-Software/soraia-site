@@ -26,7 +26,7 @@ faq:
   - q: "Is automated lead enrichment GDPR-compliant?"
     a: "Yes, when done right. You use lawful sources, log every decision with an immutable audit trail and sign a <strong>GDPR Art. 28 DPA</strong> with the vendor. At Soraia it's included in the contract by default, because without it we couldn't work on this data."
 lang: "en"
-draft: true
+draft: false
 ---
 
 Cold B2B outbound in 2026 isn't dead. It's just become a terrible use of time.

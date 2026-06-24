@@ -26,7 +26,7 @@ faq:
   - q: "L'arricchimento automatico dei lead è conforme al GDPR?"
     a: "Sì, se fatto bene. Si usano fonti lecite, si traccia ogni decisione con audit log immutabile e si firma un <strong>DPA art. 28 GDPR</strong> con il fornitore. In Soraia è incluso nel contratto di default, perché senza non potremmo lavorare su questi dati."
 lang: "it"
-draft: true
+draft: false
 ---
 
 L'outbound B2B "a freddo" nel 2026 non è morto. È solo diventato un pessimo investimento di tempo.
