@@ -40,7 +40,8 @@ talking to a busy founder). Short sentences. Concrete over abstract.
   dall'agente (≈4 recruiter in più); **Navily** −70% tempo operativo su moderazione+enrichment;
   **Numeraria** ~metà mese restituito al management; **Stars Be Original** 20.000+ candidati,
   <1 minuto di risposta; **CXL**, **LIFTT**, **FRH**, **Rainplan**, **Talent Match (Braint)**,
-  **40Factory** (Linkly per fiere B2B — link only, nessun numero di risultato pubblicato).
+  **40Factory** (Linkly per fiere B2B — link only, nessun numero di risultato pubblicato);
+  **ILTEC** (office technology Biella: sito AI-search-optimized rifatto in 3 settimane + agente commerciale via QR code sul parco macchine).
 - If you need a market stat (e.g. "% di progetti AI che falliscono"), attribute it to a
   named external source or cut it. Never fabricate a statistic.
 
