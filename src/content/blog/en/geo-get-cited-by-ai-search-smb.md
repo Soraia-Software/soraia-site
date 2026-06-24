@@ -30,7 +30,7 @@ faq:
   - q: "How long does it take to see results in AI search?"
     a: "It depends on the engine. Perplexity and ChatGPT with browsing update in days or weeks; models' internal indexes and Google AI Overviews take longer. Realistically the window is 2-4 months to see stable citations on the queries that matter to you."
 lang: "en"
-draft: true
+draft: false
 ---
 
 Your customers have stopped searching "best X supplier in Biella" on Google and clicking 10 links. They ask ChatGPT or Perplexity, read *one* answer, and contact the 2-3 companies cited inside it.
