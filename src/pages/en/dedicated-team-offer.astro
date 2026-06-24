@@ -1,0 +1,359 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import FAQ from "~/components/FAQ.astro";
+
+const title = "Dedicated team offer: modernize with zero risk | Soraia";
+const description =
+  "A dedicated team builds your first AI product with you in a month. If you're not satisfied, you don't pay and we deliver nothing. 5,000 EUR/month, for SMEs in generational handover.";
+
+const problemi = [
+  {
+    title: "Old software, untouchable",
+    description: "The system is twenty years old, but it \"works for now\", so nobody touches it. Every year that passes makes it harder to change.",
+  },
+  {
+    title: "Data you can't find",
+    description: "The data exists, somewhere. But getting an answer that should be one click away takes three phone calls and a 2019 spreadsheet.",
+  },
+  {
+    title: "Good young people don't stay",
+    description: "Slow onboarding, tools that feel like another era. After six months your talent leaves for somewhere that works better.",
+  },
+  {
+    title: "Quotes that scare you off",
+    description: "Every proposal you've received talks about years of work and hundreds of thousands of euros. No wonder nobody wants to sign.",
+  },
+];
+
+const sicurezza = [
+  "Mutual NDA before we start.",
+  "We work on test data, never on your live production.",
+  "European infrastructure, DPA art. 28, no LLM training on your data, immutable log.",
+  "Your logic is never reused for anyone else, least of all a competitor in your area.",
+  "If you don't continue, the data is destroyed.",
+];
+
+const faqs = [
+  {
+    q: "5,000 EUR/month: how does it really compare to hiring?",
+    a: "Less than the real cost of a single senior developer hired in Italy: <strong>6,700 to 9,600 euros a month</strong>, fully loaded with social charges and severance. With us you get two people, a method and a result demonstrated at the end of the month. No hiring, no recruiting, no risk.",
+  },
+  {
+    q: "Our long-standing advisor says not to touch what works.",
+    a: "He's right: what works shouldn't be touched, and we don't touch it. We build <strong>alongside</strong>, in an isolated environment; your current system stays up. The advisor should be kept in the loop, not bypassed: we work next to your IT. The real question is: have you decided that nothing can change, and accepted things as they are?",
+  },
+  {
+    q: "Could you break what works today?",
+    a: "No. We never work inside production: isolated environment, test data, no impact on live systems. At the end of the month you see a demo: if it doesn't convince you, everything stays with us and you haven't moved a bolt. Operational risk is zero by design, not by promise.",
+  },
+  {
+    q: "Other quotes talk about years of work.",
+    a: "Those timelines came from the old way of building. We sell you one month: at the end you see a demo and know immediately whether the direction is right. No 18-month project, no lock-in.",
+  },
+  {
+    q: "Are my data and processes safe?",
+    a: "Mutual NDA, test data, European infrastructure, DPA art. 28, no LLM training on your data, immutable log. The IP is yours on continuation. We never reuse your logic for anyone else, least of all a competitor in your area. If you don't continue, the data is destroyed.",
+  },
+  {
+    q: "Good young people leave anyway.",
+    a: "That's a reason to do this, not against it. A sharp 30-year-old leaves because they work on software that feels twenty years old. Modern tools change the reason they stay, and shorten onboarding for new hires.",
+  },
+  {
+    q: "Why you and not our long-standing supplier?",
+    a: "Not to replace him: he knows your company. We bring a lever he probably doesn't have in house yet, building with AI agents. Whoever takes it now, in their sector, starts ahead. Give us a month at zero risk to prove it.",
+  },
+  {
+    q: "It sounds too good to be true. Where's the catch?",
+    a: "Fair question. We can afford it because we orchestrate AI agents: a small team does the work that used to take five. And we protect ourselves the way we protect you: if you're not satisfied you don't pay and we deliver nothing. No upfront, no commitment: the risk is ours, not yours.",
+  },
+];
+
+const stripTags = (html) => html.replace(/<[^>]+>/g, "");
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Dedicated team offer. Soraia",
+    provider: {
+      "@type": "Organization",
+      name: "Soraia",
+      url: "https://www.soraia.io",
+    },
+    areaServed: ["IT", "EU"],
+    serviceType: "Dedicated team (project manager + AI product builder) to modernize software in SMEs during generational handover",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Dedicated team",
+        priceCurrency: "EUR",
+        price: "5000",
+        description: "Dedicated team at 5,000 EUR/month. First month satisfied or you don't pay, and nothing is delivered. No lock-in.",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: stripTags(f.a) },
+    })),
+  },
+];
+---
+
+<Layout title={title} description={description} lang="en" jsonLd={jsonLd}>
+  <!-- ============================================================ HERO ============================================================ -->
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="max-w-[900px]" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          Generational handover · Dedicated team
+        </p>
+
+        <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+          The next generation is in.<br/>Time to modernize.
+        </h1>
+
+        <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+          A dedicated team builds your first AI product with you in a month, <strong style="color: #fff; font-weight: 500;">without breaking what works</strong>. If you're not satisfied at the end of the month, you don't pay and we deliver nothing.
+        </p>
+
+        <div class="mt-6 inline-flex items-center gap-2 fade-up fade-up-delay-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+          <span class="text-[14px] font-medium" style="color: #F4B842;">First month: satisfied or you don't pay. Nothing delivered.</span>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+          <a href="/en/contact" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            20 min with Daniel
+            <span class="btn-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="#offerta" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
+            See the offer
+          </a>
+        </div>
+
+        <div class="mt-10 pt-8 border-t fade-up fade-up-delay-3" style="border-color: rgba(255,255,255,0.12);">
+          <p class="text-[10px] uppercase tracking-[0.18em] mb-3" style="color: rgba(255,255,255,0.45);">Built by us</p>
+          <p class="text-[13.5px] leading-relaxed" style="color: rgba(255,255,255,0.7);">
+            40+ projects · 11 countries · platforms, web apps and internal tools in production · ILTEC · Talent Match · Navily · Rainplan
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ THE PROBLEM ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="The problem"
+        title="You know the company better than anyone. And you know what's holding it back."
+        subtitle="You know where time is wasted and where the data is locked in software no one opens willingly anymore. And you know how it went every time you tried to change something."
+        align="center"
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {problemi.map((p) => (
+          <div class="card-editorial reveal !p-7 md:!p-8">
+            <h3 class="text-[1.25rem] md:text-[1.4rem] font-semibold tracking-tight leading-snug text-ink-900 mb-2.5">{p.title}</h3>
+            <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">{p.description}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-10 text-center text-[16px] md:text-[17px] text-ink-600 max-w-2xl mx-auto text-pretty">
+        So everything stays as it is. Not because it's fine: because changing seems to cost too much, take too long, risk too much.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================ WHY NOW ============================================================ -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia max-w-3xl text-center">
+      <SectionHeader eyebrow="Why now" title="The cost of change has collapsed." align="center" />
+      <div class="space-y-5 text-[16px] md:text-[17px] text-ink-700 leading-relaxed text-pretty">
+        <p>That math (years of work, hundreds of thousands of euros, uncertain outcome) was true. Until recently.</p>
+        <p>AI agents moved the line: what used to take a year and a staggering budget now gets built in a few weeks. And in a few weeks you know whether it works, before investing a fortune.</p>
+        <p><strong class="text-ink-900">We're at the beginning.</strong> Whoever starts now, in their area, gets years ahead of the competitors who wait.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ WITHOUT BREAKING WHAT WORKS ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia max-w-3xl">
+      <SectionHeader eyebrow="Zero risk" title="We don't touch what works." align="center" />
+      <div class="space-y-5 text-[16px] md:text-[17px] text-ink-700 leading-relaxed text-pretty">
+        <p>We replace nothing and we don't put our hands in your system. We build <strong class="text-ink-900">alongside</strong>, in an isolated environment separate from production: the current system stays up, and you see the new one running beside it, on test data, until it has proven its worth.</p>
+        <p>And we work <strong class="text-ink-900">next to your IT or your long-standing advisor, not in their place</strong>: their knowledge of the company is valuable, we bring a lever that didn't exist before.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ HOW IT WORKS ============================================================ -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="How it works"
+        title="A dedicated team of two."
+        subtitle="No big projects to sign blind. Two people working on your problem, with a clear, measurable goal from day one."
+        align="center"
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div class="card-editorial reveal !p-7 md:!p-8">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-violet-700 mb-2">Project Manager</p>
+          <h3 class="text-[1.4rem] font-semibold tracking-tight leading-snug text-ink-900 mb-2.5">Your single point of contact.</h3>
+          <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">Owns quality and timeline, updates you in a weekly meeting, translates between you and whoever builds. You talk to a person, not a ticket.</p>
+        </div>
+        <div class="card-editorial reveal reveal-delay-1 !p-7 md:!p-8">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-violet-700 mb-2">Product Builder</p>
+          <h3 class="text-[1.4rem] font-semibold tracking-tight leading-snug text-ink-900 mb-2.5">Builds with AI agents.</h3>
+          <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">Orchestrates AI agents to build the product, agent or automation you need, in a secure, controlled and compliant environment.</p>
+        </div>
+      </div>
+      <div class="mt-8 max-w-3xl mx-auto rounded-2xl bg-white border border-line p-7 md:p-8 reveal">
+        <p class="text-[15px] md:text-[16px] text-ink-700 leading-relaxed text-pretty">
+          Before we start we sign <strong class="text-ink-900">a single page</strong> together: one clear goal and 3-5 measurable, pass/fail criteria. At the end of the month, a <strong class="text-ink-900">live demo</strong> on your real cases, against those criteria. Not slides: the product that works.
+        </p>
+        <p class="mt-3 text-[13.5px] text-ink-500 leading-relaxed">
+          The demo is the validated, working direction; full production rollout is the next step, which we plan together.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ THE OFFER ============================================================ -->
+  <section id="offerta" class="section bg-white border-t border-line">
+    <div class="container-soraia max-w-3xl">
+      <div class="rounded-3xl bg-ink-900 text-white p-8 md:p-12 reveal text-center">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.18em] mb-4" style="color: rgba(216,180,232,0.9);">The offer</p>
+        <p class="font-semibold tracking-tight" style="font-size: clamp(2.75rem, 6vw, 4rem); line-height: 1;">
+          5,000 EUR<span class="text-[1.25rem] font-normal" style="color: rgba(255,255,255,0.6);">/month</span>
+        </p>
+        <p class="mt-3 text-[16px]" style="color: rgba(255,255,255,0.8);">Dedicated team. Zero risk.</p>
+
+        <ul class="mt-8 space-y-3.5 text-left max-w-xl mx-auto">
+          <li class="flex items-start gap-3">
+            <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="text-[15px] leading-relaxed" style="color: rgba(255,255,255,0.85);"><strong class="text-white">First month: satisfied or you don't pay.</strong> If the demo doesn't hit the criteria we signed together, you don't pay and we don't deliver the build. It stays in our environment.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="text-[15px] leading-relaxed" style="color: rgba(255,255,255,0.85);"><strong class="text-white">If you continue, the work becomes yours.</strong> Code and IP pass to you, documented and maintainable. Not a black box.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="text-[15px] leading-relaxed" style="color: rgba(255,255,255,0.85);"><strong class="text-white">Month to month, no lock-in.</strong> We ask the honesty of three months if we start, but you leave at the end of any month, no penalties. Friends as before.</span>
+          </li>
+        </ul>
+
+        <div class="mt-9">
+          <a href="/en/contact" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            Start with a conversation
+            <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+        </div>
+        <p class="mt-7 text-[13px] leading-relaxed max-w-xl mx-auto" style="color: rgba(255,255,255,0.55);">
+          Why can we afford the month at our own risk? Because we orchestrate AI agents: a small team does the work that used to take five. It's not a trick: it's the reason we exist.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ BUILD VS HIRE ============================================================ -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia max-w-3xl text-center">
+      <SectionHeader eyebrow="Build vs hire" title="Less than a single hired developer." align="center" />
+      <p class="text-[16px] md:text-[17px] text-ink-700 leading-relaxed text-pretty">
+        A single senior developer hired in Italy costs you, fully loaded with social charges and severance, <strong class="text-ink-900">between 6,700 and 9,600 euros a month</strong>. One person, to find, select, train, and who can leave whenever. With us, at the same price or less, you get <strong class="text-ink-900">two people</strong>, a method and a result demonstrated at the end of the month. No hiring, no risk.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================ DATA SAFE ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia max-w-3xl">
+      <SectionHeader eyebrow="Your data, safe" title="Your logic stays yours." align="center" />
+      <ul class="space-y-3.5 max-w-2xl mx-auto">
+        {sicurezza.map((s) => (
+          <li class="flex items-start gap-3">
+            <svg class="shrink-0 mt-1 text-violet-600" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="text-[15px] md:text-[15.5px] text-ink-700 leading-relaxed text-pretty">{s}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================ FOUNDING ============================================================ -->
+  <section class="section bg-violet-mesh border-t border-line">
+    <div class="container-soraia max-w-3xl text-center">
+      <p class="eyebrow mb-5">Founding partner</p>
+      <h2 class="text-[1.75rem] md:text-[2.25rem] font-semibold tracking-tight text-ink-900 leading-[1.15] text-balance">
+        We're selecting a few founding clients in the area.
+      </h2>
+      <p class="mt-5 text-[16px] md:text-[17px] text-ink-600 leading-relaxed text-pretty max-w-2xl mx-auto">
+        5,000 EUR/month in exchange for being among the first tellable cases in your sector. A founding price, in exchange for telling the result together.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================ FAQ ============================================================ -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia max-w-4xl">
+      <SectionHeader eyebrow="FAQ" title="What people usually ask us." align="center" />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================ FINAL CTA ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia max-w-5xl">
+      <div class="reveal text-center max-w-2xl mx-auto mb-10">
+        <p class="eyebrow mb-5">Next step</p>
+        <h2 class="text-[2rem] md:text-[2.75rem] font-semibold tracking-tight text-ink-900 leading-[1.1] text-balance">
+          Start with a conversation, not a quote.
+        </h2>
+        <p class="mt-5 text-[16px] md:text-[17px] text-ink-600 leading-relaxed text-pretty">
+          Half an hour to understand your problem and whether we can really solve it. If it makes sense, we define the criteria page and the first month begins, the one you don't pay if it doesn't satisfy you.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto reveal reveal-delay-1">
+        <a href="/en/contact" class="group rounded-2xl bg-ink-900 hover:bg-ink p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-xl no-underline">
+          <div class="flex items-start gap-4">
+            <img src="/team/daniel-levis.webp" alt="Daniel Levis" class="w-12 h-12 rounded-full object-cover ring-2 ring-violet-400/30" />
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] uppercase tracking-[0.16em] font-semibold mb-1" style="color: rgba(216,180,232,0.9);">Option 1 · Conversation</p>
+              <h3 class="text-[1.15rem] font-semibold text-white leading-tight mb-1">20 min with Daniel</h3>
+              <p class="text-[13.5px] leading-relaxed" style="color: rgba(255,255,255,0.7);">We figure out together whether it makes sense to work together. Zero pitch.</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-2 text-white group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <a href="/en/case-studies" class="group rounded-2xl bg-white border border-line hover:border-violet-300 p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-lg no-underline">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-violet-50 flex items-center justify-center shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 5-5"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] uppercase tracking-[0.16em] font-semibold text-violet-700 mb-1">Option 2 · Real examples</p>
+              <h3 class="text-[1.15rem] font-semibold text-ink-900 leading-tight mb-1">See the case studies</h3>
+              <p class="text-[13.5px] text-ink-600 leading-relaxed">Platforms, web apps and tools we've built for others.</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-2 text-violet-700 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

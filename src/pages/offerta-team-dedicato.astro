@@ -1,0 +1,367 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import FAQ from "~/components/FAQ.astro";
+
+const title = "Offerta team dedicato: modernizza con rischio zero | Soraia";
+const description =
+  "Un team dedicato costruisce con te il tuo primo prodotto IA in un mese. Se non sei soddisfatto, non paghi e non ti consegniamo nulla. 5.000 €/mese, per PMI in cambio generazionale.";
+
+const problemi = [
+  {
+    title: "Software vecchio, intoccabile",
+    description: "Il gestionale ha vent'anni, ma \"per ora funziona\", quindi nessuno lo tocca. Ogni anno che passa è più difficile cambiarlo.",
+  },
+  {
+    title: "Dati che non si trovano",
+    description: "I dati ci sono, da qualche parte. Ma per un'informazione che dovrebbe essere a un clic servono tre telefonate e un Excel del 2019.",
+  },
+  {
+    title: "I giovani bravi non restano",
+    description: "Onboarding lento, strumenti che sembrano di un'altra era. Dopo sei mesi i talenti vanno dove si lavora meglio.",
+  },
+  {
+    title: "Preventivi che spaventano",
+    description: "Ogni offerta ricevuta parla di anni di progetto e centinaia di migliaia di euro. Normale che nessuno voglia firmare.",
+  },
+];
+
+const sicurezza = [
+  "NDA reciproco prima di partire.",
+  "Lavoriamo su dati di prova, mai sulla tua produzione viva.",
+  "Infrastruttura europea, DPA art. 28, nessun addestramento degli LLM sui tuoi dati, log immutabile.",
+  "La tua logica non viene mai riutilizzata per nessun altro, tantomeno per un concorrente della zona.",
+  "Se non continui, i dati vengono distrutti.",
+];
+
+const faqs = [
+  {
+    q: "5.000 € al mese: quanto costa davvero rispetto ad assumere?",
+    a: "Meno del costo reale di un solo sviluppatore senior assunto in Italia: tra i <strong>6.700 e i 9.600 euro al mese</strong>, caricato di INPS, TFR, tredicesima e quattordicesima. Con noi hai due persone, un metodo e un risultato dimostrato a fine mese. Senza assunzione, senza recruiting, senza rischio.",
+  },
+  {
+    q: "Il nostro consulente storico sconsiglia di toccare ciò che funziona.",
+    a: "Ha ragione: ciò che funziona non si tocca, e infatti non lo tocchiamo. Costruiamo <strong>accanto</strong>, in un ambiente isolato; il sistema attuale resta in piedi. Il consulente va tenuto nel giro, non scavalcato: lavoriamo affiancati al vostro IT. La domanda vera è: avete deciso che non si può cambiare e accettare la situazione così com'è?",
+  },
+  {
+    q: "Rischio di rompere ciò che oggi funziona?",
+    a: "No. Non lavoriamo mai dentro la produzione: ambiente isolato, dati di prova, nessun impatto sui sistemi vivi. A fine mese vedi una demo: se non convince, resta tutto da noi e tu non hai mosso un bullone. Il rischio operativo è zero per costruzione, non per promessa.",
+  },
+  {
+    q: "Gli altri preventivi parlano di anni di lavoro.",
+    a: "Quei tempi venivano dal modo vecchio di costruire. Noi ti vendiamo un mese: a fine mese una demo e capisci subito se la direzione è giusta. Niente cantiere di 18 mesi, niente lock-in.",
+  },
+  {
+    q: "I miei dati e processi sono al sicuro?",
+    a: "NDA reciproco, dati di prova, infrastruttura europea, DPA art. 28, nessun addestramento degli LLM sui tuoi dati, log immutabile. L'IP è tuo alla continuazione. La tua logica non la riutilizziamo per nessun altro, tantomeno per un concorrente della zona. Se non continui, i dati vengono distrutti.",
+  },
+  {
+    q: "I giovani bravi non restano comunque.",
+    a: "È un motivo per farlo, non contro. Un trentenne in gamba se ne va perché lavora su software che sente di vent'anni fa. Strumenti moderni cambiano il motivo per cui resta, e accorciano l'onboarding di chi arriva.",
+  },
+  {
+    q: "Perché voi e non il nostro fornitore storico?",
+    a: "Non per sostituirlo: lui conosce la tua azienda. Noi portiamo una leva che probabilmente non ha ancora in casa, costruire con gli agenti IA. Chi la prende ora, nel suo settore, parte avanti. Dacci un mese a rischio zero per dimostrarlo.",
+  },
+  {
+    q: "Sembra troppo bello per essere vero. Dov'è la fregatura?",
+    a: "Domanda giusta. Possiamo permettercelo perché orchestriamo agenti IA: un team piccolo fa il lavoro che prima ne richiedeva cinque. E ci proteggiamo come proteggiamo te: se non sei soddisfatto non paghi e non ti consegniamo niente. Nessun anticipo, nessun vincolo: il rischio è nostro, non tuo.",
+  },
+];
+
+const stripTags = (html) => html.replace(/<[^>]+>/g, "");
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Offerta team dedicato. Soraia",
+    provider: {
+      "@type": "Organization",
+      name: "Soraia",
+      url: "https://www.soraia.io",
+    },
+    areaServed: ["IT", "EU"],
+    serviceType: "Team dedicato (project manager + product builder con agenti IA) per la modernizzazione del software nelle PMI in cambio generazionale",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Team dedicato",
+        priceCurrency: "EUR",
+        price: "5000",
+        description: "Team dedicato a 5.000 €/mese. Primo mese soddisfatti o non paghi, e senza consegna. Nessun lock-in.",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: stripTags(f.a) },
+    })),
+  },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+  <!-- ============================================================ HERO ============================================================ -->
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="max-w-[900px]" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: rgba(216,180,232,0.8);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          Cambio generazionale · Team dedicato
+        </p>
+
+        <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+          La nuova generazione è entrata.<br/>È il momento di modernizzare.
+        </h1>
+
+        <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+          Un team dedicato costruisce con te il tuo primo prodotto IA in un mese, <strong style="color: #fff; font-weight: 500;">senza rompere ciò che funziona</strong>. Se a fine mese non sei soddisfatto, non paghi e non ti consegniamo nulla.
+        </p>
+
+        <div class="mt-6 inline-flex items-center gap-2 fade-up fade-up-delay-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+          <span class="text-[14px] font-medium" style="color: #F4B842;">Primo mese: soddisfatti o non pagate. Niente consegna.</span>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+          <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            20 min con Daniel
+            <span class="btn-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="#offerta" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
+            Vedi l'offerta
+          </a>
+        </div>
+
+        <div class="mt-10 pt-8 border-t fade-up fade-up-delay-3" style="border-color: rgba(255,255,255,0.12);">
+          <p class="text-[10px] uppercase tracking-[0.18em] mb-3" style="color: rgba(255,255,255,0.45);">Costruito da noi</p>
+          <p class="text-[13.5px] leading-relaxed" style="color: rgba(255,255,255,0.7);">
+            40+ progetti · 11 paesi · piattaforme, web app e tool interni in produzione · ILTEC · Talent Match · Navily · Rainplan
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ IL PROBLEMA ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Il problema"
+        title="Conosci l'azienda meglio di chiunque. E sai cosa la frena."
+        subtitle="Sai dove si perde tempo e dove i dati sono chiusi in un software che nessuno apre più volentieri. E sai com'è andata ogni volta che hai provato a cambiare qualcosa."
+        align="center"
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {problemi.map((p) => (
+          <div class="card-editorial reveal !p-7 md:!p-8">
+            <h3 class="text-[1.25rem] md:text-[1.4rem] font-semibold tracking-tight leading-snug text-ink-900 mb-2.5">{p.title}</h3>
+            <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">{p.description}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-10 text-center text-[16px] md:text-[17px] text-ink-600 max-w-2xl mx-auto text-pretty">
+        Così tutto resta com'è. Non perché vada bene: perché cambiare sembra costare troppo, durare troppo, rischiare troppo.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================ PERCHE ORA ============================================================ -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia max-w-3xl text-center">
+      <SectionHeader
+        eyebrow="Perché ora"
+        title="Il costo del cambiamento è crollato."
+        align="center"
+      />
+      <div class="space-y-5 text-[16px] md:text-[17px] text-ink-700 leading-relaxed text-pretty">
+        <p>Quel calcolo (anni di lavoro, centinaia di migliaia di euro, esito incerto) era vero. Fino a poco fa.</p>
+        <p>Gli agenti IA hanno spostato la riga: ciò che richiedeva un anno e un budget da capogiro oggi si costruisce in poche settimane. E in poche settimane capisci se funziona, prima di investire una fortuna.</p>
+        <p><strong class="text-ink-900">Siamo agli inizi.</strong> Chi parte ora, nella propria zona, si porta avanti di anni rispetto ai concorrenti che aspettano.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ SENZA ROMPERE CIO CHE FUNZIONA ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia max-w-3xl">
+      <SectionHeader
+        eyebrow="Senza rischi"
+        title="Non tocchiamo ciò che funziona."
+        align="center"
+      />
+      <div class="space-y-5 text-[16px] md:text-[17px] text-ink-700 leading-relaxed text-pretty">
+        <p>Non sostituiamo niente e non mettiamo le mani nel tuo gestionale. Costruiamo <strong class="text-ink-900">accanto</strong>, in un ambiente isolato e separato dalla produzione: il sistema attuale resta in piedi, il nuovo lo vedi funzionare di fianco, su dati di prova, finché non ha dimostrato di valere.</p>
+        <p>E lavoriamo <strong class="text-ink-900">affiancati al tuo IT o al tuo consulente storico, non al loro posto</strong>: la loro conoscenza dell'azienda è preziosa, noi portiamo una leva che prima non esisteva.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ COME FUNZIONA ============================================================ -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Come funziona"
+        title="Un team dedicato di due persone."
+        subtitle="Niente progettoni da firmare al buio. Due persone che lavorano sul tuo problema, con un obiettivo chiaro e misurabile fin dal primo giorno."
+        align="center"
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div class="card-editorial reveal !p-7 md:!p-8">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-violet-700 mb-2">Project Manager</p>
+          <h3 class="text-[1.4rem] font-semibold tracking-tight leading-snug text-ink-900 mb-2.5">Il tuo punto di contatto unico.</h3>
+          <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">Tiene qualità e tempi, ti aggiorna in un meeting settimanale, traduce tra te e chi costruisce. Parli con una persona, non con un ticket.</p>
+        </div>
+        <div class="card-editorial reveal reveal-delay-1 !p-7 md:!p-8">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-violet-700 mb-2">Product Builder</p>
+          <h3 class="text-[1.4rem] font-semibold tracking-tight leading-snug text-ink-900 mb-2.5">Costruisce con gli agenti IA.</h3>
+          <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">Orchestra gli agenti IA per costruire il tuo prodotto, l'agente o l'automazione di cui hai bisogno, in un ambiente sicuro, controllato e compliant.</p>
+        </div>
+      </div>
+      <div class="mt-8 max-w-3xl mx-auto rounded-2xl bg-white border border-line p-7 md:p-8 reveal">
+        <p class="text-[15px] md:text-[16px] text-ink-700 leading-relaxed text-pretty">
+          Prima di partire firmiamo insieme <strong class="text-ink-900">una pagina sola</strong>: un obiettivo chiaro e 3-5 criteri misurabili, pass/fail. A fine mese, una <strong class="text-ink-900">demo dal vivo</strong> sui tuoi casi reali, contro quei criteri. Non slide: il prodotto che funziona.
+        </p>
+        <p class="mt-3 text-[13.5px] text-ink-500 leading-relaxed">
+          La demo è la direzione validata e funzionante; la messa in produzione completa è il passo successivo, che pianifichiamo insieme.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ L'OFFERTA ============================================================ -->
+  <section id="offerta" class="section bg-white border-t border-line">
+    <div class="container-soraia max-w-3xl">
+      <div class="rounded-3xl bg-ink-900 text-white p-8 md:p-12 reveal text-center">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.18em] mb-4" style="color: rgba(216,180,232,0.9);">L'offerta</p>
+        <p class="font-semibold tracking-tight" style="font-size: clamp(2.75rem, 6vw, 4rem); line-height: 1;">
+          5.000 €<span class="text-[1.25rem] font-normal" style="color: rgba(255,255,255,0.6);">/mese</span>
+        </p>
+        <p class="mt-3 text-[16px]" style="color: rgba(255,255,255,0.8);">Team dedicato. Zero rischi.</p>
+
+        <ul class="mt-8 space-y-3.5 text-left max-w-xl mx-auto">
+          <li class="flex items-start gap-3">
+            <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="text-[15px] leading-relaxed" style="color: rgba(255,255,255,0.85);"><strong class="text-white">Primo mese: soddisfatti o non pagate.</strong> Se alla demo non centriamo i criteri firmati insieme, non paghi e non ti consegniamo il build. Resta nel nostro ambiente.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="text-[15px] leading-relaxed" style="color: rgba(255,255,255,0.85);"><strong class="text-white">Se continui, il lavoro diventa tuo.</strong> Codice e IP passano a te, documentati e mantenibili. Non una scatola nera.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="text-[15px] leading-relaxed" style="color: rgba(255,255,255,0.85);"><strong class="text-white">Mese per mese, senza lock-in.</strong> Ti chiediamo l'onestà di darci tre mesi se partiamo, ma esci a fine di ogni mese, senza penali. Amici come prima.</span>
+          </li>
+        </ul>
+
+        <div class="mt-9">
+          <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            Partiamo da una conversazione
+            <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+        </div>
+        <p class="mt-7 text-[13px] leading-relaxed max-w-xl mx-auto" style="color: rgba(255,255,255,0.55);">
+          Perché possiamo permetterci il mese a rischio nostro? Perché orchestriamo agenti IA: un team piccolo fa il lavoro che prima ne richiedeva cinque. Non è un trucco: è il motivo per cui esistiamo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ BUILD VS HIRE ============================================================ -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia max-w-3xl text-center">
+      <SectionHeader eyebrow="Build vs hire" title="Meno di un solo sviluppatore assunto." align="center" />
+      <p class="text-[16px] md:text-[17px] text-ink-700 leading-relaxed text-pretty">
+        Un solo sviluppatore senior assunto in Italia ti costa, tutto caricato (INPS, TFR, tredicesima e quattordicesima), <strong class="text-ink-900">tra i 6.700 e i 9.600 euro al mese</strong>. Uno solo, da trovare, selezionare, formare, e che può andarsene quando vuole. Con noi, allo stesso prezzo o meno, hai <strong class="text-ink-900">due persone</strong>, un metodo e un risultato dimostrato a fine mese. Senza assunzione, senza rischio.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================ DATI AL SICURO ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia max-w-3xl">
+      <SectionHeader eyebrow="I tuoi dati, al sicuro" title="La tua logica resta tua." align="center" />
+      <ul class="space-y-3.5 max-w-2xl mx-auto">
+        {sicurezza.map((s) => (
+          <li class="flex items-start gap-3">
+            <svg class="shrink-0 mt-1 text-violet-600" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="text-[15px] md:text-[15.5px] text-ink-700 leading-relaxed text-pretty">{s}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================ FOUNDING ============================================================ -->
+  <section class="section bg-violet-mesh border-t border-line">
+    <div class="container-soraia max-w-3xl text-center">
+      <p class="eyebrow mb-5">Founding partner</p>
+      <h2 class="text-[1.75rem] md:text-[2.25rem] font-semibold tracking-tight text-ink-900 leading-[1.15] text-balance">
+        Cerchiamo pochi clienti founding nella zona.
+      </h2>
+      <p class="mt-5 text-[16px] md:text-[17px] text-ink-600 leading-relaxed text-pretty max-w-2xl mx-auto">
+        5.000 €/mese in cambio di essere tra i primi casi raccontabili del tuo settore. Prezzo da founding, in cambio di poter raccontare insieme il risultato.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================ FAQ ============================================================ -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia max-w-4xl">
+      <SectionHeader eyebrow="Domande frequenti" title="Quello che ci chiedono di solito." align="center" />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================ CTA FINALE ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia max-w-5xl">
+      <div class="reveal text-center max-w-2xl mx-auto mb-10">
+        <p class="eyebrow mb-5">Prossimo passo</p>
+        <h2 class="text-[2rem] md:text-[2.75rem] font-semibold tracking-tight text-ink-900 leading-[1.1] text-balance">
+          Partiamo da una conversazione, non da un preventivo.
+        </h2>
+        <p class="mt-5 text-[16px] md:text-[17px] text-ink-600 leading-relaxed text-pretty">
+          Mezz'ora per capire il tuo problema e se possiamo davvero risolverlo. Se ha senso, definiamo la pagina dei criteri e parte il primo mese, quello che non paghi se non ti soddisfa.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto reveal reveal-delay-1">
+        <a href="/parliamone" class="group rounded-2xl bg-ink-900 hover:bg-ink p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-xl no-underline">
+          <div class="flex items-start gap-4">
+            <img src="/team/daniel-levis.webp" alt="Daniel Levis" class="w-12 h-12 rounded-full object-cover ring-2 ring-violet-400/30" />
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] uppercase tracking-[0.16em] font-semibold mb-1" style="color: rgba(216,180,232,0.9);">Opzione 1 · Conversazione</p>
+              <h3 class="text-[1.15rem] font-semibold text-white leading-tight mb-1">20 min con Daniel</h3>
+              <p class="text-[13.5px] leading-relaxed" style="color: rgba(255,255,255,0.7);">Capiamo insieme se ha senso lavorare insieme. Zero pitch.</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-2 text-white group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <a href="/case-studies" class="group rounded-2xl bg-white border border-line hover:border-violet-300 p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-lg no-underline">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-violet-50 flex items-center justify-center shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 5-5"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] uppercase tracking-[0.16em] font-semibold text-violet-700 mb-1">Opzione 2 · Esempi reali</p>
+              <h3 class="text-[1.15rem] font-semibold text-ink-900 leading-tight mb-1">Guarda i case study</h3>
+              <p class="text-[13.5px] text-ink-600 leading-relaxed">Piattaforme, web app e tool che abbiamo costruito per altri.</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-2 text-violet-700 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
