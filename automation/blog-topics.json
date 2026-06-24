@@ -398,7 +398,7 @@
   },
   {
     "id": "costo-gestionale-legacy-sostituire",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "opinion",
     "slug_it": "costo-nascosto-gestionale-obsoleto",
     "slug_en": "hidden-cost-of-legacy-business-software",
@@ -425,7 +425,7 @@
     "sources": [
       "user-brief:cambio-generazionale"
     ],
-    "drafted_at": null
+    "drafted_at": "2026-06-24"
   },
   {
     "id": "software-moderni-attrarre-trattenere-talenti",
