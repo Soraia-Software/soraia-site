@@ -69,10 +69,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.BLOG_BOT_TOKEN }}
         run: |
-          git fetch origin main --depth=1
-          files=$(git diff --name-only origin/main...HEAD | grep -E '^src/content/blog/.*\.md$' || true)
-          [ -z "$files" ] && { echo "no blog files changed; nothing to publish"; exit 0; }
-          echo "$files" | while IFS= read -r f; do [ -n "$f" ] && sed -i 's/^draft: true\b/draft: false/' "$f"; done
+          PR="${{ github.event.pull_request.number }}"
+          files=$(gh pr view "$PR" --repo "${{ github.repository }}" --json files -q '.files[].path' | grep -E '^src/content/blog/.*\.md$' || true)
+          [ -z "$files" ] && { echo "no blog files in PR; nothing to publish"; exit 0; }
+          echo "$files" | while IFS= read -r f; do [ -n "$f" ] && [ -f "$f" ] && sed -i 's/^draft: true\b/draft: false/' "$f"; done
           git config user.name "soraia-blog-bot"
           git config user.email "162421143+danlevsoraia94@users.noreply.github.com"
           if ! git diff --quiet; then
