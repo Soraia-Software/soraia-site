@@ -50,6 +50,8 @@ Il punto è che il lavoro che conta non è il contatto. È la **qualifica** che 
 
 ## Cosa fa al suo posto un agente che qualifica i lead
 
+> **Cos'è un agente IA che qualifica i lead?** Un agente IA che qualifica i lead è un esecutore di processo che fa trigger → enrichment → scoring → routing, passando al venditore solo i lead sopra soglia con un dossier già pronto — senza tempo umano speso in ricerca o data entry.
+
 Un agente IA non è un altro tool di invio massivo. È un esecutore di processo. Riceve un trigger e lavora.
 
 Nel caso della qualifica lead, il flusso è questo:

@@ -50,6 +50,8 @@ The point is that the work that matters isn't the contact. It's the **qualificat
 
 ## What an agent that qualifies leads does instead
 
+> **What is an AI lead-qualification agent?** An AI lead-qualification agent is a process executor that does trigger → enrichment → scoring → routing, passing the rep only above-threshold leads with a ready dossier — without human time spent on research or data entry.
+
 An AI agent isn't another mass-send tool. It's a process executor. It receives a trigger and works.
 
 For lead qualification, the flow is:
