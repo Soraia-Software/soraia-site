@@ -20,7 +20,7 @@ faq:
   - q: "Is cold outbound really dead in 2026?"
     a: "No, but pure volume returns much less. Inboxes are saturated and filters increasingly aggressive. What works is fewer contacts, but far more qualified and enriched. An <strong>AI agent that qualifies leads</strong> moves the work upstream: only people worth contacting reach the rep."
   - q: "What does an AI lead-qualification agent actually do?"
-    a: "It receives a trigger (form submission, imported list, intent signal), enriches the contact from multiple sources, applies your scoring rules and passes the rep only the leads above threshold, with a ready dossier. Below-threshold leads are discarded or put in nurturing, without using human time."
+    a: "An AI lead-qualification agent runs a 4-step flow: 1) <strong>Trigger</strong> — it receives a new lead from a form, imported list or intent signal; 2) <strong>Enrichment</strong> — it enriches the contact from multiple sources (company size, sector, role, growth signals); 3) <strong>Scoring</strong> — it applies your scoring rules, not a generic score, to say who's in target; 4) <strong>Routing</strong> — it passes the rep only leads above threshold, with a ready dossier, while below-threshold leads are discarded or put in nurturing, without using human time."
   - q: "When do you NOT need a lead-qualification agent?"
     a: "If you handle fewer than 30-40 leads a week and run a few enterprise deals where every contact is already hand-curated, an agent won't move the needle. There you need a good rep, not automation. We say so plainly before starting."
   - q: "Is automated lead enrichment GDPR-compliant?"
@@ -61,7 +61,7 @@ For lead qualification, the flow is:
 
 The result isn't "more leads". It's **fewer leads reaching the rep, but the right ones**, already contextualized. Time that used to go into research and data entry returns to sales conversations.
 
-It's the same logic we use to decide [when you need a custom agent instead of ChatGPT](/en/blog/custom-ai-agents-vs-chatgpt-enterprise/): if the task is high-volume and the output always lands in your systems (CRM), copying by hand is money wasted.
+It's the same logic we use to decide [when you need a custom agent instead of ChatGPT](/en/blog/ai-agents-vs-chatgpt-enterprise): if the task is high-volume and the output always lands in your systems (CRM), copying by hand is money wasted.
 
 ## A real example: boutique real estate
 
