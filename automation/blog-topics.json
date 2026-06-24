@@ -259,7 +259,7 @@
   },
   {
     "id": "chatbot-agente-ia-trasparenza-art50",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "news-reaction",
     "slug_it": "obbligo-trasparenza-chatbot-agente-ia-art-50",
     "slug_en": "ai-act-chatbot-transparency-art50",
@@ -290,7 +290,7 @@
       "https://truescreen.io/articles/eu-ai-act-transparency-obligations-businesses/"
     ],
     "discovered_at": "2026-06-23",
-    "drafted_at": null
+    "drafted_at": "2026-06-24"
   },
   {
     "id": "ai-search-visibilita-pmi-geo",
