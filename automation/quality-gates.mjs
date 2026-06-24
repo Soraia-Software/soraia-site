@@ -77,6 +77,21 @@ function parse(text) {
   try { return JSON.parse(text.slice(s, e + 1)); } catch { return { pass: false, score: 0, issues: ["judge returned unparseable output"] }; }
 }
 
+// Compute the countable metrics deterministically and hand them to the judge, so the
+// seo-structure lens uses exact figures instead of (unreliably) eyeballing char counts.
+function metrics(src, label) {
+  if (!src) return `${label}: (file not found)`;
+  const parts = src.split(/^---$/m);
+  const fm = parts[1] || "", body = parts.slice(2).join("---");
+  const title = (fm.match(/^title:\s*"(.*)"$/m) || [, ""])[1];
+  const desc = (fm.match(/^description:\s*"(.*)"$/m) || [, ""])[1];
+  const faq = (fm.match(/^\s*-\s*q:/gm) || []).length;
+  const words = (body.trim().match(/\S+/g) || []).length;
+  const links = [...body.matchAll(/\]\((\/[^)]*)\)|href="(\/[^"]*)"/g)].map((m) => (m[1] || m[2]).replace(/[#?].*$/, "").replace(/\/$/, "")).filter((r) => r.startsWith("/"));
+  const valid = links.filter((r) => VALID_ROUTES.has(r || "/"));
+  return `${label}: title=${title.length} chars, meta description=${desc.length} chars, FAQ items=${faq}, body=${words} words, internal links=${links.length} (${valid.length} resolve to published routes)`;
+}
+
 const files = changedFiles();
 if (!files.length) { console.log("No changed blog .md files — nothing to gate."); process.exit(0); }
 
@@ -96,7 +111,8 @@ for (const itPath of files) {
   } catch {}
 
   report.push(`\n### \`${slugIt}\``);
-  const article = `IT FILE (${itPath}):\n${it}\n\nEN FILE:\n${en || "(not found)"}`.slice(0, 28000);
+  const measured = `MEASURED METRICS (authoritative — use these EXACT counts, do NOT recount):\n${metrics(it, "IT")}\n${metrics(en, "EN")}\n\n`;
+  const article = (measured + `IT FILE (${itPath}):\n${it}\n\nEN FILE:\n${en || "(not found)"}`).slice(0, 28000);
 
   const verdicts = await Promise.all(LENSES.map(async (l) => {
     try {
