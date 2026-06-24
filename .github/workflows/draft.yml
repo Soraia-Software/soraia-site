@@ -35,6 +35,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           AUTHOR_MODEL: ${{ vars.AUTHOR_MODEL }}
+          AUTOPUBLISH: ${{ vars.AUTOPUBLISH }}
         run: node automation/author.mjs
 
       - name: Open draft PR

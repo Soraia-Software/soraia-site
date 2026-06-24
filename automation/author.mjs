@@ -69,7 +69,16 @@ function stepSummary(md) {
 
 // ---- pick topic ----
 const topics = JSON.parse(readFileSync(TOPICS, "utf8"));
-const topic = topics.find((t) => t.status === "todo");
+let topic = topics.find((t) => t.status === "todo");
+// Full-autonomy fallback: with AUTOPUBLISH on, if nothing is queued, pick the
+// highest-scoring non-expired `parked` candidate so the weekly run self-sustains
+// (topic-radar keeps `parked` stocked). Without AUTOPUBLISH, a human still promotes.
+if (!topic && process.env.AUTOPUBLISH === "true") {
+  topic = topics
+    .filter((t) => t.status === "parked" && !existsSync(`src/content/blog/${t.slug_it}.md`) && (!t.freshnessExpiry || t.freshnessExpiry >= TODAY))
+    .sort((a, b) => (b.score || 0) - (a.score || 0))[0];
+  if (topic) console.log(`→ no "todo"; AUTOPUBLISH on → auto-promoting top parked: ${topic.id} (score ${topic.score})`);
+}
 if (!topic) { console.log("Backlog empty: no topic with status \"todo\". Promote a parked topic to publish."); ghOutput({ drafted: "false" }); process.exit(0); }
 const itPath = `src/content/blog/${topic.slug_it}.md`;
 const enPath = `src/content/blog/en/${topic.slug_en}.md`;

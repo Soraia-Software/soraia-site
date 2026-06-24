@@ -1,8 +1,10 @@
 # Automated blog engine
 
-A `generate → gate → human-review → publish` pipeline that produces 1–2 genuinely
-useful, bilingual (IT/EN) posts per week from a documented content-gap backlog.
-**Quality and safety over volume.** Nothing auto-publishes today.
+A `generate → gate → publish` pipeline that produces 1–2 genuinely useful, bilingual
+(IT/EN) posts per week from a documented content-gap backlog. **Quality and safety over
+volume.** Publishing mode is controlled by the `AUTOPUBLISH` repo variable (see Guardrails):
+off = human reviews + merges each draft PR; on = a post that passes ALL gates auto-merges
+and goes live with no human step (a failed gate still holds the PR for a human).
 
 ## Pieces in this folder
 - `blog-topics.json` — the versioned topic backlog. Status flow: `parked → todo → drafted → published` (or `rejected`). Only `todo` items get written; the author never reuses `drafted`/`published` (anti-duplication).
@@ -31,6 +33,6 @@ useful, bilingual (IT/EN) posts per week from a documented content-gap backlog.
 - `ANTHROPIC_API_KEY` — for Phase 2 (`author.mjs`) only.
 
 ## Guardrails (non-negotiable)
-- Human flips `draft:false`; nothing publishes unreviewed in MVP. In Phase 2, "auto-publish" = publish only if ALL five quality gates pass, else hold for a human.
+- **`AUTOPUBLISH` repo variable** (GitHub → Settings → Secrets and variables → Actions → Variables) is the publishing kill-switch. Unset/`false` → human reviews and merges every draft PR (`draft:true` until a human flips it). `true` → (1) the author auto-promotes the top-scored `parked` topic when the `todo` queue is empty, and (2) the `autopublish` job in `quality-gates.yml` flips `draft:false` and merges any bot PR (`blog/*`) that passes ALL five gates — no human step. **A failed gate always holds the PR open for a human; `draft:false` is set only after all gates pass, so a failed-gate PR stays hidden in prod even if merged.**
 - Cadence ceiling 1–2 posts/week, topics only from the gap list — avoids Google "scaled content abuse".
 - Every number traceable to the site. Never link/cite `oggi-lavoro` or `aegis` (draft, pending client approval).
