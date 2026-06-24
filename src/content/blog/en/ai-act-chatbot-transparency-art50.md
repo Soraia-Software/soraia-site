@@ -1,6 +1,6 @@
 ---
 title: "AI Act Chatbot Transparency: What to Do Before Aug 2026"
-description: "From 2 August 2026 every chatbot and synthetic content must disclose it's AI (Art. 50 AI Act). What really changes for customer support: disclosure, watermarking, audit trail."
+description: "From 2 August 2026 every chatbot must disclose it's AI (Art. 50 AI Act): what changes for customer support — disclosure, watermarking and audit trail."
 pubDate: 2026-06-24
 author: "Daniel Levis"
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Obbligo trasparenza chatbot AI Act: cosa fare entro il 2026"
-description: "Dal 2 agosto 2026 ogni chatbot e contenuto sintetico deve dichiararsi IA (Art. 50 AI Act). Cosa cambia davvero per l'assistenza clienti: disclosure, watermarking, audit trail."
+description: "Dal 2 agosto 2026 ogni chatbot deve dichiararsi IA (Art. 50 AI Act): cosa cambia per l'assistenza clienti tra disclosure, watermarking e audit trail."
 pubDate: 2026-06-24
 author: "Daniel Levis"
 tags:
