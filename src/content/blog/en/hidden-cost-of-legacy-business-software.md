@@ -69,7 +69,7 @@ This is the strongest replacement signal of all. Not because the software is old
 
 The right question isn't "how much does the new software cost". It's: **how long would it take to get my data out and make it work elsewhere?** If the answer is "I don't know" or "months", the lock-in is real and belongs in the maths.
 
-It's the same build vs buy reasoning I wrote about in the piece on [custom software or SaaS](/en/blog/software-su-misura-o-saas/). The four criteria (core process, cost over 2-3 years, lock-in, lifecycle) apply here too.
+It's the same build vs buy reasoning I wrote about in the piece on [custom software or SaaS](/en/blog/custom-software-vs-saas). The four criteria (core process, cost over 2-3 years, lock-in, lifecycle) apply here too.
 
 ## When NOT to replace
 
@@ -95,4 +95,4 @@ And before writing code, often the fastest win is getting the tribal knowledge o
 
 Measure what your ERP really costs today: onboarding hours, hours lost in workarounds, dependence on one person. That number tells you whether replacement makes sense — or whether modernising one module is enough.
 
-If you want an honest outside view, [let's talk](/en/contact): 20 minutes, no pitch. Or start with the [check-up](/check-up).
+If you want an honest outside view, [let's talk](/en/contact): 20 minutes, no pitch. Or start with the [check-up](/en/check-up).
