@@ -1,0 +1,55 @@
+name: Guide draft (AI author)
+
+# Weekly (Wednesday, a different day than the blog's Mon & Thu) -> 1 guide/week: pick the
+# first `todo` topic from automation/guide-topics.json, generate a bilingual operative guide
+# (draft:true) with Claude, and open a "Draft guida: ..." PR on a guide/ branch. Never
+# publishes directly; guide-quality-gates.yml gates it and (with AUTOPUBLISH on) flips
+# draft:false and merges. Requires the ANTHROPIC_API_KEY repo secret. Optional repo variable
+# AUTHOR_MODEL (default claude-opus-4-8; set claude-sonnet-4-6 for steady-state cost).
+
+on:
+  schedule:
+    - cron: "0 4 * * 3" # Wednesdays 06:00 Europe/Rome (04:00 UTC) -> 1 guide/week
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: guide-draft
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Generate guide draft
+        id: author
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AUTHOR_MODEL: ${{ vars.AUTHOR_MODEL }}
+          AUTOPUBLISH: ${{ vars.AUTOPUBLISH }}
+        run: node automation/guide-author.mjs
+
+      - name: Open draft PR
+        if: steps.author.outputs.drafted == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          # Scoped PAT (BLOG_BOT_TOKEN) so PR creation works despite the org disabling
+          # write for the default GITHUB_TOKEN. The guide/ branch prefix is load-bearing:
+          # guide-quality-gates.yml only auto-publishes/auto-fixes on it.
+          token: ${{ secrets.BLOG_BOT_TOKEN || github.token }}
+          branch: guide/${{ steps.author.outputs.slug }}
+          base: main
+          title: "Draft guida: ${{ steps.author.outputs.title }}"
+          body: ${{ steps.author.outputs.prbody }}
+          commit-message: "Guide draft: ${{ steps.author.outputs.slug }} (draft:true)"
+          delete-branch: true

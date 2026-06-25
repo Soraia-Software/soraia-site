@@ -8,7 +8,7 @@ const title = "AI guides for businesses | Soraia";
 const description = "Soraia's operational guides for SMEs evaluating AI: agents, consulting, training, the EU AI Act, costs. No fluff, grounded in 40+ real projects.";
 
 const guides = (await getCollection("guides"))
-  .filter((g) => g.data.lang === "en")
+  .filter((g) => g.data.lang === "en" && (import.meta.env.DEV || !g.data.draft))
   .sort((a, b) => (b.data.updatedDate || b.data.pubDate).valueOf() - (a.data.updatedDate || a.data.pubDate).valueOf());
 
 const featured = guides.filter((g) => g.data.featured);

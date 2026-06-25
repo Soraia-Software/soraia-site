@@ -22,6 +22,27 @@ and goes live with no human step (a failed gate still holds the PR for a human).
 4. **Human review** in `astro dev` (drafts render in dev, are stripped from prod builds & sitemap). Verify every metric against `public/llms.txt` / published case studies, check voice, flip `draft: true → false` in BOTH files.
 5. Commit/merge to `main` → the `deploy.yml` Action builds + `wrangler pages deploy`s. (Until the Cloudflare secrets exist, deploy with `npm run build && npx wrangler pages deploy dist --project-name=soraia-site --branch=main`.)
 
+## Operative guides engine (parallel pipeline, `/guide/`)
+
+A second, isolated fork of the same machinery publishes **1 long-form operative guide per week
+on Wednesday** (a different day than the blog's Mon & Thu) under `/guide/` and `/en/guide/`.
+Guides are thought-leadership + practical content on regulations and news (AI Act, GDPR, NIS2,
+Garante Privacy, incentivi), written to position Soraia as the honest operational expert. The
+guide fork shares `house-style.mjs` and the `deploy.yml` backstop, but uses its own backlog,
+prompt, scripts, branch prefix (`guide/`), and workflows so it can never destabilize the blog.
+
+- `guide-topics.json` — guide backlog (same status flow `parked → todo → drafted → published`), separate from `blog-topics.json` so blog and guide drafters never fight over the same `todo`.
+- `guide-system-prompt.md` — guide generation prompt: factual + attributed, archetype decides length (practical how-to ~1200-1500w, regulatory-update/opinion/news ~800-1300w), and **every guide MUST close by inviting an honest expert opinion from Soraia** (`/parliamone` / `/en/contact`).
+- `guide-author.mjs` — picks the first `todo` guide topic, writes IT+EN `draft:true` under `src/content/guides{,/en}`, registers the pair in `GUIDE_SLUG_MAP`. Run by `guide-draft.yml` (Wednesday cron).
+- `guide-quality-gates.mjs` — **2 deterministic checks** (`house-style`; `expert-cta`: the `/parliamone` // `/en/contact` link must be present) + **6 LLM gates** (fact-check, originality, brand-voice, seo-structure, geo-citability, **honesty**). Because guides auto-publish hands-off, `honesty` (every external regulatory/fiscal claim attributed to a named source; general guidance, not advice; routes to Soraia for a tailored opinion) + `expert-cta` are the safety net. Run by `guide-quality-gates.yml`.
+- `guide-fix-gates.mjs` — the guide autofix (same loop as the blog, guide constraints + keeps the CTA). Run by the `autofix` job in `guide-quality-gates.yml`.
+- `guide-radar.mjs` — discovery for regulatory/news/operative angles; dedupes against the guide backlog, published guides **and** the blog (no cannibalization). Run by `guide-topic-radar.yml` (bi-weekly, 8th & 22nd, offset from the blog radar's 1st & 15th).
+
+Guides use the **same `AUTOPUBLISH` repo variable** as the blog (flipping it affects both). The
+guide collection gained a `draft` field (`src/content.config.ts`) + the `(import.meta.env.DEV || !draft)`
+filter on all four guide pages, so a `draft:true` guide is hidden in prod (and the sitemap) and
+flips live on a green gate run, exactly like the blog.
+
 ## Roadmap
 - **Phase 0 (done)** — blog schema gains `draft` / `faq` / `keywords` / `updatedDate` / `h1` / `ogImage`; drafts hidden in prod (visible in dev); Article + FAQPage JSON-LD on blog posts; `deploy.yml`.
 - **Phase 1 (MVP)** — hand-author the first 2-3 posts from this prompt to lock the voice.

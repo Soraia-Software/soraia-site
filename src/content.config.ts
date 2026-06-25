@@ -103,6 +103,7 @@ const guides = defineCollection({
     })).default([]),
     featured: z.boolean().default(false),
     lang: z.enum(["it", "en"]).default("it"),  // EN entries live in the en/ subfolder
+    draft: z.boolean().default(false),          // hidden in prod (kill-switch + staging); visible in dev
   }),
 });
 

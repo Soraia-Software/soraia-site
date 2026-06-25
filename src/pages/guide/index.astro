@@ -6,7 +6,7 @@ const title = "Guide AI per aziende italiane | Soraia";
 const description = "Le guide operative di Soraia per le PMI italiane che valutano l'IA: agenti, consulenza, formazione, AI Act, costi. Senza fluff, basate su 40+ progetti reali.";
 
 const guides = (await getCollection("guides"))
-  .filter((g) => g.data.lang === "it")
+  .filter((g) => g.data.lang === "it" && (import.meta.env.DEV || !g.data.draft))
   .sort((a, b) => (b.data.updatedDate || b.data.pubDate).valueOf() - (a.data.updatedDate || a.data.pubDate).valueOf());
 
 const featured = guides.filter((g) => g.data.featured);

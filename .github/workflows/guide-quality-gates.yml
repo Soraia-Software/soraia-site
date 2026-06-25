@@ -1,0 +1,128 @@
+name: Guide quality gates
+
+# Runs the guide gates (2 deterministic: house-style + expert-cta; 6 LLM: fact-check,
+# originality, brand-voice, SEO/structure, GEO-citability, honesty) on any PR touching guide
+# content, posts a scorecard comment, and fails the check if any gate fails. Requires ANTHROPIC_API_KEY.
+#
+# Auto-publish: if the repo variable AUTOPUBLISH == 'true' AND all gates pass on a bot guide
+# branch (guide/*), the `autopublish` job flips draft:false and merges with BLOG_BOT_TOKEN (so
+# deploy.yml fires) -- no human approval. A FAILED gate leaves the PR open for a human. Invariant:
+# draft:false is set ONLY after all gates pass, so a failed-gate guide stays hidden in prod even
+# if merged. Because guides auto-publish, the honesty + expert-cta gates are the safety net.
+
+on:
+  pull_request:
+    paths:
+      - "src/content/guides/**"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Run guide quality gates
+        id: gates
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GATE_MODEL: ${{ vars.GATE_MODEL }}
+        run: node automation/guide-quality-gates.mjs
+
+      - name: Post scorecard comment
+        if: always() && hashFiles('automation/.gate-report.md') != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr comment "${{ github.event.pull_request.number }}" --body-file automation/.gate-report.md --repo "${{ github.repository }}"
+
+      - name: Enforce gate result
+        if: steps.gates.outcome == 'failure'
+        run: |
+          echo "::error::One or more guide quality gates failed — see the scorecard comment on the PR."
+          exit 1
+
+  # Auto-publish on green: only runs if `gates` succeeded, AUTOPUBLISH is on, and this is a
+  # bot guide branch. Flips draft:false (IT + EN) and merges with the PAT so deploy.yml ships it.
+  autopublish:
+    needs: gates
+    if: vars.AUTOPUBLISH == 'true' && startsWith(github.head_ref, 'guide/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.BLOG_BOT_TOKEN }}
+          fetch-depth: 0
+      - name: Flip draft:false + merge
+        env:
+          GH_TOKEN: ${{ secrets.BLOG_BOT_TOKEN }}
+        run: |
+          PR="${{ github.event.pull_request.number }}"
+          files=$(gh pr view "$PR" --repo "${{ github.repository }}" --json files -q '.files[].path' | grep -E '^src/content/guides/.*\.md$' || true)
+          [ -z "$files" ] && { echo "no guide files in PR; nothing to publish"; exit 0; }
+          echo "$files" | while IFS= read -r f; do [ -n "$f" ] && [ -f "$f" ] && sed -i 's/^draft: true\b/draft: false/' "$f"; done
+          git config user.name "soraia-blog-bot"
+          git config user.email "162421143+danlevsoraia94@users.noreply.github.com"
+          if ! git diff --quiet; then
+            git commit -am "Auto-publish: all gates passed, draft:false [skip ci]"
+            git push origin HEAD:"${{ github.head_ref }}"
+          fi
+          # Explicit subject/body so the flip commit's "[skip ci]" doesn't leak into the
+          # squash-merge message (which would skip deploy.yml on the push to main).
+          for i in 1 2 3 4 5; do
+            if gh pr merge "$PR" --squash --delete-branch --subject "Auto-publish guide (PR #$PR, all gates passed)" --body "" --repo "${{ github.repository }}"; then exit 0; fi
+            echo "merge not ready; retry in 10s"; sleep 10
+          done
+          echo "::error::auto-publish merge failed after retries"; exit 1
+
+  # Auto-correct on red: runs only if `gates` FAILED, AUTOPUBLISH is on, and this is a bot
+  # guide branch. Reads the latest gate findings, applies minimal fixes with Claude, and pushes
+  # them -- re-triggering the gates. Capped at MAX_AUTOFIX attempts (default 3), then hands to a human.
+  autofix:
+    needs: gates
+    if: ${{ always() && needs.gates.result == 'failure' && vars.AUTOPUBLISH == 'true' && startsWith(github.head_ref, 'guide/') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.BLOG_BOT_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Auto-correct gate failures
+        env:
+          GH_TOKEN: ${{ secrets.BLOG_BOT_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AUTHOR_MODEL: ${{ vars.AUTHOR_MODEL }}
+        run: |
+          PR="${{ github.event.pull_request.number }}"
+          MAX="${{ vars.MAX_AUTOFIX }}"; MAX="${MAX:-3}"
+          n=$(git log --oneline | grep -c "Auto-fix attempt" || true)
+          if [ "$n" -ge "$MAX" ]; then
+            gh pr comment "$PR" --body "🛑 Auto-fix gave up after $n attempt(s) — leaving this PR for a human. See the latest gate scorecard above (the remaining issue may not be fixable by editing, e.g. topic overlap or an unattributable claim)." --repo "${{ github.repository }}"
+            exit 0
+          fi
+          files=$(gh pr view "$PR" --repo "${{ github.repository }}" --json files -q '.files[].path' | grep -E '^src/content/guides/[^/]+\.md$' || true)
+          [ -z "$files" ] && { echo "no IT guide files in PR; nothing to fix"; exit 0; }
+          gh api "repos/${{ github.repository }}/issues/$PR/comments" --jq 'sort_by(.created_at) | last | .body' > "$RUNNER_TEMP/findings.md"
+          FINDINGS_FILE="$RUNNER_TEMP/findings.md" node automation/guide-fix-gates.mjs $files
+          if git diff --quiet; then echo "fixer made no changes (likely unfixable by edit); leaving for human"; exit 0; fi
+          git config user.name "soraia-blog-bot"
+          git config user.email "162421143+danlevsoraia94@users.noreply.github.com"
+          git commit -am "Auto-fix attempt $((n+1)): address gate findings"
+          git push origin HEAD:"${{ github.head_ref }}"

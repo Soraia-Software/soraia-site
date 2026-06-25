@@ -8,7 +8,7 @@ const bare = (id: string) => id.replace(/^en\//, "");
 const EN_TO_IT_GUIDE = reverseMap(GUIDE_SLUG_MAP);
 
 export async function getStaticPaths() {
-  const guides = (await getCollection("guides")).filter((g) => g.data.lang === "en");
+  const guides = (await getCollection("guides")).filter((g) => g.data.lang === "en" && (import.meta.env.DEV || !g.data.draft));
   return guides.map((g) => ({
     params: { slug: g.id.replace(/^en\//, "") },
     props: { guide: g },
@@ -21,7 +21,7 @@ const { Content, headings } = await render(guide);
 
 const toc = headings.filter((h) => h.depth === 2);
 
-const allGuides = (await getCollection("guides")).filter((g) => g.data.lang === "en");
+const allGuides = (await getCollection("guides")).filter((g) => g.data.lang === "en" && (import.meta.env.DEV || !g.data.draft));
 const related = (guide.data.related || [])
   .map((s) => allGuides.find((g) => bare(g.id) === s))
   .filter(Boolean)

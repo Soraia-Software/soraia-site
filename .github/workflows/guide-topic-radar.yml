@@ -1,0 +1,54 @@
+name: Guide radar (discovery)
+
+# Bi-weekly (8th & 22nd, offset from the blog radar's 1st & 15th): Claude + web search
+# discovers recent regulatory developments, news, and operative questions, scores candidate
+# GUIDE topics, dedupes against the guide backlog + published guides + the blog, and appends
+# the survivors to automation/guide-topics.json as `status:"parked"` via a PR. Never writes
+# guides and never sets `todo`; with AUTOPUBLISH on, guide-author auto-promotes the top parked
+# candidate when no `todo` is queued. Requires ANTHROPIC_API_KEY (web search is billed).
+
+on:
+  schedule:
+    - cron: "0 5 8,22 * *" # 8th & 22nd, 07:00 Europe/Rome (05:00 UTC) -> keeps the guide queue stocked
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: guide-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Discover guide topics
+        id: radar
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AUTHOR_MODEL: ${{ vars.AUTHOR_MODEL }}
+          RADAR_MAX_TOPICS: ${{ vars.RADAR_MAX_TOPICS }}
+        run: node automation/guide-radar.mjs
+
+      - name: Open candidates PR
+        if: steps.radar.outputs.added == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          # guide/topic-radar touches only automation/guide-topics.json, so it does NOT
+          # trigger guide-quality-gates.yml (which watches src/content/guides/**).
+          token: ${{ secrets.BLOG_BOT_TOKEN || github.token }}
+          branch: guide/topic-radar
+          base: main
+          title: "${{ steps.radar.outputs.title }}"
+          body: ${{ steps.radar.outputs.prbody }}
+          commit-message: "Guide radar: append parked candidate topics"
+          delete-branch: true
