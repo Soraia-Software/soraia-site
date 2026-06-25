@@ -32,6 +32,8 @@ draft: true
 
 C'è una domanda che pochi CEO di PMI si fanno durante un colloquio: *cosa pensa questo candidato dei nostri strumenti?*
 
+> **Risposta diretta:** I software aziendali influenzano la retention dei talenti perché i giovani candidati leggono gli strumenti come un segnale di quanto l'azienda rispetti il loro tempo: gestionali obsoleti e processi su Excel li condannano a lavoro a basso valore, ed è quello che fa scappare le persone brave. La soluzione non è rifare tutto, ma aggiungere un layer moderno (app interna o agente IA) sopra il gestionale esistente, con primo rilascio in 4 settimane.
+
 Eppure è una delle prime cose che un under 35 valuta. Vede l'Excel condiviso, il gestionale degli anni 2000, il modulo da stampare e firmare. E calcola, in silenzio, quanto sarà noiosa la sua giornata.
 
 Gli **software aziendali** non sono solo un costo operativo. Sono un segnale di employer branding che decide chi entra e, soprattutto, chi resta.

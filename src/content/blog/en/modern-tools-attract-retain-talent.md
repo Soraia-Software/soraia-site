@@ -1,6 +1,6 @@
 ---
 title: "Modern tools to attract talent, the hidden lever"
-description: "Legacy systems and Excel-based processes push young talent away. Why the tools you use decide who joins, and who stays, in your company."
+description: "Legacy systems and Excel-based processes push young talent away. The tools you use quietly decide who joins, and who stays, in your company."
 pubDate: 2026-06-25
 author: "Daniel Levis"
 tags:
@@ -31,6 +31,8 @@ draft: true
 ---
 
 There's a question few SME CEOs ask themselves during an interview: *what does this candidate think of our tools?*
+
+> **Direct answer:** Business software affects talent retention because young candidates read your tools as a signal of how much the company respects their time: legacy systems and Excel-based processes condemn them to low-value work, and that is what drives good people away. The fix isn't rebuilding everything, but adding a modern layer (an internal app or an AI agent) on top of the existing ERP, with a first release in 4 weeks.
 
 Yet it's one of the first things an under-35 evaluates. They see the shared Excel, the early-2000s ERP, the form to print and sign. And they quietly calculate how boring their day will be.
 
