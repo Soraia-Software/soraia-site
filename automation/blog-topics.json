@@ -429,7 +429,7 @@
   },
   {
     "id": "software-moderni-attrarre-trattenere-talenti",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "opinion",
     "slug_it": "software-aziendali-attrarre-trattenere-talenti",
     "slug_en": "modern-tools-attract-retain-talent",
@@ -456,7 +456,7 @@
     "sources": [
       "user-brief:cambio-generazionale"
     ],
-    "drafted_at": null
+    "drafted_at": "2026-06-25"
   },
   {
     "id": "cambio-generazionale-pmi-industriali-biella",
