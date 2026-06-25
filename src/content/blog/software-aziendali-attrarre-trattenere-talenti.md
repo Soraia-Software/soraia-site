@@ -27,7 +27,7 @@ faq:
   - q: "Software moderno significa per forza intelligenza artificiale?"
     a: "No. A volte basta digitalizzare un processo su Excel con un'app interna usabile. L'IA serve quando il task è ripetitivo e ad alto volume. La regola è la stessa: lo strumento deve togliere lavoro noioso, non aggiungerne."
 lang: "it"
-draft: true
+draft: false
 ---
 
 C'è una domanda che pochi CEO di PMI si fanno durante un colloquio: *cosa pensa questo candidato dei nostri strumenti?*

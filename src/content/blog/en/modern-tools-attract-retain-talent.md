@@ -27,7 +27,7 @@ faq:
   - q: "Does modern software always mean artificial intelligence?"
     a: "No. Sometimes it's enough to digitize an Excel process with a usable internal app. AI helps when the task is repetitive and high-volume. The rule is the same: the tool must remove boring work, not add to it."
 lang: "en"
-draft: true
+draft: false
 ---
 
 There's a question few SME CEOs ask themselves during an interview: *what does this candidate think of our tools?*
