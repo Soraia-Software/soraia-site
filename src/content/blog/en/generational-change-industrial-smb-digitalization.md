@@ -25,7 +25,7 @@ faq:
   - q: "How long until the first result?"
     a: "At Soraia the first delivery of an agent or custom tool is 4 weeks, with 30 days of hypercare. It's not the whole project: it's the first digitalized process running in production, measurable, alongside the old one until you trust it."
 lang: "en"
-draft: true
+draft: false
 ---
 
 ## Generational change: what to digitalize when the next generation takes over

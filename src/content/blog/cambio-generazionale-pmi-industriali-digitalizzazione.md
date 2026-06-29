@@ -25,7 +25,7 @@ faq:
   - q: "Quanto tempo serve per vedere il primo risultato?"
     a: "In Soraia la prima delivery di un agente o di un tool custom è in 4 settimane, con 30 giorni di hypercare. Non è il progetto intero: è il primo processo digitalizzato che gira in produzione, misurabile, accanto a quello vecchio finché non ti fidi."
 lang: "it"
-draft: true
+draft: false
 ---
 
 ## Cambio generazionale in azienda: cosa digitalizzare quando entra la nuova generazione
