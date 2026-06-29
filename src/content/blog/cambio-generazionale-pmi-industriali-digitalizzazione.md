@@ -30,6 +30,8 @@ draft: true
 
 ## Cambio generazionale in azienda: cosa digitalizzare quando entra la nuova generazione
 
+**La digitalizzazione nel cambio generazionale di una PMI industriale significa modernizzare un processo alla volta partendo da quello che fa perdere più ore e dà meno visibilità, non da quello più nuovo o più cool. Il primo processo da digitalizzare è quasi sempre quello ad alto volume ripetitivo che oggi vive fuori dal gestionale, in Excel, carta o email (estrazione dati da ordini e fatture, riconciliazioni, report ricorrenti). Il gestionale storico (TeamSystem, Zucchetti, Odoo) non va sostituito perché è il core contabile già funzionante: il problema è ciò che gli gira intorno, non il sistema stesso.**
+
 ## Punti chiave
 
 - Quando la nuova generazione entra in una PMI industriale, la digitalizzazione deve partire dal processo che fa perdere più ore e dà meno visibilità, non da quello più nuovo o più cool.
