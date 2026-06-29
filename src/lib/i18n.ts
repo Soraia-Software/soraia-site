@@ -28,6 +28,7 @@ export const GUIDE_SLUG_MAP: Record<string, string> = {
   "formazione-ai-aziendale": "corporate-ai-training",
 };
 export const BLOG_SLUG_MAP: Record<string, string> = {
+  "cambio-generazionale-pmi-industriali-digitalizzazione": "generational-change-industrial-smb-digitalization",
   "software-aziendali-attrarre-trattenere-talenti": "modern-tools-attract-retain-talent",
   "costo-nascosto-gestionale-obsoleto": "hidden-cost-of-legacy-business-software",
   "outbound-b2b-2026-agente-ia-qualifica-lead": "b2b-outbound-2026-ai-agent-lead-qualification",
