@@ -32,7 +32,7 @@ draft: true
 
 **Generational change digitalization in an industrial SMB means modernizing one process at a time, starting from the one that costs the most hours and gives the least visibility, not the newest or coolest one. The first process to digitalize is almost always the high repetitive volume one that today lives outside the ERP, in Excel, paper or email (data extraction from orders and invoices, reconciliations, recurring reports). The core legacy ERP (TeamSystem, Zucchetti, Odoo) should not be replaced because it is the accounting core that already works: the problem is what orbits it, not the system itself.**
 
-## In breve:
+## In brief:
 
 - When a new generation enters an industrial SMB, digitalization should start from the process that costs the most hours and gives the least visibility, not the newest or coolest one.
 - The legacy ERP (TeamSystem, Zucchetti, Odoo) almost never needs scrapping: the problem is the parallel Excel and paper orbiting it, not the accounting core that already works.
