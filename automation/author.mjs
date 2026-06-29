@@ -70,6 +70,20 @@ function stepSummary(md) {
 
 // ---- pick topic ----
 const topics = JSON.parse(readFileSync(TOPICS, "utf8"));
+// Auto-rotation: when a previous draft could not pass the gates, the give-up step
+// dispatches this workflow with SKIP_SLUG set, so we reject that topic (it won't be
+// re-tried) and pick a fresh one, keeping the pipeline publishing something.
+const SKIP_SLUG = (process.env.SKIP_SLUG || "").trim();
+if (SKIP_SLUG) {
+  const skip = topics.find((t) => t.slug_it === SKIP_SLUG || t.id === SKIP_SLUG);
+  if (skip && skip.status !== "rejected") {
+    skip.status = "rejected";
+    skip.rejected_at = TODAY;
+    skip.rejected_reason = "auto-rotated: could not pass quality gates after the autofix budget";
+    if (!DRY) writeFileSync(TOPICS, JSON.stringify(topics, null, 2) + "\n");
+    console.log(`→ SKIP_SLUG="${SKIP_SLUG}": marked rejected, rotating to a fresh topic`);
+  }
+}
 let topic = topics.find((t) => t.status === "todo");
 // Full-autonomy fallback: with AUTOPUBLISH on, if nothing is queued, pick the
 // highest-scoring non-expired `parked` candidate so the weekly run self-sustains

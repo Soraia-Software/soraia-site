@@ -10,6 +10,11 @@ on:
   schedule:
     - cron: "0 4 * * 1,4" # Mondays & Thursdays 06:00 Europe/Rome (04:00 UTC) — 2 posts/week
   workflow_dispatch:
+    inputs:
+      skip_slug:
+        description: "Topic slug to reject + skip (set by the auto-rotation when a draft can't pass the gates)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -36,6 +41,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           AUTHOR_MODEL: ${{ vars.AUTHOR_MODEL }}
           AUTOPUBLISH: ${{ vars.AUTOPUBLISH }}
+          SKIP_SLUG: ${{ github.event.inputs.skip_slug }}
         run: node automation/author.mjs
 
       - name: Open draft PR

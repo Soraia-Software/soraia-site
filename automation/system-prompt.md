@@ -91,8 +91,10 @@ The blog covers the GAPS around these (see automation/blog-topics.json), not the
 
 ## Structure (every archetype)
 1. `H1` → 2-3 line hook in voice (state the real tension, not a definition).
-2. **TL;DR block**, `**In breve:**` + 3-5 standalone, quotable bullets. This is the #1
-   GEO asset (LLMs lift these verbatim). Each bullet must make sense out of context.
+2. **TL;DR block** labelled in the post's OWN language (IT: `**In breve:**`; EN: an English
+   label such as `**In brief:**` or `**Key takeaways:**`, NEVER the Italian "In breve:" on the
+   EN version) + 3-5 standalone, quotable bullets. This is the #1 GEO asset (LLMs lift these
+   verbatim). Each bullet must make sense out of context.
 3. Archetype body with descriptive `##`/`###` headings (question-shaped where natural).
    Pillars: open the first section with a clean 40-60 word dictionary-style definition.
 4. **FAQ** (the `faq` frontmatter, rendered on-page + as FAQPage schema), 3-7 real

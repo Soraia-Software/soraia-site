@@ -14,6 +14,7 @@ import { normalizeDashes } from "./house-style.mjs";
 
 const DRY = process.argv.includes("--dry-run");
 const MODEL = process.env.AUTHOR_MODEL || "claude-opus-4-8"; // fixing needs a capable model
+const REWRITE = process.argv.includes("--rewrite"); // escalation: full rewrite once minimal fixes stall (oscillation)
 const die = (m) => { console.error("✗ " + m); process.exit(1); };
 
 // Same deterministic route allowlist the gate uses, so fixes only point at real routes.
@@ -75,7 +76,9 @@ for (const itPath of files) {
   } catch {}
 
   const user = [
-    "A Soraia blog draft FAILED one or more quality gates. Apply the MINIMAL edits needed to resolve EXACTLY the flagged issues. Do not rewrite the article, do not change the voice or the argument, do not touch anything unrelated to a finding. If a finding is NOT fixable by editing the text (e.g. the topic substantially overlaps an existing post), leave the files unchanged and say so in `changes`.",
+    REWRITE
+      ? "A Soraia blog draft has FAILED the quality gates repeatedly and minimal edits keep oscillating (fixing one gate re-breaks another). REWRITE the article IN FULL (IT + EN) so it passes EVERY gate at once. Keep the topic, the approved numbers, the operationally-honest voice and the 'paghi solo se funziona' guarantee, but you may freely restructure sections, headings, the TL;DR block and wording. Resolve all flagged issues together rather than one at a time."
+      : "A Soraia blog draft FAILED one or more quality gates. Apply the MINIMAL edits needed to resolve EXACTLY the flagged issues. Do not rewrite the article, do not change the voice or the argument, do not touch anything unrelated to a finding. If a finding is NOT fixable by editing the text (e.g. the topic substantially overlaps an existing post), leave the files unchanged and say so in `changes`.",
     "",
     "GATE FINDINGS TO RESOLVE:\n" + findings,
     "",
@@ -94,7 +97,7 @@ for (const itPath of files) {
     'Return ONLY strict JSON: {"it_md": "<COMPLETE corrected IT file>", "en_md": "<COMPLETE corrected EN file, or \\"\\" if unchanged/none>", "changes": ["one short note per fix, or why unfixable"]}. The *_md fields must be the full file contents (frontmatter + body), byte-for-byte except the minimal fixes. No prose outside the JSON.',
   ].join("\n");
 
-  console.log(`→ auto-fixing ${itPath}${enPath ? " + " + enPath : ""} · ${MODEL}`);
+  console.log(`→ auto-fixing ${itPath}${enPath ? " + " + enPath : ""} · ${MODEL}${REWRITE ? " · REWRITE" : ""}`);
   if (DRY) { console.log(`dry-run: findings ${findings.length}B, routes ${VALID_ROUTES.length}, IT ${measure(it)}${en ? `, EN ${measure(en)}` : ""}. No API call, no writes.`); continue; }
 
   let resp;
