@@ -1,6 +1,6 @@
 ---
 title: "Generational change: what to digitalize first"
-description: "When the next generation enters an industrial SMB, what to modernize first without stopping production. An honest guide to generational change and digitalization."
+description: "When the next generation enters an industrial SMB, what to modernize first without stopping production. An honest guide to generational change."
 pubDate: 2026-06-29
 author: "Daniel Levis"
 tags:
@@ -30,16 +30,17 @@ draft: true
 
 ## Generational change: what to digitalize when the next generation takes over
 
+## Key Takeaways
+
+- When a new generation enters an industrial SMB, digitalization should start from the process that costs the most hours and gives the least visibility, not the newest or coolest one.
+- The legacy ERP (TeamSystem, Zucchetti, Odoo) almost never needs scrapping: the problem is the parallel Excel and paper orbiting it, not the accounting core that already works.
+- The new generation expects zero paper, no double data entry and modern UX, while the old guard owns the exceptions no manual documents.
+- You digitalize one process at a time, in parallel with the old one, without switching off production: at Soraia the first delivery is 4 weeks.
+- The real risk of generational change is not technical but change management: bypassing the people who know the real processes instead of extracting their knowledge.
+
 In the Biella textile district I've watched the same scene play out dozens of times. The son (or daughter) comes back after university or a stint abroad, opens the first drawer and finds a stack of hand-linked Excel files, paper orders, an ERP that only talks to whoever has run it for twenty years.
 
 The temptation is to rebuild everything. It's almost always the mistake that halts production and turns the two generations against each other.
-
-**In short:**
-- Generational change and digitalization go together, but you don't digitalize everything: start from the process that costs the most hours and gives the least visibility.
-- The legacy ERP (TeamSystem, Zucchetti, Odoo) almost never needs scrapping. The problem is the parallel Excel and paper orbiting it.
-- The new generation expects zero paper, no double data entry, modern UX. The old guard owns the exceptions no manual documents.
-- You digitalize one process at a time, in parallel with the old one, without switching off production. At Soraia the first delivery is 4 weeks.
-- The real risk isn't technical, it's change management: bypassing the people who know the real processes instead of extracting their knowledge.
 
 ## What the new generation actually expects
 
@@ -73,7 +74,7 @@ The old guard carries the exceptions: the client who always pays at 90 days even
 
 The sequence that works: first extract the real process from the people who run it, then digitalize it, then run it in parallel with the old one until you trust it. That's precisely the point of an [AI Adoption](/en/ai-adoption) program: not just software, but the team that understands and owns it. If instead the need is an internal tool or a custom web app, we tackle it with [custom software development](/en/software-development), with the client owning the code from day one and no lock-in.
 
-And if you want to understand how to train both generations on the same tool, start from [how to structure corporate AI training](/en/guide/formazione-ai-aziendale).
+And if you want to understand how to train both generations on the same tool, start from [how to structure corporate AI training](/en/guide/corporate-ai-training).
 
 ## The right pace
 

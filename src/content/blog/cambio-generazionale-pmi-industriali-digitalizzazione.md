@@ -30,16 +30,17 @@ draft: true
 
 ## Cambio generazionale in azienda: cosa digitalizzare quando entra la nuova generazione
 
+## Punti chiave
+
+- Quando la nuova generazione entra in una PMI industriale, la digitalizzazione deve partire dal processo che fa perdere più ore e dà meno visibilità, non da quello più nuovo o più cool.
+- Il gestionale storico (TeamSystem, Zucchetti, Odoo) quasi mai va buttato: il problema è l'Excel parallelo e la carta che gli girano intorno, non il core contabile già funzionante.
+- La nuova generazione si aspetta zero carta, niente doppio inserimento dati e UX moderna, mentre la vecchia guardia possiede le eccezioni che nessun manuale documenta.
+- Si digitalizza un processo alla volta, in parallelo a quello vecchio, senza spegnere la produzione: in Soraia la prima delivery è in 4 settimane.
+- Il vero rischio del cambio generazionale non è tecnico ma di change management: scavalcare chi conosce i processi reali invece di estrarne il sapere.
+
 Nel distretto tessile biellese ho visto la stessa scena decine di volte. Il figlio (o la figlia) rientra in azienda dopo l'università o un'esperienza fuori, apre il primo cassetto e trova un fascicolo di fogli Excel collegati a mano, ordini su carta, un gestionale che parla solo con chi lo usa da vent'anni.
 
 La tentazione è rifare tutto. È quasi sempre l'errore che blocca la produzione e fa litigare le due generazioni.
-
-**In breve:**
-- Il cambio generazionale e digitalizzazione vanno insieme, ma non si digitalizza tutto: si parte dal processo che fa perdere più ore e dà meno visibilità.
-- Il gestionale storico (TeamSystem, Zucchetti, Odoo) quasi mai va buttato. Il problema è l'Excel parallelo e la carta che gli girano intorno.
-- La nuova generazione si aspetta zero carta, niente doppio inserimento dati, UX moderna. La vecchia guardia possiede le eccezioni che nessun manuale documenta.
-- Si digitalizza un processo alla volta, in parallelo a quello vecchio, senza spegnere la produzione. In Soraia la prima delivery è in 4 settimane.
-- Il vero rischio non è tecnico, è di change management: scavalcare chi conosce i processi reali invece di estrarne il sapere.
 
 ## Cosa si aspetta davvero la nuova generazione
 
