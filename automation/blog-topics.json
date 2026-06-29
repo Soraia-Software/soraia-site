@@ -460,7 +460,7 @@
   },
   {
     "id": "cambio-generazionale-pmi-industriali-biella",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "opinion",
     "slug_it": "cambio-generazionale-pmi-industriali-digitalizzazione",
     "slug_en": "generational-change-industrial-smb-digitalization",
@@ -488,6 +488,6 @@
     "sources": [
       "user-brief:cambio-generazionale"
     ],
-    "drafted_at": null
+    "drafted_at": "2026-06-29"
   }
 ]
