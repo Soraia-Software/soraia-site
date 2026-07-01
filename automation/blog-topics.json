@@ -489,5 +489,215 @@
       "user-brief:cambio-generazionale"
     ],
     "drafted_at": "2026-06-29"
+  },
+  {
+    "id": "shadow-ai-pmi-policy",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "shadow-ai-policy-uso-ia-dipendenti",
+    "slug_en": "shadow-ai-policy-smb",
+    "title_hint": "I tuoi dipendenti gia usano ChatGPT: come scrivere una policy sull'uso dell'IA (prima che ci finiscano dentro i dati dei clienti)",
+    "cluster": "compliance",
+    "primaryKeyword": "policy uso intelligenza artificiale aziendale",
+    "targetPersona": "COO / IT Manager",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/customer-support",
+      "/guide/ai-act-aziende"
+    ],
+    "dedupNotes": "Net-new: backlog and owned themes cover AI Act obligations, formazione and agenti IA, but none address Shadow AI governance - i.e. an internal AI-usage policy for staff using consumer tools without rules. Not the same as AI Act per aziende (regulatory scope) nor formazione AI (training curriculum); this is the practical governance/policy artifact.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 77,
+    "subScores": {
+      "intent": 0.72,
+      "biz": 0.75,
+      "winnability": 0.7,
+      "freshness": 0.95,
+      "geo": 0.85
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.lokky.it/blog/imprese/shadow-ai-2026-rischio-invisibile-delle-intelligenze-artificiali-usate-dai-dipendenti-senza-regole-aziendali/",
+      "https://www.agendadigitale.eu/industry-4-0/shadow-ai-nelle-pmi-il-rischio-ignorato-che-puo-diventare-risorsa/",
+      "https://studiolegally.com/diritto-digitale/shadow-ai-rischi-legali/"
+    ],
+    "discovered_at": "2026-07-01",
+    "drafted_at": null
+  },
+  {
+    "id": "voice-agent-ia-customer-support",
+    "status": "parked",
+    "archetype": "pillar",
+    "slug_it": "voice-agent-ia-assistenza-clienti-pmi",
+    "slug_en": "ai-voice-agent-customer-support-smb",
+    "title_hint": "Un agente IA che risponde al telefono: quando i voice agent hanno senso per l'assistenza clienti di una PMI (e quando no)",
+    "cluster": "ai-agents",
+    "primaryKeyword": "voice agent ia assistenza clienti",
+    "targetPersona": "Head of Customer Support / COO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/guide/agenti-ai-aziende"
+    ],
+    "dedupNotes": "Net-new: backlog covers lead qualification and outbound (sales) and regulated-sector agents, but no post on voice-first support agents for inbound customer service. Distinct from the owned 'agenti IA vs ChatGPT' comparison - this is a channel/use-case specific how-to on telephony support.",
+    "freshnessExpiry": "2027-06-30",
+    "score": 72,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.82,
+      "winnability": 0.5,
+      "freshness": 0.8,
+      "geo": 0.68
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.retellai.com/blog/best-ai-voice-agents-for-customer-support",
+      "https://www.tommasomariaricci.com/blog/intelligenza-artificiale-customer-service-guida",
+      "https://ivemind.com/it/blog/agenti-ai-pmi-guida-pratica-2026/"
+    ],
+    "discovered_at": "2026-07-01",
+    "drafted_at": null
+  },
+  {
+    "id": "sicurezza-agenti-ia-governance",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "sicurezza-governance-agenti-ia-aziende",
+    "slug_en": "securing-ai-agents-smb",
+    "title_hint": "Un agente IA con accesso ai tuoi sistemi: permessi, audit trail e i 6 controlli minimi per non svegliarti con una fuga di dati",
+    "cluster": "compliance",
+    "primaryKeyword": "sicurezza agenti ia aziende",
+    "targetPersona": "CTO / COO",
+    "supportingCaseStudy": "liftt",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/customer-support"
+    ],
+    "dedupNotes": "Net-new: no backlog post on securing/governing agents that hold system credentials (least-privilege, audit trail, data exfiltration, human-in-the-loop). Different from regulated-sector post (what is legally permitted) and from AI Act guide (regulatory) - this is the technical/operational security checklist.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 70,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.72,
+      "winnability": 0.62,
+      "freshness": 0.85,
+      "geo": 0.82
+    },
+    "sources": [
+      "topic-radar",
+      "https://aiautomationglobal.com/blog/ai-agent-security-identity-crisis-enterprise-2026",
+      "https://www.recordedfuture.com/research/emerging-enterprise-security-risks-of-ai",
+      "https://stellarcyber.ai/learn/agentic-ai-securiry-threats/"
+    ],
+    "discovered_at": "2026-07-01",
+    "drafted_at": null
+  },
+  {
+    "id": "legge-132-2025-ai-pmi",
+    "status": "parked",
+    "archetype": "news-reaction",
+    "slug_it": "legge-132-2025-intelligenza-artificiale-pmi",
+    "slug_en": "italy-ai-law-132-2025-smb",
+    "title_hint": "Non solo AI Act: cosa cambia per la tua PMI con la legge italiana 132/2025 sull'IA (obblighi, deleghe e sanzioni penali)",
+    "cluster": "compliance",
+    "primaryKeyword": "legge 132 2025 intelligenza artificiale aziende",
+    "targetPersona": "CEO / General Counsel",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/guide/ai-act-aziende",
+      "/customer-support"
+    ],
+    "dedupNotes": "Net-new: owned theme 'AI Act per aziende' covers the EU regulation only. Legge 132/2025 is Italy's separate national AI law (in force 10/10/2025), with distinct provisions - informativa ai lavoratori, uso nelle professioni, reato di diffusione di contenuti deepfake, deleghe al governo. Distinct legal instrument, distinct keyword.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 69,
+    "subScores": {
+      "intent": 0.65,
+      "biz": 0.6,
+      "winnability": 0.62,
+      "freshness": 0.9,
+      "geo": 0.9
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.valitaliapmi.it/legge-132-2025-litalia-regolamenta-lintelligenza-artificiale/",
+      "https://www.ictsecuritymagazine.com/articoli/legge-132-2025/",
+      "https://elettricomagazine.it/normative-impianti/intelligenza-artificiale-italia-definisce-regole-legge-132-2025/"
+    ],
+    "discovered_at": "2026-07-01",
+    "drafted_at": null
+  },
+  {
+    "id": "riconciliazione-bancaria-agente-ia",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "riconciliazione-bancaria-automatica-agente-ia",
+    "slug_en": "ai-agent-bank-reconciliation",
+    "title_hint": "Smetti di spuntare l'estratto conto a mano: come un agente IA fa la riconciliazione bancaria (e chiude il mese in giorni, non settimane)",
+    "cluster": "process-automation",
+    "primaryKeyword": "riconciliazione bancaria automatica ai",
+    "targetPersona": "CFO / Responsabile amministrazione",
+    "supportingCaseStudy": "numeraria",
+    "internalLinkTargets": [
+      "/finance",
+      "/ai-agents",
+      "/case-studies/numeraria"
+    ],
+    "dedupNotes": "Net-new: the parked fatturazione post is about extracting/matching data from electronic invoices. This is bank reconciliation - matching bank statement movements to the ledger and closing the month - a distinct process and keyword, backed by the Numeraria case.",
+    "freshnessExpiry": null,
+    "score": 69,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.8,
+      "winnability": 0.58,
+      "freshness": 0.5,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://factorial.it/blog/riconciliazione-bancaria/",
+      "https://yellowtech.it/guida/agenti-ai-finance-amministrazione",
+      "https://www.bpilot.it/riconciliazione-bancaria-automatica/"
+    ],
+    "discovered_at": "2026-07-01",
+    "drafted_at": null
+  },
+  {
+    "id": "dati-pronti-ia-pmi",
+    "status": "parked",
+    "archetype": "opinion",
+    "slug_it": "dati-pronti-per-intelligenza-artificiale-pmi",
+    "slug_en": "ai-data-readiness-smb",
+    "title_hint": "Il 95% dei progetti IA fallisce, ma non per il modello: perche i tuoi dati non sono pronti (e come sistemarli prima di partire)",
+    "cluster": "custom-software",
+    "primaryKeyword": "preparare dati aziendali intelligenza artificiale",
+    "targetPersona": "CTO / COO",
+    "supportingCaseStudy": "liftt",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/ai-adoption"
+    ],
+    "dedupNotes": "Net-new: the parked change-management post explains why automation projects fail on people/process anti-patterns. This is the data-foundations angle - quality, deduplica, silos, struttura - the technical precondition for agents to work, illustrated by the LIFTT dedupe/archiving case.",
+    "freshnessExpiry": null,
+    "score": 66,
+    "subScores": {
+      "intent": 0.55,
+      "biz": 0.72,
+      "winnability": 0.66,
+      "freshness": 0.55,
+      "geo": 0.8
+    },
+    "sources": [
+      "topic-radar",
+      "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+      "https://sranalytics.io/blog/why-95-of-ai-projects-fail/",
+      "https://www.pertamapartners.com/insights/ai-project-failure-statistics-2026"
+    ],
+    "discovered_at": "2026-07-01",
+    "drafted_at": null
   }
 ]
