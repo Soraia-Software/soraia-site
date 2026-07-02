@@ -162,7 +162,7 @@
   },
   {
     "id": "change-management-anti-pattern",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "opinion",
     "slug_it": "perche-i-progetti-di-automazione-falliscono",
     "slug_en": "why-automation-projects-fail",
@@ -189,7 +189,7 @@
     "sources": [
       "gap-list"
     ],
-    "drafted_at": null
+    "drafted_at": "2026-07-02"
   },
   {
     "id": "crm-su-misura-o-hubspot",
