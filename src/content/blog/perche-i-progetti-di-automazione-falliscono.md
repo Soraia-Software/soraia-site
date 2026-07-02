@@ -25,7 +25,7 @@ faq:
   - q: "Cosa fare prima di iniziare un progetto di automazione?"
     a: "Misurare la baseline. Cronometrare 10-20 task reali, capire dove va il tempo oggi, scegliere un solo metric primario. Senza questo non puoi sapere se l'automazione ha senso, né dimostrarlo dopo."
 lang: "it"
-draft: true
+draft: false
 ---
 
 Ogni volta che un progetto di automazione fallisce, la prima cosa che sento è: *"la tecnologia non era pronta"*.

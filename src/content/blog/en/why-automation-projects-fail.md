@@ -25,7 +25,7 @@ faq:
   - q: "What should you do before starting an automation project?"
     a: "Measure the baseline. Time 10-20 real tasks, understand where the time goes today, pick one single primary metric. Without it you can't know whether automation makes sense, nor prove it afterwards."
 lang: "en"
-draft: true
+draft: false
 ---
 
 Every time an automation project fails, the first thing I hear is: *"the technology wasn't ready"*.
