@@ -28,6 +28,7 @@ export const GUIDE_SLUG_MAP: Record<string, string> = {
   "formazione-ai-aziendale": "corporate-ai-training",
 };
 export const BLOG_SLUG_MAP: Record<string, string> = {
+  "perche-i-progetti-di-automazione-falliscono": "why-automation-projects-fail",
   "cambio-generazionale-pmi-industriali-digitalizzazione": "generational-change-industrial-smb-digitalization",
   "software-aziendali-attrarre-trattenere-talenti": "modern-tools-attract-retain-talent",
   "costo-nascosto-gestionale-obsoleto": "hidden-cost-of-legacy-business-software",
