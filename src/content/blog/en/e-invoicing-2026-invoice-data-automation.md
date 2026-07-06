@@ -25,7 +25,7 @@ faq:
   - q: "How long until a first invoice agent is live?"
     a: "First delivery at Soraia is 4 weeks, followed by 30 days of hypercare. We spend the first week on a timed baseline: without knowing what processing one invoice costs today, we cannot guarantee the saving."
 lang: "en"
-draft: true
+draft: false
 ---
 
 # E-invoicing 2026: stop re-typing invoice data by hand

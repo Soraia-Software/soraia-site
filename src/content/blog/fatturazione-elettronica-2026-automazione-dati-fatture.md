@@ -25,7 +25,7 @@ faq:
   - q: "Quanto tempo serve per avere il primo agente sulle fatture operativo?"
     a: "La prima delivery in Soraia è di 4 settimane, con 30 giorni di hypercare successivi. La prima settimana la usiamo per la baseline cronometrata: senza sapere quanto costa oggi processare una fattura, non possiamo garantire il risparmio."
 lang: "it"
-draft: true
+draft: false
 ---
 
 # Fatturazione elettronica 2026: basta reinserire i dati a mano
