@@ -30,6 +30,8 @@ draft: true
 
 # E-invoicing 2026: stop re-typing invoice data by hand
 
+> **What is invoice data automation?** It is the use of an AI agent that reads the invoice XML and does the work done by hand today: re-entering data into the accounting system, coding to accounts and cost centres, and three-way matching between invoice, order and bank movement. The human moves from re-typing everything to handling only the exceptions. Admin time saved typically lands in the 30-50% range.
+
 From 2026 the Italian e-invoicing obligation via the SdI exchange system extends to flat-rate (forfettario) taxpayers who were exempt so far. Operational translation for whoever runs your admin: almost every inbound and outbound invoice will be a structured XML file.
 
 Sounds like good news. It only is if you stop treating that XML like a PDF to re-type.
@@ -94,4 +96,4 @@ First delivery is in 4 weeks, with an ["hours recovered or refund" guarantee](/e
 
 ---
 
-**Want to know if your invoices can be automated?** [Let's talk](/en/contact) for 20 minutes with the CEO, or [take the check-up](/check-up) in 3 minutes.
+**Want to know if your invoices can be automated?** [Let's talk](/en/contact) for 20 minutes with the CEO, or [take the check-up](/en/check-up) in 3 minutes.
