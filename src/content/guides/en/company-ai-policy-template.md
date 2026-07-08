@@ -27,7 +27,7 @@ faq:
     a: "A policy without training is a file in the drive nobody opens. You need a short session to explain the why behind the rules, with real examples. See the <a href='/en/guide/corporate-ai-training'>corporate AI training guide</a>. This is general guidance, not advice for your company: for an honest read on your case, <a href='/en/contact'>talk to us</a>."
 featured: false
 lang: "en"
-draft: true
+draft: false
 ---
 
 A company AI policy is not about covering yourself with a document nobody reads. It is about telling your team, in plain language, who can use which AI tools, on which data, with which approvals and with what traceability. Done well, it cuts the risk of a data leak and gives you concrete proof of accountability. Done badly, it is a 40-page PDF copied from a multinational that stays locked in a drive.

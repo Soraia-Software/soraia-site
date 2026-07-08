@@ -27,7 +27,7 @@ faq:
     a: "La policy senza formazione e' un file nel drive che nessuno apre. Serve una sessione breve per spiegare il perche delle regole, con esempi reali. Vedi la <a href='/guide/formazione-ai-aziendale'>guida sulla formazione AI aziendale</a>. Questa e' guida generale, non consulenza per la tua azienda: per un parere onesto sul tuo caso, <a href='/parliamone'>parlane con noi</a>."
 featured: false
 lang: "it"
-draft: true
+draft: false
 ---
 
 Una AI policy aziendale non serve a coprirsi le spalle con un documento che nessuno legge. Serve a dire al tuo team, in italiano chiaro, chi puo usare quali strumenti AI, su quali dati, con quali approvazioni e con quale tracciabilita. Fatta bene, riduce il rischio di data leak e ti da una prova concreta di accountability. Fatta male, e' un PDF di 40 pagine copiato da una multinazionale che resta chiuso in un drive.
