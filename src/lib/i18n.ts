@@ -21,6 +21,7 @@ export const EN_TO_IT_SLUG: Record<string, string> = Object.fromEntries(
 // Content-collection slug maps (IT slug -> EN slug). Case studies share the
 // same slug across languages (brand names) so they need no map.
 export const GUIDE_SLUG_MAP: Record<string, string> = {
+  "ai-policy-aziendale-template": "company-ai-policy-template",
   "agenti-ai-aziende": "ai-agents-for-business",
   "ai-act-aziende": "ai-act-for-business",
   "consulenza-ai-italia": "ai-consulting-italy",
