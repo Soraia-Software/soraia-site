@@ -26,7 +26,7 @@ faq:
   - q: "Il codice di un CRM custom è mio?"
     a: "Con Soraia sì, dal primo giorno. Nessun abbonamento perpetuo, nessun lock-in. Questo è la differenza strutturale rispetto a un SaaS: con lo standard affitti, con il custom possiedi. Vale la pena solo se il CRM è core, altrimenti il lock-in di un SaaS maturo è un costo accettabile."
 lang: "it"
-draft: true
+draft: false
 ---
 
 La domanda arriva quando il canone di HubSpot inizia a fare male, o quando il team ha smesso di usare Salesforce e lavora davvero su un foglio Excel parallelo.

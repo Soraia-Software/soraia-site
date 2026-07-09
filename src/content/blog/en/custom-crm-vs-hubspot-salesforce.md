@@ -26,7 +26,7 @@ faq:
   - q: "Do I own the code of a custom CRM?"
     a: "With Soraia, yes, from day one. No perpetual subscription, no lock-in. That is the structural difference versus SaaS: with standard you rent, with custom you own. It only pays off if the CRM is core, otherwise the lock-in of a mature SaaS is an acceptable cost."
 lang: "en"
-draft: true
+draft: false
 ---
 
 The question shows up when the HubSpot bill starts to hurt, or when the team has quietly stopped using Salesforce and actually works on a parallel spreadsheet.
