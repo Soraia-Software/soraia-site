@@ -193,7 +193,7 @@
   },
   {
     "id": "crm-su-misura-o-hubspot",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "pillar",
     "slug_it": "crm-su-misura-o-hubspot-salesforce",
     "slug_en": "custom-crm-vs-hubspot-salesforce",
@@ -220,7 +220,7 @@
     "sources": [
       "gap-list"
     ],
-    "drafted_at": null
+    "drafted_at": "2026-07-09"
   },
   {
     "id": "ai-act-recruiting-selezione-personale",
