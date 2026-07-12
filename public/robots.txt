@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+# AIPREF Content Signals (contentsignals.org): Soraia is an AI agency, be found + cited + trained.
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
 # Block common asset/admin paths that don't need crawling
 Disallow: /downloads/

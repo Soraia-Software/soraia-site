@@ -1,0 +1,5 @@
+# Cloudflare Pages response headers.
+# RFC 8288 Link headers for agent discovery: point agents at Soraia's machine-readable
+# resources (llms.txt = site summary for LLMs, the agent-skills index, the sitemap).
+/*
+  Link: </llms.txt>; rel="describedby"; type="text/plain", </.well-known/agent-skills/index.json>; rel="describedby"; type="application/json", </sitemap-index.xml>; rel="sitemap"

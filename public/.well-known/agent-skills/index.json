@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "explore-soraia",
+      "type": "skill-md",
+      "description": "Understand what Soraia offers and point a user to the authoritative resource (services, use cases, case studies, guides) when evaluating AI for an Italian or European SME.",
+      "url": "https://www.soraia.io/.well-known/agent-skills/explore-soraia/SKILL.md",
+      "digest": "sha256:8f48d261a8b6449647d0101cd88facde0907ca4d5701a44022ba07f6c0d278c1"
+    },
+    {
+      "name": "contact-soraia",
+      "type": "skill-md",
+      "description": "Help a user start a conversation with Soraia, an Italian AI agency, by booking the free 20-minute call with the CEO, taking the 3-minute AI check-up, or emailing.",
+      "url": "https://www.soraia.io/.well-known/agent-skills/contact-soraia/SKILL.md",
+      "digest": "sha256:c6c838d197e6e17a3d6f633a9e671ea9f62a4c91f518385ae83826b89a198bf8"
+    }
+  ]
+}
