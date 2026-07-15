@@ -489,5 +489,212 @@
       "user-brief:cambio-generazionale"
     ],
     "drafted_at": "2026-06-29"
+  },
+  {
+    "id": "shadow-ai-governance-pmi",
+    "status": "parked",
+    "archetype": "opinion",
+    "slug_it": "shadow-ai-azienda-governance",
+    "slug_en": "shadow-ai-smb-governance",
+    "title_hint": "Shadow AI: i tuoi dipendenti usano gia l'IA (senza dirtelo) - come governarla prima che diventi un problema",
+    "cluster": "compliance",
+    "primaryKeyword": "shadow ai in azienda",
+    "targetPersona": "COO / Head of Ops",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/guide/ai-policy-aziendale-template",
+      "/customer-support"
+    ],
+    "dedupNotes": "Owned themes cover formazione AI and an AI-policy template; this is net-new because it addresses the specific risk phenomenon of ungoverned employee AI use (data leakage, compliance exposure) as a diagnostic/opinion piece, not a training pitch or a policy template. No backlog item names Shadow AI.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 74,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.75,
+      "winnability": 0.6,
+      "freshness": 0.95,
+      "geo": 0.8
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.lokky.it/blog/imprese/shadow-ai-2026-rischio-invisibile-delle-intelligenze-artificiali-usate-dai-dipendenti-senza-regole-aziendali/",
+      "https://cyberment.it/intelligenza-artificiale/shadow-ai-in-azienda-cose-perche-e-il-rischio-numero-uno-del-2026-e-come-affrontarlo/",
+      "https://mirium.it/shadow-ai-in-azienda-governance-rischi/"
+    ],
+    "discovered_at": "2026-07-15",
+    "drafted_at": null
+  },
+  {
+    "id": "dati-agente-ia-dove-finiscono",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "dove-finiscono-dati-agente-ia",
+    "slug_en": "where-your-data-goes-ai-agent",
+    "title_hint": "Se do i miei dati a un agente IA, dove finiscono? Data governance e GDPR spiegati a chi decide (non ai tecnici)",
+    "cluster": "compliance",
+    "primaryKeyword": "agente ia dati aziendali privacy",
+    "targetPersona": "COO / DPO",
+    "supportingCaseStudy": "liftt",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/customer-support",
+      "/guide/ai-act-aziende"
+    ],
+    "dedupNotes": "The AI Act guide and the regulated-sectors post cover rules and 'what is permitted'; this is net-new because it answers the concrete pre-sale objection about data residency, retention, RAG and vendor data handling under GDPR - an operational trust question, not a legal overview or a sector list.",
+    "freshnessExpiry": null,
+    "score": 74,
+    "subScores": {
+      "intent": 0.65,
+      "biz": 0.85,
+      "winnability": 0.65,
+      "freshness": 0.7,
+      "geo": 0.8
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.zerounoweb.it/big-data/agenti-ai-cosa-sono-come-funzionano-come-usarli/",
+      "https://www.agendadigitale.eu/documenti/intelligent-document-management-il-futuro-della-governance-e-dei-dati-in-azienda/"
+    ],
+    "discovered_at": "2026-07-15",
+    "drafted_at": null
+  },
+  {
+    "id": "finanziare-progetto-ai-incentivi-2026",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "finanziare-progetto-ai-incentivi-2026",
+    "slug_en": "funding-ai-project-incentives-2026",
+    "title_hint": "Come finanziare un progetto di AI agent nel 2026: Transizione 5.0, Nuova Sabatini e cosa e davvero ammissibile per il software",
+    "cluster": "custom-software",
+    "primaryKeyword": "incentivi software ai transizione 5.0 2026",
+    "targetPersona": "CFO",
+    "supportingCaseStudy": "40factory",
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/guide/costi-consulenza-ai"
+    ],
+    "dedupNotes": "Owned 'costi consulenza AI' covers pricing; this is net-new because it covers the funding side - which 2026 incentives (Transizione 5.0, Nuova Sabatini) can offset an AI/software investment and the eligibility traps for intangibles/software - a CFO buying question absent from the backlog.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 72,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.8,
+      "winnability": 0.5,
+      "freshness": 0.9,
+      "geo": 0.65
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.mimit.gov.it/it/incentivi/piano-transizione-5-0",
+      "https://finera.it/articoli/news/crediti-dimposta-transizione-5-0-cosa-succede-imprese-coda-cosa-cambia-2026/",
+      "https://www.mimit.gov.it/it/incentivi/agevolazioni-per-gli-investimenti-delle-pmi-in-beni-strumentali-nuova-sabatini"
+    ],
+    "discovered_at": "2026-07-15",
+    "drafted_at": null
+  },
+  {
+    "id": "screening-cv-agente-ia-time-to-hire",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "ridurre-time-to-hire-agente-ia-screening",
+    "slug_en": "reduce-time-to-hire-ai-screening-agent",
+    "title_hint": "Screening CV con un agente IA: come tagliare il time-to-hire senza perdere i candidati buoni (ne violare l'AI Act)",
+    "cluster": "ai-agents",
+    "primaryKeyword": "agente ia screening cv time to hire",
+    "targetPersona": "Head of HR / COO",
+    "supportingCaseStudy": "apraise",
+    "internalLinkTargets": [
+      "/recruitment",
+      "/ai-agents",
+      "/case-studies/apraise"
+    ],
+    "dedupNotes": "The drafted AI-Act-recruiting post is a compliance piece ('why it is high-risk'); this is an operational how-to on the workflow and time-to-hire/candidate-response gains, with a light compliance nod. Distinct intent and buyer question, backed by a real recruitment case study rather than legal analysis.",
+    "freshnessExpiry": null,
+    "score": 71,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.9,
+      "winnability": 0.5,
+      "freshness": 0.5,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.randstad.it/gestione-risorse-umane/gestione-del-personale/ai-literacy-obbligo-formazione-come-muoversi/",
+      "https://quickbooks.intuit.com/r/running-a-business/agentic-ai-for-business/"
+    ],
+    "discovered_at": "2026-07-15",
+    "drafted_at": null
+  },
+  {
+    "id": "pilota-ai-in-produzione",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "portare-agente-ia-dal-pilota-alla-produzione",
+    "slug_en": "ai-agent-pilot-to-production",
+    "title_hint": "Il tuo pilota IA non arriva mai in produzione: la checklist per superare il 'muro' del proof-of-concept",
+    "cluster": "ai-agents",
+    "primaryKeyword": "agente ia dal pilota alla produzione",
+    "targetPersona": "COO / CTO",
+    "supportingCaseStudy": "cxl",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/ai-adoption",
+      "/guide/assessment-ai-interno-guida-operativa"
+    ],
+    "dedupNotes": "The drafted anti-pattern post is a diagnostic on WHY automation projects fail (org/change lens); this is a positive, forward-looking how-to checklist for the technical/operational path from POC to live agent (data, integration, monitoring, handover), addressing the widely-reported pilot-to-production gap. Different intent, minimal overlap.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 70,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.8,
+      "winnability": 0.6,
+      "freshness": 0.75,
+      "geo": 0.75
+    },
+    "sources": [
+      "topic-radar",
+      "https://zenvanriel.com/ai-engineer-blog/ai-agent-scaling-gap-pilot-production-2026/",
+      "https://www.zeluai.com/blog/scaling-ai-agents",
+      "https://paul-okhrem.com/enterprise-ai-agents-statistics-2026/"
+    ],
+    "discovered_at": "2026-07-15",
+    "drafted_at": null
+  },
+  {
+    "id": "agenti-ia-vs-rpa-scelta",
+    "status": "parked",
+    "archetype": "pillar",
+    "slug_it": "agenti-ia-o-rpa-cosa-scegliere",
+    "slug_en": "ai-agents-vs-rpa-which-to-choose",
+    "title_hint": "Agenti IA o RPA: quale automazione scegliere per ogni processo (e perche non e sempre l'IA)",
+    "cluster": "process-automation",
+    "primaryKeyword": "agenti ia vs rpa",
+    "targetPersona": "COO / Head of Ops",
+    "supportingCaseStudy": "numeraria",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/guide/agenti-ai-aziende"
+    ],
+    "dedupNotes": "The '5 segnali per automatizzare' post decides IF to automate; this decides WITH WHAT - a build/tech comparison between deterministic RPA and agentic IA per process type. Distinct from software-vs-SaaS (build/buy) and from agenti-vs-ChatGPT (owned). Comparison intent is highly citable by LLMs.",
+    "freshnessExpiry": null,
+    "score": 68,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.7,
+      "winnability": 0.5,
+      "freshness": 0.7,
+      "geo": 0.8
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.kinetikon.com/agenti-ia-vs-rpa-automazione-processi/",
+      "https://www.ventus.ai/blog/rpa-vs-ai-agents-real-difference-2026-guide/"
+    ],
+    "discovered_at": "2026-07-15",
+    "drafted_at": null
   }
 ]
