@@ -27,7 +27,7 @@ faq:
     a: "Questa guida ti dà il metodo per capirlo da solo, ma ogni azienda ha vincoli che sulla carta non si vedono (governance, cash flow, qualità dati reale). Per un parere onesto sul tuo caso specifico, senza pitch e senza preventivo a sorpresa, <a href='/parliamone'>parlane 20 minuti con noi</a>: se la risposta è \"non adesso\", te lo diciamo."
 featured: false
 lang: "it"
-draft: true
+draft: false
 ---
 
 Prima di chiamare un fornitore, la cosa più costosa che puoi fare è non aver fatto i compiti. Un assessment AI aziendale interno, fatto in casa in 1-2 settimane, ti mette in una posizione completamente diversa: sai dove l'IA ha senso, dove non ne ha, e hai i numeri per giudicare i preventivi invece di subirli.

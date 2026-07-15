@@ -27,7 +27,7 @@ faq:
     a: "This guide gives you the method to figure it out yourself, but every company has constraints that don't show on paper (governance, cash flow, real data quality). For an honest read on your specific case, with no pitch and no surprise quote, <a href='/en/contact'>talk to us for 20 minutes</a>: if the answer is \"not yet\", we'll tell you."
 featured: false
 lang: "en"
-draft: true
+draft: false
 ---
 
 Before you call a vendor, the most expensive thing you can do is skip your homework. An internal AI assessment, run in-house over 1-2 weeks, puts you in a completely different position: you know where AI makes sense, where it doesn't, and you have the numbers to judge quotes instead of being at their mercy.
