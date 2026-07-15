@@ -33,7 +33,7 @@
   },
   {
     "id": "assessment-ai-interno-guida",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "assessment-ai-interno-guida-operativa",
     "slug_en": "internal-ai-assessment-guide",
@@ -61,7 +61,7 @@
       "seed"
     ],
     "discovered_at": "2026-06-25",
-    "drafted_at": null
+    "drafted_at": "2026-07-15"
   },
   {
     "id": "ai-act-checklist-conformita-pmi",
