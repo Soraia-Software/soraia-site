@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Soraia, offerta a rischio nostro</title>
+<style>
+  @font-face { font-family: "Inter"; font-weight: 400; font-style: normal; src: url("file:///Users/daniellevis/Desktop/Company%20Brain/soraia-site/node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 500; font-style: normal; src: url("file:///Users/daniellevis/Desktop/Company%20Brain/soraia-site/node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 600; font-style: normal; src: url("file:///Users/daniellevis/Desktop/Company%20Brain/soraia-site/node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 700; font-style: normal; src: url("file:///Users/daniellevis/Desktop/Company%20Brain/soraia-site/node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2") format("woff2"); }
+
+  :root {
+    --brand: #4A1E5C;
+    --brand-accent: #892D9C;
+    --bg: #FAFAF8;
+    --surface: #F2F1ED;
+    --ink: #1A1A1A;
+    --ink-muted: #5F5E5A;
+    --ink-soft: #8B8A85;
+    --line: rgba(0,0,0,0.10);
+    --violet-200: #E8B3F0;
+    --violet-300: #DAB5D1;
+    --success: #17B26A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+  @page { size: A4; margin: 0; }
+
+  html, body {
+    font-family: "Inter", system-ui, sans-serif;
+    color: var(--ink);
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    letter-spacing: -0.006em;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .eyebrow {
+    font-size: 7.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .eyebrow .cond { text-transform: none; letter-spacing: 0.01em; font-weight: 500; opacity: 0.78; }
+
+  /* ---------- Header strip ---------- */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7mm 12mm 5mm;
+    border-bottom: 1px solid var(--line);
+  }
+  .brand { display: flex; align-items: center; gap: 8px; }
+  .brand svg { width: 19px; height: 21px; display: block; }
+  .brand span { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink); }
+  .header .eyebrow { color: var(--brand); }
+
+  /* ---------- Hero (dark) ---------- */
+  .hero {
+    background:
+      radial-gradient(ellipse 80% 60% at 18% 0%, rgba(74,30,92,0.60) 0%, transparent 56%),
+      radial-gradient(ellipse 70% 55% at 92% 90%, rgba(137,45,156,0.40) 0%, transparent 52%),
+      linear-gradient(135deg, #0A0510 0%, #1A0820 38%, #2A1438 100%);
+    color: #fff;
+    padding: 10mm 12mm 9mm;
+  }
+  .hero .eyebrow { color: var(--violet-200); }
+  .hero h1 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    margin: 7px 0 0;
+    max-width: 165mm;
+  }
+  .hero h1 .acc { color: var(--violet-200); }
+  .hero .questions {
+    margin-top: 11px;
+    font-size: 12.5px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #EAD9F0;
+    max-width: 160mm;
+  }
+  .hero .promise {
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.82);
+    max-width: 162mm;
+  }
+  .hero .promise b { color: #fff; font-weight: 600; }
+
+  /* ---------- Generic body section ---------- */
+  .body { flex: 1; display: flex; flex-direction: column; }
+  .sec { padding: 6.5mm 12mm; }
+  .sec-h {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 9px;
+  }
+
+  /* problems row */
+  .problems { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+  .prob {
+    background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 11px 12px;
+  }
+  .prob .n { font-family: "Inter"; font-size: 10px; font-weight: 600; color: var(--brand-accent); }
+  .prob p { font-size: 10.5px; line-height: 1.4; color: var(--ink); margin-top: 5px; }
+
+  /* how it works: 4 steps grid */
+  .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 18px; }
+  .step { display: flex; gap: 10px; }
+  .step .num {
+    flex: 0 0 auto; width: 21px; height: 21px; border-radius: 999px;
+    background: var(--brand); color: #fff; font-size: 11px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step .t { font-size: 10.5px; line-height: 1.42; color: var(--ink); }
+  .step .t b { font-weight: 600; }
+
+  /* two-col: why + what you don't risk */
+  .twocol { display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; }
+  .why p { font-size: 10.5px; line-height: 1.5; color: var(--ink-muted); margin-bottom: 8px; }
+  .why p b { color: var(--ink); font-weight: 600; }
+  .why .lead { color: var(--ink); font-size: 11px; }
+
+  .norisk { background: var(--surface); border-radius: 14px; padding: 13px 15px; }
+  .norisk ul { list-style: none; }
+  .norisk li { font-size: 10.5px; line-height: 1.36; color: var(--ink); padding: 6px 0 6px 18px; position: relative; border-bottom: 1px solid var(--line); }
+  .norisk li:last-child { border-bottom: 0; }
+  .norisk li::before {
+    content: ""; position: absolute; left: 0; top: 10px; width: 9px; height: 9px;
+    border-radius: 999px; background: var(--success); opacity: 0.9;
+  }
+  .norisk li b { font-weight: 600; }
+
+  /* proof strip */
+  .proof {
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    background: #fff;
+    padding: 6mm 12mm;
+    display: flex; flex-wrap: wrap; gap: 6px 0; align-items: center;
+    font-size: 9.5px; color: var(--ink-muted); letter-spacing: 0.01em;
+  }
+  .proof .dot { color: var(--violet-300); margin: 0 9px; }
+  .proof b { color: var(--ink); font-weight: 600; }
+
+  /* real results */
+  .results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+  .rcard { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 11px 13px; }
+  .rcard .client { font-size: 11.5px; font-weight: 600; color: var(--ink); }
+  .rcard .sector { font-size: 7.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-top: 2px; }
+  .rcard .result { font-size: 10px; line-height: 1.35; color: var(--ink-muted); margin-top: 7px; }
+  .rcard .result b { color: var(--brand-accent); font-weight: 600; }
+  .stats { margin-top: 9px; font-size: 9px; color: var(--ink-muted); letter-spacing: 0.01em; }
+  .stats b { color: var(--ink); font-weight: 600; }
+  .stats .dot { color: var(--violet-300); margin: 0 7px; }
+
+  /* CTA band */
+  .cta {
+    background: var(--brand);
+    color: #fff;
+    padding: 7mm 12mm;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  }
+  .cta-left { display: flex; align-items: center; gap: 14px; }
+  .avatar { width: 50px; height: 50px; border-radius: 999px; object-fit: cover; border: 2px solid rgba(255,255,255,0.30); flex: 0 0 auto; }
+  .cta .lead { }
+  .cta .lead .k { font-size: 19px; font-weight: 600; letter-spacing: -0.02em; }
+  .cta .lead .s { font-size: 11px; color: rgba(255,255,255,0.82); margin-top: 4px; line-height: 1.4; max-width: 105mm; }
+  .cta .after { font-size: 9.5px; color: var(--violet-200); margin-top: 6px; line-height: 1.4; max-width: 105mm; }
+  .cta .after b { color: #fff; font-weight: 600; }
+  .cta .meta { text-align: right; font-size: 10px; line-height: 1.7; color: rgba(255,255,255,0.92); white-space: nowrap; }
+  .cta .meta .site { font-weight: 600; font-size: 12px; }
+  .cta .meta .scar { display: block; margin-top: 7px; font-size: 8.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--violet-200); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <svg viewBox="0 0 5900 6508" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <path d="M3142.53 2517.9C2975.81 2421.64 2777.3 2396.19 2590.69 2447.14C2404.09 2498.09 2244.66 2621.27 2147.48 2789.58L1170.4 4481.94C1092.18 4617.37 1058.94 4774.03 1075.53 4929.02C1092.11 5084.01 1157.66 5229.2 1262.58 5343.35C1367.51 5457.51 1506.3 5534.64 1658.67 5563.47C1811.05 5592.3 1969 5571.32 2109.45 5503.6L4239.05 4476.65C4358.81 4418.93 4460.88 4329.6 4534.29 4218.28C4607.69 4106.96 4649.64 3977.88 4655.61 3844.94C4661.57 3712 4631.34 3580.24 4568.16 3463.86C4504.98 3347.47 4411.25 3250.88 4297.07 3184.47L3142.53 2517.9Z" fill="#892D9C"/>
+        <path d="M2757.41 3990.1C2924.14 4086.36 3122.64 4111.81 3309.25 4060.86C3495.85 4009.91 3655.28 3886.73 3752.46 3718.42L4729.54 2026.06C4807.76 1890.63 4841 1733.97 4824.42 1578.98C4807.83 1423.99 4742.28 1278.8 4637.36 1164.64C4532.44 1050.49 4393.64 973.359 4241.27 944.527C4088.89 915.695 3930.94 936.676 3790.49 1004.4L1660.89 2031.35C1540.96 2089.16 1438.76 2178.67 1365.33 2290.21C1291.91 2401.75 1250.05 2531.08 1244.29 2664.23C1238.52 2797.38 1269.07 2929.28 1332.62 3045.68C1396.17 3162.08 1490.32 3258.56 1604.89 3324.69L2757.41 3990.1Z" fill="url(#g0)"/>
+        <path d="M3439.59 4393.42L1603.73 3333.49C1470.94 3256.83 1382.49 3115.92 1357.85 2941.76C1333.2 2767.61 1374.37 2574.47 1472.3 2404.85C1570.24 2235.22 1716.91 2103 1880.05 2037.27C2043.2 1971.54 2209.46 1977.68 2342.25 2054.35L4178.1 3114.28C4310.89 3190.95 4399.34 3331.86 4423.99 3506.01C4448.63 3680.17 4407.46 3873.3 4309.53 4042.92C4211.6 4212.55 4064.92 4344.77 3901.78 4410.5C3738.63 4476.23 3572.38 4470.09 3439.59 4393.42Z" fill="url(#g1)"/>
+        <defs>
+        <linearGradient id="g0" x1="1799.04" y1="2854.1" x2="4655.49" y2="4242.14" gradientUnits="userSpaceOnUse"><stop offset="0.27" stop-color="#B376C0"/><stop offset="0.74" stop-color="#CF92DB"/></linearGradient>
+        <linearGradient id="g1" x1="2222.14" y1="2033.23" x2="3400.73" y2="3931.34" gradientUnits="userSpaceOnUse"><stop offset="0.18" stop-color="#B376C0"/><stop offset="0.82" stop-color="#892D9C"/></linearGradient>
+        </defs>
+      </svg>
+      <span>Soraia</span>
+    </div>
+    <div class="eyebrow">Offerta riservata &middot; Solo 1 progetto al mese<span class="cond"> a queste condizioni</span></div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="eyebrow">Per chi ha software vecchi, o nessun team tecnico</div>
+    <h1>Dimmi qual &egrave; il problema.<br>Lo risolviamo <span class="acc">a rischio nostro.</span></h1>
+    <div class="questions">
+      Qual &egrave; il problema che ti porta via pi&ugrave; tempo o pi&ugrave; soldi? E quanto ti costa, ogni mese, non risolverlo?
+    </div>
+    <div class="promise">
+      Costruiamo una soluzione in <b>4 settimane</b>. Paghi <b>solo se raggiunge il risultato</b> che fissiamo insieme, per iscritto, prima di iniziare. Niente anticipo, niente contratto vincolante.
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- Problems (recognition) -->
+    <div class="sec" style="padding-bottom:4mm;">
+      <div class="sec-h">Problemi che sentiamo ogni settimana</div>
+      <div class="problems">
+        <div class="prob"><div class="n">01</div><p>Preventivi, offerte e documenti fatti a mano. Ore, ogni giorno.</p></div>
+        <div class="prob"><div class="n">02</div><p>Telefonate, email e ordini che si perdono quando sei in officina.</p></div>
+        <div class="prob"><div class="n">03</div><p>Un gestionale di 15 anni fa che nessuno sa pi&ugrave; usare davvero.</p></div>
+      </div>
+    </div>
+
+    <!-- How it works -->
+    <div class="sec" style="padding-top:3mm; padding-bottom:4mm;">
+      <div class="sec-h">Come funziona</div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div class="t">Una chiamata di <b>20 minuti</b>. Scegliamo insieme <b>un</b> problema concreto da risolvere.</div></div>
+        <div class="step"><div class="num">2</div><div class="t">Mettiamo per iscritto cosa significa &laquo;funziona&raquo;: 1-3 <b>criteri misurabili</b> (es. da 2 ore a 10 minuti per preventivo).</div></div>
+        <div class="step"><div class="num">3</div><div class="t">Lo costruiamo in <b>4 settimane</b>, a rischio nostro. Tu ci dai qualche ora e un campione di dati.</div></div>
+        <div class="step"><div class="num">4</div><div class="t">Collaudo sui criteri concordati. Se li raggiunge, <b>paghi</b>. Se no, <b>non paghi</b> e ci salutiamo, amici come prima.</div></div>
+      </div>
+    </div>
+
+    <!-- Why + what you don't risk -->
+    <div class="sec" style="padding-top:3mm; padding-bottom:5mm;">
+      <div class="twocol">
+        <div class="why">
+          <div class="sec-h">Perch&eacute; possiamo permettercelo</div>
+          <p class="lead">Con gli <b>agenti IA</b> consegniamo in poche settimane ci&ograve; che prima richiedeva mesi: se una cosa non funziona, lo scopriamo subito, e non la paghi. Non &egrave; un trucco, &egrave; il motivo per cui esistiamo.</p>
+          <p>L'obiettivo <b>non &egrave; tagliare persone</b>. &Egrave; togliere a te e ai tuoi il lavoro ripetitivo, cos&igrave; fate quello che conta.</p>
+          <p>Quello che costruiamo &egrave; <b>tuo</b> e documentato. Per <b>30 giorni</b> dopo la consegna ti seguiamo passo passo.</p>
+        </div>
+        <div class="norisk">
+          <div class="sec-h" style="margin-bottom:6px;">Cosa non rischi</div>
+          <ul>
+            <li><b>Nessun anticipo</b>, nessun contratto vincolante.</li>
+            <li><b>Rischio economico zero</b>: non paghi se non raggiungiamo il risultato concordato.</li>
+            <li>I tuoi <b>dati restano tuoi</b>. DPA firmato, non li usiamo per nient'altro.</li>
+            <li>Solo <b>1 progetto al mese</b> a queste condizioni: team dedicato per 4 settimane.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Real results -->
+    <div class="sec" style="padding-top:2mm; padding-bottom:4.5mm;">
+      <div class="sec-h">Risultati veri, aziende vere</div>
+      <div class="results">
+        <div class="rcard">
+          <div class="client">Numeraria</div>
+          <div class="sector">Studio paghe &amp; contabilit&agrave;</div>
+          <div class="result"><b>Mezzo mese</b> di tempo del management restituito, automazione end-to-end.</div>
+        </div>
+        <div class="rcard">
+          <div class="client">Navily</div>
+          <div class="sector">Community nautica</div>
+          <div class="result"><b>70% in meno</b> di tempo operativo, con la precisione mantenuta.</div>
+        </div>
+        <div class="rcard">
+          <div class="client">ILTEC</div>
+          <div class="sector">Office technology &middot; Biella</div>
+          <div class="result">Sito <b>SEO e GEO ottimizzato</b> in 3 settimane, visibile su ChatGPT, Perplexity e Google.</div>
+        </div>
+      </div>
+      <div class="stats">
+        <b>40+ progetti consegnati</b><span class="dot">&bull;</span><b>11 paesi</b><span class="dot">&bull;</span><b>team di 11 persone</b><span class="dot">&bull;</span>sede a <b>Biella</b><span class="dot">&bull;</span>prima versione funzionante in <b>4 settimane</b><span class="dot">&bull;</span>30 giorni di hypercare incluso
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="cta-left">
+      <img class="avatar" src="file:///Users/daniellevis/Desktop/Company%20Brain/soraia-site/public/team/daniel-levis.webp" alt="Daniel Levis">
+      <div class="lead">
+        <div class="k">Parliamone.</div>
+        <div class="s">Una chiamata di 20 minuti, senza impegno. Capiamo il problema e se possiamo davvero risolverlo. Decidi dopo.</div>
+      </div>
+    </div>
+    <div class="meta">
+      <div class="site">soraia.io/parliamone</div>
+      Daniel Levis, CEO &middot; info@soraia.io
+      <div class="scar">Pochi slot per questo trimestre</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
