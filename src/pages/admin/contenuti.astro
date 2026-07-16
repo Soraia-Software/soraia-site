@@ -6,18 +6,29 @@ const [blog, guides, confronti] = await Promise.all([
   getCollection("blog"), getCollection("guides"), getCollection("confronti"),
 ]);
 const itOnly = (x: any) => x.data.lang !== "en";
-type Row = { type: string; title: string; cat: string; date: Date; draft: boolean; url: string };
+const now = new Date();
+type Status = "draft" | "scheduled" | "published";
+type Row = { type: string; title: string; cat: string; date: Date; status: Status; url: string };
+// draft:true → in lavorazione; draft:false but future pubDate → programmato (esce quel giorno
+// col drip); draft:false and past/today → pubblicato (live).
+const statusOf = (draft: boolean, date: Date): Status => (draft ? "draft" : date > now ? "scheduled" : "published");
 const items: Row[] = [
-  ...blog.filter(itOnly).map((x) => ({ type: "Blog", title: x.data.title, cat: (x.data.tags || []).slice(0, 2).join(", "), date: x.data.pubDate, draft: !!x.data.draft, url: `/blog/${x.id}` })),
-  ...guides.filter(itOnly).map((x) => ({ type: "Guida", title: x.data.title, cat: "", date: x.data.pubDate, draft: !!x.data.draft, url: `/guide/${x.id}` })),
-  ...confronti.filter(itOnly).map((x) => ({ type: "Confronto", title: x.data.titolo, cat: x.data.categoria, date: x.data.pubDate, draft: !!x.data.draft, url: `/confronto/${x.id}` })),
+  ...blog.filter(itOnly).map((x) => ({ type: "Blog", title: x.data.title, cat: (x.data.tags || []).slice(0, 2).join(", "), date: x.data.pubDate, status: statusOf(!!x.data.draft, x.data.pubDate), url: `/blog/${x.id}` })),
+  ...guides.filter(itOnly).map((x) => ({ type: "Guida", title: x.data.title, cat: "", date: x.data.pubDate, status: statusOf(!!x.data.draft, x.data.pubDate), url: `/guide/${x.id}` })),
+  ...confronti.filter(itOnly).map((x) => ({ type: "Confronto", title: x.data.titolo, cat: x.data.categoria, date: x.data.pubDate, status: statusOf(!!x.data.draft, x.data.pubDate), url: `/confronto/${x.id}` })),
 ].sort((a, b) => b.date.valueOf() - a.date.valueOf());
 const fmt = (d: Date) => d.toLocaleDateString("it-IT", { day: "2-digit", month: "short", year: "2-digit" });
-const published = items.filter((i) => !i.draft).length;
+const published = items.filter((i) => i.status === "published").length;
+const scheduled = items.filter((i) => i.status === "scheduled").length;
+const STYLE: Record<Status, { bg: string; fg: string; label: string }> = {
+  published: { bg: "#EAF7EF", fg: "#17803D", label: "pubblicato" },
+  scheduled: { bg: "#E8F0FE", fg: "#1B5FC1", label: "programmato" },
+  draft: { bg: "#FBF3E6", fg: "#9A6A00", label: "in lavorazione" },
+};
 ---
 <AdminLayout title="Contenuti" active="contenuti">
   <p style="font-size: 13.5px; color: var(--color-ink-muted); margin-bottom: 6px;">Blog, guide e confronti (versione IT canonica; l'EN rispecchia). Sola lettura.</p>
-  <p style="font-size: 12.5px; color: var(--color-ink-soft); margin-bottom: 16px;">{items.length} totali · {published} pubblicati · {items.length - published} in lavorazione</p>
+  <p style="font-size: 12.5px; color: var(--color-ink-soft); margin-bottom: 16px;">{items.length} totali · {published} pubblicati · {scheduled} programmati · {items.length - published - scheduled} in lavorazione</p>
   <div style="overflow-x: auto; background: #fff; border: 1px solid var(--color-line); border-radius: 12px;">
     <table style="width: 100%; border-collapse: collapse; font-size: 13.5px;">
       <thead>
@@ -32,12 +43,12 @@ const published = items.filter((i) => !i.draft).length;
           <tr>
             <td style="padding:10px 12px;border-bottom:1px solid var(--color-line);color:var(--color-ink-muted);white-space:nowrap">{i.type}</td>
             <td style="padding:10px 12px;border-bottom:1px solid var(--color-line)">
-              {i.draft ? <span>{i.title}</span> : <a href={i.url} target="_blank" rel="noopener" style="color:var(--color-brand);text-decoration:none">{i.title}</a>}
+              {i.status === "published" ? <a href={i.url} target="_blank" rel="noopener" style="color:var(--color-brand);text-decoration:none">{i.title}</a> : <span>{i.title}</span>}
             </td>
             <td style="padding:10px 12px;border-bottom:1px solid var(--color-line);color:var(--color-ink-soft)">{i.cat || "-"}</td>
             <td style="padding:10px 12px;border-bottom:1px solid var(--color-line);color:var(--color-ink-soft);white-space:nowrap">{fmt(i.date)}</td>
             <td style="padding:10px 12px;border-bottom:1px solid var(--color-line);white-space:nowrap">
-              <span style={`font-size:12px;padding:3px 9px;border-radius:6px;background:${i.draft ? "#FBF3E6" : "#EAF7EF"};color:${i.draft ? "#9A6A00" : "#17803D"}`}>{i.draft ? "in lavorazione" : "pubblicato"}</span>
+              <span style={`font-size:12px;padding:3px 9px;border-radius:6px;background:${STYLE[i.status].bg};color:${STYLE[i.status].fg}`}>{STYLE[i.status].label}</span>
             </td>
           </tr>
         ))}
