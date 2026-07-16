@@ -1,7 +1,7 @@
 [
   {
     "id": "no-code-vs-agenti-ia",
-    "status": "todo",
+    "status": "drafted",
     "slug_it": "automazione-no-code-vs-agenti-ia",
     "slug_en": "no-code-automation-vs-ai-agents",
     "categoria": "Automazione",
@@ -10,18 +10,30 @@
     "title_hint": "Automazione no-code o agenti IA: cosa scegliere",
     "primaryKeyword": "automazione no-code o agenti IA",
     "targetPersona": "COO / Head of Ops",
-    "internalLinkTargets": ["/ai-agents", "/software-development", "/parliamone"],
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/parliamone"
+    ],
     "dedupNotes": "Quando basta un flusso no-code (Make/Zapier/n8n) e quando serve un agente IA che ragiona sui casi. Non e' il post software-su-misura-vs-saas; qui il confronto e' automazione a regole vs agente che decide.",
     "freshnessExpiry": null,
     "score": 76,
-    "subScores": { "intent": 0.8, "biz": 0.8, "winnability": 0.75, "freshness": 0.5, "geo": 0.85 },
-    "sources": ["seed"],
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.8,
+      "winnability": 0.75,
+      "freshness": 0.5,
+      "geo": 0.85
+    },
+    "sources": [
+      "seed"
+    ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-16"
   },
   {
     "id": "chatbot-regole-vs-agente-support",
-    "status": "todo",
+    "status": "drafted",
     "slug_it": "chatbot-a-regole-vs-agente-ia-support",
     "slug_en": "rule-based-chatbot-vs-ai-agent-support",
     "categoria": "Customer support",
@@ -30,14 +42,26 @@
     "title_hint": "Chatbot a regole o agente IA per il supporto",
     "primaryKeyword": "chatbot a regole o agente IA support",
     "targetPersona": "Head of Customer Support",
-    "internalLinkTargets": ["/customer-support", "/ai-agents", "/parliamone"],
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/parliamone"
+    ],
     "dedupNotes": "Chatbot scriptato (albero di FAQ) vs agente IA che capisce, esegue e fa routing. Quando basta l'uno, quando serve l'altro.",
     "freshnessExpiry": null,
     "score": 72,
-    "subScores": { "intent": 0.75, "biz": 0.72, "winnability": 0.75, "freshness": 0.5, "geo": 0.8 },
-    "sources": ["seed"],
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.72,
+      "winnability": 0.75,
+      "freshness": 0.5,
+      "geo": 0.8
+    },
+    "sources": [
+      "seed"
+    ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-16"
   },
   {
     "id": "ai-agency-vs-big4",
@@ -50,12 +74,24 @@
     "title_hint": "AI agency specializzata o Big4 per un progetto AI",
     "primaryKeyword": "AI agency o Big4",
     "targetPersona": "CEO / CFO",
-    "internalLinkTargets": ["/guide/consulenza-ai-italia", "/ai-agents", "/parliamone"],
+    "internalLinkTargets": [
+      "/guide/consulenza-ai-italia",
+      "/ai-agents",
+      "/parliamone"
+    ],
     "dedupNotes": "Per una PMI: agency specializzata (tempi/prezzo/accountability) vs Big4 (scala, multi-paese). Confronto onesto, non auto-promozionale.",
     "freshnessExpiry": null,
     "score": 70,
-    "subScores": { "intent": 0.7, "biz": 0.75, "winnability": 0.7, "freshness": 0.5, "geo": 0.8 },
-    "sources": ["seed"],
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.75,
+      "winnability": 0.7,
+      "freshness": 0.5,
+      "geo": 0.8
+    },
+    "sources": [
+      "seed"
+    ],
     "discovered_at": "2026-07-16",
     "drafted_at": null
   },
@@ -70,12 +106,374 @@
     "title_hint": "Gestionale vecchio: sostituirlo o affiancarlo con l'AI",
     "primaryKeyword": "sostituire gestionale o affiancare AI",
     "targetPersona": "CEO / IT",
-    "internalLinkTargets": ["/software-development", "/ai-agents", "/parliamone"],
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/parliamone"
+    ],
     "dedupNotes": "Rifare il gestionale (costo/rischio) vs tenerlo e aggiungere lo strato AI mancante. Quando conviene ciascuna via.",
     "freshnessExpiry": null,
     "score": 74,
-    "subScores": { "intent": 0.78, "biz": 0.8, "winnability": 0.72, "freshness": 0.5, "geo": 0.82 },
-    "sources": ["seed"],
+    "subScores": {
+      "intent": 0.78,
+      "biz": 0.8,
+      "winnability": 0.72,
+      "freshness": 0.5,
+      "geo": 0.82
+    },
+    "sources": [
+      "seed"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "geo-vs-seo-tradizionale",
+    "status": "drafted",
+    "slug_it": "ai-search-optimization-vs-seo-tradizionale",
+    "slug_en": "geo-vs-traditional-seo",
+    "categoria": "Visibilita' online",
+    "optionA_name": "AI Search Optimization (GEO)",
+    "optionB_name": "SEO tradizionale",
+    "title_hint": "AI search optimization vs SEO tradizionale: dove farsi trovare nel 2026",
+    "primaryKeyword": "ai search optimization vs seo",
+    "targetPersona": "Marketing Manager / Founder",
+    "internalLinkTargets": [
+      "/ai-search-optimization",
+      "/case-studies/iltec",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: decisione su dove investire per la visibilita' (motori AI vs Google classico), collegata al servizio AI Search Optimization; nessun overlap con backlog.",
+    "freshnessExpiry": "2027-01-31",
+    "score": 82,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.85,
+      "winnability": 0.85,
+      "freshness": 0.8,
+      "geo": 0.65
+    },
+    "sources": [
+      "confronto-radar",
+      "https://launchmind.io/it/blog/geo-vs-seo-nel-2026-cosa-devono-fare-i-brand-per-emergere-nella-ricerca-ai/",
+      "https://www.digital360.it/blog-connect/seo-geo-e-aeo-come-cambia-lottimizzazione-dei-contenuti",
+      "https://oniondigital.it/magazine/seo-per-ai-la-nuova-frontiera-del-posizionamento-online/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": "2026-07-16"
+  },
+  {
+    "id": "ai-generalista-vs-ai-verticale",
+    "status": "drafted",
+    "slug_it": "ai-generalista-vs-ai-verticale",
+    "slug_en": "generalist-ai-vs-vertical-ai",
+    "categoria": "Strategia AI",
+    "optionA_name": "AI generalista (orizzontale)",
+    "optionB_name": "AI verticale (di settore)",
+    "title_hint": "AI generalista vs AI verticale: cosa conviene davvero alle PMI B2B",
+    "primaryKeyword": "ai generalista vs ai verticale",
+    "targetPersona": "CEO / Direttore Generale",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/guide/agenti-ai-aziende",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: nessun confronto in backlog o guide affronta la scelta generalista vs verticale; tema centrale per il posizionamento 2026 di Soraia su agenti verticali.",
+    "freshnessExpiry": null,
+    "score": 81,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.9,
+      "winnability": 0.85,
+      "freshness": 0.7,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.agendadigitale.eu/industry-4-0/lia-generalista-sta-fallendo-nelle-aziende-arriva-la-vertical-ai/",
+      "https://www.make-it.it/news/perche-lai-verticale-sta-battendo-lai-generalista-nel-b2b/",
+      "https://www.unisolutions.it/2026/04/27/ai-verticale-imprese-vantaggio-competitivo/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": "2026-07-16"
+  },
+  {
+    "id": "rpa-vs-agenti-ia",
+    "status": "parked",
+    "slug_it": "rpa-vs-agenti-ia",
+    "slug_en": "rpa-vs-ai-agents",
+    "categoria": "Automazione processi",
+    "optionA_name": "RPA (Robotic Process Automation)",
+    "optionB_name": "Agenti IA",
+    "title_hint": "RPA vs Agenti IA: quale automazione per i processi della tua PMI",
+    "primaryKeyword": "rpa vs agenti ia",
+    "targetPersona": "COO / Responsabile Operations",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: la backlog no-code-vs-agenti confronta workflow builder (Make/Zapier/n8n) con agenti; qui il termine di paragone e' la RPA classica (bot rule-based su UI), categoria e buyer diversi.",
+    "freshnessExpiry": null,
+    "score": 77,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.85,
+      "winnability": 0.8,
+      "freshness": 0.55,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.kinetikon.com/agenti-ia-vs-rpa-automazione-processi/",
+      "https://www.keypartner.com/magazine/innovation/agent-ai-vs-rpa-automazione-intelligente/",
+      "https://appian.com/it/learn/topics/robotic-process-automation/rpa-vs-ai"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "ai-on-premise-vs-cloud",
+    "status": "parked",
+    "slug_it": "ai-on-premise-vs-cloud",
+    "slug_en": "on-premise-vs-cloud-ai",
+    "categoria": "Infrastruttura AI",
+    "optionA_name": "AI on-premise (locale)",
+    "optionB_name": "AI in cloud",
+    "title_hint": "AI on-premise vs cloud: dove far girare l'AI con dati sensibili",
+    "primaryKeyword": "ai on premise vs cloud",
+    "targetPersona": "IT Manager / DPO",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/customer-support",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: decisione infrastrutturale/compliance (dati, GDPR) non coperta da backlog o guide AI Act.",
+    "freshnessExpiry": null,
+    "score": 77,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.8,
+      "winnability": 0.75,
+      "freshness": 0.65,
+      "geo": 0.75
+    },
+    "sources": [
+      "confronto-radar",
+      "https://softwarebrescia.it/ai-on-premise-vs-cloud",
+      "https://www.neomedia.it/learn/ai-locale-vs-cloud-guida-per-pmi-italiane",
+      "https://www.tuxweb.it/blog/perche-on-premise-pmi"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "recruitment-ai-vs-agenzia-tradizionale",
+    "status": "parked",
+    "slug_it": "recruitment-ai-vs-agenzia-recruiting-tradizionale",
+    "slug_en": "ai-recruiting-vs-traditional-agency",
+    "categoria": "Recruitment & HR",
+    "optionA_name": "Recruitment con agenti IA",
+    "optionB_name": "Agenzia di recruiting tradizionale",
+    "title_hint": "Recruitment con AI vs agenzia tradizionale: velocita', costo, qualita'",
+    "primaryKeyword": "recruitment ai vs agenzia recruiting",
+    "targetPersona": "HR Manager / Head of Talent",
+    "internalLinkTargets": [
+      "/recruitment",
+      "/case-studies/apraise",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: confronto funzionale nel cluster HR (agente IA vs servizio esterno di recruiting), non presente in backlog; supportato dai case APraise e Stars Be Original.",
+    "freshnessExpiry": null,
+    "score": 77,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.85,
+      "winnability": 0.8,
+      "freshness": 0.6,
+      "geo": 0.65
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.secondtalent.com/it-staffing/ai-staffing-solutions-vs-traditional-recruitment-agencies/",
+      "https://www.thehypervelocity.com/blog/ai-recruiting-vs-traditional-agency-comparison/",
+      "https://hyring.com/blog/ai-native-vs-traditional-recruitment-agencies/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "software-su-misura-vs-gestionale-pronto",
+    "status": "parked",
+    "slug_it": "software-su-misura-vs-gestionale-pronto",
+    "slug_en": "custom-software-vs-off-the-shelf-erp",
+    "categoria": "Software gestionale",
+    "optionA_name": "Software su misura (build)",
+    "optionB_name": "Gestionale/ERP pronto (buy)",
+    "title_hint": "Software su misura vs gestionale pronto: la scelta build vs buy per PMI",
+    "primaryKeyword": "software su misura vs gestionale pronto",
+    "targetPersona": "COO / IT Manager",
+    "internalLinkTargets": [
+      "/software-development",
+      "/case-studies/numeraria",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: il parked 'sostituire vs affiancare gestionale' e' una decisione di migrazione; qui la scelta e' build (su misura) vs buy (pacchetto pronto) a monte dell'acquisto.",
+    "freshnessExpiry": null,
+    "score": 76,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.85,
+      "winnability": 0.75,
+      "freshness": 0.55,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.scunio.com/blog/software-gestionale-su-misura-costi-vantaggi/",
+      "https://zylo.com/blog/build-vs-buy-software-pros-and-cons",
+      "https://infominds.eu/erp-per-pmi-come-scegliere-software-gestionale/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "copilot-vs-agente-ia-autonomo",
+    "status": "parked",
+    "slug_it": "copilot-vs-agente-ia-autonomo",
+    "slug_en": "copilot-vs-autonomous-ai-agent",
+    "categoria": "Agenti IA",
+    "optionA_name": "Copilot / assistente AI (suggerisce)",
+    "optionB_name": "Agente IA autonomo (esegue)",
+    "title_hint": "Copilot vs agente IA autonomo: assistere o eseguire i processi",
+    "primaryKeyword": "copilot vs agente ia autonomo",
+    "targetPersona": "COO / Responsabile Innovazione",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/finance",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: il backlog chatbot-vs-agente riguarda il customer support; qui il confronto e' assistente che affianca l'umano vs agente che esegue il processo end-to-end, trasversale ai cluster ops.",
+    "freshnessExpiry": null,
+    "score": 74,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.8,
+      "winnability": 0.75,
+      "freshness": 0.7,
+      "geo": 0.55
+    },
+    "sources": [
+      "confronto-radar",
+      "https://virtualworkforce.ai/it/agenti-ai-autonomi-vs-copiloti/",
+      "https://www.orange-its.ch/it/insights/ai-agent-vs-assistant-copilot",
+      "https://www.fastweb.it/fastweb-plus/intelligenza-artificiale/chatbot-vs-agenti-ai-cosa-cambia-davvero/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "llm-open-source-vs-proprietario",
+    "status": "parked",
+    "slug_it": "llm-open-source-vs-proprietario",
+    "slug_en": "open-source-vs-proprietary-llm",
+    "categoria": "Modelli AI",
+    "optionA_name": "LLM open source (es. Llama)",
+    "optionB_name": "LLM proprietario (es. GPT, Claude)",
+    "title_hint": "LLM open source vs proprietario: quale scegliere per la tua azienda",
+    "primaryKeyword": "llm open source vs proprietario",
+    "targetPersona": "CTO / Data Lead",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/customer-support",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: scelta di modello (controllo/costi/privacy vs prestazioni) distinta dalle decisioni di prodotto o servizio in backlog.",
+    "freshnessExpiry": "2027-01-31",
+    "score": 71,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.75,
+      "winnability": 0.7,
+      "freshness": 0.7,
+      "geo": 0.55
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.zerounoweb.it/analytics/cognitive-computing/modelli-llm-in-azienda-come-valutare-lalternativa-open-source/",
+      "https://www.appius.it/llm-open-source-vs-closed-source-pro-contro-e-casi-duso/",
+      "https://aipia.it/tecnologia/modelli-open-source-vs-proprietari-2026/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "rag-vs-fine-tuning",
+    "status": "parked",
+    "slug_it": "rag-vs-fine-tuning",
+    "slug_en": "rag-vs-fine-tuning",
+    "categoria": "Architettura AI",
+    "optionA_name": "RAG (Retrieval-Augmented Generation)",
+    "optionB_name": "Fine-tuning del modello",
+    "title_hint": "RAG vs fine-tuning: come far usare i tuoi dati all'AI aziendale",
+    "primaryKeyword": "rag vs fine-tuning",
+    "targetPersona": "CTO / IT Manager",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: decisione tecnica su come alimentare l'AI con conoscenza aziendale, non presente in backlog ne' guide.",
+    "freshnessExpiry": null,
+    "score": 70,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.75,
+      "winnability": 0.7,
+      "freshness": 0.65,
+      "geo": 0.45
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.ibm.com/think/topics/rag-vs-fine-tuning",
+      "https://orq.ai/blog/finetuning-vs-rag",
+      "https://datamotion.com/rag-vs-fine-tuning/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "chatgpt-enterprise-vs-copilot",
+    "status": "parked",
+    "slug_it": "chatgpt-enterprise-vs-microsoft-copilot",
+    "slug_en": "chatgpt-enterprise-vs-microsoft-copilot",
+    "categoria": "Strumenti AI",
+    "optionA_name": "ChatGPT Enterprise",
+    "optionB_name": "Microsoft 365 Copilot",
+    "title_hint": "ChatGPT Enterprise vs Microsoft Copilot: quale AI per il team",
+    "primaryKeyword": "chatgpt enterprise vs microsoft copilot",
+    "targetPersona": "IT Manager / Responsabile Operations",
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/guide/formazione-ai-aziendale",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: confronto tra due prodotti di produttivita' AI (adoption), non tra approcci custom; distinto da tutti i topic in backlog.",
+    "freshnessExpiry": "2027-01-31",
+    "score": 66,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.65,
+      "winnability": 0.55,
+      "freshness": 0.7,
+      "geo": 0.5
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.microsoft.com/en-us/microsoft-365-copilot/copilot-vs-chatgpt-enterprise",
+      "https://intuitionlabs.ai/articles/chatgpt-vs-copilot-enterprise-comparison",
+      "https://embee.co.in/blog/microsoft-copilot-vs-chatgpt-enterprise-guide/"
+    ],
     "discovered_at": "2026-07-16",
     "drafted_at": null
   }

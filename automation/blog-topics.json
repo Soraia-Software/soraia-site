@@ -489,5 +489,492 @@
       "user-brief:cambio-generazionale"
     ],
     "drafted_at": "2026-06-29"
+  },
+  {
+    "id": "shadow-ai-policy-pmi",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "shadow-ai-azienda-governance",
+    "slug_en": "shadow-ai-smb-governance",
+    "title_hint": "Shadow AI: i tuoi dipendenti gia' usano l'IA senza dirtelo - come governarla prima del 2 agosto 2026",
+    "cluster": "compliance",
+    "primaryKeyword": "shadow ai in azienda",
+    "targetPersona": "COO / Head of Ops",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/customer-support",
+      "/guide/ai-policy-aziendale-template"
+    ],
+    "dedupNotes": "Owned 'formazione AI aziendale' is about upskilling; this is about ungoverned employee use of public AI tools (data leak, AI Act literacy exposure) and a governance/policy response - a distinct problem-awareness intent not in the backlog.",
+    "freshnessExpiry": "2026-08-02",
+    "score": 78,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.8,
+      "winnability": 0.55,
+      "freshness": 0.95,
+      "geo": 0.85
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.lokky.it/blog/imprese/shadow-ai-2026-rischio-invisibile-delle-intelligenze-artificiali-usate-dai-dipendenti-senza-regole-aziendali/",
+      "https://cyberment.it/intelligenza-artificiale/shadow-ai-in-azienda-cose-perche-e-il-rischio-numero-uno-del-2026-e-come-affrontarlo/",
+      "https://mirium.it/shadow-ai-in-azienda-governance-rischi/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": "2026-07-16"
+  },
+  {
+    "id": "ai-overviews-calo-traffico-pmi",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "calo-traffico-google-ai-overviews-azienda",
+    "slug_en": "ai-overviews-traffic-drop-smb",
+    "title_hint": "Il traffico dal sito sta calando? Come misurare quanto ti sta togliendo Google AI Overviews (e cosa fare)",
+    "cluster": "ai-search",
+    "primaryKeyword": "calo traffico google ai overviews azienda",
+    "targetPersona": "Head of Marketing / CEO",
+    "supportingCaseStudy": "iltec",
+    "internalLinkTargets": [
+      "/ai-search-optimization",
+      "/case-studies/iltec",
+      "/sales-marketing"
+    ],
+    "dedupNotes": "Backlog GEO post is solution-side ('come farsi citare da ChatGPT'). This is the earlier problem-awareness intent: diagnosing and quantifying the organic-traffic drop from AI Overviews in 2026 - different keyword and funnel stage, low overlap.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 76,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.8,
+      "winnability": 0.55,
+      "freshness": 0.85,
+      "geo": 0.8
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.roberto-serra.com/news/crollo-traffico-google-gennaio-ai-overviews-12-01-2026/",
+      "https://studioerica.it/google-ai-overview/",
+      "https://heroicrankings.com/seo/managed/google-ai-overview-statistics-2026/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": "2026-07-16"
+  },
+  {
+    "id": "registro-sistemi-ai-mappatura",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "registro-sistemi-ai-aziendale",
+    "slug_en": "ai-systems-inventory-smb",
+    "title_hint": "Il registro dei sistemi IA che ti serve entro agosto 2026: come mapparli (template e classificazione del rischio)",
+    "cluster": "compliance",
+    "primaryKeyword": "registro sistemi ai aziendale",
+    "targetPersona": "COO / DPO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/guide/ai-act-aziende",
+      "/guide/ai-policy-aziendale-template",
+      "/customer-support"
+    ],
+    "dedupNotes": "Backlog covers AI Act by use case (recruiting, chatbot); none covers the operational first step every deployer must do - building the AI inventory/register and rischio classification. Highly citable how-to, net-new.",
+    "freshnessExpiry": "2026-08-02",
+    "score": 75,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.75,
+      "winnability": 0.6,
+      "freshness": 0.95,
+      "geo": 0.9
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.money.it/ai-act-e-pmi-italiane-guida-di-sopravvivenza-burocrazia-dell-intelligenza-artificiale",
+      "https://www.ascensys.it/blog/ai-act-pmi-agosto-2026",
+      "https://focus.namirial.com/it/artificial-intelligence-act-obblighi-imprese-2-agosto-2026/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": "2026-07-16"
+  },
+  {
+    "id": "data-readiness-agenti-ia",
+    "status": "drafted",
+    "archetype": "pillar",
+    "slug_it": "preparare-dati-aziendali-agenti-ia",
+    "slug_en": "data-readiness-ai-agents",
+    "title_hint": "I dati della tua azienda sono pronti per un agente IA? La checklist prima di spendere un euro in automazione",
+    "cluster": "ai-agents",
+    "primaryKeyword": "preparare i dati aziendali per l'ai",
+    "targetPersona": "COO / Head of Ops",
+    "supportingCaseStudy": "liftt",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/ai-adoption",
+      "/guide/assessment-ai-interno-guida-operativa"
+    ],
+    "dedupNotes": "Backlog covers when a process is ready to automate and Excel; none covers data quality/structure prerequisites (dedupe, sources, permessi, ground truth) that decide whether an agent works. Net-new readiness angle, ties to LIFTT dedupe case.",
+    "freshnessExpiry": null,
+    "score": 74,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.85,
+      "winnability": 0.6,
+      "freshness": 0.7,
+      "geo": 0.8
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.e-power.it/blog/preparare-dati-per-ai/",
+      "https://www.fluency.cx/azienda-pronta-ia/",
+      "https://www.besttechpartner.ai/2026/06/01/intelligenza-artificiale-in-azienda-guida-pratica-all-implementazione-per-pmi/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": "2026-07-16"
+  },
+  {
+    "id": "human-in-the-loop-agenti-ia",
+    "status": "drafted",
+    "archetype": "opinion",
+    "slug_it": "supervisione-umana-agenti-ia-quanto",
+    "slug_en": "human-in-the-loop-ai-agents",
+    "title_hint": "Quanta autonomia dare a un agente IA: dove mettere l'umano nel loop (senza uccidere il risparmio di tempo)",
+    "cluster": "ai-agents",
+    "primaryKeyword": "supervisione umana agenti ai",
+    "targetPersona": "COO / Head of Ops",
+    "supportingCaseStudy": "rainplan",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/customer-support",
+      "/finance"
+    ],
+    "dedupNotes": "Backlog covers regulated sectors broadly; this is the horizontal design question of HITL checkpoints and approval gates in an agent workflow - an art.14 supervisory-control angle with a concrete case (Rainplan multi-stakeholder approvals). Net-new.",
+    "freshnessExpiry": null,
+    "score": 72,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.8,
+      "winnability": 0.6,
+      "freshness": 0.75,
+      "geo": 0.9
+    },
+    "sources": [
+      "topic-radar",
+      "https://manager.it/human-in-the-loop-dove-serve-ancora-il-manager-nellera-dellai/",
+      "https://www.consizos.it/human-in-the-loop/",
+      "https://manager.it/come-si-possono-introdurre-meccanismi-di-controllo-umano-in-agentic-ai/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": "2026-07-16"
+  },
+  {
+    "id": "build-vs-buy-agente-ia",
+    "status": "drafted",
+    "archetype": "pillar",
+    "slug_it": "agente-ia-su-misura-o-piattaforma-pronta",
+    "slug_en": "build-vs-buy-ai-agent",
+    "title_hint": "Agente IA su misura o piattaforma pronta: il framework build-vs-buy per il 2026 (con i costi veri a 3 anni)",
+    "cluster": "ai-agents",
+    "primaryKeyword": "agente ia su misura o piattaforma",
+    "targetPersona": "COO / CTO",
+    "supportingCaseStudy": "apraise",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/guide/agenti-ai-aziende"
+    ],
+    "dedupNotes": "Distinct from custom-software-vs-saas (software generally) and from the owned 'agents vs ChatGPT Enterprise' (one product). This is the 2026 build-vs-buy decision specifically for AI agents: custom vertical agent vs off-the-shelf agent platform.",
+    "freshnessExpiry": null,
+    "score": 70,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.75,
+      "winnability": 0.5,
+      "freshness": 0.8,
+      "geo": 0.8
+    },
+    "sources": [
+      "topic-radar",
+      "https://dextralabs.com/blog/build-vs-buy-ai-agents-decision-framework/",
+      "https://www.digitalapplied.com/blog/build-vs-buy-ai-custom-tools-vs-branded-saas-2026",
+      "https://pickaxe.co/post/build-vs-buy-ai-agents"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": "2026-07-16"
+  },
+  {
+    "id": "automazione-studio-commercialista-ai",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "automazione-studio-commercialista-paghe-ai",
+    "slug_en": "accounting-payroll-firm-ai-automation",
+    "title_hint": "Studi commercialisti e paghe: i processi che un agente IA ti restituisce (preventivi, ore, riconciliazioni)",
+    "cluster": "process-automation",
+    "primaryKeyword": "automazione studio commercialista ai",
+    "targetPersona": "Titolare studio / COO",
+    "supportingCaseStudy": "numeraria",
+    "internalLinkTargets": [
+      "/finance",
+      "/case-studies/numeraria",
+      "/ai-agents"
+    ],
+    "dedupNotes": "Vertical finance post for accounting/payroll firms - not covered by backlog (fatturazione post is horizontal invoice extraction). Maps directly to the Numeraria case ('meta' mese restituito al management').",
+    "freshnessExpiry": null,
+    "score": 69,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.7,
+      "winnability": 0.6,
+      "freshness": 0.7,
+      "geo": 0.75
+    },
+    "sources": [
+      "topic-radar",
+      "https://rafaelpatron.com/blog/tool/ai-commercialisti-consulenti-lavoro/",
+      "https://www.teamsystem.com/magazine/gestione-dello-studio/riconciliazione-bancaria-estratti-conto-la-soluzione-per-i-commercialisti/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": "2026-07-16"
+  },
+  {
+    "id": "marcatura-contenuti-ai-marketing",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "etichettare-contenuti-generati-ai-marketing",
+    "slug_en": "labeling-ai-generated-marketing-content",
+    "title_hint": "Immagini e testi generati dall'IA nel marketing: come etichettarli (art. 50 e marcatura machine-readable da novembre 2026)",
+    "cluster": "compliance",
+    "primaryKeyword": "etichettare contenuti generati ai marketing",
+    "targetPersona": "Head of Marketing / COO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/sales-marketing",
+      "/guide/ai-act-aziende",
+      "/ai-search-optimization"
+    ],
+    "dedupNotes": "The rejected art.50 topic was about customer-support chatbots disclosing they are AI; this is the distinct marketing-side obligation - disclosure and machine-readable marking of AI-generated images/video/copy in commercial comms (live Aug/Nov 2026). No backlog overlap.",
+    "freshnessExpiry": "2026-11-02",
+    "score": 68,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.65,
+      "winnability": 0.6,
+      "freshness": 0.95,
+      "geo": 0.8
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.ascensys.it/blog/ai-act-pmi-agosto-2026",
+      "https://www.certifico.com/full-plus/ai-act-obblighi-per-le-imprese-dal-02-agosto-2026"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "legge-132-2025-imprese-italia",
+    "status": "parked",
+    "archetype": "news-reaction",
+    "slug_it": "legge-132-2025-intelligenza-artificiale-imprese",
+    "slug_en": "italian-ai-law-132-2025-companies",
+    "title_hint": "La legge italiana sull'IA (132/2025): cosa aggiunge all'AI Act per le imprese, tra AgID, ACN e miliardo per le PMI",
+    "cluster": "compliance",
+    "primaryKeyword": "legge 132 2025 intelligenza artificiale imprese",
+    "targetPersona": "CEO / DPO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/guide/ai-act-aziende",
+      "/guide/consulenza-ai-italia",
+      "/ai-adoption"
+    ],
+    "dedupNotes": "Owned/backlog cover the EU AI Act; none covers the Italian national law 132/2025 (in force Oct 2025) - AgID/ACN as authorities, the 1bn fund for startup/PMI, and how it stacks on the EU rules. Net-new, high GEO for Italy-specific queries.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 68,
+    "subScores": {
+      "intent": 0.65,
+      "biz": 0.6,
+      "winnability": 0.55,
+      "freshness": 0.9,
+      "geo": 0.9
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.e-cons.it/news/legge-n-132-2025-sull-intelligenza-artificiale-principi-novita-e-implicazioni",
+      "https://www.compliancehub.it/2025/11/05/la-nuova-legge-sullintelligenza-artificiale-il-quadro-regolatorio-per-le-imprese-italiane/",
+      "https://www.studiospreafico.eu/2026/04/24/intelligenza-artificiale-obblighi-aziende-ai-act/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "digital-omnibus-proroga-alto-rischio",
+    "status": "parked",
+    "archetype": "news-reaction",
+    "slug_it": "digital-omnibus-ai-act-proroga-2027",
+    "slug_en": "digital-omnibus-ai-act-postponement",
+    "title_hint": "Digital Omnibus: l'alto rischio slitta al 2027 - cosa resta obbligatorio ad agosto 2026 (e cosa no)",
+    "cluster": "compliance",
+    "primaryKeyword": "digital omnibus ai act pmi",
+    "targetPersona": "CEO / COO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/guide/ai-act-aziende",
+      "/ai-adoption",
+      "/customer-support"
+    ],
+    "dedupNotes": "Net-new news reaction to the June 2026 Digital Omnibus: separates what got deferred (Annex III to Dec 2027) from what is still live in Aug 2026 (art. 50 transparency, art. 4 literacy, divieti). Backlog predates this clarification.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 67,
+    "subScores": {
+      "intent": 0.65,
+      "biz": 0.6,
+      "winnability": 0.5,
+      "freshness": 1,
+      "geo": 0.85
+    },
+    "sources": [
+      "topic-radar",
+      "https://laborproject.it/2026/07/14/ai-act-dal-2-agosto-2026-lintelligenza-artificiale-dovra-presentarsi-cosa-devono-fare-aziende-consulenti-e-dpo/",
+      "https://yellowtech.it/guida/ai-act-2026-compliance-aziende-italiane",
+      "https://www.certifico.com/full-plus/ai-act-obblighi-per-le-imprese-dal-02-agosto-2026"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "transizione-5-0-ai-conforme",
+    "status": "parked",
+    "archetype": "news-reaction",
+    "slug_it": "transizione-5-0-software-ai-conforme-ai-act",
+    "slug_en": "transizione-5-0-ai-act-compliant-software",
+    "title_hint": "Transizione 5.0 e software IA: dal 2026 la spesa e' agevolabile solo se il sistema e' conforme all'AI Act",
+    "cluster": "compliance",
+    "primaryKeyword": "transizione 5.0 software ai conforme",
+    "targetPersona": "CFO / titolare PMI industriale",
+    "supportingCaseStudy": "40factory",
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/guide/ai-act-aziende"
+    ],
+    "dedupNotes": "Net-new intersection of incentives and compliance: AI spend under Transizione 5.0/R&S is now at risk of decadenza if the AI system is not AI-Act compliant. No backlog item links funding to compliance; strong fit for industrial PMI (40Factory).",
+    "freshnessExpiry": "2026-12-31",
+    "score": 66,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.7,
+      "winnability": 0.45,
+      "freshness": 0.95,
+      "geo": 0.75
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.incentivimpresa.it/ai-act-finanza-agevolata-imprese-compliance-2026/",
+      "https://www.incentivimpresa.it/transizione-5-0-intelligenza-artificiale-incentivi/",
+      "https://www.gobid.it/it/blog/rubrica-imprese/piano-transizione-50-guida-completa-alle-novit-di-maggio-2026"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "permessi-accessi-agenti-ia-sicurezza",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "agenti-ia-permessi-accessi-sicurezza",
+    "slug_en": "ai-agent-permissions-security",
+    "title_hint": "Un agente IA con troppi permessi e' un rischio: come dargli solo gli accessi che gli servono",
+    "cluster": "compliance",
+    "primaryKeyword": "rischi sicurezza agenti ai aziende",
+    "targetPersona": "CTO / COO",
+    "supportingCaseStudy": "navily",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/customer-support",
+      "/software-development"
+    ],
+    "dedupNotes": "Distinct from shadow AI (employee misuse): this is least-privilege/access design for agents you deploy - the '2026 internal threat' angle. Not covered by backlog's regulated-sectors post; practical security how-to with the Navily moderation case.",
+    "freshnessExpiry": null,
+    "score": 66,
+    "subScores": {
+      "intent": 0.55,
+      "biz": 0.7,
+      "winnability": 0.55,
+      "freshness": 0.8,
+      "geo": 0.8
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.tomshw.it/business/gli-agenti-ai-sono-la-nuova-minaccia-interna-per-le-aziende-nel-2026",
+      "https://www.ictsecuritymagazine.com/articoli/ai-agentica/",
+      "https://layerxsecurity.com/it/generative-ai/ai-governance-trends/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "calcolo-provvigioni-automatico-ia",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "calcolo-provvigioni-automatico-agente-ia",
+    "slug_en": "automated-commission-calculation-ai",
+    "title_hint": "Calcolo provvigioni a mano ogni mese? Come un agente IA legge contratti e vendite e le calcola da solo",
+    "cluster": "process-automation",
+    "primaryKeyword": "calcolo provvigioni automatico software",
+    "targetPersona": "CFO / Sales Ops",
+    "supportingCaseStudy": "numeraria",
+    "internalLinkTargets": [
+      "/finance",
+      "/sales-marketing",
+      "/ai-agents"
+    ],
+    "dedupNotes": "Specific high-intent finance/sales use case not in backlog (fatturazione post is invoices; outbound post is lead qualifica). Complex, error-prone manual task with clear ROI, mapped to Numeraria.",
+    "freshnessExpiry": null,
+    "score": 65,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.7,
+      "winnability": 0.65,
+      "freshness": 0.5,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.tomshw.it/aioperator/gli-agenti-ai-che-funzionano-per-funzione-aziendale-2026-06-02",
+      "https://www.marcopericci.com/agenti-ai/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "voucher-cloud-cybersecurity-ai-2026",
+    "status": "parked",
+    "archetype": "news-reaction",
+    "slug_it": "voucher-cloud-cybersecurity-2026-finanziare-ai",
+    "slug_en": "voucher-cloud-cybersecurity-2026-fund-ai",
+    "title_hint": "Voucher Cloud & Cybersecurity 2026: come coprire fino al 50% del tuo progetto di software e agenti IA",
+    "cluster": "custom-software",
+    "primaryKeyword": "voucher cloud cybersecurity 2026 software ai",
+    "targetPersona": "CFO / titolare PMI",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/finance"
+    ],
+    "dedupNotes": "No backlog item addresses how PMI fund AI/software projects. Time-sensitive incentive (operational Feb 2026, fondo perduto 50%) that de-risks the buy decision - direct commercial value for Soraia sprints.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 62,
+    "subScores": {
+      "intent": 0.65,
+      "biz": 0.6,
+      "winnability": 0.4,
+      "freshness": 0.95,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.mimit.gov.it/it/incentivi/sostegno-alla-domanda-di-servizi-di-cloud-computing-e-cyber-security",
+      "https://www.incentivimpresa.it/voucher-cloud-cybersecurity-2026-fondo-perduto-pmi/",
+      "https://alsolved.com/voucher-cloud-e-cybersecurity-2026-la-guida-completa-per-le-pmi/"
+    ],
+    "discovered_at": "2026-07-16",
+    "drafted_at": null
   }
 ]

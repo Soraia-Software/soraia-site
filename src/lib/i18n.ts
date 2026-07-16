@@ -31,9 +31,20 @@ export const GUIDE_SLUG_MAP: Record<string, string> = {
 };
 // IT confronto slug -> EN slug. Filled by automation/confronto-author.mjs as pairs are created.
 export const CONFRONTO_SLUG_MAP: Record<string, string> = {
+  "ai-generalista-vs-ai-verticale": "generalist-ai-vs-vertical-ai",
+  "ai-search-optimization-vs-seo-tradizionale": "geo-vs-traditional-seo",
+  "chatbot-a-regole-vs-agente-ia-support": "rule-based-chatbot-vs-ai-agent-support",
+  "automazione-no-code-vs-agenti-ia": "no-code-automation-vs-ai-agents",
   "ai-in-casa-vs-partner": "ai-in-house-vs-partner",
 };
 export const BLOG_SLUG_MAP: Record<string, string> = {
+  "automazione-studio-commercialista-paghe-ai": "accounting-payroll-firm-ai-automation",
+  "agente-ia-su-misura-o-piattaforma-pronta": "build-vs-buy-ai-agent",
+  "supervisione-umana-agenti-ia-quanto": "human-in-the-loop-ai-agents",
+  "preparare-dati-aziendali-agenti-ia": "data-readiness-ai-agents",
+  "registro-sistemi-ai-aziendale": "ai-systems-inventory-smb",
+  "calo-traffico-google-ai-overviews-azienda": "ai-overviews-traffic-drop-smb",
+  "shadow-ai-azienda-governance": "shadow-ai-smb-governance",
   "crm-su-misura-o-hubspot-salesforce": "custom-crm-vs-hubspot-salesforce",
   "fatturazione-elettronica-2026-automazione-dati-fatture": "e-invoicing-2026-invoice-data-automation",
   "perche-i-progetti-di-automazione-falliscono": "why-automation-projects-fail",
