@@ -3,9 +3,9 @@
 // recent news / keywords / questions in Soraia's domains, scores candidate blog
 // topics against the same rubric used in blog-topics.json, dedupes them against the
 // existing backlog and the owned guides, and APPENDS the survivors as `status:"parked"`.
-// It never writes posts and never sets `todo`, a human reviews the PR, then promotes
-// a parked candidate to `todo` (which the weekly author then drafts). Run by
-// .github/workflows/topic-radar.yml. Requires ANTHROPIC_API_KEY (web search is billed).
+// It never writes posts and never sets `todo`. Run as the backlog-refill step of
+// .github/workflows/monthly-content.yml (the monthly orchestrator then promotes parked
+// candidates automatically). Requires ANTHROPIC_API_KEY (web search is billed).
 //
 // Local dry run (no API call, no writes): node automation/topic-radar.mjs --dry-run
 

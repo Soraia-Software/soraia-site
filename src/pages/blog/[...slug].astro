@@ -4,7 +4,7 @@ import { getCollection, render } from "astro:content";
 import { BLOG_SLUG_MAP } from "~/lib/i18n";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog")).filter((p) => p.data.lang === "it" && (import.meta.env.DEV || !p.data.draft));
+  const posts = (await getCollection("blog")).filter((p) => p.data.lang === "it" && (import.meta.env.DEV || (!p.data.draft && p.data.pubDate <= new Date())));
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -15,7 +15,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 
 const allPosts = (await getCollection("blog"))
-  .filter((p) => p.data.lang === "it" && (import.meta.env.DEV || !p.data.draft))
+  .filter((p) => p.data.lang === "it" && (import.meta.env.DEV || (!p.data.draft && p.data.pubDate <= new Date())))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const related = allPosts.filter((p) => p.id !== post.id).slice(0, 2);
 

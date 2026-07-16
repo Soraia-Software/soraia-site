@@ -92,6 +92,7 @@ const files = changedFiles();
 if (!files.length) { console.log("No changed confronto .md files, nothing to gate."); process.exit(0); }
 
 let anyFail = false;
+const jsonReport = [];
 const report = ["## ⚖️ Confronto quality gates\n"];
 
 for (const itPath of files) {
@@ -120,6 +121,7 @@ for (const itPath of files) {
   }));
   const verdicts = [dashGate(it, en), ...llmVerdicts];
 
+  jsonReport.push({ slug: slugIt, pass: verdicts.every((v) => v.pass), lenses: verdicts.map((v) => ({ name: v.g, score: v.score ?? 0, pass: !!v.pass, issues: v.issues || [] })) });
   for (const v of verdicts) {
     const icon = v.pass ? "✅" : "❌";
     if (!v.pass) anyFail = true;
@@ -129,6 +131,7 @@ for (const itPath of files) {
 
 const md = report.join("\n");
 writeFileSync("automation/.gate-report.md", md + "\n");
+if (process.env.GATE_REPORT_JSON) writeFileSync(process.env.GATE_REPORT_JSON, JSON.stringify(jsonReport, null, 2));
 if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, md + "\n");
 console.log(md);
 if (anyFail) { console.error("\n✗ One or more confronto quality gates failed."); process.exit(1); }

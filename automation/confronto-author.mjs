@@ -3,7 +3,8 @@
 // bilingual (IT+EN) A-vs-B comparison with Claude against automation/confronto-system-prompt.md,
 // writes both .md files as draft:true under src/content/confronti{,/en} (structured frontmatter,
 // no markdown body), registers the slug pair in CONFRONTO_SLUG_MAP, marks the topic `drafted`.
-// Never publishes, never deploys. Run by .github/workflows/confronto-draft.yml. Needs ANTHROPIC_API_KEY.
+// Never publishes, never deploys. Driven by monthly-orchestrator.mjs (which sets TARGET_PUBDATE
+// per slot); run standalone with --dry-run. Needs ANTHROPIC_API_KEY.
 //
 // Local dry run (no API call, no writes): node automation/confronto-author.mjs --dry-run
 
@@ -14,6 +15,7 @@ import { normalizeDashes } from "./house-style.mjs";
 const DRY = process.argv.includes("--dry-run");
 const MODEL = process.env.AUTHOR_MODEL || "claude-opus-4-8";
 const TODAY = new Date().toISOString().slice(0, 10);
+const PUBDATE = process.env.TARGET_PUBDATE || TODAY; // orchestrator sets the scheduled weekday
 const TOPICS = "automation/confronto-topics.json";
 const die = (msg) => { console.error("✗ " + msg); process.exit(1); };
 
@@ -65,7 +67,7 @@ function frontmatter(d, lang) {
   }
   o.push("related: []");
   o.push("featured: false");
-  o.push(`pubDate: ${TODAY}`);
+  o.push(`pubDate: ${PUBDATE}`);
   o.push(`lang: "${lang}"`);
   o.push("draft: true");
   o.push("---");

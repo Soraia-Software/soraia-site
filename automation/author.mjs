@@ -2,8 +2,9 @@
 // Blog author: picks the first `todo` topic from blog-topics.json, generates a
 // bilingual (IT+EN) draft with Claude against automation/system-prompt.md, writes
 // both .md files as draft:true, registers the slug pair in BLOG_SLUG_MAP, and marks
-// the topic `drafted`. Never publishes (draft:true) and never deploys — a human flips
-// draft:false and merges. Run by .github/workflows/draft.yml. Requires ANTHROPIC_API_KEY.
+// the topic `drafted`. Never publishes (writes draft:true) and never deploys — the monthly
+// orchestrator gates it and flips draft:false. Driven by monthly-orchestrator.mjs (which sets
+// TARGET_PUBDATE per slot); run standalone with --dry-run. Requires ANTHROPIC_API_KEY.
 //
 // Local dry run (no API call, no writes): node automation/author.mjs --dry-run
 
@@ -14,6 +15,7 @@ import { normalizeDashes } from "./house-style.mjs";
 const DRY = process.argv.includes("--dry-run");
 const MODEL = process.env.AUTHOR_MODEL || "claude-opus-4-8"; // set to claude-sonnet-4-6 for steady-state cost
 const TODAY = new Date().toISOString().slice(0, 10);
+const PUBDATE = process.env.TARGET_PUBDATE || TODAY; // orchestrator sets the scheduled weekday
 
 const TOPICS = "automation/blog-topics.json";
 const die = (msg) => { console.error("✗ " + msg); process.exit(1); };
@@ -38,7 +40,7 @@ function frontmatter(d, lang) {
   const o = ["---"];
   o.push(`title: ${j(d.title)}`);
   o.push(`description: ${j(d.description)}`);
-  o.push(`pubDate: ${TODAY}`);
+  o.push(`pubDate: ${PUBDATE}`);
   o.push(`author: ${j(d.author || "Daniel Levis")}`);
   o.push("tags:"); (d.tags || []).forEach((t) => o.push(`  - ${j(t)}`));
   o.push("keywords:"); (d.keywords || []).forEach((k) => o.push(`  - ${j(k)}`));

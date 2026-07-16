@@ -7,7 +7,7 @@ const title = "Comparisons: A vs B to decide without regret | Soraia";
 const description = "Operational head-to-head comparisons for SMEs: criteria, honest pros and cons, a readable table and a reasoned verdict. To pick the right tool without regret.";
 
 const items = (await getCollection("confronti"))
-  .filter((c) => c.data.lang === "en" && (import.meta.env.DEV || !c.data.draft))
+  .filter((c) => c.data.lang === "en" && (import.meta.env.DEV || (!c.data.draft && c.data.pubDate <= new Date())))
   .sort((a, b) => (b.data.updatedDate || b.data.pubDate).valueOf() - (a.data.updatedDate || a.data.pubDate).valueOf());
 ---
 

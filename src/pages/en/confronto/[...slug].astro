@@ -8,7 +8,7 @@ const bare = (id: string) => id.replace(/^en\//, "");
 const EN_TO_IT = reverseMap(CONFRONTO_SLUG_MAP);
 
 export async function getStaticPaths() {
-  const items = (await getCollection("confronti")).filter((c) => c.data.lang === "en" && (import.meta.env.DEV || !c.data.draft));
+  const items = (await getCollection("confronti")).filter((c) => c.data.lang === "en" && (import.meta.env.DEV || (!c.data.draft && c.data.pubDate <= new Date())));
   return items.map((c) => ({ params: { slug: c.id.replace(/^en\//, "") }, props: { c } }));
 }
 

@@ -5,7 +5,7 @@ import CTABanner from "~/components/CTABanner.astro";
 import { CONFRONTO_SLUG_MAP } from "~/lib/i18n";
 
 export async function getStaticPaths() {
-  const items = (await getCollection("confronti")).filter((c) => c.data.lang === "it" && (import.meta.env.DEV || !c.data.draft));
+  const items = (await getCollection("confronti")).filter((c) => c.data.lang === "it" && (import.meta.env.DEV || (!c.data.draft && c.data.pubDate <= new Date())));
   return items.map((c) => ({ params: { slug: c.id }, props: { c } }));
 }
 

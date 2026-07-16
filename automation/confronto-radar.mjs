@@ -2,7 +2,8 @@
 // Confronto radar: uses Claude + web search to find "A vs B" decisions SME buyers actually
 // research, dedupes against existing confronti + the blog/guide backlogs (so nothing overlaps),
 // scores them, and appends survivors to automation/confronto-topics.json as `status:"parked"`.
-// Never writes comparisons and never sets `todo`. Run by .github/workflows/confronto-topic-radar.yml.
+// Never writes comparisons and never sets `todo`. Run as the confronto backlog-refill step of
+// .github/workflows/monthly-content.yml (the monthly orchestrator then promotes parked candidates).
 //
 // Local dry run: node automation/confronto-radar.mjs --dry-run
 

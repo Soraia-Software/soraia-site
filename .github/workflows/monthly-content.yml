@@ -1,0 +1,91 @@
+name: Monthly content (generate + schedule)
+
+# Once a month, generate the WHOLE next month of content in one run and schedule it across
+# the weekdays: Mon/Wed/Fri = blog, Tue/Thu = confronto (3 blog + 2 confronti per week).
+# Each piece is authored, run through the quality gates, auto-fixed if needed, and only on a
+# full pass is it stamped and flipped to draft:false with pubDate = its weekday. Nothing goes
+# live early — the pages ship a piece only once its pubDate is reached, and scheduled-publish.yml
+# rebuilds each weekday morning to reveal that day's piece.
+#
+# Requires: ANTHROPIC_API_KEY (author/gates/fix + radar web search) and BLOG_BOT_TOKEN
+# (push to main). Optional: BREVO_API_KEY + LEAD_FROM_EMAIL (shortfall email), repo vars
+# AUTHOR_MODEL / GATE_MODEL / AUTOPUBLISH.
+
+on:
+  schedule:
+    - cron: "0 3 25 * *" # 25th of each month, 03:00 UTC → generates the upcoming month
+  workflow_dispatch:
+    inputs:
+      month:
+        description: "Target month YYYY-MM (default: next month)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monthly-content
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # Scoped PAT so the batch commit can push straight to main (the org disables
+          # write for the default GITHUB_TOKEN). deploy.yml then ships whatever is live.
+          token: ${{ secrets.BLOG_BOT_TOKEN || github.token }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      # 1) Top up the topic backlogs (parked candidates) so the month has enough to draw on.
+      - name: Refill blog topic backlog
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AUTHOR_MODEL: ${{ vars.AUTHOR_MODEL }}
+          RADAR_MAX_TOPICS: "15"
+        run: node automation/topic-radar.mjs
+      - name: Refill confronto topic backlog
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AUTHOR_MODEL: ${{ vars.AUTHOR_MODEL }}
+          RADAR_MAX_TOPICS: "10"
+        run: node automation/confronto-radar.mjs
+
+      # 2) Generate + gate + fix + stamp + schedule the whole month.
+      - name: Orchestrate the month
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AUTHOR_MODEL: ${{ vars.AUTHOR_MODEL }}
+          GATE_MODEL: ${{ vars.GATE_MODEL }}
+          AUTOPUBLISH: "true"
+          MONTH: ${{ github.event.inputs.month }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          LEAD_FROM_EMAIL: ${{ vars.LEAD_FROM_EMAIL }}
+          ALERT_EMAIL: ${{ vars.ALERT_EMAIL }}
+        run: node automation/monthly-orchestrator.mjs
+
+      # 3) Safety net: never push a tree that does not build.
+      - name: Build check
+        run: npm run build
+
+      # 4) Commit the month to main; deploy.yml ships it, the drip reveals each piece on its day.
+      - name: Commit scheduled content
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No content changes to commit."
+          else
+            git commit -m "content: schedule monthly batch [skip ci]"
+            git push origin HEAD:main
+          fi

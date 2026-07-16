@@ -6,7 +6,7 @@ const title = "Confronti: A vs B per decidere senza pentirsene | Soraia";
 const description = "Confronti operativi testa a testa per le PMI: criteri, pro e contro, tabella e verdetto ragionato. Per scegliere lo strumento giusto senza rimpianti.";
 
 const items = (await getCollection("confronti"))
-  .filter((c) => c.data.lang === "it" && (import.meta.env.DEV || !c.data.draft))
+  .filter((c) => c.data.lang === "it" && (import.meta.env.DEV || (!c.data.draft && c.data.pubDate <= new Date())))
   .sort((a, b) => (b.data.updatedDate || b.data.pubDate).valueOf() - (a.data.updatedDate || a.data.pubDate).valueOf());
 ---
 

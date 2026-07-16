@@ -1,6 +1,14 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
+// Stamp written by the monthly orchestrator when a piece passes ALL quality gates (set at
+// the same time as draft:false). The admin dashboard reads it without re-running the gates.
+const gatesStamp = z.object({
+  passedAt: z.coerce.date(),
+  model: z.string().optional(),
+  lenses: z.array(z.object({ name: z.string(), score: z.number(), pass: z.boolean().default(true) })).default([]),
+}).optional();
+
 const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
   schema: z.object({
@@ -18,6 +26,7 @@ const blog = defineCollection({
     keywords: z.array(z.string()).default([]),  // 2-5 target keywords
     faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),  // → FAQPage schema (GEO)
     ogImage: z.string().optional(),             // per-post OG image; falls back to /og/default.png
+    gates: gatesStamp,                          // stamped by the orchestrator on all-gates-pass
   }),
 });
 
@@ -142,6 +151,7 @@ const confronti = defineCollection({
     featured: z.boolean().default(false),
     lang: z.enum(["it", "en"]).default("it"),
     draft: z.boolean().default(false),          // hidden in prod (kill-switch + staging); visible in dev
+    gates: gatesStamp,                          // stamped by the orchestrator on all-gates-pass
   }),
 });
 

@@ -1,0 +1,28 @@
+name: Scheduled publish (weekday drip)
+
+# The month's content is committed up front by monthly-content.yml as draft:false but with a
+# FUTURE pubDate, so the pages keep it hidden until its day. This job runs every weekday
+# morning and re-triggers deploy.yml: the fresh build re-evaluates the `pubDate <= now` drip
+# filter, so exactly today's piece (blog on Mon/Wed/Fri, confronto on Tue/Thu) becomes visible.
+# No commits, no content generation here — just a daily rebuild.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1-5" # Mon–Fri 06:00 UTC (~07:00–08:00 Europe/Rome)
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+concurrency:
+  group: scheduled-publish
+  cancel-in-progress: false
+
+jobs:
+  drip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger a fresh build + deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main --repo "$GITHUB_REPOSITORY"
