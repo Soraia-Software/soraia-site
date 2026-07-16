@@ -1,0 +1,53 @@
+name: Confronto radar (discovery)
+
+# Monthly (12th, offset from blog radar 1st/15th and guide radar 8th/22nd): Claude + web
+# search discovers real "A vs B" decisions SME buyers research, dedupes against the confronto
+# backlog + published confronti + the blog/guide backlogs, and appends survivors to
+# automation/confronto-topics.json as `status:"parked"` via a PR. Never writes comparisons and
+# never sets `todo`; with AUTOPUBLISH on, confronto-author auto-promotes the top parked one.
+
+on:
+  schedule:
+    - cron: "0 5 12 * *" # 12th, 07:00 Europe/Rome (05:00 UTC) -> keeps the confronto queue stocked
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: confronto-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Discover confronto topics
+        id: radar
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AUTHOR_MODEL: ${{ vars.AUTHOR_MODEL }}
+          RADAR_MAX_TOPICS: ${{ vars.RADAR_MAX_TOPICS }}
+        run: node automation/confronto-radar.mjs
+
+      - name: Open candidates PR
+        if: steps.radar.outputs.added == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          # confronto/topic-radar touches only automation/confronto-topics.json, so it does
+          # NOT trigger confronto-quality-gates.yml (which watches src/content/confronti/**).
+          token: ${{ secrets.BLOG_BOT_TOKEN || github.token }}
+          branch: confronto/topic-radar
+          base: main
+          title: "${{ steps.radar.outputs.title }}"
+          body: ${{ steps.radar.outputs.prbody }}
+          commit-message: "Confronto radar: append parked candidate topics"
+          delete-branch: true
