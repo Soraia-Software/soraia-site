@@ -213,10 +213,12 @@ if (SELF_TEST) {
 }
 
 const occ = { blog: occupied("blog"), confronto: occupied("confronto") };
+const todayStr = new Date().toISOString().slice(0, 10);
 const published = [];
 const misses = [];
 
 for (const s of slots) {
+  if (s.date <= todayStr) { log(`= ${s.date} ${s.kind}: date already passed, skipping (drip only schedules future days)`); continue; }
   if (occ[s.kind].has(s.date)) { log(`= ${s.date} ${s.kind}: already occupied, skipping`); continue; }
   if (DRY) { log(`~ ${s.date} ${s.kind}: would generate (dry-run)`); continue; }
   log(`→ ${s.date} ${s.kind}: generating…`);
