@@ -1,0 +1,47 @@
+---
+import AdminLayout from "~/layouts/AdminLayout.astro";
+import { getCollection } from "astro:content";
+
+const [blog, guides, confronti] = await Promise.all([
+  getCollection("blog"), getCollection("guides"), getCollection("confronti"),
+]);
+const itOnly = (x: any) => x.data.lang !== "en";
+type Row = { type: string; title: string; cat: string; date: Date; draft: boolean; url: string };
+const items: Row[] = [
+  ...blog.filter(itOnly).map((x) => ({ type: "Blog", title: x.data.title, cat: (x.data.tags || []).slice(0, 2).join(", "), date: x.data.pubDate, draft: !!x.data.draft, url: `/blog/${x.id}` })),
+  ...guides.filter(itOnly).map((x) => ({ type: "Guida", title: x.data.title, cat: "", date: x.data.pubDate, draft: !!x.data.draft, url: `/guide/${x.id}` })),
+  ...confronti.filter(itOnly).map((x) => ({ type: "Confronto", title: x.data.titolo, cat: x.data.categoria, date: x.data.pubDate, draft: !!x.data.draft, url: `/confronto/${x.id}` })),
+].sort((a, b) => b.date.valueOf() - a.date.valueOf());
+const fmt = (d: Date) => d.toLocaleDateString("it-IT", { day: "2-digit", month: "short", year: "2-digit" });
+const published = items.filter((i) => !i.draft).length;
+---
+<AdminLayout title="Contenuti" active="contenuti">
+  <p style="font-size: 13.5px; color: var(--color-ink-muted); margin-bottom: 6px;">Blog, guide e confronti (versione IT canonica; l'EN rispecchia). Sola lettura.</p>
+  <p style="font-size: 12.5px; color: var(--color-ink-soft); margin-bottom: 16px;">{items.length} totali · {published} pubblicati · {items.length - published} in lavorazione</p>
+  <div style="overflow-x: auto; background: #fff; border: 1px solid var(--color-line); border-radius: 12px;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13.5px;">
+      <thead>
+        <tr>
+          {["Tipo", "Titolo", "Categoria", "Data", "Stato"].map((h) => (
+            <th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--color-line-strong);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-ink-soft);font-weight:500;white-space:nowrap">{h}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {items.map((i) => (
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid var(--color-line);color:var(--color-ink-muted);white-space:nowrap">{i.type}</td>
+            <td style="padding:10px 12px;border-bottom:1px solid var(--color-line)">
+              {i.draft ? <span>{i.title}</span> : <a href={i.url} target="_blank" rel="noopener" style="color:var(--color-brand);text-decoration:none">{i.title}</a>}
+            </td>
+            <td style="padding:10px 12px;border-bottom:1px solid var(--color-line);color:var(--color-ink-soft)">{i.cat || "-"}</td>
+            <td style="padding:10px 12px;border-bottom:1px solid var(--color-line);color:var(--color-ink-soft);white-space:nowrap">{fmt(i.date)}</td>
+            <td style="padding:10px 12px;border-bottom:1px solid var(--color-line);white-space:nowrap">
+              <span style={`font-size:12px;padding:3px 9px;border-radius:6px;background:${i.draft ? "#FBF3E6" : "#EAF7EF"};color:${i.draft ? "#9A6A00" : "#17803D"}`}>{i.draft ? "in lavorazione" : "pubblicato"}</span>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</AdminLayout>

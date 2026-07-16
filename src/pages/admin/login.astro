@@ -1,0 +1,74 @@
+---
+import "~/styles/globals.css";
+---
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Accesso · Soraia Admin</title>
+</head>
+<body style="background: var(--color-bg); color: var(--color-ink); min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <div style="width: 100%; max-width: 380px; padding: 24px;">
+    <div style="background: #fff; border: 1px solid var(--color-line); border-radius: 16px; padding: 32px;">
+      <p style="font-weight: 600; font-size: 16px; letter-spacing: -0.02em;">Soraia · Area riservata</p>
+      <p style="font-size: 13.5px; color: var(--color-ink-muted); margin-top: 6px;">Accesso via codice email monouso.</p>
+
+      <form id="step-email" style="margin-top: 22px;">
+        <label style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-ink-soft);">Email</label>
+        <input id="email" type="email" required autocomplete="email" placeholder="nome@soraia.io" style="width: 100%; margin-top: 6px; padding: 11px 13px; border: 1px solid var(--color-line-strong); border-radius: 8px; font-size: 14px;" />
+        <button type="submit" style="width: 100%; margin-top: 14px; background: var(--color-brand); color: #fff; border: none; border-radius: 8px; padding: 12px; font-size: 14px; font-weight: 500; cursor: pointer;">Invia codice</button>
+      </form>
+
+      <form id="step-code" style="margin-top: 22px; display: none;">
+        <label style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-ink-soft);">Codice (6 cifre)</label>
+        <input id="code" inputmode="numeric" pattern="[0-9]*" maxlength="6" required placeholder="______" style="width: 100%; margin-top: 6px; padding: 11px 13px; border: 1px solid var(--color-line-strong); border-radius: 8px; font-size: 18px; letter-spacing: 6px; text-align: center;" />
+        <button type="submit" style="width: 100%; margin-top: 14px; background: var(--color-brand); color: #fff; border: none; border-radius: 8px; padding: 12px; font-size: 14px; font-weight: 500; cursor: pointer;">Entra</button>
+        <button type="button" id="back" style="width: 100%; margin-top: 8px; background: none; color: var(--color-ink-muted); border: none; font-size: 12.5px; cursor: pointer;">Usa un'altra email</button>
+      </form>
+
+      <p id="msg" style="margin-top: 16px; font-size: 13px; min-height: 18px;"></p>
+    </div>
+  </div>
+
+  <script is:inline>
+    const $ = (id) => document.getElementById(id);
+    const msg = $("msg");
+    const setMsg = (t, ok) => { msg.textContent = t; msg.style.color = ok ? "var(--color-success)" : "#c0392b"; };
+    const params = new URLSearchParams(location.search);
+    const next = params.get("next") || "/admin";
+    let email = "";
+
+    $("step-email").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      email = $("email").value.trim().toLowerCase();
+      setMsg("Invio in corso...", true);
+      try {
+        const r = await fetch("/api/auth/request-otp", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email }) });
+        const d = await r.json().catch(() => ({}));
+        if (!r.ok) { setMsg(d.error || "Errore, riprova.", false); return; }
+        $("step-email").style.display = "none";
+        $("step-code").style.display = "block";
+        $("code").focus();
+        setMsg("Se l'email è abilitata, riceverai un codice a breve.", true);
+      } catch { setMsg("Errore di rete, riprova.", false); }
+    });
+
+    $("back").addEventListener("click", () => { $("step-code").style.display = "none"; $("step-email").style.display = "block"; setMsg("", true); });
+
+    $("step-code").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const code = $("code").value.trim();
+      setMsg("Verifica...", true);
+      try {
+        const r = await fetch("/api/auth/verify-otp", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email, code }) });
+        const d = await r.json().catch(() => ({}));
+        if (!r.ok) { setMsg(d.error || "Codice non valido.", false); return; }
+        setMsg("Accesso riuscito, reindirizzamento...", true);
+        location.href = next.startsWith("/admin") ? next : "/admin";
+      } catch { setMsg("Errore di rete, riprova.", false); }
+    });
+  </script>
+</body>
+</html>

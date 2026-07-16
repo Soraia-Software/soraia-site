@@ -1,0 +1,45 @@
+---
+import "~/styles/globals.css";
+interface Props { title: string; active?: string; }
+const { title, active = "" } = Astro.props;
+const nav = [
+  { href: "/admin", label: "Panoramica", key: "home" },
+  { href: "/admin/contatti", label: "Contatti", key: "contatti" },
+  { href: "/admin/contenuti", label: "Contenuti", key: "contenuti" },
+  { href: "/admin/utenti", label: "Utenti", key: "utenti" },
+];
+---
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>{title} · Soraia Admin</title>
+</head>
+<body style="background: var(--color-bg); color: var(--color-ink); min-height: 100vh;">
+  <header style="border-bottom: 1px solid var(--color-line); background: #fff;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 22px; flex-wrap: wrap;">
+        <a href="/admin" style="font-weight: 600; font-size: 15px; letter-spacing: -0.02em; color: var(--color-ink); text-decoration: none;">Soraia · Area riservata</a>
+        <nav style="display: flex; gap: 16px;">
+          {nav.map((n) => (
+            <a href={n.href} style={`font-size: 13.5px; text-decoration: none; color: ${active === n.key ? "var(--color-brand)" : "var(--color-ink-muted)"}; font-weight: ${active === n.key ? "600" : "400"};`}>{n.label}</a>
+          ))}
+        </nav>
+      </div>
+      <button id="logout" style="font-size: 13px; color: var(--color-ink-muted); background: none; border: 1px solid var(--color-line-strong); border-radius: 8px; padding: 6px 12px; cursor: pointer;">Esci</button>
+    </div>
+  </header>
+  <main style="max-width: 1100px; margin: 0 auto; padding: 28px 20px 60px;">
+    <h1 style="font-size: 24px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 22px;">{title}</h1>
+    <slot />
+  </main>
+  <script is:inline>
+    document.getElementById("logout")?.addEventListener("click", async () => {
+      try { await fetch("/api/auth/logout", { method: "POST" }); } catch {}
+      location.href = "/admin/login";
+    });
+  </script>
+</body>
+</html>

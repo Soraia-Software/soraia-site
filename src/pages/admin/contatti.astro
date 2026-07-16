@@ -1,0 +1,44 @@
+---
+import AdminLayout from "~/layouts/AdminLayout.astro";
+---
+<AdminLayout title="Contatti" active="contatti">
+  <p style="font-size: 13.5px; color: var(--color-ink-muted); margin-bottom: 16px;">Lead ricevuti dai form del sito (ultimi 500), dal più recente.</p>
+  <p id="count" style="font-size: 12.5px; color: var(--color-ink-soft); margin-bottom: 12px;"></p>
+  <div style="overflow-x: auto; background: #fff; border: 1px solid var(--color-line); border-radius: 12px;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+      <thead>
+        <tr id="head"></tr>
+      </thead>
+      <tbody id="rows">
+        <tr><td style="padding: 16px; color: var(--color-ink-soft);">Caricamento...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script is:inline>
+    const cols = [
+      ["created_at", "Data"], ["name", "Nome"], ["company", "Azienda"], ["role", "Ruolo"],
+      ["email", "Email"], ["team_size", "Team"], ["source", "Origine"], ["lang", "Lingua"], ["message", "Messaggio"],
+    ];
+    const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const fmt = (s) => { try { return new Date(s.includes("T") ? s : s.replace(" ", "T") + "Z").toLocaleString("it-IT", { day: "2-digit", month: "short", year: "2-digit", hour: "2-digit", minute: "2-digit" }); } catch { return esc(s); } };
+    document.getElementById("head").innerHTML = cols.map(([, l]) => `<th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--color-line-strong);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-ink-soft);font-weight:500;white-space:nowrap">${l}</th>`).join("");
+    (async () => {
+      const rows = document.getElementById("rows");
+      try {
+        const r = await fetch("/api/admin/leads");
+        if (r.status === 403) { location.href = "/admin/login"; return; }
+        const d = await r.json();
+        const leads = d.leads || [];
+        document.getElementById("count").textContent = `${leads.length} contatti`;
+        if (!leads.length) { rows.innerHTML = `<tr><td style="padding:16px;color:var(--color-ink-soft)">Nessun contatto ancora.</td></tr>`; return; }
+        rows.innerHTML = leads.map((L) => "<tr>" + cols.map(([k]) => {
+          let v = L[k];
+          if (k === "created_at") v = fmt(v);
+          if (k === "message" && v) v = String(v).slice(0, 140);
+          return `<td style="padding:10px 12px;border-bottom:1px solid var(--color-line);vertical-align:top;${k === "email" ? "white-space:nowrap" : ""}">${esc(v) || "<span style='color:#bbb'>-</span>"}</td>`;
+        }).join("") + "</tr>").join("");
+      } catch { rows.innerHTML = `<tr><td style="padding:16px;color:#c0392b">Errore nel caricamento.</td></tr>`; }
+    })();
+  </script>
+</AdminLayout>

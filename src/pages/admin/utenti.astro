@@ -1,0 +1,77 @@
+---
+import AdminLayout from "~/layouts/AdminLayout.astro";
+---
+<AdminLayout title="Utenti" active="utenti">
+  <p style="font-size: 13.5px; color: var(--color-ink-muted); margin-bottom: 16px;">Chi può accedere all'area riservata. Solo gli admin possono modificare questa lista.</p>
+
+  <form id="add" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
+    <input id="new-email" type="email" required placeholder="nuovo@soraia.io" style="flex: 1; min-width: 200px; padding: 10px 12px; border: 1px solid var(--color-line-strong); border-radius: 8px; font-size: 14px;" />
+    <select id="new-role" style="padding: 10px 12px; border: 1px solid var(--color-line-strong); border-radius: 8px; font-size: 14px;">
+      <option value="editor">editor</option>
+      <option value="admin">admin</option>
+    </select>
+    <button type="submit" style="background: var(--color-brand); color: #fff; border: none; border-radius: 8px; padding: 10px 16px; font-size: 14px; font-weight: 500; cursor: pointer;">Aggiungi</button>
+  </form>
+
+  <p id="msg" style="font-size: 13px; min-height: 18px; margin-bottom: 10px;"></p>
+  <div style="overflow-x: auto; background: #fff; border: 1px solid var(--color-line); border-radius: 12px;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13.5px;">
+      <thead><tr id="head"></tr></thead>
+      <tbody id="rows"><tr><td style="padding: 16px; color: var(--color-ink-soft);">Caricamento...</td></tr></tbody>
+    </table>
+  </div>
+
+  <script is:inline>
+    const $ = (id) => document.getElementById(id);
+    const msg = $("msg");
+    const setMsg = (t, ok) => { msg.textContent = t; msg.style.color = ok ? "var(--color-success)" : "#c0392b"; };
+    const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const heads = ["Email", "Ruolo", "Stato", "Creato", ""];
+    $("head").innerHTML = heads.map((h) => `<th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--color-line-strong);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-ink-soft);font-weight:500">${h}</th>`).join("");
+
+    async function api(method, body) {
+      const r = await fetch("/api/admin/users", { method, headers: { "Content-Type": "application/json" }, body: body ? JSON.stringify(body) : undefined });
+      if (r.status === 403) { setMsg("Solo gli admin possono gestire gli utenti.", false); return null; }
+      return r;
+    }
+    async function load() {
+      const rows = $("rows");
+      const r = await fetch("/api/admin/users");
+      if (r.status === 403) { rows.innerHTML = `<tr><td style="padding:16px;color:var(--color-ink-soft)">Solo gli admin vedono questa sezione.</td></tr>`; $("add").style.display = "none"; setMsg("", true); return; }
+      if (!r.ok) { rows.innerHTML = `<tr><td style="padding:16px;color:#c0392b">Errore.</td></tr>`; return; }
+      const { users } = await r.json();
+      rows.innerHTML = users.map((u) => `<tr>
+        <td style="padding:10px 12px;border-bottom:1px solid var(--color-line)">${esc(u.email)}</td>
+        <td style="padding:10px 12px;border-bottom:1px solid var(--color-line)">
+          <select data-role="${esc(u.email)}" style="padding:5px 8px;border:1px solid var(--color-line-strong);border-radius:6px;font-size:13px">
+            <option value="editor"${u.role === "editor" ? " selected" : ""}>editor</option>
+            <option value="admin"${u.role === "admin" ? " selected" : ""}>admin</option>
+          </select>
+        </td>
+        <td style="padding:10px 12px;border-bottom:1px solid var(--color-line)">
+          <button data-toggle="${esc(u.email)}" data-active="${u.active}" style="font-size:12px;padding:4px 10px;border-radius:6px;border:1px solid var(--color-line-strong);cursor:pointer;background:${u.active ? "#EAF7EF" : "#FBECEC"};color:${u.active ? "#17803D" : "#c0392b"}">${u.active ? "attivo" : "disattivo"}</button>
+        </td>
+        <td style="padding:10px 12px;border-bottom:1px solid var(--color-line);color:var(--color-ink-soft);white-space:nowrap">${esc((u.created_at || "").slice(0, 10))}</td>
+        <td style="padding:10px 12px;border-bottom:1px solid var(--color-line);text-align:right"><button data-del="${esc(u.email)}" style="font-size:12px;color:#c0392b;background:none;border:none;cursor:pointer">Elimina</button></td>
+      </tr>`).join("");
+    }
+    $("add").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const r = await api("POST", { email: $("new-email").value.trim().toLowerCase(), role: $("new-role").value });
+      if (!r) return;
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) { setMsg(d.error || "Errore.", false); return; }
+      $("new-email").value = ""; setMsg("Utente aggiunto.", true); load();
+    });
+    $("rows").addEventListener("click", async (e) => {
+      const t = e.target;
+      if (t.dataset.toggle) { const r = await api("PATCH", { email: t.dataset.toggle, active: t.dataset.active !== "1" }); if (r) { const d = await r.json().catch(() => ({})); if (!r.ok) setMsg(d.error || "Errore.", false); else load(); } }
+      if (t.dataset.del) { if (!confirm(`Eliminare ${t.dataset.del}?`)) return; const r = await api("DELETE", { email: t.dataset.del }); if (r) { const d = await r.json().catch(() => ({})); if (!r.ok) setMsg(d.error || "Errore.", false); else load(); } }
+    });
+    $("rows").addEventListener("change", async (e) => {
+      const t = e.target;
+      if (t.dataset.role) { const r = await api("PATCH", { email: t.dataset.role, role: t.value }); if (r) { const d = await r.json().catch(() => ({})); if (!r.ok) { setMsg(d.error || "Errore.", false); load(); } else setMsg("Ruolo aggiornato.", true); } }
+    });
+    load();
+  </script>
+</AdminLayout>

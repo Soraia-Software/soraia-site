@@ -1,0 +1,25 @@
+---
+import AdminLayout from "~/layouts/AdminLayout.astro";
+import { getCollection } from "astro:content";
+
+const [blog, guides, confronti] = await Promise.all([
+  getCollection("blog"), getCollection("guides"), getCollection("confronti"),
+]);
+const pub = (c: any[]) => c.filter((x) => !x.data.draft).length;
+const cards = [
+  { href: "/admin/contatti", title: "Contatti", desc: "I lead ricevuti dai form del sito." },
+  { href: "/admin/contenuti", title: "Contenuti", desc: `${pub(blog)} articoli · ${pub(guides)} guide · ${pub(confronti)} confronti pubblicati.` },
+  { href: "/admin/utenti", title: "Utenti", desc: "Chi può accedere a quest'area (solo admin)." },
+];
+---
+<AdminLayout title="Panoramica" active="home">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+    {cards.map((c) => (
+      <a href={c.href} style="text-decoration: none; background: #fff; border: 1px solid var(--color-line); border-radius: 14px; padding: 20px; display: block; transition: border-color 0.2s;">
+        <p style="font-size: 15px; font-weight: 600; color: var(--color-ink);">{c.title}</p>
+        <p style="font-size: 13px; color: var(--color-ink-muted); margin-top: 6px; line-height: 1.5;">{c.desc}</p>
+      </a>
+    ))}
+  </div>
+  <p style="font-size: 12.5px; color: var(--color-ink-soft); margin-top: 22px;">Sola lettura per i contenuti. La generazione automatica (blog, guide, confronti) resta gestita dai workflow.</p>
+</AdminLayout>
