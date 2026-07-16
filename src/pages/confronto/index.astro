@@ -1,0 +1,47 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const title = "Confronti: A vs B per decidere senza pentirsene | Soraia";
+const description = "Confronti operativi testa a testa per le PMI: criteri, pro e contro, tabella e verdetto ragionato. Per scegliere lo strumento giusto senza rimpianti.";
+
+const items = (await getCollection("confronti"))
+  .filter((c) => c.data.lang === "it" && (import.meta.env.DEV || !c.data.draft))
+  .sort((a, b) => (b.data.updatedDate || b.data.pubDate).valueOf() - (a.data.updatedDate || a.data.pubDate).valueOf());
+---
+
+<Layout title={title} description={description} lang="it">
+  <section class="border-b border-line" style="background: #FAFAF8;">
+    <div class="container-soraia pt-20 md:pt-28 pb-14 md:pb-16 max-w-3xl">
+      <p class="eyebrow mb-4">Confronti</p>
+      <h1 class="text-balance" style="font-size: clamp(2.25rem, 5vw + 0.5rem, 3.5rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+        A vs B, spiegato per decidere.
+      </h1>
+      <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed" style="color: var(--color-ink-muted);">
+        Confronti operativi testa a testa: criteri concreti, pro e contro onesti, una tabella leggibile e un verdetto ragionato. Per scegliere lo strumento giusto per la tua azienda, senza pentirsene.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-soraia py-14 md:py-20">
+      {items.length === 0 ? (
+        <p class="text-[15px]" style="color: var(--color-ink-muted);">Nuovi confronti in arrivo a breve.</p>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          {items.map((c) => (
+            <a href={`/confronto/${c.id}`} class="card-editorial !p-7 group no-underline flex flex-col transition-all hover:!-translate-y-0.5 hover:shadow-md">
+              <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-4" style="color: var(--color-ink-soft);">Confronto · {c.data.categoria}</p>
+              <h2 class="mb-3 text-balance" style="font-size: 1.125rem; line-height: 1.25; letter-spacing: -0.015em; font-weight: 500;">{c.data.titolo}</h2>
+              <p class="text-[13.5px] leading-relaxed text-pretty flex-1" style="color: var(--color-ink-muted);">{c.data.sottotitolo || c.data.description}</p>
+              <span class="inline-flex items-center gap-1.5 text-[13px] font-medium mt-5" style="color: var(--color-brand);">
+                Leggi il confronto
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>

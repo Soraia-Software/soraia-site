@@ -1,0 +1,177 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import CTABanner from "~/components/CTABanner.astro";
+import { CONFRONTO_SLUG_MAP, reverseMap } from "~/lib/i18n";
+
+const bare = (id: string) => id.replace(/^en\//, "");
+const EN_TO_IT = reverseMap(CONFRONTO_SLUG_MAP);
+
+export async function getStaticPaths() {
+  const items = (await getCollection("confronti")).filter((c) => c.data.lang === "en" && (import.meta.env.DEV || !c.data.draft));
+  return items.map((c) => ({ params: { slug: c.id.replace(/^en\//, "") }, props: { c } }));
+}
+
+const { c } = Astro.props;
+const d = c.data;
+const slug = bare(c.id);
+const h1 = d.titolo;
+
+function formatDate(dt: Date) {
+  return dt.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+}
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: h1,
+  description: d.description,
+  datePublished: d.pubDate.toISOString(),
+  dateModified: (d.updatedDate || d.pubDate).toISOString(),
+  author: { "@type": "Organization", name: "Soraia", url: "https://www.soraia.io" },
+  publisher: { "@type": "Organization", name: "Soraia", logo: { "@type": "ImageObject", url: "https://www.soraia.io/logos/soraia-full.svg" } },
+  keywords: d.keywords.join(", "),
+};
+const faqJsonLd = d.faq.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: d.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+} : null;
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.soraia.io/en/" },
+    { "@type": "ListItem", position: 2, name: "Comparisons", item: "https://www.soraia.io/en/confronto" },
+    { "@type": "ListItem", position: 3, name: d.titolo, item: `https://www.soraia.io/en/confronto/${slug}` },
+  ],
+};
+const jsonLd = [articleJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])];
+const altHref = EN_TO_IT[slug] ? `/confronto/${EN_TO_IT[slug]}` : "/confronto";
+
+const options = [d.optionA, d.optionB];
+---
+
+<Layout title={d.titolo} description={d.description} lang="en" jsonLd={jsonLd} altHref={altHref}>
+  <article>
+    <section class="border-b border-line" style="background: #FAFAF8;">
+      <div class="container-soraia pt-16 md:pt-20 pb-12 md:pb-14">
+        <nav class="flex items-center gap-2 text-[13px] mb-8 flex-wrap" style="color: var(--color-ink-soft);">
+          <a href="/en/" class="hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">Home</a>
+          <span>›</span>
+          <a href="/en/confronto" class="hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">Comparisons</a>
+          <span>›</span>
+          <span style="color: var(--color-ink-muted);">{d.titolo}</span>
+        </nav>
+        <div class="max-w-3xl">
+          <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-5" style="color: var(--color-ink-soft);">
+            <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+            Comparison · {d.categoria}
+          </p>
+          <h1 class="text-balance" style="font-size: clamp(2rem, 4vw + 0.5rem, 3rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">{h1}</h1>
+          {d.sottotitolo && <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">{d.sottotitolo}</p>}
+          <div class="mt-7 flex flex-wrap items-center gap-3 text-[12.5px]" style="color: var(--color-ink-soft);">
+            <span>{d.author}</span><span style="opacity:0.4;">·</span>
+            <span>Published {formatDate(d.pubDate)}</span>
+            {d.updatedDate && (<><span style="opacity:0.4;">·</span><span>Updated {formatDate(d.updatedDate)}</span></>)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container-soraia py-12 md:py-16 max-w-4xl">
+      <div class="rounded-2xl border border-line p-6 md:p-7 mb-12" style="background: #F2F1ED;">
+        <p class="text-[11px] font-semibold tracking-[0.14em] uppercase mb-3" style="color: var(--color-ink-soft);">In brief</p>
+        <p class="text-[16px] md:text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink);">{d.inBreve}</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-12">
+        {options.map((o, i) => (
+          <div class="card-editorial !p-7 flex flex-col">
+            <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-2" style="color: var(--color-brand);">Option {i === 0 ? "A" : "B"}</p>
+            <h2 class="mb-2" style="font-size: 1.375rem; line-height: 1.2; letter-spacing: -0.015em; font-weight: 500;">{o.nome}</h2>
+            <p class="text-[14.5px] leading-relaxed mb-5 text-pretty" style="color: var(--color-ink-muted);">{o.descrizione}</p>
+            {o.pro.length > 0 && (
+              <div class="mb-4">
+                <p class="text-[12px] font-semibold uppercase tracking-[0.08em] mb-2" style="color: var(--color-ink-soft);">Pros</p>
+                <ul class="space-y-1.5">{o.pro.map((p) => (<li class="text-[14px] flex gap-2" style="color: var(--color-ink);"><span style="color: var(--color-success);">+</span>{p}</li>))}</ul>
+              </div>
+            )}
+            {o.contro.length > 0 && (
+              <div class="mb-4">
+                <p class="text-[12px] font-semibold uppercase tracking-[0.08em] mb-2" style="color: var(--color-ink-soft);">Cons</p>
+                <ul class="space-y-1.5">{o.contro.map((x) => (<li class="text-[14px] flex gap-2" style="color: var(--color-ink);"><span style="color: var(--color-ink-soft);">−</span>{x}</li>))}</ul>
+              </div>
+            )}
+            {o.idealePer.length > 0 && (
+              <div class="mt-auto pt-4 border-t border-line">
+                <p class="text-[12px] font-semibold uppercase tracking-[0.08em] mb-2" style="color: var(--color-ink-soft);">Best for</p>
+                <ul class="space-y-1.5">{o.idealePer.map((p) => (<li class="text-[14px]" style="color: var(--color-ink-muted);">{p}</li>))}</ul>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {d.tabella.length > 0 && (
+        <div class="mb-12 overflow-x-auto">
+          <table class="w-full border-collapse text-[14.5px]">
+            <thead>
+              <tr>
+                <th class="text-left py-3 px-3 border-b" style="border-color: var(--color-line-strong); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-ink-soft); font-weight: 500;">Criterion</th>
+                <th class="text-left py-3 px-3 border-b" style="border-color: var(--color-line-strong); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-ink-soft); font-weight: 500;">{d.optionA.nome}</th>
+                <th class="text-left py-3 px-3 border-b" style="border-color: var(--color-line-strong); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-ink-soft); font-weight: 500;">{d.optionB.nome}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {d.tabella.map((r) => (
+                <tr>
+                  <td class="py-3 px-3 border-b align-top font-medium" style="border-color: var(--color-line); color: var(--color-ink);">{r.criterio}</td>
+                  <td class="py-3 px-3 border-b align-top" style="border-color: var(--color-line); color: var(--color-ink);">{r.valoreA}</td>
+                  <td class="py-3 px-3 border-b align-top" style="border-color: var(--color-line); color: var(--color-ink);">{r.valoreB}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      <div class="mb-4">
+        <h2 class="mb-4" style="font-size: clamp(1.5rem, 2vw + 0.5rem, 1.875rem); line-height: 1.2; letter-spacing: -0.02em; font-weight: 500;">The verdict</h2>
+        <p class="text-[16px] md:text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink);">{d.verdetto}</p>
+      </div>
+    </div>
+
+    {d.faq.length > 0 && (
+      <section class="bg-ink-50 border-y border-line">
+        <div class="container-soraia max-w-3xl py-14 md:py-20">
+          <p class="eyebrow mb-3">FAQ</p>
+          <h2 class="mb-8 text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">What people usually ask us.</h2>
+          <div class="space-y-3">
+            {d.faq.map((f) => (
+              <details class="group border border-line rounded-xl bg-white overflow-hidden">
+                <summary class="cursor-pointer list-none px-6 py-5 flex items-center justify-between gap-4 select-none">
+                  <span class="font-medium text-[15.5px]" style="color: var(--color-ink);">{f.q}</span>
+                  <span class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: var(--color-ink-50);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-ink-muted);"><path d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-5 -mt-1 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);" set:html={f.a}></div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <CTABanner
+      title="Not sure which one fits your case?"
+      description="20 minutes with the CEO to work out the right choice for your processes. No pitch, no obligation."
+      ctaText="20 min with Daniel"
+      ctaHref="/en/contact"
+      avatarName="Daniel Levis"
+      avatarRole="Co-Founder & CEO"
+      avatarSrc="/team/daniel-levis.webp"
+    />
+  </article>
+</Layout>

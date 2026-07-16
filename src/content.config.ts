@@ -107,4 +107,42 @@ const guides = defineCollection({
   }),
 });
 
-export const collections = { blog, caseStudies, guides };
+// Head-to-head comparison pages ("A vs B") - rank well for "X vs Y" buyer queries.
+// Structured (not markdown-body-driven): the page renders option cards + a criteria table
+// + a reasoned verdict from frontmatter. EN entries live in the en/ subfolder.
+const confrontoOption = z.object({
+  nome: z.string(),
+  descrizione: z.string(),
+  pro: z.array(z.string()).default([]),
+  contro: z.array(z.string()).default([]),
+  idealePer: z.array(z.string()).default([]),
+});
+const confronti = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/confronti" }),
+  schema: z.object({
+    titolo: z.string(),                        // <title> + H1
+    sottotitolo: z.string().optional(),
+    description: z.string(),                    // <meta description>
+    inBreve: z.string(),                        // answer-first TL;DR (GEO), rendered near the top
+    categoria: z.string(),
+    optionA: confrontoOption,
+    optionB: confrontoOption,
+    tabella: z.array(z.object({
+      criterio: z.string(),
+      valoreA: z.string(),
+      valoreB: z.string(),
+    })).default([]),
+    verdetto: z.string(),                       // reasoned verdict (>= 80 chars)
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    author: z.string().default("Daniel Levis"),
+    keywords: z.array(z.string()).default([]),
+    related: z.array(z.string()).default([]),
+    featured: z.boolean().default(false),
+    lang: z.enum(["it", "en"]).default("it"),
+    draft: z.boolean().default(false),          // hidden in prod (kill-switch + staging); visible in dev
+  }),
+});
+
+export const collections = { blog, caseStudies, guides, confronti };
