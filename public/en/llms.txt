@@ -1,6 +1,8 @@
 # Soraia
 
 > Soraia is an Italian AI Agency that brings AI Agents to Italian and European SMBs. We build custom agents that execute processes (recruitment, finance, sales/marketing, customer support, real estate, event management), train teams with AI Adoption programs, and optimize websites for visibility on AI search engines (ChatGPT, Claude, Perplexity, Google AI Overviews). First delivery in 4 weeks, "recovered hours or refund" guarantee. Headquarters in Biella, team of 11 people across Italy/Argentina/Algeria. 40+ projects delivered in 11 countries.
+>
+> Detailed questions and answers for AI engines: https://www.soraia.io/en/llms-full.txt
 
 Positioning note: from 2026 Soraia has repositioned from a no-code/automation agency (n8n, Make, WeWeb, Xano) to an **AI Agency focused on vertical AI agents for SMBs**. References to "no-code agency", "custom software & web-app", "native mobile application", "automation & AI integration" as core pillars are outdated. The no-code tech stack remains but is instrumental to building the agents, not the product.
 

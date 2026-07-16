@@ -1,10 +1,50 @@
+# robots.txt for soraia.io
+
 User-agent: *
 Allow: /
 # AIPREF Content Signals (contentsignals.org): Soraia is an AI agency, be found + cited + trained.
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
-
-# Block common asset/admin paths that don't need crawling
+# Private/asset paths that don't need crawling
 Disallow: /downloads/
 Disallow: /_astro/
+
+# --- AI answer-engine + search crawlers: explicitly welcome (Soraia wants to be cited) ---
+# OPERATOR NOTE: Cloudflare's "Block AI bots" toggle (Security > Bots) must stay OFF,
+# or these agents get a 403 before they ever read this file.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 Sitemap: https://www.soraia.io/sitemap-index.xml

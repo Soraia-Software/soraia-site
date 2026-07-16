@@ -52,16 +52,33 @@ const description =
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://www.soraia.io/#organization",
   name: "Soraia",
+  legalName: "Soraia S.r.l.",
   url: "https://www.soraia.io",
   logo: "https://www.soraia.io/logos/soraia-full.svg",
   description,
   email: "info@soraia.io",
+  vatID: "IT02820060024",
+  foundingDate: "2023",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Via Losana 13",
     addressLocality: "Biella",
+    postalCode: "13900",
+    addressRegion: "BI",
     addressCountry: "IT",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 45.5648864,
+    longitude: 8.0542568,
+  },
+  areaServed: ["IT", "EU"],
+  founder: [
+    { "@type": "Person", name: "Daniel Levis", jobTitle: "CEO" },
+    { "@type": "Person", name: "Davide Silvestri", jobTitle: "CTO" },
+  ],
   sameAs: ["https://www.linkedin.com/company/soraia-digital"],
 };
 

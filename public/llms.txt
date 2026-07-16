@@ -1,6 +1,8 @@
 # Soraia
 
 > Soraia è una AI Agency italiana che porta gli Agenti IA nelle PMI italiane ed europee. Costruiamo agenti su misura che eseguono i processi (recruitment, finance, sales/marketing, customer support, real estate, event management), formiamo i team con programmi di AI Adoption, ottimizziamo i siti per la visibilità su motori AI (ChatGPT, Claude, Perplexity, Google AI Overviews). Prima delivery in 4 settimane, garanzia "ore recuperate o rimborso". Sede a Biella, team di 11 persone tra Italia/Argentina/Algeria. 40+ progetti consegnati in 11 paesi.
+>
+> Domande e risposte dettagliate per i motori AI: https://www.soraia.io/llms-full.txt
 
 Nota di posizionamento: dal 2026 Soraia si è riposizionata da no-code/automation agency (n8n, Make, WeWeb, Xano) a **AI Agency focalizzata su agenti IA verticali per PMI**. Le referenze a "no-code agency", "custom software & web-app", "native mobile application", "automation & AI integration" come pilastri principali sono superate. Lo stack tecnico no-code resta ma è strumentale alla costruzione degli agenti, non il prodotto.
 
