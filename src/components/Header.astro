@@ -126,16 +126,33 @@ const prodotti = [
 <header class="sticky top-0 z-50 backdrop-blur-xl bg-ink-50/80 border-b border-ink-200/60">
   <div class="container-soraia">
     <nav class="flex items-center justify-between h-16 md:h-[72px]" aria-label="Main">
-      <a href={homeHref} class="flex items-center gap-2.5 group" aria-label="Soraia home">
-        <img
-          src="/logos/soraia-mark.svg"
-          alt=""
-          width="32"
-          height="32"
-          class="w-8 h-8 transition-transform duration-300 group-hover:scale-105"
-        />
-        <span class="text-[1.125rem] font-semibold tracking-tight">Soraia</span>
-      </a>
+      <div class="flex items-center gap-3 lg:gap-4">
+        <a href={homeHref} class="flex items-center gap-2.5 group" aria-label="Soraia home">
+          <img
+            src="/logos/soraia-mark.svg"
+            alt=""
+            width="32"
+            height="32"
+            class="w-8 h-8 transition-transform duration-300 group-hover:scale-105"
+          />
+          <span class="text-[1.125rem] font-semibold tracking-tight">Soraia</span>
+        </a>
+        <!-- Association badge: Soraia is a member of Unione Industriale Biellese.
+             White chip keeps the third-party mark distinct from Soraia's brand and
+             legible on the off-white header. Hidden below lg (shown in the drawer). -->
+        <span class="hidden lg:block w-px h-7 self-center" style="background: rgba(0,0,0,0.1);" aria-hidden="true"></span>
+        <a
+          href="https://www.ui.biella.it"
+          target="_blank"
+          rel="noopener"
+          class="hidden lg:inline-flex items-center rounded-lg bg-white px-2.5 py-1.5 border transition-shadow hover:shadow-sm"
+          style="border-color: var(--color-line);"
+          title={lang === "en" ? "Soraia is a member of Unione Industriale Biellese" : "Soraia è associata all'Unione Industriale Biellese"}
+          aria-label={lang === "en" ? "Soraia is a member of Unione Industriale Biellese" : "Soraia è associata all'Unione Industriale Biellese"}
+        >
+          <img src="/logos/unione-industriale-biellese.png" alt="" width="700" height="217" class="h-7 w-auto" />
+        </a>
+      </div>
 
       <!-- Desktop nav -->
       <ul class="hidden md:flex items-center gap-1 lg:gap-2 text-[14px] text-ink-700" data-nav>
@@ -253,6 +270,13 @@ const prodotti = [
         <a href={aboutHref} class="mobile-section__top">{labels.nav_about}</a>
         <a href={scorecardHref} class="mobile-section__top">{labels.nav_scorecard} <span class="text-[10px] font-semibold tracking-[0.1em] uppercase px-1.5 py-0.5 rounded-full ml-2" style="background: var(--color-violet-50, #F5EEF7); color: var(--color-brand);">{labels.badge_min}</span></a>
       </nav>
+
+      <div class="px-5 py-4 border-t border-ink-200/60">
+        <p class="text-[10.5px] font-semibold tracking-[0.14em] uppercase mb-2.5" style="color: var(--color-ink-soft);">{lang === "en" ? "Member of" : "Associati a"}</p>
+        <a href="https://www.ui.biella.it" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg bg-white px-3 py-2 border" style="border-color: var(--color-line);" aria-label="Unione Industriale Biellese">
+          <img src="/logos/unione-industriale-biellese.png" alt="" width="700" height="217" class="h-6 w-auto" />
+        </a>
+      </div>
 
       <div class="p-5 border-t border-ink-200/60">
         <a href={contactHref} class="btn btn-primary w-full justify-center text-[14px]">{labels.cta}</a>
