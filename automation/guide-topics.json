@@ -222,5 +222,217 @@
     ],
     "discovered_at": "2026-06-25",
     "drafted_at": null
+  },
+  {
+    "id": "ai-recruitment-ats-alto-rischio",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "ai-recruitment-ats-alto-rischio-obblighi",
+    "slug_en": "ai-recruitment-ats-high-risk-obligations",
+    "title_hint": "AI nel recruitment: perche gli ATS con IA sono ad alto rischio e cosa deve fare l'HR (trasparenza ai candidati)",
+    "cluster": "compliance",
+    "primaryKeyword": "AI Act recruitment obblighi ATS",
+    "targetPersona": "HR Director / Head of Talent",
+    "supportingCaseStudy": "talent-match",
+    "internalLinkTargets": [
+      "/recruitment",
+      "/case-studies/talent-match",
+      "/guide/ai-act-aziende",
+      "/parliamone"
+    ],
+    "dedupNotes": "Sector-specific compliance angle for Soraia's largest cluster (recruitment), not in backlog or pillars. Annex III classifies personnel selection as high-risk; the Omnibus pushed that obligation deadline to 2 December 2027, but candidate transparency, impact assessment and supplier clauses matter now. Sources: professione-lavoro.it (AI Act and HR tech, 21/06/2026), aipolicy.it draft high-risk guidelines (May 2026), CityNext (Annex III lists selezione del personale, deadline 2 Dec 2027).",
+    "freshnessExpiry": "2027-06-30",
+    "score": 75,
+    "subScores": {
+      "intent": 0.65,
+      "biz": 0.85,
+      "winnability": 0.7,
+      "freshness": 0.7,
+      "geo": 0.8
+    },
+    "sources": [
+      "guide-radar",
+      "https://www.professione-lavoro.it/ai-act-e-hr-tech-obblighi-su-rischi-trasparenza-e-ats/",
+      "https://aipolicy.it/linee-guida-ai-act-alto-rischio-classificazione/",
+      "https://citynext.it/2026/07/05/ai-act-scadenze-digital-omnibus-2026-2027-2028/"
+    ],
+    "discovered_at": "2026-07-08",
+    "drafted_at": null
+  },
+  {
+    "id": "art50-trasparenza-chatbot-ai-content",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "obblighi-trasparenza-ai-act-chatbot-contenuti",
+    "slug_en": "ai-act-transparency-chatbot-content-labeling",
+    "title_hint": "Chatbot e contenuti IA: come rispettare gli obblighi di trasparenza dell'articolo 50 (dal 2 agosto 2026)",
+    "cluster": "compliance",
+    "primaryKeyword": "obblighi trasparenza AI Act chatbot",
+    "targetPersona": "COO / Head of Customer Support",
+    "supportingCaseStudy": "navily",
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/guide/ai-act-aziende",
+      "/parliamone"
+    ],
+    "dedupNotes": "Operative playbook, not covered by pillar or backlog: how an SMB that runs a support chatbot or generates AI content complies with Article 50 (disclose interaction with AI, label synthetic content). Timely because Art.50 disclosure applies from 2 Aug 2026 while machine-readable watermarking was pushed to 2 Dec 2026 by the Omnibus. Sources: EU Commission digital-strategy page (transparency rules Aug 2026), Travers Smith state-of-play, CityNext (watermarking 2 Dec 2026).",
+    "freshnessExpiry": "2026-12-31",
+    "score": 73,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.75,
+      "winnability": 0.7,
+      "freshness": 0.85,
+      "geo": 0.85
+    },
+    "sources": [
+      "guide-radar",
+      "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "https://www.traverssmith.com/knowledge/knowledge-container/the-eu-ai-act-the-current-state-of-play/",
+      "https://citynext.it/2026/07/05/ai-act-scadenze-digital-omnibus-2026-2027-2028/"
+    ],
+    "discovered_at": "2026-07-08",
+    "drafted_at": null
+  },
+  {
+    "id": "legge-132-2025-informativa-ia-lavoratori",
+    "status": "parked",
+    "archetype": "regulatory-update",
+    "slug_it": "legge-132-2025-obbligo-informativa-ia-lavoratori-clienti",
+    "slug_en": "italian-ai-law-132-2025-disclosure-duty",
+    "title_hint": "Legge 132/2025: l'obbligo di informare lavoratori e clienti sull'uso dell'IA (cosa fare in pratica)",
+    "cluster": "compliance",
+    "primaryKeyword": "legge 132/2025 obbligo informativa IA",
+    "targetPersona": "CEO / HR Director",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/guide/ai-policy-aziendale-template",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new because it covers the ITALIAN national law (L.132/2025), distinct from the EU AI Act pillar, and the specific in-force information duty (from 10 October 2025) toward workers and clients - not covered by the ai-policy template (which teaches how to write a policy). Links the reader to the policy template as the operative next step. Sources: lavorosi.it (WST Law and Tax, 09/10/2025) and gdpr.it on L.132/2025 employer obligations.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 70,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.6,
+      "winnability": 0.65,
+      "freshness": 0.7,
+      "geo": 0.85
+    },
+    "sources": [
+      "guide-radar",
+      "https://www.lavorosi.it/rapporti-di-lavoro/assunzioni/dal-10-ottobre-scatta-lobbligo-di-informativa-a-lavoratori-e-clienti-sullutilizzo-dell-ia/",
+      "https://www.gdpr.it/entrata-in-vigore-la-legge-132-2025-sullintelligenza-artificiale-nuovi-obblighi-per-i-datori-di-lavoro/"
+    ],
+    "discovered_at": "2026-07-08",
+    "drafted_at": null
+  },
+  {
+    "id": "digital-omnibus-ai-act-pmi",
+    "status": "parked",
+    "archetype": "regulatory-update",
+    "slug_it": "digital-omnibus-ai-act-cosa-cambia-pmi",
+    "slug_en": "digital-omnibus-ai-act-changes-smes",
+    "title_hint": "Digital Omnibus e AI Act: cosa e stato rinviato al 2027-2028 e cosa NO (guida per PMI)",
+    "cluster": "compliance",
+    "primaryKeyword": "Digital Omnibus AI Act",
+    "targetPersona": "COO / DPO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/guide/ai-act-aziende",
+      "/check-up",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new vs the ai-act-aziende pillar (static overview) and the parked ai-act-checklist (a to-do list for Aug 2026): this is a dated news-reaction on what the Digital Omnibus actually moved. Sources: CityNext 05/07/2026 timeline, Council of the EU final approval 29/06/2026 and political agreement 07/05/2026, EU Commission digital-strategy AI Act page. Distinguishes postponed high-risk (2 Dec 2027 / 2 Aug 2028) from confirmed items (Art.5 bans, Art.50 transparency, GPAI, AI literacy) and the 2 Dec 2026 watermarking date.",
+    "freshnessExpiry": "2027-06-30",
+    "score": 68,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.55,
+      "winnability": 0.6,
+      "freshness": 0.95,
+      "geo": 0.85
+    },
+    "sources": [
+      "guide-radar",
+      "https://citynext.it/2026/07/05/ai-act-scadenze-digital-omnibus-2026-2027-2028/",
+      "https://www.consilium.europa.eu/it/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/",
+      "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    ],
+    "discovered_at": "2026-07-08",
+    "drafted_at": null
+  },
+  {
+    "id": "clausole-contrattuali-fornitori-ai",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "clausole-contrattuali-fornitori-ai-checklist",
+    "slug_en": "ai-vendor-contract-clauses-checklist",
+    "title_hint": "Comprare IA senza scoprirti: la checklist di clausole contrattuali per i fornitori (GDPR + AI Act)",
+    "cluster": "custom-software",
+    "primaryKeyword": "clausole contrattuali fornitori AI",
+    "targetPersona": "COO / CFO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/guide/consulenza-ai-italia",
+      "/parliamone"
+    ],
+    "dedupNotes": "Procurement/due-diligence angle absent from backlog and pillars: the AI Act shifts responsibility along the supply chain, so contracts with AI vendors need compliance warranties, technical documentation, and recourse clauses. Distinct from ai-policy (internal) and consulenza pillar (buyer guide). Sources: aipolicy.it contract clauses checklist (04/04/2026), Orrick 6-steps (Nov 2025), Baker McKenzie EU AI regulation note on reviewing AI-related contracts.",
+    "freshnessExpiry": null,
+    "score": 66,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.7,
+      "winnability": 0.7,
+      "freshness": 0.5,
+      "geo": 0.75
+    },
+    "sources": [
+      "guide-radar",
+      "https://aipolicy.it/contratti-fornitori-ai-clausole/",
+      "https://www.orrick.com/en/Insights/2025/11/The-EU-AI-Act-6-Steps-to-Take-Before-2-August-2026",
+      "https://www.bakermckenzie.com/en/insight/publications/resources/product-risk-radar-articles/eu-regulation-on-ai"
+    ],
+    "discovered_at": "2026-07-08",
+    "drafted_at": null
+  },
+  {
+    "id": "dpia-fria-sistemi-ia",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "dpia-fria-sistemi-intelligenza-artificiale",
+    "slug_en": "dpia-fria-ai-systems",
+    "title_hint": "DPIA e FRIA per i sistemi di IA: quando servono davvero e come impostarle senza sprechi",
+    "cluster": "compliance",
+    "primaryKeyword": "valutazione impatto sistemi intelligenza artificiale",
+    "targetPersona": "DPO / COO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/customer-support",
+      "/guide/ai-act-aziende",
+      "/parliamone"
+    ],
+    "dedupNotes": "Operative deliverable-focused topic distinct from the parked garante-privacy item (which is about the Garante's fixed points): explains when a GDPR DPIA and an AI Act fundamental-rights impact assessment (FRIA) are required, and how to run them together. Reinforced by the EDPB-EDPS Joint Opinion 1/2026 warning that simplification must not lower protections. Sources: EDPB-EDPS Joint Opinion 1/2026, artificialintelligenceact.eu SME resources, EU Commission digital-strategy page.",
+    "freshnessExpiry": null,
+    "score": 62,
+    "subScores": {
+      "intent": 0.55,
+      "biz": 0.6,
+      "winnability": 0.65,
+      "freshness": 0.5,
+      "geo": 0.8
+    },
+    "sources": [
+      "guide-radar",
+      "https://www.edpb.europa.eu/documents/legislative-opinion/edpb-edps-joint-opinion-12026-on-the-proposal-for-a-regulation-as_en",
+      "https://artificialintelligenceact.eu/",
+      "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    ],
+    "discovered_at": "2026-07-08",
+    "drafted_at": null
   }
 ]
