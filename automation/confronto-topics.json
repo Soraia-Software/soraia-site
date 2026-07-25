@@ -97,7 +97,7 @@
   },
   {
     "id": "sostituire-vs-affiancare-gestionale",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "sostituire-vs-affiancare-gestionale-ai",
     "slug_en": "replace-vs-augment-legacy-erp-ai",
     "categoria": "Build vs Buy",
@@ -125,7 +125,7 @@
       "seed"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-25"
   },
   {
     "id": "geo-vs-seo-tradizionale",
@@ -199,7 +199,7 @@
   },
   {
     "id": "rpa-vs-agenti-ia",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "rpa-vs-agenti-ia",
     "slug_en": "rpa-vs-ai-agents",
     "categoria": "Automazione processi",
@@ -230,11 +230,11 @@
       "https://appian.com/it/learn/topics/robotic-process-automation/rpa-vs-ai"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-25"
   },
   {
     "id": "ai-on-premise-vs-cloud",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "ai-on-premise-vs-cloud",
     "slug_en": "on-premise-vs-cloud-ai",
     "categoria": "Infrastruttura AI",
@@ -265,11 +265,11 @@
       "https://www.tuxweb.it/blog/perche-on-premise-pmi"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-25"
   },
   {
     "id": "recruitment-ai-vs-agenzia-tradizionale",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "recruitment-ai-vs-agenzia-recruiting-tradizionale",
     "slug_en": "ai-recruiting-vs-traditional-agency",
     "categoria": "Recruitment & HR",
@@ -300,11 +300,11 @@
       "https://hyring.com/blog/ai-native-vs-traditional-recruitment-agencies/"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-25"
   },
   {
     "id": "software-su-misura-vs-gestionale-pronto",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "software-su-misura-vs-gestionale-pronto",
     "slug_en": "custom-software-vs-off-the-shelf-erp",
     "categoria": "Software gestionale",
@@ -335,11 +335,11 @@
       "https://infominds.eu/erp-per-pmi-come-scegliere-software-gestionale/"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-25"
   },
   {
     "id": "copilot-vs-agente-ia-autonomo",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "copilot-vs-agente-ia-autonomo",
     "slug_en": "copilot-vs-autonomous-ai-agent",
     "categoria": "Agenti IA",
@@ -370,7 +370,7 @@
       "https://www.fastweb.it/fastweb-plus/intelligenza-artificiale/chatbot-vs-agenti-ai-cosa-cambia-davvero/"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-25"
   },
   {
     "id": "llm-open-source-vs-proprietario",
@@ -475,6 +475,350 @@
       "https://embee.co.in/blog/microsoft-copilot-vs-chatgpt-enterprise-guide/"
     ],
     "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "agente-ia-su-misura-vs-chatgpt-generico",
+    "status": "drafted",
+    "slug_it": "agente-ia-su-misura-vs-chatgpt-generico",
+    "slug_en": "custom-ai-agent-vs-generic-chatgpt",
+    "categoria": "AI strategy",
+    "optionA_name": "Agente IA su misura (dati proprietari)",
+    "optionB_name": "ChatGPT generico per il team",
+    "title_hint": "Agente IA su misura vs ChatGPT generico: cosa serve davvero in azienda",
+    "primaryKeyword": "agente ia aziendale vs chatgpt",
+    "targetPersona": "CEO / COO",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/ai-adoption",
+      "/guide/agenti-ai-aziende",
+      "/parliamone"
+    ],
+    "dedupNotes": "chatgpt-enterprise-vs-copilot (parked) confronta due prodotti vendor; qui la scelta e tra abbonamento generico e agente costruito sui processi/dati dell'azienda.",
+    "freshnessExpiry": null,
+    "score": 79,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.85,
+      "winnability": 0.8,
+      "freshness": 0.85,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.arvis.it/agenti-ai-aziendali-vs-chatgpt-perche-la-tua-impresa-ha-bisogno-di-dati-proprietari-per-evitare-disastri/",
+      "https://virtualworkforce.ai/it/agenti-ia-vs-assistenti-umani/"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "voicebot-ia-vs-chatbot-testuale",
+    "status": "drafted",
+    "slug_it": "voicebot-ia-vs-chatbot-testuale",
+    "slug_en": "ai-voicebot-vs-text-chatbot",
+    "categoria": "Customer support",
+    "optionA_name": "Agente vocale IA (voicebot)",
+    "optionB_name": "Chatbot testuale",
+    "title_hint": "Voicebot IA vs chatbot testuale: quale canale per l'assistenza clienti",
+    "primaryKeyword": "voicebot vs chatbot",
+    "targetPersona": "Head of Customer Care",
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Il backlog copre chatbot a regole vs agente IA (testo); qui la decisione e voce vs testo come canale, angolo non presente ne nei confronti pubblicati ne nel backlog.",
+    "freshnessExpiry": null,
+    "score": 76,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.8,
+      "winnability": 0.75,
+      "freshness": 0.8,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://covisian.com/it/tech-post/voicebot-chatbot-differenze/",
+      "https://justcall.io/blog/ai-voice-agent-vs-chatbot.html"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "ai-sdr-vs-agenzia-lead-generation",
+    "status": "drafted",
+    "slug_it": "agente-ia-sdr-vs-agenzia-lead-generation",
+    "slug_en": "ai-sdr-vs-lead-gen-agency",
+    "categoria": "Sales & marketing",
+    "optionA_name": "Agente IA SDR (lead generation)",
+    "optionB_name": "Agenzia di lead generation tradizionale",
+    "title_hint": "Agente IA SDR vs agenzia di lead generation: chi riempie la pipeline",
+    "primaryKeyword": "agente ia sdr vs agenzia lead generation",
+    "targetPersona": "Sales Director",
+    "internalLinkTargets": [
+      "/sales-marketing",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Recruitment-ai-vs-agenzia (parked) riguarda HR; questo confronto e sul commerciale (SDR/outbound), cluster e intento diversi.",
+    "freshnessExpiry": null,
+    "score": 76,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.85,
+      "winnability": 0.7,
+      "freshness": 0.8,
+      "geo": 0.55
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.salesforge.ai/blog/ai-sales-agents",
+      "https://www.11x.ai/guides/ai-sdr-agents-b2b-sales-teams"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "saas-verticale-pronto-vs-agente-ia-su-misura",
+    "status": "parked",
+    "slug_it": "saas-verticale-pronto-vs-agente-ia-su-misura",
+    "slug_en": "vertical-saas-vs-custom-ai-agent",
+    "categoria": "AI strategy",
+    "optionA_name": "SaaS verticale pronto (subscription)",
+    "optionB_name": "Agente IA su misura",
+    "title_hint": "SaaS verticale pronto vs agente IA su misura: abbonamento o processo tuo",
+    "primaryKeyword": "saas verticale vs agente ia su misura",
+    "targetPersona": "COO",
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/event-management",
+      "/parliamone"
+    ],
+    "dedupNotes": "Diverso dal build-vs-buy ERP: confronta un SaaS AI verticale gia pronto con un agente costruito sui processi specifici; angolo non presente in backlog/pubblicati.",
+    "freshnessExpiry": null,
+    "score": 72,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.8,
+      "winnability": 0.75,
+      "freshness": 0.75,
+      "geo": 0.55
+    },
+    "sources": [
+      "confronto-radar",
+      "https://blog.varprime.com/la-dicotomia-tra-aiaas-e-saas/",
+      "https://www.agendadigitale.eu/industry-4-0/il-saas-nellera-dellai-la-svolta-che-riscrive-i-modelli-aziendali/"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": null
+  },
+  {
+    "id": "receptionist-vocale-ia-vs-centralino-tradizionale",
+    "status": "parked",
+    "slug_it": "receptionist-vocale-ia-vs-centralino-tradizionale",
+    "slug_en": "ai-voice-receptionist-vs-traditional-switchboard",
+    "categoria": "Customer support",
+    "optionA_name": "Receptionist vocale IA / centralino AI",
+    "optionB_name": "Centralino e receptionist tradizionale",
+    "title_hint": "Receptionist vocale IA vs centralino tradizionale: chi risponde al telefono",
+    "primaryKeyword": "centralino ai vs centralino tradizionale",
+    "targetPersona": "Office/Operations Manager",
+    "internalLinkTargets": [
+      "/customer-support",
+      "/real-estate",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Nessun confronto pubblicato o in backlog tocca il canale telefonico/centralino; decisione operativa concreta per studi, agenzie immobiliari e PMI di servizi.",
+    "freshnessExpiry": null,
+    "score": 71,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.7,
+      "winnability": 0.7,
+      "freshness": 0.75,
+      "geo": 0.65
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.ezdirect.it/blog/2026/06/centralino-ai-quale-comprare-e-dove/",
+      "https://cudriec.com/ai-voice-receptionist-centralino-smart/"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": null
+  },
+  {
+    "id": "outsourcing-bpo-vs-agente-ia-support",
+    "status": "parked",
+    "slug_it": "outsourcing-bpo-vs-agente-ia-support",
+    "slug_en": "bpo-outsourcing-vs-ai-agent-support",
+    "categoria": "Customer support",
+    "optionA_name": "Customer support in outsourcing (BPO)",
+    "optionB_name": "Agente IA per il support",
+    "title_hint": "Outsourcing del customer support vs agente IA: costi e controllo a confronto",
+    "primaryKeyword": "outsourcing customer support vs agente ia",
+    "targetPersona": "Customer Service Manager",
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "chatbot-regole-vs-agente-support confronta due software; qui l'alternativa e organizzativa: esternalizzare a un BPO umano vs internalizzare con un agente IA.",
+    "freshnessExpiry": null,
+    "score": 71,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.8,
+      "winnability": 0.7,
+      "freshness": 0.75,
+      "geo": 0.55
+    },
+    "sources": [
+      "confronto-radar",
+      "https://bluetweak.com/blog/outsourcing-customer-service-vs-conversational-ai/",
+      "https://www.ringly.io/blog/sourcing-support-outsourcing"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": null
+  },
+  {
+    "id": "assumere-junior-vs-agente-ia",
+    "status": "parked",
+    "slug_it": "assumere-junior-vs-agente-ia",
+    "slug_en": "hiring-junior-vs-ai-agent",
+    "categoria": "HR & Ops",
+    "optionA_name": "Assumere una figura junior",
+    "optionB_name": "Agente IA per lo stesso ruolo operativo",
+    "title_hint": "Assumere un junior vs agente IA: come coprire un ruolo operativo ripetitivo",
+    "primaryKeyword": "assumere junior vs agente ia",
+    "targetPersona": "HR Manager / Founder",
+    "internalLinkTargets": [
+      "/recruitment",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Decisione di allocazione risorse (persona vs agente) non trattata: diversa dai confronti tool-vs-tool e dal recruitment-ai-vs-agenzia.",
+    "freshnessExpiry": null,
+    "score": 71,
+    "subScores": {
+      "intent": 0.65,
+      "biz": 0.8,
+      "winnability": 0.7,
+      "freshness": 0.8,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://manager.it/ruoli-junior-e-ia-la-guida-completa-alla-nuova-scala-di-carriera/",
+      "https://virtualworkforce.ai/it/agenti-ia-vs-assistenti-umani/"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": null
+  },
+  {
+    "id": "app-no-code-vs-software-codice-custom",
+    "status": "parked",
+    "slug_it": "app-no-code-vs-software-su-misura-in-codice",
+    "slug_en": "no-code-app-vs-custom-code-software",
+    "categoria": "Software development",
+    "optionA_name": "App no-code / low-code",
+    "optionB_name": "Software su misura in codice",
+    "title_hint": "App no-code vs software su misura in codice: quando conviene ciascuno",
+    "primaryKeyword": "app no-code vs software su misura",
+    "targetPersona": "CTO / Product Owner",
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "software-su-misura-vs-gestionale-pronto e un build-vs-buy su ERP; qui entrambe sono build, la scelta e sul come costruire (no-code vs codice). no-code-vs-agenti-ia riguarda l'automazione, non lo sviluppo app.",
+    "freshnessExpiry": null,
+    "score": 69,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.75,
+      "winnability": 0.7,
+      "freshness": 0.65,
+      "geo": 0.55
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.braincomputing.com/it-innovazioni/low-code-no-code-aziende-guida-completa",
+      "https://www.chopdawg.com/no-code-and-low-code-vs-custom-app-development-where-they-work-and-where-they-break-down/"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": null
+  },
+  {
+    "id": "report-ia-vs-report-manuale-excel",
+    "status": "parked",
+    "slug_it": "report-automatici-ia-vs-report-manuali-excel",
+    "slug_en": "ai-reports-vs-manual-excel-reports",
+    "categoria": "Finance & Ops",
+    "optionA_name": "Report automatici con IA",
+    "optionB_name": "Report manuali in Excel",
+    "title_hint": "Report automatici con IA vs report manuali in Excel: reporting finanziario a confronto",
+    "primaryKeyword": "report automatici ia vs excel",
+    "targetPersona": "CFO / Controller",
+    "internalLinkTargets": [
+      "/finance",
+      "/ai-agents",
+      "/case-studies/numeraria",
+      "/parliamone"
+    ],
+    "dedupNotes": "Nessun confronto esistente sul reporting; decisione concreta per studi e finance team tra automazione IA e fogli Excel manuali.",
+    "freshnessExpiry": null,
+    "score": 69,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.7,
+      "winnability": 0.75,
+      "freshness": 0.7,
+      "geo": 0.55
+    },
+    "sources": [
+      "confronto-radar",
+      "https://poscig.com/ai-dashboards-vs-excel-reports/",
+      "https://www.sigmacomputing.com/blog/ai-in-excel-vs-bi"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": null
+  },
+  {
+    "id": "agente-ia-appuntamenti-vs-software-booking",
+    "status": "parked",
+    "slug_it": "agente-ia-appuntamenti-vs-software-di-booking",
+    "slug_en": "ai-scheduling-agent-vs-booking-software",
+    "categoria": "Sales & Ops",
+    "optionA_name": "Agente IA per appuntamenti",
+    "optionB_name": "Software di booking (es. Calendly)",
+    "title_hint": "Agente IA per appuntamenti vs software di booking: prenotazioni a confronto",
+    "primaryKeyword": "agente ia appuntamenti vs calendly",
+    "targetPersona": "Operations / Sales Ops",
+    "internalLinkTargets": [
+      "/sales-marketing",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Confronto specifico sulla gestione appuntamenti (agente conversazionale vs tool di scheduling a link) non coperto altrove.",
+    "freshnessExpiry": null,
+    "score": 68,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.7,
+      "winnability": 0.7,
+      "freshness": 0.7,
+      "geo": 0.55
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.tatacommunications.com/knowledge-base/voice-ai/ai-virtual-assistant-vs-voice-ai-agent",
+      "https://justcall.io/blog/ai-voice-agent-vs-chatbot.html"
+    ],
+    "discovered_at": "2026-07-25",
     "drafted_at": null
   }
 ]

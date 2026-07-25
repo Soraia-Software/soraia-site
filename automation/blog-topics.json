@@ -736,7 +736,7 @@
   },
   {
     "id": "marcatura-contenuti-ai-marketing",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "etichettare-contenuti-generati-ai-marketing",
     "slug_en": "labeling-ai-generated-marketing-content",
@@ -766,11 +766,11 @@
       "https://www.certifico.com/full-plus/ai-act-obblighi-per-le-imprese-dal-02-agosto-2026"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-25"
   },
   {
     "id": "legge-132-2025-imprese-italia",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "news-reaction",
     "slug_it": "legge-132-2025-intelligenza-artificiale-imprese",
     "slug_en": "italian-ai-law-132-2025-companies",
@@ -801,11 +801,11 @@
       "https://www.studiospreafico.eu/2026/04/24/intelligenza-artificiale-obblighi-aziende-ai-act/"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-25"
   },
   {
     "id": "digital-omnibus-proroga-alto-rischio",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "news-reaction",
     "slug_it": "digital-omnibus-ai-act-proroga-2027",
     "slug_en": "digital-omnibus-ai-act-postponement",
@@ -836,11 +836,11 @@
       "https://www.certifico.com/full-plus/ai-act-obblighi-per-le-imprese-dal-02-agosto-2026"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-25"
   },
   {
     "id": "transizione-5-0-ai-conforme",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "news-reaction",
     "slug_it": "transizione-5-0-software-ai-conforme-ai-act",
     "slug_en": "transizione-5-0-ai-act-compliant-software",
@@ -871,11 +871,11 @@
       "https://www.gobid.it/it/blog/rubrica-imprese/piano-transizione-50-guida-completa-alle-novit-di-maggio-2026"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-25"
   },
   {
     "id": "permessi-accessi-agenti-ia-sicurezza",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "agenti-ia-permessi-accessi-sicurezza",
     "slug_en": "ai-agent-permissions-security",
@@ -906,7 +906,7 @@
       "https://layerxsecurity.com/it/generative-ai/ai-governance-trends/"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-07-25"
   },
   {
     "id": "calcolo-provvigioni-automatico-ia",
@@ -975,6 +975,419 @@
       "https://alsolved.com/voucher-cloud-e-cybersecurity-2026-la-guida-completa-per-le-pmi/"
     ],
     "discovered_at": "2026-07-16",
+    "drafted_at": null
+  },
+  {
+    "id": "whatsapp-business-agent-meta-italia",
+    "status": "drafted",
+    "archetype": "news-reaction",
+    "slug_it": "whatsapp-business-agent-meta-italia-pmi",
+    "slug_en": "whatsapp-business-agent-meta-italy-smb",
+    "title_hint": "Meta porta il WhatsApp Business Agent in Italia: conviene alla tua PMI o e' l'ennesimo bot che fa arrabbiare i clienti?",
+    "cluster": "process-automation",
+    "primaryKeyword": "whatsapp business agent ai azienda",
+    "targetPersona": "Head of Customer Support / COO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/sales-marketing"
+    ],
+    "dedupNotes": "Reaction to Meta's Italy launch of platform WhatsApp agents; frames build-your-own-vertical-agent vs the generic Meta bot. Backlog only covers chatbot transparency (legal) - this is a product/channel decision, net-new.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 71,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.75,
+      "winnability": 0.55,
+      "freshness": 0.95,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.adnkronos.com/economia/digitale-meta-punta-su-whatsapp-e-business-agent-per-innovare-il-rapporto-aziende-clienti_3vdXcLRlSMPCZLeOOszyuN",
+      "https://www.partitaiva.it/meta-whatsapp-business-agent-ai/"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "gestionale-ai-nativa-vs-agente-custom",
+    "status": "drafted",
+    "archetype": "news-reaction",
+    "slug_it": "gestionale-ai-nativa-vs-agente-ia-custom",
+    "slug_en": "native-erp-ai-vs-custom-agent",
+    "title_hint": "TeamSystem e Zucchetti mettono l'IA agentica dentro il gestionale: ti basta o ti serve ancora un agente su misura?",
+    "cluster": "custom-software",
+    "primaryKeyword": "gestionale ai agentica conviene",
+    "targetPersona": "CFO / COO",
+    "supportingCaseStudy": "numeraria",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/finance"
+    ],
+    "dedupNotes": "The gestionali-integration post is about wiring your own agents to the ERP; this reacts to vendors shipping native agentic AI and reframes build-vs-buy specifically around gestionale-native features. Fresh, distinct from build-vs-buy-agente-ia (which is custom-vs-platform generic).",
+    "freshnessExpiry": "2027-06-30",
+    "score": 71,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.8,
+      "winnability": 0.6,
+      "freshness": 0.85,
+      "geo": 0.75
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.milanobiz.it/tech-conference-teamsystem-scommette-ai-agentica/",
+      "https://lucasammarco.com/blog/ai-gestionali-italiani-teamsystem-zucchetti-2026"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "riconciliazione-bancaria-agente-ia",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "riconciliazione-bancaria-automatica-agente-ia",
+    "slug_en": "automated-bank-reconciliation-ai-agent",
+    "title_hint": "Riconciliazione bancaria a mano ogni mese? Come un agente IA abbina movimenti, fatture e scadenze (e cosa serve nei tuoi dati)",
+    "cluster": "process-automation",
+    "primaryKeyword": "riconciliazione bancaria automatica ai",
+    "targetPersona": "CFO / Responsabile amministrazione",
+    "supportingCaseStudy": "numeraria",
+    "internalLinkTargets": [
+      "/finance",
+      "/ai-agents",
+      "/case-studies/numeraria"
+    ],
+    "dedupNotes": "Backlog finance posts cover e-invoice data extraction and commission calc; bank reconciliation is a separate, high-demand finance workflow not covered. High buyer intent, maps to /finance + Numeraria.",
+    "freshnessExpiry": null,
+    "score": 71,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.75,
+      "winnability": 0.65,
+      "freshness": 0.6,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.bpilot.it/riconciliazione-bancaria-automatica-intelligenza-artificiale/",
+      "https://sibill.com/contabilita/riconciliazione-bancaria-automatica-cose-e-come-funziona/",
+      "https://factorial.it/blog/riconciliazione-bancaria/"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "customer-service-automazione-tocco-umano",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "automatizzare-customer-service-senza-sembrare-robot",
+    "slug_en": "automate-customer-service-without-robot-feel",
+    "title_hint": "Automatizzare le risposte ai clienti senza sembrare un robot: dove l'agente IA aiuta e dove deve passare la palla all'umano",
+    "cluster": "process-automation",
+    "primaryKeyword": "automatizzare risposte clienti pmi",
+    "targetPersona": "Head of Customer Support / COO",
+    "supportingCaseStudy": "navily",
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/case-studies/navily"
+    ],
+    "dedupNotes": "Chatbot-transparency backlog post is legal (Art. 50); this is the operational how-to on triage, escalation and tone. Distinct, high-intent, maps to /customer-support + Navily (-70% ops time on moderation).",
+    "freshnessExpiry": null,
+    "score": 71,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.75,
+      "winnability": 0.55,
+      "freshness": 0.65,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.besttechpartner.ai/2026/06/09/automazione-risposte-clienti-guida-2026-per-pmi-senza-sembrare-un-robot/",
+      "https://www.besttechpartner.ai/2026/04/04/automazione-customer-service-guida-strategica-per-pmi-tra-ai-e-tocco-umano/"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "agenti-ia-manifatturiero-pmi",
+    "status": "drafted",
+    "archetype": "pillar",
+    "slug_it": "agenti-ia-manifatturiero-pmi-casi-uso",
+    "slug_en": "ai-agents-manufacturing-smb-use-cases",
+    "title_hint": "Agenti IA nel manifatturiero: 5 casi d'uso concreti per una PMI industriale (dal preventivo al post-vendita)",
+    "cluster": "ai-agents",
+    "primaryKeyword": "agenti ia manifatturiero pmi",
+    "targetPersona": "COO / Direttore operations manifattura",
+    "supportingCaseStudy": "40factory",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/case-studies/40factory"
+    ],
+    "dedupNotes": "No vertical/manufacturing pillar exists in backlog (regulated-sectors post is banking/insurance/health). Strong fit with Soraia's Biella industrial base and 40Factory case; net-new sector page.",
+    "freshnessExpiry": null,
+    "score": 70,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.8,
+      "winnability": 0.55,
+      "freshness": 0.7,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.rayo.consulting/blog/agenti-ai-manifatturiero-casi-uso-2026",
+      "https://fibermap.it/magazine/intelligenza-artificiale-pmi/"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "responsabilita-errori-agente-ai",
+    "status": "drafted",
+    "archetype": "opinion",
+    "slug_it": "chi-paga-se-agente-ai-sbaglia-responsabilita-pmi",
+    "slug_en": "who-pays-when-ai-agent-fails-liability-smb",
+    "title_hint": "Se il tuo agente IA sbaglia (o allucina), chi paga? Responsabilita', contratti e polizze che le PMI ignorano",
+    "cluster": "compliance",
+    "primaryKeyword": "responsabilita azienda errori agente ai",
+    "targetPersona": "CEO / CFO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/customer-support",
+      "/guide/ai-act-aziende"
+    ],
+    "dedupNotes": "Human-in-the-loop backlog post is about how much autonomy to give; this is the legal/financial liability and insurance question when an agent errs. Distinct angle, high GEO citability, not owned.",
+    "freshnessExpiry": null,
+    "score": 69,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.7,
+      "winnability": 0.65,
+      "freshness": 0.8,
+      "geo": 0.8
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.assinews.it/03/2026/ai-rischi-specifici-che-le-polizze-tradizionali-non-coprono/660121962/",
+      "https://www.newebsolutions.com/hallucinations-ai-responsabilita/",
+      "https://www.tomshw.it/business/gli-agenti-ai-sono-la-nuova-minaccia-interna-per-le-aziende-nel-2026"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "preventivi-automatici-agente-ia",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "preventivi-automatici-agente-ia-pmi",
+    "slug_en": "automated-quoting-ai-agent-smb",
+    "title_hint": "Quanti preventivi perdi perche' rispondi tardi? Come un agente IA prepara la prima bozza (prezzi, condizioni, margini)",
+    "cluster": "process-automation",
+    "primaryKeyword": "preventivi automatici ai",
+    "targetPersona": "Head of Sales / Responsabile ufficio commerciale",
+    "supportingCaseStudy": "numeraria",
+    "internalLinkTargets": [
+      "/finance",
+      "/sales-marketing",
+      "/case-studies/numeraria"
+    ],
+    "dedupNotes": "Backlog covers commission calc and lead qualification, but not the quote/preventivo generation workflow (speed-to-quote as a revenue lever). Distinct use case bridging finance and sales; maps to Numeraria (preventivi/ore).",
+    "freshnessExpiry": null,
+    "score": 69,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.75,
+      "winnability": 0.65,
+      "freshness": 0.55,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.tready.it/web-marketing-articoli-news/agenti-ai-vendite-b2b-casi-framework-2026/",
+      "https://www.solutionbpartner.it/blog/intelligenza-artificiale-pmi-italiane-2026/"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "agentic-commerce-pmi-vendere-agli-agenti",
+    "status": "drafted",
+    "archetype": "pillar",
+    "slug_it": "agentic-commerce-pmi-vendere-agli-agenti-ai",
+    "slug_en": "agentic-commerce-smb-selling-to-ai-agents",
+    "title_hint": "Agentic commerce: quando a comprare e' l'agente IA del cliente, il tuo sito e i tuoi dati prodotto sono pronti?",
+    "cluster": "ai-search",
+    "primaryKeyword": "agentic commerce pmi",
+    "targetPersona": "Head of Sales / Head of E-commerce",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/sales-marketing",
+      "/ai-search-optimization",
+      "/customer-support"
+    ],
+    "dedupNotes": "Owned GEO posts are about being cited by ChatGPT/Perplexity for lead-gen; this is the distinct commerce layer - preparing product feeds, pricing and checkout so third-party buying agents can transact. Not in backlog, not an owned theme.",
+    "freshnessExpiry": "2027-06-30",
+    "score": 68,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.7,
+      "winnability": 0.6,
+      "freshness": 0.9,
+      "geo": 0.75
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.pmi.it/tecnologia/prodotti-e-servizi-ict/497185/agentic-commerce-italia-consumatori-retailer.html",
+      "https://www.salesforce.com/it/commerce/ai/agentic-commerce/",
+      "https://www.lineaecommerce.it/ecommerce-italia-summit-2026-trend-ia-7444.html"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "mcp-agenti-dati-aziendali",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "mcp-collegare-agenti-ai-dati-aziendali",
+    "slug_en": "mcp-connect-ai-agents-company-data",
+    "title_hint": "Model Context Protocol (MCP) spiegato a chi non e' tecnico: come colleghi un agente IA ai tuoi dati senza aprire falle",
+    "cluster": "ai-agents",
+    "primaryKeyword": "model context protocol azienda",
+    "targetPersona": "CTO / Head of IT / COO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/finance"
+    ],
+    "dedupNotes": "The gestionali post covers integration patterns with TeamSystem/Zucchetti/Odoo; this is the emerging MCP standard itself (what it is, why it matters, security), a newer and more general technical angle not in the backlog.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 66,
+    "subScores": {
+      "intent": 0.5,
+      "biz": 0.7,
+      "winnability": 0.6,
+      "freshness": 0.9,
+      "geo": 0.75
+    },
+    "sources": [
+      "topic-radar",
+      "https://tripdigitalsolutions.it/blog/agenti-ai-mcp-cosa-sono-aziende",
+      "https://www.theinformationlab.it/2026/07/16/implementazione-mcp-dati-aziendali-llm/"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "nis2-pmi-obblighi-2026",
+    "status": "drafted",
+    "archetype": "news-reaction",
+    "slug_it": "nis2-pmi-obblighi-scadenze-2026",
+    "slug_en": "nis2-smb-obligations-2026",
+    "title_hint": "NIS2 e la tua PMI nel 2026: sei nella catena di fornitura di un obbligato? Cosa cambia (e cosa c'entra l'IA)",
+    "cluster": "compliance",
+    "primaryKeyword": "nis2 pmi obblighi 2026",
+    "targetPersona": "COO / Head of IT",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/customer-support",
+      "/software-development",
+      "/ai-adoption"
+    ],
+    "dedupNotes": "Backlog compliance is all AI Act / legge 132 / incentivi. NIS2 cybersecurity obligations (incl. supply-chain reach into SMBs) is a separate regulation not covered; ties to agent/security governance as an upsell.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 66,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.55,
+      "winnability": 0.6,
+      "freshness": 0.8,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://fibermap.it/magazine/nis2-pmi-obblighi-scadenze-sanzioni/",
+      "https://www.agendadigitale.eu/sicurezza/obblighi-di-cyber-sicurezza-come-adeguarsi-alla-direttiva-nis2/"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": "2026-07-25"
+  },
+  {
+    "id": "gdpr-agenti-ai-dati-aziendali",
+    "status": "parked",
+    "archetype": "how-to",
+    "slug_it": "gdpr-agenti-ai-trattamento-dati-pmi",
+    "slug_en": "gdpr-ai-agents-data-processing-smb",
+    "title_hint": "Un agente IA legge i dati dei tuoi clienti: cosa vuole il Garante (GDPR) prima di accenderlo",
+    "cluster": "compliance",
+    "primaryKeyword": "gdpr agente ai dati aziendali",
+    "targetPersona": "DPO / COO / CFO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/guide/ai-act-aziende"
+    ],
+    "dedupNotes": "Owned theme covers AI Act; this is the parallel GDPR/Garante lens (basi giuridiche, DPA col provider, trattamento) when an agent touches personal data. Not covered by backlog or owned themes.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 66,
+    "subScores": {
+      "intent": 0.65,
+      "biz": 0.65,
+      "winnability": 0.6,
+      "freshness": 0.7,
+      "geo": 0.75
+    },
+    "sources": [
+      "topic-radar",
+      "https://businessweekly.it/ai-e-privacy-le-priorita-del-garante-per-imprese-e-lavoro/",
+      "https://paradigma.it/2026/04/14/ai-act-2026-obblighi-imprese-gdpr/",
+      "https://www.davidecaiazzo.it/blog/intelligenza-artificiale-privacy-aziende"
+    ],
+    "discovered_at": "2026-07-25",
+    "drafted_at": null
+  },
+  {
+    "id": "adozione-ai-pmi-italiane-dati-2026",
+    "status": "parked",
+    "archetype": "pillar",
+    "slug_it": "adozione-ai-pmi-italiane-dati-2026",
+    "slug_en": "ai-adoption-italian-smb-data-2026",
+    "title_hint": "Quanto usano davvero l'IA le PMI italiane nel 2026? I numeri Istat, dove sono ferme e perche' (benchmark per capirti)",
+    "cluster": "ai-agents",
+    "primaryKeyword": "adozione ai pmi italiane dati 2026",
+    "targetPersona": "CEO / COO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/ai-agents",
+      "/guide/assessment-ai-interno-guida-operativa"
+    ],
+    "dedupNotes": "Formazione AI (owned) sells training; this is a data-benchmark pillar built for AI-search citability (Istat 16.4% adoption, skills as the brake). Positioning/benchmark content, not a training-program page.",
+    "freshnessExpiry": "2027-06-30",
+    "score": 65,
+    "subScores": {
+      "intent": 0.55,
+      "biz": 0.6,
+      "winnability": 0.55,
+      "freshness": 0.85,
+      "geo": 0.9
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.wtraining.it/rapporto-istat-2026-competenze-ai-pmi-italiane/",
+      "https://www.ascensys.it/blog/ai-act-pmi-agosto-2026",
+      "https://fibermap.it/magazine/intelligenza-artificiale-pmi/"
+    ],
+    "discovered_at": "2026-07-25",
     "drafted_at": null
   }
 ]

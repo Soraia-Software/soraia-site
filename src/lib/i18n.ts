@@ -31,6 +31,15 @@ export const GUIDE_SLUG_MAP: Record<string, string> = {
 };
 // IT confronto slug -> EN slug. Filled by automation/confronto-author.mjs as pairs are created.
 export const CONFRONTO_SLUG_MAP: Record<string, string> = {
+  "copilot-vs-agente-ia-autonomo": "copilot-vs-autonomous-ai-agent",
+  "sostituire-vs-affiancare-gestionale-ai": "replace-vs-augment-legacy-erp-ai",
+  "agente-ia-sdr-vs-agenzia-lead-generation": "ai-sdr-vs-lead-gen-agency",
+  "voicebot-ia-vs-chatbot-testuale": "ai-voicebot-vs-text-chatbot",
+  "software-su-misura-vs-gestionale-pronto": "custom-software-vs-off-the-shelf-erp",
+  "recruitment-ai-vs-agenzia-recruiting-tradizionale": "ai-recruiting-vs-traditional-agency",
+  "ai-on-premise-vs-cloud": "on-premise-vs-cloud-ai",
+  "rpa-vs-agenti-ia": "rpa-vs-ai-agents",
+  "agente-ia-su-misura-vs-chatgpt-generico": "custom-ai-agent-vs-generic-chatgpt",
   "ai-generalista-vs-ai-verticale": "generalist-ai-vs-vertical-ai",
   "ai-search-optimization-vs-seo-tradizionale": "geo-vs-traditional-seo",
   "chatbot-a-regole-vs-agente-ia-support": "rule-based-chatbot-vs-ai-agent-support",
@@ -38,6 +47,21 @@ export const CONFRONTO_SLUG_MAP: Record<string, string> = {
   "ai-in-casa-vs-partner": "ai-in-house-vs-partner",
 };
 export const BLOG_SLUG_MAP: Record<string, string> = {
+  "nis2-pmi-obblighi-scadenze-2026": "nis2-smb-obligations-2026",
+  "mcp-collegare-agenti-ai-dati-aziendali": "mcp-connect-ai-agents-company-data",
+  "agenti-ia-permessi-accessi-sicurezza": "ai-agent-permissions-security",
+  "transizione-5-0-software-ai-conforme-ai-act": "transizione-5-0-ai-act-compliant-software",
+  "digital-omnibus-ai-act-proroga-2027": "digital-omnibus-ai-act-postponement",
+  "agentic-commerce-pmi-vendere-agli-agenti-ai": "agentic-commerce-smb-selling-to-ai-agents",
+  "legge-132-2025-intelligenza-artificiale-imprese": "italian-ai-law-132-2025-companies",
+  "etichettare-contenuti-generati-ai-marketing": "labeling-ai-generated-marketing-content",
+  "preventivi-automatici-agente-ia-pmi": "automated-quoting-ai-agent-smb",
+  "chi-paga-se-agente-ai-sbaglia-responsabilita-pmi": "who-pays-when-ai-agent-fails-liability-smb",
+  "agenti-ia-manifatturiero-pmi-casi-uso": "ai-agents-manufacturing-smb-use-cases",
+  "automatizzare-customer-service-senza-sembrare-robot": "automate-customer-service-without-robot-feel",
+  "riconciliazione-bancaria-automatica-agente-ia": "automated-bank-reconciliation-ai-agent",
+  "gestionale-ai-nativa-vs-agente-ia-custom": "native-erp-ai-vs-custom-agent",
+  "whatsapp-business-agent-meta-italia-pmi": "whatsapp-business-agent-meta-italy-smb",
   "automazione-studio-commercialista-paghe-ai": "accounting-payroll-firm-ai-automation",
   "agente-ia-su-misura-o-piattaforma-pronta": "build-vs-buy-ai-agent",
   "supervisione-umana-agenti-ia-quanto": "human-in-the-loop-ai-agents",
