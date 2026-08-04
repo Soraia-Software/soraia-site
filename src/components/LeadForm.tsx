@@ -1,6 +1,21 @@
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, useRef, type FormEvent } from "react";
 
 type Status = "idle" | "loading" | "success" | "error";
+
+// Chiave pubblica Turnstile (sicura da esporre). Impostata a build time via
+// PUBLIC_TURNSTILE_SITE_KEY: se assente, il widget non viene mostrato e il form
+// resta protetto da honeypot + time-trap + allowlist Origin + rate-limit lato server.
+const TURNSTILE_SITE_KEY = (import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined) || "";
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (el: HTMLElement, opts: Record<string, unknown>) => string;
+      remove: (id: string) => void;
+      reset: (id?: string) => void;
+    };
+  }
+}
 
 interface LeadFormProps {
   lang?: "it" | "en";
@@ -54,7 +69,41 @@ const labels = {
 export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFormProps) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
+  const renderedAt = useRef<number>(Date.now()); // time-trap: quando il form è comparso
+  const widgetRef = useRef<HTMLDivElement>(null);
   const t = labels[lang];
+
+  // Carica e renderizza Turnstile solo se la site key è configurata.
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY) return;
+    let widgetId: string | undefined;
+    const mount = () => {
+      if (window.turnstile && widgetRef.current && !widgetRef.current.hasChildNodes()) {
+        widgetId = window.turnstile.render(widgetRef.current, {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: (token: string) => setTurnstileToken(token),
+          "error-callback": () => setTurnstileToken(""),
+          "expired-callback": () => setTurnstileToken(""),
+        });
+      }
+    };
+    if (window.turnstile) {
+      mount();
+    } else {
+      const s = document.createElement("script");
+      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+      s.async = true;
+      s.defer = true;
+      s.onload = mount;
+      document.head.appendChild(s);
+    }
+    return () => {
+      if (widgetId && window.turnstile) {
+        try { window.turnstile.remove(widgetId); } catch { /* noop */ }
+      }
+    };
+  }, []);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -63,7 +112,14 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
 
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
-    const payload = { ...data, source, lang, ts: new Date().toISOString() };
+    const payload = {
+      ...data, // include il campo honeypot company_website, se un bot l'ha compilato
+      source,
+      lang,
+      ts: new Date().toISOString(),
+      rt: renderedAt.current,
+      turnstileToken,
+    };
 
     try {
       const res = await fetch("/api/lead", {
@@ -100,6 +156,12 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
         </div>
       ) : (
         <form onSubmit={onSubmit} className="space-y-5">
+          {/* Honeypot: nascosto agli umani, compilato dai bot → scartato lato server. */}
+          <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+            <label htmlFor="company_website">Website</label>
+            <input id="company_website" name="company_website" type="text" tabIndex={-1} autoComplete="off" />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <Field name="name" label={t.name} required />
             <Field name="company" label={t.company} required />
@@ -137,9 +199,11 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
             />
           </div>
 
+          {TURNSTILE_SITE_KEY && <div ref={widgetRef} className="cf-turnstile" />}
+
           <button
             type="submit"
-            disabled={status === "loading"}
+            disabled={status === "loading" || (!!TURNSTILE_SITE_KEY && !turnstileToken)}
             className="btn btn-primary w-full md:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {status === "loading" ? t.submitting : t.submit}
