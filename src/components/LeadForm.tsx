@@ -37,6 +37,7 @@ const labels = {
     submitting: "Invio in corso…",
     success: "Ricevuto. Ti scriviamo entro 24 ore.",
     error: "Qualcosa è andato storto. Scrivici a info@soraia.io",
+    antibot: "Verifica di sicurezza non superata. Riprova tra un istante.",
     privacy:
       "I tuoi dati restano riservati. Niente newsletter, niente terze parti.",
     range_1: "1-10 persone",
@@ -58,6 +59,7 @@ const labels = {
     submitting: "Sending…",
     success: "Got it. We'll reach out within 24 hours.",
     error: "Something went wrong. Write to info@soraia.io",
+    antibot: "Security check failed. Please try again in a moment.",
     privacy: "Your data stays private. No newsletter, no third parties.",
     range_1: "1-10 people",
     range_2: "11-50 people",
@@ -72,15 +74,15 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
   const [turnstileToken, setTurnstileToken] = useState<string>("");
   const renderedAt = useRef<number>(Date.now()); // time-trap: quando il form è comparso
   const widgetRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | undefined>(undefined);
   const t = labels[lang];
 
   // Carica e renderizza Turnstile solo se la site key è configurata.
   useEffect(() => {
     if (!TURNSTILE_SITE_KEY) return;
-    let widgetId: string | undefined;
     const mount = () => {
       if (window.turnstile && widgetRef.current && !widgetRef.current.hasChildNodes()) {
-        widgetId = window.turnstile.render(widgetRef.current, {
+        widgetIdRef.current = window.turnstile.render(widgetRef.current, {
           sitekey: TURNSTILE_SITE_KEY,
           callback: (token: string) => setTurnstileToken(token),
           "error-callback": () => setTurnstileToken(""),
@@ -99,8 +101,8 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
       document.head.appendChild(s);
     }
     return () => {
-      if (widgetId && window.turnstile) {
-        try { window.turnstile.remove(widgetId); } catch { /* noop */ }
+      if (widgetIdRef.current && window.turnstile) {
+        try { window.turnstile.remove(widgetIdRef.current); } catch { /* noop */ }
       }
     };
   }, []);
@@ -127,6 +129,17 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+      // 403 = verifica anti-bot non superata (token mancante/scaduto): resetta il
+      // widget così l'utente può riprovare, con un messaggio chiaro.
+      if (res.status === 403) {
+        setTurnstileToken("");
+        if (widgetIdRef.current && window.turnstile) {
+          try { window.turnstile.reset(widgetIdRef.current); } catch { /* noop */ }
+        }
+        setStatus("error");
+        setErrorMsg(t.antibot);
+        return;
+      }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus("success");
       form.reset();
@@ -203,7 +216,7 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
 
           <button
             type="submit"
-            disabled={status === "loading" || (!!TURNSTILE_SITE_KEY && !turnstileToken)}
+            disabled={status === "loading"}
             className="btn btn-primary w-full md:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {status === "loading" ? t.submitting : t.submit}
@@ -216,7 +229,9 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
 
           {status === "error" && (
             <p className="text-sm text-red-600 font-medium">
-              {t.error} {errorMsg && <span className="opacity-60">({errorMsg})</span>}
+              {errorMsg === t.antibot
+                ? t.antibot
+                : <>{t.error} {errorMsg && <span className="opacity-60">({errorMsg})</span>}</>}
             </p>
           )}
 
