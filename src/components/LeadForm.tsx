@@ -5,7 +5,7 @@ type Status = "idle" | "loading" | "success" | "error";
 // Chiave pubblica Turnstile (sicura da esporre). Impostata a build time via
 // PUBLIC_TURNSTILE_SITE_KEY: se assente, il widget non viene mostrato e il form
 // resta protetto da honeypot + time-trap + allowlist Origin + rate-limit lato server.
-const TURNSTILE_SITE_KEY = (import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined) || "";
+const TURNSTILE_SITE_KEY = (import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined) || "0x4AAAAAAEGDPCQOCz6S5OWm";
 
 declare global {
   interface Window {
