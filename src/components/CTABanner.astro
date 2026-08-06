@@ -6,12 +6,14 @@ interface Props {
   description?: string;
   ctaText: string;
   ctaHref: string;
+  secondaryText?: string;
+  secondaryHref?: string;
   avatarName?: string;
   avatarRole?: string;
   avatarSrc?: string;
 }
 
-const { title, description, ctaText, ctaHref, avatarName, avatarRole, avatarSrc } = Astro.props;
+const { title, description, ctaText, ctaHref, secondaryText, secondaryHref, avatarName, avatarRole, avatarSrc } = Astro.props;
 ---
 
 <section class="section">
@@ -49,6 +51,11 @@ const { title, description, ctaText, ctaHref, avatarName, avatarRole, avatarSrc 
               </svg>
             </span>
           </a>
+          {secondaryText && secondaryHref && (
+            <a href={secondaryHref} class="text-[13.5px] font-medium underline underline-offset-4 decoration-white/40 hover:decoration-white transition-colors" style="color: rgba(255,255,255,0.85);">
+              {secondaryText}
+            </a>
+          )}
         </div>
       </div>
     </div>
