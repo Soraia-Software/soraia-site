@@ -1,5 +1,261 @@
 [
   {
+    "id": "come-scegliere-agenzia-ai",
+    "status": "todo",
+    "archetype": "how-to",
+    "slug_it": "come-scegliere-agenzia-intelligenza-artificiale",
+    "slug_en": "how-to-choose-ai-agency",
+    "title_hint": "Come scegliere un'agenzia di intelligenza artificiale in Italia senza sprecare budget",
+    "cluster": "ai-agents",
+    "primaryKeyword": "agenzia intelligenza artificiale",
+    "targetPersona": "CEO / COO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/offerta-team-dedicato",
+      "/parliamone"
+    ],
+    "dedupNotes": "Query commerciale pura ad alto intento, oggi non coperta. Nazionale.",
+    "freshnessExpiry": null,
+    "score": 77,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.9,
+      "winnability": 0.6,
+      "freshness": 0.5,
+      "geo": 0.8
+    },
+    "sources": [
+      "seed-seo-refocus-2026-08"
+    ],
+    "discovered_at": "2026-08-04",
+    "drafted_at": null
+  },
+  {
+    "id": "ai-agent-per-aziende-cosa-sono",
+    "status": "todo",
+    "archetype": "pillar",
+    "slug_it": "ai-agent-per-aziende-cosa-sono",
+    "slug_en": "ai-agents-for-business-explained",
+    "title_hint": "AI agent per aziende: cosa sono davvero e in cosa differiscono da un chatbot",
+    "cluster": "ai-agents",
+    "primaryKeyword": "ai agent per aziende",
+    "targetPersona": "CEO / Head of Ops",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/prodotti",
+      "/parliamone"
+    ],
+    "dedupNotes": "Pillar commerciale-informativo sul termine core del business.",
+    "freshnessExpiry": null,
+    "score": 74,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.85,
+      "winnability": 0.55,
+      "freshness": 0.5,
+      "geo": 0.85
+    },
+    "sources": [
+      "seed-seo-refocus-2026-08"
+    ],
+    "discovered_at": "2026-08-04",
+    "drafted_at": null
+  },
+  {
+    "id": "quanto-costa-agente-ai-azienda",
+    "status": "todo",
+    "archetype": "how-to",
+    "slug_it": "quanto-costa-agente-ai-azienda",
+    "slug_en": "how-much-does-an-ai-agent-cost",
+    "title_hint": "Quanto costa un agente AI su misura per un'azienda e da cosa dipende",
+    "cluster": "ai-agents",
+    "primaryKeyword": "quanto costa agente ai",
+    "targetPersona": "CFO / CEO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/offerta-team-dedicato",
+      "/parliamone"
+    ],
+    "dedupNotes": "Intento transazionale altissimo (prezzo), zero copertura attuale.",
+    "freshnessExpiry": null,
+    "score": 78,
+    "subScores": {
+      "intent": 0.9,
+      "biz": 0.9,
+      "winnability": 0.6,
+      "freshness": 0.4,
+      "geo": 0.8
+    },
+    "sources": [
+      "seed-seo-refocus-2026-08"
+    ],
+    "discovered_at": "2026-08-04",
+    "drafted_at": null
+  },
+  {
+    "id": "claude-code-aziende-strumenti-interni",
+    "status": "todo",
+    "archetype": "how-to",
+    "slug_it": "claude-code-aziende-strumenti-interni",
+    "slug_en": "claude-code-for-business-internal-tools",
+    "title_hint": "Claude Code in azienda: come un coding agent costruisce i tuoi strumenti interni in giorni",
+    "cluster": "custom-software",
+    "primaryKeyword": "claude code aziende",
+    "targetPersona": "CTO / Head of Ops",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Focus Claude Code (richiesto): posizionamento capability build. Nuovo.",
+    "freshnessExpiry": null,
+    "score": 73,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.85,
+      "winnability": 0.6,
+      "freshness": 0.7,
+      "geo": 0.75
+    },
+    "sources": [
+      "seed-seo-refocus-2026-08"
+    ],
+    "discovered_at": "2026-08-04",
+    "drafted_at": null
+  },
+  {
+    "id": "ai-agent-casi-uso-pmi",
+    "status": "todo",
+    "archetype": "pillar",
+    "slug_it": "ai-agent-casi-uso-pmi",
+    "slug_en": "ai-agent-use-cases-smb",
+    "title_hint": "5 casi d'uso di AI agent che ripagano in 3 mesi in una PMI",
+    "cluster": "ai-agents",
+    "primaryKeyword": "ai agent casi d'uso aziende",
+    "targetPersona": "COO / Head of Ops",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/finance",
+      "/customer-support"
+    ],
+    "dedupNotes": "Casi d'uso + ROI, intento commerciale. Nazionale.",
+    "freshnessExpiry": null,
+    "score": 75,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.85,
+      "winnability": 0.6,
+      "freshness": 0.5,
+      "geo": 0.8
+    },
+    "sources": [
+      "seed-seo-refocus-2026-08"
+    ],
+    "discovered_at": "2026-08-04",
+    "drafted_at": null
+  },
+  {
+    "id": "automatizzare-processi-aziendali-agenti-ai",
+    "status": "todo",
+    "archetype": "how-to",
+    "slug_it": "automatizzare-processi-aziendali-agenti-ai",
+    "slug_en": "automate-business-processes-ai-agents",
+    "title_hint": "Automatizzare i processi aziendali con gli agenti AI, oltre l'automazione a regole",
+    "cluster": "process-automation",
+    "primaryKeyword": "automatizzare processi aziendali ai",
+    "targetPersona": "COO / Head of Ops",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/ai-adoption",
+      "/parliamone"
+    ],
+    "dedupNotes": "Riformula l'automazione attorno agli agenti AI (non tool-glossary tipo n8n).",
+    "freshnessExpiry": null,
+    "score": 71,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.8,
+      "winnability": 0.6,
+      "freshness": 0.5,
+      "geo": 0.75
+    },
+    "sources": [
+      "seed-seo-refocus-2026-08"
+    ],
+    "discovered_at": "2026-08-04",
+    "drafted_at": null
+  },
+  {
+    "id": "consulenza-ai-pmi-italia",
+    "status": "todo",
+    "archetype": "how-to",
+    "slug_it": "consulenza-ai-per-pmi-italia",
+    "slug_en": "ai-consulting-for-italian-smb",
+    "title_hint": "Consulenza AI per PMI: cosa aspettarsi e come misurarne il ritorno",
+    "cluster": "ai-agents",
+    "primaryKeyword": "consulenza ai pmi",
+    "targetPersona": "CEO / CFO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/offerta-team-dedicato",
+      "/parliamone"
+    ],
+    "dedupNotes": "Query commerciale 'consulenza AI', nazionale, non coperta.",
+    "freshnessExpiry": null,
+    "score": 77,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.9,
+      "winnability": 0.6,
+      "freshness": 0.5,
+      "geo": 0.8
+    },
+    "sources": [
+      "seed-seo-refocus-2026-08"
+    ],
+    "discovered_at": "2026-08-04",
+    "drafted_at": null
+  },
+  {
+    "id": "ai-act-agenti-ai-aziende-2026",
+    "status": "todo",
+    "archetype": "news-reaction",
+    "slug_it": "ai-act-agenti-ai-aziende-2026",
+    "slug_en": "ai-act-ai-agents-business-2026",
+    "title_hint": "AI Act e agenti AI: cosa deve fare un'azienda italiana entro il 2026",
+    "cluster": "compliance",
+    "primaryKeyword": "ai act aziende 2026",
+    "targetPersona": "CEO / Legal",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/ai-adoption",
+      "/parliamone"
+    ],
+    "dedupNotes": "Freshness AI Act (applicabile ago 2026) applicata agli agenti AI. Time-sensitive.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 75,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.8,
+      "winnability": 0.65,
+      "freshness": 0.9,
+      "geo": 0.8
+    },
+    "sources": [
+      "seed-seo-refocus-2026-08"
+    ],
+    "discovered_at": "2026-08-04",
+    "drafted_at": null
+  },
+  {
     "id": "custom-software-vs-saas",
     "status": "published",
     "archetype": "pillar",

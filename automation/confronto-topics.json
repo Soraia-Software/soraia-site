@@ -1,5 +1,101 @@
 [
   {
+    "id": "claude-vs-chatgpt-aziende",
+    "status": "todo",
+    "slug_it": "claude-vs-chatgpt-per-le-aziende",
+    "slug_en": "claude-vs-chatgpt-for-business",
+    "categoria": "Strumenti",
+    "optionA_name": "Claude (Anthropic)",
+    "optionB_name": "ChatGPT (OpenAI)",
+    "title_hint": "Claude o ChatGPT per le aziende: quale conviene e per cosa",
+    "primaryKeyword": "claude vs chatgpt aziende",
+    "targetPersona": "CTO / Head of Ops",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/parliamone"
+    ],
+    "dedupNotes": "Decisione reale strumento LLM per uso aziendale. Nuovo vs backlog.",
+    "freshnessExpiry": null,
+    "score": 72,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.7,
+      "winnability": 0.55,
+      "freshness": 0.6,
+      "geo": 0.85
+    },
+    "sources": [
+      "seed-seo-refocus-2026-08"
+    ],
+    "discovered_at": "2026-08-04",
+    "drafted_at": null
+  },
+  {
+    "id": "agenzia-ai-vs-team-interno",
+    "status": "todo",
+    "slug_it": "agenzia-ai-vs-team-interno",
+    "slug_en": "ai-agency-vs-in-house-team",
+    "categoria": "Fornitori",
+    "optionA_name": "Agenzia AI esterna",
+    "optionB_name": "Team AI interno",
+    "title_hint": "Agenzia AI o team interno: come coprire l'AI in azienda",
+    "primaryKeyword": "agenzia ai vs team interno",
+    "targetPersona": "CEO / CFO",
+    "internalLinkTargets": [
+      "/offerta-team-dedicato",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Build-vs-buy sul TEAM (distinto da agency-vs-Big4 in backlog). Alto intento.",
+    "freshnessExpiry": null,
+    "score": 76,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.9,
+      "winnability": 0.6,
+      "freshness": 0.5,
+      "geo": 0.8
+    },
+    "sources": [
+      "seed-seo-refocus-2026-08"
+    ],
+    "discovered_at": "2026-08-04",
+    "drafted_at": null
+  },
+  {
+    "id": "claude-code-vs-sviluppo-tradizionale",
+    "status": "todo",
+    "slug_it": "claude-code-vs-sviluppo-tradizionale",
+    "slug_en": "claude-code-vs-traditional-development",
+    "categoria": "Sviluppo",
+    "optionA_name": "Coding agent (Claude Code)",
+    "optionB_name": "Sviluppo tradizionale",
+    "title_hint": "Claude Code o sviluppo tradizionale per gli strumenti interni",
+    "primaryKeyword": "claude code vs sviluppo tradizionale",
+    "targetPersona": "CTO / COO",
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Decisione build interno con coding agent vs sviluppo classico. Focus Claude Code.",
+    "freshnessExpiry": null,
+    "score": 69,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.8,
+      "winnability": 0.6,
+      "freshness": 0.7,
+      "geo": 0.7
+    },
+    "sources": [
+      "seed-seo-refocus-2026-08"
+    ],
+    "discovered_at": "2026-08-04",
+    "drafted_at": null
+  },
+  {
     "id": "no-code-vs-agenti-ia",
     "status": "drafted",
     "slug_it": "automazione-no-code-vs-agenti-ia",

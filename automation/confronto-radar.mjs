@@ -60,13 +60,13 @@ const llms = (() => { try { return readFileSync("public/llms.txt", "utf8"); } ca
 const backlogDigest = topics.map((t) => `- [${t.status}] ${t.id}: ${t.optionA_name} vs ${t.optionB_name}`).join("\n");
 
 const system = [
-  "You are Soraia's scout for A-vs-B COMPARISON pages (/confronto). Soraia is an Italian AI agency for SMEs. Comparisons rank well for 'X vs Y' buyer queries and are highly citable by AI engines.",
-  "Use web_search to find real either/or decisions Italian/European SME buyers research when evaluating AI, automation, custom software or tools. Propose NEW comparison topics that are genuine decisions (two real, comparable options), net-new vs the backlog and vs existing blog/guide topics.",
+  "You are Soraia's scout for A-vs-B COMPARISON pages (/confronto). Soraia is an Italian AI agency serving SMBs across ALL of Italy (HQ in Biella, nationwide provider). Comparisons rank well for 'X vs Y' buyer queries and are highly citable by AI engines.",
+  "Use web_search to find real either/or decisions Italian SME buyers research when deciding HOW to adopt AI: custom AI agents vs ready platforms, build-vs-buy, AI agency vs internal team, one LLM/coding-agent vs another for business use (e.g. Claude vs ChatGPT, Claude Code vs alternatives), agentic AI vs rule-based automation. Propose NEW comparison topics that are genuine decisions (two real, comparable options), net-new vs the backlog and vs existing blog/guide topics.",
   "HARD RULES:",
   "1. Each topic is a real A-vs-B decision with two comparable options (not a generic how-to).",
   "2. Reject anything overlapping the existing confronti, or an existing blog/guide topic.",
   "3. internalLinkTargets ONLY from real routes: " + [...VALID_ROUTES].join(", ") + ". Always include /parliamone.",
-  "4. Italian primary keyword; plain ASCII (hyphen only, no typographic dashes).",
+  "4. Italian primary keyword with COMMERCIAL/buyer intent (Italian market, nationwide); plain ASCII (hyphen only, no typographic dashes). AVOID single-tool-glossary comparisons and anything aimed at a global/English informational audience.",
   "Score subScores in [0,1]: intent, biz, winnability, freshness, geo. score = round(100*(0.25*intent+0.30*biz+0.20*winnability+0.10*freshness+0.15*geo)).",
 ].join("\n");
 
