@@ -20,6 +20,15 @@ declare global {
 interface LeadFormProps {
   lang?: "it" | "en";
   source?: string;
+  /** "magnet" = compact gated-resource form (name/company/email only) that reveals a
+   *  download on success. "full" = the standard assessment form. */
+  variant?: "full" | "magnet";
+  resourceUrl?: string;   // magnet: file to reveal on success
+  resourceLabel?: string; // magnet: download button label
+  heading?: string;       // override the form heading
+  subheading?: string;    // override the form subtitle
+  submitLabel?: string;   // override the submit button label
+  successText?: string;   // override the success message
 }
 
 const labels = {
@@ -68,7 +77,8 @@ const labels = {
   },
 } as const;
 
-export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFormProps) {
+export default function LeadForm({ lang = "it", source = "recruitment", variant = "full", resourceUrl, resourceLabel, heading, subheading, submitLabel, successText }: LeadFormProps) {
+  const isMagnet = variant === "magnet";
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
   const [turnstileToken, setTurnstileToken] = useState<string>("");
@@ -163,9 +173,9 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
     <div className="card !p-8 md:!p-10 shadow-lg">
       <div className="mb-8">
         <h3 className="text-2xl md:text-3xl font-bold text-ink-900 tracking-tight">
-          {t.title}
+          {heading || t.title}
         </h3>
-        <p className="mt-3 text-ink-600 leading-relaxed">{t.subtitle}</p>
+        <p className="mt-3 text-ink-600 leading-relaxed">{subheading || t.subtitle}</p>
       </div>
 
       {status === "success" ? (
@@ -175,7 +185,12 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
               <path d="M20 6L9 17l-5-5" />
             </svg>
           </div>
-          <p className="text-lg font-semibold text-violet-900">{t.success}</p>
+          <p className="text-lg font-semibold text-violet-900">{successText || t.success}</p>
+          {resourceUrl && (
+            <a href={resourceUrl} target="_blank" rel="noopener" className="btn btn-primary mt-5" download>
+              {resourceLabel || (lang === "en" ? "Download the guide (PDF)" : "Scarica la guida (PDF)")}
+            </a>
+          )}
         </div>
       ) : (
         <form onSubmit={onSubmit} className="space-y-5">
@@ -189,38 +204,44 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
             <Field name="name" label={t.name} required />
             <Field name="company" label={t.company} required />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <Field name="role" label={t.role} />
+          {isMagnet ? (
             <Field name="email" type="email" label={t.email} required />
-          </div>
+          ) : (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <Field name="role" label={t.role} />
+                <Field name="email" type="email" label={t.email} required />
+              </div>
 
-          <div>
-            <label className="block text-sm font-medium text-ink-700 mb-2">
-              {t.recruiters}
-            </label>
-            <select
-              name="recruiters"
-              required
-              className="w-full px-4 py-3 rounded-xl border border-ink-200 bg-white text-ink-900 focus:border-violet-600 focus:ring-2 focus:ring-violet-200 focus:outline-none transition-all"
-            >
-              <option value="">·</option>
-              <option value="1-5">{t.range_1}</option>
-              <option value="6-15">{t.range_2}</option>
-              <option value="16-40">{t.range_3}</option>
-              <option value="40+">{t.range_4}</option>
-            </select>
-          </div>
+              <div>
+                <label className="block text-sm font-medium text-ink-700 mb-2">
+                  {t.recruiters}
+                </label>
+                <select
+                  name="recruiters"
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-ink-200 bg-white text-ink-900 focus:border-violet-600 focus:ring-2 focus:ring-violet-200 focus:outline-none transition-all"
+                >
+                  <option value="">·</option>
+                  <option value="1-5">{t.range_1}</option>
+                  <option value="6-15">{t.range_2}</option>
+                  <option value="16-40">{t.range_3}</option>
+                  <option value="40+">{t.range_4}</option>
+                </select>
+              </div>
 
-          <div>
-            <label className="block text-sm font-medium text-ink-700 mb-2">
-              {t.message}
-            </label>
-            <textarea
-              name="message"
-              rows={4}
-              className="w-full px-4 py-3 rounded-xl border border-ink-200 bg-white text-ink-900 focus:border-violet-600 focus:ring-2 focus:ring-violet-200 focus:outline-none transition-all resize-none"
-            />
-          </div>
+              <div>
+                <label className="block text-sm font-medium text-ink-700 mb-2">
+                  {t.message}
+                </label>
+                <textarea
+                  name="message"
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-xl border border-ink-200 bg-white text-ink-900 focus:border-violet-600 focus:ring-2 focus:ring-violet-200 focus:outline-none transition-all resize-none"
+                />
+              </div>
+            </>
+          )}
 
           {TURNSTILE_SITE_KEY && <div ref={widgetRef} className="cf-turnstile" />}
 
@@ -229,7 +250,7 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
             disabled={status === "loading"}
             className="btn btn-primary w-full md:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {status === "loading" ? t.submitting : t.submit}
+            {status === "loading" ? t.submitting : (submitLabel || t.submit)}
             {status !== "loading" && (
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M13 5l7 7-7 7" />

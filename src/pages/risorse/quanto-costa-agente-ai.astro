@@ -1,0 +1,87 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import LeadForm from "~/components/LeadForm.tsx";
+import ProofBar from "~/components/ProofBar.astro";
+
+const title = "Quanto costa un agente AI: guida ai prezzi (PDF gratuito) | Soraia";
+const description =
+  "Scarica la guida gratuita ai prezzi degli agenti AI per le PMI italiane: da cosa dipende il costo, i modelli di prezzo sul mercato e come stimare la spesa per il tuo caso.";
+
+const pdf = "/risorse/quanto-costa-un-agente-ai.pdf";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  url: "https://www.soraia.io/risorse/quanto-costa-agente-ai",
+  inLanguage: "it-IT",
+  about: "Prezzi e costi degli agenti AI per le PMI",
+};
+
+const inside = [
+  "I 5 fattori che determinano davvero il costo (spoiler: non è il modello AI)",
+  "I modelli di prezzo sul mercato, con ordini di grandezza reali",
+  "Il confronto build vs hire: agente AI vs assumere uno sviluppatore",
+  "4 domande per stimare la spesa sul tuo caso, senza sorprese",
+];
+
+const proofLogos = [
+  { name: "APraise", src: "/logos/clients/apraise.webp" },
+  { name: "KB&B", src: "/logos/clients/kbb.webp" },
+  { name: "CXL", src: "/logos/clients/cxl.webp" },
+  { name: "Rainplan", src: "/logos/clients/rainplan.webp" },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd} altHref="/en/contact">
+  <section class="relative overflow-hidden bg-violet-mesh">
+    <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
+    <div class="orb orb-lilac w-[400px] h-[400px] -bottom-20 -left-20 opacity-40 float-slower" aria-hidden="true"></div>
+
+    <div class="container-soraia pt-16 md:pt-24 pb-16 md:pb-20 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <!-- LEFT: what's inside -->
+        <div class="lg:col-span-6 lg:sticky lg:top-32">
+          <p class="eyebrow mb-6 fade-up">Guida gratuita · PDF</p>
+          <h1 class="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] font-semibold tracking-tight text-ink-900 leading-[1.04] text-balance fade-up fade-up-delay-1">
+            Quanto costa un agente AI per la tua azienda
+          </h1>
+          <p class="mt-6 text-[18px] md:text-[19px] text-ink-700 leading-relaxed text-pretty fade-up fade-up-delay-2 max-w-lg">
+            Una guida onesta ai costi reali degli agenti AI per le PMI: da cosa dipendono, i modelli di prezzo sul mercato e come stimare la spesa per il tuo caso. Niente gergo, niente sorprese.
+          </p>
+
+          <ul class="mt-8 space-y-3 fade-up fade-up-delay-3 max-w-lg">
+            {inside.map((x) => (
+              <li class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-5 h-5 mt-0.5 rounded-full flex items-center justify-center" style="background: var(--color-brand);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                <span class="text-[15.5px] text-ink-800 leading-snug">{x}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-10 fade-up fade-up-delay-3">
+            <ProofBar label="Già scelti da PMI e scale-up · Tra cui" logos={proofLogos} />
+          </div>
+        </div>
+
+        <!-- RIGHT: gated magnet form -->
+        <div class="lg:col-span-6 fade-up fade-up-delay-2">
+          <LeadForm
+            client:load
+            lang="it"
+            variant="magnet"
+            source="lead-magnet-costo-agente-ai"
+            resourceUrl={pdf}
+            resourceLabel="Scarica la guida (PDF)"
+            heading="Ricevi la guida ora"
+            subheading="Lasciaci nome, azienda ed email: la guida è subito scaricabile."
+            submitLabel="Scarica la guida"
+            successText="Ecco la tua guida. Buona lettura!"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
