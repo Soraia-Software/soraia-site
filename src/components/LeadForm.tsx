@@ -114,6 +114,9 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
 
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+    // First-touch attribution captured on landing (see Layout.astro).
+    let attr: Record<string, string> = {};
+    try { attr = JSON.parse(localStorage.getItem("soraia_attr") || "{}"); } catch { /* noop */ }
     const payload = {
       ...data, // include il campo honeypot company_website, se un bot l'ha compilato
       source,
@@ -121,6 +124,13 @@ export default function LeadForm({ lang = "it", source = "recruitment" }: LeadFo
       ts: new Date().toISOString(),
       rt: renderedAt.current,
       turnstileToken,
+      utm_source: attr.utm_source || "",
+      utm_medium: attr.utm_medium || "",
+      utm_campaign: attr.utm_campaign || "",
+      utm_content: attr.utm_content || "",
+      utm_term: attr.utm_term || "",
+      referrer: attr.referrer || "",
+      landing_page: attr.landing_page || "",
     };
 
     try {

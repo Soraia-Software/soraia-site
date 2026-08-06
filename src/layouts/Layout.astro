@@ -97,6 +97,29 @@ const contactHref = i18nPath("/parliamone", lang);
         />
       )
     }
+    <!-- First-touch attribution: capture utm_* + external referrer + landing page once
+         per visitor (90-day window) so a lead can be traced to the channel that brought
+         them. Read by LeadForm at submit; stored on the lead in D1. -->
+    <script is:inline>
+      (function () {
+        try {
+          var KEY = "soraia_attr", MAXAGE = 90 * 864e5;
+          var cur = null;
+          try { cur = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) {}
+          if (cur && cur.ts && Date.now() - cur.ts < MAXAGE) return; // keep first-touch
+          var p = new URLSearchParams(location.search);
+          var g = function (k) { return (p.get(k) || "").slice(0, 120); };
+          var ref = "";
+          try { if (document.referrer && new URL(document.referrer).hostname !== location.hostname) ref = document.referrer; } catch (e) {}
+          localStorage.setItem(KEY, JSON.stringify({
+            utm_source: g("utm_source"), utm_medium: g("utm_medium"), utm_campaign: g("utm_campaign"),
+            utm_content: g("utm_content"), utm_term: g("utm_term"),
+            referrer: ref.slice(0, 300), landing_page: (location.pathname + location.search).slice(0, 300),
+            ts: Date.now()
+          }));
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body class="min-h-screen flex flex-col antialiased">
     <Header lang={lang} altHref={otherPath} />

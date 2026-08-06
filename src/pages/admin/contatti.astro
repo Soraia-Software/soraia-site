@@ -18,10 +18,18 @@ import AdminLayout from "~/layouts/AdminLayout.astro";
   <script is:inline>
     const cols = [
       ["created_at", "Data"], ["name", "Nome"], ["company", "Azienda"], ["role", "Ruolo"],
-      ["email", "Email"], ["team_size", "Team"], ["source", "Origine"], ["lang", "Lingua"], ["message", "Messaggio"],
+      ["email", "Email"], ["team_size", "Team"], ["canale", "Canale"], ["source", "Pagina"], ["lang", "Lingua"], ["message", "Messaggio"],
     ];
     const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
     const fmt = (s) => { try { return new Date(s.includes("T") ? s : s.replace(" ", "T") + "Z").toLocaleString("it-IT", { day: "2-digit", month: "short", year: "2-digit", hour: "2-digit", minute: "2-digit" }); } catch { return esc(s); } };
+    // Derive a human channel from first-touch attribution: utm_source (+campaign) → referrer domain → "diretto".
+    const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } };
+    const canale = (L) => {
+      if (L.utm_source) return L.utm_source + (L.utm_campaign ? " · " + L.utm_campaign : "");
+      const h = host(L.referrer);
+      if (h) return h;
+      return "diretto";
+    };
     document.getElementById("head").innerHTML = cols.map(([, l]) => `<th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--color-line-strong);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-ink-soft);font-weight:500;white-space:nowrap">${l}</th>`).join("");
     (async () => {
       const rows = document.getElementById("rows");
@@ -34,6 +42,7 @@ import AdminLayout from "~/layouts/AdminLayout.astro";
         if (!leads.length) { rows.innerHTML = `<tr><td style="padding:16px;color:var(--color-ink-soft)">Nessun contatto ancora.</td></tr>`; return; }
         rows.innerHTML = leads.map((L) => "<tr>" + cols.map(([k]) => {
           let v = L[k];
+          if (k === "canale") v = canale(L);
           if (k === "created_at") v = fmt(v);
           if (k === "message" && v) v = String(v).slice(0, 140);
           return `<td style="padding:10px 12px;border-bottom:1px solid var(--color-line);vertical-align:top;${k === "email" ? "white-space:nowrap" : ""}">${esc(v) || "<span style='color:#bbb'>-</span>"}</td>`;

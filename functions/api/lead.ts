@@ -33,13 +33,21 @@ interface LeadPayload {
   rt?: number;                 // epoch ms in cui il form è stato renderizzato (time-trap)
   company_website?: string;    // honeypot: i browser umani lo lasciano vuoto
   turnstileToken?: string;     // token Cloudflare Turnstile
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_content?: string;
+  utm_term?: string;
+  referrer?: string;
+  landing_page?: string;       // first-touch attribution (see Layout.astro)
 }
 
 const REQUIRED_FIELDS: (keyof LeadPayload)[] = ["name", "company", "email"];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // Limiti di lunghezza per campo: un form umano non li supera; tagliano i payload-bomba.
 const MAX_LEN: Record<string, number> = {
-  name: 120, company: 120, role: 120, email: 160, recruiters: 40, message: 2000, source: 60, lang: 8,
+  name: 120, company: 120, role: 120, email: 160, recruiters: 40, message: 2000, source: 80, lang: 8,
+  utm_source: 120, utm_medium: 120, utm_campaign: 120, utm_content: 120, utm_term: 120, referrer: 300, landing_page: 300,
 };
 const MIN_FILL_MS = 2500; // sotto questa soglia dopo il render è quasi certamente un bot
 const RATE_MAX = 5;       // invii massimi per IP...
@@ -223,8 +231,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     try {
       await env.soraia_leads
         .prepare(
-          `INSERT INTO leads (name, company, role, email, team_size, message, source, lang, user_agent, ip, email_sent)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+          `INSERT INTO leads (name, company, role, email, team_size, message, source, lang, user_agent, ip, email_sent,
+                              utm_source, utm_medium, utm_campaign, utm_content, utm_term, referrer, landing_page)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
         )
         .bind(
           data.name!,
@@ -237,7 +246,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           data.lang || null,
           request.headers.get("user-agent") || null,
           ip || null,
-          emailSent ? 1 : 0
+          emailSent ? 1 : 0,
+          data.utm_source || null,
+          data.utm_medium || null,
+          data.utm_campaign || null,
+          data.utm_content || null,
+          data.utm_term || null,
+          data.referrer || null,
+          data.landing_page || null
         )
         .run();
     } catch (dbErr) {
