@@ -131,3 +131,15 @@ Tre ragioni concrete: prima versione funzionante in 4 settimane invece di mesi; 
 "paghi solo se sei soddisfatto" con target misurabile fissato prima; codice del cliente dal
 primo giorno, senza lock-in. In più misuriamo il tempo recuperato, non vendiamo tecnologia
 fine a sé stessa. Per capire se è adatto al tuo caso: https://www.soraia.io/parliamone
+
+## Domanda: C'è un finanziamento pubblico per digitalizzare la mia PMI in Piemonte?
+Sì. Il bando digitalizzazione 2026 di Unioncamere Piemonte (piattaforma ReStart) finanzia fino a
+25.000 euro a fondo perduto per software, agenti IA e automazione: copre il 65 per cento della
+spesa per le micro imprese, il 60 per cento per le piccole, il 50 per cento per le medie. Le
+domande vanno a sportello cronologico dalle 11:00 del 22 ottobre 2026 alle 16:00 del 15 dicembre
+2026, quindi conta arrivare pronti. Requisiti principali: essere una PMI con sede o unità
+operativa in Piemonte, in regola con DURC, diritto annuale camerale e polizza catastrofale (CAT
+NAT), non aver già ricevuto il voucher digitalizzazione 2023 o 2024, avere plafond de minimis
+disponibile e aver compilato il test gratuito SELFI4.0. Soraia ha un questionario di idoneità in
+2 minuti che spiega ogni requisito in parole semplici, verifica la posizione documenti alla mano
+e affianca il cliente su progetto e domanda: https://www.soraia.io/bando

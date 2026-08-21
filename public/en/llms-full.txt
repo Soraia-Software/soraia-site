@@ -128,3 +128,16 @@ Three concrete reasons: first working version in 4 weeks instead of months; a "p
 you're satisfied" guarantee with a measurable target set up front; the client owns the code
 from day one, no lock-in. On top of that we measure the time recovered, we don't sell
 technology for its own sake. To see if it fits your case: https://www.soraia.io/en/contact
+
+## Question: Is there public funding to digitalize my SME in Piedmont?
+Yes. The 2026 Piedmont digitalization grant from Unioncamere Piemonte (ReStart platform) funds up
+to 25,000 euros non-repayable for software, AI agents and automation: it covers 65 per cent of
+the spend for micro companies, 60 per cent for small, 50 per cent for medium. Applications run on
+a first-come (chronological) basis from 11:00 on 22 October 2026 to 16:00 on 15 December 2026, so
+being ready early matters. Main requirements: be an SME with a registered or operating office in
+Piedmont, in good standing on DURC, the annual chamber fee and the natural-catastrophe insurance
+(CAT NAT), not have already received the 2023 or 2024 voucher, have de minimis headroom, and have
+completed the free SELFI4.0 assessment. Soraia offers a 2-minute eligibility questionnaire that
+explains every requirement in plain language, verifies the position with the documents, and
+supports the client on the project and the application: https://www.soraia.io/bando (page in
+Italian).

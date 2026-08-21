@@ -12,6 +12,7 @@ Nota di posizionamento: dal 2026 Soraia si è riposizionata da no-code/automatio
 - [AI Adoption](https://www.soraia.io/ai-adoption): Workshop e tutoraggio mensile per il team. 3 livelli: Foundation €8-10k, Foundation + Tutoraggio €20-25k, Foundation + Tutoraggio + Brain Pilot €30-35k. 110h/anno liberate per persona.
 - [AI Search Optimization](https://www.soraia.io/ai-search-optimization): Audit + re-architettura contenuti + rifacimento sito high-converting AI-ready. Per essere trovabili su ChatGPT, Claude, Perplexity, Google AI Overviews. Audit €2.000, Sprint €3-15k.
 - [Software custom](https://www.soraia.io/software-development): Sviluppo di web app, app mobile, CRM e tool interni su misura per digitalizzare e ottimizzare i processi. Stesso modello degli AI agents: Scoping €2.000 (rimborsato se procedi), Build Sprint €10-50k, primo rilascio in 4 settimane, codice del cliente dal primo giorno.
+- [Cambio generazionale, team dedicato](https://www.soraia.io/offerta-team-dedicato): Team dedicato che modernizza con l'AI i software gestionali obsoleti in poche settimane, a rischio zero. Il primo mese è soddisfatti o non paghi.
 
 ## Sei Ops cluster (use case)
 
@@ -42,6 +43,8 @@ Nota di posizionamento: dal 2026 Soraia si è riposizionata da no-code/automatio
 
 - [Tutti i case studies](https://www.soraia.io/case-studies): 13 case pubblici filtrabili per Ops cluster.
 - [Guide AI](https://www.soraia.io/guide): Agenti AI per aziende, AI Act, consulenza AI in Italia, costi consulenza AI, formazione AI aziendale.
+- [Bando digitalizzazione Piemonte 2026](https://www.soraia.io/bando): Voucher fino a 25.000€ a fondo perduto per le PMI piemontesi (Unioncamere Piemonte) per software, agenti IA e automazione: 65% micro, 60% piccole, 50% medie. Domande a sportello cronologico dal 22/10 al 15/12/2026. Include un questionario di idoneità in 2 minuti che spiega ogni requisito (polizza CAT NAT, DURC, de minimis, SELFI4.0); Soraia verifica l'idoneità e affianca su progetto e domanda.
+- [Quanto costa un agente AI, guida ai prezzi](https://www.soraia.io/risorse/quanto-costa-agente-ai): Guida PDF gratuita ai costi degli agenti AI per le PMI: da cosa dipende il prezzo, i modelli di spesa sul mercato, come stimare la spesa per il proprio caso.
 - [Blog](https://www.soraia.io/blog): Insight su agenti IA, ROI, comparison con ChatGPT enterprise.
 - [Software su misura o SaaS](https://www.soraia.io/blog/software-su-misura-o-saas/): I 4 criteri (processo core, costo totale a 2-3 anni, lock-in, lifecycle) per decidere tra build e buy senza pentirsene.
 - [Check-up IA](https://www.soraia.io/check-up): Self-assessment 3 minuti per valutare maturità AI dell'azienda.
