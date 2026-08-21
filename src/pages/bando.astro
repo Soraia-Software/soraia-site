@@ -1,0 +1,154 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import BandoQuiz from "~/components/BandoQuiz.tsx";
+
+const title = "Bando digitalizzazione Piemonte 2026: fino a 25.000€ a fondo perduto | Soraia";
+const description =
+  "Voucher digitalizzazione per le PMI piemontesi: fino a 25.000€ a fondo perduto per software, agenti IA e automazione. Scopri in 2 minuti se puoi accedere, con un questionario che spiega ogni requisito.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  url: "https://www.soraia.io/bando",
+  inLanguage: "it-IT",
+  about: "Bando voucher digitalizzazione PMI Piemonte 2026 (Unioncamere Piemonte)",
+};
+
+const inBreve = [
+  { k: "Cosa", v: "Voucher digitalizzazione per le PMI del Piemonte (Unioncamere Piemonte)", icon: '<circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/>' },
+  { k: "Quanto", v: "Fino a 25.000€ a fondo perduto: 65% micro, 60% piccole, 50% medie", icon: '<path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>' },
+  { k: "Per cosa", v: "Software, agenti IA, automazione, CRM/ERP, cybersecurity, IoT. Consulenza e formazione fino al 30%", icon: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>' },
+  { k: "Quando", v: "Domande dal 22/10 al 15/12/2026, a sportello cronologico. Precarico documenti dal 12/10", icon: '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>' },
+];
+
+const baseReq = [
+  "Micro, piccola o media impresa (non grande)",
+  "Sede o unita operativa attiva in Piemonte",
+  "In regola con DURC, diritto annuale e polizza catastrofale",
+  "Non aver gia ricevuto il voucher digitalizzazione 2023 o 2024",
+];
+
+const offer = [
+  { pillar: "Misurare", body: "Capiamo il livello di maturita digitale della tua azienda e mappiamo i processi, individuando i colli di bottiglia e cosa conviene digitalizzare per primo.", icon: '<path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-5"/>' },
+  { pillar: "Integrare", body: "Inseriamo agenti IA nei tuoi processi operativi, collegati ai tuoi dati e ai tuoi sistemi: non chatbot, ma agenti che eseguono attivita al posto tuo.", icon: '<path d="M9 7l-2-2-2 2 2 2z"/><path d="M19 5l-2-2-2 2 2 2z"/><path d="M5 21h14"/><path d="M9 21v-8a3 3 0 0 1 6 0v8"/>' },
+  { pillar: "Formare", body: "Prepariamo il tuo team a usare e governare l'AI in autonomia.", icon: '<path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/>' },
+];
+
+const timeline = [
+  { d: "12 ottobre 2026", t: "Apre il precarico documenti sulla piattaforma ReStart (il portale di Unioncamere dove si presenta la domanda)" },
+  { d: "22 ottobre 2026, ore 11:00", t: "Si aprono le domande, a sportello cronologico (conta l'ordine di arrivo)" },
+  { d: "15 dicembre 2026, ore 16:00", t: "Chiusura domande (o prima, se le risorse si esauriscono)" },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd} altHref="/en/contact">
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-violet-mesh">
+    <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
+    <div class="container-soraia pt-16 md:pt-24 pb-12 md:pb-16 relative z-10 max-w-3xl">
+      <p class="eyebrow mb-5">Bando digitalizzazione Piemonte 2026</p>
+      <h1 class="text-[2.5rem] sm:text-[3.25rem] md:text-[3.75rem] font-semibold tracking-tight text-ink-900 leading-[1.04] text-balance">
+        Fino a 25.000€ a fondo perduto per digitalizzare la tua PMI
+      </h1>
+      <p class="mt-6 text-[18px] md:text-[20px] text-ink-700 leading-relaxed text-pretty max-w-2xl">
+        Il Piemonte finanzia software, agenti IA e automazione per le PMI del territorio. In pochi minuti scopri se puoi accedere: un questionario semplice che ti spiega ogni requisito, anche quelli con i nomi complicati.
+      </p>
+      <div class="mt-8">
+        <a href="#questionario" class="btn btn-primary">
+          Verifica la tua idoneita
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IN BREVE -->
+  <section class="section">
+    <div class="container-soraia">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {inBreve.map((b) => (
+          <div class="card-editorial !p-6">
+            <span class="inline-flex w-10 h-10 rounded-xl items-center justify-center mb-4" style="background: var(--color-violet-50, #F5EEF7); color: var(--color-brand);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={b.icon} />
+            </span>
+            <p class="text-[11px] font-semibold tracking-[0.12em] uppercase mb-2" style="color: var(--color-ink-soft);">{b.k}</p>
+            <p class="text-[15px] leading-relaxed" style="color: var(--color-ink);">{b.v}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="mt-4 text-[13px] leading-relaxed" style="color: var(--color-ink-soft);">
+        Intensita base 65/60/50% fino a 25.000€, con possibili +5% se ti affianchi a un soggetto aggregatore e +1/2% di premialita. Essendo a sportello cronologico, la raccolta puo sospendersi al superamento del 120% delle risorse (19,2 milioni €): conta arrivare pronti.
+      </p>
+
+      <!-- Base requirements -->
+      <div class="mt-6 rounded-2xl border border-line p-6 md:p-7" style="background: #FAFAF8;">
+        <p class="text-[11px] font-semibold tracking-[0.14em] uppercase mb-4" style="color: var(--color-ink-soft);">Requisiti di base (in sintesi)</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+          {baseReq.map((r) => (
+            <div class="flex items-start gap-2.5">
+              <span class="flex-shrink-0 w-5 h-5 mt-0.5 rounded-full flex items-center justify-center" style="background: var(--color-brand);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              </span>
+              <span class="text-[15px] leading-snug" style="color: var(--color-ink);">{r}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUESTIONARIO -->
+  <section id="questionario" class="section pt-0">
+    <div class="container-soraia max-w-2xl">
+      <BandoQuiz client:load />
+    </div>
+  </section>
+
+  <!-- OFFERTA -->
+  <section class="section" style="background: #F3EFF5;">
+    <div class="container-soraia">
+      <div class="max-w-2xl mb-10">
+        <p class="eyebrow mb-4">La nostra offerta dedicata</p>
+        <h2 class="text-balance" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 2.5rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">Come usiamo il voucher per farti fare un salto vero</h2>
+        <p class="mt-4 text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+          Tre passi. Il grosso della spesa (oltre il 70%, come chiede il bando) va sugli strumenti veri: agenti IA e software che restano tuoi. Misurare e formare completano il percorso.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {offer.map((o, idx) => (
+          <div class="card !p-7 flex flex-col">
+            <span class="inline-flex w-11 h-11 rounded-xl items-center justify-center mb-5" style="background: var(--color-brand); color: #fff;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={o.icon} />
+            </span>
+            <p class="text-[11px] font-semibold tracking-[0.12em] uppercase mb-1" style="color: var(--color-brand);">Passo {idx + 1}</p>
+            <h3 class="mb-2" style="font-size: 1.375rem; line-height: 1.2; letter-spacing: -0.015em; font-weight: 600;">{o.pillar}</h3>
+            <p class="text-[15px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{o.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <div class="container-soraia max-w-3xl">
+      <p class="eyebrow mb-6">Le date che contano</p>
+      <div class="space-y-5">
+        {timeline.map((e) => (
+          <div class="flex items-start gap-4">
+            <span class="flex-shrink-0 w-2.5 h-2.5 mt-2 rounded-full" style="background: var(--color-brand);"></span>
+            <div>
+              <p class="font-semibold text-[15.5px]" style="color: var(--color-ink);">{e.d}</p>
+              <p class="text-[15px] leading-relaxed" style="color: var(--color-ink-muted);">{e.t}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="mt-10 text-[13px] leading-relaxed rounded-xl p-5 border border-line" style="color: var(--color-ink-soft); background: #FAFAF8;">
+        Questo e uno strumento di orientamento, non una verifica ufficiale. I requisiti che fanno fede sono quelli del bando di Unioncamere Piemonte. Verifichiamo insieme la tua posizione, documenti alla mano, prima di presentare la domanda.
+      </p>
+    </div>
+  </section>
+</Layout>

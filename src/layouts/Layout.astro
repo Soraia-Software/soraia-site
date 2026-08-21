@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
 import AskAIWidget from "~/components/AskAIWidget.astro";
+import AnnouncementBar from "~/components/AnnouncementBar.astro";
 import { localizePath, path as i18nPath } from "~/lib/i18n";
 
 interface Props {
@@ -122,6 +123,14 @@ const contactHref = i18nPath("/parliamone", lang);
     </script>
   </head>
   <body class="min-h-screen flex flex-col antialiased">
+    {lang === "it" && (
+      <AnnouncementBar
+        text="Fino a 25.000€ a fondo perduto per le PMI piemontesi."
+        ctaText="Scopri in 2 minuti se puoi approfittarne"
+        ctaHref="/bando"
+        dismissId="bando-piemonte-2026"
+      />
+    )}
     <Header lang={lang} altHref={otherPath} />
     <main class="flex-1">
       <slot />

@@ -3,12 +3,18 @@ interface Props {
   text: string;
   ctaText: string;
   ctaHref: string;
+  /** If set, the bar shows a dismiss button and stays hidden once closed (per browser). */
+  dismissId?: string;
 }
-const { text, ctaText, ctaHref } = Astro.props;
+const { text, ctaText, ctaHref, dismissId } = Astro.props;
+const key = dismissId ? `soraia_annbar_${dismissId}` : "";
 ---
 
-<div class="bg-gradient-to-r from-violet-900 via-violet-800 to-violet-700 text-white text-sm">
-  <div class="container-soraia py-2.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+<div
+  data-annbar={dismissId || ""}
+  class="relative bg-gradient-to-r from-violet-900 via-violet-800 to-violet-700 text-white text-sm"
+>
+  <div class="container-soraia py-2.5 pr-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
     <span class="text-white/85">{text}</span>
     <a href={ctaHref} class="inline-flex items-center gap-1 font-semibold text-white hover:text-amber transition-colors">
       {ctaText}
@@ -16,5 +22,27 @@ const { text, ctaText, ctaHref } = Astro.props;
         <path d="M5 12h14M13 5l7 7-7 7"/>
       </svg>
     </a>
+    {dismissId && (
+      <button type="button" data-annbar-close aria-label="Chiudi" class="absolute right-3 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    )}
   </div>
 </div>
+
+{dismissId && (
+  <script is:inline define:vars={{ key }}>
+    (function () {
+      try {
+        const bar = document.querySelector("[data-annbar]");
+        if (!bar) return;
+        if (localStorage.getItem(key) === "1") { bar.style.display = "none"; return; }
+        const btn = bar.querySelector("[data-annbar-close]");
+        btn && btn.addEventListener("click", function () {
+          bar.style.display = "none";
+          try { localStorage.setItem(key, "1"); } catch (e) {}
+        });
+      } catch (e) {}
+    })();
+  </script>
+)}

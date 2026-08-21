@@ -29,6 +29,7 @@ interface LeadFormProps {
   subheading?: string;    // override the form subtitle
   submitLabel?: string;   // override the submit button label
   successText?: string;   // override the success message
+  hiddenMessage?: string; // sent as `message` (e.g. a quiz verdict summary) instead of a textarea
 }
 
 const labels = {
@@ -77,7 +78,7 @@ const labels = {
   },
 } as const;
 
-export default function LeadForm({ lang = "it", source = "recruitment", variant = "full", resourceUrl, resourceLabel, heading, subheading, submitLabel, successText }: LeadFormProps) {
+export default function LeadForm({ lang = "it", source = "recruitment", variant = "full", resourceUrl, resourceLabel, heading, subheading, submitLabel, successText, hiddenMessage }: LeadFormProps) {
   const isMagnet = variant === "magnet";
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
@@ -142,6 +143,8 @@ export default function LeadForm({ lang = "it", source = "recruitment", variant 
       referrer: attr.referrer || "",
       landing_page: attr.landing_page || "",
     };
+    // A caller-supplied summary (e.g. the bando quiz verdict + answers) rides in `message`.
+    if (hiddenMessage) (payload as Record<string, unknown>).message = hiddenMessage;
 
     try {
       const res = await fetch("/api/lead", {
