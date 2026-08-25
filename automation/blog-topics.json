@@ -1,7 +1,7 @@
 [
   {
     "id": "come-scegliere-agenzia-ai",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "come-scegliere-agenzia-intelligenza-artificiale",
     "slug_en": "how-to-choose-ai-agency",
@@ -29,11 +29,11 @@
       "seed-seo-refocus-2026-08"
     ],
     "discovered_at": "2026-08-04",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "ai-agent-per-aziende-cosa-sono",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "pillar",
     "slug_it": "ai-agent-per-aziende-cosa-sono",
     "slug_en": "ai-agents-for-business-explained",
@@ -61,11 +61,11 @@
       "seed-seo-refocus-2026-08"
     ],
     "discovered_at": "2026-08-04",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "quanto-costa-agente-ai-azienda",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "quanto-costa-agente-ai-azienda",
     "slug_en": "how-much-does-an-ai-agent-cost",
@@ -93,11 +93,11 @@
       "seed-seo-refocus-2026-08"
     ],
     "discovered_at": "2026-08-04",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "claude-code-aziende-strumenti-interni",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "claude-code-aziende-strumenti-interni",
     "slug_en": "claude-code-for-business-internal-tools",
@@ -125,11 +125,11 @@
       "seed-seo-refocus-2026-08"
     ],
     "discovered_at": "2026-08-04",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "ai-agent-casi-uso-pmi",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "pillar",
     "slug_it": "ai-agent-casi-uso-pmi",
     "slug_en": "ai-agent-use-cases-smb",
@@ -157,11 +157,11 @@
       "seed-seo-refocus-2026-08"
     ],
     "discovered_at": "2026-08-04",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "automatizzare-processi-aziendali-agenti-ai",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "automatizzare-processi-aziendali-agenti-ai",
     "slug_en": "automate-business-processes-ai-agents",
@@ -189,11 +189,11 @@
       "seed-seo-refocus-2026-08"
     ],
     "discovered_at": "2026-08-04",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "consulenza-ai-pmi-italia",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "consulenza-ai-per-pmi-italia",
     "slug_en": "ai-consulting-for-italian-smb",
@@ -221,11 +221,11 @@
       "seed-seo-refocus-2026-08"
     ],
     "discovered_at": "2026-08-04",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "ai-act-agenti-ai-aziende-2026",
-    "status": "todo",
+    "status": "drafted",
     "archetype": "news-reaction",
     "slug_it": "ai-act-agenti-ai-aziende-2026",
     "slug_en": "ai-act-ai-agents-business-2026",
@@ -253,7 +253,7 @@
       "seed-seo-refocus-2026-08"
     ],
     "discovered_at": "2026-08-04",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "custom-software-vs-saas",
@@ -1166,7 +1166,7 @@
   },
   {
     "id": "calcolo-provvigioni-automatico-ia",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "calcolo-provvigioni-automatico-agente-ia",
     "slug_en": "automated-commission-calculation-ai",
@@ -1196,11 +1196,11 @@
       "https://www.marcopericci.com/agenti-ai/"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "voucher-cloud-cybersecurity-ai-2026",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "news-reaction",
     "slug_it": "voucher-cloud-cybersecurity-2026-finanziare-ai",
     "slug_en": "voucher-cloud-cybersecurity-2026-fund-ai",
@@ -1231,7 +1231,7 @@
       "https://alsolved.com/voucher-cloud-e-cybersecurity-2026-la-guida-completa-per-le-pmi/"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "whatsapp-business-agent-meta-italia",
@@ -1578,7 +1578,7 @@
   },
   {
     "id": "gdpr-agenti-ai-dati-aziendali",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "how-to",
     "slug_it": "gdpr-agenti-ai-trattamento-dati-pmi",
     "slug_en": "gdpr-ai-agents-data-processing-smb",
@@ -1609,11 +1609,11 @@
       "https://www.davidecaiazzo.it/blog/intelligenza-artificiale-privacy-aziende"
     ],
     "discovered_at": "2026-07-25",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "adozione-ai-pmi-italiane-dati-2026",
-    "status": "parked",
+    "status": "drafted",
     "archetype": "pillar",
     "slug_it": "adozione-ai-pmi-italiane-dati-2026",
     "slug_en": "ai-adoption-italian-smb-data-2026",
@@ -1644,6 +1644,6 @@
       "https://fibermap.it/magazine/intelligenza-artificiale-pmi/"
     ],
     "discovered_at": "2026-07-25",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   }
 ]

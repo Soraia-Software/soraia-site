@@ -1,7 +1,7 @@
 [
   {
     "id": "claude-vs-chatgpt-aziende",
-    "status": "todo",
+    "status": "drafted",
     "slug_it": "claude-vs-chatgpt-per-le-aziende",
     "slug_en": "claude-vs-chatgpt-for-business",
     "categoria": "Strumenti",
@@ -29,11 +29,11 @@
       "seed-seo-refocus-2026-08"
     ],
     "discovered_at": "2026-08-04",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "agenzia-ai-vs-team-interno",
-    "status": "todo",
+    "status": "drafted",
     "slug_it": "agenzia-ai-vs-team-interno",
     "slug_en": "ai-agency-vs-in-house-team",
     "categoria": "Fornitori",
@@ -61,11 +61,11 @@
       "seed-seo-refocus-2026-08"
     ],
     "discovered_at": "2026-08-04",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "claude-code-vs-sviluppo-tradizionale",
-    "status": "todo",
+    "status": "drafted",
     "slug_it": "claude-code-vs-sviluppo-tradizionale",
     "slug_en": "claude-code-vs-traditional-development",
     "categoria": "Sviluppo",
@@ -93,7 +93,7 @@
       "seed-seo-refocus-2026-08"
     ],
     "discovered_at": "2026-08-04",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "no-code-vs-agenti-ia",
@@ -470,7 +470,7 @@
   },
   {
     "id": "llm-open-source-vs-proprietario",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "llm-open-source-vs-proprietario",
     "slug_en": "open-source-vs-proprietary-llm",
     "categoria": "Modelli AI",
@@ -501,7 +501,7 @@
       "https://aipia.it/tecnologia/modelli-open-source-vs-proprietari-2026/"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "rag-vs-fine-tuning",
@@ -678,7 +678,7 @@
   },
   {
     "id": "saas-verticale-pronto-vs-agente-ia-su-misura",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "saas-verticale-pronto-vs-agente-ia-su-misura",
     "slug_en": "vertical-saas-vs-custom-ai-agent",
     "categoria": "AI strategy",
@@ -709,11 +709,11 @@
       "https://www.agendadigitale.eu/industry-4-0/il-saas-nellera-dellai-la-svolta-che-riscrive-i-modelli-aziendali/"
     ],
     "discovered_at": "2026-07-25",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "receptionist-vocale-ia-vs-centralino-tradizionale",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "receptionist-vocale-ia-vs-centralino-tradizionale",
     "slug_en": "ai-voice-receptionist-vs-traditional-switchboard",
     "categoria": "Customer support",
@@ -744,11 +744,11 @@
       "https://cudriec.com/ai-voice-receptionist-centralino-smart/"
     ],
     "discovered_at": "2026-07-25",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "outsourcing-bpo-vs-agente-ia-support",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "outsourcing-bpo-vs-agente-ia-support",
     "slug_en": "bpo-outsourcing-vs-ai-agent-support",
     "categoria": "Customer support",
@@ -778,7 +778,7 @@
       "https://www.ringly.io/blog/sourcing-support-outsourcing"
     ],
     "discovered_at": "2026-07-25",
-    "drafted_at": null
+    "drafted_at": "2026-08-25"
   },
   {
     "id": "assumere-junior-vs-agente-ia",
@@ -915,6 +915,355 @@
       "https://justcall.io/blog/ai-voice-agent-vs-chatbot.html"
     ],
     "discovered_at": "2026-07-25",
+    "drafted_at": null
+  },
+  {
+    "id": "agenzia-ai-italiana-vs-vendor-internazionale",
+    "status": "drafted",
+    "slug_it": "agenzia-ai-italiana-vs-vendor-internazionale",
+    "slug_en": "italian-ai-agency-vs-global-vendor",
+    "categoria": "Build-vs-buy / partner",
+    "optionA_name": "Agenzia AI italiana (partner locale)",
+    "optionB_name": "Piattaforma / vendor AI internazionale (self-serve)",
+    "title_hint": "Agenzia AI italiana vs vendor internazionale: chi scegliere per la tua PMI",
+    "primaryKeyword": "agenzia AI italiana vs vendor internazionale",
+    "targetPersona": "Titolare/CEO di PMI",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/guide/consulenza-ai-italia",
+      "/guide/ai-act-aziende",
+      "/parliamone"
+    ],
+    "dedupNotes": "Diverso da agenzia-ai-vs-team-interno (interno vs esterno) e da ai-agency-vs-big4 (specialista vs system integrator): qui l'asse e' partner locale italiano vs piattaforma/vendor estero self-serve, con focus su GDPR/AI Act, lingua e vicinanza. Net-new.",
+    "freshnessExpiry": null,
+    "score": 81,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.9,
+      "winnability": 0.65,
+      "freshness": 0.5,
+      "geo": 0.95
+    },
+    "sources": [
+      "confronto-radar",
+      "https://blog.unique.it/ai-act-italiano-pmi",
+      "https://www.federprivacy.org/informazione/punto-di-vista/l-intelligenza-artificiale-nelle-pmi-italiane-navigare-in-acque-sicure-tra-promesse-e-insidie-grazie-alla-bussola-del-gdpr",
+      "https://yellowtech.it/guida/migliori-aziende-consulenza-ai-italia"
+    ],
+    "discovered_at": "2026-08-25",
+    "drafted_at": "2026-08-25"
+  },
+  {
+    "id": "consulente-ai-freelance-vs-agenzia-ai",
+    "status": "drafted",
+    "slug_it": "consulente-ai-freelance-vs-agenzia-ai",
+    "slug_en": "freelance-ai-consultant-vs-ai-agency",
+    "categoria": "Partner / procurement",
+    "optionA_name": "Consulente AI freelance",
+    "optionB_name": "Agenzia AI strutturata",
+    "title_hint": "Consulente AI freelance o agenzia AI: cosa conviene alla tua azienda",
+    "primaryKeyword": "consulente AI freelance vs agenzia AI",
+    "targetPersona": "Direttore operativo (COO)",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/guide/consulenza-ai-italia",
+      "/guide/costi-consulenza-ai",
+      "/parliamone"
+    ],
+    "dedupNotes": "Non coperto: agenzia-ai-vs-team-interno confronta interno vs esterno, ai-agency-vs-big4 confronta specialista vs Big4. Qui l'asse e' singolo freelance vs agenzia (continuita', scalabilita', rischio bus-factor). Net-new.",
+    "freshnessExpiry": null,
+    "score": 80,
+    "subScores": {
+      "intent": 0.9,
+      "biz": 0.9,
+      "winnability": 0.7,
+      "freshness": 0.4,
+      "geo": 0.85
+    },
+    "sources": [
+      "confronto-radar",
+      "https://freelancedev.it/blog/freelance-vs-agenzia",
+      "https://www.gabrielebertoloni.it/seo-fondamentale/consulente-agenzia-pmi/",
+      "https://yellowtech.it/guida/migliori-aziende-consulenza-ai-italia"
+    ],
+    "discovered_at": "2026-08-25",
+    "drafted_at": "2026-08-25"
+  },
+  {
+    "id": "agente-ia-whatsapp-vs-chatbot-sito-web",
+    "status": "drafted",
+    "slug_it": "agente-ia-whatsapp-vs-chatbot-sito-web",
+    "slug_en": "whatsapp-ai-agent-vs-website-chatbot",
+    "categoria": "Canale customer engagement",
+    "optionA_name": "Agente IA su WhatsApp Business",
+    "optionB_name": "Chatbot / widget sul sito web",
+    "title_hint": "Agente IA su WhatsApp o chatbot sul sito: dove parlare coi clienti",
+    "primaryKeyword": "agente IA WhatsApp vs chatbot sito web",
+    "targetPersona": "Responsabile customer support",
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/case-studies/navily",
+      "/parliamone"
+    ],
+    "dedupNotes": "Diverso da chatbot-a-regole-vs-agente-ia-support (regole vs IA) e da voicebot-ia-vs-chatbot-testuale (voce vs testo): qui la scelta e' di CANALE, WhatsApp vs widget sul sito. Rilancio da lancio Meta WhatsApp Business agent in Italia (2026). Net-new.",
+    "freshnessExpiry": "2027-08-25",
+    "score": 77,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.85,
+      "winnability": 0.65,
+      "freshness": 0.6,
+      "geo": 0.75
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.partitaiva.it/meta-whatsapp-business-agent-ai/",
+      "https://giallostudio.it/blog/automazione-whatsapp-business"
+    ],
+    "discovered_at": "2026-08-25",
+    "drafted_at": "2026-08-25"
+  },
+  {
+    "id": "assumere-ai-manager-vs-formare-team",
+    "status": "drafted",
+    "slug_it": "assumere-ai-manager-vs-formare-team",
+    "slug_en": "hire-ai-manager-vs-upskill-team",
+    "categoria": "Skills / build-vs-buy competenze",
+    "optionA_name": "Assumere un AI manager/specialist",
+    "optionB_name": "Formare il team esistente (AI adoption)",
+    "title_hint": "Assumere un AI manager o formare il team? La scelta per le PMI",
+    "primaryKeyword": "assumere AI manager vs formare il team",
+    "targetPersona": "Direttore HR / General Manager",
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/recruitment",
+      "/guide/formazione-ai-aziendale",
+      "/parliamone"
+    ],
+    "dedupNotes": "Diverso da assumere-junior-vs-agente-ia (persona vs agente per ruolo operativo) e da recruitment-ai-vs-agenzia: qui l'asse e' costruire competenza AI assumendo un profilo dedicato vs upskilling del team via programma. Net-new.",
+    "freshnessExpiry": null,
+    "score": 77,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.85,
+      "winnability": 0.7,
+      "freshness": 0.55,
+      "geo": 0.8
+    },
+    "sources": [
+      "confronto-radar",
+      "https://it.indeed.com/recruiting/c/info/gestire-cambiamenti-intelligenza-artificiale",
+      "https://www.cegos.it/risorse/blog/management/ai-e-management-strumenti-per-i-manager"
+    ],
+    "discovered_at": "2026-08-25",
+    "drafted_at": "2026-08-25"
+  },
+  {
+    "id": "formazione-ai-una-tantum-vs-tutoraggio-continuo",
+    "status": "drafted",
+    "slug_it": "formazione-ai-una-tantum-vs-tutoraggio-continuo",
+    "slug_en": "one-off-ai-training-vs-ongoing-mentoring",
+    "categoria": "Formazione / adoption",
+    "optionA_name": "Workshop AI una tantum",
+    "optionB_name": "Percorso di tutoraggio AI continuo",
+    "title_hint": "Corso AI una tantum o tutoraggio continuo: cosa fa davvero adottare l'AI",
+    "primaryKeyword": "formazione AI una tantum vs tutoraggio continuo",
+    "targetPersona": "Responsabile L&D / HR",
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/guide/formazione-ai-aziendale",
+      "/parliamone"
+    ],
+    "dedupNotes": "Nessun confronto esistente sulla MODALITA' di formazione; agenzia-ai-vs-team-interno riguarda il delivery, non il formato del percorso. Rilevante con obbligo formazione AI Act 2026. Mappa sui livelli AI Adoption di Soraia. Net-new.",
+    "freshnessExpiry": null,
+    "score": 77,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.9,
+      "winnability": 0.75,
+      "freshness": 0.45,
+      "geo": 0.8
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.staffmillennium.it/ai-act-e-formazione-obbligatoria-in-azienda-cosa-devi-sapere/",
+      "https://www.agendadigitale.eu/documenti/formazione-ai-obbligatoria-per-le-imprese-guida-completa/"
+    ],
+    "discovered_at": "2026-08-25",
+    "drafted_at": "2026-08-25"
+  },
+  {
+    "id": "progetto-pilota-ai-vs-rollout-aziendale",
+    "status": "drafted",
+    "slug_it": "progetto-pilota-ai-vs-rollout-aziendale",
+    "slug_en": "ai-pilot-vs-company-wide-rollout",
+    "categoria": "Strategia di adozione",
+    "optionA_name": "Progetto pilota AI in un reparto",
+    "optionB_name": "Roll-out AI a tutta l'azienda",
+    "title_hint": "Pilota AI in un reparto o roll-out aziendale: da dove partire",
+    "primaryKeyword": "progetto pilota AI vs adozione aziendale",
+    "targetPersona": "Direttore operativo (COO)",
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/check-up",
+      "/guide/assessment-ai-interno-guida-operativa",
+      "/parliamone"
+    ],
+    "dedupNotes": "Non e' un confronto tra strumenti ma tra APPROCCI di rollout; nessun confronto esistente affronta pilota vs scala. Tema caldo nella stampa italiana 2026 (fine dei PoC). Net-new.",
+    "freshnessExpiry": null,
+    "score": 75,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.85,
+      "winnability": 0.7,
+      "freshness": 0.65,
+      "geo": 0.7
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.ai4business.it/intelligenza-artificiale/adozione-aziendale-dellai-dai-poc-alle-scelte-irreversibili/",
+      "https://www.econopoly.ilsole24ore.com/2026/07/01/ai-e-software-litalia-sperimenta-piu-degli-altri-ma-serve-unadozione-su-larga-scala/"
+    ],
+    "discovered_at": "2026-08-25",
+    "drafted_at": "2026-08-25"
+  },
+  {
+    "id": "agente-ia-multilingua-vs-team-supporto-umano",
+    "status": "drafted",
+    "slug_it": "agente-ia-multilingua-vs-team-supporto-multilingua",
+    "slug_en": "multilingual-ai-agent-vs-multilingual-support-team",
+    "categoria": "Customer support / scala",
+    "optionA_name": "Agente IA multilingua",
+    "optionB_name": "Team di supporto umano multilingua",
+    "title_hint": "Agente IA multilingua o team multilingua: come coprire i clienti esteri",
+    "primaryKeyword": "agente IA multilingua vs team supporto multilingua",
+    "targetPersona": "Responsabile customer care / e-commerce",
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/case-studies/navily",
+      "/parliamone"
+    ],
+    "dedupNotes": "Diverso da outsourcing-bpo-vs-agente-ia-support (BPO vs IA) e da chatbot-regole-vs-agente: qui l'asse specifico e' la copertura MULTILINGUA per PMI export/e-commerce. Net-new.",
+    "freshnessExpiry": null,
+    "score": 72,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.8,
+      "winnability": 0.7,
+      "freshness": 0.5,
+      "geo": 0.7
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.edesk.com/it/blog/7-strumenti-di-assistenza-clienti-con-supporto-multilingue-per-le-commerce-globale/",
+      "https://www.edesk.com/it/blog/5-migliori-strumenti-di-assistenza-clienti-multilingue-per-i-venditori-di-ecommerce/"
+    ],
+    "discovered_at": "2026-08-25",
+    "drafted_at": "2026-08-25"
+  },
+  {
+    "id": "crm-con-agenti-ia-vs-crm-tradizionale",
+    "status": "parked",
+    "slug_it": "crm-con-agenti-ia-vs-crm-tradizionale",
+    "slug_en": "ai-agent-crm-vs-traditional-crm",
+    "categoria": "Sales / software",
+    "optionA_name": "CRM potenziato con agenti IA",
+    "optionB_name": "CRM tradizionale",
+    "title_hint": "CRM tradizionale o CRM con agenti IA: cosa cambia per le vendite",
+    "primaryKeyword": "CRM con AI vs CRM tradizionale",
+    "targetPersona": "Direttore commerciale / Sales manager",
+    "internalLinkTargets": [
+      "/sales-marketing",
+      "/software-development",
+      "/case-studies/talent-match",
+      "/parliamone"
+    ],
+    "dedupNotes": "Diverso da software-su-misura-vs-gestionale-pronto (build vs buy generico): qui il confronto e' su un CRM con agenti IA che eseguono task (qualifica, follow-up, reporting) vs un CRM tradizionale come sistema di registrazione. Net-new.",
+    "freshnessExpiry": "2027-08-25",
+    "score": 71,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.75,
+      "winnability": 0.6,
+      "freshness": 0.6,
+      "geo": 0.7
+    },
+    "sources": [
+      "confronto-radar",
+      "https://flusia.it/it/blog/futuro-crm-2026-trend/",
+      "https://weblabagency.ch/customer-relationship-management-10-migliori/"
+    ],
+    "discovered_at": "2026-08-25",
+    "drafted_at": null
+  },
+  {
+    "id": "gemini-workspace-vs-microsoft-copilot",
+    "status": "parked",
+    "slug_it": "gemini-workspace-vs-microsoft-copilot",
+    "slug_en": "gemini-workspace-vs-microsoft-copilot",
+    "categoria": "Piattaforma AI produttivita'",
+    "optionA_name": "Google Gemini (Workspace)",
+    "optionB_name": "Microsoft 365 Copilot",
+    "title_hint": "Google Gemini o Microsoft 365 Copilot: quale AI per la produttivita' del team",
+    "primaryKeyword": "Gemini Workspace vs Microsoft 365 Copilot aziende",
+    "targetPersona": "IT manager / Direttore operativo",
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/guide/formazione-ai-aziendale",
+      "/parliamone"
+    ],
+    "dedupNotes": "Diverso da claude-vs-chatgpt-aziende e dal parked chatgpt-enterprise-vs-copilot: qui il match e' Gemini-in-Workspace vs 365 Copilot, cioe' la scelta tra le due suite di produttivita' gia' in uso nelle PMI. Net-new.",
+    "freshnessExpiry": "2027-08-25",
+    "score": 67,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.6,
+      "winnability": 0.55,
+      "freshness": 0.8,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.velosio.com/blog/microsoft-copilot-vs-google-gemini/",
+      "https://ttms.com/google-gemini-vs-microsoft-copilot-ai-integration-in-google-workspace-and-microsoft-365/"
+    ],
+    "discovered_at": "2026-08-25",
+    "drafted_at": null
+  },
+  {
+    "id": "mcp-vs-integrazioni-api-custom",
+    "status": "parked",
+    "slug_it": "mcp-vs-integrazioni-api-custom",
+    "slug_en": "mcp-vs-custom-api-integrations",
+    "categoria": "Integrazione tecnica",
+    "optionA_name": "Connettere l'AI via MCP (Model Context Protocol)",
+    "optionB_name": "Integrazioni API su misura",
+    "title_hint": "MCP o integrazioni API su misura: come collegare l'AI ai tuoi sistemi",
+    "primaryKeyword": "MCP vs integrazioni API custom aziende",
+    "targetPersona": "CTO / IT lead di PMI",
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Nessun confronto esistente su come connettere gli agenti ai sistemi aziendali; e' una scelta architetturale build-vs-standard (MCP emergente vs API su misura), non un glossario mono-tool. Net-new.",
+    "freshnessExpiry": "2027-08-25",
+    "score": 60,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.6,
+      "winnability": 0.6,
+      "freshness": 0.75,
+      "geo": 0.5
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.truefoundry.com/blog/mcp-vs-api",
+      "https://medium.com/@tahirbalarabe2/model-context-protocol-mcp-vs-apis-the-new-standard-for-ai-integration-d6b9a7665ea7"
+    ],
+    "discovered_at": "2026-08-25",
     "drafted_at": null
   }
 ]
