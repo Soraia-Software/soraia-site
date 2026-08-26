@@ -1,0 +1,70 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const title = "Lavora con noi | Soraia";
+const description =
+  "Posizioni aperte in Soraia, agenzia di trasformazione AI. Team piccolo, full remote, AI-first e bootstrapped: costruisci qualcosa di concreto, non una slide per il prossimo round.";
+
+const jobs = (await getCollection("jobs"))
+  .filter((j) => j.data.lang === "it" && (import.meta.env.DEV || !j.data.draft))
+  .sort((a, b) => (a.data.order - b.data.order) || (b.data.pubDate.valueOf() - a.data.pubDate.valueOf()));
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  url: "https://www.soraia.io/careers",
+  inLanguage: "it-IT",
+};
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd} altHref="/en/contact">
+  <section class="relative overflow-hidden bg-violet-mesh">
+    <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
+    <div class="container-soraia pt-16 md:pt-24 pb-12 md:pb-16 relative z-10 max-w-3xl">
+      <p class="eyebrow mb-5">Lavora con noi</p>
+      <h1 class="text-[2.5rem] sm:text-[3.25rem] md:text-[3.75rem] font-semibold tracking-tight text-ink-900 leading-[1.04] text-balance">
+        Costruisci qualcosa di concreto, non una slide
+      </h1>
+      <p class="mt-6 text-[18px] md:text-[20px] text-ink-700 leading-relaxed text-pretty max-w-2xl">
+        Soraia è un'agenzia di trasformazione AI. Siamo AI-first, full remote e bootstrapped: cresciamo con i ricavi dei clienti, non con investimenti esterni. Team piccolo, autonomia estrema, responsabilità vera.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-soraia max-w-3xl">
+      <p class="text-[11px] font-semibold tracking-[0.14em] uppercase mb-6" style="color: var(--color-ink-soft);">
+        {jobs.length === 0 ? "Nessuna posizione aperta" : `${jobs.length} posizione${jobs.length > 1 ? "i" : ""} aperta${jobs.length > 1 ? "e" : ""}`}
+      </p>
+
+      {jobs.length === 0 ? (
+        <div class="card !p-8">
+          <p class="text-ink-700 leading-relaxed">Al momento non ci sono posizioni aperte. Se pensi di poter dare valore a Soraia, scrivici comunque a <a href="mailto:info@soraia.io" style="color: var(--color-brand);">info@soraia.io</a>: le persone giuste ce le teniamo strette.</p>
+        </div>
+      ) : (
+        <div class="space-y-5">
+          {jobs.map((j) => (
+            <a href={`/careers/${j.id}`} class="card-editorial !p-7 md:!p-8 block group hover:border-ink-300 transition-colors">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h2 style="font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; font-weight: 500;" class="group-hover:text-[var(--color-brand)] transition-colors">{j.data.title}</h2>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    {[j.data.team, j.data.location, j.data.type, j.data.compensation].filter(Boolean).map((chip) => (
+                      <span class="text-[12px] font-medium px-2.5 py-1 rounded-full" style="background: var(--color-violet-50, #F5EEF7); color: var(--color-brand);">{chip}</span>
+                    ))}
+                  </div>
+                </div>
+                <span class="flex-shrink-0 mt-1.5 inline-flex items-center justify-center w-9 h-9 rounded-full border border-line group-hover:border-[var(--color-brand)] transition-colors" style="color: var(--color-brand);">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+              <p class="mt-4 text-[15.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{j.data.description}</p>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>

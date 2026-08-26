@@ -155,4 +155,22 @@ const confronti = defineCollection({
   }),
 });
 
-export const collections = { blog, caseStudies, guides, confronti };
+// Open positions. Body = the full job description (markdown); frontmatter = the facts
+// shown as chips + used in the careers list and JSON-LD JobPosting.
+const jobs = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/jobs" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),                     // <meta> + card summary
+    team: z.string().optional(),                 // e.g. "Sales"
+    location: z.string().default("Full remote"),
+    type: z.string().default("Collaborazione P.IVA"),
+    compensation: z.string().optional(),         // chip, e.g. "20-55k € (fisso + bonus)"
+    order: z.number().default(0),                // list ordering (lower = first)
+    pubDate: z.coerce.date(),
+    lang: z.enum(["it", "en"]).default("it"),
+    draft: z.boolean().default(false),           // hidden in prod when true
+  }),
+});
+
+export const collections = { blog, caseStudies, guides, confronti, jobs };

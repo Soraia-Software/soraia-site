@@ -1,0 +1,128 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+import ApplicationForm from "~/components/ApplicationForm.tsx";
+
+export async function getStaticPaths() {
+  const jobs = (await getCollection("jobs")).filter((j) => j.data.lang === "it" && (import.meta.env.DEV || !j.data.draft));
+  return jobs.map((j) => ({ params: { slug: j.id }, props: { job: j } }));
+}
+
+const { job } = Astro.props;
+const d = job.data;
+const { Content } = await render(job);
+
+const title = `${d.title} | Lavora con Soraia`;
+const description = d.description;
+const chips = [d.team, d.location, d.type, d.compensation].filter(Boolean);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  title: d.title,
+  description: d.description,
+  datePosted: d.pubDate.toISOString(),
+  employmentType: "CONTRACTOR",
+  hiringOrganization: { "@type": "Organization", name: "Soraia", sameAs: "https://www.soraia.io" },
+  jobLocationType: "TELECOMMUTE",
+  applicantLocationRequirements: { "@type": "Country", name: "Italy" },
+  directApply: true,
+};
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd} altHref="/en/contact">
+  <article>
+    <!-- HERO -->
+    <section class="border-b border-line" style="background: #FAFAF8;">
+      <div class="container-soraia pt-14 md:pt-20 pb-10 md:pb-12 max-w-3xl">
+        <nav class="flex items-center gap-2 text-[13px] mb-7 flex-wrap" style="color: var(--color-ink-soft);">
+          <a href="/careers" class="hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">Lavora con noi</a>
+          <span>›</span>
+          <span style="color: var(--color-ink-muted);">{d.title}</span>
+        </nav>
+        <h1 class="text-balance" style="font-size: clamp(2rem, 4vw + 0.5rem, 3rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">{d.title}</h1>
+        <div class="mt-5 flex flex-wrap gap-2">
+          {chips.map((c) => (
+            <span class="text-[12.5px] font-medium px-3 py-1.5 rounded-full" style="background: var(--color-violet-50, #F5EEF7); color: var(--color-brand);">{c}</span>
+          ))}
+        </div>
+        <div class="mt-8">
+          <a href="#candidati" class="btn btn-primary">
+            Candidati
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <section class="section">
+      <div class="container-soraia max-w-3xl">
+        <div class="prose-soraia">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    <!-- CANDIDATI -->
+    <section id="candidati" class="section pt-0">
+      <div class="container-soraia max-w-2xl">
+        <ApplicationForm client:load roleSlug={job.id} roleTitle={d.title} />
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<style is:global>
+  .prose-soraia {
+    color: var(--color-ink);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .prose-soraia > * + * { margin-top: 1.15em; }
+  .prose-soraia > h2 + *,
+  .prose-soraia > h3 + * { margin-top: 0.6em; }
+  .prose-soraia h2 {
+    font-size: clamp(1.5rem, 2vw + 0.5rem, 1.875rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin-top: 2.5em;
+    margin-bottom: 0.6em;
+    color: var(--color-ink);
+    scroll-margin-top: 6rem;
+  }
+  .prose-soraia h3 {
+    font-size: 1.1875rem;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    color: var(--color-ink);
+    scroll-margin-top: 6rem;
+  }
+  .prose-soraia p { color: var(--color-ink); }
+  .prose-soraia strong { font-weight: 600; color: var(--color-ink); }
+  .prose-soraia a {
+    color: var(--color-brand);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .prose-soraia a:hover { opacity: 0.7; }
+  .prose-soraia ul, .prose-soraia ol {
+    padding-left: 1.4em;
+    color: var(--color-ink);
+  }
+  .prose-soraia ul { list-style: disc; }
+  .prose-soraia ol { list-style: decimal; }
+  .prose-soraia li { margin: 0.4em 0; }
+  .prose-soraia li::marker { color: var(--color-ink-soft); }
+  .prose-soraia li > p { display: inline; }
+  .prose-soraia hr {
+    border: none;
+    border-top: 1px solid var(--color-line);
+    margin-block: 2.5em;
+  }
+</style>
