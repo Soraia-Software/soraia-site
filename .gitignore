@@ -12,3 +12,9 @@ Team_events/
 
 # Raw photo originals (HEIC etc.) — not served, kept local
 _source-photos/
+
+# iCloud sync duplicates (Desktop-synced repo)
+* 2.*
+* 3.*
+*\ 2
+*\ 3
