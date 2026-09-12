@@ -15,8 +15,6 @@ export default function PricingCalculator() {
   const [step, setStep] = useState(0);
   const hours = BASE_HOURS + step * STEP_HOURS;
   const price = BASE_PRICE + step * STEP_PRICE;
-  const aiHours = Math.round(hours * 0.8);
-  const pmHours = hours - aiHours;
   const pct = (step / (STEPS - 1)) * 100;
 
   return (
@@ -44,7 +42,12 @@ export default function PricingCalculator() {
           </span>
           <span className="text-[15px]" style={{ color: "var(--color-ink-soft)" }}>al mese</span>
         </div>
-        <p className="mt-3 text-[12.5px]" style={{ color: "var(--color-ink-soft)" }}>Tutti i prezzi sono IVA esclusa. Si parte da € 3.000 al mese.</p>
+        <p className="mt-3 text-[15px]" style={{ color: "var(--color-ink)" }}><b>{hours} ore al mese</b>, due figure dedicate sul tuo progetto.</p>
+        <div className="mt-5 inline-flex items-center gap-2.5 rounded-full px-5 py-2.5" style={{ background: "var(--color-violet-50, #F5EEF7)", border: "1px solid var(--color-violet-200, #E9D5F0)" }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={brand} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          <span className="text-[14px] font-semibold" style={{ color: brand }}>Anche solo per un mese, senza vincoli di durata.</span>
+        </div>
+        <p className="mt-4 text-[12.5px]" style={{ color: "var(--color-ink-soft)" }}>Tutti i prezzi sono IVA esclusa. Si parte da € 3.000 al mese.</p>
       </div>
 
       {/* TWO ROLES */}
@@ -55,8 +58,7 @@ export default function PricingCalculator() {
             <span className="inline-flex w-11 h-11 rounded-full items-center justify-center mb-4" style={{ background: "var(--color-violet-50, #F5EEF7)", color: brand }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
             </span>
-            <p className="text-[13px] font-semibold" style={{ color: brand }}>Project Manager</p>
-            <p style={{ fontSize: "2.5rem", fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.1 }}>{pmHours} ore</p>
+            <p style={{ fontSize: "1.5rem", fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.2, color: brand }}>Project Manager</p>
           </div>
           <p className="mt-4 text-[14.5px] leading-relaxed text-pretty" style={{ color: "var(--color-ink-muted)" }}>
             Unico riferimento per tutta la fornitura. Garantisce quattro cose:
@@ -87,8 +89,7 @@ export default function PricingCalculator() {
             <span className="inline-flex w-11 h-11 rounded-full items-center justify-center mb-4" style={{ background: "var(--color-violet-50, #F5EEF7)", color: brand }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M7 8l-4 4 4 4"/><path d="M17 8l4 4-4 4"/><path d="M14 4l-4 16"/></svg>
             </span>
-            <p className="text-[13px] font-semibold" style={{ color: brand }}>AI Engineer</p>
-            <p style={{ fontSize: "2.5rem", fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.1 }}>{aiHours} ore</p>
+            <p style={{ fontSize: "1.5rem", fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.2, color: brand }}>AI Engineer</p>
           </div>
           <p className="mt-4 text-[14.5px] leading-relaxed text-pretty" style={{ color: "var(--color-ink-muted)" }}>
             Responsabile dell'intera realizzazione tecnica: modello dati e anagrafica unica, integrazioni, sviluppo della piattaforma e progettazione, orchestrazione e ottimizzazione degli agenti di intelligenza artificiale.
