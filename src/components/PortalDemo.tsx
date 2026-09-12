@@ -651,7 +651,7 @@ function SprintsTab() {
   ].filter((g) => g.items.length > 0);
   const selectedSprint = selected ? SPRINTS.find((s) => s.id === selected) : null;
   return (
-    <div className="grid gap-6" style={{ gridTemplateColumns: selectedSprint ? "minmax(280px, 1fr) 1.6fr" : "1fr" }}>
+    <div className="grid gap-6 sprint-grid" style={{ gridTemplateColumns: selectedSprint ? "minmax(280px, 1fr) 1.6fr" : "1fr" }}>
       <div className="flex flex-col gap-5">
         {groups.map(({ status, items }) => {
           const isCollapsed = !!collapsed[status];

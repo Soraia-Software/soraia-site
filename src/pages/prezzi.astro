@@ -135,22 +135,45 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- PORTALE CLIENTE -->
+  <!-- PORTALE CLIENTE (embedded live demo) -->
   <section class="section pt-0">
-    <div class="container-soraia max-w-3xl text-center">
-      <p class="eyebrow mb-4">Trasparenza</p>
-      <h2 class="text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">Vedi ore e avanzamento in tempo reale</h2>
-      <p class="mt-4 text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
-        Ogni cliente ha un portale dedicato: ore lavorate per sprint e per persona, stato di ogni ticket, tutto aggiornato in tempo reale. Niente scatola nera, niente report da chiedere.
-      </p>
-      <div class="mt-7">
-        <a href="/demo-portale" class="btn btn-primary">
-          Prova il portale, demo
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
+    <div class="container-soraia">
+      <div class="max-w-2xl mb-8">
+        <p class="eyebrow mb-4">Trasparenza</p>
+        <h2 class="text-balance" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 2.5rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">Il portale cliente, in tempo reale</h2>
+        <p class="mt-4 text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+          Ogni cliente ha questo portale: i ticket in lavorazione, le ore per sprint e per persona, l'avanzamento del progetto. Niente scatola nera, niente report da chiedere. Provalo qui sotto, sono dati di esempio.
+        </p>
       </div>
+      <div class="portal-embed">
+        <div class="portal-embed__bar">
+          <span class="portal-embed__dot" style="background:#ff5f57;"></span>
+          <span class="portal-embed__dot" style="background:#febc2e;"></span>
+          <span class="portal-embed__dot" style="background:#28c840;"></span>
+          <span class="portal-embed__url">Portale cliente · Nordica HR (demo)</span>
+          <button type="button" id="portalExpand" class="portal-embed__expand" aria-label="Apri a schermo intero">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M16 21h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+            Schermo intero
+          </button>
+        </div>
+        <iframe id="portalFrame" src="/demo-portale?embed=1" title="Portale cliente Soraia, demo interattiva" loading="lazy"></iframe>
+      </div>
+      <p class="text-center text-[13px] mt-4" style="color: var(--color-ink-soft);">
+        Muoviti liberamente: cambia sprint, apri il dettaglio ore di ogni persona, filtra e cerca i ticket.
+      </p>
     </div>
   </section>
+  <script is:inline>
+    (function () {
+      var b = document.getElementById("portalExpand"), f = document.getElementById("portalFrame");
+      if (!b || !f) return;
+      b.addEventListener("click", function () {
+        var req = f.requestFullscreen || f.webkitRequestFullscreen || f.msRequestFullscreen;
+        if (req) { try { req.call(f); return; } catch (e) {} }
+        window.open("/demo-portale", "_blank");
+      });
+    })();
+  </script>
 
   <!-- CTA -->
   <section class="section">
@@ -343,5 +366,65 @@ const jsonLd = {
   }
   .sprint-step--milestone .sprint-step-title {
     color: var(--color-brand);
+  }
+
+  /* Embedded client-portal demo (browser-window frame) */
+  .portal-embed {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid var(--color-line);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 24px 60px -28px rgba(74, 30, 92, 0.4);
+  }
+  .portal-embed__bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 14px;
+    background: #f3eff5;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .portal-embed__dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+  .portal-embed__url {
+    margin-left: 10px;
+    font-size: 12.5px;
+    color: var(--color-ink-soft);
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .portal-embed__expand {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--color-brand);
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    padding: 5px 12px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .portal-embed__expand:hover { border-color: var(--color-brand); }
+  .portal-embed iframe {
+    width: 100%;
+    height: 700px;
+    border: 0;
+    display: block;
+    background: #faf7fb;
+  }
+  #portalFrame:fullscreen { width: 100vw; height: 100vh; }
+  @media (max-width: 640px) {
+    .portal-embed iframe { height: 600px; }
+    .portal-embed__url { display: none; }
   }
 </style>

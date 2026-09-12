@@ -62,7 +62,17 @@ import PortalDemo from "~/components/PortalDemo.tsx";
       .portal-app ::-webkit-scrollbar { width: 9px; height: 9px; }
       .portal-app ::-webkit-scrollbar-thumb { background: rgba(137, 45, 156, 0.22); border-radius: 999px; }
       .portal-app ::-webkit-scrollbar-track { background: transparent; }
+
+      /* Embedded mode (inside an iframe on another page): hide the demo ribbon */
+      html.is-embed .demo-ribbon { display: none; }
+      /* Narrow width (small embeds / phones): stack the sprint detail under the list */
+      @media (max-width: 720px) {
+        .portal-app .sprint-grid { grid-template-columns: 1fr !important; }
+      }
     </style>
+    <script is:inline>
+      try { if (new URLSearchParams(location.search).has("embed")) document.documentElement.classList.add("is-embed"); } catch (e) {}
+    </script>
   </head>
   <body>
     <div class="demo-shell">
