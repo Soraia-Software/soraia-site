@@ -1,0 +1,79 @@
+---
+import "~/styles/globals.css";
+import PortalDemo from "~/components/PortalDemo.tsx";
+---
+
+<!doctype html>
+<html lang="it" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Portale cliente Soraia · demo</title>
+    <meta
+      name="description"
+      content="Demo interattiva e anonimizzata del portale cliente Soraia: ore per sprint, avanzamento del progetto e ticket in Kanban."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style is:global>
+      html, body { margin: 0; height: 100%; }
+      body { background: #faf7fb; }
+      .demo-shell { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+      .demo-ribbon {
+        display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+        padding: 8px 16px; background: linear-gradient(90deg, #3d0f4a, #892d9c);
+        color: #fff; font-family: "DM Sans", system-ui, sans-serif; font-size: 12.5px;
+        flex-shrink: 0;
+      }
+      .demo-ribbon .tag {
+        font-size: 10px; font-weight: 800; letter-spacing: 0.1em;
+        background: rgba(255,255,255,0.16); padding: 3px 8px; border-radius: 6px;
+      }
+      .demo-ribbon .txt { opacity: 0.92; }
+      .demo-ribbon a {
+        margin-left: auto; color: #fff; font-weight: 600; text-decoration: none;
+        display: inline-flex; align-items: center; gap: 6px;
+        border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 4px 12px;
+      }
+      .demo-ribbon a:hover { background: rgba(255,255,255,0.14); }
+      .demo-app { flex: 1; min-height: 0; }
+
+      /* Portal design tokens (scoped so the rest of the site is untouched) */
+      .portal-app {
+        --color-primary: #892d9c;
+        --color-primary-light: #f5eaf7;
+        --color-primary-deeper: #3d0f4a;
+        --color-bg: #faf7fb;
+        --color-border: rgba(137, 45, 156, 0.12);
+        --color-text-primary: #1a1a1a;
+        --color-text-secondary: #555555;
+        --color-text-muted: #aaaaaa;
+        --font-ui: "DM Sans", system-ui, sans-serif;
+        font-family: var(--font-ui);
+      }
+      .portal-app .rte-content ul { margin: 0; padding-left: 16px; }
+      .portal-app .rte-content li { margin: 2px 0; }
+      .portal-app .rte-content p { margin: 0; }
+      .portal-app ::-webkit-scrollbar { width: 9px; height: 9px; }
+      .portal-app ::-webkit-scrollbar-thumb { background: rgba(137, 45, 156, 0.22); border-radius: 999px; }
+      .portal-app ::-webkit-scrollbar-track { background: transparent; }
+    </style>
+  </head>
+  <body>
+    <div class="demo-shell">
+      <div class="demo-ribbon">
+        <span class="tag">DEMO</span>
+        <span class="txt">Portale cliente Soraia · dati di esempio anonimizzati. Muoviti liberamente: cambia sprint, apri il dettaglio ore, filtra i ticket.</span>
+        <a href="/prezzi">← Torna a soraia.io</a>
+      </div>
+      <div class="demo-app">
+        <PortalDemo client:load />
+      </div>
+    </div>
+  </body>
+</html>
