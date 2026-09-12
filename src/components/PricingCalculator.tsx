@@ -1,12 +1,14 @@
 import { useState } from "react";
 
-// Base: 45 ore combinate = 3.000 euro/mese, split 80% AI Engineer / 20% Project Manager.
-// Ogni step aggiunge 15 ore (12 AI + 3 PM) e 1.000 euro. Numeri sempre interi.
-const STEPS = 10; // 0..9  -> 45h/3.000 ... 180h/12.000
+// Base: 45 ore combinate = 3.000 euro/mese. Ogni step aggiunge 3 ore e 200 euro
+// (rate costante di ~66,7 euro/ora). 61 step -> slider fluido, prezzi puliti.
+// step 0 = 45h/3.000 euro ... step 60 = 225h/15.000 euro.
+const STEPS = 61; // 0..60
 const BASE_HOURS = 45;
 const BASE_PRICE = 3000;
-const STEP_HOURS = 15;
-const STEP_PRICE = 1000;
+const STEP_HOURS = 3;
+const STEP_PRICE = 200;
+const MAX_HOURS = BASE_HOURS + (STEPS - 1) * STEP_HOURS; // 225
 const brand = "#4A1E5C";
 
 const fmt = (n: number) => n.toLocaleString("it-IT");
@@ -23,14 +25,14 @@ export default function PricingCalculator() {
       <div className="max-w-2xl mx-auto">
         <div className="flex items-baseline justify-between mb-3">
           <span className="text-[13px] font-medium" style={{ color: "var(--color-ink-soft)" }}>{hours} ore/mese</span>
-          <span className="text-[13px] font-medium" style={{ color: "var(--color-ink-soft)" }}>fino a 180 ore/mese</span>
+          <span className="text-[13px] font-medium" style={{ color: "var(--color-ink-soft)" }}>fino a {MAX_HOURS} ore/mese</span>
         </div>
         <input
           type="range" min={0} max={STEPS - 1} step={1} value={step}
           onChange={(e) => setStep(Number(e.target.value))}
           aria-label="Ore al mese"
           className="pricing-range"
-          style={{ background: `linear-gradient(to right, ${brand} 0%, #a855f7 ${pct}%, #E7E4DF ${pct}%, #E7E4DF 100%)` }}
+          style={{ backgroundImage: `linear-gradient(to right, ${brand} 0%, #a855f7 ${pct}%, #E7E4DF ${pct}%, #E7E4DF 100%)` }}
         />
       </div>
 
