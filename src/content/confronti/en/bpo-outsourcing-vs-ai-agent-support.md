@@ -37,7 +37,7 @@ optionB:
     - "Immutable audit log on every answer, useful for GDPR and the AI Act"
   contro:
     - "Ambiguous or emotional cases still need escalation to a human"
-    - "Upfront build cost (Assessment around 2,000 euro, Sprint 10-50k)"
+    - "Upfront build cost"
     - "It must be trained on your knowledge base: a poor base means a poor agent"
     - "You need an internal owner curating content and edge cases"
   idealePer:
@@ -59,7 +59,7 @@ tabella:
     valoreB: "Direct, defined by you"
   - criterio: "Upfront investment"
     valoreA: "Low (provider setup)"
-    valoreB: "Build sprint (10-50k)"
+    valoreB: "From €3,000/month"
   - criterio: "Traceability / compliance"
     valoreA: "Depends on the BPO"
     valoreB: "Audit log on every answer"
@@ -68,11 +68,11 @@ faq:
   - q: "Does an AI agent fully replace a BPO?"
     a: "Rarely, and that is not the goal. An AI agent is excellent at repetitive requests and triage, but ambiguous, emotional or negotiation cases still need <strong>escalation to a human</strong>. The most robust model is hybrid: the agent handles first level, humans handle complex cases. See how we work on <a href='/customer-support'>customer support</a>."
   - q: "How much does starting with an AI agent cost versus a BPO?"
-    a: "With Soraia you start from an AI Readiness Assessment of around <strong>2,000 euro</strong> (refunded if you proceed) and a build Sprint between <strong>10,000 and 50,000 euro</strong>. A BPO instead has a recurring cost per agent or per ticket, low at first but <strong>linear</strong> as volumes grow. What pays off depends on your numbers: <a href='/parliamone'>let's talk</a>."
+    a: "With Soraia it starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool. A BPO instead has a recurring cost per agent or per ticket, low at first but <strong>linear</strong> as volumes grow. What pays off depends on your numbers: <a href='/parliamone'>let's talk</a>."
   - q: "Is the AI agent GDPR and AI Act compliant?"
     a: "Yes. Soraia's <a href='/ai-agents'>AI agents</a> are GDPR-compliant, with European infrastructure when required, an art. 28 DPA included and an <strong>immutable audit log on every decision</strong>. No LLM training on client data."
   - q: "What if the agent falls short of the promised quality?"
-    a: "With Soraia the <strong>you pay only if satisfied</strong> guarantee applies: a measurable target is set at assessment (e.g. share of tickets resolved autonomously) and, if it is not met by go-live plus 30 days of hypercare, Soraia works for free until it is or refunds the sprint."
+    a: "With Soraia the <strong>you pay only if satisfied</strong> guarantee applies: a measurable target is set at assessment (e.g. share of tickets resolved autonomously) and, if it is not met by go-live plus 30 days of hypercare, Soraia works for free until it is."
 related: []
 featured: false
 pubDate: 2026-09-29

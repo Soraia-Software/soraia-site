@@ -117,4 +117,4 @@ The quick answers to the questions COOs and DPOs ask us are in the box below.
 
 ---
 
-**Want an assessment of your specific case?** In the [AI Readiness Assessment €2,000](/en/ai-agents) we map your AI systems and tell you honestly which tier they fall into and what to do, without scaremongering. Or start with the [3-minute check-up](/en/check-up).
+**Want an assessment of your specific case?** In the [AI Readiness Assessment](/en/ai-agents) we map your AI systems and tell you honestly which tier they fall into and what to do, without scaremongering. Or start with the [3-minute check-up](/en/check-up).

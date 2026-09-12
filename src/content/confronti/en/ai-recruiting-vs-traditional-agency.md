@@ -23,7 +23,7 @@ optionA:
     - "You need an already-defined hiring process to put inside the agent"
     - "For rare or executive roles, human network and judgment outweigh automation"
     - "Requires an HR owner to follow the project and validate the criteria"
-    - "Upfront build cost (Assessment ~2,000 euro, Sprint 10-50k) before the payback"
+    - "Upfront build cost before the payback"
   idealePer:
     - "Companies with high volumes and recurring roles (retail, hospitality, contact centers)"
     - "HR teams that want to free time from manual screening"
@@ -53,7 +53,7 @@ tabella:
     valoreA: "High, near-zero marginal cost"
     valoreB: "Limited by number of recruiters"
   - criterio: "Cost model"
-    valoreA: "One-off sprint + optional retainer"
+    valoreA: "From €3,000/month"
     valoreB: "Fee per hire (15-25% of salary)"
   - criterio: "Senior/executive roles"
     valoreA: "Weak without human network"
@@ -66,11 +66,11 @@ faq:
   - q: "Does an AI agent replace recruiters?"
     a: "No, it augments them. The agent does the repetitive work (screening, parsing, first contact), recruiters focus on interviews, evaluation and closing. In the <a href='/case-studies/apraise'>APraise</a> case the agent equals <strong>4 extra recruiters</strong> without replacing the existing team."
   - q: "How much does an AI agent cost versus an agency?"
-    a: "With Soraia you start with an Assessment of around <strong>2,000 euro</strong> (refunded if you proceed) and a build Sprint between <strong>10,000 and 50,000 euro</strong>. A traditional agency typically charges 15-25% of salary per hire: at high volumes, the agent's cost per hire drops far faster. <a href='/parliamone'>Let's talk</a> for an estimate on your hiring volume."
+    a: "With Soraia it starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool. A traditional agency typically charges 15-25% of salary per hire: at high volumes, the agent's cost per hire drops far faster. <a href='/parliamone'>Let's talk</a> for an estimate on your hiring volume."
   - q: "What about executive or very rare roles?"
     a: "There a traditional agency is often still the better choice: the contact network and human judgment on fit and negotiation matter more than automation. AI excels at volume and first filter, not at headhunting a handful of rare profiles."
   - q: "What if the agent doesn't deliver the promised result?"
-    a: "With Soraia the <strong>you only pay if you're satisfied</strong> guarantee applies: a measurable target is set in the assessment (e.g. 5h/recruiter/week recovered) and, if it isn't reached by go-live + 30 days of hypercare, we work for free until it is or refund the sprint. See the <a href='/recruitment'>Recruitment & HR</a> cluster."
+    a: "With Soraia the <strong>you only pay if you're satisfied</strong> guarantee applies: a measurable target is set in the assessment (e.g. 5h/recruiter/week recovered) and, if it isn't reached by go-live + 30 days of hypercare, we work for free until it is. See the <a href='/recruitment'>Recruitment & HR</a> cluster."
 related: []
 featured: false
 pubDate: 2026-08-13

@@ -64,7 +64,7 @@ faq:
   - q: "Come si misura il ritorno della GEO se il traffico e' zero-click?"
     a: "E' il punto piu' onesto: l'attribuzione e' ancora immatura. Si monitorano le citazioni nei principali assistenti AI, il traffico brand e le richieste di contatto che nascono dopo una ricerca AI. Non aspettarti dashboard precise come su Google Analytics; oggi si ragiona per segnali, non per numeri al centesimo."
   - q: "Come lavora Soraia sull'AI Search Optimization?"
-    a: "Con un <a href='/ai-search-optimization'>audit da circa 2.000 euro</a> e uno sprint tra 3.000 e 15.000 euro che riorganizza i contenuti e, se serve, rifa' il sito in versione AI-ready. Per <a href='/case-studies/iltec'>ILTEC</a> abbiamo rifatto il sito AI search optimized in 3 settimane con un agente commerciale collegato. Se vuoi capire da dove partire, <a href='/parliamone'>parliamone</a>."
+    a: "Con un <a href='/ai-search-optimization'>audit</a> riorganizziamo i contenuti e, se serve, rifacciamo il sito in versione AI-ready. Per <a href='/case-studies/iltec'>ILTEC</a> abbiamo rifatto il sito AI search optimized in 3 settimane con un agente commerciale collegato. Si parte da <strong>3.000 € al mese</strong>, due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese: vedi i <a href='/prezzi'>prezzi</a>. Se vuoi capire da dove partire, <a href='/parliamone'>parliamone</a>."
   - q: "Da cosa dovrei partire con budget limitato?"
     a: "Dalla base SEO: contenuti che rispondono davvero alle domande dei clienti e un sito tecnicamente pulito. Quella stessa base rende il sito piu' citabile dai motori AI, quindi non e' lavoro sprecato. La GEO dedicata ha senso subito solo se i tuoi buyer usano gia' assistenti AI per scegliere i fornitori."
 related: []

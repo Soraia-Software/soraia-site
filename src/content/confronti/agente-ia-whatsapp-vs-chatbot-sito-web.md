@@ -68,7 +68,7 @@ faq:
   - q: "Devo per forza scegliere un solo canale?"
     a: "No. La parte difficile e costosa e' l'<strong>agente IA sul processo</strong> (triage, risposte, routing al team umano): una volta costruito quello, esporlo sia su WhatsApp sia sul widget del sito e' un lavoro di integrazione, non un secondo progetto da zero. Vedi come lavoriamo sul <a href='/customer-support'>customer support</a>."
   - q: "Quanto costa partire con un agente IA su un canale?"
-    a: "Con Soraia si parte da un AI Readiness Assessment di circa <strong>2.000 euro</strong> (rimborsato se procedi) e uno Sprint di build tra <strong>10.000 e 50.000 euro</strong>, con prima delivery in <strong>4 settimane</strong>. Le tariffe Meta per WhatsApp sono un costo a parte, variabile, che dipende dai volumi. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in <strong>4 settimane</strong>. Le tariffe Meta per WhatsApp sono un costo a parte, variabile, che dipende dai volumi. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "L'agente su WhatsApp o sul sito e' conforme al GDPR?"
     a: "Si. In entrambi i casi lavoriamo GDPR-compliant, con DPA art. 28 nel contratto, audit log immutabile e nessun training degli LLM sui tuoi dati. Sul sito hai controllo pieno sui dati; su WhatsApp passi anche dall'infrastruttura Meta, quindi va valutato quali dati transitano."
   - q: "Un agente IA riesce davvero a ridurre il carico sul team?"

@@ -117,4 +117,4 @@ Le risposte rapide alle domande che ci fanno i COO e i DPO sono nel box qui sott
 
 ---
 
-**Vuoi una valutazione del tuo caso specifico?** Nell'[AI Readiness Assessment €2.000](/ai-agents) mappiamo i tuoi sistemi IA e ti diciamo onestamente in quale livello ricadono e cosa serve fare, senza allarmismi. Oppure inizia dal [check-up 3 minuti](/check-up).
+**Vuoi una valutazione del tuo caso specifico?** Nell'[AI Readiness Assessment](/ai-agents) mappiamo i tuoi sistemi IA e ti diciamo onestamente in quale livello ricadono e cosa serve fare, senza allarmismi. Oppure inizia dal [check-up 3 minuti](/check-up).

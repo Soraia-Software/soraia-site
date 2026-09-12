@@ -174,7 +174,7 @@ Visti decine di volte nei 40+ progetti Soraia. Evitabili se ne sei consapevole.
 In Italia 2026 ci sono 3 tipi di provider:
 
 - **Big4 consulting** (Accenture, Deloitte, McKinsey): brand riconosciuto, fee alte (€100k+ per il primo agente), tempi lunghi (6-12 mesi).
-- **AI agency specializzate** (es. Soraia): focus PMI, prezzi €10-50k, tempi 4 settimane, accountability diretta CEO-CEO.
+- **AI agency specializzate** (es. Soraia): focus PMI, prima delivery in 4 settimane, accountability diretta CEO-CEO. Prezzo unico e trasparente, a partire da 3.000 € al mese (vedi <a href="/prezzi">prezzi</a>).
 - **Freelance / sviluppatori indipendenti**: prezzi più bassi, rischio qualità + continuità.
 
 Per un confronto operativo vedi la <a href="/guide/consulenza-ai-italia">guida consulenza AI Italia</a>.

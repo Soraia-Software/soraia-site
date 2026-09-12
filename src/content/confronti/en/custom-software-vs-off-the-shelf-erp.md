@@ -68,13 +68,13 @@ faq:
   - q: "How do I tell whether to build or buy a process?"
     a: "Four criteria: whether the process is <strong>core and differentiating</strong>, whether the package forces heavy workarounds, the <strong>total 2-3 year cost</strong> (licenses plus adaptations), and lock-in risk. We detail them here: <a href='/blog/software-su-misura-o-saas/'>custom software or SaaS</a>. To think it through on your case, <a href='/parliamone'>let's talk</a>."
   - q: "How much does starting with custom software cost?"
-    a: "With Soraia you start from a Scoping of about <strong>2,000 euro</strong> (refunded if you proceed) and a Build Sprint between <strong>10,000 and 50,000 euro</strong>, with a first release in 4 weeks. A ready-made ERP has a lower upfront cost, but the per-user fee grows every year: the choice is decided on the 2-3 year total, not on day one."
+    a: "With Soraia it starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool, with a first release in 4 weeks. A ready-made ERP has a lower upfront cost, but the per-user fee grows every year: the choice is decided on the 2-3 year total, not on day one. <a href='/en/contact'>Let's talk</a>."
   - q: "If I build custom, do I stay dependent on the vendor?"
     a: "No. With Soraia the <strong>code is yours from day one</strong>, documented and maintainable: no perpetual subscriptions, no lock-in. With a ready-made ERP, data and customizations live inside the product and migrating away is often costly."
   - q: "Can I mix the two approaches?"
     a: "Yes, and it's often the best choice. Many SMEs keep a <strong>ready-made system on commodity</strong> (accounting, HR) and build <strong>custom only on the core process</strong>. See how we did it for a payroll firm in <a href='/case-studies/numeraria'>Numeraria</a>."
   - q: "What if it doesn't work?"
-    a: "With Soraia the <strong>pay only if you're satisfied</strong> guarantee applies: the target is set in scoping and, if it's not reached by go-live plus 30 days of hypercare, we work for free until it is or refund the sprint. Learn more about <a href='/software-development'>custom software</a>."
+    a: "With Soraia the <strong>pay only if you're satisfied</strong> guarantee applies: the target is set in scoping and, if it's not reached by go-live plus 30 days of hypercare, we work for free until it is. Learn more about <a href='/software-development'>custom software</a>."
 related: []
 featured: false
 pubDate: 2026-08-18

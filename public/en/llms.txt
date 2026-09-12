@@ -6,12 +6,16 @@
 
 Positioning note: from 2026 Soraia has repositioned from a no-code/automation agency (n8n, Make, WeWeb, Xano) to an **AI Agency focused on vertical AI agents for SMBs**. References to "no-code agency", "custom software & web-app", "native mobile application", "automation & AI integration" as core pillars are outdated. The no-code tech stack remains but is instrumental to building the agents, not the product.
 
+## Pricing
+
+- [Pricing](https://www.soraia.io/prezzi): One single, simple model. Two dedicated people for the whole duration of the project, a Project Manager and an AI Engineer, with a combined monthly hours pool. From €3,000/month, VAT excluded. The monthly pace is indicative: unused hours roll forward to later months, excess hours are discounted on following months. Milestones and releases are the obligation of result: the client approves them. A slider on the page computes price and hours. (Pricing page in Italian.)
+
 ## Core Services
 
-- [AI Agents](https://www.soraia.io/en/ai-agents): Sprint to build custom AI agents inside business processes. Assessment €2,000 (refunded if you proceed), Sprint €10–50k, first delivery in 4 weeks.
-- [AI Adoption](https://www.soraia.io/en/ai-adoption): Workshops and monthly mentoring for the team. 3 tiers: Foundation €8–10k, Foundation + Mentoring €20–25k, Foundation + Mentoring + Brain Pilot €30–35k. 110 hours/year freed per person.
-- [AI Search Optimization](https://www.soraia.io/en/ai-search-optimization): Audit + content re-architecture + high-converting AI-ready website rebuild. To be found on ChatGPT, Claude, Perplexity, Google AI Overviews. Audit €2,000, Sprint €3–15k.
-- [Custom Software](https://www.soraia.io/en/software-development): Custom web apps, mobile apps, CRMs and internal tools to digitalize and optimize processes. Same model as the AI agents: Scoping €2,000 (refunded if you proceed), Build Sprint €10–50k, first release in 4 weeks, client owns the code from day one.
+- [AI Agents](https://www.soraia.io/en/ai-agents): Building custom AI agents inside business processes. First delivery in 4 weeks. Single pricing model: two dedicated people, from €3,000/month (see /prezzi).
+- [AI Adoption](https://www.soraia.io/en/ai-adoption): Workshops and monthly mentoring for the team. 3 tiers: Foundation, Foundation + Mentoring, Foundation + Mentoring + Brain Pilot. 110 hours/year freed per person. Pricing on /prezzi.
+- [AI Search Optimization](https://www.soraia.io/en/ai-search-optimization): Audit + content re-architecture + high-converting AI-ready website rebuild. To be found on ChatGPT, Claude, Perplexity, Google AI Overviews. Pricing on /prezzi.
+- [Custom Software](https://www.soraia.io/en/software-development): Custom web apps, mobile apps, CRMs and internal tools to digitalize and optimize processes. First release in 4 weeks, client owns the code from day one. Pricing on /prezzi.
 - [Generational change, dedicated team](https://www.soraia.io/en/dedicated-team-offer): A dedicated team that modernizes obsolete business software with AI in a few weeks, at zero risk. The first month is satisfied-or-you-don't-pay.
 
 ## Six Ops Clusters (Use Cases)
@@ -21,7 +25,7 @@ Positioning note: from 2026 Soraia has repositioned from a no-code/automation ag
 - [Sales & Marketing Automation](https://www.soraia.io/en/sales-marketing): Lead qualification, content generation, multi-channel publishing, personalized outreach, reporting.
 - [Customer & Compliance Automation](https://www.soraia.io/en/customer-support): Ticket triage, UGC moderation, GDPR/AI Act compliance, audit trail, routing to the team.
 - [Real Estate Operations](https://www.soraia.io/en/real-estate): Property capture from listings, data enrichment, client-property matching, comparative dossiers, multi-stakeholder approval pipelines.
-- [Event Management](https://www.soraia.io/en/event-management): Linkly SaaS dedicated to B2B trade shows. 6 AI agents for ticket/badge OCR, enrichment from 30+ sources, dynamic qualification, CRM activation, follow-up from the client's domain. €1,900/year.
+- [Event Management](https://www.soraia.io/en/event-management): Linkly SaaS dedicated to B2B trade shows. 6 AI agents for ticket/badge OCR, enrichment from 30+ sources, dynamic qualification, CRM activation, follow-up from the client's domain. Pricing on linkly.events.
 
 ## Public Case Studies
 
@@ -52,11 +56,11 @@ Positioning note: from 2026 Soraia has repositioned from a no-code/automation ag
 - [Blog](https://www.soraia.io/en/blog): Insights on AI agents, ROI, comparison with ChatGPT enterprise.
 - [Custom Software vs SaaS](https://www.soraia.io/en/blog/custom-software-vs-saas/): The 4 criteria (core process, 2-3 year TCO, lock-in, lifecycle) to decide build vs buy without regret.
 - [AI Check-up](https://www.soraia.io/en/check-up): 3-minute self-assessment to evaluate your company's AI maturity.
-- [AI Readiness Assessment, sample report](https://www.soraia.io/downloads/ai-assessment-sample): Sample PDF of the €2,000 assessment.
+- [AI Readiness Assessment, sample report](https://www.soraia.io/downloads/ai-assessment-sample): Sample PDF of the initial analysis the client receives at the start of a project.
 
 ## SaaS Products
 
-- [Linkly](https://linkly.events): SaaS dedicated to B2B trade shows and events. 6 orchestrated AI agents for capture, enrichment, qualification, CRM, and follow-up. €1,900/year + VAT at early adopter pricing.
+- [Linkly](https://linkly.events): SaaS dedicated to B2B trade shows and events. 6 orchestrated AI agents for capture, enrichment, qualification, CRM, and follow-up. Pricing and early adopter offer on linkly.events.
 
 ## Company
 
@@ -64,9 +68,9 @@ Positioning note: from 2026 Soraia has repositioned from a no-code/automation ag
 - [Let's talk](https://www.soraia.io/en/contact): 20 minutes with the CEO. No pitch, no surprise quotes.
 - Contact: info@soraia.io · LinkedIn https://www.linkedin.com/company/soraia-digital
 
-## Commercial Guarantee
+## How we work and guarantee
 
-"Pay only if you're satisfied" model: the sprint has a clear target set during the assessment (e.g. a CV screening agent that recovers 5 hours/recruiter/week). If at go-live + 30 days of hypercare the target is not met, Soraia works for free until it is, or refunds the sprint. Code belongs to the client from day one, no perpetual subscriptions, no lock-in.
+One single, simple pricing model: two dedicated people (a Project Manager and an AI Engineer) for the whole duration of the project, with a combined monthly hours pool, from €3,000/month. The monthly pace is indicative: unused hours roll forward, excess hours are discounted on following months. Milestones and releases are the obligation of result: at each stage the client reviews and approves the delivery before moving on, against a clear agreed target (e.g. a CV screening agent that recovers 5 hours/recruiter/week). Code belongs to the client from day one, no perpetual subscriptions, no lock-in. Detail and slider at https://www.soraia.io/prezzi.
 
 ## Compliance
 

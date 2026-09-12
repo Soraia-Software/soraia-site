@@ -72,7 +72,7 @@ faq:
   - q: "Da quale dei due conviene partire?"
     a: "Dipende dal processo. Su attivita' ripetitive ad alto volume (es. riconciliazioni o estrazione fatture in <a href='/finance'>Finance</a>) l'agente autonomo recupera piu' ore. Su attivita' variabili e ad alto giudizio, meglio un copilot. Spesso conviene un percorso: copilot prima per costruire fiducia, autonomia dopo dove i numeri la giustificano."
   - q: "Quanto tempo si risparmia davvero con un agente autonomo?"
-    a: "Dipende dal processo, ma il target si fissa prima di iniziare: ad esempio <strong>5 ore a persona a settimana</strong> recuperate su un'attivita' ripetitiva. Con Soraia vale la garanzia paghi solo se sei soddisfatto: se al go-live + 30 giorni il target non e' raggiunto, si lavora gratis finche' non lo e' oppure si rimborsa. Per capire quale approccio fa per te, <a href='/parliamone'>parliamone</a>."
+    a: "Dipende dal processo, ma il target si fissa prima di iniziare: ad esempio <strong>5 ore a persona a settimana</strong> recuperate su un'attivita' ripetitiva. Con Soraia vale la garanzia paghi solo se sei soddisfatto: se al go-live + 30 giorni il target non e' raggiunto, si lavora gratis finche' non lo e'. Per capire quale approccio fa per te, <a href='/parliamone'>parliamone</a>."
 related: []
 featured: false
 pubDate: 2026-08-27

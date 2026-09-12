@@ -37,7 +37,7 @@ optionB:
     - "Audit log immutabile su ogni risposta, utile per GDPR e AI Act"
   contro:
     - "Sui casi ambigui o emotivi serve comunque l'escalation a un umano"
-    - "Costo iniziale di build (Assessment circa 2.000 euro, Sprint 10-50k)"
+    - "Costo iniziale di build"
     - "Va addestrato sulla tua knowledge base: se e' povera, l'agente lo e' anche"
     - "Serve un referente interno che curi contenuti e casi limite"
   idealePer:
@@ -59,7 +59,7 @@ tabella:
     valoreB: "Diretto, definito da te"
   - criterio: "Investimento iniziale"
     valoreA: "Basso (setup fornitore)"
-    valoreB: "Sprint di build (10-50k)"
+    valoreB: "Da 3.000 €/mese"
   - criterio: "Tracciabilita' / compliance"
     valoreA: "Dipende dal BPO"
     valoreB: "Audit log su ogni risposta"
@@ -68,7 +68,7 @@ faq:
   - q: "Un agente IA sostituisce completamente il BPO?"
     a: "Raramente, e non e' l'obiettivo. L'agente IA e' bravissimo su richieste ripetitive e triage, ma sui casi ambigui, emotivi o che richiedono negoziazione serve <strong>l'escalation a un umano</strong>. Il modello piu' solido e' ibrido: l'agente gestisce il primo livello, gli umani i casi complessi. Vedi come lavoriamo sul <a href='/customer-support'>customer support</a>."
   - q: "Quanto costa partire con un agente IA rispetto a un BPO?"
-    a: "Con Soraia si parte da un AI Readiness Assessment di circa <strong>2.000 euro</strong> (rimborsato se procedi) e uno Sprint di build tra <strong>10.000 e 50.000 euro</strong>. Un BPO ha invece un costo ricorrente per operatore o per ticket, basso all'inizio ma <strong>lineare</strong> al crescere dei volumi. La convenienza dipende dai tuoi numeri: <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese. Un BPO ha invece un costo ricorrente per operatore o per ticket, basso all'inizio ma <strong>lineare</strong> al crescere dei volumi. La convenienza dipende dai tuoi numeri: <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "L'agente IA rispetta il GDPR e l'AI Act?"
     a: "Si'. Gli <a href='/ai-agents'>agenti IA</a> di Soraia sono GDPR-compliant, con infrastruttura europea quando richiesto, DPA art. 28 inclusa e <strong>audit log immutabile su ogni decisione</strong>. Nessun training degli LLM sui dati del cliente."
   - q: "E se l'agente non raggiunge la qualita' promessa?"

@@ -22,7 +22,7 @@ faq:
   - q: "Is it safe to give a coding agent access to our code?"
     a: "It depends on the setup. Use it in an isolated environment, with limited permissions and no production credentials. For GDPR-bound sectors you need a <strong>DPA under art. 28</strong> with the vendor and no model training on your data. At Soraia this is included in the contract."
   - q: "How much does an internal tool built with Claude Code cost?"
-    a: "The coding agent slashes writing hours, not the whole cost. At Soraia Scoping is ~<strong>€2,000</strong> (refunded if you proceed) and a Build Sprint runs <strong>€10-50k</strong>, with first release in 4 weeks. The code is yours from day one."
+    a: "The coding agent slashes writing hours, not the whole cost. At Soraia our pricing is one model: from <strong>€3,000/month</strong>, two dedicated people (a Project Manager and an AI Engineer), with first release in 4 weeks. The code is yours from day one."
   - q: "Claude Code or an off-the-shelf SaaS?"
     a: "If a SaaS covers the process at a reasonable 2-3 year cost, buy it. A coding agent wins when the process is core, specific and poorly served by market tools. Build vs buy is still the first question."
 lang: "en"
@@ -87,7 +87,7 @@ It is the same principle behind our [AI agents](/en/ai-agents): automatic execut
 
 The tech stack is instrumental: what we deliver is a measurable result, not the tool we build it with. A coding agent is one of the levers that lets us ship the first release in **4 weeks** instead of months.
 
-The model stays the same as custom development: Scoping ~€2,000 (refunded if you proceed), Build Sprint €10-50k, your code from day one, no lock-in. The coding agent cuts writing hours. It does not cut scoping, testing, data governance, or the "you pay only if it works" guarantee.
+The model stays the same as custom development: from €3,000/month, two dedicated people (a Project Manager and an AI Engineer), your code from day one, no lock-in. The coding agent cuts writing hours. It does not cut scoping, testing, data governance, or the "you pay only if it works" guarantee.
 
 ## When you do NOT need an external team
 

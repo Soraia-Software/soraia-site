@@ -23,7 +23,7 @@ faq:
   - q: "Si integra con TeamSystem o Zucchetti?"
     a: "L'agente si aggancia ai gestionali via export/import o API dove disponibili. Non ti chiediamo di cambiare gestionale: costruiamo sopra lo stack che già usi, incluso il flusso di fatturazione elettronica."
   - q: "Quanto costa e in quanto tempo parte?"
-    a: "Assessment ~<strong>€2.000</strong> (rimborsato se procedi), poi Sprint <strong>€10-50k</strong> con primo agente live in <strong>4 settimane</strong> e 30 giorni di hypercare. La garanzia resta: <strong>paghi solo se funziona</strong>."
+    a: "Si parte da <strong>3.000 € al mese</strong> (IVA esclusa), con due figure dedicate (un Project Manager e un AI Engineer). Primo agente live in <strong>4 settimane</strong> e 30 giorni di hypercare. La garanzia resta: <strong>paghi solo se funziona</strong>."
 lang: "it"
 gates:
   passedAt: 2026-07-16T14:53:45.191Z
@@ -47,7 +47,7 @@ draft: false
 > - Un agente IA non decide da solo: prepara la bozza, riconcilia il facile, escala all'umano solo le anomalie.
 > - In [Numeraria](/case-studies/numeraria) il risultato è stato circa **mezzo mese restituito al management** ogni mese.
 > - Per un agente contabile interno l'AI Act ti colloca in genere a rischio minimo: nessuna decisione autonoma che impatta persone.
-> - Prezzo: assessment ~**€2.000** rimborsato, sprint **€10-50k**, primo agente live in **4 settimane**, garanzia paghi solo se funziona.
+> - Prezzo: a partire da **3.000 € al mese** (IVA esclusa), due figure dedicate (Project Manager e AI Engineer), primo agente live in **4 settimane**, garanzia paghi solo se funziona.
 
 Uno studio paghe e contabilità non perde tempo sulle cose difficili. Lo perde su quelle ripetitive: preparare l'ennesimo preventivo, aggregare le ore del team, riconciliare estratti conto.
 
@@ -91,7 +91,7 @@ Il risultato pubblicato: circa **mezzo mese restituito al management** ogni mese
 
 ## Cosa serve per partire
 
-Assessment ~**€2.000** (rimborsato se procedi) per misurare la baseline e scegliere il primo processo. Poi uno sprint da **€10-50k**, primo agente live in **4 settimane**, 30 giorni di hypercare. Il target è scritto nel contratto: se non lo raggiungiamo, lavoriamo gratis fino a quando succede o rimborsiamo.
+Si parte da **3.000 € al mese** (IVA esclusa), con due figure dedicate (Project Manager e AI Engineer), per misurare la baseline e portare live il primo processo. Primo agente live in **4 settimane**, 30 giorni di hypercare. Il target è scritto nel contratto: se non lo raggiungiamo, lavoriamo gratis fino a quando succede o rimborsiamo.
 
 ---
 

@@ -36,7 +36,7 @@ optionB:
     - "ROI misurabile su un processo (es. ore recuperate a settimana)"
     - "Governance e audit trail integrati, utile per GDPR e AI Act"
   contro:
-    - "Costo iniziale piu' alto (Assessment ~2.000 euro, Sprint 10-50k)"
+    - "Costo iniziale piu' alto"
     - "Ha senso solo su processi ripetitivi e con volume"
     - "Richiede un referente interno che segua il progetto"
     - "Va mantenuto quando il processo o i sistemi cambiano"
@@ -47,7 +47,7 @@ optionB:
 tabella:
   - criterio: "Costo di partenza"
     valoreA: "Pochi euro/persona al mese"
-    valoreB: "Assessment ~2.000 euro + Sprint 10-50k"
+    valoreB: "Da 3.000 €/mese"
   - criterio: "Tempo per iniziare"
     valoreA: "Oggi stesso"
     valoreB: "Prima delivery in 4 settimane"
@@ -68,7 +68,7 @@ faq:
   - q: "Se uso gia' ChatGPT in azienda, mi serve ancora un agente verticale?"
     a: "Dipende dal processo. ChatGPT e' ottimo per produttivita' individuale, ma non esegue lavoro end-to-end nei tuoi sistemi ne' conosce le tue regole. Quando un processo e' ripetitivo, ad alto volume e core (screening CV, riconciliazioni, qualifica lead), un <a href='/ai-agents'>agente verticale</a> porta ROI misurabile che uno strumento generico non da'. I due si integrano, non si escludono."
   - q: "Quanto costa passare da un tool generalista a un agente verticale?"
-    a: "Con Soraia si parte da un AI Readiness Assessment di circa <strong>2.000 euro</strong> (rimborsato se procedi) e uno Sprint di build tra <strong>10.000 e 50.000 euro</strong>, con prima delivery in 4 settimane. Il salto ha senso quando il tempo perso su un singolo processo giustifica l'investimento. Per capire su quali processi conviene, <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in 4 settimane. Il salto ha senso quando il tempo perso su un singolo processo giustifica l'investimento. Per capire su quali processi conviene, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "L'AI verticale sostituisce quella generalista?"
     a: "No. La generalista resta lo strumento quotidiano per mille attivita' non standardizzate. La verticale interviene sui processi core e ripetitivi dove serve precisione, esecuzione e tracciabilita'. Nella pratica una PMI usa entrambe: <a href='/guide/agenti-ai-aziende'>qui trovi come funzionano gli agenti verticali</a>."
   - q: "Come faccio a capire quali processi meritano un agente verticale?"

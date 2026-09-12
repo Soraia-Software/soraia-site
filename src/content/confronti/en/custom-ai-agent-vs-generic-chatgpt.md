@@ -19,7 +19,7 @@ optionA:
     - "Serious governance: audit log, no LLM training on your data, AI Act alignment"
     - "Measurable results against an agreed target (e.g. 5h/recruiter/week saved)"
   contro:
-    - "Requires an upfront investment (Assessment ~2,000 euro, Sprint 10-50k)"
+    - "Requires an upfront investment"
     - "Only makes sense on a repeatable, well-defined process, not everything"
     - "You need an internal owner to follow the project and the data"
     - "It has to be maintained and updated over time"
@@ -52,7 +52,7 @@ tabella:
     valoreA: "Yes, integrated with your systems"
     valoreB: "No, general knowledge"
   - criterio: "Cost"
-    valoreA: "Assessment ~2,000 euro + Sprint 10-50k"
+    valoreA: "From €3,000/month"
     valoreB: "A few tens of euro/user per month"
   - criterio: "Time to activate"
     valoreA: "First delivery in 4 weeks"
@@ -68,13 +68,13 @@ faq:
   - q: "Isn't ChatGPT enough if I give it access to my documents?"
     a: "It helps, but it stays an assistant: it answers whoever queries it, it doesn't execute an end-to-end process on your systems. A <a href='/ai-agents'>custom agent</a> connects to CRM, ERP and PDFs, applies your rules and produces a repeatable result with an audit trail. They are two different tools, not two versions of the same one."
   - q: "How much does an agent cost compared to ChatGPT subscriptions?"
-    a: "ChatGPT costs a few tens of euro per user per month. A custom agent starts with an <strong>Assessment of about 2,000 euro</strong> (refunded if you proceed) and a <strong>Sprint between 10,000 and 50,000 euro</strong>. It's not a like-for-like comparison: you pay more because the agent executes a process and returns measurable hours. To see if it's worth it for your case, <a href='/parliamone'>let's talk</a>."
+    a: "ChatGPT costs a few tens of euro per user per month. A custom agent with Soraia starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool. It's not a like-for-like comparison: you pay more because the agent executes a process and returns measurable hours. To see if it's worth it for your case, <a href='/parliamone'>let's talk</a>."
   - q: "What about sensitive data? Is generic ChatGPT a risk?"
     a: "The biggest risk is people pasting sensitive data into an ungoverned tool. With a Soraia custom agent your data stays yours: <strong>no LLM training on client data</strong>, immutable audit log, art. 28 DPA and AI Act alignment. European infrastructure or on-premise where required."
   - q: "Which one should I start with?"
     a: "Almost always: first ChatGPT spread across the team to build confidence, then an <a href='/ai-adoption'>AI Adoption</a> path to see where AI adds value, and finally a custom agent on the process that proved repeatable and high-volume. See also the <a href='/guide/agenti-ai-aziende'>guide to AI agents in companies</a>."
   - q: "How long does a custom agent take to go live?"
-    a: "A first working version is usually live in <strong>4 weeks</strong>, followed by 30 days of hypercare. The <strong>pay only if you're satisfied</strong> guarantee applies: if the agreed target isn't met, we keep working until it is or refund the sprint."
+    a: "A first working version is usually live in <strong>4 weeks</strong>, followed by 30 days of hypercare. The <strong>pay only if you're satisfied</strong> guarantee applies: if the agreed target isn't met, we keep working until it is."
 related: []
 featured: false
 pubDate: 2026-08-04

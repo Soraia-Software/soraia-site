@@ -17,6 +17,7 @@ const labels = {
     col_resources: "Risorse",
     col_company: "Soraia",
     col_legal: "Legali",
+    nav_pricing: "Prezzi",
     nav_agents: "AI Agents",
     nav_adoption: "AI Adoption",
     nav_search_opt: "AI Search Optimization",
@@ -53,6 +54,7 @@ const labels = {
     col_resources: "Resources",
     col_company: "Soraia",
     col_legal: "Legal",
+    nav_pricing: "Pricing",
     nav_agents: "AI Agents",
     nav_adoption: "AI Adoption",
     nav_search_opt: "AI Search Optimization",
@@ -132,6 +134,7 @@ const featuredGuides = [
       <div>
         <p class="text-[11px] font-semibold uppercase tracking-[0.14em] mb-5" style="color: var(--color-ink-soft);">{labels.col_solutions}</p>
         <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
+          <li><a href="/prezzi" class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_pricing}</a></li>
           <li><a href={p("/ai-adoption")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_adoption}</a></li>
           <li><a href={p("/ai-agents")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_agents}</a></li>
           <li><a href={p("/ai-search-optimization")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_search_opt}</a></li>

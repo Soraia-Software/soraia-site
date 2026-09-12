@@ -203,7 +203,7 @@ The process that works for an Italian SME with 10–200 employees:
 
 Full disclosure: this guide is written by Soraia, an Italian AI agency 100% focused on SMEs. Our approach differs from market standards on 4 points.
 
-**1. €1,900 assessment, refunded if you proceed.** Skin in the game on both sides.
+**1. Two dedicated people (a Project Manager and an AI Engineer), from €3,000/month.** <a href="/en/contact">Let's talk</a>.
 
 **2. "If it doesn't work, you don't pay" guarantee written into the contract.** This is not marketing, it is an operational clause with a primary metric and a measurement window.
 

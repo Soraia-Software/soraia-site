@@ -95,7 +95,7 @@ In practice that means:
 - Concentrating value on pages that convert, not on dozens of generic articles.
 - Getting found not only on Google, but on ChatGPT, Claude, Perplexity.
 
-That's the work we do with [AI Search Optimization](/en/ai-search-optimization): €2,000 audit, €3-15k sprint. For [ILTEC](/en/case-studies/iltec), an office technology firm in Biella, we rebuilt the AI-search-optimized site in 3 weeks and added a sales agent via QR code on the machine fleet. Traffic wasn't the KPI: qualified leads were.
+That's the work we do with [AI Search Optimization](/en/ai-search-optimization): an audit, then a sprint. For [ILTEC](/en/case-studies/iltec), an office technology firm in Biella, we rebuilt the AI-search-optimized site in 3 weeks and added a sales agent via QR code on the machine fleet. Traffic wasn't the KPI: qualified leads were.
 
 If instead your problem is downstream, meaning the leads that arrive aren't worked well, look at [Sales & Marketing](/en/sales-marketing) before touching content.
 

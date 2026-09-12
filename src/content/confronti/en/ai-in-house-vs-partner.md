@@ -31,7 +31,7 @@ optionB:
     - "Reduced risk: with Soraia you pay only if the agreed target is met"
     - "Client owns the code from day one, no lock-in"
   contro:
-    - "Cost of the initial sprint (Assessment about EUR 2,000, Sprint EUR 10-50k)"
+    - "Cost of the initial sprint"
     - "Knowledge must be transferred in-house if you want to internalize"
     - "You need an internal point of contact for the project"
   idealePer:
@@ -49,18 +49,18 @@ tabella:
     valoreB: "Client's from day one"
   - criterio: "Steady-state cost"
     valoreA: "Recurring salaries"
-    valoreB: "Sprint + optional retainer"
+    valoreB: "From €3,000/month"
   - criterio: "Knowledge that stays"
     valoreA: "In-house immediately"
     valoreB: "Transferable via internalization"
 verdetto: "It is not a binary choice forever. For an SME that does not yet have an AI team, starting with an external partner cuts time and risk: you see in 4 weeks whether the process works, with the code already yours, and decide afterwards. As AI becomes central, it makes sense to bring the skills in-house, often starting from exactly what the partner has built and documented. The right question is not 'in-house or outside', but 'what should I do now, given where I am'."
 faq:
   - q: "How much does starting with a partner cost vs hiring?"
-    a: "With Soraia you start from an AI Readiness Assessment of about <strong>EUR 2,000</strong> (refunded if you proceed) and a build Sprint between <strong>EUR 10,000 and 50,000</strong>. A single senior in-house developer, counting loaded salary and months of ramp-up, costs more and pays back much later. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
+    a: "With Soraia it starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool. A single senior in-house developer, counting loaded salary and months of ramp-up, costs more and pays back much later. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
   - q: "If I start with a partner, am I locked in?"
     a: "No. The <strong>code is yours from day one</strong>, documented and maintainable: no lock-in. You can internalize whenever you want, often starting from what was built."
   - q: "What if it doesn't work?"
-    a: "With Soraia the <strong>pay-only-if-you're-satisfied</strong> guarantee applies: a measurable target is set during the assessment and, if it is not met, we work for free until it is, or refund the sprint."
+    a: "With Soraia the <strong>pay-only-if-you're-satisfied</strong> guarantee applies: a measurable target is set during the assessment and, if it is not met, we work for free until it is."
 related: []
 featured: true
 pubDate: 2026-07-16

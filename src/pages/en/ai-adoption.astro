@@ -35,27 +35,6 @@ const deliverables = [
   "Connector checklist: what to activate, what to deactivate, when, and with which permissions",
 ];
 
-const coachingPackages = [
-  {
-    hours: "10 hours",
-    rate: "€120/hour",
-    total: "€1,200",
-    when: "A handful of specific cases to unblock in the weeks following the workshop.",
-  },
-  {
-    hours: "20 hours",
-    rate: "€100/hour",
-    total: "€2,000",
-    when: "More sustained support spread across multiple team members.",
-  },
-  {
-    hours: "50 hours",
-    rate: "€90/hour",
-    total: "€4,500",
-    when: "Extended consolidation programme covering the full year after the workshop.",
-  },
-];
-
 const dontFeatures = [
   "Theory-heavy courses on AI's impact on society or the economy",
   "Slides packed with generic tools, disconnected from your real processes",
@@ -115,20 +94,17 @@ const jsonLd = [
       {
         "@type": "Offer",
         name: "Foundation",
-        priceCurrency: "EUR",
-        description: "Kick-off + batch workshops + wrap-up. Team up to 20 people. €8–10k.",
+        description: "Kick-off + batch workshops + wrap-up. Team up to 20 people.",
       },
       {
         "@type": "Offer",
         name: "Foundation + Coaching",
-        priceCurrency: "EUR",
-        description: "Foundation + 3 months of monthly coaching and 1:1 coaching. €20–25k.",
+        description: "Foundation + 3 months of monthly coaching and 1:1 coaching.",
       },
       {
         "@type": "Offer",
         name: "Foundation + Coaching + Brain Pilot",
-        priceCurrency: "EUR",
-        description: "Foundation + Coaching + Company Brain pilot for 5–6 advanced users. €30–35k.",
+        description: "Foundation + Coaching + Company Brain pilot for 5–6 advanced users.",
       },
     ],
   },
@@ -385,7 +361,7 @@ const jsonLd = [
           </div>
 
           <div class="flex items-baseline gap-1.5 mb-2">
-            <span class="text-[2.5rem] font-semibold text-ink-900 leading-none">€8–10k</span>
+            <span class="text-[2.5rem] font-semibold text-ink-900 leading-none">Custom</span>
           </div>
           <p class="text-[12px] text-ink-500 mb-5">For teams up to 20 people</p>
 
@@ -439,7 +415,7 @@ const jsonLd = [
             </div>
 
             <div class="flex items-baseline gap-1.5 mb-2">
-              <span class="text-[2.5rem] font-semibold text-white leading-none">€20–25k</span>
+              <span class="text-[2.5rem] font-semibold text-white leading-none">Custom</span>
             </div>
             <p class="text-[12px] text-white/60 mb-5">For teams up to 20 people, 3 months of coaching included</p>
 
@@ -484,7 +460,7 @@ const jsonLd = [
           </div>
 
           <div class="flex items-baseline gap-1.5 mb-2">
-            <span class="text-[2.5rem] font-semibold text-ink-900 leading-none">€30–35k</span>
+            <span class="text-[2.5rem] font-semibold text-ink-900 leading-none">Custom</span>
           </div>
           <p class="text-[12px] text-ink-500 mb-5">For teams up to 20 people + 4–6 pilot advanced users</p>
 
@@ -536,46 +512,14 @@ const jsonLd = [
   </section>
 
   <!-- ============================================================
-       ADD-ON: PACCHETTI COACHING ORARI
+       PRICING. One simple model
        ============================================================ -->
   <section class="section bg-ink-50">
-    <div class="container-soraia max-w-5xl">
-      <SectionHeader
-        eyebrow="Optional add-on"
-        title="Coaching package."
-        subtitle="Available on top of any proposal. Individual or small-group coaching hours (max 5 people), to be used in the months following the workshop for team members who need targeted support. <strong>Three sizes with a decreasing hourly rate at higher volumes.</strong>"
-      />
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-        {coachingPackages.map((p, i) => (
-          <article class={`card-editorial relative reveal !p-7 flex flex-col ${i === 1 ? "ring-2 ring-violet-200 bg-violet-50/40" : ""}`}>
-            <div class="mb-5">
-              <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-2">Package</p>
-              <h3 class="text-[1.75rem] font-semibold text-ink-900 leading-none">{p.hours}</h3>
-              <p class="text-[13px] text-violet-700 mt-2 font-semibold">{p.rate}</p>
-            </div>
-
-            <div class="hairline mb-5"></div>
-
-            <div class="flex items-baseline gap-1.5 mb-4">
-              <span class="text-[2.25rem] font-semibold text-ink-900 leading-none">{p.total}</span>
-              <span class="text-[12px] text-ink-500">total</span>
-            </div>
-
-            <p class="text-[14px] text-ink-700 leading-relaxed text-pretty flex-1">
-              <strong class="text-ink-900">When it makes sense:</strong> {p.when}
-            </p>
-          </article>
-        ))}
-      </div>
-
-      <div class="reveal mt-10 max-w-3xl mx-auto bg-white border border-ink-200 rounded-2xl p-7">
-        <p class="eyebrow mb-3">What a single hour includes</p>
-        <p class="text-[14.5px] text-ink-700 leading-relaxed text-pretty">
-          1:1 session or small group (max 5 people) on individual use cases, deep dive into company-specific processes, skill debugging, and coaching towards autonomy. Hours are <strong class="text-ink-900">company-wide</strong>: whoever in the team needs them uses them, they are not per-person allocations.
-        </p>
-        <p class="text-[13px] text-ink-500 leading-relaxed mt-4">
-          <strong class="text-ink-700">Terms.</strong> The package can be activated within 3 months of the end of the workshop. Once activated, hours are valid for 12 months. Invoiced at activation. You can purchase multiple packages or upgrade to a larger size if the first runs out.
+    <div class="container-soraia max-w-3xl">
+      <div class="reveal bg-white border border-ink-200 rounded-2xl p-8 md:p-10 text-center">
+        <p class="eyebrow mb-3">Pricing</p>
+        <p class="text-[16px] md:text-[17px] text-ink-700 leading-relaxed text-pretty">
+          One simple model: two dedicated people, from <strong class="text-ink-900">€3,000/month</strong>. <a href="/en/contact" class="text-violet-700 font-semibold underline underline-offset-2">Let's talk</a>.
         </p>
       </div>
     </div>

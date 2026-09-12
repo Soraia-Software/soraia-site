@@ -64,7 +64,7 @@ faq:
   - q: "How do you measure GEO returns if traffic is zero-click?"
     a: "This is the most honest point: attribution is still immature. You track citations in the main AI assistants, brand traffic and contact requests that follow an AI search. Do not expect dashboards as precise as Google Analytics; today you read signals, not numbers to the decimal."
   - q: "How does Soraia work on AI Search Optimization?"
-    a: "With an <a href='/ai-search-optimization'>audit around 2,000 euro</a> and a sprint between 3,000 and 15,000 euro that reorganizes content and, if needed, rebuilds the site in an AI-ready version. For <a href='/case-studies/iltec'>ILTEC</a> we rebuilt the AI search optimized site in 3 weeks with a connected sales agent. To figure out where to start, <a href='/parliamone'>let's talk</a>."
+    a: "It starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool. The work reorganizes content and, if needed, rebuilds the site in an <a href='/ai-search-optimization'>AI-ready version</a>. For <a href='/case-studies/iltec'>ILTEC</a> we rebuilt the AI search optimized site in 3 weeks with a connected sales agent. To figure out where to start, <a href='/parliamone'>let's talk</a>."
   - q: "Where should I start with a limited budget?"
     a: "With the SEO base: content that truly answers customer questions and a technically clean site. That same base makes the site more citable by AI engines, so it is not wasted work. Dedicated GEO makes sense right away only if your buyers already use AI assistants to choose vendors."
 related: []

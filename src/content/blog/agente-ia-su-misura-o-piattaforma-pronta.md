@@ -101,4 +101,4 @@ Te lo diciamo in faccia:
 
 ---
 
-**Vuoi capire se il tuo processo e' pronto per uscire dalla piattaforma?** Lo mettiamo nero su bianco nell'[AI Readiness Assessment €2.000](/ai-agents) (rimborsato se procedi) oppure inizia con il [check-up di 3 minuti](/check-up).
+**Vuoi capire se il tuo processo e' pronto per uscire dalla piattaforma?** Lo mettiamo nero su bianco nell'[AI Readiness Assessment](/ai-agents) oppure inizia con il [check-up di 3 minuti](/check-up).

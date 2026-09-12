@@ -96,4 +96,4 @@ Not because we are heroic, but because without these we cannot operate in regula
 
 ---
 
-**Want an assessment of your specific situation?** We cover it in the [AI Readiness Assessment €2,000](/en/ai-agents) ([download an anonymised sample report](/en/downloads/ai-assessment-sample)). We tell you honestly which risk level you fall under and what needs to be done. Or start with the [3-minute check-up](/en/check-up).
+**Want an assessment of your specific situation?** We cover it in the [AI Readiness Assessment](/en/ai-agents) ([download an anonymised sample report](/en/downloads/ai-assessment-sample)). We tell you honestly which risk level you fall under and what needs to be done. Or start with the [3-minute check-up](/en/check-up).

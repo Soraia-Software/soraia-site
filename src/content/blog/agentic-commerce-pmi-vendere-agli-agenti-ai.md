@@ -25,7 +25,7 @@ faq:
   - q: "Che differenza c'e' con la SEO o la GEO che gia' faccio?"
     a: "La GEO (essere citati da ChatGPT e Perplexity) serve a farti trovare per contenuti e lead. L'agentic commerce e' il livello <strong>transazionale</strong>: dati prodotto strutturati, prezzi machine-readable, disponibilita' in tempo reale, condizioni di reso chiare. Un agente cita chi trova; compra (o consiglia l'acquisto) da chi puo' leggere e fidarsi dei dati."
   - q: "Quanto costa preparare il catalogo per gli agenti?"
-    a: "Il primo passo e' un audit dei dati prodotto e dell'architettura del sito: da noi parte da <strong>€2.000</strong>. Lo sprint di re-architettura contenuti e sito AI-ready va da €3-15k a seconda del catalogo. Non serve rifare l'e-commerce da zero: serve rendere i dati che gia' hai comprensibili a una macchina."
+    a: "Il primo passo e' un audit dei dati prodotto e dell'architettura del sito. Poi lo sprint di re-architettura contenuti e sito AI-ready, dimensionato sul catalogo. Non serve rifare l'e-commerce da zero: serve rendere i dati che gia' hai comprensibili a una macchina."
   - q: "Quando NON conviene investire in agentic commerce ora?"
     a: "Se il tuo catalogo prodotto ha dati sporchi, prezzi non allineati tra sistemi o disponibilita' inaffidabili, prima sistemi quelli. Un agente che legge dati sbagliati ti fa perdere l'ordine e la reputazione. E se vendi solo tramite gare o relazioni dirette senza catalogo pubblico, l'urgenza e' bassa."
 lang: "it"
@@ -50,7 +50,7 @@ La domanda operativa non e' filosofica. E': quando l'agente del tuo cliente legg
 - L'agentic commerce e' il livello transazionale della ricerca AI: non farsi solo citare, ma farsi **leggere e scegliere** da un agente che acquista o consiglia l'acquisto per conto del cliente.
 - Il lavoro utile per una PMI nel 2026 non e' costruire un agente venditore, ma rendere feed prodotto, prezzi e disponibilita' **machine-readable e affidabili**.
 - E' distinto dalla GEO (essere citati per lead): qui contano dati strutturati, prezzi coerenti tra sistemi e condizioni di reso chiare.
-- Il primo passo concreto e' un audit dei dati prodotto e dell'architettura del sito, da **€2.000**, senza rifare l'e-commerce da zero.
+- Il primo passo concreto e' un audit dei dati prodotto e dell'architettura del sito, senza rifare l'e-commerce da zero.
 - Se i tuoi dati prodotto sono sporchi o i prezzi disallineati, l'agentic commerce va **rimandato**: prima si puliscono i dati, poi si vende agli agenti.
 
 ## Cos'e' l'agentic commerce
@@ -108,8 +108,8 @@ Quando l'acquisto e' mediato da un agente, il post-vendita cambia. Domande su st
 
 Non serve buttare l'e-commerce. Il percorso pragmatico:
 
-1. **Audit** dei dati prodotto e dell'architettura del sito (da €2.000). Fotografiamo cosa un agente riesce a leggere oggi e dove si rompe.
-2. **Re-architettura contenuti e feed** con sprint da €3-15k a seconda del catalogo.
+1. **Audit** dei dati prodotto e dell'architettura del sito. Fotografiamo cosa un agente riesce a leggere oggi e dove si rompe.
+2. **Re-architettura contenuti e feed** con sprint dimensionato sul catalogo.
 3. Allineamento tra e-commerce, gestionale e feed sul fronte [sales & marketing](/sales-marketing), cosi' prezzi e disponibilita' non divergono.
 
 Prima delivery utile in **4 settimane**, come nei nostri sprint. E se i tuoi dati partono sporchi, te lo diciamo: prima si pulisce, poi si vende agli agenti. Non ha senso ottimizzare per un agente dati che nemmeno un umano capisce.
@@ -120,4 +120,4 @@ Te lo dico chiaro: se i prezzi non sono allineati tra sistemi, se la disponibili
 
 ---
 
-**Vuoi capire cosa legge oggi un agente del tuo catalogo?** Partiamo dall'audit AI Search Optimization (€2.000) o [parliamone](/parliamone) 20 minuti, senza pitch.
+**Vuoi capire cosa legge oggi un agente del tuo catalogo?** Partiamo dall'audit AI Search Optimization o [parliamone](/parliamone) 20 minuti, senza pitch.

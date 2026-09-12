@@ -95,7 +95,7 @@ In pratica significa:
 - Concentrare il valore sulle pagine che convertono, non su decine di articoli generici.
 - Farti trovare non solo su Google, ma su ChatGPT, Claude, Perplexity.
 
-E il lavoro che facciamo con [AI Search Optimization](/ai-search-optimization): audit €2.000, sprint €3-15k. Per [ILTEC](/case-studies/iltec), office technology di Biella, abbiamo rifatto il sito AI-search-optimized in 3 settimane e aggiunto un agente commerciale via QR code sul parco macchine. Il traffico non era il KPI: lo erano i lead qualificati.
+E il lavoro che facciamo con [AI Search Optimization](/ai-search-optimization). Per [ILTEC](/case-studies/iltec), office technology di Biella, abbiamo rifatto il sito AI-search-optimized in 3 settimane e aggiunto un agente commerciale via QR code sul parco macchine. Il traffico non era il KPI: lo erano i lead qualificati.
 
 Se invece il tuo problema e a valle, cioe i lead che arrivano non vengono lavorati bene, guarda [Sales & Marketing](/sales-marketing) prima di toccare i contenuti.
 

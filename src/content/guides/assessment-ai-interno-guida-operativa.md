@@ -114,7 +114,7 @@ Alla fine dell'assessment interno dovresti avere **una pagina** che contiene:
 
 Con questa pagina in mano, la conversazione con un fornitore cambia natura. Non chiedi più "cosa potete fare per noi": presenti un problema definito con numeri, e vedi chi ti risponde con un piano serio e chi con slide di marketing.
 
-Se vuoi una versione ancora più rapida per capire la maturità AI della tua azienda prima di iniziare, il nostro [check-up in 3 minuti](/check-up) è un buon punto di partenza. E se poi vuoi affidare l'assessment approfondito a chi costruisce, i nostri [agenti IA](/ai-agents) partono da un assessment pagato (rimborsato se procedi) con baseline cronometrata dal team.
+Se vuoi una versione ancora più rapida per capire la maturità AI della tua azienda prima di iniziare, il nostro [check-up in 3 minuti](/check-up) è un buon punto di partenza. E se poi vuoi affidare l'assessment approfondito a chi costruisce, i nostri [agenti IA](/ai-agents) partono con due figure dedicate (Project Manager e AI Engineer) e una baseline cronometrata dal team, a partire da 3.000 € al mese. [Vedi i prezzi](/prezzi).
 
 ## Nota importante
 

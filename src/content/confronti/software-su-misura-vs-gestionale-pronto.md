@@ -68,7 +68,7 @@ faq:
   - q: "Come capisco se un processo va costruito o comprato?"
     a: "Quattro criteri: se il processo e' <strong>core e differenziante</strong>, se il pacchetto ti obbliga a workaround pesanti, il <strong>costo totale a 2-3 anni</strong> (licenze + adattamenti) e il rischio di lock-in. Li abbiamo dettagliati qui: <a href='/blog/software-su-misura-o-saas/'>software su misura o SaaS</a>. Se vuoi ragionarci sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "Quanto costa partire con un software su misura?"
-    a: "Con Soraia si parte da uno Scoping di circa <strong>2.000 euro</strong> (rimborsato se procedi) e un Build Sprint tra <strong>10.000 e 50.000 euro</strong>, con primo rilascio in 4 settimane. Un ERP pronto ha un costo iniziale piu' basso, ma il canone per utente cresce ogni anno: la scelta si decide sul totale a 2-3 anni, non sul primo giorno."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese, con primo rilascio in 4 settimane. Un ERP pronto ha un costo iniziale piu' basso, ma il canone per utente cresce ogni anno: la scelta si decide sul totale a 2-3 anni, non sul primo giorno. Vedi i <a href='/prezzi'>prezzi</a>."
   - q: "Se costruisco su misura, resto dipendente dal fornitore?"
     a: "No. Con Soraia il <strong>codice e' tuo dal primo giorno</strong>, documentato e mantenibile: niente abbonamenti perpetui, niente lock-in. Con un ERP pronto invece i dati e le customizzazioni restano dentro il prodotto e migrare via e' spesso oneroso."
   - q: "Posso mischiare i due approcci?"

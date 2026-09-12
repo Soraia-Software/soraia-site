@@ -23,7 +23,7 @@ faq:
   - q: "Should I replace the whole system or just modernise it?"
     a: "Almost never throw everything away. Usually it's better to keep the core (master data, accounting, e-invoicing) and replace or add the modules that actually hurt: the interface the team hates, the reports you build by hand, the manual steps. You start there, not with a big bang."
   - q: "How much does a new custom tool cost versus the ERP?"
-    a: "At Soraia, scoping costs <strong>€2,000 (refunded if you proceed)</strong> and a build sprint €10-50k, with first release in 4 weeks and your code from day one. It doesn't necessarily replace the ERP: often we build the layer that makes it usable by the team without touching the core."
+    a: "At Soraia our pricing is one model: from <strong>€3,000/month</strong>, two dedicated people (a Project Manager and an AI Engineer), with first release in 4 weeks and your code from day one. It doesn't necessarily replace the ERP: often we build the layer that makes it usable by the team without touching the core."
   - q: "How do I reduce key-person risk on the ERP?"
     a: "Document the processes, cut the steps that rely on tribal knowledge, and move the know-how out of one person's head into a tool anyone can use. A tool with a clear interface and guided flows is the most direct way to remove the single point of failure."
 lang: "en"
@@ -40,7 +40,7 @@ This isn't an IT problem. It's a hidden cost you don't see in the books, but you
 - Vendor lock-in is measured in time, not just money: how long would it take to export your data and run it somewhere else?
 - You almost never need a big bang. Often it's better to keep the core (accounting, e-invoicing) and replace the modules that hurt.
 - Before deciding you need a baseline: how many hours that process costs you today. Without a number, every choice is an opinion.
-- At Soraia, scoping a custom tool costs €2,000 (refunded if you proceed), build sprint €10-50k, first release in 4 weeks, your code from day one.
+- At Soraia our pricing is one model: from €3,000/month, two dedicated people (a Project Manager and an AI Engineer), first release in 4 weeks, your code from day one.
 
 ## The cost you don't see in the books
 
@@ -87,7 +87,7 @@ Replace when: key-person risk is high, onboarding costs more than you can afford
 
 And it's almost always better to start with one piece, not everything. With [ILTEC](/en/case-studies/iltec), a B2B office technology firm in Biella, we didn't rebuild their internal systems: we added the missing layer, an AI search optimized site in 3 weeks and a sales agent via QR code on their machine fleet. You start at the point that hurts most.
 
-The same model applies to an internal custom tool: [scoping](/en/software-development) €2,000 (refunded if you proceed), build sprint €10-50k, first release in 4 weeks, your code from day one. No perpetual subscription, no new lock-in replacing the old one.
+The same model applies to an internal [custom tool](/en/software-development): from €3,000/month, two dedicated people (a Project Manager and an AI Engineer), first release in 4 weeks, your code from day one. No perpetual subscription, no new lock-in replacing the old one.
 
 And before writing code, often the fastest win is getting the tribal knowledge out of one person's head: documenting processes and training the team. That's what we do with [AI Adoption](/en/ai-adoption).
 

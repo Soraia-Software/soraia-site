@@ -23,7 +23,7 @@ faq:
   - q: "Sostituire tutto il gestionale o solo svecchiarlo?"
     a: "Quasi mai serve buttare tutto. Spesso conviene tenere il core (anagrafiche, contabilità, fatturazione elettronica) e sostituire o aggiungere i moduli che fanno davvero male: l'interfaccia che il team odia, i report che fai a mano, i passaggi manuali. Si parte da lì, non da un big bang."
   - q: "Quanto costa un nuovo tool custom rispetto al gestionale?"
-    a: "Da Soraia lo scoping costa <strong>€2.000 (rimborsato se procedi)</strong> e un build sprint €10-50k, con primo rilascio in 4 settimane e codice tuo dal primo giorno. Non sostituisce per forza il gestionale: spesso costruiamo lo strato che lo rende usabile dal team senza toccare il core."
+    a: "Da Soraia si parte da <strong>3.000 € al mese</strong> (IVA esclusa), con due figure dedicate (Project Manager e AI Engineer), primo rilascio in 4 settimane e codice tuo dal primo giorno. Non sostituisce per forza il gestionale: spesso costruiamo lo strato che lo rende usabile dal team senza toccare il core."
   - q: "Come riduco il rischio key-person sul gestionale?"
     a: "Documenta i processi, riduci i passaggi che richiedono conoscenza tribale e sposta il sapere dalla testa di una persona a uno strumento usabile da chiunque. Un tool con interfaccia chiara e flussi guidati è il modo più diretto per togliere il single point of failure."
 lang: "it"
@@ -40,7 +40,7 @@ Questo non è un problema IT. È un costo nascosto che non vedi nel bilancio, ma
 - Il lock-in del fornitore si misura in tempo, non solo in soldi: quanto ci metti a esportare i dati e a rifarli girare altrove?
 - Non serve quasi mai un big bang. Spesso conviene tenere il core (contabilità, fatturazione elettronica) e sostituire i moduli che fanno male.
 - Prima di decidere serve una baseline: quante ore costa oggi quel processo. Senza numero, ogni scelta è un'opinione.
-- Da Soraia lo scoping di un tool custom costa €2.000 (rimborsato se procedi), build sprint €10-50k, primo rilascio in 4 settimane, codice tuo dal giorno uno.
+- Da Soraia un tool custom parte da 3.000 € al mese (IVA esclusa), con due figure dedicate (Project Manager e AI Engineer), primo rilascio in 4 settimane, codice tuo dal giorno uno.
 
 ## Il costo che non vedi in bilancio
 
@@ -87,7 +87,7 @@ Sostituisci quando: il rischio key-person è alto, l'onboarding costa più di qu
 
 E quasi sempre conviene partire da un pezzo, non da tutto. Con [ILTEC](/case-studies/iltec), B2B di office technology a Biella, non abbiamo rifatto i loro sistemi interni: abbiamo aggiunto lo strato che mancava, sito AI search optimized in 3 settimane e un agente commerciale via QR code sul parco macchine. Si parte dal punto che fa più male.
 
-Lo stesso modello vale per un tool interno custom: [scoping](/software-development) €2.000 (rimborsato se procedi), build sprint €10-50k, primo rilascio in 4 settimane, codice tuo dal primo giorno. Niente abbonamento perpetuo, niente nuovo lock-in al posto del vecchio.
+Lo stesso modello vale per un [tool interno custom](/software-development): si parte da 3.000 € al mese (IVA esclusa), con due figure dedicate (Project Manager e AI Engineer), primo rilascio in 4 settimane, codice tuo dal primo giorno. Niente abbonamento perpetuo, niente nuovo lock-in al posto del vecchio.
 
 E prima di scrivere codice, spesso il guadagno più rapido è togliere la conoscenza tribale dalla testa di una persona: documentare i processi e formare il team. È quello che facciamo con l'[AI Adoption](/ai-adoption).
 

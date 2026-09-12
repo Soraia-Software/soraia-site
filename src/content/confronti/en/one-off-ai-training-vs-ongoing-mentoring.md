@@ -36,7 +36,7 @@ optionB:
     - "People have someone to ask when they get stuck"
     - "With Soraia it frees on average 110 hours/year per person on the tracked use cases"
   contro:
-    - "Higher, recurring cost (with Soraia the mentoring tiers start at 20-25k)"
+    - "Higher, recurring cost"
     - "Requires ongoing time from people, not just one day"
     - "Needs an internal sponsor to keep the path alive"
     - "The value depends on the team's willingness to engage over time"
@@ -47,7 +47,7 @@ optionB:
 tabella:
   - criterio: "Cost"
     valoreA: "Single contained expense"
-    valoreB: "Recurring (20-25k / 30-35k tiers with mentoring)"
+    valoreB: "From €3,000/month"
   - criterio: "Impact on adoption"
     valoreA: "Awareness, but it fades fast"
     valoreB: "Habits that consolidate over time"
@@ -70,7 +70,7 @@ faq:
   - q: "Why does a workshop alone often change nothing?"
     a: "Because without application to real cases most of what's learned is forgotten within weeks. Real adoption happens when people use AI on their own work with someone to ask. That's the logic of Soraia's <a href='/ai-adoption'>AI Adoption</a> paths, which pair the workshop with monthly mentoring."
   - q: "How much does ongoing mentoring cost compared to a workshop?"
-    a: "With Soraia the <strong>Foundation</strong> tier (workshop) starts at <strong>8-10k</strong>, while the tiers with monthly mentoring start at <strong>20-25k</strong> and reach <strong>30-35k</strong> with Brain Pilot. On the tracked use cases we free on average 110 hours/year per person. More in the <a href='/guide/formazione-ai-aziendale'>company AI training guide</a>."
+    a: "With Soraia both now sit in one model that starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool. On the tracked use cases we free on average 110 hours/year per person. More in the <a href='/guide/formazione-ai-aziendale'>company AI training guide</a>. <a href='/en/contact'>Let's talk</a>."
   - q: "Can I start with the workshop and add mentoring later?"
     a: "Yes, and it's often the smartest choice. The workshop raises awareness and surfaces use cases; the mentoring then works exactly on those. This way you invest in the continuous path only where there's concrete value to free."
 related: []

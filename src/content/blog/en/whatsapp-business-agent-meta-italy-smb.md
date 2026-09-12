@@ -18,7 +18,7 @@ faq:
   - q: "Does Meta's WhatsApp Business Agent replace my customer support?"
     a: "No. It handles repetitive questions well (hours, order status, FAQs) on the WhatsApp channel. But it doesn't know your internal processes, doesn't write to your CRM or ERP, and doesn't decide edge cases. For those you need an agent built on your context, or a human."
   - q: "How much does Meta's WhatsApp Business Agent cost versus a custom agent?"
-    a: "The Meta bot has a low entry cost because it's generic and hosted on the platform. A vertical custom agent starts at a <strong>€10-50k</strong> sprint but runs the process end-to-end inside your systems. The choice depends on volume and how much specific context you need."
+    a: "The Meta bot has a low entry cost because it's generic and hosted on the platform. A vertical custom agent is priced on one model, from <strong>€3,000/month</strong>, two dedicated people (a Project Manager and an AI Engineer), and it runs the process end-to-end inside your systems. The choice depends on volume and how much specific context you need."
   - q: "Do I have to tell customers they're talking to an AI on WhatsApp?"
     a: "Yes. A client-facing chatbot falls under the AI Act's limited-risk tier: a transparency obligation. You must clearly state the user is talking to an AI and allow escalation to a human."
   - q: "Can I use WhatsApp as the channel and build my own agent on top?"

@@ -68,11 +68,11 @@ faq:
   - q: "Do I really have to pick just one channel?"
     a: "No. The hard, expensive part is the <strong>AI agent on the process</strong> (triage, answers, routing to humans): once that exists, exposing it on both WhatsApp and the website widget is integration work, not a second project from scratch. See how we work on <a href='/customer-support'>customer support</a>."
   - q: "How much does it cost to start with an AI agent on one channel?"
-    a: "With Soraia you start from an AI Readiness Assessment of around <strong>2,000 euro</strong> (refunded if you proceed) and a build Sprint between <strong>10,000 and 50,000 euro</strong>, with first delivery in <strong>4 weeks</strong>. Meta's WhatsApp fees are a separate, variable cost that depends on volume. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
+    a: "With Soraia it starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool, with first delivery in <strong>4 weeks</strong>. Meta's WhatsApp fees are a separate, variable cost that depends on volume. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
   - q: "Is an agent on WhatsApp or the website GDPR-compliant?"
     a: "Yes. In both cases we work GDPR-compliant, with an art. 28 DPA in the contract, an immutable audit log and no LLM training on your data. On the site you keep full control over data; on WhatsApp you also route through Meta's infrastructure, so you should assess which data transits."
   - q: "Can an AI agent really cut the load on my team?"
-    a: "Yes, if it is built on the right process. On a community project like <a href='/case-studies/navily'>Navily</a>, automating moderation and enrichment cut operational time by <strong>70%</strong>. The <strong>pay only if you're satisfied</strong> guarantee applies: if the agreed target is not met, we work for free until it is, or we refund the sprint."
+    a: "Yes, if it is built on the right process. On a community project like <a href='/case-studies/navily'>Navily</a>, automating moderation and enrichment cut operational time by <strong>70%</strong>. The <strong>pay only if you're satisfied</strong> guarantee applies: if the agreed target is not met, we work for free until it is."
   - q: "What if Meta changes WhatsApp's rules tomorrow?"
     a: "That is a real channel risk: policies and fees are set by Meta. That is why we keep the <strong>agent logic separate from the channel</strong>: if WhatsApp changes terms, the agent stays and we move or extend it to the site without redoing the work. The code is yours from day one, no lock-in."
 related: []

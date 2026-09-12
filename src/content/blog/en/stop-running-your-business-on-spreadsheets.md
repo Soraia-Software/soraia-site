@@ -27,7 +27,7 @@ faq:
   - q: "Can an AI agent just read my spreadsheet?"
     a: "Yes, and it's often the most sensible first step. An agent can pull data from the sheet, validate it, reconcile it and push it into your downstream systems without you rebuilding everything. That's the <a href=\"/en/case-studies/numeraria\">Numeraria</a> pattern: agents handle quotes, hours and reconciliations, and the team uses the system without even noticing."
   - q: "How long does it take to get off the spreadsheet?"
-    a: "With our model the first useful delivery lands in 4 weeks, not six months. We start with a roughly €2,000 scoping (refunded if you proceed) to check the case holds, then a build sprint. And if the agreed target isn't hit 30 days after go-live, we work for free until it is, or we refund."
+    a: "With our model the first useful delivery lands in 4 weeks, not six months. We start with a scoping to check the case holds, then a build sprint. And if the agreed target isn't hit 30 days after go-live, we work for free until it is, or we refund."
 lang: "en"
 draft: false
 ---

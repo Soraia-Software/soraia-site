@@ -23,7 +23,7 @@ optionA:
     - "Serve un processo di hiring gia' definito da mettere dentro l'agente"
     - "Su ruoli rari o executive la rete umana e il giudizio pesano piu' dell'automazione"
     - "Richiede un referente HR che segua il progetto e validi i criteri"
-    - "Costo iniziale di build (Assessment circa 2.000 euro, Sprint 10-50k) prima del ritorno"
+    - "Costo iniziale di build prima del ritorno"
   idealePer:
     - "Aziende con volumi alti e ruoli ricorrenti (retail, hospitality, contact center)"
     - "HR che vogliono liberare tempo dallo screening manuale"
@@ -66,7 +66,7 @@ faq:
   - q: "Un agente IA sostituisce i recruiter?"
     a: "No, li potenzia. L'agente fa il lavoro ripetitivo (screening, parsing, primo contatto), i recruiter si concentrano su colloqui, valutazione e chiusura. Nel case <a href='/case-studies/apraise'>APraise</a> l'agente equivale a <strong>4 recruiter aggiuntivi</strong> senza sostituire il team esistente."
   - q: "Quanto costa un agente IA rispetto a un'agenzia?"
-    a: "Con Soraia si parte da un Assessment di circa <strong>2.000 euro</strong> (rimborsato se procedi) e uno Sprint di build tra <strong>10.000 e 50.000 euro</strong>. Un'agenzia tradizionale costa in genere il 15-25% della RAL per ogni assunzione: su volumi alti, il costo per assunzione dell'agente scende molto piu' velocemente. <a href='/parliamone'>Parliamone</a> per una stima sul tuo volume di hiring."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese. Un'agenzia tradizionale costa in genere il 15-25% della RAL per ogni assunzione: su volumi alti, il costo per assunzione dell'agente scende molto piu' velocemente. <a href='/parliamone'>Parliamone</a> per una stima sul tuo volume di hiring, o vedi i <a href='/prezzi'>prezzi</a>."
   - q: "E per i ruoli executive o molto rari?"
     a: "Li' l'agenzia tradizionale resta spesso la scelta migliore: la rete di contatti e il giudizio umano su fit e negoziazione contano piu' dell'automazione. L'AI eccelle sul volume e sul primo filtro, non sul headhunting di pochi profili rari."
   - q: "E se l'agente non porta il risultato promesso?"

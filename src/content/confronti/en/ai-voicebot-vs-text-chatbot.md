@@ -70,9 +70,9 @@ faq:
   - q: "Does the voicebot understand accents and dialects?"
     a: "It depends on speech recognition quality and tuning. Strong accents, background noise and dialect stay the most fragile part of voice: that is why it must be tested on your real audience before going live, and it always needs a clean handoff to a human when it fails to understand."
   - q: "How much does it cost to start with a support agent?"
-    a: "With Soraia you start from an <strong>AI Readiness Assessment of around 2,000 euro</strong> (refunded if you proceed) and a build Sprint between <strong>10,000 and 50,000 euro</strong>, with first delivery in 4 weeks. Text usually sits in the lower band, voice higher due to the added complexity. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
+    a: "With Soraia it starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool, with first delivery in 4 weeks. Text is usually simpler to build, voice more involved due to the added complexity. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
   - q: "How do I avoid the agent worsening the customer experience?"
-    a: "You set a measurable target in the assessment (e.g. share of requests resolved without an operator) and the <strong>pay only if you're satisfied</strong> guarantee applies: if at go-live plus 30 days of hypercare the target is not met, we work for free until it is or refund the sprint. The code is yours from day one."
+    a: "You set a measurable target in the assessment (e.g. share of requests resolved without an operator) and the <strong>pay only if you're satisfied</strong> guarantee applies: if at go-live plus 30 days of hypercare the target is not met, we work for free until it is. The code is yours from day one."
   - q: "Are both channels compatible with GDPR and the AI Act?"
     a: "Yes, if designed well. You need an <strong>audit trail of decisions</strong>, a legal basis for processing and a human handoff where required. Voice adds the topic of recordings and transcriptions, to be handled with the same care. See how we build <a href='/ai-agents'>AI agents</a>."
 related: []

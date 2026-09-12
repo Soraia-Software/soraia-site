@@ -26,7 +26,7 @@ faq:
   - q: "Una PMI può davvero farsi citare dai motori AI?"
     a: "Sì, e spesso è più facile che scalare Google. I motori AI premiano contenuti specifici e verificabili, non solo i domini con più backlink. Una PMI con casi reali, numeri propri e contenuto ben strutturato su una nicchia può essere citata dove i grandi player restano generici."
   - q: "Quanto costa un intervento di AI Search Optimization?"
-    a: "In Soraia partiamo da un <strong>audit a €2.000</strong> che misura quanto sei già citabile. Lo sprint di re-architettura contenuti e rifacimento sito AI-ready va da €3k a €15k a seconda dello scope. Prima ti diciamo se ha senso, poi costruiamo."
+    a: "In Soraia partiamo da un <strong>audit</strong> che misura quanto sei già citabile, poi lo sprint di re-architettura contenuti e rifacimento sito AI-ready, dimensionato sullo scope. Si parte da 3.000 € al mese (IVA esclusa), con due figure dedicate (Project Manager e AI Engineer). Prima ti diciamo se ha senso, poi costruiamo."
   - q: "Quanto tempo serve per vedere risultati nella AI search?"
     a: "Dipende dal motore. Perplexity e ChatGPT con browsing aggiornano in giorni o settimane; gli indici interni dei modelli e Google AI Overviews richiedono più tempo. Realisticamente la finestra è di 2-4 mesi per vedere citazioni stabili sulle query che contano per te."
 lang: "it"
@@ -42,7 +42,7 @@ La domanda non è più "sono in prima pagina?". È: **l'AI mi nomina quando un m
 - La GEO (Generative Engine Optimization) è far sì che ChatGPT, Claude, Perplexity e Google AI Overviews **citino la tua azienda** come fonte nelle loro risposte.
 - Non sostituisce la SEO: cambia i segnali che contano. I motori AI premiano contenuti **autosufficienti, verificabili e citabili verbatim**, non solo i domini con più backlink.
 - Per una PMI di nicchia farsi citare è spesso **più facile** che scalare Google: vince la specificità, non la dimensione del budget.
-- Il primo passo non è scrivere di più: è capire **se sei già citabile**. In Soraia parte da un audit da €2.000.
+- Il primo passo non è scrivere di più: è capire **se sei già citabile**. In Soraia si parte da un audit.
 - Caso reale: per **ILTEC** abbiamo rifatto il sito AI search optimized in 3 settimane, abbinato a un agente IA commerciale.
 
 ## Cos'è la GEO
@@ -84,11 +84,11 @@ Te lo dico onesto, perché Soraia non vince vendendo audit dove non servono:
 
 Il primo passo non è scrivere di più. È misurare **se sei già citabile** e su cosa.
 
-1. **Audit (€2.000)**: testiamo le query reali del tuo settore sui motori AI, vediamo chi viene citato oggi e perché, e mappiamo i gap di contenuto e struttura.
+1. **Audit**: testiamo le query reali del tuo settore sui motori AI, vediamo chi viene citato oggi e perché, e mappiamo i gap di contenuto e struttura.
 2. **Re-architettura contenuti**: riorganizziamo o riscriviamo i contenuti chiave in formato estraibile e citabile, con dati verificabili tuoi.
 3. **Sito AI-ready**: dove serve, rifacimento del sito perché sia tecnicamente leggibile dai crawler AI e converta il traffico che arriva.
 
-È esattamente il percorso fatto con **[ILTEC](/case-studies/iltec)**, B2B office technology di Biella: sito rifatto AI search optimized in 3 settimane, abbinato a un agente IA commerciale attivabile via QR code sul parco macchine. Lo sprint completo va da €3k a €15k a seconda dello scope.
+È esattamente il percorso fatto con **[ILTEC](/case-studies/iltec)**, B2B office technology di Biella: sito rifatto AI search optimized in 3 settimane, abbinato a un agente IA commerciale attivabile via QR code sul parco macchine. Lo sprint completo è dimensionato sullo scope.
 
 ## La domanda da farsi oggi
 

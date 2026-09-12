@@ -26,7 +26,7 @@ faq:
   - q: "Who should own data readiness, IT or Operations?"
     a: "Operations defines what counts as correct data and where the real data lives. IT provides access and permissions. In practice the COO or Head of Ops leads, because they know the processes and the exceptions. A pure IT project tends to optimise the technical structure and lose the operational context that makes data useful."
   - q: "How long does the data readiness phase take?"
-    a: "In our sprints we assess it during the AI Readiness Assessment (~€2,000, refunded if you proceed) and fix it in the first weeks. For a well-scoped process a few days of work are enough. If the data turns out to be in critical shape, it's better to know before signing a €10-50k sprint."
+    a: "In our sprints we assess it during the AI Readiness Assessment and fix it in the first weeks. For a well-scoped process a few days of work are enough. If the data turns out to be in critical shape, it's better to know before signing a sprint."
 lang: "en"
 gates:
   passedAt: 2026-07-16T14:36:08.910Z
@@ -53,7 +53,7 @@ Because that's where 70% of projects die, before they even start.
 - You don't need to clean the whole company archive. You only need to prepare the sources the first agent touches. Isolating scope beats big-bang.
 - Five prerequisites decide whether an agent works: sources identified, data deduplicated, permissions in order, machine-readable format, and a ground truth to test it against.
 - With LIFTT, a deep-tech VC holding, the real work wasn't the model: it was automatic email archiving and dedupe, which made the auto-generated monthly report possible.
-- Data readiness must be measured before signing a sprint. It costs a few days. It saves you from spending €10-50k on foundations that won't hold.
+- Data readiness must be measured before signing a sprint. It costs a few days. It saves you from spending on foundations that won't hold.
 
 ## What data readiness means for an AI agent
 
@@ -120,7 +120,7 @@ The good news: you almost never need to clean everything. You need to prepare th
 
 ## How we handle it at Soraia
 
-We assess data readiness in the [AI Readiness Assessment](/en/ai-agents) (~€2,000, refunded if you proceed): we map the sources, measure quality across the first agent's scope, check permissions and format, build the ground truth. If gaps show up, you see them before signing a €10-50k sprint, not after.
+We assess data readiness in the [AI Readiness Assessment](/en/ai-agents): we map the sources, measure quality across the first agent's scope, check permissions and format, build the ground truth. If gaps show up, you see them before signing a sprint, not after.
 
 When the data is weak but the process is right, the first delivery in 4 weeks often includes exactly the dedupe and structuring work, as we did with [LIFTT](/en/case-studies/liftt). And if the team doesn't yet have a clean-data culture, [AI Adoption](/en/ai-adoption) exists to build it, because an agent only survives if the people around it keep the sources in order.
 

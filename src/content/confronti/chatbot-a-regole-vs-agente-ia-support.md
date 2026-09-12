@@ -69,7 +69,7 @@ faq:
   - q: "L'agente IA rischia di dare risposte sbagliate ai clienti?"
     a: "E' il rischio reale se non lo vincoli. Per questo va costruito con guardrail, una knowledge base curata ed escalation al team umano sui casi limite. In <a href='/customer-support'>customer support</a> aggiungiamo <strong>audit log immutabile</strong> su ogni decisione e allineamento all'AI Act."
   - q: "Quanto costa passare da un chatbot a un agente IA?"
-    a: "Con Soraia si parte da un Assessment di circa <strong>2.000 euro</strong> (rimborsato se procedi) e uno Sprint di build tra <strong>10.000 e 50.000 euro</strong>, con prima delivery in <strong>4 settimane</strong>. Il costo dipende dalle integrazioni (help desk, sistema ordini). Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in <strong>4 settimane</strong>. La complessita' delle integrazioni (help desk, sistema ordini) incide su quante ore servono. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "Come faccio a sapere quale mi serve davvero?"
     a: "Guarda i tuoi ticket: se la maggior parte sono poche domande ripetute, bastano le regole. Se molti clienti scrivono in linguaggio libero o chiedono azioni sul loro ordine, l'albero non basta. Con Soraia fissiamo un target misurabile (es. quota di ticket risolti senza umano) e vale la garanzia <strong>paghi solo se sei soddisfatto</strong>."
 related: []

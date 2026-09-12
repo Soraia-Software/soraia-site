@@ -26,7 +26,7 @@ faq:
   - q: "Chi deve occuparsi della data readiness, IT o Operations?"
     a: "Operations definisce cosa conta come dato corretto e dove vivono i dati reali. L'IT fornisce accessi e permessi. Nella pratica il COO o l'Head of Ops guida, perché conosce i processi e le eccezioni. Un progetto IT puro tende a ottimizzare la struttura tecnica e a perdere il contesto operativo che rende i dati utili."
   - q: "Quanto tempo richiede la fase di data readiness?"
-    a: "Nei nostri sprint la valutiamo durante l'AI Readiness Assessment (~€2.000, rimborsato se procedi) e la sistemiamo nelle prime settimane. Per un processo ben delimitato bastano pochi giorni di lavoro. Se emerge che i dati sono in stato critico, è meglio saperlo prima di firmare uno sprint da €10-50k."
+    a: "Nei nostri sprint la valutiamo durante l'AI Readiness Assessment e la sistemiamo nelle prime settimane. Per un processo ben delimitato bastano pochi giorni di lavoro. Se emerge che i dati sono in stato critico, è meglio saperlo prima di firmare uno sprint."
 lang: "it"
 gates:
   passedAt: 2026-07-16T14:36:08.910Z
@@ -53,7 +53,7 @@ Perché è lì che il 70% dei progetti muore, prima ancora di partire.
 - Non devi pulire tutto l'archivio aziendale. Devi preparare solo le fonti che il primo agente tocca. Isolare il perimetro batte il big-bang.
 - Cinque prerequisiti decidono se un agente funziona: fonti identificate, dati deduplicati, permessi in regola, formato leggibile dalla macchina, e una ground truth per testarlo.
 - Con LIFTT, holding VC deep tech, il lavoro vero non è stato il modello: è stato archiving e dedupe automatici delle email, che hanno reso possibile il report mensile auto-generato.
-- La data readiness va misurata prima di firmare uno sprint. Costa pochi giorni. Ti evita di spendere €10-50k su fondamenta che non reggono.
+- La data readiness va misurata prima di firmare uno sprint. Costa pochi giorni. Ti evita di investire su fondamenta che non reggono.
 
 ## Cos'è la data readiness per un agente IA
 
@@ -120,7 +120,7 @@ La buona notizia: quasi mai serve pulire tutto. Serve preparare il sottoinsieme 
 
 ## Come lo affrontiamo in Soraia
 
-La data readiness la valutiamo nell'[AI Readiness Assessment](/ai-agents) (~€2.000, rimborsato se procedi): mappiamo le fonti, misuriamo la qualità sul perimetro del primo agente, verifichiamo permessi e formato, costruiamo la ground truth. Se emergono buchi, li vedi prima di firmare uno sprint da €10-50k, non dopo.
+La data readiness la valutiamo nell'[AI Readiness Assessment](/ai-agents): mappiamo le fonti, misuriamo la qualità sul perimetro del primo agente, verifichiamo permessi e formato, costruiamo la ground truth. Se emergono buchi, li vedi prima di firmare uno sprint, non dopo.
 
 Quando i dati sono deboli ma il processo è giusto, spesso la prima delivery in 4 settimane include proprio il lavoro di dedupe e strutturazione, come abbiamo fatto con [LIFTT](/case-studies/liftt). E se il team non ha ancora la cultura del dato pulito, l'[AI Adoption](/ai-adoption) serve a costruirla, perché un agente vive solo se chi gli sta intorno tiene in ordine le fonti.
 

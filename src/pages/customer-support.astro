@@ -19,7 +19,7 @@ const jsonLd = [
     provider: { "@type": "Organization", name: "Soraia", url: "https://www.soraia.io" },
     areaServed: "IT",
     serviceType: "AI agents for customer support teams",
-    offers: { "@type": "Offer", priceCurrency: "EUR", price: "2000", description: "Assessment iniziale €2.000, rimborsato se procedi con lo sprint." },
+    offers: { "@type": "Offer", description: "Assessment iniziale su richiesta." },
   },
 ];
 
@@ -117,7 +117,7 @@ const faqs = [
   },
   {
     q: "Quanto costa davvero?",
-    a: "Assessment <strong>€2.000</strong> (rimborsato). Sprint <strong>€10-50k</strong>. Garanzia: se l'agente non riduce il tempo di triage promesso, lavoriamo gratis fino a quando non lo fa.",
+    a: "Assessment iniziale. Sprint di costruzione. Garanzia: se l'agente non riduce il tempo di triage promesso, lavoriamo gratis fino a quando non lo fa.",
   },
 ];
 ---
@@ -145,7 +145,7 @@ const faqs = [
           </div>
           <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
             <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
-              Richiedi assessment, €2.000
+              Richiedi assessment
               <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
             </a>
             <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">Vedi il caso Navily</a>
@@ -267,7 +267,7 @@ const faqs = [
         Scopri quanto tempo può recuperare il tuo team support.
       </h2>
       <p class="mt-5 text-[17px] leading-relaxed reveal reveal-delay-1" style="color: var(--color-ink-muted);">
-        Assessment €2.000, rimborsato se procedi. 1-2 settimane dall'inizio al report.
+        Assessment iniziale, 1-2 settimane dall'inizio al report.
       </p>
       <div class="mt-10 reveal reveal-delay-2">
         <a href="/parliamone" class="btn btn-primary">

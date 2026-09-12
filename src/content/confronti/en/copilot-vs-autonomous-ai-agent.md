@@ -72,7 +72,7 @@ faq:
   - q: "Which one should I start with?"
     a: "It depends on the process. On repetitive, high-volume tasks (e.g. reconciliations or invoice extraction in <a href='/en/finance'>Finance</a>) an autonomous agent recovers more hours. On variable, high-judgment tasks a copilot is better. Often the smart path is a journey: copilot first to build trust, autonomy later where the numbers justify it."
   - q: "How much time do you really save with an autonomous agent?"
-    a: "It depends on the process, but the target is set before you start: for example <strong>5 hours per person per week</strong> recovered on a repetitive task. With Soraia the pay-only-if-satisfied guarantee applies: if the target is not met by go-live + 30 days, we work for free until it is, or we refund. To work out which approach fits you, <a href='/en/contact'>let's talk</a>."
+    a: "It depends on the process, but the target is set before you start: for example <strong>5 hours per person per week</strong> recovered on a repetitive task. With Soraia the pay-only-if-satisfied guarantee applies: if the target is not met by go-live + 30 days, we work for free until it is. To work out which approach fits you, <a href='/en/contact'>let's talk</a>."
 related: []
 featured: false
 pubDate: 2026-08-27

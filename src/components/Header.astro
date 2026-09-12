@@ -13,6 +13,7 @@ const labels = {
   it: {
     nav_servizi: "Servizi",
     nav_prodotti: "Prodotti",
+    nav_prezzi: "Prezzi",
     nav_guide: "Guide",
     nav_cases: "Case studies",
     nav_blog: "Blog",
@@ -27,6 +28,7 @@ const labels = {
   en: {
     nav_servizi: "Services",
     nav_prodotti: "Products",
+    nav_prezzi: "Pricing",
     nav_guide: "Guides",
     nav_cases: "Case studies",
     nav_blog: "Blog",
@@ -47,6 +49,7 @@ const searchOptHref = path("/ai-search-optimization", lang);
 const softwareHref = path("/software-development", lang);
 const offerHref = path("/offerta-team-dedicato", lang);
 const prodottiHref = path("/prodotti", lang);
+const prezziHref = "/prezzi";
 const guideHref = path("/guide", lang);
 const casesHref = path("/case-studies", lang);
 const blogHref = path("/blog", lang);
@@ -187,6 +190,7 @@ const prodotti = [
 
         <!-- Prodotti link (no dropdown) -->
         <li><a href={prodottiHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_prodotti}</a></li>
+        <li><a href={prezziHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_prezzi}</a></li>
 
         <li><a href={casesHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_cases}</a></li>
         <li><a href={aboutHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_about}</a></li>
@@ -266,6 +270,7 @@ const prodotti = [
         </details>
 
         <a href={prodottiHref} class="mobile-section__top">{labels.nav_prodotti}</a>
+        <a href={prezziHref} class="mobile-section__top">{labels.nav_prezzi}</a>
         <a href={casesHref} class="mobile-section__top">{labels.nav_cases}</a>
         <a href={aboutHref} class="mobile-section__top">{labels.nav_about}</a>
         <a href={scorecardHref} class="mobile-section__top">{labels.nav_scorecard} <span class="text-[10px] font-semibold tracking-[0.1em] uppercase px-1.5 py-0.5 rounded-full ml-2" style="background: var(--color-violet-50, #F5EEF7); color: var(--color-brand);">{labels.badge_min}</span></a>

@@ -37,7 +37,7 @@ optionB:
     - "With Soraia, first delivery in 4 weeks and client-owned code from day one"
   contro:
     - "Probabilistic behavior: needs validation and supervision, especially early on"
-    - "Initial build cost (Assessment around 2,000 euro, Sprint 10-50k)"
+    - "Initial build cost"
     - "Needs guardrails and audit logs for high-risk cases"
     - "Not the right choice for simple, repetitive copy-paste tasks"
   idealePer:
@@ -72,7 +72,7 @@ faq:
   - q: "Can I use them together?"
     a: "Yes, and it's often the best choice. The AI agent <strong>interprets and decides</strong> (e.g. reads a variable invoice, figures out the case), then hands the structured result to RPA that <strong>runs the deterministic clicks</strong> on legacy systems. Each does what it's strong at."
   - q: "How much does it cost to start with an AI agent?"
-    a: "With Soraia you start with an AI Readiness Assessment of around <strong>2,000 euro</strong> (refunded if you proceed) and a build Sprint between <strong>10,000 and 50,000 euro</strong>, with first delivery in 4 weeks and client-owned code from day one. To figure out whether your process is for RPA, an agent or both, <a href='/en/contact'>let's talk</a>."
+    a: "With Soraia it starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool, with first delivery in 4 weeks and client-owned code from day one. To figure out whether your process is for RPA, an agent or both, <a href='/en/contact'>let's talk</a>."
   - q: "Is an AI agent as auditable as an RPA bot?"
     a: "Yes, if built well. With Soraia every agent decision has an <strong>immutable audit log</strong> and guardrails are in place for high-risk cases. The behavior stays probabilistic, so it needs validation, but traceability is guaranteed."
 related: []

@@ -18,7 +18,7 @@ featured: false
 h1: "CRM su misura o HubSpot/Salesforce: quando ha senso costruirne uno tuo"
 faq:
   - q: "Un CRM su misura costa di più di HubSpot o Salesforce?"
-    a: "Nel breve, quasi sempre sì: un CRM standard parte da poche decine di euro/utente/mese, un build custom in Soraia parte da <strong>€10-50k</strong> di sprint. Ma il conto vero è a 2-3 anni: se hai 40 utenti e paghi €100+/utente/mese, il canone standard supera in fretta il costo di un build. Confronta sempre il costo totale sull'orizzonte reale, non il prezzo di listino."
+    a: "Nel breve, quasi sempre sì: un CRM standard parte da poche decine di euro/utente/mese, un build custom in Soraia parte da <strong>3.000 € al mese</strong> (IVA esclusa), con due figure dedicate (Project Manager e AI Engineer). Ma il conto vero è a 2-3 anni: se hai 40 utenti e paghi €100+/utente/mese, il canone standard supera in fretta il costo di un build. Confronta sempre il costo totale sull'orizzonte reale, non il prezzo di listino."
   - q: "Posso partire da HubSpot e passare a un CRM custom dopo?"
     a: "Sì, ed è spesso la strada giusta. Usi lo standard per validare il processo, poi costruisci custom solo la parte che ti differenzia. L'errore è il contrario: costruire custom su un processo che non hai ancora stabilizzato. Se il tuo workflow cambierà tra 3 mesi, resta sullo standard."
   - q: "Quando un CRM standard NON basta più?"
@@ -40,7 +40,7 @@ Risposta onesta: **quasi mai al primo colpo**. Ma per alcune aziende, a un certo
 - Un CRM su misura ha senso quando il **processo di vendita è il tuo vantaggio competitivo**, non quando vuoi solo risparmiare sul canone.
 - Il confronto vero non è prezzo di listino contro sprint, è **costo totale a 2-3 anni** incluse integrazioni, add-on e ore perse ad adattarsi allo standard.
 - La strada più sicura è ibrida: **standard per validare il processo, custom solo sulla parte che ti differenzia**.
-- In Soraia un CRM custom parte da uno sprint **€10-50k** con primo rilascio in **4 settimane** e il codice è tuo dal primo giorno.
+- In Soraia un CRM custom parte da **3.000 € al mese** (IVA esclusa), con due figure dedicate (Project Manager e AI Engineer), primo rilascio in **4 settimane** e il codice è tuo dal primo giorno.
 - Se il tuo processo cambierà tra 3 mesi o hai meno di 10 venditori, resta sullo standard. Costruire custom su un workflow instabile è spreco.
 
 ## Cos'è un CRM su misura
@@ -63,7 +63,7 @@ Ma se il tuo processo di vendita **è il vantaggio competitivo**, ad esempio un 
 
 ## Criterio 2. Il costo totale a 2-3 anni
 
-Il prezzo di listino inganna. HubSpot a poche decine di euro/utente/mese sembra imbattibile contro uno sprint da **€10-50k**.
+Il prezzo di listino inganna. HubSpot a poche decine di euro/utente/mese sembra imbattibile contro un build su misura.
 
 Poi arrivano:
 
@@ -94,7 +94,7 @@ Per la maggior parte delle PMI la risposta migliore non è "o standard o custom"
 2. Identifica la parte che ti differenzia (matching, scoring, workflow proprietario).
 3. Costruisci custom **solo quella parte**, integrandola con lo standard o sostituendolo del tutto quando ha senso.
 
-È lo stesso approccio dei nostri progetti di [sviluppo software su misura](/software-development): scoping €2.000 rimborsato se procedi, build sprint €10-50k, primo rilascio in 4 settimane, codice tuo dal giorno uno. E dei nostri sprint di [sales & marketing automation](/sales-marketing), dove spesso l'agente IA vive sopra il CRM esistente invece di sostituirlo.
+È lo stesso approccio dei nostri progetti di [sviluppo software su misura](/software-development): si parte da 3.000 € al mese (IVA esclusa), con due figure dedicate (Project Manager e AI Engineer), primo rilascio in 4 settimane, codice tuo dal giorno uno. E dei nostri sprint di [sales & marketing automation](/sales-marketing), dove spesso l'agente IA vive sopra il CRM esistente invece di sostituirlo.
 
 ## Quando NON costruire un CRM custom
 

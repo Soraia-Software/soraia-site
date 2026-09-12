@@ -114,7 +114,7 @@ At the end of the internal assessment you should have **one page** containing:
 
 With this page in hand, the conversation with a vendor changes nature. You no longer ask "what can you do for us": you present a defined problem with numbers, and you see who replies with a serious plan versus who replies with marketing slides.
 
-If you want an even faster read on your company's AI maturity before starting, our [3-minute check-up](/en/check-up) is a good starting point. And if you then want to hand the deep assessment to whoever builds, our [AI agents](/en/ai-agents) start from a paid assessment (refunded if you proceed) with a baseline timed by the team.
+If you want an even faster read on your company's AI maturity before starting, our [3-minute check-up](/en/check-up) is a good starting point. And if you then want to hand the deep assessment to whoever builds, our [AI agents](/en/ai-agents) start with two dedicated people (a Project Manager and an AI Engineer) and a baseline timed by the team, from €3,000/month. [Let's talk](/en/contact).
 
 ## Important note
 

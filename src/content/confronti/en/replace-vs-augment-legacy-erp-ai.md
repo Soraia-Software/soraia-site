@@ -52,7 +52,7 @@ tabella:
     valoreB: "Low (ERP stays live)"
   - criterio: "Upfront cost"
     valoreA: "High, hard to phase"
-    valoreB: "Assessment ~2,000, Sprint 10-50k"
+    valoreB: "From €3,000/month"
   - criterio: "Technical debt"
     valoreA: "Removed at the root"
     valoreB: "Stays underneath, mitigated on top"
@@ -69,11 +69,11 @@ faq:
   - q: "Can AI agents actually read data from an old ERP?"
     a: "In most cases yes, via API, periodic exports or database access. If the ERP is fully closed, in <a href='/software-development'>scoping</a> we assess whether the integration is feasible before starting: we don't promise what the system won't allow."
   - q: "How much does augmenting cost versus rebuilding the ERP?"
-    a: "With Soraia the AI layer starts from an Assessment of about <strong>2,000 euro</strong> (refunded if you proceed) and a Sprint between <strong>10,000 and 50,000 euro</strong>, with first delivery in <strong>4 weeks</strong>. Rebuilding an ERP is an order of magnitude bigger, with migration risk. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
+    a: "With Soraia the AI layer starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool, with first delivery in <strong>4 weeks</strong>. Rebuilding an ERP is an order of magnitude bigger, with migration risk. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
   - q: "What if I later decide to replace the ERP anyway?"
     a: "The agents built are documented and the <strong>code is yours from day one</strong>: much of the mapped process logic stays useful for the migration. No lock-in, so augmenting today doesn't close the door to replacing tomorrow."
   - q: "What if the AI layer doesn't deliver the expected value?"
-    a: "The <strong>pay only if satisfied</strong> guarantee applies: we set a measurable target in the assessment (e.g. hours recovered on reconciliations) and, if it's not met by go-live plus 30 days of hypercare, we work for free until it is or we refund the sprint."
+    a: "The <strong>pay only if satisfied</strong> guarantee applies: we set a measurable target in the assessment (e.g. hours recovered on reconciliations) and, if it's not met by go-live plus 30 days of hypercare, we work for free until it is."
 related: []
 featured: false
 pubDate: 2026-08-25

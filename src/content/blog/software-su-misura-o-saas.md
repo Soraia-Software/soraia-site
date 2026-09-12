@@ -22,7 +22,7 @@ faq:
   - q: "Quando conviene un SaaS pronto invece del software su misura?"
     a: "Quando il processo non è un tuo vantaggio competitivo e un leader di mercato lo risolve già bene: email, fatturazione elettronica, firma digitale, HR di base. Qui un <strong>SaaS</strong> standard costa meno, si aggiorna da solo e non lo devi mantenere tu. Il custom ha senso solo dove il processo <em>è</em> il business."
   - q: "Quanto costa davvero un software su misura rispetto a un SaaS?"
-    a: "Il canone SaaS sembra più basso, ma va moltiplicato per gli anni e per il numero di utenti, e aggiunto al costo nascosto delle integrazioni e dei workaround. In Soraia il modello è Scoping a <strong>€2.000</strong> (rimborsato se procedi) + Build Sprint <strong>€10–50k</strong>, primo rilascio in <strong>4 settimane</strong>, e il codice è tuo dal primo giorno: niente canone perpetuo."
+    a: "Il canone SaaS sembra più basso, ma va moltiplicato per gli anni e per il numero di utenti, e aggiunto al costo nascosto delle integrazioni e dei workaround. In Soraia si parte da <strong>3.000 € al mese</strong> (IVA esclusa), con due figure dedicate (Project Manager e AI Engineer), primo rilascio in <strong>4 settimane</strong>, e il codice è tuo dal primo giorno: niente canone perpetuo."
   - q: "Come evito il lock-in con un fornitore di software custom?"
     a: "Mettendolo nel contratto. Da noi il <strong>codice è del cliente dal primo giorno</strong>, niente abbonamenti perpetui, niente dipendenza obbligata. Con un SaaS il lock-in è strutturale: i tuoi dati e le tue automazioni vivono dentro il loro modello di pricing, e cambiare costa una migrazione."
   - q: "Software su misura significa progetti lunghi e rischiosi?"
@@ -69,7 +69,7 @@ Conta tutto:
 - **Le integrazioni mancanti.** Se il SaaS non parla con il tuo gestionale (TeamSystem, Zucchetti, Odoo), paghi qualcuno per copiare il dato a mano. È data entry mascherato.
 - **I workaround.** Ogni foglio Excel "ponte" è tempo che qualcuno spende ogni settimana, per sempre.
 
-Il software su misura ha il costo concentrato all'inizio. Nel nostro modello: **Scoping a €2.000** (rimborsato se procedi), **Build Sprint €10–50k**, primo rilascio in **4 settimane**. Poi il costo marginale per utente è zero, e non c'è un canone che cresce con l'azienda. Il confronto onesto si fa su 24-36 mesi, non sul primo bonifico.
+Il software su misura si dimensiona sul progetto. Nel nostro modello si parte da **3.000 € al mese** (IVA esclusa), con due figure dedicate (Project Manager e AI Engineer), primo rilascio in **4 settimane**, e il codice è tuo dal primo giorno: niente canone che cresce per utente con l'azienda. Il confronto onesto si fa su 24-36 mesi, non sul primo bonifico.
 
 ## Criterio 3. Quanto ti costa uscirne (lock-in)
 

@@ -26,7 +26,7 @@ faq:
   - q: "Can an SMB really get cited by AI engines?"
     a: "Yes, and it's often easier than ranking on Google. AI engines reward specific, verifiable content, not just domains with the most backlinks. An SMB with real cases, its own numbers and well-structured content on a niche can get cited where big players stay generic."
   - q: "How much does an AI Search Optimization project cost?"
-    a: "At Soraia we start with a <strong>€2,000 audit</strong> that measures how citable you already are. The content re-architecture and AI-ready site rebuild sprint runs from €3k to €15k depending on scope. We tell you whether it makes sense first, then build."
+    a: "At Soraia we start with an <strong>audit</strong> that measures how citable you already are. The content re-architecture and AI-ready site rebuild depend on scope. Our pricing is a single model: from €3,000/month, two dedicated people (a Project Manager and an AI Engineer). We tell you whether it makes sense first, then build."
   - q: "How long does it take to see results in AI search?"
     a: "It depends on the engine. Perplexity and ChatGPT with browsing update in days or weeks; models' internal indexes and Google AI Overviews take longer. Realistically the window is 2-4 months to see stable citations on the queries that matter to you."
 lang: "en"
@@ -42,7 +42,7 @@ The question is no longer "am I on page one?". It's: **does the AI name me when 
 - GEO (Generative Engine Optimization) is getting ChatGPT, Claude, Perplexity and Google AI Overviews to **cite your company** as a source in their answers.
 - It doesn't replace SEO, it changes which signals matter. AI engines reward content that is **self-contained, verifiable and citable verbatim**, not just domains with the most backlinks.
 - For a niche SMB, getting cited is often **easier** than ranking on Google: specificity wins, not budget size.
-- The first step isn't writing more, it's figuring out **whether you're already citable**. At Soraia it starts with a €2,000 audit.
+- The first step isn't writing more, it's figuring out **whether you're already citable**. At Soraia it starts with an audit.
 - Real case: for **ILTEC** we rebuilt the site AI search optimized in 3 weeks, paired with a commercial AI agent.
 
 ## What GEO is
@@ -84,11 +84,11 @@ Honestly, because Soraia doesn't win selling audits where they're not needed:
 
 The first step isn't writing more. It's measuring **whether you're already citable** and on what.
 
-1. **Audit (€2,000)**: we test the real queries in your field on AI engines, see who gets cited today and why, and map the content and structure gaps.
+1. **Audit**: we test the real queries in your field on AI engines, see who gets cited today and why, and map the content and structure gaps.
 2. **Content re-architecture**: we reorganize or rewrite the key content in an extractable, citable format, with your own verifiable data.
 3. **AI-ready site**: where needed, a site rebuild so it's technically readable by AI crawlers and converts the traffic that arrives.
 
-It's exactly the path we took with **[ILTEC](/en/case-studies/iltec)**, a B2B office technology company in Biella: site rebuilt AI search optimized in 3 weeks, paired with a commercial AI agent activated via QR code on its installed machine base. The full sprint runs from €3k to €15k depending on scope.
+It's exactly the path we took with **[ILTEC](/en/case-studies/iltec)**, a B2B office technology company in Biella: site rebuilt AI search optimized in 3 weeks, paired with a commercial AI agent activated via QR code on its installed machine base. The full sprint is scoped to the project.
 
 ## The question to ask today
 

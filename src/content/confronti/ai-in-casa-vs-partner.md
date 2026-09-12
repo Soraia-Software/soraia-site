@@ -31,7 +31,7 @@ optionB:
     - "Rischio ridotto: con Soraia paghi solo se il target concordato e' raggiunto"
     - "Codice del cliente dal primo giorno, nessun lock-in"
   contro:
-    - "Costo dello sprint iniziale (Assessment circa 2.000 euro, Sprint 10-50k)"
+    - "Costo iniziale a carico dell'azienda"
     - "La conoscenza va trasferita in casa se vuoi internalizzare"
     - "Serve un referente interno che segua il progetto"
   idealePer:
@@ -56,7 +56,7 @@ tabella:
 verdetto: "Non e' una scelta binaria per sempre. Per una PMI che non ha ancora un team AI, partire con un partner esterno riduce tempi e rischio: vedi in 4 settimane se il processo funziona, con il codice gia' tuo, e decidi dopo. Man mano che l'AI diventa centrale, ha senso internalizzare le competenze, spesso proprio a partire da quello che il partner ha costruito e documentato. La domanda giusta non e' 'in casa o fuori', ma 'cosa mi conviene fare adesso, dato dove sono'."
 faq:
   - q: "Quanto costa partire con un partner rispetto ad assumere?"
-    a: "Con Soraia si parte da un AI Readiness Assessment di circa <strong>2.000 euro</strong> (rimborsato se procedi) e uno Sprint di build tra <strong>10.000 e 50.000 euro</strong>. Un singolo sviluppatore senior interno, tra stipendio caricato e mesi di ramp-up, costa di piu' e rende molto piu' tardi. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese. Un singolo sviluppatore senior interno, tra stipendio caricato e mesi di ramp-up, costa di piu' e rende molto piu' tardi. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "Se parto con un partner, resto dipendente da lui?"
     a: "No. Il <strong>codice e' tuo dal primo giorno</strong>, documentato e mantenibile: niente lock-in. Puoi internalizzare quando vuoi, spesso proprio a partire da quello che e' stato costruito."
   - q: "E se non funziona?"

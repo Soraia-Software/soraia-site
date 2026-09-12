@@ -25,7 +25,7 @@ faq:
   - q: "How is this different from the SEO or GEO I already do?"
     a: "GEO (being cited by ChatGPT and Perplexity) helps you get found for content and leads. Agentic commerce is the <strong>transactional</strong> layer: structured product data, machine-readable prices, real-time availability, clear return terms. An agent cites whoever it finds; it buys (or recommends buying) from whoever it can read and trust."
   - q: "How much does preparing the catalog for agents cost?"
-    a: "The first step is an audit of product data and site architecture: with us it starts at <strong>€2,000</strong>. The content and AI-ready site re-architecture sprint runs €3-15k depending on the catalog. You don't need to rebuild the e-commerce from scratch: you need to make the data you already have machine-readable."
+    a: "The first step is an audit of product data and site architecture. The content and AI-ready site re-architecture depends on the catalog. Pricing is a single model: from €3,000/month, two dedicated people (a Project Manager and an AI Engineer). You don't need to rebuild the e-commerce from scratch: you need to make the data you already have machine-readable."
   - q: "When should you NOT invest in agentic commerce yet?"
     a: "If your product catalog has dirty data, prices misaligned across systems, or unreliable availability, fix those first. An agent reading wrong data costs you the order and your reputation. And if you sell only via tenders or direct relationships with no public catalog, the urgency is low."
 lang: "en"
@@ -50,7 +50,7 @@ The operational question isn't philosophical. It's: when your customer's agent r
 - Agentic commerce is the transactional layer of AI search: not just being cited, but being **read and chosen** by an agent that buys or recommends buying for the customer.
 - The useful work for an SMB in 2026 isn't building a selling agent, it's making product feeds, prices and availability **machine-readable and reliable**.
 - It's distinct from GEO (being cited for leads): here what counts is structured data, prices consistent across systems, and clear return terms.
-- The concrete first step is an audit of product data and site architecture, from **€2,000**, without rebuilding the e-commerce from scratch.
+- The concrete first step is an audit of product data and site architecture, without rebuilding the e-commerce from scratch.
 - If your product data is dirty or prices are misaligned, agentic commerce should **wait**: clean the data first, then sell to agents.
 
 ## What agentic commerce is
@@ -108,8 +108,8 @@ When the purchase is agent-mediated, after-sales changes. Questions about order 
 
 You don't need to throw away the e-commerce. The pragmatic path:
 
-1. **Audit** of product data and site architecture (from €2,000). We map what an agent can read today and where it breaks.
-2. **Content and feed re-architecture** with a €3-15k sprint depending on the catalog.
+1. **Audit** of product data and site architecture. We map what an agent can read today and where it breaks.
+2. **Content and feed re-architecture** with a sprint depending on the catalog.
 3. Alignment across e-commerce, ERP and feeds on the [sales & marketing](/en/sales-marketing) side, so prices and availability don't diverge.
 
 First useful delivery in **4 weeks**, as in our sprints. And if your data starts dirty, we'll tell you: clean first, then sell to agents. There's no point optimizing for an agent data that not even a human understands.
@@ -120,4 +120,4 @@ Straight talk: if prices aren't aligned across systems, if availability is an ap
 
 ---
 
-**Want to know what an agent reads from your catalog today?** Start with the AI Search Optimization audit (€2,000) or [let's talk](/en/contact) for 20 minutes, no pitch.
+**Want to know what an agent reads from your catalog today?** Start with the AI Search Optimization audit or [let's talk](/en/contact) for 20 minutes, no pitch.

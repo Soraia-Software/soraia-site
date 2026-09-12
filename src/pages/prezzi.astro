@@ -1,0 +1,142 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import PricingCalculator from "~/components/PricingCalculator.tsx";
+
+const title = "Prezzi | Soraia";
+const description =
+  "Prezzi semplici e trasparenti: due figure dedicate (Project Manager e AI Engineer), ore al mese combinate, a partire da 3.000 euro al mese. Sposta lo slider e vedi il prezzo.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  url: "https://www.soraia.io/prezzi",
+  inLanguage: "it-IT",
+};
+
+const come = [
+  {
+    t: "Due persone dedicate, dal primo giorno",
+    d: "Un Project Manager e un AI Engineer sul tuo progetto per tutta la durata, con responsabilità separate. Nessun call center, nessun passaggio di mano.",
+    icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  },
+  {
+    t: "Un punto ogni settimana, dashboard sempre aperta",
+    d: "Sai cosa è stato fatto, quante ore sono state usate e cosa arriva dopo. Il registro del lavoro è nella dashboard di progetto, a cui accedi quando vuoi.",
+    icon: '<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18M8 21h8"/>',
+  },
+  {
+    t: "Consegne a milestone: approvi tu",
+    d: "A ogni tappa ricevi qualcosa da verificare. Approvi o chiedi correzioni prima che si prosegua. Le milestone e i rilasci sono l'obbligo di risultato.",
+    icon: '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',
+  },
+  {
+    t: "Ore flessibili, mese su mese",
+    d: "Il ritmo mensile è indicativo: le ore non consumate si recuperano dopo, quelle in eccesso si scontano sui mesi seguenti. Paghi il lavoro, non un abbonamento rigido.",
+    icon: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd} altHref="/en/contact">
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-violet-mesh">
+    <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
+    <div class="container-soraia pt-16 md:pt-24 pb-8 md:pb-10 relative z-10 text-center max-w-2xl">
+      <p class="eyebrow mb-5">Prezzi</p>
+      <h1 class="text-[2.5rem] sm:text-[3.25rem] md:text-[3.75rem] font-semibold tracking-tight text-ink-900 leading-[1.04] text-balance">
+        Prezzi semplici e trasparenti
+      </h1>
+      <p class="mt-6 text-[18px] md:text-[20px] text-ink-700 leading-relaxed text-pretty">
+        Valore concreto, ogni mese. Sposta lo slider e scopri il prezzo: due figure dedicate, ore al mese combinate, a partire da 3.000 euro.
+      </p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="section pt-8 md:pt-10">
+    <div class="container-soraia">
+      <PricingCalculator client:load />
+    </div>
+  </section>
+
+  <!-- COME LAVORIAMO -->
+  <section class="section" style="background: #F3EFF5;">
+    <div class="container-soraia">
+      <div class="max-w-2xl mb-10">
+        <p class="eyebrow mb-4">Come lavoriamo</p>
+        <h2 class="text-balance" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 2.5rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">Semplice per te, serio sotto il cofano</h2>
+        <p class="mt-4 text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+          Per te è facile da seguire: due persone, un punto a settimana, consegne che approvi tu. Dietro ogni milestone però c'è il lavoro tecnico vero, quello che fa la differenza tra una demo e un software che regge: modello dei dati, integrazioni, agenti AI ottimizzati, test di carico, sicurezza e rilasci controllati.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {come.map((c) => (
+          <div class="card !p-7 flex items-start gap-4">
+            <span class="flex-shrink-0 inline-flex w-11 h-11 rounded-xl items-center justify-center" style="background: var(--color-brand); color: #fff;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" set:html={c.icon} />
+            </span>
+            <div>
+              <h3 style="font-size: 1.125rem; letter-spacing: -0.01em; font-weight: 600; line-height: 1.25;">{c.t}</h3>
+              <p class="mt-2 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{c.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container-soraia max-w-2xl text-center">
+      <h2 class="text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">Partiamo da una conversazione, non da un preventivo</h2>
+      <p class="mt-4 text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+        Mezz'ora per capire il problema, il perimetro e quante ore servono davvero nel tuo caso. Senza impegno.
+      </p>
+      <div class="mt-7">
+        <a href="/parliamone" class="btn btn-primary">
+          20 min con Daniel
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  .pricing-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    outline: none;
+    cursor: pointer;
+  }
+  .pricing-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--color-brand);
+    box-shadow: 0 2px 10px rgba(74, 30, 92, 0.3);
+    cursor: pointer;
+    margin-top: -10px;
+  }
+  .pricing-range::-moz-range-thumb {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--color-brand);
+    box-shadow: 0 2px 10px rgba(74, 30, 92, 0.3);
+    cursor: pointer;
+  }
+  .pricing-range::-moz-range-track {
+    height: 6px;
+    border-radius: 999px;
+    background: transparent;
+  }
+</style>

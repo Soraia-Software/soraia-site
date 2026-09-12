@@ -202,7 +202,7 @@ Il processo che funziona per una PMI italiana 10-200 dipendenti:
 
 Pieno disclaimer: questa guida la scrive Soraia, AI agency italiana 100% focus PMI. Il nostro approccio differisce dagli standard di mercato su 4 punti.
 
-**1. Assessment €1.900 rimborsato se procedi.** Skin in the game su entrambe le parti.
+**1. Due figure dedicate (Project Manager e AI Engineer), a partire da 3.000 € al mese.** <a href="/prezzi">Vedi i prezzi</a>.
 
 **2. Garanzia "se non funziona, non paghi" scritta nel contratto.** Non è marketing, è clausola operativa con metric primario e finestra di misurazione.
 

@@ -70,11 +70,11 @@ faq:
   - q: "Does it understand Italian and callers well?"
     a: "Quality must be <strong>tested in the field</strong>, not assumed: you start by mapping typical requests and escalation cases, and measure on real calls before going live. That's why with Soraia the sprint has a clear target and 30 days of hypercare: if it doesn't answer well enough, we keep working until it does. Read our <a href='/en/ai-agents'>AI agents</a> approach."
   - q: "How much does setting up an AI voice agent cost?"
-    a: "With Soraia you start from an AI Readiness Assessment of around <strong>2,000 euro</strong> (refunded if you proceed) and a build Sprint between <strong>10,000 and 50,000 euro</strong>, with first delivery in <strong>4 weeks</strong>. The per-call cost once live is low and predictable; the sensible comparison is with the staff cost to cover the same hours and peaks."
+    a: "With Soraia it starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool, with first delivery in <strong>4 weeks</strong>. The per-call cost once live is low and predictable; the sensible comparison is with the staff cost to cover the same hours and peaks. <a href='/en/contact'>Let's talk</a>."
   - q: "What if the agent gets it wrong or the call is delicate?"
     a: "It's designed with <strong>escalation rules</strong>: when it recognizes an ambiguous, emotional or out-of-scope case, it hands off to a person instead of pushing. Every call stays traceable with log and transcript, also useful to improve the agent over time. See it in a real context on <a href='/en/real-estate'>real estate operations</a>."
   - q: "How does the guarantee work if it doesn't deliver?"
-    a: "The <strong>pay only if you're satisfied</strong> model applies: in assessment you set a measurable target (e.g. calls handled autonomously or missed calls brought to zero) and, if it isn't met by go-live + hypercare, we work for free until it is or refund the sprint. The <a href='/en/ai-agents'>code is yours from day one</a>, no lock-in."
+    a: "The <strong>pay only if you're satisfied</strong> model applies: in assessment you set a measurable target (e.g. calls handled autonomously or missed calls brought to zero) and, if it isn't met by go-live + hypercare, we work for free until it is. The <a href='/en/ai-agents'>code is yours from day one</a>, no lock-in."
 related: []
 featured: false
 pubDate: 2026-09-24
