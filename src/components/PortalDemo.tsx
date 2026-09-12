@@ -96,12 +96,12 @@ function byDeadlineThenPriority(a: any, b: any) {
 /* ── Anonymized demo data ─────────────────────────────────────────────────── */
 const CLIENT = { name: "Nordica HR", color: "#5a4fcf" };
 const ME = { id: "c1", name: "Mario Rossi", initials: "MR", color: "#378add", role: "client" };
+// Real Soraia team assigned to the client (one PM + one AI Engineer, plus admin oversight).
 const TEAM = [
-  { id: "u1", name: "Luca Moretti", role: "PM",    color: "#892d9c" },
-  { id: "u2", name: "Sara Bruno",   role: "PM",    color: "#378add" },
-  { id: "u3", name: "Elena Costa",  role: "PM",    color: "#e24b4a" },
-  { id: "u4", name: "Andrea Conti", role: "Admin", color: "#ef9f27" },
-  { id: "u5", name: "Marco Ferrari",role: "Dev",   color: "#1d9e75" },
+  { id: "u1", name: "Eleonora Cogo",     role: "PM",     color: "#892d9c", avatar: "/team/eleonora-cogo.webp" },
+  { id: "u2", name: "Lorenzo Barbaglia", role: "AI Eng", color: "#1d9e75", avatar: "/team/lorenzo-barbaglia.webp" },
+  { id: "u3", name: "Davide Silvestri",  role: "Admin",  color: "#378add", avatar: "/team/davide-silvestri.webp" },
+  { id: "u4", name: "Daniel Levis",      role: "Admin",  color: "#ef9f27", avatar: "/team/daniel-levis.webp" },
 ];
 const teamById = (id: string) => TEAM.find((u) => u.id === id);
 
@@ -144,7 +144,7 @@ const DAY_HOURS = [3.5, 6, 4.5, 7.5, 5, 2.5, 6.5, 4, 8, 5.5, 3, 7];
 
 let _eid = 1;
 function genLog(role: string, total: number, baseISO: string) {
-  const pool = TASKS[role] || TASKS.PM;
+  const pool = role === "Admin" ? TASKS.Admin : /ai|eng|dev/i.test(role) ? TASKS.Dev : TASKS.PM;
   const out: any[] = []; let rem = Math.round(total * 10) / 10;
   let seed = Math.round(total) + role.length; let i = 0;
   const d = new Date(baseISO + "T00:00:00Z");
@@ -162,12 +162,11 @@ function genLog(role: string, total: number, baseISO: string) {
   return out;
 }
 function splitMembers(total: number, baseISO: string) {
-  const parts = [["u1", 0.52], ["u2", 0.16], ["u3", 0.12], ["u4", 0.10], ["u5", 0.10]] as [string, number][];
+  const parts = [["u2", "AI Eng", 0.60], ["u1", "PM", 0.25], ["u3", "Admin", 0.09], ["u4", "Admin", 0.06]] as [string, string, number][];
   let acc = 0; const out: any[] = [];
-  parts.forEach(([uid, w], idx) => {
+  parts.forEach(([uid, role, w], idx) => {
     const t = idx === parts.length - 1 ? Math.round((total - acc) * 10) / 10 : Math.round(total * w * 10) / 10;
     acc += t;
-    const role = uid === "u5" ? "Dev" : uid === "u4" ? "Admin" : "PM";
     out.push({ usr_id: uid, total: t, entries: genLog(role, t, baseISO) });
   });
   return out.sort((a, b) => b.total - a.total);
@@ -177,17 +176,10 @@ const SPRINTS = [
   {
     id: "s7", type: "DEVELOPMENT", status: "IN_PROGRESS", start_date: "2026-08-20", end_date: "2026-09-19", hours_planned: 150,
     members: [
-      { usr_id: "u1", total: 75.5, entries: genLog("PM", 75.5, "2026-09-11") },
-      { usr_id: "u4", total: 15, entries: genLog("Admin", 15, "2026-09-10") },
-      { usr_id: "u2", total: 15, entries: genLog("PM", 15, "2026-09-09") },
-      { usr_id: "u3", total: 14, entries: [
-        { id: _eid++, date: "2026-09-08", hours: 3, notes: "<ul><li>re-sizing del backlog (84h totali)</li><li>timeline go-live gennaio 2027, brief di 7 task</li><li>ambienti staging definiti (staging-soraia / staging-cliente)</li></ul>" },
-        { id: _eid++, date: "2026-09-07", hours: 6, notes: "call con il cliente e apertura ticket" },
-        { id: _eid++, date: "2026-09-04", hours: 5, notes: "QA" },
-      ] },
-      { usr_id: "u5", total: 8, entries: [
-        { id: _eid++, date: "2026-09-10", hours: 8, notes: "<ul><li>creazione spazio 'staging-cliente' su BE e FE con nuovo branch e datasource</li><li>ticket sulla ricerca avanzata</li><li>ticket di UI</li><li>ticket accessi utente in impostazioni</li></ul>" },
-      ] },
+      { usr_id: "u2", total: 79, entries: genLog("AI Eng", 79, "2026-09-11") },
+      { usr_id: "u1", total: 31.5, entries: genLog("PM", 31.5, "2026-09-08") },
+      { usr_id: "u3", total: 10, entries: genLog("Admin", 10, "2026-09-10") },
+      { usr_id: "u4", total: 7, entries: genLog("Admin", 7, "2026-09-09") },
     ],
   },
   { id: "s6", type: "DEVELOPMENT", status: "COMPLETED", start_date: "2026-07-20", end_date: "2026-08-19", hours_planned: 150, members: splitMembers(150, "2026-08-18") },
@@ -215,7 +207,7 @@ const INITIAL_TICKETS = [
   TK("Annunci (job): prototipo di creazione con AI", "High", "Feature", "In Progress", "Chiara V.", "2026-09-14", { a: 2, desc: "<p>Prototipo per generare bozze di annuncio a partire dalla vacancy, con tono e requisiti coerenti.</p>" }),
   TK("Ricalcolo punteggio di match candidato-vacancy", "Medium", "Incident", "In Progress", "Paolo M.", "2026-09-09", { c: 2 }),
   TK("GDPR: date dei consensi privacy e marketing", "Medium", "Feature", "Needs Feedback", "Giulia B.", "2026-09-03", { reply: true, c: 4, desc: "<p>Vogliamo tracciare data e fonte del consenso privacy e di quello marketing, separati, su azienda e candidato.</p>", comments: [
-    { id: 1, author_name: "Sara Bruno", author_role: "SORAIA", created_at: "2026-09-02T10:20:00Z", body: "Ciao, per procedere ci serve conferma: il consenso marketing va richiesto anche ai candidati o solo alle aziende?" },
+    { id: 1, author_name: "Eleonora Cogo", author_role: "SORAIA", author_avatar: "/team/eleonora-cogo.webp", created_at: "2026-09-02T10:20:00Z", body: "Ciao, per procedere ci serve conferma: il consenso marketing va richiesto anche ai candidati o solo alle aziende?" },
   ] }),
   TK("Backend, dossier: generazione e invio al cliente", "Low", "Feature", "Needs Feedback", "Giulia B.", "2026-09-04", { reply: true, a: 2, c: 9 }),
   TK("Backend: email di conferma colloquio", "Low", "Feature", "Needs Feedback", "Giulia B.", "2026-09-04", { reply: true, c: 1 }),
@@ -231,7 +223,7 @@ const INITIAL_TICKETS = [
   TK("Azienda: edit anagrafica", "High", "Incident", "To be Released", "Chiara V.", "2026-08-19", { reply: true }),
   TK("Vacancy: storicizzazione dei passaggi di stato", "High", "Feature", "To be Released", "Giulia B.", "2026-08-19"),
   TK("Import lista aziende da CSV", "Medium", "Feature", "To be Released", "Paolo M.", "2026-08-19"),
-  TK("Login SSO per i clienti", "Medium", "Feature", "Done – Production", "Chiara V.", "2026-08-02", { comments: [ { id: 1, author_name: "Luca Moretti", author_role: "SORAIA", created_at: "2026-08-01T09:00:00Z", body: "Rilasciato in produzione, accesso con Google e Microsoft attivo." } ] }),
+  TK("Login SSO per i clienti", "Medium", "Feature", "Done – Production", "Chiara V.", "2026-08-02", { comments: [ { id: 1, author_name: "Lorenzo Barbaglia", author_role: "SORAIA", author_avatar: "/team/lorenzo-barbaglia.webp", created_at: "2026-08-01T09:00:00Z", body: "Rilasciato in produzione, accesso con Google e Microsoft attivo." } ] }),
   TK("Bugfix filtro data sui colloqui", "High", "Incident", "Done – Production", "Paolo M.", "2026-07-28"),
   TK("Notifiche email: digest settimanale", "Low", "Feature", "Done – Production", "Giulia B.", "2026-07-25"),
   TK("Migrazione DB anagrafiche", "Medium", "Change", "Done – Production", "Chiara V.", "2026-07-20"),
@@ -268,7 +260,8 @@ function SprintTypePill({ type }: any) {
 function NeedsReplyBadge() {
   return <span style={{ display: "inline-flex", alignItems: "center", gap: 4, padding: "2px 8px", borderRadius: 20, fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", background: "#faeeda", color: "#854f0b", border: "1px solid #ef9f27" }}><Icon name="message" size={10} /> Reply</span>;
 }
-function Avatar({ name, size = 26 }: { name: string; size?: number }) {
+function Avatar({ name, size = 26, src }: { name: string; size?: number; src?: string }) {
+  if (src) return <img src={src} alt={name} style={{ width: size, height: size, borderRadius: "50%", objectFit: "cover", flexShrink: 0, background: "#f5f5f5" }} />;
   return <div style={{ width: size, height: size, borderRadius: "50%", background: avatarColor(name), display: "flex", alignItems: "center", justifyContent: "center", fontSize: size * 0.38, fontWeight: 700, color: "#fff", flexShrink: 0 }}>{initialsOf(name)}</div>;
 }
 
@@ -404,7 +397,7 @@ function CommentBubble({ c }: any) {
   const isClient = (c.author_role || "").toUpperCase() === "CLIENT";
   return (
     <div className="flex items-start gap-2.5">
-      <Avatar name={c.author_name} size={26} />
+      <Avatar name={c.author_name} size={26} src={c.author_avatar} />
       <div className="flex-1 min-w-0">
         <div className="flex items-baseline gap-2" style={{ marginBottom: 4 }}>
           <span style={{ fontSize: 12, fontWeight: 600 }}>{c.author_name}</span>
@@ -652,7 +645,7 @@ function ClientSprintDetail({ sprint, onClose }: any) {
               <div key={m.usr_id} style={{ background: "#fff", border: "1px solid var(--color-border)", borderRadius: 10, overflow: "hidden" }}>
                 <button onClick={() => setExpanded((p) => ({ ...p, [m.usr_id]: !p[m.usr_id] }))} className="w-full flex items-center gap-3 text-left" style={{ background: "none", border: "none", cursor: "pointer", padding: "10px 12px" }}>
                   <span style={{ display: "flex", color: "var(--color-text-muted)" }}><Icon name={open ? "chevrondown" : "chevronright"} size={13} /></span>
-                  <div className="rounded-full flex items-center justify-center" style={{ width: 28, height: 28, background: u?.color || avatarColor(u?.name || ""), fontSize: 10, fontWeight: 700, color: "#fff", flexShrink: 0 }}>{initialsOf(u?.name || "??")}</div>
+                  <Avatar name={u?.name || "?"} size={28} src={u?.avatar} />
                   <div className="flex-1 min-w-0">
                     <div style={{ fontSize: 12, fontWeight: 600 }}>{u?.name || "Soraia team member"}</div>
                     <div style={{ fontSize: 10, color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.05em" }}>{u?.role || "team"}</div>
