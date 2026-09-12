@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 /* ============================================================================
    Soraia Client Portal - DEMO
@@ -681,6 +681,12 @@ function SprintsTab() {
 /* ── Root ─────────────────────────────────────────────────────────────────── */
 export default function PortalDemo() {
   const [tab, setTab] = useState("tickets");
+  useEffect(() => {
+    try {
+      const p = new URLSearchParams(window.location.search).get("tab");
+      if (p === "sprints" || p === "tickets") setTab(p);
+    } catch { /* no-op */ }
+  }, []);
   const [tickets, setTickets] = useState(INITIAL_TICKETS);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
   const toast = (m: string) => { setToastMsg(m); window.setTimeout(() => setToastMsg((cur) => (cur === m ? null : cur)), 2600); };
