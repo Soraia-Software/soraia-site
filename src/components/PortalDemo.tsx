@@ -105,18 +105,59 @@ const TEAM = [
 ];
 const teamById = (id: string) => TEAM.find((u) => u.id === id);
 
-const PM_NOTES = ["call con il cliente e triage dei ticket", "aggiornamento del planning e review settimanale", "coordinamento del team e verifica dello staging", "QA e collaudo delle consegne", "stesura specifiche e apertura ticket"];
-const DEV_NOTES = ["sviluppo feature ricerca avanzata", "integrazione API e correzione bug", "lavori su UI e accessi utente", "deploy su staging e verifica", "modello dati e migrazioni"];
-const ADMIN_NOTES = ["gestione accessi e ambienti", "setup infrastruttura e datasource"];
+// Realistic micro-tasks (each ~1-3h). A logged day bundles a few of them, so an
+// 8h day shows several tasks and short days show one or two, never 8h on one task.
+const TASKS: Record<string, string[]> = {
+  PM: [
+    "call di allineamento con il cliente sui ticket in attesa di feedback e priorità della settimana",
+    "triage dei nuovi ticket in arrivo, assegnazione priorità e stima delle ore per ognuno",
+    "aggiornamento del planning di sprint e re-sizing del backlog (stima ~84h sui prossimi due sprint)",
+    "review con il team delle consegne su ricerca avanzata aziende e dossier candidato, lista dei fix",
+    "stesura delle specifiche e dei criteri di accettazione per il flusso consensi GDPR (privacy e marketing separati)",
+    "verifica dello staging con il cliente sul modulo annunci e raccolta del feedback in ticket",
+    "preparazione della demo di fine sprint: script, dati di esempio e note di rilascio",
+    "risposta ai ticket in attesa di feedback e sollecito delle decisioni aperte lato cliente",
+    "coordinamento con gli sviluppatori sull'integrazione MailChimp per l'invio dei dossier",
+    "definizione della timeline di go-live (gen 2027) e brief di 7 task per il team",
+  ],
+  Dev: [
+    "sviluppo della ricerca avanzata aziende: filtri per settore, dimensione e area geografica",
+    "correzione del bug sul ricalcolo del punteggio di match candidato-vacancy",
+    "lavori sulla UI degli accessi utente e sui permessi dell'utente operatore in impostazioni",
+    "creazione dello spazio 'staging-cliente' su BE e FE con nuovo branch e datasource dedicato",
+    "revisione del codice, merge delle PR e allineamento del branch di sviluppo",
+    "test e fix sui casi limite del flag 'non ricontattare' su azienda e candidato",
+    "ottimizzazione delle query e paginazione sulla lista candidati (aggiunta indici)",
+    "migrazione delle anagrafiche e script di normalizzazione dei dati importati",
+    "deploy su staging del modulo dossier e verifica dell'email di conferma colloquio",
+    "stesura dei test automatici sul flusso di pubblicazione annunci sui portali",
+  ],
+  Admin: [
+    "gestione degli accessi e dei ruoli per i nuovi operatori del cliente",
+    "setup degli ambienti e del datasource di staging, allineamento delle variabili d'ambiente",
+    "configurazione della pipeline CI/CD e degli step di deploy automatico su staging",
+    "manutenzione, backup del database e verifica dei log di sistema",
+    "gestione dell'infrastruttura cloud: monitoraggio risorse e rinnovo certificati",
+  ],
+};
+const DAY_HOURS = [3.5, 6, 4.5, 7.5, 5, 2.5, 6.5, 4, 8, 5.5, 3, 7];
 
 let _eid = 1;
-function genEntries(baseISO: string, total: number, notes: string[]) {
-  const out: any[] = []; let rem = Math.round(total * 10) / 10; let i = 0;
+function genLog(role: string, total: number, baseISO: string) {
+  const pool = TASKS[role] || TASKS.PM;
+  const out: any[] = []; let rem = Math.round(total * 10) / 10;
+  let seed = Math.round(total) + role.length; let i = 0;
   const d = new Date(baseISO + "T00:00:00Z");
-  while (rem > 0.01 && i < 40) {
-    const h = Math.min(8, rem); rem = Math.round((rem - h) * 10) / 10;
-    out.push({ id: _eid++, date: d.toISOString().slice(0, 10), hours: h, notes: notes[i % notes.length] });
-    d.setUTCDate(d.getUTCDate() - 3); i++;
+  while (rem > 0.01 && i < 30) {
+    let h = DAY_HOURS[(i + seed) % DAY_HOURS.length];
+    if (h > rem) h = rem;
+    h = Math.round(h * 10) / 10; rem = Math.round((rem - h) * 10) / 10;
+    const nb = h >= 7 ? 4 : h >= 4.5 ? 3 : h >= 2.5 ? 2 : 1;
+    const tasks: string[] = [];
+    for (let k = 0; k < nb; k++) tasks.push(pool[(seed + i + k) % pool.length]);
+    const notes = nb === 1 ? tasks[0] : `<ul>${tasks.map((t) => `<li>${t}</li>`).join("")}</ul>`;
+    out.push({ id: _eid++, date: d.toISOString().slice(0, 10), hours: h, notes });
+    d.setUTCDate(d.getUTCDate() - 3); seed += nb; i++;
   }
   return out;
 }
@@ -126,8 +167,8 @@ function splitMembers(total: number, baseISO: string) {
   parts.forEach(([uid, w], idx) => {
     const t = idx === parts.length - 1 ? Math.round((total - acc) * 10) / 10 : Math.round(total * w * 10) / 10;
     acc += t;
-    const notes = uid === "u5" ? DEV_NOTES : uid === "u4" ? ADMIN_NOTES : PM_NOTES;
-    out.push({ usr_id: uid, total: t, entries: genEntries(baseISO, t, notes) });
+    const role = uid === "u5" ? "Dev" : uid === "u4" ? "Admin" : "PM";
+    out.push({ usr_id: uid, total: t, entries: genLog(role, t, baseISO) });
   });
   return out.sort((a, b) => b.total - a.total);
 }
@@ -136,9 +177,9 @@ const SPRINTS = [
   {
     id: "s7", type: "DEVELOPMENT", status: "IN_PROGRESS", start_date: "2026-08-20", end_date: "2026-09-19", hours_planned: 150,
     members: [
-      { usr_id: "u1", total: 75.5, entries: genEntries("2026-09-11", 75.5, PM_NOTES) },
-      { usr_id: "u4", total: 15, entries: genEntries("2026-09-10", 15, ADMIN_NOTES) },
-      { usr_id: "u2", total: 15, entries: genEntries("2026-09-09", 15, PM_NOTES) },
+      { usr_id: "u1", total: 75.5, entries: genLog("PM", 75.5, "2026-09-11") },
+      { usr_id: "u4", total: 15, entries: genLog("Admin", 15, "2026-09-10") },
+      { usr_id: "u2", total: 15, entries: genLog("PM", 15, "2026-09-09") },
       { usr_id: "u3", total: 14, entries: [
         { id: _eid++, date: "2026-09-08", hours: 3, notes: "<ul><li>re-sizing del backlog (84h totali)</li><li>timeline go-live gennaio 2027, brief di 7 task</li><li>ambienti staging definiti (staging-soraia / staging-cliente)</li></ul>" },
         { id: _eid++, date: "2026-09-07", hours: 6, notes: "call con il cliente e apertura ticket" },
