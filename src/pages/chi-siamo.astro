@@ -8,6 +8,19 @@ import CTABanner from "~/components/CTABanner.astro";
 const title = "Chi siamo, AI Agency italiana per le PMI | Soraia";
 const description = "AI consultants 100% remote distribuiti tra Italia, Europa e Sudamerica. 40+ progetti consegnati, focus su PMI italiane, nessun lock-in tecnologico.";
 
+// Loghi di università/aziende dei founder. Metti i file ufficiali in
+// src/assets/logos/experience/<slug>.{svg,png,webp,avif}: se il file c'è si vede
+// il logo, altrimenti si mostra il nome (nessuna immagine rotta).
+const expLogos = import.meta.glob("/src/assets/logos/experience/*.{svg,png,webp,avif}", { eager: true, query: "?url", import: "default" }) as Record<string, string>;
+const slugify = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+function logoFor(name: string): string | null {
+  const slug = slugify(name);
+  for (const [p, url] of Object.entries(expLogos)) {
+    if ((p.split("/").pop() || "").replace(/\.[^.]+$/, "") === slug) return url;
+  }
+  return null;
+}
+
 const valueIcons: Record<string, string> = {
   // sparkles: AI with discernment
   sparkles: '<path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/><path d="M19 14l.7 2.1L22 17l-2.3.9L19 20l-.7-2.1L16 17l2.3-.9z"/><path d="M5 19l.4 1.2L7 21l-1.6.4L5 23l-.4-1.6L3 21l1.6-.4z"/>',
@@ -216,23 +229,23 @@ const faqs = [
             </div>
             <p class="text-[15px] leading-relaxed text-pretty flex-1" style="color: var(--color-ink-muted);">{f.bio}</p>
             <div class="mt-7 pt-6 border-t border-line space-y-3">
-              <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
                 <p class="text-[10px] font-medium tracking-[0.14em] uppercase w-[78px] flex-shrink-0" style="color: var(--color-ink-soft);">Education</p>
-                {f.education.map((e, i) => (
-                  <>
-                    {i > 0 && <span class="text-[11px]" style="color: var(--color-ink-soft);">·</span>}
-                    <span class="text-[13px] font-medium" style="color: var(--color-ink);">{e}</span>
-                  </>
-                ))}
+                {f.education.map((e) => {
+                  const url = logoFor(e);
+                  return url
+                    ? <img src={url} alt={e} title={e} class="exp-logo" loading="lazy" />
+                    : <span class="text-[13px] font-medium" style="color: var(--color-ink);">{e}</span>;
+                })}
               </div>
-              <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
                 <p class="text-[10px] font-medium tracking-[0.14em] uppercase w-[78px] flex-shrink-0" style="color: var(--color-ink-soft);">Experience</p>
-                {f.companies.map((c, i) => (
-                  <>
-                    {i > 0 && <span class="text-[11px]" style="color: var(--color-ink-soft);">·</span>}
-                    <span class="text-[13px] font-medium" style="color: var(--color-ink);">{c}</span>
-                  </>
-                ))}
+                {f.companies.map((c) => {
+                  const url = logoFor(c);
+                  return url
+                    ? <img src={url} alt={c} title={c} class="exp-logo" loading="lazy" />
+                    : <span class="text-[13px] font-medium" style="color: var(--color-ink);">{c}</span>;
+                })}
               </div>
             </div>
           </article>
@@ -302,6 +315,17 @@ const faqs = [
     </div>
 
     <style is:global>
+      /* Founder education/experience logo strip */
+      .exp-logo {
+        height: 24px;
+        width: auto;
+        max-width: 118px;
+        object-fit: contain;
+        filter: grayscale(1);
+        opacity: 0.6;
+        transition: filter 160ms ease, opacity 160ms ease;
+      }
+      .exp-logo:hover { filter: grayscale(0); opacity: 1; }
       .events-carousel {
         position: relative;
         max-width: none;
