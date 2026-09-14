@@ -238,7 +238,7 @@ const faqs = [
                     : <span class="text-[13px] font-medium" style="color: var(--color-ink);">{e}</span>;
                 })}
               </div>
-              <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
+              <div class="flex flex-nowrap items-center gap-x-2.5">
                 <p class="text-[10px] font-medium tracking-[0.14em] uppercase w-[78px] flex-shrink-0" style="color: var(--color-ink-soft);">Experience</p>
                 {f.companies.map((c) => {
                   const url = logoFor(c);
@@ -317,10 +317,12 @@ const faqs = [
     <style is:global>
       /* Founder education/experience logo strip */
       .exp-logo {
-        height: 30px;
+        height: 28px;
         width: auto;
-        max-width: 150px;
+        max-width: 88px;
         object-fit: contain;
+        flex: 0 1 auto;
+        min-width: 0;
       }
       .events-carousel {
         position: relative;
