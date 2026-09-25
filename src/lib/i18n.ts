@@ -31,6 +31,16 @@ export const GUIDE_SLUG_MAP: Record<string, string> = {
 };
 // IT confronto slug -> EN slug. Filled by automation/confronto-author.mjs as pairs are created.
 export const CONFRONTO_SLUG_MAP: Record<string, string> = {
+  "crm-con-agenti-ia-vs-crm-tradizionale": "ai-agent-crm-vs-traditional-crm",
+  "assumere-junior-vs-agente-ia": "hiring-junior-vs-ai-agent",
+  "knowledge-base-ia-vs-wiki-aziendale": "ai-knowledge-base-vs-company-wiki",
+  "contenuti-marketing-ia-vs-agenzia-copywriting": "ai-marketing-content-vs-copywriting-agency",
+  "analisi-dati-ia-conversazionale-vs-dashboard-bi": "conversational-ai-analytics-vs-bi-dashboard",
+  "custom-gpt-vs-agente-ia-integrato": "custom-gpt-vs-integrated-ai-agent",
+  "canone-mensile-vs-progetto-prezzo-fisso-ai": "monthly-retainer-vs-fixed-price-ai-project",
+  "voicebot-ia-outbound-vs-call-center-telemarketing": "ai-outbound-voicebot-vs-telemarketing-call-center",
+  "estrazione-documenti-ia-vs-data-entry-manuale": "ai-document-extraction-vs-manual-data-entry",
+  "copilot-studio-vs-agente-ia-su-misura": "copilot-studio-vs-custom-ai-agent",
   "outsourcing-bpo-vs-agente-ia-support": "bpo-outsourcing-vs-ai-agent-support",
   "receptionist-vocale-ia-vs-centralino-tradizionale": "ai-voice-receptionist-vs-traditional-switchboard",
   "llm-open-source-vs-proprietario": "open-source-vs-proprietary-llm",

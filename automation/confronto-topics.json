@@ -782,7 +782,7 @@
   },
   {
     "id": "assumere-junior-vs-agente-ia",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "assumere-junior-vs-agente-ia",
     "slug_en": "hiring-junior-vs-ai-agent",
     "categoria": "HR & Ops",
@@ -812,7 +812,7 @@
       "https://virtualworkforce.ai/it/agenti-ia-vs-assistenti-umani/"
     ],
     "discovered_at": "2026-07-25",
-    "drafted_at": null
+    "drafted_at": "2026-09-25"
   },
   {
     "id": "app-no-code-vs-software-codice-custom",
@@ -1165,7 +1165,7 @@
   },
   {
     "id": "crm-con-agenti-ia-vs-crm-tradizionale",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "crm-con-agenti-ia-vs-crm-tradizionale",
     "slug_en": "ai-agent-crm-vs-traditional-crm",
     "categoria": "Sales / software",
@@ -1196,7 +1196,7 @@
       "https://weblabagency.ch/customer-relationship-management-10-migliori/"
     ],
     "discovered_at": "2026-08-25",
-    "drafted_at": null
+    "drafted_at": "2026-09-25"
   },
   {
     "id": "gemini-workspace-vs-microsoft-copilot",
@@ -1264,6 +1264,360 @@
       "https://medium.com/@tahirbalarabe2/model-context-protocol-mcp-vs-apis-the-new-standard-for-ai-integration-d6b9a7665ea7"
     ],
     "discovered_at": "2026-08-25",
+    "drafted_at": null
+  },
+  {
+    "id": "copilot-studio-vs-agente-ia-su-misura",
+    "status": "drafted",
+    "slug_it": "copilot-studio-vs-agente-ia-su-misura",
+    "slug_en": "copilot-studio-vs-custom-ai-agent",
+    "categoria": "Build platform vs bespoke",
+    "optionA_name": "Copilot Studio (piattaforma low-code Microsoft)",
+    "optionB_name": "Agente IA su misura (build custom)",
+    "title_hint": "Copilot Studio vs agente IA su misura: costruire agenti dentro Microsoft o su misura",
+    "primaryKeyword": "Copilot Studio vs agenti IA su misura",
+    "targetPersona": "IT Manager / COO",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/ai-adoption",
+      "/software-development",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: 'no-code-vs-agenti-ia' riguarda Make/Zapier/n8n e 'saas-verticale-pronto-vs-agente-ia-su-misura' un SaaS pronto; qui e' l'agent-builder Microsoft (crediti, ecosistema M365, Cowork/Agent 365 2026) vs agenti realmente custom fuori dal lock-in.",
+    "freshnessExpiry": "2027-06-30",
+    "score": 80,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.9,
+      "winnability": 0.7,
+      "freshness": 0.85,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://yellowtech.it/guida/copilot-studio-agenti-ai",
+      "https://blog.varprime.com/microsoft365-copilot-agenti/",
+      "https://www.microsoft.com/it-it/microsoft-365-copilot/microsoft-copilot-studio"
+    ],
+    "discovered_at": "2026-09-25",
+    "drafted_at": "2026-09-25"
+  },
+  {
+    "id": "estrazione-documenti-ia-vs-data-entry-manuale",
+    "status": "drafted",
+    "slug_it": "estrazione-documenti-ia-vs-data-entry-manuale",
+    "slug_en": "ai-document-extraction-vs-manual-data-entry",
+    "categoria": "Finance / Document automation",
+    "optionA_name": "Estrazione documenti con IA (IDP)",
+    "optionB_name": "Data entry manuale / in outsourcing",
+    "title_hint": "Estrazione documenti con IA vs data entry manuale: cosa conviene alla tua amministrazione",
+    "primaryKeyword": "estrazione dati documenti IA vs data entry manuale",
+    "targetPersona": "CFO / Responsabile amministrazione",
+    "internalLinkTargets": [
+      "/finance",
+      "/ai-agents",
+      "/case-studies/numeraria",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: 'rpa-vs-agenti-ia' compara paradigmi di automazione e 'report-ia-vs-report-manuale-excel' (parked) riguarda la reportistica; qui il confronto e' specifico sull'estrazione dati da fatture/PDF/documenti vs inserimento manuale o BPO di data entry.",
+    "freshnessExpiry": null,
+    "score": 79,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.9,
+      "winnability": 0.7,
+      "freshness": 0.6,
+      "geo": 0.7
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.nicma.com/data-entry-massivo-fatture-ai/",
+      "https://www.besttechpartner.ai/2026/04/19/estrazione-dati-ia-come-semplificare-la-gestione-di-documenti-complessi/",
+      "https://blog.catamacro.com/estrazione-dati-documenti-ocr-ai"
+    ],
+    "discovered_at": "2026-09-25",
+    "drafted_at": "2026-09-25"
+  },
+  {
+    "id": "voicebot-ia-outbound-vs-call-center-telemarketing",
+    "status": "drafted",
+    "slug_it": "voicebot-ia-outbound-vs-call-center-telemarketing",
+    "slug_en": "ai-outbound-voicebot-vs-telemarketing-call-center",
+    "categoria": "Sales / Voice",
+    "optionA_name": "Voicebot IA per chiamate outbound",
+    "optionB_name": "Call center outbound / telemarketing tradizionale",
+    "title_hint": "Voicebot IA outbound vs call center telemarketing: qualificare e richiamare i lead",
+    "primaryKeyword": "voicebot IA outbound vs call center telemarketing",
+    "targetPersona": "Direttore commerciale / Sales Ops",
+    "internalLinkTargets": [
+      "/sales-marketing",
+      "/customer-support",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: 'receptionist-vocale-ia-vs-centralino-tradizionale' e' inbound e 'voicebot-ia-vs-chatbot-testuale' e' un confronto di canale; qui e' l'outbound (qualifica lead, richiami, appuntamenti) con l'angolo italiano di AI Act e Registro delle Opposizioni.",
+    "freshnessExpiry": "2027-03-31",
+    "score": 77,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.8,
+      "winnability": 0.7,
+      "freshness": 0.75,
+      "geo": 0.75
+    },
+    "sources": [
+      "confronto-radar",
+      "https://it.diabolocom.com/blog/campagne-chiamate-outbound-automatiche/",
+      "https://www.crm4solution.com/ai-act-e-call-center/",
+      "https://www.thelgo.it/funzionalita/voice-ai-intelligenza-agentica-per-call-center/"
+    ],
+    "discovered_at": "2026-09-25",
+    "drafted_at": "2026-09-25"
+  },
+  {
+    "id": "modello-a-canone-vs-progetto-prezzo-fisso-ai",
+    "status": "drafted",
+    "slug_it": "canone-mensile-vs-progetto-prezzo-fisso-ai",
+    "slug_en": "monthly-retainer-vs-fixed-price-ai-project",
+    "categoria": "Engagement model",
+    "optionA_name": "Canone mensile con team dedicato",
+    "optionB_name": "Progetto AI a prezzo fisso (una tantum)",
+    "title_hint": "Canone mensile vs progetto a prezzo fisso: come ingaggiare un partner AI",
+    "primaryKeyword": "progetto AI canone mensile vs prezzo fisso",
+    "targetPersona": "CEO / Founder PMI",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/ai-adoption",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: nessun confronto del backlog affronta il modello di ingaggio economico. E' una decisione reale build/partner (retainer con figure dedicate e ore riportabili vs progetto chiuso a scope fisso) e riflette direttamente il modello Soraia.",
+    "freshnessExpiry": null,
+    "score": 74,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.85,
+      "winnability": 0.65,
+      "freshness": 0.55,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.soraia.io/prezzi",
+      "https://yellowtech.it/guida/copilot-studio-agenti-ai"
+    ],
+    "discovered_at": "2026-09-25",
+    "drafted_at": "2026-09-25"
+  },
+  {
+    "id": "custom-gpt-vs-agente-ia-integrato",
+    "status": "drafted",
+    "slug_it": "custom-gpt-vs-agente-ia-integrato",
+    "slug_en": "custom-gpt-vs-integrated-ai-agent",
+    "categoria": "Build depth",
+    "optionA_name": "Custom GPT (dentro ChatGPT, GPT Builder)",
+    "optionB_name": "Agente IA integrato via API nei processi",
+    "title_hint": "Custom GPT vs agente IA integrato: fin dove conviene costruire",
+    "primaryKeyword": "Custom GPT vs agente IA su misura integrato",
+    "targetPersona": "Head of Operations / Innovation Manager",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/parliamone"
+    ],
+    "dedupNotes": "Distinto da 'agente-ia-su-misura-vs-chatgpt-generico' (che compara ChatGPT generico per il team vs agente): qui il confronto e' tra un Custom GPT effettivamente costruito col GPT Builder (no-code, vive dentro ChatGPT, nessuna automazione) e un agente integrato via API nel CRM/gestionale che agisce; e' una decisione di profondita' di build, non di 'generico vs su misura'.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 73,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.85,
+      "winnability": 0.6,
+      "freshness": 0.7,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.astraloopstudio.com/blog/gpt-personalizzato-azienda-come-crearlo/",
+      "https://datamasters.it/blog/creare-agenti-chatgpt/",
+      "https://www.seoroma.com/seoblog/gpts-guida-completa.php"
+    ],
+    "discovered_at": "2026-09-25",
+    "drafted_at": "2026-09-25"
+  },
+  {
+    "id": "analisi-dati-ia-conversazionale-vs-dashboard-bi",
+    "status": "drafted",
+    "slug_it": "analisi-dati-ia-conversazionale-vs-dashboard-bi",
+    "slug_en": "conversational-ai-analytics-vs-bi-dashboard",
+    "categoria": "Data / Business Intelligence",
+    "optionA_name": "Analisi dati conversazionale con IA (chiedi ai tuoi dati)",
+    "optionB_name": "Dashboard BI tradizionale (es. Power BI)",
+    "title_hint": "Analisi dati conversazionale con IA vs dashboard BI: interrogare i dati in linguaggio naturale",
+    "primaryKeyword": "analisi dati IA conversazionale vs dashboard Power BI",
+    "targetPersona": "Direttore operativo / Data owner",
+    "internalLinkTargets": [
+      "/finance",
+      "/sales-marketing",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: non presente nel backlog. Decisione reale tra interrogare i dati in linguaggio naturale (text-to-data/agente dati) e costruire/mantenere dashboard BI statiche, tema distinto dai report automatici e dalla document automation.",
+    "freshnessExpiry": "2027-03-31",
+    "score": 73,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.8,
+      "winnability": 0.65,
+      "freshness": 0.7,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.domo.com/it/learn/article/ai-data-analysis-tools",
+      "https://yellowtech.it/guida/migliori-ai-analisi-dati",
+      "https://docs.cloud.google.com/looker/docs/studio/conversational-analytics-overview?hl=it"
+    ],
+    "discovered_at": "2026-09-25",
+    "drafted_at": "2026-09-25"
+  },
+  {
+    "id": "contenuti-marketing-ia-vs-agenzia-copywriting",
+    "status": "drafted",
+    "slug_it": "contenuti-marketing-ia-vs-agenzia-copywriting",
+    "slug_en": "ai-marketing-content-vs-copywriting-agency",
+    "categoria": "Sales / Marketing",
+    "optionA_name": "Produzione contenuti con IA (agente su misura)",
+    "optionB_name": "Agenzia di copywriting / content tradizionale",
+    "title_hint": "Contenuti marketing con IA vs agenzia di copywriting: qualita', scala e costi",
+    "primaryKeyword": "contenuti marketing IA vs agenzia copywriting",
+    "targetPersona": "Marketing Manager PMI",
+    "internalLinkTargets": [
+      "/sales-marketing",
+      "/ai-search-optimization",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: 'ai-sdr-vs-agenzia-lead-generation' riguarda la lead gen, non la produzione di contenuti. Qui il confronto e' sulla creazione di contenuti (blog, schede prodotto, email, ADV) con agente IA sui dati/brand vs affidamento a un'agenzia di copywriting.",
+    "freshnessExpiry": null,
+    "score": 73,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.8,
+      "winnability": 0.55,
+      "freshness": 0.6,
+      "geo": 0.7
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.itch.it/ai-nel-content-marketing-alleata-o-nemica-del-copywriter-nel-2025/",
+      "https://www.automatiking.com/intelligenza-artificiale-vs-copywriter/",
+      "https://flowagency.it/lintelligenza-artificiale-e-il-copywriting-un-nuovo-scenario/"
+    ],
+    "discovered_at": "2026-09-25",
+    "drafted_at": "2026-09-25"
+  },
+  {
+    "id": "knowledge-base-ia-vs-wiki-aziendale",
+    "status": "drafted",
+    "slug_it": "knowledge-base-ia-vs-wiki-aziendale",
+    "slug_en": "ai-knowledge-base-vs-company-wiki",
+    "categoria": "Internal knowledge / Adoption",
+    "optionA_name": "Knowledge base IA interna (RAG sui documenti)",
+    "optionB_name": "Wiki / documentazione aziendale tradizionale",
+    "title_hint": "Knowledge base con IA vs wiki aziendale: trovare le risposte interne senza perdere tempo",
+    "primaryKeyword": "knowledge base IA interna vs wiki aziendale",
+    "targetPersona": "Responsabile HR / Operations",
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/customer-support",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: nessun confronto del backlog copre la gestione della conoscenza interna. Decisione reale tra interrogare i documenti in linguaggio naturale (RAG) e mantenere un wiki/documentazione manuale (che tende a diventare obsoleto).",
+    "freshnessExpiry": null,
+    "score": 72,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.8,
+      "winnability": 0.7,
+      "freshness": 0.6,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://giallostudio.it/blog/ai-per-knowledge-base-aziendale",
+      "https://francescataddei.it/blog/knowledge-base-ia/",
+      "https://klutch.app/it/blog/corporate-wiki-vs-knowledge-base-which-one-is-right-for-you/"
+    ],
+    "discovered_at": "2026-09-25",
+    "drafted_at": "2026-09-25"
+  },
+  {
+    "id": "traduzione-ia-vs-agenzia-traduzione",
+    "status": "parked",
+    "slug_it": "traduzione-ia-vs-agenzia-traduzione",
+    "slug_en": "ai-translation-vs-translation-agency",
+    "categoria": "Localization / Export",
+    "optionA_name": "Traduzione con IA / agente di localizzazione",
+    "optionB_name": "Agenzia di traduzione professionale",
+    "title_hint": "Traduzione con IA vs agenzia di traduzione: come localizzare per i mercati esteri",
+    "primaryKeyword": "traduzione IA vs agenzia di traduzione aziende",
+    "targetPersona": "Export Manager / Marketing internazionale",
+    "internalLinkTargets": [
+      "/sales-marketing",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: 'agente-ia-multilingua-vs-team-supporto-umano' riguarda il customer support multilingua in tempo reale; qui il confronto e' sulla traduzione/localizzazione di contenuti e documenti per l'export (made in Italy) tra IA/MT e agenzia di traduzione.",
+    "freshnessExpiry": null,
+    "score": 67,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.6,
+      "winnability": 0.6,
+      "freshness": 0.6,
+      "geo": 0.75
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.lipsie.com/it/risorse-traduzioni/libri-bianchi/agenzia-di-traduzioni-ia/",
+      "https://www.traducta.it/notizie/che-modo-ia-trasformando-mercato-internazionale-traduzione",
+      "https://www.polilingua.com/blog/post/ai-vs-human-translation-vs-mtpe.htm"
+    ],
+    "discovered_at": "2026-09-25",
+    "drafted_at": null
+  },
+  {
+    "id": "verbale-riunioni-ia-vs-stesura-manuale",
+    "status": "parked",
+    "slug_it": "verbale-riunioni-ia-vs-stesura-manuale",
+    "slug_en": "ai-meeting-minutes-vs-manual-notes",
+    "categoria": "Productivity / Adoption",
+    "optionA_name": "Verbali e note riunione con IA (notetaker)",
+    "optionB_name": "Stesura manuale di verbali e minute",
+    "title_hint": "Verbali di riunione con IA vs stesura manuale: recuperare ore di follow-up",
+    "primaryKeyword": "verbale riunione con IA vs stesura manuale",
+    "targetPersona": "Project Manager / Assistente di direzione",
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/finance",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: nessun confronto del backlog copre la verbalizzazione. Decisione operativa reale (trascrizione + riepilogo + action item automatici vs presa appunti e stesura manuale), utile come entry-point di AI adoption con angolo privacy/governance dei dati.",
+    "freshnessExpiry": null,
+    "score": 60,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.55,
+      "winnability": 0.6,
+      "freshness": 0.55,
+      "geo": 0.55
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.azeusconvene.com/it-it/articoli/software-verbale-riunione-ai",
+      "https://briefme.one/blog/verbali-di-riunione-2-0-creare-un-verbale-con-l-ai-in-pochi-minuti"
+    ],
+    "discovered_at": "2026-09-25",
     "drafted_at": null
   }
 ]
