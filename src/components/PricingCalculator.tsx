@@ -21,39 +21,8 @@ export default function PricingCalculator() {
 
   return (
     <div>
-      {/* SLIDER */}
-      <div className="max-w-2xl mx-auto">
-        <div className="flex items-baseline justify-between mb-3">
-          <span className="text-[13px] font-medium" style={{ color: "var(--color-ink-soft)" }}>{hours} ore/mese</span>
-          <span className="text-[13px] font-medium" style={{ color: "var(--color-ink-soft)" }}>fino a {MAX_HOURS} ore/mese</span>
-        </div>
-        <input
-          type="range" min={0} max={STEPS - 1} step={1} value={step}
-          onChange={(e) => setStep(Number(e.target.value))}
-          aria-label="Ore al mese"
-          className="pricing-range"
-          style={{ backgroundImage: `linear-gradient(to right, ${brand} 0%, #a855f7 ${pct}%, #E7E4DF ${pct}%, #E7E4DF 100%)` }}
-        />
-      </div>
-
-      {/* PRICE */}
-      <div className="text-center mt-10">
-        <div className="flex items-baseline justify-center gap-2">
-          <span style={{ fontSize: "clamp(2.75rem, 6vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1 }}>
-            € {fmt(price)}
-          </span>
-          <span className="text-[15px]" style={{ color: "var(--color-ink-soft)" }}>al mese</span>
-        </div>
-        <p className="mt-3 text-[15px]" style={{ color: "var(--color-ink)" }}><b>{hours} ore al mese</b>, due figure dedicate sul tuo progetto.</p>
-        <div className="mt-5 inline-flex items-center gap-2.5 rounded-full px-5 py-2.5" style={{ background: "var(--color-violet-50, #F5EEF7)", border: "1px solid var(--color-violet-200, #E9D5F0)" }}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={brand} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          <span className="text-[14px] font-semibold" style={{ color: brand }}>Anche solo per un mese, senza vincoli di durata.</span>
-        </div>
-        <p className="mt-4 text-[12.5px]" style={{ color: "var(--color-ink-soft)" }}>Tutti i prezzi sono IVA esclusa. Si parte da € 3.000 al mese.</p>
-      </div>
-
       {/* TWO ROLES */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Project Manager */}
         <div className="card !p-7 md:!p-8 flex flex-col">
           <div className="flex flex-col items-center text-center">
@@ -123,6 +92,37 @@ export default function PricingCalculator() {
         <p className="text-[15px] leading-relaxed text-pretty" style={{ color: "var(--color-ink)" }}>
           Due figure dedicate per l'intera durata del progetto, con responsabilità separate. <b>{hours} ore al mese combinate fra le due.</b> Il ritmo mensile è indicativo: le ore non consumate si recuperano nei mesi successivi, quelle in eccesso si scontano sui mesi seguenti. Le milestone e i rilasci restano l'obbligo di risultato.
         </p>
+      </div>
+
+      {/* SLIDER */}
+      <div className="max-w-2xl mx-auto mt-14">
+        <div className="flex items-baseline justify-between mb-3">
+          <span className="text-[13px] font-medium" style={{ color: "var(--color-ink-soft)" }}>{hours} ore/mese</span>
+          <span className="text-[13px] font-medium" style={{ color: "var(--color-ink-soft)" }}>fino a {MAX_HOURS} ore/mese</span>
+        </div>
+        <input
+          type="range" min={0} max={STEPS - 1} step={1} value={step}
+          onChange={(e) => setStep(Number(e.target.value))}
+          aria-label="Ore al mese"
+          className="pricing-range"
+          style={{ backgroundImage: `linear-gradient(to right, ${brand} 0%, #a855f7 ${pct}%, #E7E4DF ${pct}%, #E7E4DF 100%)` }}
+        />
+      </div>
+
+      {/* PRICE */}
+      <div className="text-center mt-10">
+        <div className="flex items-baseline justify-center gap-2">
+          <span style={{ fontSize: "clamp(2.75rem, 6vw, 4rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1 }}>
+            € {fmt(price)}
+          </span>
+          <span className="text-[15px]" style={{ color: "var(--color-ink-soft)" }}>al mese</span>
+        </div>
+        <p className="mt-3 text-[15px]" style={{ color: "var(--color-ink)" }}><b>{hours} ore al mese</b>, due figure dedicate sul tuo progetto.</p>
+        <div className="mt-5 inline-flex items-center gap-2.5 rounded-full px-5 py-2.5" style={{ background: "var(--color-violet-50, #F5EEF7)", border: "1px solid var(--color-violet-200, #E9D5F0)" }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={brand} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          <span className="text-[14px] font-semibold" style={{ color: brand }}>Anche solo per un mese, senza vincoli di durata.</span>
+        </div>
+        <p className="mt-4 text-[12.5px]" style={{ color: "var(--color-ink-soft)" }}>Tutti i prezzi sono IVA esclusa. Si parte da € 3.000 al mese.</p>
       </div>
     </div>
   );
