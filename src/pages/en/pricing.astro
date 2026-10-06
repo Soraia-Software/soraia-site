@@ -4,42 +4,41 @@ import PricingCalculator from "~/components/PricingCalculator.tsx";
 import SectionHeader from "~/components/SectionHeader.astro";
 import "~/styles/prezzi.css";
 
-const title = "Prezzi | Soraia";
+const title = "Pricing | Soraia";
 const description =
-  "Prezzi semplici e trasparenti: due figure dedicate (Project Manager e AI Engineer), ore al mese combinate, a partire da 3.000 euro al mese. Sposta lo slider e vedi il prezzo.";
+  "Simple, transparent pricing: two dedicated people (a Project Manager and an AI Engineer), combined monthly hours, from €3,000 a month. Move the slider and see the price.";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: title,
-  url: "https://www.soraia.io/prezzi",
-  inLanguage: "it-IT",
+  url: "https://www.soraia.io/en/pricing",
+  inLanguage: "en",
 };
-
 ---
 
-<Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
+<Layout title={title} description={description} lang="en" jsonLd={jsonLd}>
   <!-- HERO -->
   <section class="relative overflow-hidden bg-violet-mesh">
     <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
     <div class="container-soraia pt-16 md:pt-24 pb-8 md:pb-10 relative z-10 text-center max-w-2xl">
-      <p class="eyebrow mb-5">Prezzi</p>
+      <p class="eyebrow mb-5">Pricing</p>
       <h1 class="text-[2.5rem] sm:text-[3.25rem] md:text-[3.75rem] font-semibold tracking-tight text-ink-900 leading-[1.04] text-balance">
-        Prezzi semplici e trasparenti
+        Simple, transparent pricing
       </h1>
       <p class="mt-6 text-[18px] md:text-[20px] text-ink-700 leading-relaxed text-pretty">
-        Due figure dedicate sul tuo progetto, a partire da 3.000 euro al mese. Anche solo per un mese, senza vincoli di durata. Sposta lo slider e scopri il prezzo.
+        Two dedicated people on your project, from €3,000 a month. Even for a single month, with no lock-in. Move the slider and see the price.
       </p>
     </div>
   </section>
 
-  <!-- METODOLOGIA (sprint methodology) -->
+  <!-- METHODOLOGY (sprint methodology) -->
   <section class="section bg-white border-t border-line">
     <div class="container-soraia">
       <SectionHeader
-        eyebrow="Metodologia"
-        title="Come costruiamo i tuoi agenti IA."
-        subtitle="<strong>Sprint iterativi corti</strong>: ad ogni iterazione l'agente fa già qualcosa di utile in produzione. Niente progetti di 6 mesi che finiscono in un demo: vedi valore già dalla prima settimana."
+        eyebrow="Methodology"
+        title="How we build your AI agents."
+        subtitle="<strong>Short, iterative sprints</strong>: at every iteration the agent already does something useful in production. No 6-month projects that end in a demo: you see value from the very first week."
         align="center"
       />
 
@@ -48,14 +47,14 @@ const jsonLd = {
         <div class="rounded-2xl bg-ink-50 border border-line px-4 py-6 md:px-8 md:py-8">
           <img
             src="/agile/sprint.webp"
-            alt="Sprint iterativi: ogni ciclo consegna valore in produzione"
+            alt="Iterative sprints: each cycle delivers value in production"
             loading="lazy"
             decoding="async"
             class="w-full h-auto block"
           />
         </div>
         <figcaption class="mt-3.5 text-[12.5px] text-center" style="color: var(--color-ink-soft);">
-          Sprint iterativi: ad ogni ciclo l'agente è già in produzione.
+          Iterative sprints: at every cycle the agent is already in production.
         </figcaption>
       </figure>
 
@@ -66,84 +65,84 @@ const jsonLd = {
             <div class="sprint-step-head">
               <span class="sprint-num">1</span>
               <div class="sprint-step-meta">
-                <p class="sprint-step-tag">Settimana 1</p>
+                <p class="sprint-step-tag">Week 1</p>
                 <p class="sprint-step-title">Discovery + baseline</p>
               </div>
             </div>
-            <p class="sprint-step-body">Cronometriamo il processo target con il tuo team. Lock del <strong>metric primario unico</strong> (es. ore/persona/settimana recuperate). Senza baseline, niente garanzia.</p>
+            <p class="sprint-step-body">We time the target process with your team. We lock the <strong>single primary metric</strong> (e.g. hours/person/week recovered). No baseline, no guarantee.</p>
           </li>
           <li class="sprint-step">
             <div class="sprint-step-head">
               <span class="sprint-num">2</span>
               <div class="sprint-step-meta">
-                <p class="sprint-step-tag">Settimane 2-3</p>
-                <p class="sprint-step-title">Build dell'agente</p>
+                <p class="sprint-step-tag">Weeks 2-3</p>
+                <p class="sprint-step-title">Agent build</p>
               </div>
             </div>
-            <p class="sprint-step-body">Prompt engineering, integrazione con i tuoi sistemi (CRM, ATS, gestionali), regole di escalation, audit log. Review settimanali con il tuo team operativo.</p>
+            <p class="sprint-step-body">Prompt engineering, integration with your systems (CRM, ATS, ERPs), escalation rules, audit log. Weekly reviews with your operational team.</p>
           </li>
           <li class="sprint-step">
             <div class="sprint-step-head">
               <span class="sprint-num">3</span>
               <div class="sprint-step-meta">
-                <p class="sprint-step-tag">Settimana 4</p>
+                <p class="sprint-step-tag">Week 4</p>
                 <p class="sprint-step-title">Shadow mode + training</p>
               </div>
             </div>
-            <p class="sprint-step-body">L'agente lavora in parallelo al team umano, senza ancora prendere decisioni autonome. Confronto output, fine-tuning sui criteri, formazione del team.</p>
+            <p class="sprint-step-body">The agent works in parallel with the human team, without yet making autonomous decisions. Output comparison, fine-tuning on the criteria, team training.</p>
           </li>
           <li class="sprint-step sprint-step--milestone">
             <div class="sprint-step-head">
               <span class="sprint-num sprint-num--milestone">4</span>
               <div class="sprint-step-meta">
-                <p class="sprint-step-tag">Go-live + 30 gg</p>
-                <p class="sprint-step-title">Hypercare e misurazione</p>
+                <p class="sprint-step-tag">Go-live + 30 days</p>
+                <p class="sprint-step-title">Hypercare and measurement</p>
               </div>
             </div>
-            <p class="sprint-step-body">L'agente passa in produzione. Monitoring attivo Soraia per 30 giorni, fix immediati sui casi limite. Al giorno 30: <strong>misurazione finale vs baseline</strong>. Se non hai recuperato le ore promesse, non paghi lo sprint.</p>
+            <p class="sprint-step-body">The agent goes into production. Active Soraia monitoring for 30 days, immediate fixes on edge cases. On day 30: <strong>final measurement vs baseline</strong>. If you haven't recovered the promised hours, you don't pay for the sprint.</p>
           </li>
         </ol>
 
         <div class="mt-12 flex justify-center">
           <div class="inline-flex items-center gap-2.5 px-5 py-3 rounded-full text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand); border: 1px solid var(--color-violet-200);">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span><strong>4 settimane</strong> al primo agente live · iterazioni mensili dopo il go-live</span>
+            <span><strong>4 weeks</strong> to the first agent live · monthly iterations after go-live</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4 SETTIMANE IN PRODUZIONE (la differenza) -->
+  <!-- THE DIFFERENCE -->
   <section class="section pt-0">
     <div class="container-soraia">
       <div class="rounded-3xl p-8 md:p-14 text-center" style="background: var(--color-brand); color: #fff;">
-        <p class="eyebrow mb-4" style="color: rgba(255,255,255,0.7);">La differenza</p>
+        <p class="eyebrow mb-4" style="color: rgba(255,255,255,0.7);">The difference</p>
         <h2 class="text-balance mx-auto max-w-3xl" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 3rem); line-height: 1.08; letter-spacing: -0.025em; font-weight: 500; color: #fff;">
-          In 4 settimane sei già in produzione
+          In 4 weeks you're already in production
         </h2>
         <p class="mt-5 text-[17px] md:text-[19px] leading-relaxed text-pretty max-w-2xl mx-auto" style="color: rgba(255,255,255,0.82);">
-          Molte agenzie, dopo quattro settimane, non ti hanno ancora mandato il preventivo. Con noi, nello stesso mese, il primo rilascio gira già sui tuoi processi reali.
+          Many agencies, after four weeks, still haven't sent you the quote. With us, in the same month, the first release is already running on your real processes.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- PM + AI ENGINEER + SLIDER E PREZZI -->
+  <!-- PM + AI ENGINEER + SLIDER AND PRICE -->
   <section class="section pt-4 md:pt-6">
     <div class="container-soraia">
-      <PricingCalculator client:load />
+      <PricingCalculator client:load lang="en" />
     </div>
   </section>
 
-  <!-- PORTALE CLIENTE (embedded live demo) -->
+  <!-- CLIENT PORTAL (embedded live demo) -->
   <section class="section pt-0">
     <div class="container-soraia">
       <div class="max-w-2xl mb-8">
-        <p class="eyebrow mb-4">Trasparenza</p>
-        <h2 class="text-balance" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 2.5rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">Il portale cliente, in tempo reale</h2>
+        <p class="eyebrow mb-4">Transparency</p>
+        <h2 class="text-balance" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 2.5rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">The client portal, in real time</h2>
         <p class="mt-4 text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
-          Ogni cliente ha questo portale: i ticket in lavorazione, le ore per sprint e per persona, l'avanzamento del progetto. Niente scatola nera, niente report da chiedere. Provalo qui sotto, sono dati di esempio.
+          Every client gets this portal: the tickets in progress, the hours per sprint and per person, the project's progress. No black box, no reports to chase. Try it below, with sample data.
         </p>
       </div>
       <div class="portal-embed">
@@ -151,16 +150,16 @@ const jsonLd = {
           <span class="portal-embed__dot" style="background:#ff5f57;"></span>
           <span class="portal-embed__dot" style="background:#febc2e;"></span>
           <span class="portal-embed__dot" style="background:#28c840;"></span>
-          <span class="portal-embed__url">Portale cliente · Nordica HR (demo)</span>
-          <button type="button" id="portalExpand" class="portal-embed__expand" aria-label="Apri a schermo intero">
+          <span class="portal-embed__url">Client portal · Nordica HR (demo)</span>
+          <button type="button" id="portalExpand" class="portal-embed__expand" aria-label="Open fullscreen">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M16 21h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-            Schermo intero
+            Fullscreen
           </button>
         </div>
-        <iframe id="portalFrame" src="/demo-portale?embed=1" title="Portale cliente Soraia, demo interattiva" loading="lazy"></iframe>
+        <iframe id="portalFrame" src="/demo-portale?embed=1" title="Soraia client portal, interactive demo" loading="lazy"></iframe>
       </div>
       <p class="text-center text-[13px] mt-4" style="color: var(--color-ink-soft);">
-        Muoviti liberamente: cambia sprint, apri il dettaglio ore di ogni persona, filtra e cerca i ticket.
+        Move around freely: switch sprint, open each person's hours breakdown, filter and search the tickets.
       </p>
     </div>
   </section>
@@ -179,17 +178,16 @@ const jsonLd = {
   <!-- CTA -->
   <section class="section">
     <div class="container-soraia max-w-2xl text-center">
-      <h2 class="text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">Partiamo da una conversazione, non da un preventivo</h2>
+      <h2 class="text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">Let's start with a conversation, not a quote</h2>
       <p class="mt-4 text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
-        Mezz'ora per capire il problema, il perimetro e quante ore servono davvero nel tuo caso. Senza impegno.
+        Half an hour to understand the problem, the scope, and how many hours it really takes in your case. No commitment.
       </p>
       <div class="mt-7">
-        <a href="/parliamone" class="btn btn-primary">
-          20 min con Daniel
+        <a href="/en/contact" class="btn btn-primary">
+          20 min with Daniel
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
   </section>
 </Layout>
-

@@ -13,6 +13,7 @@ export const IT_TO_EN_SLUG: Record<string, string> = {
   "chi-siamo": "about",
   parliamone: "contact",
   "offerta-team-dedicato": "dedicated-team-offer",
+  prezzi: "pricing",
 };
 export const EN_TO_IT_SLUG: Record<string, string> = Object.fromEntries(
   Object.entries(IT_TO_EN_SLUG).map(([it, en]) => [en, it]),

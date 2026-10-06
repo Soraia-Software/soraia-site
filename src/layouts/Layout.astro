@@ -17,6 +17,9 @@ interface Props {
    *  pages whose slug differs across languages (guides, blog). When omitted,
    *  the alternate is derived from the path via localizePath(). */
   altHref?: string;
+  /** Pages that exist in one language only (e.g. the Piedmont grant funnel):
+   *  hide the language switcher and skip the alternate-language hreflang. */
+  hideLangSwitch?: boolean;
 }
 
 const {
@@ -27,6 +30,7 @@ const {
   lang = "it",
   jsonLd,
   altHref,
+  hideLangSwitch = false,
 } = Astro.props;
 
 const siteUrl = "https://www.soraia.io";
@@ -56,8 +60,8 @@ const contactHref = i18nPath("/parliamone", lang);
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- hreflang alternates -->
-    <link rel="alternate" hreflang="it" href={itUrl} />
-    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang={lang} href={lang === "en" ? enUrl : itUrl} />
+    {!hideLangSwitch && <link rel="alternate" hreflang={lang === "en" ? "it" : "en"} href={lang === "en" ? itUrl : enUrl} />}
     <link rel="alternate" hreflang="x-default" href={itUrl} />
 
     <!-- Open Graph -->
@@ -131,7 +135,7 @@ const contactHref = i18nPath("/parliamone", lang);
         dismissId="bando-piemonte-2026"
       />
     )}
-    <Header lang={lang} altHref={otherPath} />
+    <Header lang={lang} altHref={otherPath} hideLangSwitch={hideLangSwitch} />
     <main class="flex-1">
       <slot />
     </main>

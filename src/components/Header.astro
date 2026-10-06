@@ -5,9 +5,12 @@ interface Props {
   lang?: Lang;
   /** URL of the current page in the other language (for the switcher). */
   altHref?: string;
+  /** Hide the language switcher on pages that exist in one language only
+   *  (e.g. the Piedmont grant funnel), so switching never lands on an unrelated page. */
+  hideLangSwitch?: boolean;
 }
 
-const { lang = "it", altHref } = Astro.props;
+const { lang = "it", altHref, hideLangSwitch = false } = Astro.props;
 
 const labels = {
   it: {
@@ -49,7 +52,7 @@ const searchOptHref = path("/ai-search-optimization", lang);
 const softwareHref = path("/software-development", lang);
 const offerHref = path("/offerta-team-dedicato", lang);
 const prodottiHref = path("/prodotti", lang);
-const prezziHref = "/prezzi";
+const prezziHref = path("/prezzi", lang);
 const guideHref = path("/guide", lang);
 const casesHref = path("/case-studies", lang);
 const blogHref = path("/blog", lang);
@@ -203,13 +206,20 @@ const prodotti = [
       </ul>
 
       <div class="flex items-center gap-3">
-        <a
-          href={otherHref}
-          class="hidden sm:inline-flex text-[11px] font-semibold text-ink-500 hover:text-ink-900 transition-colors uppercase tracking-[0.14em]"
-          aria-label={`Switch to ${otherLang.toUpperCase()}`}
-        >
-          {otherLang.toUpperCase()}
-        </a>
+        {!hideLangSwitch && (
+          <a
+            href={otherHref}
+            class="hidden sm:inline-flex items-center justify-center transition-opacity hover:opacity-80"
+            aria-label={`Switch to ${otherLang.toUpperCase()}`}
+            title={otherLang === "en" ? "English" : "Italiano"}
+          >
+            <img
+              src={otherLang === "en" ? "/flags/gb.svg" : "/flags/it.svg"}
+              alt={otherLang === "en" ? "English" : "Italiano"}
+              style="height: 18px; width: auto; border-radius: 3px; box-shadow: 0 0 0 1px rgba(0,0,0,0.08); display: block;"
+            />
+          </a>
+        )}
         <button
           type="button"
           class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-md hover:bg-ink-100"
