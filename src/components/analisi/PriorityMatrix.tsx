@@ -13,7 +13,8 @@ function BubbleDot({ b, selected, onClick }: { b: Bubble; selected: boolean; onC
       variants={{ hidden: { opacity: 0, scale: 0 }, show: { opacity: 1, scale: 1 } }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       style={{
-        position: "absolute", left: `${b.x}%`, top: `${b.y}%`, transform: "translate(-50%,-50%)",
+        // area di plotting rientrata dai bordi: i cerchi non escono mai dalla matrice
+        position: "absolute", left: `${7 + b.x * 0.86}%`, top: `${9 + b.y * 0.82}%`, transform: "translate(-50%,-50%)",
         display: "flex", flexDirection: alignRight ? "row-reverse" : "row", alignItems: "center", gap: 10,
         background: "none", border: 0, cursor: "pointer", zIndex: selected ? 7 : 3,
       }}
