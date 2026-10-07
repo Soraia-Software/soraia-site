@@ -6,7 +6,7 @@ import {
   OPENING, OBJECTIVES, METHOD, INSIGHTS, DELIVERABLES, CLOSING, PRICING, COMPANY,
 } from "./data";
 import {
-  Section, Icon, ProgressRail, useActiveSection, useReveal,
+  Section, Icon, useReveal,
 } from "./shared";
 import ProcessMap from "./ProcessMap";
 import Affinity from "./Affinity";
@@ -191,14 +191,8 @@ function Closing() {
 
 /* ------------------------------- orchestratore ------------------------------ */
 export default function AnalisiProcessi() {
-  const active = useActiveSection();
   return (
     <div className="ap-root">
-      <ProgressRail active={active} onJump={(i) => {
-        const els = document.querySelectorAll<HTMLElement>("[data-ap-section]");
-        els[i]?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }} />
-
       <Opening />
       <Objectives />
       <Method />
