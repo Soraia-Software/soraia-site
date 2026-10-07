@@ -1,0 +1,131 @@
+/* =============================================================================
+   /analisi-processi, stili di pagina (caricati solo qui)
+   - font Bricolage Grotesque self-hosted per i titoli
+   - scroll-snap leggero, una sezione per schermo
+   - variabili colore semantiche
+   ============================================================================= */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url("/fonts/bricolage-grotesque-latin.woff2") format("woff2");
+}
+
+:root {
+  --ap-header-h: 72px;
+  --ap-purple: #3f1548;      /* viola scuro richiesto */
+  --ap-purple-700: #4a1e5c;  /* brand */
+  --ap-accent: #892d9c;
+
+  --ap-crit-bg: #fbe9e9;   --ap-crit-bd: #e8a9a9;   --ap-crit-tx: #a8353b;
+  --ap-oss-bg:  #e9f1fb;   --ap-oss-bd:  #a9c6ed;   --ap-oss-tx:  #2a5e9e;
+  --ap-des-bg:  #e7f5ec;   --ap-des-bd:  #a6d8ba;   --ap-des-tx:  #2a7d4f;
+  --ap-dec-bg:  #fdefd9;   --ap-dec-bd:  #f2c27e;   --ap-dec-tx:  #b5720e;  --ap-dec: #f0a32e;
+  --ap-viola-bg:#f4e9f6;   --ap-viola-bd:#c99bd4;   --ap-viola-tx:#5e2168;
+
+  --ap-ink: #211326;
+  --ap-ink-soft: #6a5f70;
+}
+
+/* Scroll-snap leggero a livello di documento (il file è caricato solo su questa
+   pagina, quindi la regola html{} non tocca il resto del sito). */
+html {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: var(--ap-header-h);
+}
+
+.ap-root {
+  background:
+    radial-gradient(1200px 600px at 85% -5%, rgba(137, 45, 156, 0.06), transparent 60%),
+    radial-gradient(900px 500px at 0% 100%, rgba(63, 21, 72, 0.05), transparent 55%),
+    #fcfbfd;
+  color: var(--ap-ink);
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+.ap-section {
+  min-height: calc(100svh - var(--ap-header-h));
+  scroll-snap-align: start;
+  scroll-margin-top: var(--ap-header-h);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: clamp(2rem, 5vh, 4.5rem) clamp(1rem, 5vw, 5rem);
+}
+
+.ap-wrap { width: 100%; max-width: 1180px; margin-inline: auto; }
+
+.ap-head { font-family: "Bricolage Grotesque", "Inter", sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.04; }
+
+.ap-eyebrow {
+  font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ap-accent); margin-bottom: 1rem;
+}
+
+.ap-title { font-size: clamp(2rem, 4vw, 3.25rem); color: var(--ap-purple); }
+.ap-lead  { font-size: clamp(1.125rem, 1.6vw, 1.375rem); line-height: 1.55; color: var(--ap-ink-soft); max-width: 48ch; }
+
+.ap-card {
+  background: #fff; border: 1px solid rgba(63, 21, 72, 0.1);
+  border-radius: 20px; box-shadow: 0 10px 30px -18px rgba(63, 21, 72, 0.25);
+}
+
+/* marchio Soraia in basso a destra di ogni sezione */
+.ap-mark {
+  position: absolute; right: clamp(1rem, 4vw, 3rem); bottom: clamp(0.75rem, 3vh, 1.75rem);
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 13px; font-weight: 600; color: var(--ap-ink-soft); opacity: 0.6;
+}
+.ap-mark svg { display: block; }
+
+/* rail laterale */
+.ap-rail { position: fixed; top: 50%; transform: translateY(-50%); right: 18px; z-index: 40; }
+.ap-rail-item {
+  display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+  width: 100%; background: none; border: 0; cursor: pointer;
+  padding: 5px 2px; color: var(--ap-ink-soft);
+}
+.ap-rail-item .dot {
+  width: 9px; height: 9px; border-radius: 999px; flex: 0 0 auto;
+  background: rgba(63, 21, 72, 0.22); transition: background .2s, transform .2s;
+}
+.ap-rail-item .lbl {
+  font-size: 13px; font-weight: 600; white-space: nowrap;
+  opacity: 0; transform: translateX(8px); transition: opacity .2s, transform .2s;
+  pointer-events: none;
+}
+.ap-rail:hover .ap-rail-item .lbl { opacity: 1; transform: none; }
+.ap-rail-item.active .dot { background: var(--ap-accent); transform: scale(1.35); }
+.ap-rail-item.active .lbl { opacity: 1; transform: none; color: var(--ap-purple); }
+.ap-rail-item:hover .dot { background: var(--ap-accent); }
+@media (max-width: 1024px) { .ap-rail { display: none; } }
+
+/* post-it */
+.ap-postit {
+  border-radius: 10px; padding: 10px 12px; font-size: 14.5px; line-height: 1.3;
+  box-shadow: 0 6px 16px -10px rgba(0,0,0,0.4); border: 1px solid;
+}
+
+/* scrollbar discreta */
+.ap-root ::-webkit-scrollbar { width: 8px; height: 8px; }
+.ap-root ::-webkit-scrollbar-thumb { background: rgba(137,45,156,0.22); border-radius: 999px; }
+.ap-root ::-webkit-scrollbar-track { background: transparent; }
+
+/* pagina pensata per la condivisione schermo in call: niente overlay flottanti */
+.ask-ai-widget { display: none !important; }
+
+@media (max-width: 860px) {
+  .ap-matrix-grid { grid-template-columns: 1fr !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-snap-type: none; scroll-behavior: auto; }
+}
+
+/* su schermi bassi lasciamo respirare senza forzare lo snap */
+@media (max-height: 680px) {
+  .ap-section { min-height: auto; padding-block: 3.5rem; }
+}

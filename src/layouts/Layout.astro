@@ -20,6 +20,8 @@ interface Props {
   /** Pages that exist in one language only (e.g. the Piedmont grant funnel):
    *  hide the language switcher and skip the alternate-language hreflang. */
   hideLangSwitch?: boolean;
+  /** Keep the page out of search engines (e.g. in-call sales tools). */
+  noindex?: boolean;
 }
 
 const {
@@ -31,6 +33,7 @@ const {
   jsonLd,
   altHref,
   hideLangSwitch = false,
+  noindex = false,
 } = Astro.props;
 
 const siteUrl = "https://www.soraia.io";
@@ -58,6 +61,7 @@ const contactHref = i18nPath("/parliamone", lang);
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- hreflang alternates -->
     <link rel="alternate" hreflang={lang} href={lang === "en" ? enUrl : itUrl} />

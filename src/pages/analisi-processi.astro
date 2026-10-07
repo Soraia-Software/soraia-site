@@ -1,0 +1,31 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import AnalisiProcessi from "~/components/analisi/AnalisiProcessi.tsx";
+import { NOINDEX } from "~/components/analisi/data";
+import "~/styles/analisi.css";
+
+const title = "Analisi dei processi | Soraia";
+const description =
+  "Come funziona l'analisi dei processi di Soraia: interviste, mappatura dei flussi, raggruppamento per temi, matrice delle priorità e piano d'azione. Lo strumento che usiamo per capire dove automazione e intelligenza artificiale portano più valore.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Analisi dei processi",
+  provider: { "@type": "Organization", name: "Soraia" },
+  areaServed: "IT",
+  description,
+  inLanguage: "it-IT",
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="it"
+  jsonLd={jsonLd}
+  hideLangSwitch
+  noindex={NOINDEX}
+>
+  <AnalisiProcessi client:load />
+</Layout>
