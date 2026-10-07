@@ -6,10 +6,10 @@ import { AnimatePresence, motion } from "motion/react";
 import { COMPANY, FLOW, type FlowNode } from "./data";
 import { RevealButton } from "./shared";
 
-const W = 1180, H = 500;
-const LANE_X = 132, LANE_TOP = 38, LANE_H = 112;
-const BOX_W = 112, BOX_H = 64;
-const DW = 68, DH = 44; // semi-assi del rombo decisione
+const W = 1180, H = 516;
+const LANE_X = 132, LANE_TOP = 36, LANE_H = 116;
+const BOX_W = 116, BOX_H = 72;
+const DW = 72, DH = 48; // semi-assi del rombo decisione
 
 const LY = (lane: number) => LANE_TOP + lane * LANE_H + LANE_H / 2;
 
@@ -128,7 +128,7 @@ export default function ProcessMap() {
               zIndex: 2,
             }}>
               <span style={{
-                fontSize: "clamp(10px, 0.92vw, 13px)", lineHeight: 1.14,
+                fontSize: "clamp(10px, 0.85vw, 12.5px)", lineHeight: 1.12,
                 fontWeight: isEnd ? 500 : isDecision ? 700 : 600,
                 color: isEnd ? "var(--ap-ink-soft)" : isDecision ? "var(--ap-dec-tx)" : "var(--ap-ink)",
               }}>{n.label}</span>
@@ -136,10 +136,13 @@ export default function ProcessMap() {
           );
         })}
 
-        {/* etichette sì/no */}
+        {/* etichette sì/no (sul tratto della freccia; la verticale spostata a lato
+            per non finire sotto il chip di automazione) */}
         {FLOW.edges.filter((e) => e[2]).map(([from, to, label], i) => {
           const a = nodes[from], b = nodes[to];
-          const x = (a.x + b.x) / 2, y = (a.y + b.y) / 2;
+          const p1 = edgePoint(a, b.x, b.y), p2 = edgePoint(b, a.x, a.y);
+          const vertical = Math.abs(a.x - b.x) < 2;
+          const x = (p1.x + p2.x) / 2 + (vertical ? -54 : 0), y = (p1.y + p2.y) / 2;
           return (
             <span key={i} style={{
               position: "absolute", left: `${x / W * 100}%`, top: `${y / H * 100}%`,
@@ -159,7 +162,7 @@ export default function ProcessMap() {
                 initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
                 style={{
                   position: "absolute", left: `${n.x / W * 100}%`,
-                  top: `${(n.y + (below ? BOX_H / 2 + 7 : -(BOX_H / 2 + 7))) / H * 100}%`,
+                  top: `${(n.y + (below ? BOX_H / 2 + 11 : -(BOX_H / 2 + 11))) / H * 100}%`,
                   transform: below ? "translate(-50%,0)" : "translate(-50%,-100%)",
                   background: "var(--ap-accent)", color: "#fff", borderRadius: 999,
                   padding: "2px 10px", fontSize: "clamp(9px,0.8vw,11.5px)", fontWeight: 700, whiteSpace: "nowrap",

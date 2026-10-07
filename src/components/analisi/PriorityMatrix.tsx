@@ -14,19 +14,20 @@ function BubbleDot({ b, selected, onClick }: { b: Bubble; selected: boolean; onC
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       style={{
         position: "absolute", left: `${b.x}%`, top: `${b.y}%`, transform: "translate(-50%,-50%)",
-        display: "flex", flexDirection: alignRight ? "row-reverse" : "row", alignItems: "center", gap: 7,
-        background: "none", border: 0, cursor: "pointer", zIndex: selected ? 6 : 3,
+        display: "flex", flexDirection: alignRight ? "row-reverse" : "row", alignItems: "center", gap: 10,
+        background: "none", border: 0, cursor: "pointer", zIndex: selected ? 7 : 3,
       }}
     >
       <span style={{
-        width: 19, height: 19, borderRadius: 999, background: color, flex: "0 0 auto",
-        boxShadow: selected ? `0 0 0 5px ${b.type === "IA" ? "rgba(137,45,156,0.25)" : "rgba(74,30,92,0.22)"}` : "0 4px 10px -4px rgba(63,21,72,0.6)",
+        width: 38, height: 38, borderRadius: 999, background: color, flex: "0 0 auto",
+        border: "3px solid #fff",
+        boxShadow: selected ? `0 0 0 6px ${b.type === "IA" ? "rgba(137,45,156,0.3)" : "rgba(74,30,92,0.26)"}` : "0 6px 16px -5px rgba(63,21,72,0.65)",
         transition: "box-shadow .2s",
       }} />
       <span style={{
-        fontSize: "clamp(11px,0.95vw,13.5px)", fontWeight: 600, lineHeight: 1.1, color: "var(--ap-ink)",
-        background: "rgba(255,255,255,0.9)", borderRadius: 6, padding: "2px 6px", boxShadow: "0 1px 4px rgba(63,21,72,0.12)",
-        maxWidth: 132, textAlign: alignRight ? "right" : "left",
+        fontSize: "clamp(12.5px,1.05vw,15px)", fontWeight: 600, lineHeight: 1.18, color: "var(--ap-ink)",
+        background: "rgba(255,255,255,0.96)", borderRadius: 9, padding: "4px 11px", boxShadow: "0 2px 9px rgba(63,21,72,0.16)",
+        maxWidth: 170, textAlign: alignRight ? "right" : "left",
       }}>{b.label}</span>
     </motion.button>
   );
@@ -41,12 +42,13 @@ export default function PriorityMatrix() {
     <div style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr)", gap: 18 }}>
       <div className="ap-matrix-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) 288px", gap: 20, alignItems: "start" }}>
         {/* chart */}
-        <div style={{ position: "relative", paddingLeft: 30, paddingBottom: 28 }}>
-          <div style={{ position: "absolute", left: -4, top: "48%", transform: "translateY(-50%) rotate(-90deg)", transformOrigin: "center",
-            fontSize: 12.5, fontWeight: 700, color: "var(--ap-ink-soft)", whiteSpace: "nowrap" }}>Sforzo di sviluppo</div>
-          <span style={{ position: "absolute", left: 16, top: 6, fontSize: 11, fontWeight: 600, color: "var(--ap-ink-soft)", background: "rgba(252,251,253,0.85)", padding: "0 3px" }}>moderato</span>
-          <span style={{ position: "absolute", left: 16, bottom: 58, fontSize: 11, fontWeight: 600, color: "var(--ap-ink-soft)", background: "rgba(252,251,253,0.85)", padding: "0 3px" }}>elevato</span>
-
+        <div style={{ position: "relative" }}>
+          <div style={{ display: "flex", gap: 8, alignItems: "stretch" }}>
+          <div style={{ width: 22, position: "relative", flex: "0 0 auto" }}>
+            <span style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%,-50%) rotate(-90deg)", transformOrigin: "center",
+              whiteSpace: "nowrap", fontSize: 12.5, fontWeight: 700, color: "var(--ap-ink-soft)" }}>Sforzo di sviluppo</span>
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9", borderRadius: 16,
             border: "1px solid rgba(63,21,72,0.12)", background: "#fff", boxShadow: "0 12px 34px -20px rgba(63,21,72,0.3)" }}>
             <div style={{ position: "absolute", inset: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", borderRadius: 16, overflow: "hidden" }}>
@@ -59,6 +61,8 @@ export default function PriorityMatrix() {
             </div>
             <div style={{ position: "absolute", left: "50%", top: 0, bottom: 0, width: 1, background: "rgba(63,21,72,0.18)" }} />
             <div style={{ position: "absolute", top: "50%", left: 0, right: 0, height: 1, background: "rgba(63,21,72,0.18)" }} />
+            <span style={{ position: "absolute", top: 9, left: 11, fontSize: 11.5, fontWeight: 700, color: "var(--ap-ink-soft)", background: "rgba(255,255,255,0.72)", borderRadius: 5, padding: "1px 7px", zIndex: 2 }}>moderato</span>
+            <span style={{ position: "absolute", bottom: 9, left: 11, fontSize: 11.5, fontWeight: 700, color: "var(--ap-ink-soft)", background: "rgba(255,255,255,0.72)", borderRadius: 5, padding: "1px 7px", zIndex: 2 }}>elevato</span>
 
             <motion.div style={{ position: "absolute", inset: 0 }}
               initial={reduce ? "show" : "hidden"} whileInView="show" viewport={{ once: true, amount: 0.4 }}
@@ -73,6 +77,8 @@ export default function PriorityMatrix() {
             <span>Impatto basso</span>
             <span style={{ fontWeight: 700 }}>Impatto →</span>
             <span>Impatto alto</span>
+          </div>
+          </div>
           </div>
         </div>
 
