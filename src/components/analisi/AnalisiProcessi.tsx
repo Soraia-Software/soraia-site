@@ -18,7 +18,7 @@ function Opening() {
   const r = useReveal();
   return (
     <Section id="apertura">
-      <motion.h1 className="ap-head ap-title" {...r} style={{ fontSize: "clamp(2.25rem, 4.6vw, 3.75rem)", color: "var(--ap-purple)", maxWidth: "18ch" }}>
+      <motion.h1 className="ap-head" {...r} style={{ fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)", letterSpacing: "-0.025em", lineHeight: 1.05, color: "var(--color-ink)", maxWidth: "18ch" }}>
         {OPENING.title}
       </motion.h1>
       <motion.p {...r} transition={{ ...r.transition, delay: 0.1 }} className="ap-lead" style={{ marginTop: 20, maxWidth: "54ch" }}>
@@ -37,7 +37,7 @@ function Opening() {
             {c.highlight && (
               <span className="ap-eyebrow" style={{ marginBottom: 10, display: "block" }}>Qui entra l'analisi</span>
             )}
-            <h3 className="ap-head" style={{ fontSize: "clamp(18px,1.6vw,23px)", color: "var(--ap-purple)", marginBottom: 10, lineHeight: 1.15 }}>{c.title}</h3>
+            <h3 className="ap-head" style={{ fontSize: "clamp(18px,1.6vw,23px)", color: "var(--color-ink)", marginBottom: 10, lineHeight: 1.15 }}>{c.title}</h3>
             <p style={{ fontSize: 17, lineHeight: 1.5, color: "var(--ap-ink-soft)", margin: 0 }}>{c.body}</p>
           </motion.div>
         ))}
@@ -60,7 +60,7 @@ function Objectives() {
               <span style={{ display: "inline-flex", width: 48, height: 48, borderRadius: 14, alignItems: "center", justifyContent: "center", background: "var(--ap-viola-bg)", color: "var(--ap-accent)", marginBottom: 16 }}>
                 <Ico width={26} height={26} />
               </span>
-              <h3 className="ap-head" style={{ fontSize: "clamp(16px,1.35vw,20px)", color: "var(--ap-purple)", marginBottom: 8, lineHeight: 1.15 }}>{o.title}</h3>
+              <h3 className="ap-head" style={{ fontSize: "clamp(16px,1.35vw,20px)", color: "var(--color-ink)", marginBottom: 8, lineHeight: 1.15 }}>{o.title}</h3>
               <p style={{ fontSize: 16, lineHeight: 1.45, color: "var(--ap-ink-soft)", margin: 0 }}>{o.body}</p>
             </motion.div>
           );
@@ -87,13 +87,13 @@ function Method() {
                   style={{ height: 2, flex: 1, background: "var(--ap-viola-bd)", transformOrigin: "left" }} />
               )}
             </div>
-            <h3 className="ap-head" style={{ fontSize: "clamp(16px,1.35vw,20px)", color: "var(--ap-purple)", marginBottom: 8, lineHeight: 1.15 }}>{s.title}</h3>
+            <h3 className="ap-head" style={{ fontSize: "clamp(16px,1.35vw,20px)", color: "var(--color-ink)", marginBottom: 8, lineHeight: 1.15 }}>{s.title}</h3>
             <p style={{ fontSize: 15.5, lineHeight: 1.45, color: "var(--ap-ink-soft)", margin: 0 }}>{s.body}</p>
           </motion.div>
         ))}
       </div>
       <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1 }}
-        style={{ marginTop: "clamp(1.75rem,4vh,2.5rem)", fontSize: "clamp(17px,1.5vw,21px)", fontWeight: 600, color: "var(--ap-purple)", maxWidth: "60ch", lineHeight: 1.4 }}>
+        style={{ marginTop: "clamp(1.75rem,4vh,2.5rem)", fontSize: "clamp(17px,1.5vw,21px)", fontWeight: 600, color: "var(--color-ink)", maxWidth: "60ch", lineHeight: 1.4 }}>
         {METHOD.note}
       </motion.p>
     </Section>
@@ -111,7 +111,7 @@ function InsightsCycle() {
               <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.45, delay: i * 0.18 }} className="ap-card" style={{ padding: "22px 22px", width: "100%" }}>
                 <span className="ap-head" style={{ fontSize: 30, color: "var(--ap-viola-bd)" }}>{i + 1}</span>
-                <h3 className="ap-head" style={{ fontSize: "clamp(16px,1.35vw,20px)", color: "var(--ap-purple)", margin: "4px 0 8px", lineHeight: 1.18 }}>{n.title}</h3>
+                <h3 className="ap-head" style={{ fontSize: "clamp(16px,1.35vw,20px)", color: "var(--color-ink)", margin: "4px 0 8px", lineHeight: 1.18 }}>{n.title}</h3>
                 <p style={{ fontSize: 15.5, lineHeight: 1.45, color: "var(--ap-ink-soft)", margin: 0 }}>{n.body}</p>
               </motion.div>
               {i < INSIGHTS.length - 1 && (
@@ -152,7 +152,7 @@ function Deliverables() {
               <span style={{ display: "inline-flex", width: 48, height: 48, borderRadius: 14, alignItems: "center", justifyContent: "center", background: "var(--ap-viola-bg)", color: "var(--ap-accent)", marginBottom: 16 }}>
                 <Ico width={26} height={26} />
               </span>
-              <h3 className="ap-head" style={{ fontSize: "clamp(16px,1.35vw,19px)", color: "var(--ap-purple)", marginBottom: 6, lineHeight: 1.18 }}>{d.title}</h3>
+              <h3 className="ap-head" style={{ fontSize: "clamp(16px,1.35vw,19px)", color: "var(--color-ink)", marginBottom: 6, lineHeight: 1.18 }}>{d.title}</h3>
               <p style={{ fontSize: 15, lineHeight: 1.4, color: "var(--ap-ink-soft)", margin: 0 }}>{d.body}</p>
             </motion.div>
           );
@@ -160,13 +160,13 @@ function Deliverables() {
       </div>
 
       <div style={{ marginTop: "clamp(1.75rem,4vh,2.5rem)", display: "flex", flexWrap: "wrap", gap: 20, alignItems: "center", justifyContent: "space-between" }}>
-        <p style={{ fontSize: "clamp(16px,1.4vw,19px)", fontWeight: 600, color: "var(--ap-purple)", maxWidth: "40ch", margin: 0, lineHeight: 1.4 }}>
+        <p style={{ fontSize: "clamp(16px,1.4vw,19px)", fontWeight: 600, color: "var(--color-ink)", maxWidth: "40ch", margin: 0, lineHeight: 1.4 }}>
           {PRICING.standalone}
         </p>
         {PRICING.show && (
           <div className="ap-card" style={{ padding: "16px 24px", background: "var(--ap-viola-bg)", border: "1.5px solid var(--ap-viola-bd)" }}>
             <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--ap-accent)" }}>Analisi dei processi</div>
-            <div className="ap-head" style={{ fontSize: "clamp(24px,2.4vw,34px)", color: "var(--ap-purple)", lineHeight: 1.1, marginTop: 2 }}>
+            <div className="ap-head" style={{ fontSize: "clamp(24px,2.4vw,34px)", color: "var(--color-ink)", lineHeight: 1.1, marginTop: 2 }}>
               a partire da {PRICING.from}
             </div>
             <div style={{ fontSize: 15, color: "var(--ap-ink-soft)", marginTop: 2 }}>{PRICING.note}</div>
@@ -182,7 +182,7 @@ function Closing() {
   return (
     <Section id="chiusura" center>
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.6 }}
-        className="ap-head" style={{ fontSize: "clamp(1.75rem,3.4vw,2.9rem)", color: "var(--ap-purple)", maxWidth: "20ch", marginInline: "auto", lineHeight: 1.18 }}>
+        className="ap-head" style={{ fontSize: "clamp(1.75rem,3.4vw,2.9rem)", color: "var(--color-ink)", maxWidth: "20ch", marginInline: "auto", lineHeight: 1.18 }}>
         {CLOSING}
       </motion.p>
     </Section>

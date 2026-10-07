@@ -26,7 +26,7 @@ export default function ActionPlan() {
             viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.45, delay: c.n * 0.08 }}
             style={{ padding: "22px 22px 24px" }}>
             <div className="ap-head" style={{ fontSize: 44, color: "var(--ap-viola-bd)", lineHeight: 1 }}>{c.n}</div>
-            <h3 className="ap-head" style={{ fontSize: "clamp(18px,1.5vw,22px)", color: "var(--ap-purple)", margin: "6px 0 8px" }}>{c.title}</h3>
+            <h3 className="ap-head" style={{ fontSize: "clamp(18px,1.5vw,22px)", color: "var(--color-ink)", margin: "6px 0 8px" }}>{c.title}</h3>
             <p style={{ fontSize: 16, lineHeight: 1.45, color: "var(--ap-ink-soft)", margin: 0 }}>{c.goal}</p>
           </motion.div>
         ))}
@@ -66,12 +66,12 @@ export default function ActionPlan() {
                 viewport={{ once: true, amount: 0.5 }} transition={{ delay: 0.3 + i * 0.22, type: "spring", stiffness: 260, damping: 20 }}
                 style={{ position: "absolute", left: `${p.x / 1000 * 100}%`, top: `${p.y / 300 * 100}%`, transform: "translate(-50%,-50%)", textAlign: "center", width: 150 }}>
                 <span style={{ display: "inline-block", width: 15, height: 15, borderRadius: 999, background: i === 0 ? "var(--ap-purple)" : "var(--ap-accent)", boxShadow: "0 0 0 4px rgba(255,255,255,0.9)" }} />
-                <div className="ap-head" style={{ fontSize: "clamp(13px,1.1vw,16px)", color: "var(--ap-purple)", marginTop: 4, lineHeight: 1.1 }}>{s.label}</div>
+                <div className="ap-head" style={{ fontSize: "clamp(13px,1.1vw,16px)", color: "var(--color-ink)", marginTop: 4, lineHeight: 1.1 }}>{s.label}</div>
                 <div style={{ fontSize: "clamp(10px,0.85vw,12px)", color: "var(--ap-ink-soft)", lineHeight: 1.15 }}>{s.note}</div>
               </motion.div>
             );
           })}
-          <span className="ap-head" style={{ position: "absolute", left: "88%", top: "2%", fontSize: "clamp(11px,0.9vw,13px)", color: "var(--ap-purple)", width: 120, lineHeight: 1.15 }}>
+          <span className="ap-head" style={{ position: "absolute", left: "88%", top: "2%", fontSize: "clamp(11px,0.9vw,13px)", color: "var(--color-ink)", width: 120, lineHeight: 1.15 }}>
             Obiettivo: lo strumento completo
           </span>
         </div>
@@ -81,7 +81,7 @@ export default function ActionPlan() {
         {/* riordino priorità */}
         <div className="ap-card" style={{ marginTop: 20, padding: "18px 20px", maxWidth: 760, marginInline: "auto" }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
-            <strong className="ap-head" style={{ fontSize: "clamp(15px,1.2vw,18px)", color: "var(--ap-purple)" }}>
+            <strong className="ap-head" style={{ fontSize: "clamp(15px,1.2vw,18px)", color: "var(--color-ink)" }}>
               {revised ? "Dopo il primo rilascio, in base all'uso reale" : "L'ordine previsto delle attività"}
             </strong>
             <RevealButton active={revised} onClick={() => setRevised((v) => !v)}>Aggiorna le priorità</RevealButton>
@@ -94,7 +94,7 @@ export default function ActionPlan() {
                     initial={{ opacity: 0, x: -14 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 14 }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     style={{ display: "flex", alignItems: "center", gap: 12, background: "rgba(63,21,72,0.04)", borderRadius: 12, padding: "11px 14px" }}>
-                    <span className="ap-head" style={{ width: 26, height: 26, borderRadius: 8, background: "var(--ap-purple)", color: "#fff", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: 14, flex: "0 0 auto" }}>{i + 1}</span>
+                    <span className="ap-head" style={{ width: 26, height: 26, borderRadius: 8, background: "var(--ap-purple)", color: "#fff", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: 14, flex: "0 0 auto" }}>{item.id}</span>
                     <span style={{ fontSize: 16, fontWeight: 600, color: "var(--ap-ink)" }}>{item.label}</span>
                     {"tag" in item && item.tag && (
                       <span style={{ marginLeft: "auto", fontSize: 12.5, fontWeight: 700, color: "var(--ap-accent)", background: "var(--ap-viola-bg)", borderRadius: 999, padding: "3px 10px" }}>{item.tag}</span>

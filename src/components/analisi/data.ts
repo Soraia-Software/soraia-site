@@ -367,6 +367,7 @@ export const ROADMAP = {
     { id: "A", label: "Anagrafica clienti unica", tag: "fatto" },
     { id: "C", label: "Passaggio ordine strutturato", tag: "sale: serve subito" },
     { id: "E", label: "Richieste di assistenza tracciate", tag: "nuova priorità" },
+    { id: "D", label: "Agenda attività", tag: "rimandata" },
   ],
   mountainCaption:
     "La cima è l'obiettivo finale, lo strumento completo. Ogni sprint è un passo. Dopo ogni rilascio le priorità si aggiornano in base all'uso reale.",

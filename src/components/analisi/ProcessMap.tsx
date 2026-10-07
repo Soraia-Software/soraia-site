@@ -99,7 +99,7 @@ export default function ProcessMap() {
             position: "absolute", left: 0, top: `${(LANE_TOP + l * LANE_H) / H * 100}%`,
             height: `${(LANE_H - 12) / H * 100}%`, width: `${LANE_X / W * 100}%`,
             display: "flex", alignItems: "center", paddingLeft: "1.1%",
-            fontSize: "clamp(11px, 0.95vw, 14px)", fontWeight: 700, color: "var(--ap-purple)", lineHeight: 1.1,
+            fontSize: "clamp(11px, 0.95vw, 14px)", fontWeight: 700, color: "var(--color-ink)", lineHeight: 1.1,
           }}>{d}</div>
         ))}
 

@@ -63,7 +63,7 @@ export default function Affinity() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14, alignItems: "start" }}>
             {AFFINITY_COLUMNS.map((col, ci) => (
               <div key={col}>
-                <h3 className="ap-head" style={{ fontSize: "clamp(15px,1.3vw,19px)", color: "var(--ap-purple)", marginBottom: 10, textAlign: "center" }}>{col}</h3>
+                <h3 className="ap-head" style={{ fontSize: "clamp(15px,1.3vw,19px)", color: "var(--color-ink)", marginBottom: 10, textAlign: "center" }}>{col}</h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                   {POSTITS.filter((p) => p.theme === ci).map((p) => (
                     <PostIt key={p.id} id={p.id} text={p.text} color={p.color} />
