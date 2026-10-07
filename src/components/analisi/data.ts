@@ -97,6 +97,7 @@ export const OPENING = {
       highlight: false,
       title: "Avete già un progetto chiaro",
       body: "Sapete cosa volete costruire. Si parte direttamente dallo sviluppo.",
+      cta: { label: "Candida il tuo progetto", href: "/parliamone" },
     },
     {
       highlight: true,

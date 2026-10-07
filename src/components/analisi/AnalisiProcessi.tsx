@@ -39,6 +39,12 @@ function Opening() {
             )}
             <h3 className="ap-head" style={{ fontSize: "clamp(18px,1.6vw,23px)", color: "var(--color-ink)", marginBottom: 10, lineHeight: 1.15 }}>{c.title}</h3>
             <p style={{ fontSize: 17, lineHeight: 1.5, color: "var(--ap-ink-soft)", margin: 0 }}>{c.body}</p>
+            {"cta" in c && c.cta && (
+              <a href={c.cta.href} className="btn btn-ghost btn-arrow" style={{ marginTop: 16, paddingInline: 0, color: "var(--color-brand)" }}>
+                {c.cta.label}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+              </a>
+            )}
           </motion.div>
         ))}
       </div>
