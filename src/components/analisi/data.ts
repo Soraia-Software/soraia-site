@@ -313,7 +313,7 @@ export const MATRIX: Bubble[] = [
     problem: "Le attività di installazione e assistenza non sono pianificate in un posto solo.",
     departments: ["Ufficio tecnico", "Assistenza"] },
   // Alto impatto, sforzo elevato (in basso a destra)
-  { id: "crm-fatt", label: "Integrazione CRM-fatturazione", x: 84, y: 72, type: "automazione",
+  { id: "crm-fatt", label: "Integrazione CRM-fatturazione", x: 62, y: 60, type: "automazione",
     problem: "I dati del preventivo vengono reinseriti a mano in fattura.",
     departments: ["Commerciale", "Amministrazione"] },
   { id: "pulizia", label: "Pulizia dei dati storici", x: 66, y: 83, type: "automazione",
