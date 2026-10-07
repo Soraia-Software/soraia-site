@@ -6,7 +6,7 @@ import {
   OPENING, OBJECTIVES, METHOD, INSIGHTS, DELIVERABLES, CLOSING, PRICING, COMPANY,
 } from "./data";
 import {
-  Section, Icon, ProgressRail, useActiveSection, useKeyboardNav, useReveal,
+  Section, Icon, ProgressRail, useActiveSection, useReveal,
 } from "./shared";
 import ProcessMap from "./ProcessMap";
 import Affinity from "./Affinity";
@@ -192,7 +192,6 @@ function Closing() {
 /* ------------------------------- orchestratore ------------------------------ */
 export default function AnalisiProcessi() {
   const active = useActiveSection();
-  useKeyboardNav(active);
   return (
     <div className="ap-root">
       <ProgressRail active={active} onJump={(i) => {

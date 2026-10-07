@@ -51,7 +51,6 @@ export function Section({
         )}
         {children && <div style={{ marginTop: title ? "clamp(1.5rem, 3vh, 2.5rem)" : 0 }}>{children}</div>}
       </div>
-      <SoraiaMark />
     </section>
   );
 }

@@ -29,12 +29,9 @@
   --ap-ink-soft: #6a5f70;
 }
 
-/* Scroll-snap leggero a livello di documento (il file è caricato solo su questa
-   pagina, quindi la regola html{} non tocca il resto del sito). */
-html {
-  scroll-snap-type: y proximity;
-  scroll-padding-top: var(--ap-header-h);
-}
+/* Offset per i salti dal rail laterale (header sticky). Nessuno scroll-snap:
+   la pagina scorre come una normale pagina web, non come delle slide. */
+html { scroll-padding-top: var(--ap-header-h); }
 
 .ap-root {
   background:
@@ -46,15 +43,12 @@ html {
 }
 
 .ap-section {
-  min-height: calc(100svh - var(--ap-header-h));
-  scroll-snap-align: start;
   scroll-margin-top: var(--ap-header-h);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   position: relative;
-  padding: clamp(2rem, 5vh, 4.5rem) clamp(1rem, 5vw, 5rem);
+  padding: clamp(3.25rem, 7vh, 6rem) clamp(1rem, 5vw, 5rem);
+  border-top: 1px solid rgba(63, 21, 72, 0.06);
 }
+.ap-section:first-child { border-top: 0; padding-top: clamp(2.5rem, 5vh, 4rem); }
 
 .ap-wrap { width: 100%; max-width: 1180px; margin-inline: auto; }
 
@@ -122,10 +116,5 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-snap-type: none; scroll-behavior: auto; }
-}
-
-/* su schermi bassi lasciamo respirare senza forzare lo snap */
-@media (max-height: 680px) {
-  .ap-section { min-height: auto; padding-block: 3.5rem; }
+  html { scroll-behavior: auto; }
 }
