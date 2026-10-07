@@ -100,7 +100,7 @@ export const OPENING = {
     },
     {
       highlight: true,
-      title: "Sapete di essere inefficienti, ma non sapete da dove partire",
+      title: "Sapete che volete sfruttare l'AI, ma non sapete da dove partire",
       body: "Si parte dall'analisi dei processi: prima capiamo come lavorate, poi decidiamo cosa costruire.",
     },
   ],
