@@ -89,20 +89,22 @@ export const SECTIONS = [
    1. APERTURA
 ---------------------------------------------------------------------------- */
 export const OPENING = {
-  title: "Non sai da dove partire? Partiamo da come lavorate oggi.",
+  title: "Non sapete da dove partire? Partiamo da come lavorate oggi.",
   subtitle:
-    "L'analisi serve a capire dove l'automazione e l'intelligenza artificiale portano più valore, prima di spendere in sviluppo.",
+    "Lavoriamo con le aziende in due modi. Il punto di partenza dipende da quanto è già chiaro cosa automatizzare.",
   clientTypes: [
     {
       highlight: false,
-      title: "Avete già un progetto chiaro",
-      body: "Sapete cosa volete costruire. Si parte direttamente dallo sviluppo.",
+      label: "Sviluppo",
+      title: "Avete già le idee chiare",
+      body: "Sapete quali processi automatizzare e dove l'intelligenza artificiale porta valore. I colli di bottiglia li avete già individuati. Si parte dallo sviluppo.",
       cta: { label: "Candida il tuo progetto", href: "/parliamone" },
     },
     {
       highlight: true,
-      title: "Sapete che volete sfruttare l'AI, ma non sapete da dove partire",
-      body: "Si parte dall'analisi dei processi: prima capiamo come lavorate, poi decidiamo cosa costruire.",
+      label: "Analisi dei processi",
+      title: "Volete sfruttare l'AI, ma non sapete da dove partire",
+      body: "Prima capiamo come lavorate davvero, poi decidiamo cosa costruire. È il percorso che vedete in questa pagina.",
     },
   ],
 };

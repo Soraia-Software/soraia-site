@@ -34,9 +34,7 @@ function Opening() {
               background: c.highlight ? "var(--ap-viola-bg)" : "#fff",
               position: "relative",
             }}>
-            {c.highlight && (
-              <span className="ap-eyebrow" style={{ marginBottom: 10, display: "block" }}>Qui entra l'analisi</span>
-            )}
+            <span style={{ display: "block", fontSize: 13, fontWeight: 600, marginBottom: 14, color: c.highlight ? "var(--ap-accent)" : "var(--ap-ink-soft)" }}>{c.label}</span>
             <h3 className="ap-head" style={{ fontSize: "clamp(18px,1.6vw,23px)", color: "var(--color-ink)", marginBottom: 10, lineHeight: 1.15 }}>{c.title}</h3>
             <p style={{ fontSize: 17, lineHeight: 1.5, color: "var(--ap-ink-soft)", margin: 0 }}>{c.body}</p>
             {"cta" in c && c.cta && (
