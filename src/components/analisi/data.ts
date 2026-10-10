@@ -95,7 +95,7 @@ export const OPENING = {
   clientTypes: [
     {
       highlight: false,
-      label: "Sviluppo",
+      label: "AI engineering",
       title: "Avete già le idee chiare",
       body: "Sapete quali processi automatizzare e dove l'intelligenza artificiale porta valore. I colli di bottiglia li avete già individuati. Si parte dallo sviluppo.",
       cta: { label: "Candida il tuo progetto", href: "/parliamone" },
