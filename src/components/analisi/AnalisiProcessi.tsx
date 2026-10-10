@@ -18,34 +18,13 @@ function Opening() {
   const r = useReveal();
   return (
     <Section id="apertura">
-      <motion.h1 className="ap-head" {...r} style={{ fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)", letterSpacing: "-0.025em", lineHeight: 1.05, color: "var(--color-ink)", maxWidth: "18ch" }}>
+      <motion.p {...r} className="ap-eyebrow">{OPENING.eyebrow}</motion.p>
+      <motion.h1 className="ap-head" {...r} transition={{ ...r.transition, delay: 0.05 }} style={{ fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)", letterSpacing: "-0.025em", lineHeight: 1.05, color: "var(--color-ink)", maxWidth: "18ch" }}>
         {OPENING.title}
       </motion.h1>
-      <motion.p {...r} transition={{ ...r.transition, delay: 0.1 }} className="ap-lead" style={{ marginTop: 20, maxWidth: "54ch" }}>
+      <motion.p {...r} transition={{ ...r.transition, delay: 0.12 }} className="ap-lead" style={{ marginTop: 20, maxWidth: "56ch" }}>
         {OPENING.subtitle}
       </motion.p>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 18, marginTop: "clamp(1.75rem,4vh,2.75rem)" }}>
-        {OPENING.clientTypes.map((c, i) => (
-          <motion.div key={i} {...r} transition={{ ...r.transition, delay: 0.18 + i * 0.1 }}
-            className="ap-card"
-            style={{
-              padding: "24px 26px",
-              border: c.highlight ? "2px solid var(--ap-accent)" : "1px solid rgba(63,21,72,0.1)",
-              background: c.highlight ? "var(--ap-viola-bg)" : "#fff",
-              position: "relative",
-            }}>
-            <span style={{ display: "block", fontSize: 13, fontWeight: 600, marginBottom: 14, color: c.highlight ? "var(--ap-accent)" : "var(--ap-ink-soft)" }}>{c.label}</span>
-            <h3 className="ap-head" style={{ fontSize: "clamp(18px,1.6vw,23px)", color: "var(--color-ink)", marginBottom: 10, lineHeight: 1.15 }}>{c.title}</h3>
-            <p style={{ fontSize: 17, lineHeight: 1.5, color: "var(--ap-ink-soft)", margin: 0 }}>{c.body}</p>
-            {"cta" in c && c.cta && (
-              <a href={c.cta.href} className="btn btn-ghost btn-arrow" style={{ marginTop: 16, paddingInline: 0, color: "var(--color-brand)" }}>
-                {c.cta.label}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
-              </a>
-            )}
-          </motion.div>
-        ))}
-      </div>
     </Section>
   );
 }

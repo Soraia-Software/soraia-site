@@ -89,24 +89,10 @@ export const SECTIONS = [
    1. APERTURA
 ---------------------------------------------------------------------------- */
 export const OPENING = {
+  eyebrow: "Analisi dei processi",
   title: "Non sapete da dove partire? Partiamo da come lavorate oggi.",
   subtitle:
-    "Lavoriamo con le aziende in due modi. Il punto di partenza dipende da quanto è già chiaro cosa automatizzare.",
-  clientTypes: [
-    {
-      highlight: false,
-      label: "AI engineering",
-      title: "Avete già le idee chiare",
-      body: "Sapete quali processi automatizzare e dove l'intelligenza artificiale porta valore. I colli di bottiglia li avete già individuati. Si parte dallo sviluppo.",
-      cta: { label: "Candida il tuo progetto", href: "/parliamone" },
-    },
-    {
-      highlight: true,
-      label: "Analisi dei processi",
-      title: "Volete sfruttare l'AI, ma non sapete da dove partire",
-      body: "Prima capiamo come lavorate davvero, poi decidiamo cosa costruire. È il percorso che vedete in questa pagina.",
-    },
-  ],
+    "L'analisi dei processi serve a capire dove l'automazione e l'intelligenza artificiale portano più valore, prima di spendere in sviluppo.",
 };
 
 /* ----------------------------------------------------------------------------
