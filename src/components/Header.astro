@@ -51,6 +51,7 @@ const adoptionHref = path("/ai-adoption", lang);
 const searchOptHref = path("/ai-search-optimization", lang);
 const softwareHref = path("/software-development", lang);
 const analisiHref = path("/analisi-processi", lang);
+const aiEngHref = path("/ai-engineering", lang);
 const offerHref = path("/offerta-team-dedicato", lang);
 const prodottiHref = path("/prodotti", lang);
 const prezziHref = path("/prezzi", lang);
@@ -62,48 +63,55 @@ const contactHref = path("/parliamone", lang);
 const otherLang: Lang = lang === "it" ? "en" : "it";
 const otherHref = altHref ?? localizePath(Astro.url.pathname, otherLang);
 
-const servizi = [
-  {
-    href: offerHref,
-    title: lang === "en" ? "Generational change" : "Cambio generazionale",
-    subtitle: lang === "en"
-      ? "Dedicated team to modernize your software in a month, zero risk"
-      : "Team dedicato per modernizzare i software in un mese, a rischio zero",
-    iconPath: '<path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" /><path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />',
-  },
-  {
-    href: adoptionHref,
-    title: "AI Adoption",
-    subtitle: lang === "en"
-      ? "Workshop + adoption program to upskill your team on AI"
-      : "Workshop + programma di adozione AI per il tuo team",
-    iconPath: '<path d="M12 21a9 9 0 1 1 0 -18a9 9 0 0 1 0 18z" /><path d="M14.5 9.5l-5 1l1 5l5 -1l-1 -5z" /><path d="M13 13l-1.5 -1.5" />',
-  },
-  {
-    href: agentsHref,
-    title: "AI Agents",
-    subtitle: lang === "en"
-      ? "Sprint to ship one production-ready agent in your workflow"
-      : "Sprint per costruire un AI agent custom dentro i vostri processi",
-    iconPath: '<path d="M9 7l-2 -2l-2 2l2 2z" /><path d="M19 5l-2 -2l-2 2l2 2z" /><path d="M5 21h14" /><path d="M9 21v-8a3 3 0 0 1 6 0v8" /><path d="M12 13v8" />',
-  },
-  {
-    href: softwareHref,
-    title: "Custom Software",
-    subtitle: lang === "en"
-      ? "Custom web apps, mobile apps, CRMs & internal tools for your processes"
-      : "Web app, app mobile, CRM e tool interni su misura per i tuoi processi",
-    iconPath: '<path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" />',
-  },
-  {
-    href: searchOptHref,
-    title: "AI Search Optimization",
-    subtitle: lang === "en"
-      ? "Be found on ChatGPT, Claude, Perplexity & Google AI Overviews"
-      : "Renditi trovabile su ChatGPT, Claude, Perplexity, Google AI Overviews",
-    iconPath: '<circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" /><path d="M8 11h6" /><path d="M11 8v6" />',
-  },
-];
+// IT: solo i due servizi principali nel dropdown; gli altri restano nel footer.
+// EN: le pagine analisi/ai-engineering non esistono, si tiene la lista completa.
+const servizi = lang === "it"
+  ? [
+      {
+        href: analisiHref,
+        title: "Analisi dei processi",
+        subtitle: "L'audit che individua dove automazione e AI portano più valore",
+        iconPath: '<path d="M4 4h16v4H4z" /><path d="M4 12h10v4H4z" /><path d="M4 20h6" /><circle cx="18" cy="16" r="3" /><path d="M20.2 18.2 L22 20" />',
+      },
+      {
+        href: aiEngHref,
+        title: "AI Engineering",
+        subtitle: "Sviluppo di agenti IA a sprint iterativi, primo rilascio in 4 settimane",
+        iconPath: '<path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" />',
+      },
+    ]
+  : [
+      {
+        href: offerHref,
+        title: "Generational change",
+        subtitle: "Dedicated team to modernize your software in a month, zero risk",
+        iconPath: '<path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" /><path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />',
+      },
+      {
+        href: adoptionHref,
+        title: "AI Adoption",
+        subtitle: "Workshop + adoption program to upskill your team on AI",
+        iconPath: '<path d="M12 21a9 9 0 1 1 0 -18a9 9 0 0 1 0 18z" /><path d="M14.5 9.5l-5 1l1 5l5 -1l-1 -5z" /><path d="M13 13l-1.5 -1.5" />',
+      },
+      {
+        href: agentsHref,
+        title: "AI Agents",
+        subtitle: "Sprint to ship one production-ready agent in your workflow",
+        iconPath: '<path d="M9 7l-2 -2l-2 2l2 2z" /><path d="M19 5l-2 -2l-2 2l2 2z" /><path d="M5 21h14" /><path d="M9 21v-8a3 3 0 0 1 6 0v8" /><path d="M12 13v8" />',
+      },
+      {
+        href: softwareHref,
+        title: "Custom Software",
+        subtitle: "Custom web apps, mobile apps, CRMs & internal tools for your processes",
+        iconPath: '<path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" />',
+      },
+      {
+        href: searchOptHref,
+        title: "AI Search Optimization",
+        subtitle: "Be found on ChatGPT, Claude, Perplexity & Google AI Overviews",
+        iconPath: '<circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" /><path d="M8 11h6" /><path d="M11 8v6" />',
+      },
+    ];
 
 const prodotti = [
   {
@@ -197,9 +205,6 @@ const prodotti = [
 
         <li><a href={casesHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_cases}</a></li>
         <li><a href={aboutHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_about}</a></li>
-        {lang === "it" && (
-          <li><a href={analisiHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">Analisi dei processi</a></li>
-        )}
       </ul>
 
       <div class="flex items-center gap-3">
@@ -282,9 +287,6 @@ const prodotti = [
         <a href={prezziHref} class="mobile-section__top">{labels.nav_prezzi}</a>
         <a href={casesHref} class="mobile-section__top">{labels.nav_cases}</a>
         <a href={aboutHref} class="mobile-section__top">{labels.nav_about}</a>
-        {lang === "it" && (
-          <a href={analisiHref} class="mobile-section__top">Analisi dei processi</a>
-        )}
       </nav>
 
       <div class="px-5 py-4 border-t border-ink-200/60">
