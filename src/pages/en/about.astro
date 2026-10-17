@@ -98,7 +98,14 @@ const teamEvents = [
   { src: "/team-events/escp-zero-to-startup-2026-a.webp",                    caption: "Course 'From Zero to Startup', ESCP 2026" },
   { src: "/team-events/sponsor-nel-mondo-venire-biella-2025-a.webp",         caption: "Sponsor of 'Nel Mondo a Venire', Biella 2025" },
   { src: "/team-events/sponsor-nel-mondo-venire-biella-2025-b.webp",         caption: "Sponsor of 'Nel Mondo a Venire', Biella 2025" },
+  { src: "/team-events/orecchiette-retreat-puglia.webp",                     caption: "Puglia retreat: handmade orecchiette" },
+  { src: "/team-events/alberobello-retreat-puglia.webp",                     caption: "Puglia retreat, Alberobello" },
+  { src: "/team-events/boat-trip-retreat-puglia.webp",                       caption: "Puglia retreat, boat trip" },
+  { src: "/team-events/orecchiette-2-retreat-puglia.webp",                   caption: "Puglia retreat, cooking together" },
 ];
+// two rows for the horizontal looping marquee
+const eventsRowA = teamEvents.filter((_, i) => i % 2 === 0);
+const eventsRowB = teamEvents.filter((_, i) => i % 2 === 1);
 
 const worldRegions = [
   {
@@ -164,14 +171,18 @@ const faqs = [
         </h1>
       </div>
 
-      <!-- events / retreat mosaic: real people, off-screen -->
-      <div class="events-mosaic mt-12 md:mt-16">
-        {teamEvents.map((e) => (
-          <figure class="em-tile m-0">
-            <img src={e.src} alt={e.caption} loading="lazy" decoding="async" />
-            <figcaption class="em-cap">{e.caption}</figcaption>
-          </figure>
-        ))}
+      <!-- events / retreat marquee: slow horizontal loop to reveal all photos -->
+      <div class="events-marquee mt-12 md:mt-16" aria-label="Soraia team moments and retreats">
+        <div class="em-row em-row--a">
+          {[...eventsRowA, ...eventsRowA].map((e, i) => (
+            <img src={e.src} alt={i < eventsRowA.length ? e.caption : ""} aria-hidden={i >= eventsRowA.length ? "true" : undefined} loading="lazy" decoding="async" />
+          ))}
+        </div>
+        <div class="em-row em-row--b">
+          {[...eventsRowB, ...eventsRowB].map((e, i) => (
+            <img src={e.src} alt={i < eventsRowB.length ? e.caption : ""} aria-hidden={i >= eventsRowB.length ? "true" : undefined} loading="lazy" decoding="async" />
+          ))}
+        </div>
       </div>
 
       <div class="mt-12 md:mt-14 max-w-2xl mx-auto">
@@ -196,15 +207,24 @@ const faqs = [
     <style is:global>
       /* Founder education/experience logo strip (used in the "Founders" section) */
       .exp-logo { height: 28px; width: auto; max-width: 88px; object-fit: contain; flex: 0 1 auto; min-width: 0; }
-      /* Events mosaic (hero) */
-      .events-mosaic { column-count: 2; column-gap: 12px; }
-      @media (min-width: 768px) { .events-mosaic { column-count: 3; column-gap: 14px; } }
-      @media (min-width: 1200px) { .events-mosaic { column-count: 4; column-gap: 16px; } }
-      .em-tile { position: relative; break-inside: avoid; margin: 0 0 12px; border-radius: 14px; overflow: hidden; background: var(--color-ink-100); box-shadow: var(--shadow-sm); }
-      @media (min-width: 768px) { .em-tile { margin-bottom: 14px; } }
-      .em-tile img { display: block; width: 100%; height: auto; }
-      .em-cap { position: absolute; inset: auto 0 0 0; padding: 28px 12px 10px; font-size: 12px; line-height: 1.25; color: #fff; background: linear-gradient(to top, rgba(26,10,32,0.88) 0%, rgba(26,10,32,0.25) 60%, transparent 100%); opacity: 0; transition: opacity .2s ease; }
-      .em-tile:hover .em-cap { opacity: 1; }
+      /* Events marquee (hero): two rows scrolling slowly in a loop, opposite directions */
+      .events-marquee {
+        display: flex; flex-direction: column; gap: 14px; overflow: hidden;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+      }
+      .em-row { display: flex; width: max-content; will-change: transform; }
+      .em-row img {
+        height: clamp(140px, 19vw, 220px); width: auto; flex: 0 0 auto; margin-right: 14px;
+        border-radius: 14px; object-fit: cover; box-shadow: var(--shadow-sm);
+        background: var(--color-ink-100); -webkit-user-drag: none; user-select: none;
+      }
+      .em-row--a { animation: em-marquee-left 70s linear infinite; }
+      .em-row--b { animation: em-marquee-right 88s linear infinite; }
+      .events-marquee:hover .em-row { animation-play-state: paused; }
+      @keyframes em-marquee-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      @keyframes em-marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+      @media (prefers-reduced-motion: reduce) { .em-row { animation: none; } }
     </style>
   </section>
 

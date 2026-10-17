@@ -67,4 +67,34 @@ const jsonLd = {
       )}
     </div>
   </section>
+
+  <!-- PROCESSO DI SELEZIONE -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia">
+      <div class="max-w-2xl mb-12 md:mb-14">
+        <p class="eyebrow mb-5">Il processo di selezione</p>
+        <h2 class="text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem); line-height: 1.15; font-weight: 500; color: var(--color-ink);">
+          Quattro passaggi, nessuna sorpresa.
+        </h2>
+        <p class="mt-5 text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+          Un processo rapido e trasparente. In genere lo chiudiamo in un paio di settimane, lavorando sui tuoi tempi.
+        </p>
+      </div>
+
+      <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 list-none p-0 m-0">
+        {[
+          { n: "01", title: "Primo colloquio conoscitivo", body: "Una call con Daniel per conoscerci: chi sei, cosa cerchi, come lavoriamo. Niente test a sorpresa." },
+          { n: "02", title: "Take home test", body: "La nostra challenge: un caso reale, simile a quello che affronterai da noi. La fai con calma, a casa, sui tuoi tempi." },
+          { n: "03", title: "Secondo colloquio", body: "Un confronto tecnico con Davide: rivediamo insieme la challenge ed entriamo nel dettaglio del ruolo." },
+          { n: "04", title: "Final call", body: "L'ultima call per allinearci su aspettative, condizioni e tempistiche. Se c'è match, si parte." },
+        ].map((s) => (
+          <li class="card !p-6 md:!p-7 flex flex-col">
+            <span class="text-[13px] font-semibold tracking-[0.12em]" style="color: var(--color-brand-accent);">{s.n}</span>
+            <h3 class="mt-3 font-medium tracking-tight" style="font-size: 1.125rem; line-height: 1.2; color: var(--color-ink);">{s.title}</h3>
+            <p class="mt-2.5 text-[14.5px] leading-relaxed" style="color: var(--color-ink-muted);">{s.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
 </Layout>
