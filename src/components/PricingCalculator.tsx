@@ -1,12 +1,16 @@
 import { useState } from "react";
 
 // Due modelli:
-//  - a pacchetti di ore: 43h/mese = 3.000€, 70€ per ora aggiuntiva.
-//  - a corpo: rilascio a prezzo fisso, da 3.000€.
-const BASE_HOURS = 43;
+//  - a pacchetti di ore: 45h/mese = 3.000€, poi scaglioni da 1.000€ (15 ore).
+//  - a corpo: rilascio a prezzo fisso, da 5.000€.
+// Tariffa reale 200/3 = 66,6667 €/ora (mostrata come 67€/ora) così che ogni
+// scaglione da 1.000€ = 15 ore tonde e il prezzo resti sempre un migliaio pieno.
+const BASE_HOURS = 45;
 const BASE_PRICE = 3000;
-const RATE = 70; // € per ora aggiuntiva
-const MAX_HOURS = 200;
+const RATE = 200 / 3; // € per ora (66,6667), display 67€/ora
+const RATE_DISPLAY = 67;
+const STEP_HOURS = 15; // 15 ore = 1.000€
+const MAX_HOURS = 195; // 13.000€
 const brand = "#4A1E5C";
 
 type Lang = "it" | "en";
@@ -25,7 +29,7 @@ const T = {
     oreLine: (h: number) => `${h} ore al mese, due figure dedicate sul tuo progetto.`,
     badgeStrong: "Anche solo per un mese",
     badgeRest: ". Nessun vincolo di durata, decidi tu ogni mese se continuare.",
-    oreMin: "Pacchetto minimo: 43 ore, 3.000€ al mese.",
+    oreMin: `Pacchetto minimo: 45 ore, 3.000€ al mese. ${RATE_DISPLAY}€/ora, a scaglioni da 1.000€.`,
     corpoTag: "Compri il risultato",
     corpoTitle: "Un rilascio preciso, a prezzo fisso.",
     corpoLead: "Concordiamo insieme un rilascio chiaro e lavoriamo a sprint fino a raggiungerlo. Paghi il risultato approvato, non le ore: il modo migliore per vedere quanto siamo veloci.",
@@ -57,7 +61,7 @@ const T = {
     oreLine: (h: number) => `${h} hours a month, two dedicated people on your project.`,
     badgeStrong: "Even for a single month",
     badgeRest: ". No lock-in, you decide each month whether to continue.",
-    oreMin: "Minimum package: 43 hours, €3,000 per month.",
+    oreMin: `Minimum package: 45 hours, €3,000 per month. €${RATE_DISPLAY}/hour, in €1,000 steps.`,
     corpoTag: "Buy the outcome",
     corpoTitle: "A precise release, at a fixed price.",
     corpoLead: "We agree on a clear release and work in sprints until we reach it. You pay for the approved result, not the hours: the best way to see how fast we are.",
@@ -82,7 +86,8 @@ const T = {
 export default function PricingCalculator({ lang = "it" }: { lang?: Lang }) {
   const [mode, setMode] = useState<Mode>("ore");
   const [hours, setHours] = useState(BASE_HOURS);
-  const price = BASE_PRICE + (hours - BASE_HOURS) * RATE;
+  // scaglioni da 15 ore: il prezzo cade sempre su un migliaio pieno
+  const price = Math.round(BASE_PRICE + (hours - BASE_HOURS) * RATE);
   const pct = ((hours - BASE_HOURS) / (MAX_HOURS - BASE_HOURS)) * 100;
   const C = T[lang];
   const fmt = (n: number) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, lang === "en" ? "," : ".");
@@ -114,7 +119,7 @@ export default function PricingCalculator({ lang = "it" }: { lang?: Lang }) {
             <span className="text-[13px] font-medium" style={{ color: "var(--color-ink-soft)" }}>{C.maxLabel}</span>
           </div>
           <input
-            type="range" min={BASE_HOURS} max={MAX_HOURS} step={1} value={hours}
+            type="range" min={BASE_HOURS} max={MAX_HOURS} step={STEP_HOURS} value={hours}
             onChange={(e) => setHours(Number(e.target.value))}
             aria-label={C.sliderAria}
             className="pricing-range"

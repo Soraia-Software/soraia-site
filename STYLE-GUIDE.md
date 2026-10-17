@@ -89,13 +89,16 @@ Use the `.btn` classes, never ad-hoc button styling:
 ## 7. Components to reuse (don't re-implement)
 
 - `SectionHeader` — every section intro.
-- `PricingCalculator` — the two-model pricing (ore @ 70€/h from 3.000€/43h, OR a corpo
-  from 5.000€/primo rilascio). In **a corpo** mode the client does **not** see the hours
-  worked; keep that invariant.
+- `PricingCalculator` — the two-model pricing. **Ore**: base 45h = 3.000€, then steps of
+  1.000€ = 15h (slider `step=15`), up to 195h = 13.000€. Real rate is `200/3` =
+  66,6667 €/h but **displayed as 67€/ora** so every €1.000 tier lands on a round
+  thousand; price is `Math.round(...)`. **A corpo**: from 5.000€/primo rilascio, and the
+  client does **not** see the hours worked, keep that invariant.
 - `SprintRoadmap` — the mountain + sprint timeline + "aggiorna le priorità" reorder,
   shared by `/analisi-processi` and `/ai-engineering`.
-- Team carousels (homepage "Il tuo team") — one card per role (PM, AI Engineer), swipeable
-  to show multiple available profiles but one dedicated per role. **Photos only, no names.**
+- Team cards (homepage "Il tuo team") — vertical full-image cards (4:5 portrait,
+  600×750 webp, name overlaid on a bottom gradient), grouped by role (PM, AI Engineer).
+  Multiple profiles per role are shown; one dedicated per role is assigned (see caption).
 
 ## 8. i18n
 
