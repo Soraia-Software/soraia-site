@@ -18,8 +18,11 @@ function Opening() {
   const r = useReveal();
   return (
     <Section id="apertura">
-      <motion.p {...r} className="ap-eyebrow">{OPENING.eyebrow}</motion.p>
-      <motion.h1 className="ap-head" {...r} transition={{ ...r.transition, delay: 0.05 }} style={{ fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)", letterSpacing: "-0.025em", lineHeight: 1.05, color: "var(--color-ink)", maxWidth: "18ch" }}>
+      <motion.p {...r} className="ap-eyebrow" style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+        <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--color-amber)", flex: "0 0 auto" }} />
+        {OPENING.eyebrow}
+      </motion.p>
+      <motion.h1 className="ap-head" {...r} transition={{ ...r.transition, delay: 0.05 }} style={{ fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)", letterSpacing: "-0.025em", lineHeight: 1.05, color: "#fff", maxWidth: "18ch" }}>
         {OPENING.title}
       </motion.h1>
       <motion.p {...r} transition={{ ...r.transition, delay: 0.12 }} className="ap-lead" style={{ marginTop: 20, maxWidth: "56ch" }}>
