@@ -138,7 +138,7 @@ export default function PricingCalculator({ lang = "it" }: { lang?: Lang }) {
         /* ===== A CORPO ===== */
         <div className="card !p-7 md:!p-10">
           <p className="text-[11px] font-semibold uppercase tracking-[0.16em] mb-3" style={{ color: brand }}>{C.corpoTag}</p>
-          <h3 className="font-semibold tracking-tight mb-3" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)", color: "var(--color-ink)" }}>{C.corpoTitle}</h3>
+          <h3 className="font-medium tracking-tight mb-3" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)", color: "var(--color-ink)" }}>{C.corpoTitle}</h3>
           <p className="text-[16px] leading-relaxed text-pretty mb-7" style={{ color: "var(--color-ink-muted)", maxWidth: "58ch" }}>{C.corpoLead}</p>
 
           <div className="flex items-baseline gap-2 mb-6">
