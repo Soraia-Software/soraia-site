@@ -33,14 +33,35 @@ function cardQuote(c: typeof cases[number]): string {
 }
 
 // Video testimonianze in cima alla pagina, cliccabili (un click e parte il video).
-// Ordine voluto: Gabriella (Stars Be Original), Margherita (40Factory, appena avrà il
-// videoTestimonial nel frontmatter), Gianluca (quando esisterà la scheda); poi gli altri.
-const videoOrder = ["stars-be-original", "40factory", "gianluca", "rainplan", "storywonder", "talent-match"];
-const withVideo = cases.filter((c) => c.data.videoTestimonial);
-const videoCases = [
-  ...videoOrder.map((slug) => withVideo.find((c) => c.id === slug)).filter(Boolean),
-  ...withVideo.filter((c) => !videoOrder.includes(c.id)),
-].slice(0, 4) as typeof cases;
+// Video testimonianze in hero. Ordine voluto: Gabriella (Stars Be Original), Gianluca (Utravel),
+// Margherita (40Factory, appena avrà il videoTestimonial nel frontmatter), poi gli altri.
+// Gianluca non ha una scheda caso studio: vive qui come voce "extra" con gli stessi campi.
+type VideoTile = { key: string; speaker: string; role: string; client: string; thumb: string; fallback: string; embed: string };
+const ytThumb = (id: string) => `https://i.ytimg.com/vi/${id}/oar2.jpg`; // thumbnail verticale (Shorts)
+const ytEmbed = (id: string) => `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+const extraVideos: VideoTile[] = [
+  { key: "utravel", speaker: "Gianluca Di Donato", role: "Ex Founder & CEO", client: "Utravel", thumb: ytThumb("fLxkNFEMarM"), fallback: "https://i.ytimg.com/vi/fLxkNFEMarM/hqdefault.jpg", embed: ytEmbed("fLxkNFEMarM") },
+];
+const caseVideos: VideoTile[] = cases.filter((c) => c.data.videoTestimonial).map((c) => {
+  const v = c.data.videoTestimonial!;
+  const fallback = v.poster || c.data.stakeholder.photo || photoMap[c.id];
+  return {
+    key: c.id,
+    speaker: v.speaker || c.data.stakeholder.name,
+    role: v.role || c.data.stakeholder.role,
+    client: c.data.client,
+    // se la thumbnail verticale di YouTube non esiste si ripiega sulla foto del referente
+    thumb: v.provider === "youtube" ? ytThumb(v.id) : fallback,
+    fallback,
+    embed: v.provider === "youtube" ? ytEmbed(v.id) : `https://player.vimeo.com/video/${v.id}?autoplay=1&title=0&byline=0&portrait=0`,
+  };
+});
+const videoOrder = ["stars-be-original", "utravel", "40factory", "rainplan", "storywonder", "talent-match"];
+const allVideos = [...caseVideos, ...extraVideos];
+const videoTiles: VideoTile[] = [
+  ...videoOrder.map((key) => allVideos.find((t) => t.key === key)).filter((t): t is VideoTile => Boolean(t)),
+  ...allVideos.filter((t) => !videoOrder.includes(t.key)),
+];
 
 // Industry filter taxonomy, allineata ai 6 Ops cluster del sito.
 // Un case può appartenere a primary industry + additionalIndustries (es. ILTEC: sales-marketing + customer-support).
@@ -68,39 +89,28 @@ const industryFilters = [
         Casi studio
       </p>
       <h1 class="text-balance max-w-4xl" style="font-size: clamp(2.125rem, 4.2vw + 1rem, 3.75rem); line-height: 1.06; letter-spacing: -0.025em; font-weight: 500;">
-        Non chiedere a noi come lavoriamo. Ascolta il feedback reale, e non richiesto, dei nostri clienti.
+        Ascolta il feedback reale, e non richiesto, dei nostri clienti.
       </h1>
       <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
         Agenti IA in produzione per PMI italiane ed europee: cosa abbiamo costruito e quali risultati, raccontati da chi li usa ogni giorno.
       </p>
 
-      {videoCases.length > 0 && (
-        <div class="mt-12 md:mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {videoCases.map((c) => {
-            const v = c.data.videoTestimonial!;
-            const speaker = v.speaker || c.data.stakeholder.name;
-            const role = v.role || c.data.stakeholder.role;
-            const fallback = v.poster || c.data.stakeholder.photo || photoMap[c.id];
-            // thumbnail verticale di YouTube (Shorts); se non esiste si ripiega sulla foto del referente
-            const thumb = v.provider === "youtube" ? `https://i.ytimg.com/vi/${v.id}/oar2.jpg` : fallback;
-            const embed = v.provider === "youtube"
-              ? `https://www.youtube.com/embed/${v.id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`
-              : `https://player.vimeo.com/video/${v.id}?autoplay=1&title=0&byline=0&portrait=0`;
-            return (
-              <div class="vt">
-                <button type="button" class="vt-card" data-video-embed={embed} aria-label={`Guarda la testimonianza di ${speaker}, ${c.data.client}`}>
-                  <img src={thumb} alt="" loading="eager" decoding="async" class="vt-poster" onerror={`this.onerror=null;this.src='${fallback}'`} />
-                  <span class="vt-play" aria-hidden="true">
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                  </span>
-                </button>
-                <p class="vt-title">
-                  <strong>{speaker}</strong>
-                  <span>{role} · {c.data.client}</span>
-                </p>
-              </div>
-            );
-          })}
+      {videoTiles.length > 0 && (
+        <div class="mt-12 md:mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+          {videoTiles.map((t) => (
+            <div class="vt">
+              <button type="button" class="vt-card" data-video-embed={t.embed} aria-label={`Guarda la testimonianza di ${t.speaker}, ${t.client}`}>
+                <img src={t.thumb} alt="" loading="eager" decoding="async" class="vt-poster" onerror={`this.onerror=null;this.src='${t.fallback}'`} />
+                <span class="vt-play" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </button>
+              <p class="vt-title">
+                <strong>{t.speaker}</strong>
+                <span>{t.role} · {t.client}</span>
+              </p>
+            </div>
+          ))}
         </div>
       )}
     </div>
