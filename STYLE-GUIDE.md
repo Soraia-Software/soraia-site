@@ -48,8 +48,15 @@ Brand primary is **`--color-brand` = `#4A1E5C`** (deep aubergine). Accent is
   sections). Ink: `--color-ink` `#1A1A1A`, `--color-ink-muted`, `--color-ink-soft`.
 - Hairlines: `--color-line` (default), `--color-line-strong` (hover/emphasis),
   `--color-line-dark` (on dark).
-- Dark hero background: `.bg-hero-dark`. Soft violet tints: `.bg-violet-radial` /
-  `.bg-violet-mesh`.
+- Dark hero background: `.bg-hero-dark`. Light hero: `.bg-violet-mesh`. **Both carry the
+  site's signature contour lines** (faint large arcs, inline SVG in the background), so every
+  hero gets them with no markup. Add the lines to other sections with `.bg-lines-light` /
+  `.bg-lines-dark` (image-only, layer on your own colour).
+- "Più colorato ogni tanto": `.bg-tech-grid` (lilac base + thin line grid + glows + arcs) for
+  one standout band per page, and `.glow-tr` / `.glow-br` for a soft violet corner glow
+  (container needs `relative overflow-hidden`). Use sparingly, as rhythm, not everywhere.
+- Dark rhythm bands (e.g. the careers hiring steps) reuse `.bg-hero-dark` with
+  translucent white cards (`rgba(255,255,255,0.05)` + 12% white border).
 - **No pink/gradient backgrounds behind team photos.** Photos sit on their natural
   background. (The pink team gradient was removed.)
 - `/analisi-processi` has its own scoped palette in
@@ -64,8 +71,8 @@ Use the `.btn` classes, never ad-hoc button styling:
 - `.btn .btn-secondary` — outline, ink text. Alternative action.
 - `.btn .btn-ghost` — text-only, for tertiary links.
 - Add `.btn-arrow` + an inline arrow `svg` for the sliding-arrow hover.
-- Radius is `--radius-sm` (8px); don't round buttons to pill unless it's a control
-  (carousel nav, toggles).
+- Buttons are **pills** (`border-radius: 999px`), with a soft lift on hover. The old 8px
+  radius is gone; don't reintroduce square-ish buttons.
 
 ## 5. Layout & spacing
 
@@ -73,8 +80,9 @@ Use the `.btn` classes, never ad-hoc button styling:
   section padding.
 - Section intros use the `SectionHeader` component (eyebrow + title + optional lead),
   so eyebrow/heading treatment stays uniform.
-- Cards: `.card` (hairline, 16px radius, 1.75rem padding) or `.card-editorial`
-  (2rem padding, shadow on hover). Equal-height card rows use `items-stretch`.
+- Cards: `.card` (hairline, **22px radius**, 1.75rem padding) or `.card-editorial`
+  (2rem padding). Interactive cards (`.card-hover`, `.card-editorial`) lift 3px with a
+  shadow on hover. Equal-height card rows use `items-stretch`.
 - Max content width and gutters follow the existing container; keep a 16px side gutter
   on mobile and no horizontal scroll.
 

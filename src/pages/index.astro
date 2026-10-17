@@ -273,21 +273,20 @@ const faqs = [
             </a>
           </div>
 
-          <!-- CEO CREDIBILITY CHIP -->
-          <a href="/parliamone" class="mt-6 inline-flex items-center gap-3 group fade-up fade-up-delay-4 no-underline">
-            <img
-              src="/team/daniel-levis.avif"
-              alt="Daniel Levis"
-              width="40"
-              height="40"
-              class="w-10 h-10 rounded-full object-cover ring-2 ring-white/20 group-hover:ring-white/40 transition-all"
-              loading="eager"
-            />
-            <span class="text-[13px] leading-tight">
-              <span class="block text-white/85">Daniel Levis, CEO Soraia</span>
-              <span class="block text-violet-200/60">capiamo insieme se ha senso. Senza pitch.</span>
-            </span>
-          </a>
+          <!-- VOLTI DEL TEAM + STRISCIA DI FIDUCIA (come complaion: le persone subito in hero) -->
+          <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 fade-up fade-up-delay-4">
+            <div class="flex items-center flex-shrink-0">
+              {["daniel-levis", "veronica-pisana", "eleonora-cogo", "lorenzo-barbaglia", "davide-silvestri", "martina-rochstein", "paolo-bacchetti"].map((slug, i) => (
+                <img src={`/team/${slug}.webp?v=4`} alt="" loading="eager" width="40" height="40" class={`w-10 h-10 rounded-full object-cover ring-2 ring-[#1A0820] ${i === 0 ? "" : "-ml-2.5"}`} />
+              ))}
+            </div>
+            <a href="/parliamone" class="inline-flex items-center text-[13px] leading-tight no-underline group">
+              <span class="block">
+                <span class="block text-white/90 font-medium">10 persone, 100% remote. Veronica ti risponde entro 24 ore.</span>
+                <span class="block text-violet-200/60 group-hover:text-violet-200/90 transition-colors">Capiamo insieme se ha senso. Senza pitch.</span>
+              </span>
+            </a>
+          </div>
         </div>
 
         <!-- Right: visual -->
@@ -306,7 +305,7 @@ const faqs = [
   <!-- ============================================================
        2a-bis. POSIZIONAMENTO PMI, sfondo tech + griglia, facce del team
        ============================================================ -->
-  <section class="section" style="background: radial-gradient(circle at 12% 8%, rgba(137,45,156,0.10), transparent 42%), radial-gradient(circle at 92% 92%, rgba(74,30,92,0.10), transparent 42%), repeating-linear-gradient(0deg, rgba(74,30,92,0.045) 0 1px, transparent 1px 48px), repeating-linear-gradient(90deg, rgba(74,30,92,0.045) 0 1px, transparent 1px 48px), #F7F3FA;">
+  <section class="section bg-tech-grid relative overflow-hidden">
     <div class="container-soraia">
       <div class="max-w-3xl mx-auto text-center">
         <p class="eyebrow mb-5">Per le PMI in crescita</p>
