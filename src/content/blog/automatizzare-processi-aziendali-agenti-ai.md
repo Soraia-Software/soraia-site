@@ -103,4 +103,4 @@ Un processo non sta per sempre allo stesso livello. Man mano che le eccezioni cr
 
 E quando sposti la coda a un agente, il team che prima gestiva quelle eccezioni deve fidarsi dell'agente e sapere quando riprenderselo. Per questo il confine tecnico va accompagnato dall'[adozione AI](/ai-adoption): senza, l'agente resta inutilizzato e il ROI non arriva.
 
-Lavoriamo con la garanzia **"paghi solo se funziona"**: se le ore non tornano, non paghi. Se vuoi tracciare il confine sui tuoi processi (quali restano a regole, quali passano a un agente), [parliamone](/parliamone): 20 minuti, senza pitch.
+Lavoriamo con la garanzia **"primo mese soddisfatti o rimborsati"**: se il primo mese non ti convince, rimborsiamo. Se vuoi tracciare il confine sui tuoi processi (quali restano a regole, quali passano a un agente), [parliamone](/parliamone): 20 minuti, senza pitch.

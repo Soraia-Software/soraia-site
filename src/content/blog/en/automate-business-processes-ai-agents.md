@@ -103,4 +103,4 @@ A process doesn't stay on the same layer forever. As exceptions grow, the share 
 
 And when you move the tail to an agent, the team that used to handle those exceptions has to trust the agent and know when to take a case back. That's why the technical boundary goes hand in hand with [AI adoption](/en/ai-adoption): without it, the agent sits unused and the ROI never arrives.
 
-We work with the **"pay only if it works"** guarantee: if the hours don't come back, you don't pay. If you want to draw the boundary on your own processes (which stay on rules, which move to an agent), [let's talk](/en/contact): 20 minutes, no pitch.
+We work with the **"first month satisfied or refunded"** guarantee: if the first month doesn't convince you, we refund it. If you want to draw the boundary on your own processes (which stay on rules, which move to an agent), [let's talk](/en/contact): 20 minutes, no pitch.

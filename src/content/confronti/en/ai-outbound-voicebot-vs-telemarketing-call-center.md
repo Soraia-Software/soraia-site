@@ -75,11 +75,11 @@ faq:
   - q: "Does the voicebot fully replace my sales reps?"
     a: "No, and in most cases it should not. The most effective approach is <strong>hybrid</strong>: AI handles high-volume qualification, callbacks and reminders, while reps focus on deals that need relationship and negotiation. See our <a href='/sales-marketing'>sales & marketing</a> agents."
   - q: "How long until I have a working outbound voicebot?"
-    a: "With Soraia the <strong>first delivery is in 4 weeks</strong>: a voice agent connected to your CRM on a concrete use case (e.g. first-contact qualification or appointment reminders). It starts from a measurable target agreed in the assessment. For your case, <a href='/parliamone'>let's talk</a>."
+    a: "With Soraia the <strong>first delivery is in 4 weeks</strong>: a voice agent connected to your CRM on a concrete use case (e.g. first-contact qualification or appointment reminders). It starts from a measurable target agreed in the process audit. For your case, <a href='/parliamone'>let's talk</a>."
   - q: "How does it cost compared to a telemarketing agency?"
-    a: "Our model starts at <strong>3,000 € per month</strong> with two dedicated people (Project Manager and AI Engineer) and client-owned code from day one. A telemarketing agency is paid per agent-hour or per contact: cheap on small volumes, expensive and hard to scale as volumes grow. The voicebot pays off exactly where numbers rise."
+    a: "Our model starts at <strong>3,000 € per month</strong> with three dedicated people (Account Manager, Project Manager and AI Engineer) and client-owned code from day one. A telemarketing agency is paid per agent-hour or per contact: cheap on small volumes, expensive and hard to scale as volumes grow. The voicebot pays off exactly where numbers rise."
   - q: "What if the voicebot does not convert as hoped?"
-    a: "Our <strong>pay only if you are satisfied</strong> guarantee applies: the target (e.g. number of qualified leads or booked appointments) is set in the assessment and, if not met, we keep working until it is or refund the sprint. The code stays yours anyway: no lock-in."
+    a: "Our <strong>first month satisfied or refunded</strong> guarantee applies: the target (e.g. number of qualified leads or booked appointments) is set in the process audit and, if the first month doesn't convince you, we refund it or keep working for free until you're satisfied. The code stays yours anyway: no lock-in."
 related: []
 featured: false
 pubDate: 2026-10-06

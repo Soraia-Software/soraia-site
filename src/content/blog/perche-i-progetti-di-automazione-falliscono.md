@@ -45,7 +45,7 @@ Quasi mai è vero. Nel 90% dei casi che vediamo, il motivo per cui falliscono i 
 
 Se non hai una risposta cronometrata, non hai una baseline, hai un'impressione. E su un'impressione non puoi né decidere se automatizzare, né dimostrare dopo che è servito.
 
-Una baseline reale è una settimana di lavoro: cronometri 10-20 task veri, distribuisci il tempo tra le fasi, misuri gli outcome. Noi in Soraia questa la facciamo prima di ogni sprint, ed è il motivo per cui possiamo scrivere il target nel contratto con la garanzia "ore recuperate o rimborso". Senza baseline, quella garanzia non esisterebbe.
+Una baseline reale è una settimana di lavoro: cronometri 10-20 task veri, distribuisci il tempo tra le fasi, misuri gli outcome. Noi in Soraia questa la facciamo prima di ogni sprint, ed è il motivo per cui possiamo scrivere il target nel contratto con la garanzia "primo mese soddisfatti o rimborsati". Senza baseline, quella garanzia non esisterebbe.
 
 ## Anti-pattern 2. Lo scope che si allarga ("già che ci siamo")
 

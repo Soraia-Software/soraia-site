@@ -92,7 +92,7 @@ Te lo dico prima di venderti uno sprint:
 3. Costruisci un agente su quel perimetro, con l'umano sulle eccezioni.
 4. Misura a 30 giorni sulla baseline.
 
-La prima delivery è in 4 settimane, con [garanzia "ore recuperate o rimborso"](/ai-agents): se il target sul metric primario non è raggiunto, lavoriamo gratis finché non succede o rimborsiamo.
+La prima delivery è in 4 settimane, con [garanzia "primo mese soddisfatti o rimborsati"](/prezzi): se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto.
 
 ---
 

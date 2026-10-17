@@ -193,7 +193,7 @@ Soluzioni che funzionano (testate in 30+ clienti Soraia):
 
 ## Come Soraia fa AI Adoption
 
-Pieno disclaimer: Soraia è AI agency italiana, e l'adoption è una delle due linee di servizio (l'altra sono gli <a href="/guide/agenti-ai-aziende">agenti IA custom</a>).
+Pieno disclaimer: Soraia è AI agency italiana, e l'adoption accompagna i progetti di <a href="/guide/agenti-ai-aziende">agenti IA custom</a> che costruiamo.
 
 Il nostro modello differisce su 3 punti:
 

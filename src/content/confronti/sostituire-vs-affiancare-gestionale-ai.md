@@ -32,7 +32,7 @@ optionB:
   pro:
     - "Prima versione funzionante in 4 settimane, non in mesi"
     - "Nessuna interruzione: il gestionale continua a girare com'e'"
-    - "Rischio ridotto: con Soraia paghi solo se il target concordato e' raggiunto"
+    - "Rischio ridotto: con Soraia vale la garanzia primo mese soddisfatti o rimborsati"
     - "Copri il valore mancante senza toccare il core"
   contro:
     - "Il debito tecnico del gestionale resta sotto"
@@ -69,11 +69,11 @@ faq:
   - q: "Gli agenti IA riescono a leggere i dati di un gestionale vecchio?"
     a: "Nella maggior parte dei casi si', tramite API, export periodici o accesso al database. Se il gestionale e' completamente chiuso, valutiamo in <a href='/software-development'>scoping</a> se l'integrazione e' fattibile prima di partire: non promettiamo cio' che il sistema non permette."
   - q: "Quanto costa affiancare rispetto a rifare il gestionale?"
-    a: "Con Soraia lo strato AI parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in <strong>4 settimane</strong>. Rifare un gestionale e' un progetto di ordine di grandezza superiore, con rischio di migrazione. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia lo strato AI parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in <strong>4 settimane</strong>. Rifare un gestionale e' un progetto di ordine di grandezza superiore, con rischio di migrazione. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "E se poi decido comunque di sostituire il gestionale?"
     a: "Gli agenti costruiti sono documentati e il <strong>codice e' tuo dal primo giorno</strong>: molta della logica di processo mappata resta utile per la migrazione. Nessun lock-in, quindi affiancare oggi non ti chiude la porta a sostituire domani."
   - q: "E se lo strato AI non porta il valore previsto?"
-    a: "Vale la garanzia <strong>paghi solo se sei soddisfatto</strong>: fissiamo un target misurabile in assessment (es. ore recuperate su riconciliazioni) e, se al go-live piu' 30 giorni di hypercare non e' raggiunto, lavoriamo gratis finche' non lo e' oppure rimborsiamo lo sprint."
+    a: "Vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: fissiamo un target misurabile in fase di analisi (es. ore recuperate su riconciliazioni) e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto."
 related: []
 featured: false
 pubDate: 2026-08-25

@@ -70,11 +70,11 @@ faq:
   - q: "Come capisco se un flusso a regole basta o se mi serve un agente?"
     a: "Regola pratica: se riesci a scrivere tutte le condizioni come 'se X allora Y' senza infiniti rami, il <strong>no-code basta</strong>. Se il lavoro dipende da testo libero, da casi che non riesci a prevedere tutti, o le eccezioni continuano a moltiplicarsi, serve un <a href='/ai-agents'>agente IA che ragiona</a>."
   - q: "Quanto costa un agente IA rispetto a un canone no-code?"
-    a: "Un tool no-code costa un canone mensile piu' il setup: economico su volumi bassi. Un agente IA su misura con Soraia parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in 4 settimane. Vale l'investimento quando il no-code non regge le eccezioni o i volumi fanno esplodere i costi per esecuzione. Vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Un tool no-code costa un canone mensile piu' il setup: economico su volumi bassi. Un agente IA su misura con Soraia parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in 4 settimane. Vale l'investimento quando il no-code non regge le eccezioni o i volumi fanno esplodere i costi per esecuzione. Vedi i <a href='/prezzi'>prezzi</a>."
   - q: "L'agente IA e' affidabile come un flusso deterministico?"
     a: "Un flusso a regole e' prevedibile per definizione; un agente decide, quindi serve controllo. Per questo ogni agente Soraia ha <strong>audit log immutabile su ogni decisione</strong> e guardrail definiti: hai la flessibilita' del giudizio con la tracciabilita' dell'automazione."
   - q: "E se costruisco un agente e poi non porta il valore atteso?"
-    a: "Con Soraia vale la garanzia <strong>paghi solo se sei soddisfatto</strong>: si fissa un target misurabile in assessment e, se al go-live piu' 30 giorni di hypercare non e' raggiunto, si lavora gratis finche' non lo e' oppure si rimborsa lo sprint. Il <a href='/software-development'>codice resta tuo</a> dal primo giorno."
+    a: "Con Soraia vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: si fissa un target misurabile in fase di analisi e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto. Il <a href='/software-development'>codice resta tuo</a> dal primo giorno."
 related: []
 featured: false
 pubDate: 2026-07-21

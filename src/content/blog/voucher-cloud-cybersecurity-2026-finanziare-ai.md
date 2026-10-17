@@ -90,7 +90,7 @@ Un incentivo al 50% dimezza il costo. Non crea valore da solo. Se il progetto no
 
 Prima del voucher serve la stessa cosa che chiediamo in ogni sprint: una **baseline misurata**. Quanto costa oggi il processo che vuoi automatizzare, cronometrato su task reali. Solo allora sai se l'agente ha senso.
 
-È lo stesso principio dietro la nostra garanzia "paghi solo se funziona": il target è scritto nel contratto e misurato a 30 giorni dal go-live. Il voucher riduce il rischio economico, la garanzia riduce il rischio operativo. I due si sommano, non si sostituiscono.
+È lo stesso principio dietro la nostra garanzia "primo mese soddisfatti o rimborsati": il target è scritto nel contratto e misurato a 30 giorni dal go-live. Il voucher riduce il rischio economico, la garanzia riduce il rischio operativo. I due si sommano, non si sostituiscono.
 
 ## A sportello significa: arrivi pronto o non arrivi
 

@@ -113,7 +113,7 @@ The standard process we use at Soraia. Replicable by any serious partner; a red 
 
 ### Phase 1, Discovery & Baseline (1–2 weeks)
 
-Map the current process, time human effort across 10–20 real tasks, identify bottlenecks, define the **single primary metric** (e.g. "recruiter hours/week recovered"). Output: an AI Readiness Assessment with a clear scope and quantified expected ROI. [Download an anonymised sample report](/en/downloads/ai-assessment-sample) to see what a client receives at the end of this phase.
+Map the current process, time human effort across 10–20 real tasks, identify bottlenecks, define the **single primary metric** (e.g. "recruiter hours/week recovered"). Output: a process audit report with a clear scope and quantified expected ROI, which the client receives at the end of this phase.
 
 ### Phase 2, Build (2–3 weeks)
 
@@ -184,7 +184,7 @@ For an operational comparison, see the <a href="/en/guide/ai-consulting-italy">A
 The 4 selection criteria that work:
 
 1. **Verifiable track record**, ask for 3 case studies with contactable stakeholders.
-2. **Explicit guarantee**, a serious partner writes the primary metric into the contract and ties themselves to the outcome. Soraia, for example, offers **"if it doesn't work, you don't pay"** as standard.
+2. **Explicit guarantee**, a serious partner writes the primary metric into the contract and ties themselves to the outcome. Soraia, for example, offers **"first month satisfied or refunded"** as standard.
 3. **Your code, no lock-in**, check this in the contract.
 4. **Sector knowledge and SME culture**, a partner who doesn't understand how an SME actually operates will burn the first sprint on misunderstandings.
 

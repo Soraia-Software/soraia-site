@@ -22,7 +22,7 @@ faq:
   - q: "Quando conviene un SaaS pronto invece del software su misura?"
     a: "Quando il processo non è un tuo vantaggio competitivo e un leader di mercato lo risolve già bene: email, fatturazione elettronica, firma digitale, HR di base. Qui un <strong>SaaS</strong> standard costa meno, si aggiorna da solo e non lo devi mantenere tu. Il custom ha senso solo dove il processo <em>è</em> il business."
   - q: "Quanto costa davvero un software su misura rispetto a un SaaS?"
-    a: "Il canone SaaS sembra più basso, ma va moltiplicato per gli anni e per il numero di utenti, e aggiunto al costo nascosto delle integrazioni e dei workaround. In Soraia si parte da <strong>3.000 € al mese</strong> (IVA esclusa), con due figure dedicate (Project Manager e AI Engineer), primo rilascio in <strong>4 settimane</strong>, e il codice è tuo dal primo giorno: niente canone perpetuo."
+    a: "Il canone SaaS sembra più basso, ma va moltiplicato per gli anni e per il numero di utenti, e aggiunto al costo nascosto delle integrazioni e dei workaround. In Soraia si parte da <strong>3.000 € al mese</strong> (IVA esclusa), con tre persone dedicate (Account Manager, Project Manager e AI Engineer), primo rilascio in <strong>4 settimane</strong>, e il codice è tuo dal primo giorno: niente canone perpetuo."
   - q: "Come evito il lock-in con un fornitore di software custom?"
     a: "Mettendolo nel contratto. Da noi il <strong>codice è del cliente dal primo giorno</strong>, niente abbonamenti perpetui, niente dipendenza obbligata. Con un SaaS il lock-in è strutturale: i tuoi dati e le tue automazioni vivono dentro il loro modello di pricing, e cambiare costa una migrazione."
   - q: "Software su misura significa progetti lunghi e rischiosi?"
@@ -69,7 +69,7 @@ Conta tutto:
 - **Le integrazioni mancanti.** Se il SaaS non parla con il tuo gestionale (TeamSystem, Zucchetti, Odoo), paghi qualcuno per copiare il dato a mano. È data entry mascherato.
 - **I workaround.** Ogni foglio Excel "ponte" è tempo che qualcuno spende ogni settimana, per sempre.
 
-Il software su misura si dimensiona sul progetto. Nel nostro modello si parte da **3.000 € al mese** (IVA esclusa), con due figure dedicate (Project Manager e AI Engineer), primo rilascio in **4 settimane**, e il codice è tuo dal primo giorno: niente canone che cresce per utente con l'azienda. Il confronto onesto si fa su 24-36 mesi, non sul primo bonifico.
+Il software su misura si dimensiona sul progetto. Nel nostro modello si parte da **3.000 € al mese** (IVA esclusa), con tre persone dedicate (Account Manager, Project Manager e AI Engineer), primo rilascio in **4 settimane**, e il codice è tuo dal primo giorno: niente canone che cresce per utente con l'azienda. Il confronto onesto si fa su 24-36 mesi, non sul primo bonifico.
 
 ## Criterio 3. Quanto ti costa uscirne (lock-in)
 
@@ -100,4 +100,4 @@ Per il resto, processo core, stabile, ad alto volume, con un SaaS che ti sta str
 
 Una nota di metodo: prima di decidere, misura. Senza una baseline di quanto costa oggi il processo (in ore, in errori, in workaround), "il custom conviene" resta un'opinione. Se vuoi i numeri prima di spendere, parti dalla [guida ai costi della consulenza AI](/guide/costi-consulenza-ai).
 
-Lo facciamo da Biella, su 40+ progetti consegnati in 11 paesi, con la stessa garanzia di sempre: **paghi solo se funziona**. Il target è scritto nel contratto, e se non lo raggiungiamo, lavoriamo gratis fino a quando non succede oppure rimborsiamo. Se vuoi capire da che parte stai, [parliamone](/parliamone), 20 minuti, senza pitch, oppure fai il [check-up](/check-up).
+Lo facciamo da Biella, su 40+ progetti consegnati, con la stessa garanzia di sempre: **primo mese soddisfatti o rimborsati**. Il target è scritto nel contratto, e se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto. Se vuoi capire da che parte stai, [parliamone](/parliamone), 20 minuti, senza pitch, oppure fai il [check-up](/check-up).

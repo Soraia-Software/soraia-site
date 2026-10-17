@@ -95,7 +95,7 @@ Se sei gia' allineato all'AI Act, il delta della legge 132/2025 e' gestibile:
 4. **Nomina un referente interno** per IA e compliance, anche part-time, spesso il DPO.
 5. **Non partire dalla compliance per fare adoption**: parti dal processo, poi impacchetta la governance sopra.
 
-Se non hai ancora una mappa dei tuoi sistemi IA, la costruiamo nell'assessment. E se ti serve un partner che conosce il contesto italiano (gestionali, fatturazione elettronica, GDPR), la nostra [pagina sulla consulenza AI in Italia](/guide/consulenza-ai-italia) spiega come lavoriamo.
+Se non hai ancora una mappa dei tuoi sistemi IA, la costruiamo nell'analisi dei processi. E se ti serve un partner che conosce il contesto italiano (gestionali, fatturazione elettronica, GDPR), la nostra [pagina sulla consulenza AI in Italia](/guide/consulenza-ai-italia) spiega come lavoriamo.
 
 ## Quando NON serve una consulenza dedicata
 

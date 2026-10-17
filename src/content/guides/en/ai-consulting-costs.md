@@ -20,7 +20,7 @@ faq:
   - q: "What is the minimum price for a serious AI project in a company?"
     a: "Below <strong>€10,000</strong> total, it is hard to build a serious custom AI agent (with baseline measurement, build, deploy, and 30-day hypercare). Below this threshold you only get: (a) very small workflows (single Make/n8n automation with AI), (b) shallow pilots that never reach real production, (c) providers selling hours without a clear scope. The real sweet spot for a first agent: <strong>€15,000–35,000</strong>."
   - q: "How much does the first AI Readiness Assessment cost?"
-    a: "<strong>€1,500–3,000</strong> for a serious assessment (1–2 weeks, timed baseline, scope definition, expected ROI, action plan). Serious providers offer it <strong>refunded if you proceed</strong> with a sprint. Soraia's model is a single, simple one: two dedicated people (a Project Manager and an AI Engineer), from €3,000/month. <a href='/en/contact'>Let's talk</a>. <a href='/en/downloads/ai-assessment-sample'>Download an anonymised sample report</a> to see exactly what you receive."
+    a: "<strong>€1,500–3,000</strong> for a serious assessment (1–2 weeks, timed baseline, scope definition, expected ROI, action plan). Serious providers offer it <strong>refunded if you proceed</strong> with a sprint. Soraia's model is a single, simple one: three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €3,000/month. <a href='/en/contact'>Let's talk</a>."
   - q: "How much does an ongoing retainer cost after the initial sprint?"
     a: "<strong>€3,000–15,000/month</strong> depending on: scope (1 agent vs. a portfolio), criticality (24h SLA vs. best effort), number of integrations, and sector (regulated industries require more compliance hours). For a typical mid-market SMB after the first agent: <strong>€5,000–8,000/month</strong> is the typical range."
   - q: "Fixed price or time & material: which should I choose?"
@@ -56,7 +56,7 @@ Data based on Soraia's internal benchmark plus feedback from clients who evaluat
 
 **Timeline**: 1–2 weeks of consulting.
 
-**Market standard**: serious providers offer it **refunded if you proceed** with a sprint, skin in the game for both sides. Soraia's model is a single, simple one: two dedicated people (a Project Manager and an AI Engineer), from €3,000/month. <a href="/en/contact">Let's talk</a>. [Download an anonymised sample report](/en/downloads/ai-assessment-sample) to see exactly what you receive at the end of the assessment.
+**Market standard**: serious providers offer it **refunded if you proceed** with a sprint, skin in the game for both sides. Soraia's model is a single, simple one: three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €3,000/month. <a href="/en/contact">Let's talk</a>.
 
 **Provider that skips the assessment**: red flag. It means they will sell you a sprint without understanding your real processes.
 
@@ -275,9 +275,9 @@ On €10M revenue: a 1% budget = **€100,000/year total** (sprints + retainer +
 
 ## What Soraia does differently on costs
 
-Disclaimer: this guide is written by Soraia, an AI agency. Soraia's model is a single, simple one: two dedicated people (a Project Manager and an AI Engineer), from €3,000/month. <a href="/en/contact">Let's talk</a>.
+Disclaimer: this guide is written by Soraia, an AI agency. Soraia's model is a single, simple one: three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €3,000/month. <a href="/en/contact">Let's talk</a>.
 
-**Our "if it doesn't work, you don't pay" guarantee.** The primary metric is written into the contract. If we don't hit it at 60–90 days, we work for free until we do.
+**Our "first month satisfied or refunded" guarantee.** The primary metric is written into the contract. If the first month doesn't convince you, we refund it or keep working for free until you're satisfied.
 
 **Client's code from day one.** Zero lock-in, zero disguised "perpetual subscriptions".
 

@@ -95,7 +95,7 @@ If you are already aligned with the AI Act, the delta from law 132/2025 is manag
 4. **Appoint an internal owner** for AI and compliance, even part-time, often the DPO.
 5. **Do not start from compliance to drive adoption**: start from the process, then wrap governance on top.
 
-If you do not yet have a map of your AI systems, we build it in the assessment. And if you need a partner who knows the Italian context (business software, e-invoicing, GDPR), our [page on AI consulting in Italy](/en/guide/ai-consulting-italy) explains how we work.
+If you do not yet have a map of your AI systems, we build it in the process audit. And if you need a partner who knows the Italian context (business software, e-invoicing, GDPR), our [page on AI consulting in Italy](/en/guide/ai-consulting-italy) explains how we work.
 
 ## When a dedicated consultancy is NOT needed
 

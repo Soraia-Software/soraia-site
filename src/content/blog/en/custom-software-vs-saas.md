@@ -22,7 +22,7 @@ faq:
   - q: "When does an off-the-shelf SaaS beat custom software?"
     a: "When the process isn't a competitive advantage and a market leader already nails it: email, e-invoicing, e-signature, basic HR. There a standard <strong>SaaS</strong> costs less, updates itself, and isn't yours to maintain. Custom only pays off where the process <em>is</em> the business."
   - q: "What does custom software really cost versus a SaaS?"
-    a: "The SaaS subscription looks cheaper, but you have to multiply it by years and seats, then add the hidden cost of missing integrations and workarounds. At Soraia the model is one: from <strong>€3,000/month</strong>, two dedicated people (a Project Manager and an AI Engineer), first release in <strong>4 weeks</strong>, and the code is yours from day one, no perpetual fee."
+    a: "The SaaS subscription looks cheaper, but you have to multiply it by years and seats, then add the hidden cost of missing integrations and workarounds. At Soraia the model is one: from <strong>€3,000/month</strong>, three dedicated people (an Account Manager, a Project Manager and an AI Engineer), first release in <strong>4 weeks</strong>, and the code is yours from day one, no perpetual fee."
   - q: "How do I avoid lock-in with a custom software vendor?"
     a: "Put it in the contract. With us the <strong>code is the client's from day one</strong>, no perpetual subscriptions, no forced dependency. With a SaaS, lock-in is structural: your data and automations live inside their pricing model, and switching costs you a migration."
   - q: "Doesn't custom software mean long, risky projects?"
@@ -69,7 +69,7 @@ Count everything:
 - **The missing integrations.** If the SaaS doesn't talk to your ERP (TeamSystem, Zucchetti, Odoo), you pay someone to copy data by hand. That's data entry in disguise.
 - **The workarounds.** Every "bridge" spreadsheet is time someone spends every week, forever.
 
-Custom software front-loads the cost. In our model: from **€3,000/month**, two dedicated people (a Project Manager and an AI Engineer), first release in **4 weeks**. After that the marginal cost per seat is zero, and there's no subscription that grows with the company. The honest comparison runs over 24-36 months, not the first payment.
+Custom software front-loads the cost. In our model: from **€3,000/month**, three dedicated people (an Account Manager, a Project Manager and an AI Engineer), first release in **4 weeks**. After that the marginal cost per seat is zero, and there's no subscription that grows with the company. The honest comparison runs over 24-36 months, not the first payment.
 
 ## Criterion 3. What it costs to leave (lock-in)
 
@@ -100,4 +100,4 @@ For everything else, core, stable, high-volume process with a SaaS that's too ti
 
 A note on method: before you decide, measure. Without a baseline of what the process costs today (in hours, errors, workarounds), "custom is worth it" stays an opinion. If you want the numbers before you spend, start with our [guide to AI consulting costs](/en/guide/ai-consulting-costs).
 
-We do this from Biella, across 40+ projects delivered in 11 countries, with the same guarantee as always, **paghi solo se funziona** (you only pay if it works): the target is written into the contract, and if we don't hit it, we work for free until we do, or we refund. If you want to figure out which side you're on, [let's talk](/en/contact), 20 minutes, no pitch, or run the [check-up](/en/check-up).
+We do this from Biella, across 40+ projects delivered, with the same guarantee as always: **first month satisfied or refunded**. The target is written into the contract, and if the first month doesn't convince you, we refund it or keep working for free until you're satisfied. If you want to figure out which side you're on, [let's talk](/en/contact), 20 minutes, no pitch, or run the [check-up](/en/check-up).

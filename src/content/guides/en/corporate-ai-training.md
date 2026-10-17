@@ -194,7 +194,7 @@ Solutions that work (tested across 30+ Soraia clients):
 
 ## How Soraia Handles AI Adoption
 
-Full disclosure: Soraia is an Italian AI agency, and adoption is one of our two service lines (the other is <a href="/en/guide/ai-agents-for-business">custom AI agents</a>).
+Full disclosure: Soraia is an Italian AI agency, and adoption work accompanies the <a href="/en/guide/ai-agents-for-business">custom AI agents</a> we build.
 
 Our model differs on 3 points:
 

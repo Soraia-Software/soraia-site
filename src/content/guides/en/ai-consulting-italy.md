@@ -32,7 +32,7 @@ faq:
   - q: "How many AI consultancies should I talk to before choosing?"
     a: "<strong>3 comparisons</strong> is the sweet spot. Fewer than 2 and you have no benchmark. More than 4 and you start getting confused and dragging out the decision. Aim for 1 Big4, 1 specialist agency, and 1 indie/freelance to get the full triangle."
   - q: "What happens if the AI consulting engagement fails?"
-    a: "It depends on the contract. Without an explicit guarantee: you pay for the time spent regardless. With a 'no result, no fee' guarantee (e.g. Soraia): you don't pay for the sprint, or you receive a full refund. <strong>Check this clause before signing</strong>, it's the single most important item in the contract."
+    a: "It depends on the contract. Without an explicit guarantee: you pay for the time spent regardless. With an explicit guarantee (e.g. Soraia: first month satisfied or refunded): if the first month doesn't convince you, you get a refund. <strong>Check this clause before signing</strong>, it's the single most important item in the contract."
 ---
 
 In Italy in 2026, demand for AI consulting has exploded: in 18 months, hundreds of "AI agencies", consultants, and freelancers have emerged promising to bring artificial intelligence into businesses. Quality varies enormously, promises are often unsustainable, and a SME CEO has about 30 minutes to figure out who is worth their time and who is not.
@@ -124,7 +124,7 @@ A credible provider writes the **primary metric into the contract** and ties the
 - "If we do not achieve X hours saved per recruiter per week within 60 days, we work for free until the target is reached, or provide a full refund."
 - "If the agent does not process 80% of invoices without human intervention within 30 days, the next sprint is free."
 
-Soraia, for instance, offers **"if it doesn't work, you don't pay"** as a standard contractual commitment. It's a strong filter: if a provider won't tie themselves to the result, they probably aren't confident they can deliver it.
+Soraia, for instance, offers **"first month satisfied or refunded"** as a standard contractual commitment. It's a strong filter: if a provider won't tie themselves to the result, they probably aren't confident they can deliver it.
 
 ### 3. Skin in the Game on the Assessment
 
@@ -203,9 +203,9 @@ The process that works for an Italian SME with 10–200 employees:
 
 Full disclosure: this guide is written by Soraia, an Italian AI agency 100% focused on SMEs. Our approach differs from market standards on 4 points.
 
-**1. Two dedicated people (a Project Manager and an AI Engineer), from €3,000/month.** <a href="/en/contact">Let's talk</a>.
+**1. Three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €3,000/month.** <a href="/en/contact">Let's talk</a>.
 
-**2. "If it doesn't work, you don't pay" guarantee written into the contract.** This is not marketing, it is an operational clause with a primary metric and a measurement window.
+**2. "First month satisfied or refunded" guarantee written into the contract.** An operational clause with a primary metric and a measurement window.
 
 **3. Client code from week one.** Zero lock-in. If you want to internalize later, we provide training and documentation.
 

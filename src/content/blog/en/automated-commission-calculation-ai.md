@@ -99,7 +99,7 @@ But if you have multiple plans, many deals and recurring disputes, the case is s
 
 With Numeraria, a payroll and accounting firm, AI agents on quotes, hours and reconciliations gave **management back roughly half a month**, time that used to vanish into repetitive manual work. Commission calculation is in the same family: high volume, precise rules, structured output.
 
-Our "you only pay if it works" guarantee applies here too: we set the target (e.g. hours/month recovered on commission calculation) at assessment and measure it 30 days after go-live. If we miss it, we work for free until we hit it or refund the sprint.
+Our "first month satisfied or refunded" guarantee applies here too: we set the target (e.g. hours/month recovered on commission calculation) in the process audit and measure it 30 days after go-live. If the first month doesn't convince you, we refund it or keep working for free until you're satisfied.
 
 ## Where to start
 

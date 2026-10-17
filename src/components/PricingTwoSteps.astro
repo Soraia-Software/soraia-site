@@ -1,6 +1,5 @@
 ---
 import SectionHeader from "./SectionHeader.astro";
-import { path } from "~/lib/i18n";
 
 interface Props {
   bg?: "white" | "ink-50";
@@ -9,81 +8,87 @@ interface Props {
 }
 const { bg = "white", lang = "it", variant = "ai" } = Astro.props;
 
+// Due modi di partire (analisi dei processi oppure direttamente il primo sprint),
+// stesso modello di prezzo per entrambi: tre persone dedicate, da 3.000 € al mese.
 const copy = {
   ai: {
     en: {
-      eyebrow: "How we start",
-      title: "Two steps. Fixed price. Guarantee included.",
-      subtitle: "No 12-month roadmaps, no endless quotes. We start with a clear assessment and decide together whether to move forward.",
+      eyebrow: "Where to start",
+      title: "Where to start is up to you.",
+      subtitle: "No 12-month roadmaps, no endless quotes. A process audit on site, or straight into the first sprint: you decide, and the first month is satisfied or refunded.",
       step1_eyebrow: "Starting point",
-      step1_desc: "We get into your real operations: we map the processes you run today, identify the bottlenecks, assess the tools you use, and hand you a concrete action plan.",
-      investment: "Investment",
-      duration: "Duration",
-      step1_duration: "1-2 wks",
+      step1_name: "Process audit",
+      step1_desc: "When a shared screen is not enough, we come on site: we interview people at their desks, observe the work as it really happens and map the flows in the field. Out of it come the right priorities and an action plan your team recognises as its own.",
+      metric_label: "Format",
+      step1_metric: "On site",
       walk_away: "What you walk away with",
       step1_items: [
-        "A map of your operational processes",
-        "Bottlenecks identified and prioritized",
-        "An assessment of your current tool stack",
-        "A step-by-step operational action plan",
+        "A map of your real operational flows",
+        "Interviews with the people who do the work",
+        "Priorities with the expected impact of each",
+        "An action plan the team recognises as its own",
       ],
-      sample: "See a sample report",
       step2_eyebrow: "We build",
+      step2_name: "AI Engineering",
       guarantee: "Guarantee",
-      step2_desc: 'We build the agents, integrate them into your systems, and train your team. First delivery in 4 weeks. <strong class="text-white">If it doesn\'t work, you don\'t pay.</strong>',
-      first_delivery: "First delivery",
-      step2_delivery: "4 wks",
+      step2_desc: 'We build the agents and the software, integrate them with your systems and train your team, in iterative sprints. First release in production in 4 weeks. <strong class="text-white">First month satisfied or refunded.</strong>',
+      first_delivery: "First release",
+      step2_metric: "4 wks",
       step2_items: [
         "AI agents live in production",
         "Integration with your systems",
-        "Team training (AI Adoption included)",
+        "Team training on the new flows",
         "Your code, full documentation",
         "30 days of post go-live hypercare",
       ],
-      footer: 'The assessment pins down the process to tackle and the measurable target; then the two dedicated people start on the first milestones, which <strong class="text-ink-900">you approve before we move on</strong>.',
+      footer: 'The audit pins down the process to tackle and the measurable target; then the three dedicated people start on the first milestones, which <strong class="text-ink-900">you approve before we move on</strong>.',
+      pricing_link: "See pricing",
+      pricing_tail: ": three dedicated people, from 3,000 € per month, even for a single month.",
     },
     it: {
-      eyebrow: "Come iniziamo",
-      title: "Due passi. Prezzo definito. Garanzia inclusa.",
-      subtitle: "Niente roadmap a 12 mesi, niente preventivi infiniti. Si parte da un assessment chiaro e si decide insieme se andare avanti.",
+      eyebrow: "Da dove partire",
+      title: "Da dove partire dipende da te.",
+      subtitle: "Niente roadmap a 12 mesi, niente preventivi infiniti. Analisi dei processi in azienda oppure direttamente il primo sprint: decidi tu, e il primo mese è soddisfatti o rimborsati.",
       step1_eyebrow: "Punto di partenza",
-      step1_desc: "Entriamo nella tua operatività reale: mappiamo i processi che fai oggi, identifichiamo i bottleneck, valutiamo gli strumenti che usi, ti consegniamo un piano d'azione concreto.",
-      investment: "Investimento",
-      duration: "Durata",
-      step1_duration: "1-2 sett.",
+      step1_name: "Analisi dei processi",
+      step1_desc: "Quando uno schermo condiviso non basta, veniamo in azienda: intervistiamo le persone alla loro scrivania, osserviamo il lavoro com'è davvero e mappiamo i flussi sul campo. Ne escono le priorità giuste e un piano d'azione che il team riconosce come suo.",
+      metric_label: "Formato",
+      step1_metric: "In azienda",
       walk_away: "Cosa porti via",
       step1_items: [
-        "Mappa dei tuoi processi operativi",
-        "Bottleneck identificati con priorità",
-        "Valutazione dello stack tool attuale",
-        "Action plan operativo step-by-step",
+        "Mappa dei tuoi flussi operativi reali",
+        "Interviste alle persone che fanno il lavoro",
+        "Priorità con l'impatto atteso di ciascuna",
+        "Piano d'azione che il team riconosce come suo",
       ],
-      sample: "Vedi un sample del report",
       step2_eyebrow: "Costruiamo",
+      step2_name: "AI Engineering",
       guarantee: "Garanzia",
-      step2_desc: 'Costruiamo gli agenti, integriamo sui tuoi sistemi, formiamo il team. Prima delivery in 4 settimane. <strong class="text-white">Se non sei soddisfatto, non paghi.</strong>',
-      first_delivery: "Prima delivery",
-      step2_delivery: "4 sett.",
+      step2_desc: 'Costruiamo gli agenti e il software, integriamo sui tuoi sistemi e formiamo il team, a sprint iterativi. Primo rilascio in produzione in 4 settimane. <strong class="text-white">Primo mese soddisfatti o rimborsati.</strong>',
+      first_delivery: "Primo rilascio",
+      step2_metric: "4 sett.",
       step2_items: [
         "Agenti IA live in produzione",
         "Integrazione con i tuoi sistemi",
-        "Formazione del team (AI Adoption inclusa)",
+        "Formazione del team sui nuovi flussi",
         "Codice tuo, documentazione completa",
         "30 giorni di hypercare post go-live",
       ],
-      footer: "L'assessment fissa il processo da attaccare e il target misurabile; poi partono le due figure dedicate con le prime milestone, che <strong class=\"text-ink-900\">approvi tu prima di proseguire</strong>.",
+      footer: "L'analisi fissa il processo da attaccare e il target misurabile; poi partono le tre persone dedicate con le prime milestone, che <strong class=\"text-ink-900\">approvi tu prima di proseguire</strong>.",
+      pricing_link: "Vedi i prezzi",
+      pricing_tail: ": tre persone dedicate, a partire da 3.000 € al mese, anche solo per un mese.",
     },
   },
   software: {
     en: {
-      eyebrow: "How we start",
-      title: "Two steps. Fixed price. Your code.",
+      eyebrow: "Where to start",
+      title: "Two steps. Clear scope. Your code.",
       subtitle: "No endless quotes, no 12-month projects. We start with clear scoping and decide together what to build, with a first release in a few weeks.",
       step1_eyebrow: "Starting point",
+      step1_name: "Discovery & Scoping",
       step1_desc: "We get into your real processes: we map how you work today, define the functional spec and architecture, and hand you a concrete development plan with estimate and roadmap.",
-      investment: "Investment",
-      duration: "Duration",
-      step1_duration: "1-2 wks",
+      metric_label: "Duration",
+      step1_metric: "1-2 wks",
       walk_away: "What you walk away with",
       step1_items: [
         "A map of the processes to digitalize",
@@ -91,12 +96,12 @@ const copy = {
         "A sprint-based release roadmap",
         "A clear estimate of timeline and cost",
       ],
-      sample: "",
       step2_eyebrow: "We build",
+      step2_name: "Build Sprint",
       guarantee: "Guarantee",
-      step2_desc: 'We build in iterative sprints, integrate with your systems, ship to production, and train your team. First release in 4 weeks. <strong class="text-white">Your code from day one, zero lock-in.</strong>',
+      step2_desc: 'We build in iterative sprints, integrate with your systems, ship to production, and train your team. First release in 4 weeks. <strong class="text-white">Your code from day one, first month satisfied or refunded.</strong>',
       first_delivery: "First release",
-      step2_delivery: "4 wks",
+      step2_metric: "4 wks",
       step2_items: [
         "Web app / mobile / internal tools in production",
         "Integration with your systems (CRM, ERP, line-of-business)",
@@ -104,17 +109,19 @@ const copy = {
         "Iterative sprints with weekly demos",
         "30 days of post go-live hypercare",
       ],
-      footer: 'The scoping pins down the spec and the architecture; then the two dedicated people start on the first releases, which <strong class="text-ink-900">you approve before we move on</strong>.',
+      footer: 'The scoping pins down the spec and the architecture; then the three dedicated people start on the first releases, which <strong class="text-ink-900">you approve before we move on</strong>.',
+      pricing_link: "See pricing",
+      pricing_tail: ": three dedicated people, from 3,000 € per month, even for a single month.",
     },
     it: {
-      eyebrow: "Come iniziamo",
-      title: "Due passi. Prezzo definito. Codice tuo.",
+      eyebrow: "Da dove partire",
+      title: "Due passi. Perimetro chiaro. Codice tuo.",
       subtitle: "Niente preventivi infiniti né progetti di 12 mesi. Si parte da uno scoping chiaro e si decide insieme cosa costruire, con un primo rilascio in poche settimane.",
       step1_eyebrow: "Punto di partenza",
+      step1_name: "Discovery & Scoping",
       step1_desc: "Entriamo nei tuoi processi reali: mappiamo come lavori oggi, definiamo le specifiche funzionali e l'architettura, ti consegniamo un piano di sviluppo concreto con stima e roadmap.",
-      investment: "Investimento",
-      duration: "Durata",
-      step1_duration: "1-2 sett.",
+      metric_label: "Durata",
+      step1_metric: "1-2 sett.",
       walk_away: "Cosa porti via",
       step1_items: [
         "Mappa dei processi da digitalizzare",
@@ -122,12 +129,12 @@ const copy = {
         "Roadmap di rilascio a sprint",
         "Stima chiara di tempi e costi",
       ],
-      sample: "",
       step2_eyebrow: "Costruiamo",
+      step2_name: "Build Sprint",
       guarantee: "Garanzia",
-      step2_desc: 'Sviluppiamo a sprint iterativi, integriamo sui tuoi sistemi, rilasciamo in produzione e formiamo il team. Primo rilascio in 4 settimane. <strong class="text-white">Codice tuo dal primo giorno, zero lock-in.</strong>',
+      step2_desc: 'Sviluppiamo a sprint iterativi, integriamo sui tuoi sistemi, rilasciamo in produzione e formiamo il team. Primo rilascio in 4 settimane. <strong class="text-white">Codice tuo dal primo giorno, primo mese soddisfatti o rimborsati.</strong>',
       first_delivery: "Primo rilascio",
-      step2_delivery: "4 sett.",
+      step2_metric: "4 sett.",
       step2_items: [
         "Web app / mobile / tool interni in produzione",
         "Integrazione con i tuoi sistemi (CRM, ERP, gestionali)",
@@ -135,16 +142,15 @@ const copy = {
         "Sprint iterativi con demo settimanali",
         "30 giorni di hypercare post go-live",
       ],
-      footer: "Lo scoping fissa le specifiche e l'architettura; poi partono le due figure dedicate con i primi rilasci, che <strong class=\"text-ink-900\">approvi tu prima di proseguire</strong>.",
+      footer: "Lo scoping fissa le specifiche e l'architettura; poi partono le tre persone dedicate con i primi rilasci, che <strong class=\"text-ink-900\">approvi tu prima di proseguire</strong>.",
+      pricing_link: "Vedi i prezzi",
+      pricing_tail: ": tre persone dedicate, a partire da 3.000 € al mese, anche solo per un mese.",
     },
   },
 }[variant][lang];
 
 const t = copy;
-const stepNames = variant === "software"
-  ? { step1: "Discovery & Scoping", step2: "Build Sprint" }
-  : { step1: "AI Readiness Assessment", step2: "Co-Building & Adoption Sprint" };
-const sampleHref = path("/downloads/ai-assessment-sample", lang);
+const pricingHref = lang === "en" ? "/en/pricing" : "/prezzi";
 ---
 
 <section id="come-iniziamo" class={`section ${bg === "white" ? "bg-white" : "bg-ink-50"}`}>
@@ -157,7 +163,7 @@ const sampleHref = path("/downloads/ai-assessment-sample", lang);
     />
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-      <!-- STEP 01: ASSESSMENT -->
+      <!-- STEP 01: ANALISI / SCOPING -->
       <article class="card-editorial relative reveal !p-8 md:!p-10 flex flex-col">
         <div class="flex items-baseline gap-4 mb-6">
           <span class="text-[3rem] font-semibold text-ink-200 leading-none">01</span>
@@ -165,7 +171,7 @@ const sampleHref = path("/downloads/ai-assessment-sample", lang);
         </div>
 
         <h3 class="text-[1.75rem] md:text-[2rem] font-medium tracking-tight text-ink-900 leading-[1.1] mb-3">
-          {stepNames.step1}
+          {t.step1_name}
         </h3>
         <p class="text-[15px] text-ink-700 leading-relaxed text-pretty mb-7 flex-1">
           {t.step1_desc}
@@ -174,8 +180,8 @@ const sampleHref = path("/downloads/ai-assessment-sample", lang);
         <div class="hairline mb-6"></div>
 
         <div class="mb-6">
-          <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-1.5">{t.duration}</p>
-          <p class="text-2xl md:text-3xl font-semibold text-ink-900 leading-none">{t.step1_duration}</p>
+          <p class="text-[10px] uppercase tracking-[0.16em] text-ink-500 font-semibold mb-1.5">{t.metric_label}</p>
+          <p class="text-2xl md:text-3xl font-semibold text-ink-900 leading-none">{t.step1_metric}</p>
         </div>
 
         <div>
@@ -190,16 +196,6 @@ const sampleHref = path("/downloads/ai-assessment-sample", lang);
               </li>
             ))}
           </ul>
-
-          {t.sample && (
-            <a href={sampleHref} class="mt-6 inline-flex items-center gap-2 text-[13px] font-medium group" style="color: var(--color-brand);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
-              {t.sample}
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            </a>
-          )}
         </div>
       </article>
 
@@ -221,7 +217,7 @@ const sampleHref = path("/downloads/ai-assessment-sample", lang);
           </div>
 
           <h3 class="text-[1.75rem] md:text-[2rem] font-medium tracking-tight text-white leading-[1.1] mb-3">
-            {stepNames.step2}
+            {t.step2_name}
           </h3>
           <p class="text-[15px] text-white/75 leading-relaxed text-pretty mb-7 flex-1" set:html={t.step2_desc}></p>
 
@@ -229,7 +225,7 @@ const sampleHref = path("/downloads/ai-assessment-sample", lang);
 
           <div class="mb-6">
             <p class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-1.5">{t.first_delivery}</p>
-            <p class="text-2xl md:text-3xl font-semibold text-white leading-none">{t.step2_delivery}</p>
+            <p class="text-2xl md:text-3xl font-semibold text-white leading-none">{t.step2_metric}</p>
           </div>
 
           <div>
@@ -251,8 +247,8 @@ const sampleHref = path("/downloads/ai-assessment-sample", lang);
 
     <p class="text-center text-sm text-ink-500 mt-10 max-w-2xl mx-auto reveal" set:html={t.footer}></p>
     <p class="text-center text-sm mt-3 max-w-2xl mx-auto reveal">
-      <a href="/prezzi" style="color: var(--color-brand); font-weight: 600;">{lang === "en" ? "See pricing" : "Vedi i prezzi"}</a>
-      <span class="text-ink-500">{lang === "en" ? ": two dedicated people, from 3,000 € per month." : ": due figure dedicate, a partire da 3.000 € al mese."}</span>
+      <a href={pricingHref} style="color: var(--color-brand); font-weight: 600;">{t.pricing_link}</a>
+      <span class="text-ink-500">{t.pricing_tail}</span>
     </p>
   </div>
 </section>

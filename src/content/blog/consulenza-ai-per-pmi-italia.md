@@ -20,7 +20,7 @@ faq:
   - q: "Quanto tempo di risposta ai candidati è realistico?"
     a: "Dipende dal volume e dai sistemi. Nel case <strong>Stars Be Original</strong> (recruitment hospitality) l'agente ha gestito 20k+ candidati con <strong>meno di 1 minuto</strong> di risposta. Il punto non è la velocità in sé, ma non perdere candidati buoni mentre la casella email si accumula."
   - q: "Come misuro se l'agente HR ha davvero funzionato?"
-    a: "Con una <strong>baseline cronometrata</strong> prima di iniziare e <strong>un solo metric primario</strong> (es. ore/persona/settimana sullo smistamento CV, o time-to-first-contact). Senza baseline ogni claim di risparmio è un'opinione. Lo scriviamo nel contratto con la garanzia <strong>paghi solo se funziona</strong>."
+    a: "Con una <strong>baseline cronometrata</strong> prima di iniziare e <strong>un solo metric primario</strong> (es. ore/persona/settimana sullo smistamento CV, o time-to-first-contact). Senza baseline ogni claim di risparmio è un'opinione. Lo scriviamo nel contratto, con la garanzia <strong>primo mese soddisfatti o rimborsati</strong>."
   - q: "Quando NON conviene un agente IA nel recruitment?"
     a: "Se assumi poche persone l'anno con profili molto vari, il volume non giustifica un agente su misura: meglio strumenti pronti. L'agente conviene dove c'è alto volume ripetitivo (candidature a centinaia, screening ricorrente, hiring spike stagionali)."
 lang: "it"
@@ -82,7 +82,7 @@ Senza baseline, ogni claim di risparmio è un'opinione da riunione. Il minimo si
 - **Un solo metric primario:** ore/persona/settimana sullo smistamento CV, oppure time-to-first-contact sul candidato. Uno solo.
 - **Una finestra chiara:** misuri a 30 giorni dal go-live, non prima. Prima misuri solo il rumore dell'adozione.
 
-È proprio perché costruiamo questa misurazione che possiamo tenere la garanzia **paghi solo se funziona**: il target del metric è scritto nel contratto. Se non lo raggiungiamo, lavoriamo gratis finché succede, oppure rimborsiamo.
+È proprio perché costruiamo questa misurazione che possiamo tenere la garanzia **primo mese soddisfatti o rimborsati**: il target del metric è scritto nel contratto. Se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto.
 
 ## Quando NON conviene
 

@@ -68,11 +68,11 @@ faq:
   - q: "Un agente IA sostituisce completamente il BPO?"
     a: "Raramente, e non e' l'obiettivo. L'agente IA e' bravissimo su richieste ripetitive e triage, ma sui casi ambigui, emotivi o che richiedono negoziazione serve <strong>l'escalation a un umano</strong>. Il modello piu' solido e' ibrido: l'agente gestisce il primo livello, gli umani i casi complessi. Vedi come lavoriamo sul <a href='/customer-support'>customer support</a>."
   - q: "Quanto costa partire con un agente IA rispetto a un BPO?"
-    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese. Un BPO ha invece un costo ricorrente per operatore o per ticket, basso all'inizio ma <strong>lineare</strong> al crescere dei volumi. La convenienza dipende dai tuoi numeri: <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese. Un BPO ha invece un costo ricorrente per operatore o per ticket, basso all'inizio ma <strong>lineare</strong> al crescere dei volumi. La convenienza dipende dai tuoi numeri: <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "L'agente IA rispetta il GDPR e l'AI Act?"
     a: "Si'. Gli <a href='/ai-agents'>agenti IA</a> di Soraia sono GDPR-compliant, con infrastruttura europea quando richiesto, DPA art. 28 inclusa e <strong>audit log immutabile su ogni decisione</strong>. Nessun training degli LLM sui dati del cliente."
   - q: "E se l'agente non raggiunge la qualita' promessa?"
-    a: "Con Soraia vale la garanzia <strong>paghi solo se sei soddisfatto</strong>: si fissa un target misurabile in assessment (es. quota di ticket risolti in autonomia) e, se al go-live piu' 30 giorni di hypercare non e' raggiunto, si lavora gratis finche' non lo e' oppure si rimborsa lo sprint."
+    a: "Con Soraia vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: si fissa un target misurabile in fase di analisi (es. quota di ticket risolti in autonomia) e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto."
 related: []
 featured: false
 pubDate: 2026-09-29

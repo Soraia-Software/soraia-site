@@ -99,7 +99,7 @@ Se invece hai piani multipli, molti deal e contestazioni ricorrenti, il caso è 
 
 Con Numeraria, uno studio paghe e contabilità, agenti IA su preventivi, ore e riconciliazioni hanno restituito **circa metà mese al management**, tempo che prima spariva in lavoro manuale ripetitivo. Il calcolo provvigioni è nella stessa famiglia: alto volume, regole precise, output strutturato.
 
-La nostra garanzia "paghi solo se funziona" si applica anche qui: fissiamo il target (es. ore/mese recuperate sul calcolo provvigioni) in assessment, lo misuriamo a 30 giorni dal go-live. Se non lo raggiungiamo, lavoriamo gratis finché non succede o rimborsiamo lo sprint.
+La nostra garanzia "primo mese soddisfatti o rimborsati" si applica anche qui: fissiamo il target (es. ore/mese recuperate sul calcolo provvigioni) in fase di analisi, lo misuriamo a 30 giorni dal go-live. Se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto.
 
 ## Da dove iniziare
 

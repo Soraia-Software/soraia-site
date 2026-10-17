@@ -34,7 +34,7 @@ optionB:
     - "Frees real hours: the process runs without constant human oversight"
     - "Scales with volume without adding headcount"
     - "Consistent and traceable: immutable audit log on every decision"
-    - "With Soraia the target is set in the assessment, e.g. 5h/person/week recovered"
+    - "With Soraia the target is set in the process audit, e.g. 5h/person/week recovered"
   contro:
     - "More upfront work: rules, edge cases and escalation must be defined"
     - "Needs trust and governance: who oversees what the agent does"
@@ -68,11 +68,11 @@ faq:
   - q: "What is the real difference between a copilot and an autonomous agent?"
     a: "A copilot <strong>suggests</strong>: it proposes drafts and actions, but the human decides and confirms every step. An autonomous agent <strong>executes</strong>: it completes the process itself (extract, reconcile, qualify, send) and only calls a human on edge cases. The difference is not the technology but how much control you delegate."
   - q: "Is an autonomous agent risky? Who controls what it does?"
-    a: "A well-built agent has defined rules, <strong>escalation to a human on edge cases</strong> and an immutable audit log on every decision. With Soraia a measurable target and the boundaries of autonomy are set in the assessment; the agent does no more than it is allowed. See how we work on <a href='/en/ai-agents'>AI Agents</a>."
+    a: "A well-built agent has defined rules, <strong>escalation to a human on edge cases</strong> and an immutable audit log on every decision. With Soraia a measurable target and the boundaries of autonomy are set in the process audit; the agent does no more than it is allowed. See how we work on <a href='/en/ai-agents'>AI Agents</a>."
   - q: "Which one should I start with?"
     a: "It depends on the process. On repetitive, high-volume tasks (e.g. reconciliations or invoice extraction in <a href='/en/finance'>Finance</a>) an autonomous agent recovers more hours. On variable, high-judgment tasks a copilot is better. Often the smart path is a journey: copilot first to build trust, autonomy later where the numbers justify it."
   - q: "How much time do you really save with an autonomous agent?"
-    a: "It depends on the process, but the target is set before you start: for example <strong>5 hours per person per week</strong> recovered on a repetitive task. With Soraia the pay-only-if-satisfied guarantee applies: if the target is not met by go-live + 30 days, we work for free until it is. To work out which approach fits you, <a href='/en/contact'>let's talk</a>."
+    a: "It depends on the process, but the target is set before you start: for example <strong>5 hours per person per week</strong> recovered on a repetitive task. With Soraia the first month satisfied or refunded guarantee applies: if the first month doesn't convince you, we refund it or keep working for free until you're satisfied. To work out which approach fits you, <a href='/en/contact'>let's talk</a>."
 related: []
 featured: false
 pubDate: 2026-08-27

@@ -6,7 +6,7 @@ import FAQ from "~/components/FAQ.astro";
 
 const title = "AI Agents for Your Processes | Soraia";
 const description =
-  "Custom AI agents for six high-impact areas in SMEs. From €3,000/month, two dedicated people. First delivery in 4 weeks, you only pay if you're satisfied.";
+  "Custom AI agents for six high-impact areas in SMEs. From €3,000/month with three dedicated people, first release in production in 4 weeks, first month satisfied or refunded.";
 
 const areas = [
   {
@@ -131,19 +131,19 @@ const icons = {
 const faqs = [
   {
     q: "What exactly is an \"AI agent\"?",
-    a: "An AI agent is software that performs tasks autonomously: it reads data, makes decisions, and acts on your systems (ATS, CRM, ERP). It's not ChatGPT suggesting answers, it's a digital worker that <strong>does the work</strong> on the processes you choose, instead of your team.",
+    a: "An AI agent is software that performs tasks autonomously: it reads data, makes decisions, and acts on your systems (ATS, CRM, ERP). Unlike ChatGPT, which suggests answers, it's a digital worker that <strong>does the work</strong> on the processes you choose, instead of your team.",
   },
   {
     q: "Which systems does it integrate with?",
-    a: "Bullhorn, Salesforce, Bee-Staffing, In-Recruiting, Odoo, Fatture in Cloud, HubSpot, Pipedrive, legacy Italian ERP systems, proprietary ATS. If you have a custom tool, we validate it during the assessment.",
+    a: "Bullhorn, Salesforce, Bee-Staffing, In-Recruiting, Odoo, Fatture in Cloud, HubSpot, Pipedrive, legacy Italian ERP systems, proprietary ATS. If you have a custom tool, we check it during the process audit.",
   },
   {
     q: "How long before we see results?",
-    a: "<strong>4 weeks from kick-off to the first agent in production.</strong> Week 1: discovery and baseline. Weeks 2–3: build. Week 4: deploy + team training + first measurement. <strong>30 days of hypercare included</strong> after go-live.",
+    a: "<strong>4 weeks from kick-off to the first agent in production</strong>, on your real processes. From there we continue in sprints, one release at a time, with <strong>30 days of hypercare included</strong> after go-live.",
   },
   {
-    q: "What do you mean by \"you only pay if you're satisfied\"?",
-    a: "The sprint has a clear target defined in the assessment (e.g. <em>a CV screening agent that recovers 5 hours/recruiter/week</em>). If the target isn't met at go-live + 30 days of hypercare, we work for free until it is, or we refund the sprint. <strong>No contract small print.</strong>",
+    q: "What do you mean by \"first month satisfied or refunded\"?",
+    a: "Every sprint has a clear target set together (e.g. <em>a CV screening agent that recovers 5 hours/recruiter/week</em>), and you approve every milestone before we move on. If the first month doesn't convince you, we refund you; alternatively we work for free until you are satisfied. <strong>No contract small print.</strong>",
   },
   {
     q: "How do you handle GDPR, the AI Act, and sensitive data?",
@@ -172,14 +172,13 @@ const jsonLd = [
     offers: [
       {
         "@type": "Offer",
-        name: "AI Readiness Assessment",
-        
-        description: "Initial assessment, 1-2 weeks.",
+        name: "Process audit",
+        description: "On-site audit: desk-side interviews, process map, priorities and action plan.",
       },
       {
         "@type": "Offer",
-        name: "Co-Building & Adoption Sprint",
-        description: "First delivery in 4 weeks. You only pay if you're satisfied.",
+        name: "AI Engineering",
+        description: "Sprint-based development, first release in production in 4 weeks. From €3,000/month with three dedicated people, first month satisfied or refunded.",
       },
     ],
   },
@@ -233,9 +232,8 @@ const jsonLd = [
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </span>
           </a>
-          <a href="/en/downloads/ai-assessment-sample" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40 inline-flex items-center gap-2">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download sample report
+          <a href="/en/pricing" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
+            See pricing
           </a>
         </div>
 
@@ -249,7 +247,7 @@ const jsonLd = [
         <div class="mt-10 pt-8 border-t fade-up fade-up-delay-3" style="border-color: rgba(255,255,255,0.12);">
           <p class="text-[10px] uppercase tracking-[0.18em] mb-3" style="color: rgba(255,255,255,0.45);">They work with us</p>
           <p class="text-[13.5px] leading-relaxed" style="color: rgba(255,255,255,0.7);">
-            40+ projects · 11 countries · APraise · Numeraria · LIFTT · Navily · Stars Be Original
+            40+ projects delivered · APraise · Numeraria · LIFTT · Navily · Stars Be Original
           </p>
         </div>
       </div>
@@ -496,7 +494,7 @@ const jsonLd = [
           20 minutes with the CEO. No pitch.
         </h2>
         <p class="mt-5 text-[16px] md:text-[17px] text-ink-600 leading-relaxed text-pretty">
-          We figure out together whether an AI Readiness Assessment makes sense for your situation. No commitment, no sales call.
+          We figure out together where to start in your case: from the process audit or straight into the first sprint. No commitment, no sales call.
         </p>
       </div>
 
@@ -513,15 +511,15 @@ const jsonLd = [
           </div>
         </a>
 
-        <a href="/en/downloads/ai-assessment-sample" class="group rounded-2xl bg-white border border-line hover:border-violet-300 p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-lg no-underline">
+        <a href="/en/case-studies" class="group rounded-2xl bg-white border border-line hover:border-violet-300 p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-lg no-underline">
           <div class="flex items-start gap-4">
             <div class="w-12 h-12 rounded-full bg-violet-50 flex items-center justify-center shrink-0">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
             <div class="flex-1 min-w-0">
-              <p class="text-[11px] uppercase tracking-[0.16em] font-semibold text-violet-700 mb-1">Option 2 · Resources</p>
-              <h3 class="text-[1.15rem] font-semibold text-ink-900 leading-tight mb-1">Download sample report</h3>
-              <p class="text-[13.5px] text-ink-600 leading-relaxed">See what an AI Readiness Assessment looks like. PDF, 22 pages.</p>
+              <p class="text-[11px] uppercase tracking-[0.16em] font-semibold text-violet-700 mb-1">Option 2 · Proof</p>
+              <h3 class="text-[1.15rem] font-semibold text-ink-900 leading-tight mb-1">Hear it from our clients</h3>
+              <p class="text-[13.5px] text-ink-600 leading-relaxed">Unprompted video testimonials and 13 public case studies with real numbers.</p>
             </div>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-2 text-violet-700 group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </div>

@@ -70,9 +70,9 @@ faq:
   - q: "Il voicebot capisce accenti e dialetti italiani?"
     a: "Dipende dalla qualita' del riconoscimento vocale e dal tuning. Accenti marcati, rumore di fondo e dialetto restano il punto piu' fragile del voice: per questo va testato sul tuo pubblico reale prima di metterlo in produzione, e serve sempre un handoff pulito all'operatore quando non capisce."
   - q: "Quanto costa partire con un agente di assistenza?"
-    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in 4 settimane. Il testo di solito richiede meno ore, il voice di piu' per la complessita' aggiuntiva. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in 4 settimane. Il testo di solito richiede meno ore, il voice di piu' per la complessita' aggiuntiva. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "Come evito che l'agente peggiori l'esperienza cliente?"
-    a: "Si fissa un target misurabile in assessment (es. quota di richieste risolte senza operatore) e vale la garanzia <strong>paghi solo se sei soddisfatto</strong>: se al go-live piu' 30 giorni di hypercare il target non e' raggiunto, si lavora gratis finche' non lo e' oppure si rimborsa lo sprint. Il codice e' tuo dal primo giorno."
+    a: "Si fissa un target misurabile in fase di analisi (es. quota di richieste risolte senza operatore) e vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto. Il codice e' tuo dal primo giorno."
   - q: "Entrambi i canali sono compatibili con GDPR e AI Act?"
     a: "Si', se progettati bene. Serve <strong>audit trail delle decisioni</strong>, base giuridica per il trattamento e handoff umano dove richiesto. Il voice aggiunge il tema delle registrazioni e delle trascrizioni, da gestire con la stessa attenzione. Vedi come lavoriamo gli <a href='/ai-agents'>agenti IA</a>."
 related: []

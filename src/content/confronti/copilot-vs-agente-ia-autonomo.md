@@ -34,7 +34,7 @@ optionB:
     - "Libera ore reali: il processo gira senza presidio umano costante"
     - "Scala con il volume senza aggiungere persone"
     - "Coerente e tracciabile: audit log immutabile su ogni decisione"
-    - "Con Soraia il target si fissa in assessment, es. 5h/persona/settimana recuperate"
+    - "Con Soraia il target si fissa in fase di analisi, es. 5h/persona/settimana recuperate"
   contro:
     - "Serve piu' lavoro iniziale: regole, casi limite ed escalation vanno definiti"
     - "Richiede fiducia e governance: chi controlla cosa fa l'agente"
@@ -68,11 +68,11 @@ faq:
   - q: "Qual e' la differenza vera tra copilot e agente autonomo?"
     a: "Il copilot <strong>suggerisce</strong>: propone bozze e azioni, ma l'umano decide e conferma ogni passo. L'agente autonomo <strong>esegue</strong>: porta a termine il processo da solo (estrarre, riconciliare, qualificare, inviare) e chiama l'umano solo sui casi limite. La differenza non e' la tecnologia ma quanto controllo deleghi."
   - q: "Un agente autonomo e' rischioso? Chi controlla cosa fa?"
-    a: "Un agente ben costruito ha regole definite, <strong>escalation all'umano sui casi limite</strong> e un audit log immutabile su ogni decisione. Con Soraia si fissa in assessment un target misurabile e i confini di autonomia; l'agente non fa piu' di cio' che gli e' stato concesso. Vedi come lavoriamo su <a href='/ai-agents'>AI Agents</a>."
+    a: "Un agente ben costruito ha regole definite, <strong>escalation all'umano sui casi limite</strong> e un audit log immutabile su ogni decisione. Con Soraia si fissa in fase di analisi un target misurabile e i confini di autonomia; l'agente non fa piu' di cio' che gli e' stato concesso. Vedi come lavoriamo su <a href='/ai-agents'>AI Agents</a>."
   - q: "Da quale dei due conviene partire?"
     a: "Dipende dal processo. Su attivita' ripetitive ad alto volume (es. riconciliazioni o estrazione fatture in <a href='/finance'>Finance</a>) l'agente autonomo recupera piu' ore. Su attivita' variabili e ad alto giudizio, meglio un copilot. Spesso conviene un percorso: copilot prima per costruire fiducia, autonomia dopo dove i numeri la giustificano."
   - q: "Quanto tempo si risparmia davvero con un agente autonomo?"
-    a: "Dipende dal processo, ma il target si fissa prima di iniziare: ad esempio <strong>5 ore a persona a settimana</strong> recuperate su un'attivita' ripetitiva. Con Soraia vale la garanzia paghi solo se sei soddisfatto: se al go-live + 30 giorni il target non e' raggiunto, si lavora gratis finche' non lo e'. Per capire quale approccio fa per te, <a href='/parliamone'>parliamone</a>."
+    a: "Dipende dal processo, ma il target si fissa prima di iniziare: ad esempio <strong>5 ore a persona a settimana</strong> recuperate su un'attivita' ripetitiva. Con Soraia vale la garanzia primo mese soddisfatti o rimborsati: se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto. Per capire quale approccio fa per te, <a href='/parliamone'>parliamone</a>."
 related: []
 featured: false
 pubDate: 2026-08-27

@@ -70,11 +70,11 @@ faq:
   - q: "How do I tell whether a rule-based flow is enough or I need an agent?"
     a: "Rule of thumb: if you can write every condition as 'if X then Y' without endless branches, <strong>no-code is enough</strong>. If the work depends on free text, on cases you cannot fully predict, or the exceptions keep multiplying, you need an <a href='/en/ai-agents'>AI agent that reasons</a>."
   - q: "How much does an AI agent cost versus a no-code subscription?"
-    a: "A no-code tool costs a monthly fee plus setup: cheap at low volume. A custom AI agent with Soraia starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool, with first delivery in 4 weeks. It is worth it when no-code cannot handle the exceptions or volume makes per-execution costs explode."
+    a: "A no-code tool costs a monthly fee plus setup: cheap at low volume. A custom AI agent with Soraia starts from <strong>€3,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and a combined monthly hours pool, with first delivery in 4 weeks. It is worth it when no-code cannot handle the exceptions or volume makes per-execution costs explode."
   - q: "Is an AI agent as reliable as a deterministic flow?"
     a: "A rule-based flow is predictable by definition; an agent decides, so it needs oversight. That is why every Soraia agent ships with an <strong>immutable audit log on each decision</strong> and defined guardrails: you get the flexibility of judgment with the traceability of automation."
   - q: "What if I build an agent and it does not deliver the expected value?"
-    a: "With Soraia the <strong>pay only if you are satisfied</strong> guarantee applies: a measurable target is set in the assessment and, if it is not met by go-live plus 30 days of hypercare, we work for free until it is. The <a href='/en/software-development'>code stays yours</a> from day one."
+    a: "With Soraia the <strong>first month satisfied or refunded</strong> guarantee applies: a measurable target is set in the process audit and, if the first month doesn't convince you, we refund it or keep working for free until you're satisfied. The <a href='/en/software-development'>code stays yours</a> from day one."
 related: []
 featured: false
 pubDate: 2026-07-21

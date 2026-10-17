@@ -72,7 +72,7 @@ From this, four quadrants:
 - **Irreversible + low impact** (archiving, dedupe): autonomy with a threshold, the agent stops only ambiguous cases.
 - **Irreversible + high impact** (send to a client, payment, decision about a person): **mandatory human approval gate**.
 
-It's a table we fill in with the client during assessment, row by row on the real workflow. This isn't philosophy: it's where the boundary sits between what the [agent runs](/en/ai-agents) alone and what waits for a signature.
+It's a table we fill in with the client during the process audit, row by row on the real workflow. This isn't philosophy: it's where the boundary sits between what the [agent runs](/en/ai-agents) alone and what waits for a signature.
 
 ## A concrete case: multi-stakeholder approvals at Rainplan
 
@@ -101,7 +101,7 @@ Well-designed human oversight isn't "how much control can I add". It's "what's t
 
 ## How we set it up in sprints
 
-During assessment we map the workflow step by step against the reversibility × impact matrix, define the approval gates, and write them into the contract alongside the primary metric. An immutable audit log on every decision is default. So at 30 days after go-live we know not only whether the agent recovered time, but also how often the human was needed, and whether they were really needed.
+During the process audit we map the workflow step by step against the reversibility × impact matrix, define the approval gates, and write them into the contract alongside the primary metric. An immutable audit log on every decision is default. So at 30 days after go-live we know not only whether the agent recovered time, but also how often the human was needed, and whether they were really needed.
 
 ---
 

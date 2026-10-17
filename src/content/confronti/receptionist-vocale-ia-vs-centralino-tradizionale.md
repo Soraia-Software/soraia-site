@@ -70,11 +70,11 @@ faq:
   - q: "Capisce bene l'italiano e i clienti al telefono?"
     a: "La qualita' va <strong>testata sul campo</strong>, non data per scontata: si parte mappando le richieste tipiche e i casi di escalation, e si misura su chiamate reali prima di andare live. Per questo con Soraia lo sprint ha un target chiaro e 30 giorni di hypercare: se non risponde bene abbastanza, si lavora finche' non lo fa. Vedi come lavoriamo sul <a href='/customer-support'>customer support</a>."
   - q: "Quanto costa mettere in piedi un agente vocale IA?"
-    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in <strong>4 settimane</strong>. Il costo per chiamata a regime e' basso e prevedibile; il confronto sensato e' col costo del personale che copre gli stessi orari e picchi. Vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in <strong>4 settimane</strong>. Il costo per chiamata a regime e' basso e prevedibile; il confronto sensato e' col costo del personale che copre gli stessi orari e picchi. Vedi i <a href='/prezzi'>prezzi</a>."
   - q: "E se l'agente sbaglia o la chiamata e' delicata?"
     a: "Si progetta con <strong>regole di escalation</strong>: quando riconosce un caso ambiguo, emotivo o fuori scenario, passa a una persona invece di insistere. Ogni chiamata resta tracciata con log e trascrizione, utile anche per migliorare l'agente nel tempo. Puoi vederne l'uso in un contesto reale sulle <a href='/real-estate'>operazioni immobiliari</a>."
   - q: "Come funziona la garanzia se non porta il risultato?"
-    a: "Vale il modello <strong>paghi solo se sei soddisfatto</strong>: in assessment si fissa un target misurabile (es. chiamate gestite in autonomia o chiamate perse azzerate) e, se al go-live + hypercare non e' raggiunto, si lavora gratis finche' non lo e' oppure si rimborsa lo sprint. Il <a href='/ai-agents'>codice e' tuo dal primo giorno</a>, senza lock-in."
+    a: "Vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: in fase di analisi si fissa un target misurabile (es. chiamate gestite in autonomia o chiamate perse azzerate) e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto. Il <a href='/ai-agents'>codice e' tuo dal primo giorno</a>, senza lock-in."
 related: []
 featured: false
 pubDate: 2026-09-24

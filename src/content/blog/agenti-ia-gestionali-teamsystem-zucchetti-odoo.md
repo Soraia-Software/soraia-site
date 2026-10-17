@@ -26,7 +26,7 @@ faq:
   - q: "Odoo è più facile da integrare di TeamSystem o Zucchetti?"
     a: "In genere sì, perché Odoo nasce con un'API ufficiale (XML-RPC/JSON-RPC) e un modello dati documentato. Ma facile da connettere non significa progetto facile: la difficoltà reale sta nelle regole di business, nelle eccezioni e nel change management del team, non nel protocollo di integrazione."
   - q: "Devo cambiare gestionale per usare gli agenti IA?"
-    a: "No, e se un fornitore te lo chiede come prerequisito, diffida. Gli agenti vanno costruiti <strong>sopra lo stack che già hai</strong>: l'output finisce nei tuoi sistemi tramite i loro canali ufficiali. Il codice è tuo dal primo giorno, niente lock-in, e il modello è <strong>paghi solo se funziona</strong>: se al go-live il target concordato non è raggiunto, si lavora gratis finché non lo è oppure si rimborsa lo sprint."
+    a: "No, e se un fornitore te lo chiede come prerequisito, diffida. Gli agenti vanno costruiti <strong>sopra lo stack che già hai</strong>: l'output finisce nei tuoi sistemi tramite i loro canali ufficiali. Il codice è tuo dal primo giorno, niente lock-in, e la garanzia è <strong>primo mese soddisfatti o rimborsati</strong>: se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto."
   - q: "Quanto tempo serve per il primo agente integrato con il gestionale?"
     a: "Il primo agente live è in <strong>4 settimane</strong> per un workflow ben perimetrato. La parte di integrazione vera e propria raramente è il collo di bottiglia: lo sono la baseline misurata, le regole di business e l'accesso ai dati, che vanno chiariti prima di scrivere codice."
   - q: "E la compliance? Il gestionale contiene dati sensibili."
@@ -78,7 +78,7 @@ In tutti e tre i casi la regola d'oro è la stessa: **il gestionale resta l'auto
 ## Cosa evitare (gli errori che fanno fallire i progetti)
 
 - **Far scrivere l'agente direttamente nelle tabelle contabili.** Salti le validazioni del gestionale e rischi di corrompere dati su cui poi fatturi o dichiari. Passa sempre dal canale ufficiale di import.
-- **Promettere l'integrazione prima di aver visto l'istanza.** "TeamSystem si integra" è un'opinione finché qualcuno non guarda la tua licenza, i tuoi moduli, i tuoi permessi. In assessment mappiamo cosa è realmente accessibile, prima di stimare.
+- **Promettere l'integrazione prima di aver visto l'istanza.** "TeamSystem si integra" è un'opinione finché qualcuno non guarda la tua licenza, i tuoi moduli, i tuoi permessi. In fase di analisi mappiamo cosa è realmente accessibile, prima di stimare.
 - **Confondere "connesso" con "automatizzato".** Tirar fuori un dato via API è il 10% del lavoro. Il 90% sono le regole di business: quali voci, quali eccezioni, quando l'agente decide da solo e quando passa la palla a un umano.
 - **Niente baseline.** Senza misurare quanto costa oggi un workflow, non puoi dire se l'agente lo ha migliorato. È lo stesso principio che applichiamo a ogni sprint e che descriviamo nella [guida agli agenti IA per aziende](/guide/agenti-ai-aziende).
 - **Audit log dentro al gestionale.** Le decisioni dell'agente vanno loggate in un registro immutabile **separato**: chi/cosa ha triggerato, quali regole, quale output, se c'è stata escalation. Serve per debugging e per la compliance (DPA art. 28 GDPR, allineamento AI Act).
@@ -103,4 +103,4 @@ Su un workflow ben perimetrato, il primo agente live è in **4 settimane**. L'in
 
 ---
 
-**Hai un gestionale e vuoi sapere se e come ci si integra un agente IA?** [Parliamone](/parliamone): 20 minuti col CEO, guardiamo il tuo caso e ti diciamo onestamente quale dei tre pattern è il tuo, prima di qualunque preventivo. Lavoriamo con un modello chiaro: **paghi solo se funziona**, con un target fissato in assessment e codice tuo dal primo giorno.
+**Hai un gestionale e vuoi sapere se e come ci si integra un agente IA?** [Parliamone](/parliamone): 20 minuti col CEO, guardiamo il tuo caso e ti diciamo onestamente quale dei tre pattern è il tuo, prima di qualunque preventivo. Lavoriamo con un modello chiaro: **primo mese soddisfatti o rimborsati**, con un target fissato in fase di analisi e codice tuo dal primo giorno.

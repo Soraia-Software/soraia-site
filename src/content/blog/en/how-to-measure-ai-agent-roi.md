@@ -60,9 +60,9 @@ Measuring before day 30 means measuring noise. The adoption curve needs time to 
 
 ## The guarantee that follows from all this
 
-When the four pieces above are in place, you can make a concrete ROI commitment. That's exactly what we do with our **"hours recovered or your money back" guarantee**: the primary metric target is written into the contract, measured against the baseline we define together, and evaluated 30 days after go-live.
+When the four pieces above are in place, you can make a concrete ROI commitment. That's exactly what we do with our **"first month satisfied or refunded" guarantee**: the primary metric target is written into the contract, measured against the baseline we define together, and evaluated 30 days after go-live.
 
-If we don't hit the target, we work for free or refund the sprint. Not because we're being heroic, because we've built the measurement system that makes it verifiable.
+If the first month doesn't convince you, we refund it or keep working for free until you're satisfied. Not because we're being heroic, because we've built the measurement system that makes it verifiable.
 
 ---
 

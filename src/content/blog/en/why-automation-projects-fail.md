@@ -45,7 +45,7 @@ It's almost never true. In 90% of the cases we see, the reason automation projec
 
 If you don't have a timed answer, you don't have a baseline, you have an impression. And on an impression you can neither decide whether to automate, nor prove afterwards that it helped.
 
-A real baseline is one week of work: you time 10-20 real tasks, split the time across phases, measure the outcomes. At Soraia we do this before every sprint, and it's why we can write the target into the contract with the "hours recovered or refund" guarantee. Without a baseline, that guarantee wouldn't exist.
+A real baseline is one week of work: you time 10-20 real tasks, split the time across phases, measure the outcomes. At Soraia we do this before every sprint, and it's why we can write the target into the contract with the "first month satisfied or refunded" guarantee. Without a baseline, that guarantee wouldn't exist.
 
 ## Anti-pattern 2. Scope that creeps ("while we're at it")
 

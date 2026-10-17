@@ -26,7 +26,7 @@ faq:
   - q: "Who should own data readiness, IT or Operations?"
     a: "Operations defines what counts as correct data and where the real data lives. IT provides access and permissions. In practice the COO or Head of Ops leads, because they know the processes and the exceptions. A pure IT project tends to optimise the technical structure and lose the operational context that makes data useful."
   - q: "How long does the data readiness phase take?"
-    a: "In our sprints we assess it during the AI Readiness Assessment and fix it in the first weeks. For a well-scoped process a few days of work are enough. If the data turns out to be in critical shape, it's better to know before signing a sprint."
+    a: "In our sprints we assess it during the process audit and fix it in the first weeks. For a well-scoped process a few days of work are enough. If the data turns out to be in critical shape, it's better to know before signing a sprint."
 lang: "en"
 gates:
   passedAt: 2026-07-16T14:36:08.910Z
@@ -120,7 +120,7 @@ The good news: you almost never need to clean everything. You need to prepare th
 
 ## How we handle it at Soraia
 
-We assess data readiness in the [AI Readiness Assessment](/en/ai-agents): we map the sources, measure quality across the first agent's scope, check permissions and format, build the ground truth. If gaps show up, you see them before signing a sprint, not after.
+We assess data readiness in the [process audit](/en/contact): we map the sources, measure quality across the first agent's scope, check permissions and format, build the ground truth. If gaps show up, you see them before signing a sprint, not after.
 
 When the data is weak but the process is right, the first delivery in 4 weeks often includes exactly the dedupe and structuring work, as we did with [LIFTT](/en/case-studies/liftt). And if the team doesn't yet have a clean-data culture, [AI Adoption](/en/ai-adoption) exists to build it, because an agent only survives if the people around it keep the sources in order.
 

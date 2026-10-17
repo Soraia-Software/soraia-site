@@ -104,4 +104,4 @@ Quando invece i numeri ci sono, [costruiamo l'agente](/ai-agents) sul processo r
 
 ## Prossimo passo
 
-Se hai un support che affoga nel ripetitivo ma non vuoi perdere il tocco umano, [parliamone in 20 minuti](/parliamone). Ti diciamo onestamente quali ticket automatizzare e quali no, con la garanzia "paghi solo se funziona".
+Se hai un support che affoga nel ripetitivo ma non vuoi perdere il tocco umano, [parliamone in 20 minuti](/parliamone). Ti diciamo onestamente quali ticket automatizzare e quali no, con la garanzia "primo mese soddisfatti o rimborsati".

@@ -68,13 +68,13 @@ faq:
   - q: "ChatGPT non basta se gli do accesso ai miei documenti?"
     a: "Aiuta, ma resta un assistente: risponde a chi lo interroga, non esegue un processo end-to-end sui tuoi sistemi. Un <a href='/ai-agents'>agente su misura</a> si collega a CRM, gestionale e PDF, applica le tue regole e produce un risultato ripetibile con audit trail. Sono due strumenti diversi, non due versioni dello stesso."
   - q: "Quanto costa un agente rispetto agli abbonamenti ChatGPT?"
-    a: "ChatGPT costa poche decine di euro per utente al mese. Un agente su misura parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese. Non e' un confronto alla pari: paghi di piu' perche' l'agente esegue un processo e restituisce ore misurabili. Per capire se conviene sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
+    a: "ChatGPT costa poche decine di euro per utente al mese. Un agente su misura parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese. Non e' un confronto alla pari: paghi di piu' perche' l'agente esegue un processo e restituisce ore misurabili. Per capire se conviene sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "E i dati sensibili? Con ChatGPT generico rischio?"
     a: "Il rischio maggiore e' che le persone incollino dati sensibili in un tool non governato. Con un agente su misura Soraia i dati restano tuoi: <strong>nessun training degli LLM sui dati cliente</strong>, audit log immutabile, DPA art. 28 e allineamento all'AI Act. Se serve, infrastruttura europea o on-premise."
   - q: "Da quale dei due dovrei partire?"
     a: "Quasi sempre: prima ChatGPT diffuso nel team per creare confidenza, poi un percorso di <a href='/ai-adoption'>AI Adoption</a> per capire dove l'IA porta valore, e infine un agente su misura sul processo che si e' dimostrato ripetibile e ad alto volume. Vedi anche la <a href='/guide/agenti-ai-aziende'>guida agli agenti IA in azienda</a>."
   - q: "Quanto ci mette un agente su misura a partire?"
-    a: "La prima versione funzionante e' in genere live in <strong>4 settimane</strong>, seguita da 30 giorni di hypercare. Vale la garanzia <strong>paghi solo se sei soddisfatto</strong>: se il target concordato non e' raggiunto, si lavora fino a raggiungerlo o si rimborsa lo sprint."
+    a: "La prima versione funzionante e' in genere live in <strong>4 settimane</strong>, seguita da 30 giorni di hypercare. Vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto."
 related: []
 featured: false
 pubDate: 2026-08-04

@@ -92,7 +92,7 @@ I'll tell you before selling you a sprint:
 3. Build an agent on that perimeter, with the human on exceptions.
 4. Measure at 30 days against the baseline.
 
-First delivery is in 4 weeks, with an ["hours recovered or refund" guarantee](/en/ai-agents): if the target on the primary metric isn't hit, we work for free until it is, or we refund.
+First delivery is in 4 weeks, with a ["first month satisfied or refunded" guarantee](/en/pricing): if the first month doesn't convince you, we refund it or keep working for free until you're satisfied.
 
 ---
 

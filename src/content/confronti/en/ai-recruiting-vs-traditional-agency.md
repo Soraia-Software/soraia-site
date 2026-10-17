@@ -66,11 +66,11 @@ faq:
   - q: "Does an AI agent replace recruiters?"
     a: "No, it augments them. The agent does the repetitive work (screening, parsing, first contact), recruiters focus on interviews, evaluation and closing. In the <a href='/case-studies/apraise'>APraise</a> case the agent equals <strong>4 extra recruiters</strong> without replacing the existing team."
   - q: "How much does an AI agent cost versus an agency?"
-    a: "With Soraia it starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool. A traditional agency typically charges 15-25% of salary per hire: at high volumes, the agent's cost per hire drops far faster. <a href='/parliamone'>Let's talk</a> for an estimate on your hiring volume."
+    a: "With Soraia it starts from <strong>€3,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and a combined monthly hours pool. A traditional agency typically charges 15-25% of salary per hire: at high volumes, the agent's cost per hire drops far faster. <a href='/parliamone'>Let's talk</a> for an estimate on your hiring volume."
   - q: "What about executive or very rare roles?"
     a: "There a traditional agency is often still the better choice: the contact network and human judgment on fit and negotiation matter more than automation. AI excels at volume and first filter, not at headhunting a handful of rare profiles."
   - q: "What if the agent doesn't deliver the promised result?"
-    a: "With Soraia the <strong>you only pay if you're satisfied</strong> guarantee applies: a measurable target is set in the assessment (e.g. 5h/recruiter/week recovered) and, if it isn't reached by go-live + 30 days of hypercare, we work for free until it is. See the <a href='/recruitment'>Recruitment & HR</a> cluster."
+    a: "With Soraia the <strong>first month satisfied or refunded</strong> guarantee applies: a measurable target is set in the process audit (e.g. 5h/recruiter/week recovered) and, if the first month doesn't convince you, we refund it or keep working for free until you're satisfied. See the <a href='/recruitment'>Recruitment & HR</a> cluster."
 related: []
 featured: false
 pubDate: 2026-08-13

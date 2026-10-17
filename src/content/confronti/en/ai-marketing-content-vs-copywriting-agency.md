@@ -70,7 +70,7 @@ faq:
   - q: "Is AI content quality good enough?"
     a: "It depends on two things: how well you train the agent on your <strong>brand voice and data</strong>, and whether there is human review. Without these, output is generic. With an agent built on your real content and a final check, quality is solid for most volume formats. See how we work on <a href='/en/sales-marketing'>Sales & Marketing</a>."
   - q: "How much does building a content agent cost?"
-    a: "With Soraia it starts at <strong>3.000 € per month</strong>: two dedicated people (Project Manager and AI Engineer) and a combined monthly hour pool. <strong>First delivery is in 4 weeks</strong> and the code is yours from day one. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
+    a: "With Soraia it starts at <strong>3.000 € per month</strong>: three dedicated people (Account Manager, Project Manager and AI Engineer) and a combined monthly hour pool. <strong>First delivery is in 4 weeks</strong> and the code is yours from day one. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
   - q: "Is AI content penalized by search and AI engines?"
     a: "It is not the origin that matters, but whether the content is useful, accurate and well structured. Reviewed AI content rich in real data can be <strong>more visible on AI engines</strong> when structured well. We handle this with <a href='/en/ai-search-optimization'>AI Search Optimization</a>."
   - q: "Can I keep my brand voice with an agent?"

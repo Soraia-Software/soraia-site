@@ -59,9 +59,9 @@ Misurare prima del 30° giorno = misurare il rumore. La curva di adoption ha bis
 
 ## La garanzia che ne discende
 
-Quando i 4 pezzi sopra sono chiari, puoi promettere ROI in modo concreto. Ed è esattamente quello che facciamo con la **garanzia "ore recuperate o rimborso"**: il target del metric primario è scritto nel contratto, misurato sulla baseline definita insieme, valutato a 30gg dal go-live.
+Quando i 4 pezzi sopra sono chiari, puoi promettere ROI in modo concreto. Ed è esattamente quello che facciamo con la **garanzia "primo mese soddisfatti o rimborsati"**: il target del metric primario è scritto nel contratto, misurato sulla baseline definita insieme, valutato a 30gg dal go-live.
 
-Se non raggiungiamo il target, lavoriamo gratis o rimborsiamo lo sprint. Non perché siamo eroici, perché abbiamo costruito il sistema di misurazione che lo rende verificabile.
+Se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto. Non perché siamo eroici, perché abbiamo costruito il sistema di misurazione che lo rende verificabile.
 
 ---
 

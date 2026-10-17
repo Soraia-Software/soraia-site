@@ -6,7 +6,6 @@ import WorldMap from "~/components/WorldMap.astro";
 import CTABanner from "~/components/CTABanner.astro";
 import HeroVisual from "~/components/HeroVisual.astro";
 import FAQ from "~/components/FAQ.astro";
-import PartnersStrip from "~/components/PartnersStrip.astro";
 import AskAISection from "~/components/AskAISection.astro";
 import CaseStudyCarousel from "~/components/CaseStudyCarousel.astro";
 import { getCollection } from "astro:content";
@@ -156,11 +155,11 @@ const worldRegions = [
 const faqs = [
   {
     q: "What does Soraia do in 30 seconds?",
-    a: "We're an <strong>Italian AI Agency</strong> with clients in 11 countries. We work on two fronts: <strong>AI Agents</strong> (we build AI agents that run your processes end-to-end) and <strong>AI Adoption</strong> (we train your team to understand what changes). First delivery in 4 weeks. If it doesn't work, you don't pay.",
+    a: "We're an <strong>Italian AI agency</strong> for SMEs: we bring order to your processes and automate them with custom software and AI agents that remain your property. Two services: a <strong>process audit</strong> (we come on site, map the work as it really happens and leave you with priorities and an action plan) and <strong>AI Engineering</strong> (sprint-based development, first release in production in 4 weeks). First month satisfied or refunded.",
   },
   {
     q: "How much does it cost to get started?",
-    a: "One simple model: <strong>from €3,000/month</strong>, VAT excluded. You get <strong>two dedicated people</strong> on your project, a Project Manager and an AI Engineer, plus a combined monthly hours pool. Milestones and releases are the obligation of result: you approve them. <a href='/en/downloads/ai-assessment-sample' style='color: var(--color-brand); text-decoration: underline;'>Download a sample report</a>.",
+    a: "<strong>From €3,000/month</strong>, VAT excluded, for a 45-hour package: <strong>three dedicated people</strong> on your project, an Account Manager, a Project Manager and an AI Engineer, with a combined monthly hours pool. The price only grows in €1,000 steps if you need more hours, even for a single month. Alternatively we work fixed-price, from €5,000 for a first release. Move the slider on the <a href='/en/pricing' style='color: var(--color-brand); text-decoration: underline;'>pricing page</a>.",
   },
   {
     q: "Who is this for?",
@@ -168,11 +167,11 @@ const faqs = [
   },
   {
     q: "How quickly will we see results?",
-    a: "<strong>4 weeks from kick-off to the first agent in production</strong>. Week 1: discovery + measured baseline. Weeks 2–3: build. Week 4: deploy + team training + first measurement. <strong>30 days of post-go-live support included</strong>. For AI Adoption: programmes ranging from 6 weeks (Foundation) to 4 months (with Brain Pilot).",
+    a: "<strong>4 weeks from kick-off to the first release in production</strong>, on your real processes. From there we continue in sprints, one release at a time, and you approve every milestone before we move on. If you start with the process audit, within a few weeks you have the process map, the priorities and the action plan.",
   },
   {
     q: "What does the first step look like?",
-    a: "We start with a <strong>free 20-minute call</strong> with CEO Daniel, no pitch, just figuring out whether it makes sense to talk. If you have a concrete use case, we turn it into a measurable action plan (<a href='/en/downloads/ai-assessment-sample' style='color: var(--color-brand); text-decoration: underline;'>see an anonymous sample</a>), then two dedicated people, a Project Manager and an AI Engineer, start on your project from €3,000/month. The work only kicks off once you're convinced by the plan.",
+    a: "We start with a <strong>free 20-minute call</strong> with Daniel, the CEO: no pitch, just figuring out whether it makes sense to work together. Daniel personally replies within 24 hours. Then you decide where to start: from the on-site process audit, or straight into the first sprint if you already know what to build. Milestones and releases are the obligation of result: you approve them.",
   },
 ];
 ---
@@ -208,7 +207,7 @@ const faqs = [
             </div>
             <div>
               <p class="text-white font-medium" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1; letter-spacing: -0.02em;">40+</p>
-              <p class="text-[12px] text-violet-200/70 mt-2 leading-snug">projects delivered<br/>in 11 countries</p>
+              <p class="text-[12px] text-violet-200/70 mt-2 leading-snug">projects<br/>delivered</p>
             </div>
             <div>
               <p class="text-white font-medium" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1; letter-spacing: -0.02em;">4 wks</p>
@@ -267,22 +266,7 @@ const faqs = [
        ============================================================ -->
   <ProofBar label="Trusted by" />
 
-  <!-- Featured-in row: Xano + WeWeb published our case studies -->
-  <section class="py-10 bg-white border-b border-ink-200">
-    <div class="container-soraia">
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-x-8 gap-y-4 max-w-3xl mx-auto">
-        <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 whitespace-nowrap">
-          Featured as a case study on
-        </p>
-        <a href="https://www.xano.com/case-study/how-xano-helped-soraia-modernize-legacy-recruiting-system-save-360k-yearly/" target="_blank" rel="noopener" class="inline-flex items-center group" aria-label="Xano case study">
-          <img src="/logos/tools/xano.webp" alt="Xano" loading="lazy" class="h-6 md:h-7 w-auto object-contain transition-all duration-300 opacity-50 group-hover:opacity-100 grayscale group-hover:grayscale-0" />
-        </a>
-        <a href="https://www.weweb.io/customer-stories/soraia" target="_blank" rel="noopener" class="inline-flex items-center group" aria-label="WeWeb customer story">
-          <img src="/logos/tools/weweb.svg" alt="WeWeb" loading="lazy" class="h-6 md:h-7 w-auto object-contain transition-all duration-300 opacity-50 group-hover:opacity-100 grayscale group-hover:grayscale-0" />
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- (featured-in row Xano/WeWeb removed on 2026-10-18, as on the Italian home) -->
 
   <!-- ============================================================
        3. WHAT WE DO, 2 pillars: People + Processes
@@ -559,23 +543,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- ============================================================
-       10. TECH STACK
-       ============================================================ -->
-  <section class="section bg-ink-50 border-y border-ink-200">
-    <div class="container-soraia">
-      <SectionHeader
-        eyebrow="Stack agnostic"
-        title="We work with whatever stack you already use."
-        subtitle="We adapt to your tools: AI models, automation platforms, CRMs, storage. <strong>We don't sell new licences.</strong> We build on top of what you already have."
-        align="center"
-      />
-      <PartnersStrip partners={partners} />
-      <p class="text-center text-sm text-ink-500 mt-10 max-w-3xl mx-auto reveal">
-        Using Microsoft, Google, Salesforce, AWS, Teams, Slack, or other tools? <span class="text-ink-700 font-semibold">We work with those too.</span> The client's stack is the starting point, not a constraint.
-      </p>
-    </div>
-  </section>
+  <!-- ("Stack agnostic" section removed on 2026-10-18, as on the Italian home) -->
 
   <!-- ============================================================
        14. FAQ

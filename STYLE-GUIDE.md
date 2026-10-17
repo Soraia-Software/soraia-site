@@ -20,6 +20,28 @@ section rather than inventing a new treatment.
 - Guarantee wording: "soddisfatti o rimborsati" / "il primo mese, anche solo per un mese".
   The "anche solo per un mese" line is deliberate: "al mese" alone scares.
 
+### 1b. Facts the copy must not contradict (as of 2026-10-18)
+
+- **Two services, and only two in the Servizi menu**: *Analisi dei processi* (the on-site
+  audit: desk-side interviews, process map in the field, priorities, action plan; the
+  `/analisi-processi` deck is noindex, the service is requested from `/parliamone`) and
+  *AI Engineering* (sprint-based development, first release in production in 4 weeks).
+  "Da dove partire dipende da te."
+- **Pricing lives on `/prezzi` only**: hour packages from **45 h = 3.000 €/month, 67 €/h,
+  1.000 € steps (15 h), up to 195 h**, or fixed-price from **5.000 € per first release**.
+  **Three dedicated people, one per role: Account Manager, Project Manager, AI Engineer.**
+  "Anche solo per un mese." Guarantee: **primo mese soddisfatti o rimborsati**.
+- **Team**: "più di 10 persone" (never a fixed 10 or 11), **distributed in Italy**, 100%
+  remote, registered office in Biella. Daniel replies personally within 24 hours.
+- **Stats**: "40+ progetti consegnati". Never "in 11 paesi".
+- **Retired old-site concepts** (do not reintroduce): AI Readiness Assessment, "assessment
+  iniziale 1-2 settimane", AI Adoption workshop as a pillar, Co-Building Sprint, the week-by-week
+  sprint timeline, "Stack agnostic", the Xano/WeWeb featured row, "se non funziona non paghi",
+  "rimborsiamo lo sprint", "due figure dedicate", "Nessun vincolo di durata", 43 ore.
+  `/downloads/ai-assessment-sample` still exists but is noindex, out of the sitemap and unlinked.
+- `public/llms.txt` and `public/llms-full.txt` restate all of the above for AI answer engines:
+  update them whenever one of these facts changes.
+
 ## 2. Typography
 
 One typeface: **Inter** (`--font-sans`), self-hosted. Mono is **JetBrains Mono**
@@ -100,7 +122,9 @@ Use the `.btn` classes, never ad-hoc button styling:
   They come from the collection field `videoTestimonial` (`provider`, `id`, optional
   `poster`, `speaker`, `role`); order is the `videoOrder` list in the page.
 - `/analisi-processi` is **noindex** (`noindex` prop on `Layout`, driven from
-  `data.ts`). Keep it out of indexes and sitemaps.
+  `data.ts`). Keep it out of indexes and sitemaps: `astro.config.mjs` filters
+  `/analisi-processi`, `/demo-portale`, `/downloads/*` and `/admin/*` out of the sitemap.
+- Client logos: one source, `src/data/clientLogos.ts`; `ProofBar` with just a `label`.
 
 ## 7. Components to reuse (don't re-implement)
 
@@ -112,6 +136,10 @@ Use the `.btn` classes, never ad-hoc button styling:
   client does **not** see the hours worked, keep that invariant.
 - `SprintRoadmap` — the mountain + sprint timeline + "aggiorna le priorità" reorder,
   shared by `/analisi-processi` and `/ai-engineering`.
+- `PricingTwoSteps` — the "Da dove partire dipende da te" two-card block (01 Analisi dei
+  processi / 02 AI Engineering, or Discovery & Scoping / Build Sprint with `variant="software"`),
+  used on `/ai-agents` and `/software-development`. Pricing tail: three dedicated people, from
+  3.000 €/month, even for a single month.
 - Team row (homepage "Il tuo team") — one slow looping **row of cards** (photo 4:5, name and
   surname, role in accent) on a `.bg-tech-grid` band; pure CSS marquee (set duplicated,
   `translateX(-50%)`, pause on hover, respects reduced-motion). Roles are data in the page.

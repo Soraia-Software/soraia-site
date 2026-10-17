@@ -72,7 +72,7 @@ Da qui i quattro quadranti:
 - **Irreversibile + basso impatto** (archiviazione, dedupe): autonomia con soglia, l'agente ferma solo i casi ambigui.
 - **Irreversibile + alto impatto** (invio a cliente, pagamento, decisione su persona): **approval gate umano obbligatorio**.
 
-È una tabella che compiliamo insieme al cliente in fase di assessment, riga per riga sul workflow reale. Non è filosofia: è dove finisce il confine tra ciò che l'[agente esegue](/ai-agents) da solo e ciò che aspetta una firma.
+È una tabella che compiliamo insieme al cliente in fase di analisi, riga per riga sul workflow reale. Non è filosofia: è dove finisce il confine tra ciò che l'[agente esegue](/ai-agents) da solo e ciò che aspetta una firma.
 
 ## Un caso concreto: approvazioni multi-stakeholder in Rainplan
 
@@ -101,7 +101,7 @@ La supervisione umana ben progettata non è "quanto controllo posso mettere". È
 
 ## Come lo impostiamo negli sprint
 
-In fase di assessment mappiamo il workflow passo per passo sulla matrice reversibilità × impatto, definiamo gli approval gate, e li scriviamo nel contratto insieme al metric primario. L'audit log immutabile su ogni decisione è di default. Così a 30 giorni dal go-live sappiamo non solo se l'agente ha recuperato tempo, ma anche quante volte è servito l'umano, e se serviva davvero.
+In fase di analisi mappiamo il workflow passo per passo sulla matrice reversibilità × impatto, definiamo gli approval gate, e li scriviamo nel contratto insieme al metric primario. L'audit log immutabile su ogni decisione è di default. Così a 30 giorni dal go-live sappiamo non solo se l'agente ha recuperato tempo, ma anche quante volte è servito l'umano, e se serviva davvero.
 
 ---
 

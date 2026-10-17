@@ -12,7 +12,7 @@ keywords:
   - "AI agent cost for SMEs"
 optionA:
   nome: "Monthly retainer with a dedicated team"
-  descrizione: "You pay a monthly fee for dedicated people (Project Manager + AI Engineer) with a combined hours pool, and client-approved milestones drive the work."
+  descrizione: "You pay a monthly fee for three dedicated people (an Account Manager, a Project Manager and an AI Engineer) with a combined hours pool, and client-approved milestones drive the work."
   pro:
     - "Absorbs scope changes without renegotiating the contract every time"
     - "With Soraia, unused hours roll into later months and excess hours are credited against the following ones"
@@ -64,7 +64,7 @@ tabella:
 verdetto: "This isn't an ideological choice, it depends on how stable your scope is. If you know exactly what you want to build and it won't change, fixed price gives budget certainty and is easier to approve. If the process is complex, only becomes clear as you build it, or you plan to evolve and maintain it, a monthly retainer with a dedicated team handles change without constant renegotiations. Soraia works on a retainer precisely because AI agents almost always evolve after the first release, but still sets milestones and an agreed target: so you get the flexibility of a retainer plus a clear obligation of result."
 faq:
   - q: "With a monthly retainer, do I still pay if I do little work one month?"
-    a: "With Soraia the retainer is an indicative pace: <strong>unused hours roll into later months</strong> and excess hours are credited against the following ones. The retainer starts from <strong>3,000 euro per month</strong> with two dedicated people. What matters are the milestones, which the client approves."
+    a: "With Soraia the retainer is an indicative pace: <strong>unused hours roll into later months</strong> and excess hours are credited against the following ones. The retainer starts from <strong>3,000 euro per month</strong> with three dedicated people. What matters are the milestones, which the client approves."
   - q: "Isn't fixed price always safer for my budget?"
     a: "On the single number, yes, but only if scope doesn't change. In practice, on AI projects the perimeter evolves as you build, and each change becomes a renegotiation. Fixed price is safe when scope is clear, stable and bounded; otherwise it hides extras and delays."
   - q: "Does a retainer lock me into the vendor?"

@@ -19,7 +19,7 @@ faq:
   - q: "Qual è il prezzo minimo per un progetto AI serio in azienda?"
     a: "Sotto i <strong>€10.000</strong> totali, è difficile fare un agente IA custom serio (con baseline, build, deploy, 30gg hypercare). Sotto questa soglia trovi solo: (a) workflow molto piccoli (single automation Make/n8n con AI), (b) pilot superficiali che non vanno mai in produzione vera, (c) provider che vendono ore senza scope chiaro. Sweet spot reale per il primo agente: <strong>€15-35k</strong>."
   - q: "Quanto costa il primo AI Readiness Assessment?"
-    a: "<strong>€1.500-3.000</strong> per un assessment serio (1-2 settimane, baseline cronometrata, scope, ROI atteso, action plan). I provider seri lo offrono <strong>rimborsato se procedi</strong> con uno sprint. Il modello di Soraia è unico e semplice: due figure dedicate (Project Manager e AI Engineer), a partire da 3.000 € al mese. Dettaglio e slider nella <a href='/prezzi'>pagina prezzi</a>. <a href='/downloads/ai-assessment-sample'>Scarica un sample anonimo del report</a> per vedere esattamente cosa ricevi."
+    a: "<strong>€1.500-3.000</strong> per un assessment serio (1-2 settimane, baseline cronometrata, scope, ROI atteso, action plan). I provider seri lo offrono <strong>rimborsato se procedi</strong> con uno sprint. Il modello di Soraia è unico e semplice: tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 3.000 € al mese. Dettaglio e slider nella <a href='/prezzi'>pagina prezzi</a>."
   - q: "Quanto costa un retainer continuativo dopo lo sprint iniziale?"
     a: "<strong>€3.000-15.000/mese</strong> a seconda di: scope (1 agente vs portfolio), criticità (SLA 24h vs best effort), numero di integrazioni, settore (regolamentato richiede più ore di compliance). Per una PMI media post-primo agente: <strong>€5-8k/mese</strong> è il range tipico."
   - q: "Modello fix price o time & material: cosa scegliere?"
@@ -55,7 +55,7 @@ Dato basato su benchmark interno Soraia + sentito da clienti che hanno valutato 
 
 **Tempo**: 1-2 settimane di consulenza.
 
-**Standard di mercato**: provider seri lo offrono **rimborsato se procedi** con uno sprint. Skin in the game per entrambe le parti. Il modello di Soraia è unico e semplice: due figure dedicate (Project Manager e AI Engineer), a partire da 3.000 € al mese. Dettaglio e slider nella <a href="/prezzi">pagina prezzi</a>. [Scarica un sample anonimo del report](/downloads/ai-assessment-sample) per vedere esattamente cosa ricevi al termine dell'assessment.
+**Standard di mercato**: provider seri lo offrono **rimborsato se procedi** con uno sprint. Skin in the game per entrambe le parti. Il modello di Soraia è unico e semplice: tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 3.000 € al mese. Dettaglio e slider nella <a href="/prezzi">pagina prezzi</a>.
 
 **Provider che salta l'assessment**: red flag. Significa che ti venderà uno sprint senza capire i tuoi processi reali.
 
@@ -274,9 +274,9 @@ Su €10M fatturato: budget 1% = **€100k/anno totale** (sprint + retainer + fo
 
 ## Cosa fa Soraia in modo diverso sui costi
 
-Disclaimer: questa guida la scrive Soraia, AI agency italiana. Il modello di Soraia è unico e semplice: due figure dedicate (Project Manager e AI Engineer), a partire da 3.000 € al mese. Dettaglio e slider nella <a href="/prezzi">pagina prezzi</a>.
+Disclaimer: questa guida la scrive Soraia, AI agency italiana. Il modello di Soraia è unico e semplice: tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 3.000 € al mese. Dettaglio e slider nella <a href="/prezzi">pagina prezzi</a>.
 
-**Garanzia "se non funziona, non paghi".** Il metric primario è scritto nel contratto. Se non lo raggiungiamo a 60-90 giorni, lavoriamo gratis fino al raggiungimento.
+**Garanzia "primo mese soddisfatti o rimborsati".** Il metric primario è scritto nel contratto. Se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto.
 
 **Codice del cliente dalla prima settimana.** Zero lock-in, zero "abbonamenti perpetui" mascherati.
 

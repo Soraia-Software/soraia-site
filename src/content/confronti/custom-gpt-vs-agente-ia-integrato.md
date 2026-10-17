@@ -71,7 +71,7 @@ faq:
   - q: "Allora il Custom GPT e' inutile?"
     a: "No. E' <strong>ottimo per validare in fretta</strong>: capisci in poche ore se un assistente su knowledge base porta valore, prima di investire in sviluppo. Spesso e' il primo passo giusto proprio perche' costa quasi nulla e non tocca i sistemi core."
   - q: "Quanto costa passare a un agente integrato?"
-    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato, con prima delivery in 4 settimane. Il codice e' tuo dal primo giorno, nessun lock-in. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato, con prima delivery in 4 settimane. Il codice e' tuo dal primo giorno, nessun lock-in. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "Con l'agente integrato resto legato a OpenAI?"
     a: "No. Un agente costruito su misura e' <strong>model-agnostico</strong>: puoi cambiare LLM senza rifare tutto. Col Custom GPT invece vivi dentro l'ecosistema ChatGPT, con i suoi limiti, regole e prezzi. Vedi anche lo <a href='/software-development'>sviluppo software su misura</a>."
   - q: "E la compliance sui dati?"

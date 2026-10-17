@@ -90,7 +90,7 @@ A 50% incentive halves the cost. It doesn't create value on its own. If the proj
 
 Before the voucher you need the same thing we ask for in every sprint: a **measured baseline**. What the process you want to automate costs today, timed on real tasks. Only then do you know whether the agent makes sense.
 
-It's the same principle behind our "you pay only if it works" guarantee: the target is written in the contract and measured 30 days after go-live. The voucher reduces the financial risk, the guarantee reduces the operational risk. The two add up, they don't replace each other.
+It's the same principle behind our "first month satisfied or refunded" guarantee: the target is written in the contract and measured 30 days after go-live. The voucher reduces the financial risk, the guarantee reduces the operational risk. The two add up, they don't replace each other.
 
 ## Window-based means: arrive ready or don't arrive
 

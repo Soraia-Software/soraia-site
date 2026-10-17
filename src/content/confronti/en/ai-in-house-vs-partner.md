@@ -28,7 +28,7 @@ optionB:
   descrizione: "A partner builds the agent on your process with a proven method, and the code stays yours."
   pro:
     - "First working version in 4 weeks, not months"
-    - "Reduced risk: with Soraia you pay only if the agreed target is met"
+    - "Reduced risk: with Soraia the first month is satisfied or refunded"
     - "Client owns the code from day one, no lock-in"
   contro:
     - "Cost of the initial sprint"
@@ -56,11 +56,11 @@ tabella:
 verdetto: "It is not a binary choice forever. For an SME that does not yet have an AI team, starting with an external partner cuts time and risk: you see in 4 weeks whether the process works, with the code already yours, and decide afterwards. As AI becomes central, it makes sense to bring the skills in-house, often starting from exactly what the partner has built and documented. The right question is not 'in-house or outside', but 'what should I do now, given where I am'."
 faq:
   - q: "How much does starting with a partner cost vs hiring?"
-    a: "With Soraia it starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool. A single senior in-house developer, counting loaded salary and months of ramp-up, costs more and pays back much later. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
+    a: "With Soraia it starts from <strong>€3,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and a combined monthly hours pool. A single senior in-house developer, counting loaded salary and months of ramp-up, costs more and pays back much later. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
   - q: "If I start with a partner, am I locked in?"
     a: "No. The <strong>code is yours from day one</strong>, documented and maintainable: no lock-in. You can internalize whenever you want, often starting from what was built."
   - q: "What if it doesn't work?"
-    a: "With Soraia the <strong>pay-only-if-you're-satisfied</strong> guarantee applies: a measurable target is set during the assessment and, if it is not met, we work for free until it is."
+    a: "With Soraia the <strong>first month satisfied or refunded</strong> guarantee applies: a measurable target is set during the process audit and, if the first month doesn't convince you, we refund it or keep working for free until you're satisfied."
 related: []
 featured: true
 pubDate: 2026-07-16

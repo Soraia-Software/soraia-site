@@ -20,7 +20,7 @@ faq:
   - q: "What candidate response time is realistic?"
     a: "It depends on volume and systems. In the <strong>Stars Be Original</strong> case (hospitality recruitment) the agent handled 20k+ candidates with <strong>under 1 minute</strong> response time. The point isn't speed for its own sake, but not losing good candidates while the inbox piles up."
   - q: "How do I verify the HR agent actually worked?"
-    a: "With a <strong>timed baseline</strong> before you start and <strong>one primary metric</strong> (e.g. hours per person per week on CV sorting, or time-to-first-contact). Without a baseline, every savings claim is an opinion. We write it into the contract under our <strong>you only pay if it works</strong> guarantee."
+    a: "With a <strong>timed baseline</strong> before you start and <strong>one primary metric</strong> (e.g. hours per person per week on CV sorting, or time-to-first-contact). Without a baseline, every savings claim is an opinion. We write it into the contract under our <strong>first month satisfied or refunded</strong> guarantee."
   - q: "When is an AI agent NOT worth it in recruitment?"
     a: "If you hire few people a year with very varied profiles, the volume doesn't justify a custom agent: off-the-shelf tools are better. The agent pays off where there's high repetitive volume (hundreds of applications, recurring screening, seasonal hiring spikes)."
 lang: "en"
@@ -82,7 +82,7 @@ Without a baseline, every savings claim is a meeting-room opinion. The bare mini
 - **One primary metric:** hours per person per week on CV sorting, or time-to-first-contact on the candidate. Just one.
 - **A clear window:** you measure at 30 days post go-live, not before. Earlier you're only measuring adoption noise.
 
-It's precisely because we build this measurement that we can hold the **you only pay if it works** guarantee: the metric target is written into the contract. If we miss it, we work for free until we hit it, or we refund.
+It's precisely because we build this measurement that we can hold the **first month satisfied or refunded** guarantee: the metric target is written into the contract. If the first month doesn't convince you, we refund it or keep working for free until you're satisfied.
 
 ## When it is NOT worth it
 

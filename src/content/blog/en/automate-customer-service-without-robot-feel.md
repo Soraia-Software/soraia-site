@@ -104,4 +104,4 @@ When the numbers are there, we [build the agent](/en/ai-agents) on the real proc
 
 ## Next step
 
-If your support is drowning in repetitive work but you don't want to lose the human touch, [let's talk for 20 minutes](/en/contact). We'll tell you honestly which tickets to automate and which not to, with the "you pay only if it works" guarantee.
+If your support is drowning in repetitive work but you don't want to lose the human touch, [let's talk for 20 minutes](/en/contact). We'll tell you honestly which tickets to automate and which not to, with the "first month satisfied or refunded" guarantee.

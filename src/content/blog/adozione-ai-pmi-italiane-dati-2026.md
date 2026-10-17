@@ -22,7 +22,7 @@ faq:
   - q: "Perche' le PMI italiane sono ferme sull'adozione AI?"
     a: "Il freno principale non e' il costo del software ne' la tecnologia: sono le <strong>competenze interne</strong>. Senza qualcuno in azienda che sappia dove applicare l'IA, mappare un processo e misurarne il risultato, gli strumenti restano inutilizzati o si fermano a esperimenti individuali su ChatGPT."
   - q: "Cosa devo fare prima di adottare l'IA nella mia PMI?"
-    a: "Misura una baseline. Prima di comprare qualsiasi cosa, cronometra 2-3 processi ripetitivi ad alto volume e quantifica quanto costano oggi. Senza baseline non puoi capire dove l'IA rende, ne' verificare se ha funzionato. E' anche il motivo per cui la garanzia <strong>paghi solo se funziona</strong> ha senso solo con numeri di partenza chiari."
+    a: "Misura una baseline. Prima di comprare qualsiasi cosa, cronometra 2-3 processi ripetitivi ad alto volume e quantifica quanto costano oggi. Senza baseline non puoi capire dove l'IA rende, ne' verificare se ha funzionato. E' anche il motivo per cui la garanzia <strong>primo mese soddisfatti o rimborsati</strong> ha senso solo con numeri di partenza chiari."
   - q: "L'AI Act blocca l'adozione dell'IA nelle PMI?"
     a: "No. Dal <strong>agosto 2026</strong> l'AI Act e' pienamente applicabile, ma per la maggior parte delle PMI gli obblighi diretti sono limitati (trasparenza, supervisione umana sui casi critici, DPA art. 28 GDPR con i fornitori). Non e' un motivo per non adottare l'IA, e' un motivo per adottarla con governance dal primo giorno."
   - q: "Da dove conviene partire con un budget contenuto?"
@@ -73,7 +73,7 @@ Tradotto: se sei una PMI da 10-200 persone, il tuo vero confronto non e' con la 
 
 Qui il dato piu' onesto: il freno principale non e' il prezzo del software. E' la **competenza interna**.
 
-Lo vediamo in ogni assessment. L'azienda ha budget, ha processi ripetitivi evidenti, a volte ha gia' pagato una licenza enterprise. Quello che manca e' qualcuno che sappia:
+Lo vediamo in ogni analisi dei processi. L'azienda ha budget, ha processi ripetitivi evidenti, a volte ha gia' pagato una licenza enterprise. Quello che manca e' qualcuno che sappia:
 - riconoscere quale processo vale la pena automatizzare;
 - mappare come funziona davvero oggi, non come e' scritto nel manuale;
 - misurare il prima e il dopo.
@@ -110,7 +110,7 @@ Ti dico anche quando **non** partire:
 - Se il team e' sotto le 10 persone con task molto vari, spesso basta una licenza enterprise piu' una o due automazioni, non un agente custom.
 - Se il processo cambiera' tra tre mesi, aspetta che si stabilizzi.
 
-Sono le stesse regole che applichiamo prima di proporre un [agente IA custom](/ai-agents): senza numeri di partenza la nostra garanzia "paghi solo se funziona" non avrebbe senso, e non la firmeremmo.
+Sono le stesse regole che applichiamo prima di proporre un [agente IA custom](/ai-agents): senza numeri di partenza la nostra garanzia "primo mese soddisfatti o rimborsati" non avrebbe senso, e non la firmeremmo.
 
 ## La conclusione onesta
 

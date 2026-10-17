@@ -36,14 +36,14 @@ const labels = {
   it: {
     title: "Parliamo dei tuoi processi",
     subtitle:
-      "Lasciaci due righe sulla tua azienda. Ti ricontattiamo entro 24 ore con una proposta di assessment.",
+      "Lasciaci due righe sulla tua azienda. Daniel ti ricontatta personalmente entro 24 ore.",
     name: "Nome e cognome",
     company: "Azienda",
     role: "Ruolo",
     email: "Email aziendale",
     recruiters: "Dimensione del team",
     message: "Cosa vorresti automatizzare o migliorare?",
-    submit: "Richiedi assessment",
+    submit: "Candida la tua azienda",
     submitting: "Invio in corso…",
     success: "Ricevuto. Ti scriviamo entro 24 ore.",
     error: "Qualcosa è andato storto. Scrivici a info@soraia.io",
@@ -58,14 +58,14 @@ const labels = {
   en: {
     title: "Let's talk about your processes",
     subtitle:
-      "A couple of lines about your company. We'll reply within 24 hours with an assessment proposal.",
+      "A couple of lines about your company. Daniel personally gets back to you within 24 hours.",
     name: "Full name",
     company: "Company",
     role: "Role",
     email: "Work email",
     recruiters: "Team size",
     message: "What would you like to automate or improve?",
-    submit: "Request assessment",
+    submit: "Apply as a company",
     submitting: "Sending…",
     success: "Got it. We'll reach out within 24 hours.",
     error: "Something went wrong. Write to info@soraia.io",

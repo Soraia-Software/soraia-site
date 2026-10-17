@@ -31,7 +31,7 @@ faq:
   - q: "Quante consulenze AI dovrei sentire prima di scegliere?"
     a: "<strong>3 confronti</strong> sono lo sweet spot. Sotto i 2 non hai metro di paragone. Sopra i 4 cominci a confonderti e ad allungare la decision making. Cerca 1 Big4, 1 agency specializzata, 1 indie/freelance per avere il triangolo completo."
   - q: "Cosa succede se la consulenza AI fallisce?"
-    a: "Dipende dal contratto. Senza garanzia esplicita: paghi comunque il tempo speso. Con garanzia 'no result no fee' (es. Soraia): non paghi lo sprint o rimborso integrale. <strong>Verifica questa clausola prima di firmare</strong>: è il singolo più importante del contratto."
+    a: "Dipende dal contratto. Senza garanzia esplicita: paghi comunque il tempo speso. Con garanzia esplicita (es. Soraia: primo mese soddisfatti o rimborsati): se il primo mese non convince, rimborso. <strong>Verifica questa clausola prima di firmare</strong>: è il singolo più importante del contratto."
 ---
 
 In Italia 2026 la domanda di consulenza AI è esplosa: in 18 mesi sono nate centinaia di "AI agency", consulenti, freelance che promettono di portare l'IA in azienda. La qualità è molto variabile, le promesse spesso non sostenibili, e il CEO di una PMI ha 30 minuti per capire chi vale e chi no.
@@ -123,7 +123,7 @@ Il provider serio scrive **nel contratto** il metric primario e si lega al risul
 - "Se non raggiungiamo X ore recuperate per recruiter/settimana entro 60 giorni, lavoriamo gratis fino al raggiungimento o rimborso."
 - "Se l'agente non processa 80% delle fatture senza intervento umano entro 30 giorni, sprint successivo gratis."
 
-Soraia per esempio offre **"se non funziona, non paghi"** come standard contrattuale. È un filtro forte: se il provider non si lega al risultato, probabilmente non è sicuro di poterlo garantire.
+Soraia per esempio offre **"primo mese soddisfatti o rimborsati"** come standard contrattuale. È un filtro forte: se il provider non si lega al risultato, probabilmente non è sicuro di poterlo garantire.
 
 ### 3. Skin in the game sull'assessment
 
@@ -202,9 +202,9 @@ Il processo che funziona per una PMI italiana 10-200 dipendenti:
 
 Pieno disclaimer: questa guida la scrive Soraia, AI agency italiana 100% focus PMI. Il nostro approccio differisce dagli standard di mercato su 4 punti.
 
-**1. Due figure dedicate (Project Manager e AI Engineer), a partire da 3.000 € al mese.** <a href="/prezzi">Vedi i prezzi</a>.
+**1. Tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 3.000 € al mese.** <a href="/prezzi">Vedi i prezzi</a>.
 
-**2. Garanzia "se non funziona, non paghi" scritta nel contratto.** Non è marketing, è clausola operativa con metric primario e finestra di misurazione.
+**2. Garanzia "primo mese soddisfatti o rimborsati" scritta nel contratto.** È una clausola operativa, con metric primario e finestra di misurazione.
 
 **3. Codice del cliente dalla prima settimana.** Zero lock-in. Se vuoi internalizzare dopo, ti diamo training e documentazione.
 

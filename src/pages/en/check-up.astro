@@ -3,7 +3,7 @@ import Layout from "~/layouts/Layout.astro";
 
 const title = "Free AI Check-up, understand where you stand in 3 minutes | Soraia";
 const description =
-  "7 questions, 3 minutes, no email required. Get your AI Readiness Score + 3 concrete recommendations to bring AI into your company.";
+  "7 questions, 3 minutes, no email required. Get your AI Score + 3 concrete recommendations to bring AI into your company.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -139,7 +139,7 @@ const questions = [
       </h1>
 
       <p class="mt-6 text-[17px] md:text-[18px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
-        7 questions about your operational reality. We return an <strong style="color: var(--color-ink); font-weight: 500;">AI Readiness Score</strong> (0-100) and 3 concrete recommendations for your situation. No email required to see the result.
+        7 questions about your operational reality. We return an <strong style="color: var(--color-ink); font-weight: 500;">AI Score</strong> (0-100) and 3 concrete recommendations for your situation. No email required to see the result.
       </p>
     </div>
   </section>
@@ -214,7 +214,7 @@ const questions = [
       <div class="text-center mb-12">
         <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
           <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
-          Your AI Readiness Score
+          Your AI Score
         </p>
 
         <p style="font-family: var(--font-sans); font-size: clamp(5rem, 14vw, 8rem); font-weight: 500; letter-spacing: -0.04em; line-height: 1; color: var(--color-brand);">
@@ -231,20 +231,8 @@ const questions = [
         <ul id="cu-recs" class="space-y-5"></ul>
       </div>
 
-      <!-- CTA: download sample + book call -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <a href="/en/downloads/ai-assessment-sample" class="card-editorial !p-6 group no-underline transition-all hover:!-translate-y-1 hover:shadow-md">
-          <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-lg bg-violet-50 text-violet-700 flex items-center justify-center flex-shrink-0">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </div>
-            <div>
-              <p class="font-medium text-[15px]" style="color: var(--color-ink);">Download the sample assessment</p>
-              <p class="text-[13px] mt-1 leading-snug" style="color: var(--color-ink-muted);">Anonymous example PDF. What you would receive in 1-2 weeks.</p>
-            </div>
-          </div>
-        </a>
-
+      <!-- CTA: book call -->
+      <div class="max-w-xl mx-auto">
         <a href="/en/contact" class="card-editorial !p-6 group no-underline transition-all hover:!-translate-y-1 hover:shadow-md" style="border-color: var(--color-violet-200); background: #FDF4FF;">
           <div class="flex items-start gap-4">
             <div class="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0" style="background: var(--color-brand); color: white;">
@@ -252,7 +240,7 @@ const questions = [
             </div>
             <div>
               <p class="font-medium text-[15px]" style="color: var(--color-ink);">Discuss your result</p>
-              <p class="text-[13px] mt-1 leading-snug" style="color: var(--color-ink-muted);">20 min with the CEO. Together we figure out where to start.</p>
+              <p class="text-[13px] mt-1 leading-snug" style="color: var(--color-ink-muted);">20 min with Daniel. Together we figure out where to start: a process audit or straight into the first sprint.</p>
             </div>
           </div>
         </a>
@@ -340,27 +328,27 @@ const questions = [
       function tierFor(score) {
         if (score < 40) return {
           title: "Early stage, you need a foundation.",
-          desc: "You\'re in an exploratory phase. Before building agents, it\'s worth aligning your team on AI usage and establishing core processes.",
+          desc: "You\'re in an exploratory phase. Before building agents, it\'s worth understanding how the team really works and establishing core processes.",
           recs: [
-            { title: "Start with an AI Adoption Foundation", body: "A 2-day workshop to level up the team on daily AI use + basic governance, for teams of up to 20 people." },
-            { title: "Map your processes before automating", body: "Understand who does what and where time is lost. Without a baseline, agents have no target." },
-            { title: "Get ready for a sprint", body: "Once the team is aligned, pick 1-2 high-impact processes and build your first agent. 4 weeks to first deploy." },
+            { title: "Start with the process audit", body: "We come on site, interview people at their desks and map the flows in the field. Out of it come the right priorities and an action plan the team recognises as its own. <a href='/en/contact' style='color: var(--color-brand); text-decoration: underline;'>It starts with a 20-minute call</a>." },
+            { title: "Measure a baseline before automating", body: "Understand who does what and where time is lost. Without a baseline, agents have no target." },
+            { title: "Get ready for the first sprint", body: "Once priorities are clear, pick 1-2 high-impact processes and build your first agent with <a href='/en/ai-agents' style='color: var(--color-brand); text-decoration: underline;'>AI Engineering</a>: first release in production in 4 weeks." },
           ],
         };
         if (score < 70) return {
           title: "Ready. You\'re ready to build.",
           desc: "You have the right bottlenecks, a motivated team, and likely a budget. Now you need a precise action plan and a first agent in production.",
           recs: [
-            { title: "Run the AI Readiness Assessment", body: "1-2 weeks of work together. Outputs: process map, prioritised bottlenecks, tool evaluation, operational action plan. <a href='/en/downloads/ai-assessment-sample' style='color: var(--color-brand); text-decoration: underline;'>Download a sample report</a>." },
-            { title: "Co-Building Sprint", body: "First delivery in 4 weeks. If you\'re not satisfied, you don\'t pay. Your team learns alongside us during the sprint." },
-            { title: "Support AI Adoption", body: "While we build the agents, we train the team that will use them. Without adoption, agents end up forgotten." },
+            { title: "Run the process audit", body: "On-site audit: desk-side interviews, observing the work as it really happens, flow mapping. Outputs: the right priorities and an operational action plan. <a href='/en/contact' style='color: var(--color-brand); text-decoration: underline;'>Start with a 20-minute call</a>." },
+            { title: "AI Engineering: first release in 4 weeks", body: "AI agents and custom software in sprints: the first release runs on your real processes in 4 weeks, then improves one release at a time. First month satisfied or refunded. <a href='/en/ai-agents' style='color: var(--color-brand); text-decoration: underline;'>See how we work</a>." },
+            { title: "Bring the team along", body: "While we build the agents, we train the team that will use them. Without adoption, agents end up forgotten." },
           ],
         };
         return {
           title: "Advanced. Let\'s build specific agents.",
           desc: "You\'re already leveraging AI at a basic level. The next leap is building custom agents on your specific processes, with your own code and zero lock-in.",
           recs: [
-            { title: "Go straight to Assessment + Sprint", body: "You have the foundations. We go directly to the 2-3 processes with the highest ROI. Initial assessment, then sprint, guarantee included. <a href='/en/downloads/ai-assessment-sample' style='color: var(--color-brand); text-decoration: underline;'>View a sample report</a>." },
+            { title: "Go straight to AI Engineering", body: "You have the foundations. We go directly to the 2-3 processes with the highest ROI: first release in production in 4 weeks, then one release at a time, first month satisfied or refunded. <a href='/en/ai-agents' style='color: var(--color-brand); text-decoration: underline;'>See the method</a> or book <a href='/en/contact' style='color: var(--color-brand); text-decoration: underline;'>20 min with Daniel</a>." },
             { title: "Consider the Brain pilot", body: "For power users, deploy the Soraia Brain framework: each person gets a personal AI intern that knows their work. A real differentiator." },
             { title: "Think long-term: your code, no lock-in", body: "The agent code is yours from week one. If you want to internalise later, we provide training + docs. Zero perpetual subscriptions." },
           ],

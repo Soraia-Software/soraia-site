@@ -68,11 +68,11 @@ faq:
   - q: "Does an AI agent fully replace a BPO?"
     a: "Rarely, and that is not the goal. An AI agent is excellent at repetitive requests and triage, but ambiguous, emotional or negotiation cases still need <strong>escalation to a human</strong>. The most robust model is hybrid: the agent handles first level, humans handle complex cases. See how we work on <a href='/customer-support'>customer support</a>."
   - q: "How much does starting with an AI agent cost versus a BPO?"
-    a: "With Soraia it starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool. A BPO instead has a recurring cost per agent or per ticket, low at first but <strong>linear</strong> as volumes grow. What pays off depends on your numbers: <a href='/parliamone'>let's talk</a>."
+    a: "With Soraia it starts from <strong>€3,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and a combined monthly hours pool. A BPO instead has a recurring cost per agent or per ticket, low at first but <strong>linear</strong> as volumes grow. What pays off depends on your numbers: <a href='/parliamone'>let's talk</a>."
   - q: "Is the AI agent GDPR and AI Act compliant?"
     a: "Yes. Soraia's <a href='/ai-agents'>AI agents</a> are GDPR-compliant, with European infrastructure when required, an art. 28 DPA included and an <strong>immutable audit log on every decision</strong>. No LLM training on client data."
   - q: "What if the agent falls short of the promised quality?"
-    a: "With Soraia the <strong>you pay only if satisfied</strong> guarantee applies: a measurable target is set at assessment (e.g. share of tickets resolved autonomously) and, if it is not met by go-live plus 30 days of hypercare, Soraia works for free until it is."
+    a: "With Soraia the <strong>first month satisfied or refunded</strong> guarantee applies: a measurable target is set in the process audit (e.g. share of tickets resolved autonomously) and, if the first month doesn't convince you, Soraia refunds it or keeps working for free until you're satisfied."
 related: []
 featured: false
 pubDate: 2026-09-29

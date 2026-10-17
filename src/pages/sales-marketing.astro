@@ -19,7 +19,7 @@ const jsonLd = [
     provider: { "@type": "Organization", name: "Soraia", url: "https://www.soraia.io" },
     areaServed: "IT",
     serviceType: "AI agents for sales and marketing operations",
-    offers: { "@type": "Offer", description: "Assessment iniziale su richiesta." },
+    offers: { "@type": "Offer", description: "Da 3.000 € al mese, tre persone dedicate; primo mese soddisfatti o rimborsati." },
   },
 ];
 
@@ -42,7 +42,7 @@ const processes = [
   {
     number: "01",
     title: "Prospect identification (ICP match)",
-    description: "L'agente scansiona fonti pubbliche e database, identifica aziende e profili che matchano il vostro ICP (settore, dimensione, segnali di hiring/funding/expansion). Niente più liste compre comprate.",
+    description: "L'agente scansiona fonti pubbliche e database, identifica aziende e profili che matchano il tuo ICP (settore, dimensione, segnali di hiring/funding/expansion). Niente più liste comprate.",
     icon: "screen" as const,
   },
   {
@@ -54,7 +54,7 @@ const processes = [
   {
     number: "03",
     title: "Qualifica dinamica (BANT, MEDDIC, custom)",
-    description: "L'agente applica il vostro framework di qualifica sui dati raccolti. Score motivato, tier hot/warm/cold, ragioni del match. Il sales riceve solo lead pronti alla conversazione.",
+    description: "L'agente applica il tuo framework di qualifica sui dati raccolti. Score motivato, tier hot/warm/cold, ragioni del match. Il sales riceve solo lead pronti alla conversazione.",
     icon: "compass" as const,
   },
   {
@@ -94,15 +94,15 @@ const comparisonRows = [
   { label: "Costo", values: ["Per seat alto", "Per seat alto", "One-time + maintenance"] as [string, string, string] },
   { label: "Personalizzazione vera", values: ["Template", "Template avanzati", "Contestuale per lead"] as [string, string, string] },
   { label: "Enrichment incluso", values: ["Add-on a parte", "Limitato", "Da 25+ fonti, incluso"] as [string, string, string] },
-  { label: "Qualifica framework custom", values: ["No", "BANT base", "BANT/MEDDIC/vostro"] as [string, string, string] },
-  { label: "Dipendenza dal fornitore", values: ["Totale", "Totale", "Nessuna (codice vostro)"] as [string, string, string] },
+  { label: "Qualifica framework custom", values: ["No", "BANT base", "BANT/MEDDIC/tuo"] as [string, string, string] },
+  { label: "Dipendenza dal fornitore", values: ["Totale", "Totale", "Nessuna (codice tuo)"] as [string, string, string] },
   { label: "Attribution analytics", values: ["Base", "Sì", "Custom dashboard"] as [string, string, string] },
 ];
 
 const faqs = [
   {
     q: "Come gestite GDPR e dati personali dei lead?",
-    a: "Infrastruttura europea, log completi delle decisioni dell'agente, retention configurabile, opt-out e diritto all'oblio one-click. <strong>Nessun training sui vostri dati</strong>.",
+    a: "Infrastruttura europea, log completi delle decisioni dell'agente, retention configurabile, opt-out e diritto all'oblio one-click. <strong>Nessun training sui tuoi dati</strong>.",
   },
   {
     q: "Si integra con HubSpot, Salesforce, Pipedrive, CRM custom?",
@@ -114,11 +114,11 @@ const faqs = [
   },
   {
     q: "Come addestrate il messaging brand?",
-    a: "Partiamo dalle vostre email/sequence più performanti. L'agente impara il vostro tono, struttura, tipologia di CTA. Validiamo con voi prima di mandare in produzione su volumi reali.",
+    a: "Partiamo dalle tue email/sequence più performanti. L'agente impara il tuo tono, struttura, tipologia di CTA. Lo validiamo con te prima di mandare in produzione su volumi reali.",
   },
   {
     q: "Quanto costa davvero?",
-    a: "Assessment iniziale. Sprint di costruzione. Garanzia: se l'agente non aumenta il tasso di risposta o non riduce il tempo di profilazione promesso, lavoriamo gratis finché non lo fa.",
+    a: "Da <strong>3.000 € al mese</strong> con tre persone dedicate (Account Manager, Project Manager e AI Engineer), oppure a corpo da 5.000 € per un primo rilascio. Primo mese soddisfatti o rimborsati. Il dettaglio è nei <a href='/prezzi' style='color: var(--color-brand); text-decoration: underline;'>prezzi</a>.",
   },
 ];
 ---
@@ -142,11 +142,11 @@ const faqs = [
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
             </svg>
-            <span class="text-[14px] font-medium" style="color: #F4B842;">Se non funziona, non paghi. Garanzia inclusa.</span>
+            <span class="text-[14px] font-medium" style="color: #F4B842;">Primo mese soddisfatti o rimborsati.</span>
           </div>
           <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
             <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
-              Richiedi assessment
+              20 min con Daniel
               <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
             </a>
             <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">Vedi il caso ILTEC</a>
@@ -218,10 +218,10 @@ const faqs = [
           La nostra garanzia
         </p>
         <h2 style="color: #fff; font-size: clamp(2rem, 4vw + 0.5rem, 3rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;" class="text-balance">
-          Pipeline qualificata in autonomia.<br/><span style="color: rgba(255,255,255,0.45);">Misurata in 4 settimane. O non paghi.</span>
+          Pipeline qualificata in autonomia.<br/><span style="color: rgba(255,255,255,0.45);">Primo mese soddisfatti o rimborsati.</span>
         </h2>
         <p style="color: rgba(255,255,255,0.72);" class="mt-7 text-[17px] leading-relaxed max-w-2xl text-pretty">
-          Baseline misurata in assessment (tempo profilazione + tasso risposta + lead qualificati/settimana). Se l'agente non porta i numeri promessi, lavoriamo gratis finché non succede, oppure rimborsiamo.
+          Baseline misurata insieme nell'analisi dei processi (tempo profilazione + tasso risposta + lead qualificati/settimana). Ogni milestone la approvi tu. Se il primo mese non ti convince, ti rimborsiamo.
         </p>
       </div>
     </div>
@@ -268,11 +268,11 @@ const faqs = [
         Scopri quante ore può recuperare il tuo sales team.
       </h2>
       <p class="mt-5 text-[17px] leading-relaxed reveal reveal-delay-1" style="color: var(--color-ink-muted);">
-        Assessment iniziale, 1-2 settimane dall'inizio al report.
+        Si parte da una call di 20 minuti con Daniel. Da lì, analisi dei processi in azienda o direttamente il primo sprint: dipende da te.
       </p>
       <div class="mt-10 reveal reveal-delay-2">
         <a href="/parliamone" class="btn btn-primary">
-          Richiedi assessment
+          20 min con Daniel
           <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </a>
       </div>

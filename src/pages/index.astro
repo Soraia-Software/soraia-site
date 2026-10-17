@@ -47,7 +47,7 @@ const carouselItems = allCases
 
 const title = "Soraia. Portiamo gli Agenti IA nelle PMI Italiane";
 const description =
-  "Non software che il tuo team deve imparare a usare. Agenti IA che eseguono i tuoi processi. Misuriamo il tempo recuperato, se non funziona, non paghi.";
+  "Mettiamo ordine nei processi della tua PMI e li automatizziamo con software su misura e agenti IA, che restano tuoi. Analisi dei processi e AI Engineering, da 3.000 € al mese con tre persone dedicate. Primo mese soddisfatti o rimborsati.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -61,6 +61,8 @@ const jsonLd = {
   email: "info@soraia.io",
   vatID: "IT02820060024",
   foundingDate: "2023",
+  numberOfEmployees: { "@type": "QuantitativeValue", minValue: 10 },
+  knowsAbout: ["Analisi dei processi aziendali", "Agenti IA", "AI Engineering", "Automazione dei processi per PMI"],
   address: {
     "@type": "PostalAddress",
     streetAddress: "Via Losana 13",
@@ -174,11 +176,11 @@ const worldRegions = [
 const faqs = [
   {
     q: "Cosa fa Soraia in 30 secondi?",
-    a: "Siamo un'<strong>AI Agency italiana</strong> con clienti in 11 paesi. Lavoriamo su due fronti: <strong>AI Agents</strong> (costruiamo agenti IA che eseguono i tuoi processi end-to-end) e <strong>AI Adoption</strong> (formiamo il team perché capisca cosa cambia). Prima delivery in 4 settimane. Se non funziona, non paghi.",
+    a: "Siamo un'<strong>AI agency italiana</strong> per le PMI: mettiamo ordine nei processi e li automatizziamo con software su misura e agenti IA, che restano di tua proprietà. Due servizi: <strong>Analisi dei processi</strong> (veniamo in azienda, mappiamo il lavoro com'è davvero e usciamo con le priorità e un piano d'azione) e <strong>AI Engineering</strong> (sviluppo a sprint, primo rilascio in produzione in 4 settimane). Primo mese soddisfatti o rimborsati.",
   },
   {
     q: "Quanto costa iniziare?",
-    a: "Da <strong>3.000 € al mese</strong>, IVA esclusa. Un modello unico e semplice: due figure dedicate sul progetto, un Project Manager e un AI Engineer, con un monte ore combinato al mese. Il prezzo sale solo se servono più ore. Muovi lo slider e vedi il prezzo nella <a href='/prezzi' style='color: var(--color-brand); text-decoration: underline;'>pagina Prezzi</a>.",
+    a: "Da <strong>3.000 € al mese</strong>, IVA esclusa, per un pacchetto di 45 ore: tre persone dedicate sul progetto, un Account Manager, un Project Manager e un AI Engineer, con un monte ore combinato. Il prezzo sale a scaglioni di 1.000 € solo se servono più ore, anche solo per un mese. In alternativa lavoriamo a corpo, a prezzo fisso, da 5.000 € per un primo rilascio. Muovi lo slider nella <a href='/prezzi' style='color: var(--color-brand); text-decoration: underline;'>pagina Prezzi</a>.",
   },
   {
     q: "Per chi è pensato?",
@@ -186,11 +188,11 @@ const faqs = [
   },
   {
     q: "In quanto tempo si vedono risultati?",
-    a: "<strong>4 settimane dal go al primo agente in produzione</strong>. Settimana 1: discovery + baseline misurata. Settimane 2-3: build. Settimana 4: deploy + training del team + prima misurazione. <strong>30 giorni di affiancamento inclusi</strong> dopo il go-live. Per AI Adoption: programma da 6 settimane (Foundation) a 4 mesi (con Brain Pilot).",
+    a: "<strong>4 settimane dal via al primo rilascio in produzione</strong>, sui tuoi processi reali. Da lì si prosegue a sprint, un rilascio alla volta, e ogni milestone la approvi tu prima di andare avanti. Se parti dall'analisi dei processi, in poche settimane hai la mappa dei flussi, le priorità e il piano d'azione.",
   },
   {
     q: "Come funziona il primo step?",
-    a: "Si parte con una <strong>call gratuita di 20 minuti</strong> con il CEO Daniel, nessun pitch, solo capire se ha senso parlarci. Se c'è un caso d'uso concreto, definiamo insieme il perimetro e le ore che servono davvero, poi partiamo con le due figure dedicate e le prime milestone (<a href='/downloads/ai-assessment-sample' style='color: var(--color-brand); text-decoration: underline;'>vedi un esempio di analisi iniziale</a>). Le milestone e i rilasci sono l'obbligo di risultato: li approvi tu.",
+    a: "Si parte con una <strong>call gratuita di 20 minuti</strong> con Daniel, il CEO: nessun pitch, solo capire se ha senso lavorare insieme. Daniel risponde personalmente entro 24 ore. Poi decidi tu da dove partire: dall'analisi dei processi in azienda, oppure direttamente dal primo sprint se hai già le idee chiare. Le milestone e i rilasci sono l'obbligo di risultato: li approvi tu.",
   },
 ];
 ---
@@ -239,7 +241,7 @@ const faqs = [
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
             </svg>
-            <span class="text-[14px] text-amber font-medium">Se non funziona, non paghi. Garanzia inclusa.</span>
+            <span class="text-[14px] text-amber font-medium">Primo mese soddisfatti o rimborsati.</span>
           </div>
 
           <!-- CTA + CEO CHIP -->

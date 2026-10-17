@@ -72,8 +72,8 @@ const questions = [
   },
   {
     id: "pain",
-    label: "Qual è il vostro principale problema operativo?",
-    sub: "Dove perdete più tempo o accumulate più errori.",
+    label: "Qual è il tuo principale problema operativo?",
+    sub: "Dove perdi più tempo o accumuli più errori.",
     layout: "grid-cols-1 md:grid-cols-2",
     variant: "rich",
     options: [
@@ -101,7 +101,7 @@ const questions = [
   },
   {
     id: "urgency",
-    label: "Quanto urge per voi vedere risultati?",
+    label: "Quanto urge per te vedere risultati?",
     sub: "Da qui dipende molto la scelta del primo step.",
     layout: "grid-cols-1 md:grid-cols-2",
     variant: "text",
@@ -231,20 +231,8 @@ const questions = [
         <ul id="cu-recs" class="space-y-5"></ul>
       </div>
 
-      <!-- CTA: download sample + book call -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <a href="/downloads/ai-assessment-sample" class="card-editorial !p-6 group no-underline transition-all hover:!-translate-y-1 hover:shadow-md">
-          <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-lg bg-violet-50 text-violet-700 flex items-center justify-center flex-shrink-0">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </div>
-            <div>
-              <p class="font-medium text-[15px]" style="color: var(--color-ink);">Scarica il sample assessment</p>
-              <p class="text-[13px] mt-1 leading-snug" style="color: var(--color-ink-muted);">PDF anonimo di esempio. Cosa riceveresti in 1-2 settimane.</p>
-            </div>
-          </div>
-        </a>
-
+      <!-- CTA: book call -->
+      <div class="max-w-xl mx-auto">
         <a href="/parliamone" class="card-editorial !p-6 group no-underline transition-all hover:!-translate-y-1 hover:shadow-md" style="border-color: var(--color-violet-200); background: #FDF4FF;">
           <div class="flex items-start gap-4">
             <div class="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0" style="background: var(--color-brand); color: white;">
@@ -252,7 +240,7 @@ const questions = [
             </div>
             <div>
               <p class="font-medium text-[15px]" style="color: var(--color-ink);">Discuti il tuo risultato</p>
-              <p class="text-[13px] mt-1 leading-snug" style="color: var(--color-ink-muted);">20 min con il CEO. Capiamo insieme da dove iniziare.</p>
+              <p class="text-[13px] mt-1 leading-snug" style="color: var(--color-ink-muted);">20 min con Daniel. Capiamo insieme da dove iniziare: analisi dei processi o direttamente il primo sprint.</p>
             </div>
           </div>
         </a>
@@ -339,28 +327,28 @@ const questions = [
 
       function tierFor(score) {
         if (score < 40) return {
-          title: "Early stage, serve foundation.",
-          desc: "Sei in una fase esplorativa. Prima di costruire agenti, conviene allineare il team sull'uso dell'AI e fissare i processi di base.",
+          title: "Early stage, serve una base.",
+          desc: "Sei in una fase esplorativa. Prima di costruire agenti, conviene capire come lavora davvero il team e fissare i processi di base.",
           recs: [
-            { title: "Inizia da un AI Adoption Foundation", body: "Workshop di 2 giorni per livellare il team sull'uso AI quotidiano + governance di base, per team fino a 20 persone." },
-            { title: "Mappa i tuoi processi prima di automatizzare", body: "Capisci chi fa cosa e dove si perde tempo. Senza baseline, gli agenti non hanno target." },
-            { title: "Tieniti pronto per uno sprint", body: "Una volta che il team è allineato, scegli 1-2 processi ad alto impatto e costruisci il primo agente. 4 settimane al primo deploy." },
+            { title: "Inizia dall'analisi dei processi", body: "Veniamo in azienda, intervistiamo le persone alla loro scrivania e mappiamo i flussi sul campo. Ne escono le priorità giuste e un piano d'azione che il team riconosce come suo. <a href='/parliamone' style='color: var(--color-brand); text-decoration: underline;'>Si richiede da una call di 20 minuti</a>." },
+            { title: "Misura una baseline prima di automatizzare", body: "Capisci chi fa cosa e dove si perde tempo. Senza baseline, gli agenti non hanno target." },
+            { title: "Tieniti pronto per il primo sprint", body: "Una volta chiare le priorità, scegli 1-2 processi ad alto impatto e costruisci il primo agente con l'<a href='/ai-engineering' style='color: var(--color-brand); text-decoration: underline;'>AI Engineering</a>: primo rilascio in produzione in 4 settimane." },
           ],
         };
         if (score < 70) return {
           title: "Ready. Sei pronto a costruire.",
           desc: "Hai i bottleneck giusti, il team motivato e probabilmente un budget. Adesso serve un piano d'azione preciso e un primo agente in produzione.",
           recs: [
-            { title: "Fai l'AI Readiness Assessment", body: "1-2 settimane di lavoro insieme. Esce con: mappa processi, bottleneck con priorità, valutazione tool, action plan operativo. <a href='/downloads/ai-assessment-sample' style='color: var(--color-brand); text-decoration: underline;'>Scarica un sample del report</a>." },
-            { title: "Co-Building Sprint", body: "Prima delivery in 4 settimane. Se non sei soddisfatto, non paghi. Il tuo team forma con noi durante lo sprint." },
-            { title: "Affianca l'AI Adoption", body: "Mentre costruiamo gli agenti, formiamo il team che li userà. Senza adoption, gli agenti finiscono dimenticati." },
+            { title: "Fai l'analisi dei processi", body: "Audit in azienda: interviste alla scrivania, osservazione del lavoro com'è davvero, mappa dei flussi. Esce con le priorità giuste e un piano d'azione operativo. <a href='/parliamone' style='color: var(--color-brand); text-decoration: underline;'>Parti da una call di 20 minuti</a>." },
+            { title: "AI Engineering: primo rilascio in 4 settimane", body: "Agenti IA e software su misura a sprint: il primo rilascio gira sui tuoi processi reali in 4 settimane, poi migliora un rilascio alla volta. Primo mese soddisfatti o rimborsati. <a href='/ai-engineering' style='color: var(--color-brand); text-decoration: underline;'>Scopri come lavoriamo</a>." },
+            { title: "Porta il team con te", body: "Mentre costruiamo gli agenti, formiamo il team che li userà. Senza adozione, gli agenti finiscono dimenticati." },
           ],
         };
         return {
           title: "Advanced. Costruiamo agenti specifici.",
           desc: "Stai già sfruttando AI a un livello base. Il prossimo salto è costruire agenti custom sui tuoi processi specifici, con codice tuo e zero lock-in.",
           recs: [
-            { title: "Salta all'Assessment + Sprint", body: "Hai le basi. Andiamo dritti su 2-3 processi a ROI più alto. Assessment iniziale, poi sprint, garanzia inclusa. <a href='/downloads/ai-assessment-sample' style='color: var(--color-brand); text-decoration: underline;'>Vedi un sample del report</a>." },
+            { title: "Salta direttamente all'AI Engineering", body: "Hai le basi. Andiamo dritti su 2-3 processi a ROI più alto: primo rilascio in produzione in 4 settimane, poi un rilascio alla volta, primo mese soddisfatti o rimborsati. <a href='/ai-engineering' style='color: var(--color-brand); text-decoration: underline;'>Vedi il metodo</a> oppure <a href='/parliamone' style='color: var(--color-brand); text-decoration: underline;'>20 min con Daniel</a>." },
             { title: "Considera il Brain pilot", body: "Per i power user, deploy framework Soraia Brain: ogni persona ha un AI intern personale che conosce il suo lavoro. Differenziatore reale." },
             { title: "Pensa lungo termine: codice tuo, no lock-in", body: "Il codice degli agenti è tuo dalla prima settimana. Se vuoi internalizzare dopo, ti diamo training + docs. Zero abbonamenti perpetui." },
           ],

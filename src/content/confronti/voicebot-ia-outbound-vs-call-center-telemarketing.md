@@ -75,11 +75,11 @@ faq:
   - q: "Il voicebot sostituisce del tutto i miei commerciali?"
     a: "No, e nella maggior parte dei casi non conviene. L'approccio piu' efficace e' <strong>ibrido</strong>: l'IA gestisce qualifica, richiami e promemoria ad alto volume, i commerciali si concentrano sulle trattative dove servono relazione e negoziazione. Vedi i nostri agenti <a href='/sales-marketing'>sales & marketing</a>."
   - q: "Quanto ci vuole per avere un voicebot outbound funzionante?"
-    a: "Con Soraia la <strong>prima delivery e' in 4 settimane</strong>: agente vocale connesso al CRM su un caso d'uso concreto (es. qualifica del primo contatto o promemoria appuntamenti). Si parte da un target misurabile concordato in assessment. Per il tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia la <strong>prima delivery e' in 4 settimane</strong>: agente vocale connesso al CRM su un caso d'uso concreto (es. qualifica del primo contatto o promemoria appuntamenti). Si parte da un target misurabile concordato in fase di analisi. Per il tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "Quanto costa rispetto a un'agenzia di telemarketing?"
-    a: "Il nostro modello parte da <strong>3.000 € al mese</strong> con due figure dedicate (Project Manager e AI Engineer) e codice del cliente dal primo giorno. Un'agenzia di telemarketing si paga a ora/operatore o a contatto: conveniente sui piccoli volumi, cara e difficile da scalare quando i volumi salgono. Il voicebot conviene proprio dove i numeri crescono."
+    a: "Il nostro modello parte da <strong>3.000 € al mese</strong> con tre persone dedicate (Account Manager, Project Manager e AI Engineer) e codice del cliente dal primo giorno. Un'agenzia di telemarketing si paga a ora/operatore o a contatto: conveniente sui piccoli volumi, cara e difficile da scalare quando i volumi salgono. Il voicebot conviene proprio dove i numeri crescono."
   - q: "E se il voicebot non converte come speravo?"
-    a: "Vale la garanzia <strong>paghi solo se sei soddisfatto</strong>: il target (es. numero di lead qualificati o appuntamenti fissati) si fissa in assessment e, se non e' raggiunto, si lavora finche' non lo e' o si rimborsa lo sprint. Il codice resta comunque tuo: nessun lock-in."
+    a: "Vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: il target (es. numero di lead qualificati o appuntamenti fissati) si fissa in fase di analisi e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto. Il codice resta comunque tuo: nessun lock-in."
 related: []
 featured: false
 pubDate: 2026-10-06

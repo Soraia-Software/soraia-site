@@ -26,7 +26,7 @@ faq:
   - q: "Is Odoo easier to integrate than TeamSystem or Zucchetti?"
     a: "Usually yes, because Odoo ships with an official API (XML-RPC/JSON-RPC) and a documented data model. But easy to connect doesn't mean easy project: the real difficulty is in the business rules, the exceptions and the team's change management, not the integration protocol."
   - q: "Do I have to switch ERP to use AI agents?"
-    a: "No, and if a vendor demands it as a prerequisite, be wary. Agents should be built <strong>on top of the stack you already have</strong>: the output lands in your systems through their official channels. The code is yours from day one, no lock-in, and the model is <strong>you only pay if it works</strong>: if the agreed target isn't hit at go-live, the work continues for free until it is, or the sprint is refunded."
+    a: "No, and if a vendor demands it as a prerequisite, be wary. Agents should be built <strong>on top of the stack you already have</strong>: the output lands in your systems through their official channels. The code is yours from day one, no lock-in, and the guarantee is <strong>first month satisfied or refunded</strong>: if the first month doesn't convince you, we refund it or keep working for free until you're satisfied."
   - q: "How long until the first agent integrated with my ERP?"
     a: "The first agent goes live in <strong>4 weeks</strong> for a well-scoped workflow. The integration itself is rarely the bottleneck: the measured baseline, the business rules and data access are, and they need to be clarified before any code is written."
   - q: "What about compliance? The ERP holds sensitive data."
@@ -78,7 +78,7 @@ In all three cases the golden rule is the same: **the ERP stays the authority ov
 ## What to avoid (the mistakes that sink projects)
 
 - **Letting the agent write straight into accounting tables.** You skip the ERP's validations and risk corrupting data you later invoice or file taxes on. Always go through the official import channel.
-- **Promising integration before seeing the instance.** "TeamSystem integrates" is an opinion until someone looks at your licence, your modules, your permissions. In the assessment we map what's actually accessible, before estimating anything.
+- **Promising integration before seeing the instance.** "TeamSystem integrates" is an opinion until someone looks at your licence, your modules, your permissions. In the process audit we map what's actually accessible, before estimating anything.
 - **Confusing "connected" with "automated."** Pulling a value out via API is 10% of the work. The other 90% is the business rules: which line items, which exceptions, when the agent decides on its own and when it hands off to a human.
 - **No baseline.** Without measuring what a workflow costs today, you can't say whether the agent improved it. It's the same principle we apply to every sprint and describe in the [guide to AI agents for companies](/en/guide/ai-agents-for-business).
 - **Audit log inside the ERP.** The agent's decisions belong in a **separate** immutable log: who/what triggered it, which rules, which output, whether there was an escalation. You need it for debugging and for compliance (GDPR art. 28 DPA, AI Act alignment).
@@ -103,4 +103,4 @@ For a well-scoped workflow, the first agent goes live in **4 weeks**. Integratio
 
 ---
 
-**Got an ERP and want to know whether (and how) an AI agent plugs into it?** [Let's talk](/en/contact): 20 minutes with the CEO, we look at your case and tell you honestly which of the three patterns is yours, before any quote. We work on a clear model: **you only pay if it works**, with a target set in the assessment and code that is yours from day one.
+**Got an ERP and want to know whether (and how) an AI agent plugs into it?** [Let's talk](/en/contact): 20 minutes with the CEO, we look at your case and tell you honestly which of the three patterns is yours, before any quote. We work on a clear model: **first month satisfied or refunded**, with a target set in the process audit and code that is yours from day one.

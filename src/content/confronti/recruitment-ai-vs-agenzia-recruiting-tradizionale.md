@@ -66,11 +66,11 @@ faq:
   - q: "Un agente IA sostituisce i recruiter?"
     a: "No, li potenzia. L'agente fa il lavoro ripetitivo (screening, parsing, primo contatto), i recruiter si concentrano su colloqui, valutazione e chiusura. Nel case <a href='/case-studies/apraise'>APraise</a> l'agente equivale a <strong>4 recruiter aggiuntivi</strong> senza sostituire il team esistente."
   - q: "Quanto costa un agente IA rispetto a un'agenzia?"
-    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese. Un'agenzia tradizionale costa in genere il 15-25% della RAL per ogni assunzione: su volumi alti, il costo per assunzione dell'agente scende molto piu' velocemente. <a href='/parliamone'>Parliamone</a> per una stima sul tuo volume di hiring, o vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese. Un'agenzia tradizionale costa in genere il 15-25% della RAL per ogni assunzione: su volumi alti, il costo per assunzione dell'agente scende molto piu' velocemente. <a href='/parliamone'>Parliamone</a> per una stima sul tuo volume di hiring, o vedi i <a href='/prezzi'>prezzi</a>."
   - q: "E per i ruoli executive o molto rari?"
     a: "Li' l'agenzia tradizionale resta spesso la scelta migliore: la rete di contatti e il giudizio umano su fit e negoziazione contano piu' dell'automazione. L'AI eccelle sul volume e sul primo filtro, non sul headhunting di pochi profili rari."
   - q: "E se l'agente non porta il risultato promesso?"
-    a: "Con Soraia vale la garanzia <strong>paghi solo se sei soddisfatto</strong>: si fissa un target misurabile in assessment (es. 5h/recruiter/settimana recuperate) e, se al go-live + 30 giorni di hypercare non e' raggiunto, si lavora gratis finche' non lo e' oppure si rimborsa lo sprint. Vedi il cluster <a href='/recruitment'>Recruitment & HR</a>."
+    a: "Con Soraia vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: si fissa un target misurabile in fase di analisi (es. 5h/recruiter/settimana recuperate) e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto. Vedi il cluster <a href='/recruitment'>Recruitment & HR</a>."
 related: []
 featured: false
 pubDate: 2026-08-13

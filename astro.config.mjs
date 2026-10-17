@@ -5,7 +5,14 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://www.soraia.io',
-  integrations: [react(), sitemap()],
+  integrations: [
+    react(),
+    sitemap({
+      // Fuori dalla sitemap le pagine noindex o di servizio: deck in call, demo portale,
+      // report di esempio del vecchio sito, area admin.
+      filter: (page) => !/\/(analisi-processi|demo-portale|downloads|admin)(\/|$)/.test(page),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

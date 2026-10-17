@@ -22,7 +22,7 @@ faq:
   - q: "Why are Italian SMBs stuck on AI adoption?"
     a: "The main brake is not software cost or technology, it is <strong>internal skills</strong>. Without someone inside the company who knows where to apply AI, how to map a process and how to measure the result, the tools sit unused or stay stuck as individual ChatGPT experiments."
   - q: "What should I do before adopting AI in my SMB?"
-    a: "Measure a baseline. Before buying anything, time 2-3 high-volume repetitive processes and quantify what they cost today. Without a baseline you cannot tell where AI pays off, nor verify whether it worked. It is also why the <strong>you only pay if it works</strong> guarantee only makes sense with clear starting numbers."
+    a: "Measure a baseline. Before buying anything, time 2-3 high-volume repetitive processes and quantify what they cost today. Without a baseline you cannot tell where AI pays off, nor verify whether it worked. It is also why the <strong>first month satisfied or refunded</strong> guarantee only makes sense with clear starting numbers."
   - q: "Does the AI Act block AI adoption for SMBs?"
     a: "No. From <strong>August 2026</strong> the AI Act is fully applicable, but for most SMBs the direct obligations are limited (transparency, human oversight on critical cases, an art. 28 GDPR DPA with vendors). It is not a reason to skip AI, it is a reason to adopt it with governance from day one."
   - q: "Where should I start on a limited budget?"
@@ -73,7 +73,7 @@ Translated: if you're an SMB of 10-200 people, your real comparison isn't with t
 
 Here's the most honest data point: the main brake isn't software price. It's **internal skills**.
 
-We see it in every assessment. The company has budget, has obvious repetitive processes, sometimes already pays for an enterprise licence. What's missing is someone who knows how to:
+We see it in every process audit. The company has budget, has obvious repetitive processes, sometimes already pays for an enterprise licence. What's missing is someone who knows how to:
 - recognise which process is worth automating;
 - map how it actually works today, not how the manual describes it;
 - measure before and after.
@@ -110,7 +110,7 @@ I'll also tell you when **not** to start:
 - If the team is under 10 people with highly varied tasks, an enterprise licence plus one or two automations is often enough, not a custom agent.
 - If the process will change in three months, wait for it to stabilise.
 
-These are the same rules we apply before proposing a [custom AI agent](/en/ai-agents): without starting numbers our "you only pay if it works" guarantee would make no sense, and we wouldn't sign it.
+These are the same rules we apply before proposing a [custom AI agent](/en/ai-agents): without starting numbers our "first month satisfied or refunded" guarantee would make no sense, and we wouldn't sign it.
 
 ## The honest conclusion
 

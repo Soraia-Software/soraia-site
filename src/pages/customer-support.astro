@@ -19,7 +19,7 @@ const jsonLd = [
     provider: { "@type": "Organization", name: "Soraia", url: "https://www.soraia.io" },
     areaServed: "IT",
     serviceType: "AI agents for customer support teams",
-    offers: { "@type": "Offer", description: "Assessment iniziale su richiesta." },
+    offers: { "@type": "Offer", description: "Da 3.000 € al mese, tre persone dedicate; primo mese soddisfatti o rimborsati." },
   },
 ];
 
@@ -92,32 +92,32 @@ const cases = [
 const comparisonRows = [
   { label: "Costo", values: ["Per seat", "Per ticket", "One-time + maintenance"] as [string, string, string] },
   { label: "Tempo a regime", values: ["Subito", "Setup lungo", "4 settimane"] as [string, string, string] },
-  { label: "Tono brand", values: ["Limitato", "Configurabile", "Addestrato sul vostro"] as [string, string, string] },
+  { label: "Tono brand", values: ["Limitato", "Configurabile", "Addestrato sul tuo"] as [string, string, string] },
   { label: "Multi-canale", values: ["Limitato", "Sì", "Sì, custom integration"] as [string, string, string] },
-  { label: "Dipendenza dal fornitore", values: ["Nessuna", "Totale", "Nessuna (codice vostro)"] as [string, string, string] },
+  { label: "Dipendenza dal fornitore", values: ["Nessuna", "Totale", "Nessuna (codice tuo)"] as [string, string, string] },
   { label: "Sentiment + analytics", values: ["No", "Sì base", "Custom executive dashboard"] as [string, string, string] },
 ];
 
 const faqs = [
   {
     q: "Come gestite GDPR e dati personali dei clienti?",
-    a: "Infrastruttura europea o on-premise sulla vostra. <strong>Nessun training sui vostri dati</strong>. Log di ogni decisione dell'agente, retention configurabile, audit-ready.",
+    a: "Infrastruttura europea o on-premise sulla tua. <strong>Nessun training sui tuoi dati</strong>. Log di ogni decisione dell'agente, retention configurabile, audit-ready.",
   },
   {
     q: "Si integra col mio helpdesk (Zendesk, Intercom, Freshdesk, custom)?",
-    a: "Sì. Lavoriamo via API o webhook con i principali helpdesk. Se hai una soluzione custom o un sistema legacy lo validiamo in assessment.",
+    a: "Sì. Lavoriamo via API o webhook con i principali helpdesk. Se hai una soluzione custom o un sistema legacy lo verifichiamo nell'analisi dei processi.",
   },
   {
     q: "L'agente può rispondere autonomamente o serve sempre l'umano?",
-    a: "Configurabile per categoria di ticket. Per casi routine (info standard, status check), può rispondere autonomamente con confidence threshold. Per casi delicati o borderline, passa al team con context completo. <strong>Voi decidete dove tracciare la linea</strong>.",
+    a: "Configurabile per categoria di ticket. Per casi routine (info standard, status check), può rispondere autonomamente con confidence threshold. Per casi delicati o borderline, passa al team con context completo. <strong>Decidi tu dove tracciare la linea</strong>.",
   },
   {
     q: "Come addestrate il tono brand?",
-    a: "Analizziamo un campione delle vostre risposte storiche migliori. Il tono di voce emerge dai dati, non da linee guida astratte. Validiamo con voi prima di andare in produzione.",
+    a: "Analizziamo un campione delle tue risposte storiche migliori. Il tono di voce emerge dai dati, non da linee guida astratte. Lo validiamo con te prima di andare in produzione.",
   },
   {
     q: "Quanto costa davvero?",
-    a: "Assessment iniziale. Sprint di costruzione. Garanzia: se l'agente non riduce il tempo di triage promesso, lavoriamo gratis fino a quando non lo fa.",
+    a: "Da <strong>3.000 € al mese</strong> con tre persone dedicate (Account Manager, Project Manager e AI Engineer), oppure a corpo da 5.000 € per un primo rilascio. Primo mese soddisfatti o rimborsati. Il dettaglio è nei <a href='/prezzi' style='color: var(--color-brand); text-decoration: underline;'>prezzi</a>.",
   },
 ];
 ---
@@ -141,11 +141,11 @@ const faqs = [
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
             </svg>
-            <span class="text-[14px] font-medium" style="color: #F4B842;">Se non funziona, non paghi. Garanzia inclusa.</span>
+            <span class="text-[14px] font-medium" style="color: #F4B842;">Primo mese soddisfatti o rimborsati.</span>
           </div>
           <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
             <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
-              Richiedi assessment
+              20 min con Daniel
               <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
             </a>
             <a href="#cases" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">Vedi il caso Navily</a>
@@ -217,10 +217,10 @@ const faqs = [
           La nostra garanzia
         </p>
         <h2 style="color: #fff; font-size: clamp(2rem, 4vw + 0.5rem, 3rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;" class="text-balance">
-          -70% di tempo operativo sul triage.<br/><span style="color: rgba(255,255,255,0.45);">Misurato in 4 settimane. O non paghi.</span>
+          -70% di tempo operativo sul triage.<br/><span style="color: rgba(255,255,255,0.45);">Primo mese soddisfatti o rimborsati.</span>
         </h2>
         <p style="color: rgba(255,255,255,0.72);" class="mt-7 text-[17px] leading-relaxed max-w-2xl text-pretty">
-          Baseline misurata in assessment sui vostri ticket reali. Se l'agente non recupera il tempo promesso al team, lavoriamo gratis finché non succede, oppure rimborsiamo lo sprint.
+          Baseline misurata insieme nell'analisi dei processi, sui tuoi ticket reali. Ogni milestone la approvi tu. Se il primo mese non ti convince, ti rimborsiamo.
         </p>
       </div>
     </div>
@@ -267,11 +267,11 @@ const faqs = [
         Scopri quanto tempo può recuperare il tuo team support.
       </h2>
       <p class="mt-5 text-[17px] leading-relaxed reveal reveal-delay-1" style="color: var(--color-ink-muted);">
-        Assessment iniziale, 1-2 settimane dall'inizio al report.
+        Si parte da una call di 20 minuti con Daniel. Da lì, analisi dei processi in azienda o direttamente il primo sprint: dipende da te.
       </p>
       <div class="mt-10 reveal reveal-delay-2">
         <a href="/parliamone" class="btn btn-primary">
-          Richiedi assessment
+          20 min con Daniel
           <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </a>
       </div>

@@ -12,7 +12,7 @@ keywords:
   - "quanto costa un agente AI PMI"
 optionA:
   nome: "Canone mensile con team dedicato"
-  descrizione: "Paghi un canone mensile per figure dedicate (Project Manager + AI Engineer) con un monte ore combinato, e le milestone approvate dal cliente guidano il lavoro."
+  descrizione: "Paghi un canone mensile per tre persone dedicate (Account Manager, Project Manager e AI Engineer) con un monte ore combinato, e le milestone approvate dal cliente guidano il lavoro."
   pro:
     - "Assorbe i cambi di scope senza rinegoziare il contratto ogni volta"
     - "Con Soraia le ore non consumate si recuperano nei mesi successivi, quelle in eccesso si scontano sui seguenti"
@@ -64,7 +64,7 @@ tabella:
 verdetto: "Non e' una scelta ideologica, dipende dalla stabilita' dello scope. Se sai esattamente cosa vuoi costruire e non cambiera', il prezzo fisso da' certezza di budget ed e' piu' semplice da approvare. Se il processo e' complesso, lo capisci davvero solo mentre lo costruisci, o pensi di farlo evolvere e mantenere, il canone mensile con team dedicato regge il cambiamento senza continue rinegoziazioni. Soraia lavora a canone proprio perche' gli agenti IA quasi sempre evolvono dopo il primo rilascio, ma fissa comunque milestone e un target concordato: cosi' hai la flessibilita' del canone e un obbligo di risultato chiaro."
 faq:
   - q: "Con un canone mensile pago anche se in un mese lavoro poco?"
-    a: "Con Soraia il canone e' un ritmo indicativo: le <strong>ore non consumate si recuperano nei mesi successivi</strong> e quelle in eccesso si scontano sui seguenti. Il canone parte da <strong>3.000 euro al mese</strong> con due figure dedicate. Quello che conta sono le milestone, che approva il cliente."
+    a: "Con Soraia il canone e' un ritmo indicativo: le <strong>ore non consumate si recuperano nei mesi successivi</strong> e quelle in eccesso si scontano sui seguenti. Il canone parte da <strong>3.000 euro al mese</strong> con tre persone dedicate. Quello che conta sono le milestone, che approva il cliente."
   - q: "Il prezzo fisso non e' sempre piu' sicuro per il mio budget?"
     a: "Sul singolo numero si', ma solo se lo scope non cambia. In pratica sui progetti AI il perimetro evolve mentre si costruisce, e ogni modifica diventa una rinegoziazione. Il prezzo fisso e' sicuro quando lo scope e' chiaro, stabile e delimitato; altrimenti nasconde extra e ritardi."
   - q: "Con il canone rischio di restare legato al fornitore?"

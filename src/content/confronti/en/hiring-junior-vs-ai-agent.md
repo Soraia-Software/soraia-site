@@ -70,9 +70,9 @@ faq:
   - q: "How fast is an AI agent operational compared to a junior?"
     a: "With Soraia the <strong>first delivery is in 4 weeks</strong>. A junior usually needs weeks or months of ramp-up before being fully productive, and that time is invested even if the person then changes role or leaves."
   - q: "How much does an AI agent cost compared to a salary?"
-    a: "With Soraia it starts at <strong>3,000 € per month</strong> (dedicated Project Manager + AI Engineer). A junior's loaded salary is recurring even in low-peak months; the agent has an upfront build cost and then a low marginal cost on volume. The choice depends on the role: <a href='/parliamone'>let's talk</a> and we'll estimate your case."
+    a: "With Soraia it starts at <strong>3,000 € per month</strong> (dedicated Account Manager, Project Manager and AI Engineer). A junior's loaded salary is recurring even in low-peak months; the agent has an upfront build cost and then a low marginal cost on volume. The choice depends on the role: <a href='/parliamone'>let's talk</a> and we'll estimate your case."
   - q: "What if I pick wrong?"
-    a: "With Soraia we set a measurable target in the assessment (e.g. hours recovered per week) and the <strong>pay only if you're satisfied</strong> guarantee applies. So you validate early whether the agent adds value on the role, before committing to a hire or a long path."
+    a: "With Soraia we set a measurable target in the process audit (e.g. hours recovered per week) and the <strong>first month satisfied or refunded</strong> guarantee applies. So you validate early whether the agent adds value on the role, before committing to a hire or a long path."
   - q: "Can I use both the junior and the agent?"
     a: "Yes, and it is often the best choice. The <strong>agent takes the repetitive work</strong> that demotivates and slows people down, while the junior focuses on cases that need judgement and grows faster because they are not buried in routine."
 related: []

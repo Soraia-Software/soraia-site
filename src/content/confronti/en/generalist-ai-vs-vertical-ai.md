@@ -68,7 +68,7 @@ faq:
   - q: "If I already use ChatGPT in the company, do I still need a vertical agent?"
     a: "It depends on the process. ChatGPT is great for individual productivity, but it does not run end-to-end work in your systems nor know your rules. When a process is repetitive, high-volume and core (CV screening, reconciliations, lead qualification), a <a href='/ai-agents'>vertical agent</a> delivers measurable ROI a generic tool cannot. The two integrate, they do not exclude each other."
   - q: "How much does it cost to move from a generalist tool to a vertical agent?"
-    a: "With Soraia it starts from <strong>€3,000/month</strong>: two dedicated people (a Project Manager and an AI Engineer) and a combined monthly hours pool, with first delivery in 4 weeks. The jump makes sense when the time lost on a single process justifies the investment. To see which processes are worth it, <a href='/parliamone'>let's talk</a>."
+    a: "With Soraia it starts from <strong>€3,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and a combined monthly hours pool, with first delivery in 4 weeks. The jump makes sense when the time lost on a single process justifies the investment. To see which processes are worth it, <a href='/parliamone'>let's talk</a>."
   - q: "Does vertical AI replace generalist AI?"
     a: "No. Generalist AI stays the everyday tool for a thousand non-standardised tasks. Vertical AI steps in on core, repetitive processes that need precision, execution and traceability. In practice an SME uses both: <a href='/guide/agenti-ai-aziende'>here is how vertical agents work</a>."
   - q: "How do I know which processes deserve a vertical agent?"

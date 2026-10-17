@@ -68,13 +68,13 @@ faq:
   - q: "Come capisco se un processo va costruito o comprato?"
     a: "Quattro criteri: se il processo e' <strong>core e differenziante</strong>, se il pacchetto ti obbliga a workaround pesanti, il <strong>costo totale a 2-3 anni</strong> (licenze + adattamenti) e il rischio di lock-in. Li abbiamo dettagliati qui: <a href='/blog/software-su-misura-o-saas/'>software su misura o SaaS</a>. Se vuoi ragionarci sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "Quanto costa partire con un software su misura?"
-    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: due figure dedicate (Project Manager e AI Engineer) e un monte ore combinato al mese, con primo rilascio in 4 settimane. Un ERP pronto ha un costo iniziale piu' basso, ma il canone per utente cresce ogni anno: la scelta si decide sul totale a 2-3 anni, non sul primo giorno. Vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese, con primo rilascio in 4 settimane. Un ERP pronto ha un costo iniziale piu' basso, ma il canone per utente cresce ogni anno: la scelta si decide sul totale a 2-3 anni, non sul primo giorno. Vedi i <a href='/prezzi'>prezzi</a>."
   - q: "Se costruisco su misura, resto dipendente dal fornitore?"
     a: "No. Con Soraia il <strong>codice e' tuo dal primo giorno</strong>, documentato e mantenibile: niente abbonamenti perpetui, niente lock-in. Con un ERP pronto invece i dati e le customizzazioni restano dentro il prodotto e migrare via e' spesso oneroso."
   - q: "Posso mischiare i due approcci?"
     a: "Si', ed e' spesso la scelta migliore. Molte PMI tengono un <strong>gestionale pronto sul commodity</strong> (contabilita', HR) e costruiscono <strong>su misura solo sul processo core</strong>. Vedi come lo abbiamo fatto per uno studio paghe in <a href='/case-studies/numeraria'>Numeraria</a>."
   - q: "E se non funziona?"
-    a: "Con Soraia vale la garanzia <strong>paghi solo se sei soddisfatto</strong>: il target si fissa in scoping e, se al go-live piu' 30 giorni di hypercare non e' raggiunto, si lavora gratis fino a quando non lo e' oppure si rimborsa lo sprint. Scopri di piu' su <a href='/software-development'>software su misura</a>."
+    a: "Con Soraia vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: il target si fissa in scoping e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto. Scopri di piu' su <a href='/software-development'>software su misura</a>."
 related: []
 featured: false
 pubDate: 2026-08-18

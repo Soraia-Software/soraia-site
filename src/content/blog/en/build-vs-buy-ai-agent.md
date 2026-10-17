@@ -101,4 +101,4 @@ We'll say it straight:
 
 ---
 
-**Want to work out if your process is ready to leave the platform?** We put it in writing in the [AI Readiness Assessment](/en/ai-agents) or start with the [3-minute check-up](/en/check-up).
+**Want to work out if your process is ready to leave the platform?** We put it in writing in the [process audit](/en/contact) or start with the [3-minute check-up](/en/check-up).

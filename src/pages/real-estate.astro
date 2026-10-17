@@ -27,13 +27,13 @@ const jsonLd = [
     offers: [
       {
         "@type": "Offer",
-        name: "AI Readiness Assessment",
-        description: "Assessment iniziale, 1-2 settimane.",
+        name: "Analisi dei processi",
+        description: "Audit in azienda: interviste, osservazione del lavoro, mappa dei flussi e piano d'azione.",
       },
       {
         "@type": "Offer",
-        name: "Co-Building Sprint",
-        description: "Sprint di costruzione, prima delivery in 4 settimane.",
+        name: "AI Engineering",
+        description: "Da 3.000 € al mese, tre persone dedicate; primo rilascio in 4 settimane; primo mese soddisfatti o rimborsati.",
       },
     ],
   },
@@ -135,11 +135,11 @@ const faqs = [
   },
   {
     q: "Su quali sistemi si integra?",
-    a: "Salesforce, HubSpot, Pipedrive, Zoho, gestionali immobiliari custom (Idealista PRO, Casa.it agenzie, CRM proprietari). Per dossier e documenti: Notion, Airtable, Xano, GDrive. Se hai uno stack custom lo validiamo in assessment.",
+    a: "Salesforce, HubSpot, Pipedrive, Zoho, gestionali immobiliari custom (Idealista PRO, Casa.it agenzie, CRM proprietari). Per dossier e documenti: Notion, Airtable, Xano, GDrive. Se hai uno stack custom lo verifichiamo nell'analisi dei processi.",
   },
   {
     q: "Quanto tempo per il primo agente in produzione?",
-    a: "<strong>4 settimane dal go</strong>. Settimana 1 discovery + baseline. Settimane 2-3 build (capture + enrichment + integrazione CRM). Settimana 4 deploy + training del team + prima misurazione. 30 giorni di hypercare inclusi.",
+    a: "<strong>4 settimane dal go</strong>. Il primo rilascio è in produzione in 4 settimane, poi si prosegue a sprint, un rilascio alla volta. 30 giorni di hypercare inclusi.",
   },
   {
     q: "Come gestite GDPR e dati clienti?",
@@ -147,7 +147,7 @@ const faqs = [
   },
   {
     q: "Quanto costa?",
-    a: "Assessment iniziale. Sprint di costruzione secondo complessità, prezzo definito in proposta dopo l'assessment. <strong>Paghi solo se sei soddisfatto</strong>: se al go-live + 30 giorni il target non è raggiunto, lavoriamo gratis fino a quando non succede.",
+    a: "Da <strong>3.000 € al mese</strong> con tre persone dedicate (Account Manager, Project Manager e AI Engineer), oppure a corpo da 5.000 € per un primo rilascio. <strong>Primo mese soddisfatti o rimborsati</strong>. Il dettaglio è nei <a href='/prezzi' style='color: var(--color-brand); text-decoration: underline;'>prezzi</a>.",
   },
 ];
 ---
@@ -177,7 +177,7 @@ const faqs = [
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
             </svg>
-            <span class="text-[14px] font-medium" style="color: #F4B842;">Paghi solo se sei soddisfatto. Garanzia inclusa.</span>
+            <span class="text-[14px] font-medium" style="color: #F4B842;">Primo mese soddisfatti o rimborsati.</span>
           </div>
 
           <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
@@ -292,15 +292,15 @@ const faqs = [
         </p>
 
         <h2 style="color: #fff; font-size: clamp(2rem, 4vw + 0.5rem, 3rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;" class="text-balance">
-          Prima delivery in 4 settimane.<br/><span style="color: rgba(255,255,255,0.45);">Se l'agente non recupera le ore, lavoriamo gratis.</span>
+          Prima delivery in 4 settimane.<br/><span style="color: rgba(255,255,255,0.45);">Primo mese soddisfatti o rimborsati.</span>
         </h2>
 
         <p style="color: rgba(255,255,255,0.72);" class="mt-7 text-[17px] leading-relaxed max-w-2xl text-pretty">
-          Lo sprint ha un target chiaro fissato in assessment (es: <em>agente di capture immobili che recupera 5h/consulente/settimana</em>). Se al go-live + 30 giorni di hypercare il target non è raggiunto, lavoriamo gratis fino a quando non succede, oppure rimborsiamo lo sprint.
+          Lo sprint ha un target chiaro, misurato insieme nell'analisi dei processi (es: <em>agente di capture immobili che recupera 5h/consulente/settimana</em>). Ogni milestone la approvi tu. Se il primo mese non ti convince, ti rimborsiamo.
         </p>
 
         <p style="color: rgba(255,255,255,0.55);" class="mt-4 text-[15px] leading-relaxed max-w-2xl text-pretty">
-          Assessment iniziale. Sprint di costruzione, prezzo definito in proposta. Il codice è tuo dal primo giorno, niente abbonamenti perpetui.
+          Tre persone dedicate, una quota mensile, anche solo per un mese. Il codice è tuo dal primo giorno, niente abbonamenti perpetui.
         </p>
       </div>
     </div>
@@ -370,7 +370,7 @@ const faqs = [
        ============================================================ -->
   <CTABanner
     title="20 minuti col CEO. Senza pitch."
-    description="Capiamo insieme se ha senso fare l'AI Readiness Assessment sul tuo caso. Nessun impegno, nessuna vendita."
+    description="Capiamo insieme da dove partire sul tuo caso: analisi dei processi in azienda o direttamente il primo sprint. Nessun impegno, nessuna vendita."
     ctaText="20 min con Daniel"
     ctaHref="/parliamone"
     avatarName="Daniel Levis"
