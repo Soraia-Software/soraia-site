@@ -440,7 +440,10 @@ const faqs = [
                 {g.people.map((p) => (
                   <div class="team-slide">
                     <figure class="team-card">
-                      <img src={`/team/${p.slug}.webp`} alt={p.name} width="600" height="750" loading="lazy" />
+                      <picture>
+                        <source srcset={`/team/${p.slug}.avif`} type="image/avif" />
+                        <img src={`/team/${p.slug}.webp`} alt={p.name} width="600" height="750" loading="lazy" />
+                      </picture>
                       <figcaption><span class="tc-name">{p.name}</span></figcaption>
                     </figure>
                   </div>
@@ -464,6 +467,7 @@ const faqs = [
         .team-track::-webkit-scrollbar { display: none; }
         .team-slide { flex: 0 0 100%; display: flex; justify-content: center; scroll-snap-align: center; padding: 2px 0; }
         .team-card { position: relative; width: clamp(190px, 62%, 240px); border-radius: var(--radius-lg); overflow: hidden; background: var(--color-ink-100); box-shadow: var(--shadow-sm); }
+        .team-card picture { display: block; }
         .team-card img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
         .team-card figcaption { position: absolute; inset: auto 0 0 0; padding: 30px 14px 12px; background: linear-gradient(to top, rgba(26,10,32,0.82) 0%, rgba(26,10,32,0.3) 55%, transparent 100%); }
         .tc-name { color: #fff; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
