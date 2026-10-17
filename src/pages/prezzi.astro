@@ -6,7 +6,7 @@ import "~/styles/prezzi.css";
 
 const title = "Prezzi | Soraia";
 const description =
-  "Prezzi semplici e trasparenti: due figure dedicate (Project Manager e AI Engineer), ore al mese combinate, a partire da 3.000 euro al mese. Sposta lo slider e vedi il prezzo.";
+  "Prezzi semplici e trasparenti: a pacchetti di ore (da 3.000 euro per 43 ore al mese) o a corpo a prezzo fisso (da 3.000 euro per un primo rilascio). Primo mese soddisfatti o rimborsati.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -28,110 +28,20 @@ const jsonLd = {
         Prezzi semplici e trasparenti
       </h1>
       <p class="mt-6 text-[18px] md:text-[20px] text-ink-700 leading-relaxed text-pretty">
-        Due figure dedicate sul tuo progetto, a partire da 3.000 euro al mese. Anche solo per un mese, senza vincoli di durata. Sposta lo slider e scopri il prezzo.
+        Due modelli, un solo metodo. A pacchetti di ore o a corpo a prezzo fisso, da 3.000 euro. Il primo mese è soddisfatti o rimborsati.
       </p>
     </div>
   </section>
 
-  <!-- METODOLOGIA (sprint methodology) -->
+  <!-- PRICING, due modelli -->
   <section class="section bg-white border-t border-line">
     <div class="container-soraia">
       <SectionHeader
-        eyebrow="Metodologia"
-        title="Come costruiamo i tuoi agenti IA."
-        subtitle="<strong>Sprint iterativi corti</strong>: ad ogni iterazione l'agente fa già qualcosa di utile in produzione. Niente progetti di 6 mesi che finiscono in un demo: vedi valore già dalla prima settimana."
+        eyebrow="Due modi di lavorare"
+        title="Scegli come preferisci lavorare con noi."
+        subtitle="A pacchetti di ore o a corpo, a prezzo fisso. In entrambi i casi si lavora a sprint, con metodo iterativo, e vedi tutto nella dashboard di progetto. <a href='/ai-engineering' style='color: var(--color-brand); font-weight: 600;'>Come lavoriamo, in dettaglio &rarr;</a>"
         align="center"
       />
-
-      <!-- Sprint diagram (hero visual, centered) -->
-      <figure class="m-0 mt-8 max-w-[1180px] mx-auto">
-        <div class="rounded-2xl bg-ink-50 border border-line px-4 py-6 md:px-8 md:py-8">
-          <img
-            src="/agile/sprint.webp"
-            alt="Sprint iterativi: ogni ciclo consegna valore in produzione"
-            loading="lazy"
-            decoding="async"
-            class="w-full h-auto block"
-          />
-        </div>
-        <figcaption class="mt-3.5 text-[12.5px] text-center" style="color: var(--color-ink-soft);">
-          Sprint iterativi: ad ogni ciclo l'agente è già in produzione.
-        </figcaption>
-      </figure>
-
-      <!-- Sprint steps timeline 4-col -->
-      <div class="mt-14 md:mt-16 max-w-6xl mx-auto">
-        <ol class="sprint-timeline">
-          <li class="sprint-step">
-            <div class="sprint-step-head">
-              <span class="sprint-num">1</span>
-              <div class="sprint-step-meta">
-                <p class="sprint-step-tag">Settimana 1</p>
-                <p class="sprint-step-title">Discovery + baseline</p>
-              </div>
-            </div>
-            <p class="sprint-step-body">Cronometriamo il processo target con il tuo team. Lock del <strong>metric primario unico</strong> (es. ore/persona/settimana recuperate). Senza baseline, niente garanzia.</p>
-          </li>
-          <li class="sprint-step">
-            <div class="sprint-step-head">
-              <span class="sprint-num">2</span>
-              <div class="sprint-step-meta">
-                <p class="sprint-step-tag">Settimane 2-3</p>
-                <p class="sprint-step-title">Build dell'agente</p>
-              </div>
-            </div>
-            <p class="sprint-step-body">Prompt engineering, integrazione con i tuoi sistemi (CRM, ATS, gestionali), regole di escalation, audit log. Review settimanali con il tuo team operativo.</p>
-          </li>
-          <li class="sprint-step">
-            <div class="sprint-step-head">
-              <span class="sprint-num">3</span>
-              <div class="sprint-step-meta">
-                <p class="sprint-step-tag">Settimana 4</p>
-                <p class="sprint-step-title">Shadow mode + training</p>
-              </div>
-            </div>
-            <p class="sprint-step-body">L'agente lavora in parallelo al team umano, senza ancora prendere decisioni autonome. Confronto output, fine-tuning sui criteri, formazione del team.</p>
-          </li>
-          <li class="sprint-step sprint-step--milestone">
-            <div class="sprint-step-head">
-              <span class="sprint-num sprint-num--milestone">4</span>
-              <div class="sprint-step-meta">
-                <p class="sprint-step-tag">Go-live + 30 gg</p>
-                <p class="sprint-step-title">Hypercare e misurazione</p>
-              </div>
-            </div>
-            <p class="sprint-step-body">L'agente passa in produzione. Monitoring attivo Soraia per 30 giorni, fix immediati sui casi limite. Al giorno 30: <strong>misurazione finale vs baseline</strong>. Se non hai recuperato le ore promesse, non paghi lo sprint.</p>
-          </li>
-        </ol>
-
-        <div class="mt-12 flex justify-center">
-          <div class="inline-flex items-center gap-2.5 px-5 py-3 rounded-full text-[13px] font-medium" style="background: var(--color-brand-soft); color: var(--color-brand); border: 1px solid var(--color-violet-200);">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span><strong>4 settimane</strong> al primo agente live · iterazioni mensili dopo il go-live</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4 SETTIMANE IN PRODUZIONE (la differenza) -->
-  <section class="section pt-0">
-    <div class="container-soraia">
-      <div class="rounded-3xl p-8 md:p-14 text-center" style="background: var(--color-brand); color: #fff;">
-        <p class="eyebrow mb-4" style="color: rgba(255,255,255,0.7);">La differenza</p>
-        <h2 class="text-balance mx-auto max-w-3xl" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 3rem); line-height: 1.08; letter-spacing: -0.025em; font-weight: 500; color: #fff;">
-          In 4 settimane sei già in produzione
-        </h2>
-        <p class="mt-5 text-[17px] md:text-[19px] leading-relaxed text-pretty max-w-2xl mx-auto" style="color: rgba(255,255,255,0.82);">
-          Molte agenzie, dopo quattro settimane, non ti hanno ancora mandato il preventivo. Con noi, nello stesso mese, il primo rilascio gira già sui tuoi processi reali.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PM + AI ENGINEER + SLIDER E PREZZI -->
-  <section class="section pt-4 md:pt-6">
-    <div class="container-soraia">
       <PricingCalculator client:load />
     </div>
   </section>
