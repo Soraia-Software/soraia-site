@@ -32,6 +32,16 @@ function cardQuote(c: typeof cases[number]): string {
   return q.length > 140 ? q.slice(0, 137).trimEnd() + "…" : q;
 }
 
+// Video testimonianze in cima alla pagina, cliccabili (un click e parte il video).
+// Ordine voluto: Gabriella (Stars Be Original), Margherita (40Factory, appena avrà il
+// videoTestimonial nel frontmatter), Gianluca (quando esisterà la scheda); poi gli altri.
+const videoOrder = ["stars-be-original", "40factory", "gianluca", "rainplan", "storywonder", "talent-match"];
+const withVideo = cases.filter((c) => c.data.videoTestimonial);
+const videoCases = [
+  ...videoOrder.map((slug) => withVideo.find((c) => c.id === slug)).filter(Boolean),
+  ...withVideo.filter((c) => !videoOrder.includes(c.id)),
+].slice(0, 4) as typeof cases;
+
 // Industry filter taxonomy, allineata ai 6 Ops cluster del sito.
 // Un case può appartenere a primary industry + additionalIndustries (es. ILTEC: sales-marketing + customer-support).
 const matchesIndustry = (c: typeof cases[number], id: string) =>
@@ -50,20 +60,86 @@ const industryFilters = [
 
 <Layout title={title} description={description} lang="it">
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
-    <div class="container-soraia pt-20 md:pt-28 pb-16 md:pb-20">
+  <!-- HERO + VIDEO TESTIMONIANZE: subito, con la foto come thumbnail, un click e parte il video -->
+  <section class="relative overflow-hidden border-b border-line bg-violet-mesh">
+    <div class="container-soraia pt-16 md:pt-24 pb-16 md:pb-20">
       <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
         <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
-        Case studies
+        Casi studio
       </p>
-      <h1 class="text-balance max-w-3xl" style="font-size: clamp(2.25rem, 5vw + 1rem, 4rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
-        Agenti IA in produzione. Numeri reali.
+      <h1 class="text-balance max-w-4xl" style="font-size: clamp(2.125rem, 4.2vw + 1rem, 3.75rem); line-height: 1.06; letter-spacing: -0.025em; font-weight: 500;">
+        Non chiedere a noi come lavoriamo. Ascolta il feedback reale, e non richiesto, dei nostri clienti.
       </h1>
       <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
-        Quali processi abbiamo automatizzato per PMI italiane ed europee, cosa abbiamo costruito, quali risultati. Niente vanity metrics, solo agenti in produzione che gestiscono lavoro vero.
+        Agenti IA in produzione per PMI italiane ed europee: cosa abbiamo costruito e quali risultati, raccontati da chi li usa ogni giorno.
       </p>
+
+      {videoCases.length > 0 && (
+        <div class="mt-12 md:mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {videoCases.map((c) => {
+            const v = c.data.videoTestimonial!;
+            const speaker = v.speaker || c.data.stakeholder.name;
+            const role = v.role || c.data.stakeholder.role;
+            const fallback = v.poster || c.data.stakeholder.photo || photoMap[c.id];
+            // thumbnail verticale di YouTube (Shorts); se non esiste si ripiega sulla foto del referente
+            const thumb = v.provider === "youtube" ? `https://i.ytimg.com/vi/${v.id}/oar2.jpg` : fallback;
+            const embed = v.provider === "youtube"
+              ? `https://www.youtube.com/embed/${v.id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`
+              : `https://player.vimeo.com/video/${v.id}?autoplay=1&title=0&byline=0&portrait=0`;
+            return (
+              <div class="vt">
+                <button type="button" class="vt-card" data-video-embed={embed} aria-label={`Guarda la testimonianza di ${speaker}, ${c.data.client}`}>
+                  <img src={thumb} alt="" loading="eager" decoding="async" class="vt-poster" onerror={`this.onerror=null;this.src='${fallback}'`} />
+                  <span class="vt-play" aria-hidden="true">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                </button>
+                <p class="vt-title">
+                  <strong>{speaker}</strong>
+                  <span>{role} · {c.data.client}</span>
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
+
+    <script is:inline>
+      (function () {
+        document.querySelectorAll("[data-video-embed]").forEach(function (card) {
+          card.addEventListener("click", function () {
+            if (card.dataset.playing) return;
+            card.dataset.playing = "1";
+            var frame = document.createElement("iframe");
+            frame.src = card.getAttribute("data-video-embed");
+            frame.title = card.getAttribute("aria-label") || "Video";
+            frame.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture; fullscreen");
+            frame.setAttribute("allowfullscreen", "");
+            frame.className = "vt-frame";
+            card.innerHTML = "";
+            card.appendChild(frame);
+            card.classList.add("is-playing");
+          }, { once: true });
+        });
+      })();
+    </script>
+    <style is:global>
+      /* tile verticali come sul canale YouTube: thumbnail 9:16, play al centro, titolo sotto */
+      .vt-card { position: relative; display: block; width: 100%; aspect-ratio: 9 / 16; border-radius: 1.125rem; overflow: hidden; border: 0; padding: 0; background: #1A0820; cursor: pointer; box-shadow: var(--shadow-sm); transition: transform .22s var(--ease-out-quart), box-shadow .22s ease; }
+      .vt-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+      .vt-card:focus-visible { outline: 3px solid var(--color-violet-200); outline-offset: 2px; }
+      .vt-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .5s var(--ease-out-quart); }
+      .vt-card:hover .vt-poster { transform: scale(1.03); }
+      .vt-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border-radius: 999px; background: rgba(255,255,255,0.92); color: var(--color-brand); display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(26,10,32,0.35); transition: transform .22s var(--ease-out-quart), background .22s ease; }
+      .vt-play svg { margin-left: 3px; }
+      .vt-card:hover .vt-play { transform: translate(-50%, -50%) scale(1.06); background: #fff; }
+      .vt-card.is-playing { cursor: default; transform: none; }
+      .vt-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      .vt-title { margin: 12px 2px 0; display: flex; flex-direction: column; gap: 2px; line-height: 1.3; }
+      .vt-title strong { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--color-ink); }
+      .vt-title span { font-size: 13px; color: var(--color-ink-muted); }
+    </style>
   </section>
 
   <!-- FILTER BAR + GRID -->

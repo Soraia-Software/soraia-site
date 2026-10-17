@@ -80,6 +80,8 @@ const caseStudies = defineCollection({
       provider: z.enum(["youtube", "vimeo"]),
       id: z.string(),
       poster: z.string().optional(),
+      speaker: z.string().optional(),          // chi parla nel video, se diverso dallo stakeholder della scheda
+      role: z.string().optional(),             // ruolo di chi parla (es. "Head of Product")
     }).optional(),
     shortQuote: z.string().optional(),         // card-friendly shorter version of heroQuote
     cardImage: z.string().optional(),          // photo used as card background (fallback: stakeholder photo)

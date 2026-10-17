@@ -18,7 +18,7 @@ const labels = {
     nav_prodotti: "Prodotti",
     nav_prezzi: "Prezzi",
     nav_guide: "Guide",
-    nav_cases: "Case studies",
+    nav_cases: "Casi studio",
     nav_blog: "Blog",
     nav_about: "Chi siamo",
     nav_scorecard: "Check-up IA",
@@ -199,12 +199,10 @@ const prodotti = [
           </div>
         </li>
 
-        <!-- Prodotti link (no dropdown) -->
-        <li><a href={prodottiHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_prodotti}</a></li>
-        <li><a href={prezziHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_prezzi}</a></li>
-
+        <!-- Ordine deciso il 2026-10-17: Servizi, Casi studio, Chi siamo, Prezzi (Prodotti solo nel footer) -->
         <li><a href={casesHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_cases}</a></li>
         <li><a href={aboutHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_about}</a></li>
+        <li><a href={prezziHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_prezzi}</a></li>
       </ul>
 
       <div class="flex items-center gap-3">
@@ -283,10 +281,9 @@ const prodotti = [
           </div>
         </details>
 
-        <a href={prodottiHref} class="mobile-section__top">{labels.nav_prodotti}</a>
-        <a href={prezziHref} class="mobile-section__top">{labels.nav_prezzi}</a>
         <a href={casesHref} class="mobile-section__top">{labels.nav_cases}</a>
         <a href={aboutHref} class="mobile-section__top">{labels.nav_about}</a>
+        <a href={prezziHref} class="mobile-section__top">{labels.nav_prezzi}</a>
       </nav>
 
       <div class="px-5 py-4 border-t border-ink-200/60">

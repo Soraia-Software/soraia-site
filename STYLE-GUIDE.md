@@ -88,9 +88,15 @@ Use the `.btn` classes, never ad-hoc button styling:
 
 ## 6. Navigation (IA)
 
+- **Nav order (both languages): Servizi · Casi studio · Chi siamo · Prezzi.** "Prodotti" is
+  footer-only. Decided 2026-10-17; don't reshuffle.
 - **Servizi dropdown = exactly two items: "Analisi dei processi" + "AI Engineering"**
   (IT). All other pages live in the footer only. The EN nav keeps its fuller list.
 - Primary nav CTA: "20 min con Daniel".
+- `/case-studies` opens with the **video testimonials** (vertical 9:16 tiles, YouTube
+  `oar2.jpg` thumbnail with photo fallback, name + role below, one click = inline autoplay).
+  They come from the collection field `videoTestimonial` (`provider`, `id`, optional
+  `poster`, `speaker`, `role`); order is the `videoOrder` list in the page.
 - `/analisi-processi` is **noindex** (`noindex` prop on `Layout`, driven from
   `data.ts`). Keep it out of indexes and sitemaps.
 
