@@ -277,21 +277,15 @@ const faqs = [
             </a>
           </div>
 
-          <!-- VOLTI DEL TEAM + STRISCIA DI FIDUCIA (come complaion: le persone subito in hero) -->
-          <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 fade-up fade-up-delay-4">
-            <div class="flex items-center flex-shrink-0">
-              {["daniel-levis", "veronica-pisana", "eleonora-cogo", "lorenzo-barbaglia", "davide-silvestri", "martina-rochstein", "paolo-bacchetti"].map((slug, i) => (
-                <img src={`/team/${slug}.webp?v=4`} alt="" loading="eager" width="40" height="40" class={`w-10 h-10 rounded-full object-cover ring-2 ring-[#1A0820] ${i === 0 ? "" : "-ml-2.5"}`} />
-              ))}
-            </div>
-            <a href="/parliamone" class="inline-flex items-center text-[13px] leading-tight no-underline group">
-              <span class="block">
-                <span class="block text-white font-medium">Daniel Levis</span>
-                <span class="block text-violet-200/70">Co-Founder &amp; CEO</span>
-                <span class="block mt-1 text-white/85 group-hover:text-white transition-colors">Rispondo personalmente alle richieste entro 24 ore.</span>
-              </span>
-            </a>
-          </div>
+          <!-- CHI RISPONDE: solo Daniel, perché è lui a rispondere (i volti del team stanno più sotto) -->
+          <a href="/parliamone" class="mt-8 inline-flex items-center gap-4 text-[13px] leading-tight no-underline group fade-up fade-up-delay-4">
+            <img src="/team/daniel-levis.webp?v=4" alt="Daniel Levis" loading="eager" width="56" height="56" class="w-14 h-14 rounded-full object-cover ring-2 ring-white/20 flex-shrink-0" />
+            <span class="block">
+              <span class="block text-white font-medium">Daniel Levis</span>
+              <span class="block text-violet-200/70">Co-Founder &amp; CEO</span>
+              <span class="block mt-1 text-white/85 group-hover:text-white transition-colors">Rispondo personalmente alle richieste entro 24 ore.</span>
+            </span>
+          </a>
         </div>
 
         <!-- Right: visual -->

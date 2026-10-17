@@ -55,8 +55,10 @@ Brand primary is **`--color-brand` = `#4A1E5C`** (deep aubergine). Accent is
 - "Più colorato ogni tanto": `.bg-tech-grid` (lilac base + thin line grid + glows + arcs) for
   one standout band per page, and `.glow-tr` / `.glow-br` for a soft violet corner glow
   (container needs `relative overflow-hidden`). Use sparingly, as rhythm, not everywhere.
-- Dark rhythm bands (e.g. the careers hiring steps) reuse `.bg-hero-dark` with
-  translucent white cards (`rgba(255,255,255,0.05)` + 12% white border).
+- Dark rhythm bands (home "Dopo il nostro intervento", chi-siamo "Cosa ci muove", careers
+  hiring steps) reuse `.bg-hero-dark` with the global translucent cards `.dk-card` + icon
+  chip `.dk-chip` (white 5% fill, 12% white border, lilac icon). Pair with
+  `SectionHeader variant="dark"`. The `/analisi-processi` cover uses the same class.
 - **No pink/gradient backgrounds behind team photos.** Photos sit on their natural
   background. (The pink team gradient was removed.)
 - `/analisi-processi` has its own scoped palette in
