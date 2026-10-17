@@ -29,7 +29,7 @@ const T = {
     corpoTitle: "Un rilascio preciso, a prezzo fisso.",
     corpoLead: "Concordiamo insieme un rilascio chiaro e lavoriamo a sprint fino a raggiungerlo. Paghi il risultato approvato, non le ore: il modo migliore per vedere quanto siamo veloci.",
     corpoFrom: "da",
-    corpoPrice: "3.000€",
+    corpoPrice: "5.000€",
     corpoPriceNote: "per un primo rilascio chiaro",
     corpoPoints: [
       "Lo scope del rilascio si concorda prima di partire",
@@ -60,7 +60,7 @@ const T = {
     corpoTitle: "A precise release, at a fixed price.",
     corpoLead: "We agree on a clear release and work in sprints until we reach it. You pay for the approved result, not the hours: the best way to see how fast we are.",
     corpoFrom: "from",
-    corpoPrice: "€3,000",
+    corpoPrice: "€5,000",
     corpoPriceNote: "for a first clear release",
     corpoPoints: [
       "The release scope is agreed before we start",
