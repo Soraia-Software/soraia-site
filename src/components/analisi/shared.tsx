@@ -35,13 +35,13 @@ export function SoraiaMark() {
 
 /* ------------------------------- guscio Sezione ----------------------------- */
 export function Section({
-  id, eyebrow, title, titleMax, children, center = false,
+  id, eyebrow, title, titleMax, children, center = false, className,
 }: {
   id: string; eyebrow?: string; title?: React.ReactNode; titleMax?: number;
-  children?: React.ReactNode; center?: boolean;
+  children?: React.ReactNode; center?: boolean; className?: string;
 }) {
   return (
-    <section id={id} className="ap-section" data-ap-section data-ap-label={id}>
+    <section id={id} className={className ? `ap-section ${className}` : "ap-section"} data-ap-section data-ap-label={id}>
       <div className="ap-wrap" style={center ? { textAlign: "center" } : undefined}>
         {eyebrow && <p className="ap-eyebrow">{eyebrow}</p>}
         {title && (

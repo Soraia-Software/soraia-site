@@ -301,6 +301,12 @@
   background-repeat: no-repeat;
 }
 
+/* Card traslucide da usare sulle fasce scure (.bg-hero-dark): home "Dopo il nostro intervento",
+   chi-siamo "Cosa ci muove". Chip quadrato con icona in lilla. */
+.dk-card { border-radius: 1.375rem; padding: 1.75rem 2rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); transition: transform .22s var(--ease-out-quart), background .22s ease; }
+.dk-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.08); }
+.dk-chip { display: inline-flex; width: 44px; height: 44px; border-radius: 12px; align-items: center; justify-content: center; margin-bottom: 1.25rem; background: rgba(137,45,156,0.35); color: var(--color-violet-200); }
+
 /* Solo le linee, da sommare a sezioni che hanno già un loro colore */
 .bg-lines-light {
   background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' fill='none' stroke='rgba(74,30,92,0.11)' stroke-width='1.2'%3E%3Ccircle cx='1400' cy='-60' r='520'/%3E%3Ccircle cx='1400' cy='-60' r='790'/%3E%3Ccircle cx='90' cy='980' r='480'/%3E%3Cpath d='M-80 720 C 380 520, 920 790, 1700 400'/%3E%3C/svg%3E");

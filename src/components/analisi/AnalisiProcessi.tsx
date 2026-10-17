@@ -17,7 +17,7 @@ import ActionPlan from "./ActionPlan";
 function Opening() {
   const r = useReveal();
   return (
-    <Section id="apertura">
+    <Section id="apertura" className="bg-hero-dark">
       <motion.p {...r} className="ap-eyebrow" style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
         <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--color-amber)", flex: "0 0 auto" }} />
         {OPENING.eyebrow}

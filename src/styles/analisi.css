@@ -93,14 +93,11 @@ html { scroll-padding-top: var(--ap-header-h); }
 .ap-root ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.18); border-radius: 999px; }
 .ap-root ::-webkit-scrollbar-track { background: transparent; }
 
-/* Cover di apertura: hero scuro coerente con le altre pagine servizi (bg-hero-dark) */
+/* Cover di apertura: stesso sfondo delle hero scure dei servizi. Il colore e gli archi
+   arrivano dalla classe globale .bg-hero-dark messa sulla sezione, qui solo il ritmo. */
 #apertura {
   overflow: hidden;
   padding-block: clamp(5rem, 12vh, 8rem);
-  background:
-    radial-gradient(ellipse 80% 60% at 20% 0%, rgba(74, 30, 92, 0.55) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 50% at 90% 80%, rgba(42, 14, 54, 0.65) 0%, transparent 50%),
-    linear-gradient(135deg, #0a0510 0%, #1a0820 35%, #2a1438 100%);
 }
 #apertura .ap-eyebrow { color: var(--color-violet-200); }
 #apertura .ap-lead { color: rgba(255, 255, 255, 0.78); }
