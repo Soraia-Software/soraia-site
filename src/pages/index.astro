@@ -95,6 +95,12 @@ const homeLogos = [
   { name: "Navily", src: "/logos/clients/navily.webp" },
   { name: "French Riviera Househunting", src: "/logos/clients/frh.webp" },
   { name: "ILTEC", src: "/logos/clients/iltec.webp" },
+  { name: "Banca Sella", src: "/logos/clients/banca-sella.webp" },
+  { name: "ESCP", src: "/logos/clients/escp.webp" },
+  { name: "Beta Imprese", src: "/logos/clients/betaimprese.webp" },
+  { name: "Lanificio TG", src: "/logos/clients/lanificio-tg.webp" },
+  { name: "Lyra", src: "/logos/clients/logo-lyra.webp" },
+  { name: "Por Tier", src: "/logos/clients/por-tier-logo.webp" },
 ];
 
 const partners = [
@@ -296,23 +302,6 @@ const faqs = [
        2. TRUSTED BY, proof bar + featured-in
        ============================================================ -->
   <ProofBar label="Si fidano di noi" logos={homeLogos} />
-
-  <!-- Featured-in row: Xano + WeWeb hanno pubblicato i nostri case study -->
-  <section class="py-10 bg-white border-b border-ink-200">
-    <div class="container-soraia">
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-x-8 gap-y-4 max-w-3xl mx-auto">
-        <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 whitespace-nowrap">
-          Pubblicati come case study su
-        </p>
-        <a href="https://www.xano.com/case-study/how-xano-helped-soraia-modernize-legacy-recruiting-system-save-360k-yearly/" target="_blank" rel="noopener" class="inline-flex items-center group" aria-label="Xano case study">
-          <img src="/logos/tools/xano.webp" alt="Xano" loading="lazy" class="h-6 md:h-7 w-auto object-contain transition-all duration-300 opacity-50 group-hover:opacity-100 grayscale group-hover:grayscale-0" />
-        </a>
-        <a href="https://www.weweb.io/customer-stories/soraia" target="_blank" rel="noopener" class="inline-flex items-center group" aria-label="WeWeb customer story">
-          <img src="/logos/tools/weweb.svg" alt="WeWeb" loading="lazy" class="h-6 md:h-7 w-auto object-contain transition-all duration-300 opacity-50 group-hover:opacity-100 grayscale group-hover:grayscale-0" />
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- ============================================================
        2a-bis. POSIZIONAMENTO PMI, sfondo tech + griglia, facce del team
@@ -833,24 +822,6 @@ const faqs = [
   </section>
 
   <!-- ============================================================
-       10. TECH STACK
-       ============================================================ -->
-  <section class="section bg-ink-50 border-y border-ink-200">
-    <div class="container-soraia">
-      <SectionHeader
-        eyebrow="Stack agnostic"
-        title="Lavoriamo con qualsiasi stack già usi."
-        subtitle="Ci adattiamo ai tuoi tool: i modelli IA, le piattaforme di automazione, i CRM, gli storage. <strong>Non vendiamo licenze nuove.</strong> Costruiamo sopra quello che hai già."
-        align="center"
-      />
-      <PartnersStrip partners={partners} />
-      <p class="text-center text-sm text-ink-500 mt-10 max-w-3xl mx-auto reveal">
-        Usi Microsoft, Google, Salesforce, AWS, Teams, Slack, TeamSystem, Zucchetti o altri tool? <span class="text-ink-700 font-semibold">Lavoriamo anche con quelli.</span> Lo stack del cliente è il punto di partenza, non un vincolo.
-      </p>
-    </div>
-  </section>
-
-  <!-- ============================================================
        14. FAQ
        ============================================================ -->
   <section class="section bg-white">
@@ -872,13 +843,37 @@ const faqs = [
   <!-- ============================================================
        16. CTA FINALE. Call con il CEO
        ============================================================ -->
-  <CTABanner
-    title="20 minuti col CEO. Senza pitch."
-    description="Capiamo insieme se ha senso lavorare. Nessun impegno, nessun preventivo a sorpresa: solo una conversazione operativa sui tuoi processi."
-    ctaText="20 min con Daniel"
-    ctaHref="/parliamone"
-    avatarName="Daniel Levis"
-    avatarRole="Co-Founder & CEO"
-    avatarSrc="/team/daniel-levis.webp"
-  />
+  <section class="section">
+    <div class="container-soraia">
+      <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700 p-8 md:p-12 lg:p-14">
+        <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-32 opacity-30 float-slow" aria-hidden="true"></div>
+        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8 reveal">
+            <h2 style="color: #fff; font-size: clamp(1.75rem, 2.5vw + 0.5rem, 2.5rem); line-height: 1.13; letter-spacing: -0.02em; font-weight: 500;" class="text-balance">
+              Parli con un consulente reale.
+            </h2>
+            <p style="color: rgba(255,255,255,0.8);" class="mt-4 text-[16px] md:text-[18px] leading-relaxed max-w-2xl text-pretty">
+              Un team di esperti in AI e automazione, pronto ad ascoltare le tue esigenze. Niente pitch: capiamo insieme se possiamo aiutarti davvero.
+            </p>
+            <div class="mt-8">
+              <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+                Candida la tua azienda
+                <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+              </a>
+            </div>
+          </div>
+          <div class="lg:col-span-4 flex flex-col items-start lg:items-end gap-3.5 reveal reveal-delay-2">
+            <div class="flex items-center">
+              {["daniel-levis", "veronica-pisana", "paolo-bacchetti"].map((slug, i) => (
+                <img src={`/team/${slug}.webp?v=4`} alt="" loading="lazy" width="56" height="56" class={`rounded-full object-cover border-2 ${i === 0 ? "" : "-ml-3.5"}`} style="width: 56px; height: 56px; border-color: rgba(255,255,255,0.92); box-shadow: 0 2px 12px rgba(0,0,0,0.28);" />
+              ))}
+            </div>
+            <p style="color: rgba(255,255,255,0.72);" class="text-[13px] font-medium lg:text-right">
+              Daniel, Veronica e Paolo ti rispondono
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
