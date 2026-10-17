@@ -19,29 +19,19 @@ const jsonLd = {
 ---
 
 <Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
-  <!-- HERO -->
+  <!-- HERO = due modi di lavorare + calcolatore -->
   <section class="relative overflow-hidden bg-violet-mesh">
     <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
-    <div class="container-soraia pt-16 md:pt-24 pb-8 md:pb-10 relative z-10 text-center max-w-2xl">
-      <p class="eyebrow mb-5">Prezzi</p>
-      <h1 class="text-[2.5rem] sm:text-[3.25rem] md:text-[3.75rem] font-medium tracking-tight text-ink-900 leading-[1.04] text-balance">
-        Prezzi semplici e trasparenti
-      </h1>
-      <p class="mt-6 text-[18px] md:text-[20px] text-ink-700 leading-relaxed text-pretty">
-        Due modelli, un solo metodo. A pacchetti di ore o a corpo a prezzo fisso, da 3.000 euro. Il primo mese è soddisfatti o rimborsati.
-      </p>
-    </div>
-  </section>
-
-  <!-- PRICING, due modelli -->
-  <section class="section bg-white border-t border-line">
-    <div class="container-soraia">
-      <SectionHeader
-        eyebrow="Due modi di lavorare"
-        title="Scegli come preferisci lavorare con noi."
-        subtitle="A pacchetti di ore o a corpo, a prezzo fisso. In entrambi i casi si lavora a sprint, con metodo iterativo, e vedi tutto nella dashboard di progetto. <a href='/ai-engineering' style='color: var(--color-brand); font-weight: 600;'>Come lavoriamo, in dettaglio &rarr;</a>"
-        align="center"
-      />
+    <div class="container-soraia pt-16 md:pt-24 pb-14 md:pb-16 relative z-10">
+      <header class="max-w-3xl text-center mx-auto mb-12 md:mb-14">
+        <p class="eyebrow mb-5">Due modi di lavorare</p>
+        <h1 class="text-ink text-balance" style="font-size: clamp(2.5rem, 5vw + 1rem, 3.75rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+          Scegli come preferisci lavorare con noi.
+        </h1>
+        <p class="mt-6 text-[17px] md:text-[18px] leading-relaxed text-pretty max-w-2xl mx-auto" style="color: var(--color-ink-muted);">
+          A pacchetti di ore o a corpo, a prezzo fisso, da 3.000 euro al mese. In entrambi i casi si lavora a sprint, con metodo iterativo, e vedi tutto nella dashboard di progetto. <a href="/ai-engineering" style="color: var(--color-brand); font-weight: 600;">Come lavoriamo, in dettaglio &rarr;</a>
+        </p>
+      </header>
       <PricingCalculator client:load />
     </div>
   </section>
