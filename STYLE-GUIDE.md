@@ -118,9 +118,11 @@ Use the `.btn` classes, never ad-hoc button styling:
   Team photos are branded purple-background portraits in `public/team/` (webp+avif, source
   PNGs in `_team-image-sources/`, gitignored). Bump the `?v=N` query on the image URLs
   whenever a photo is replaced at the same filename (CDN caches by URL).
-- `ProofBar` — client logos in **two rows scrolling in opposite directions** (`rowA` is seen
-  first and runs right→left, `rowB` left→right). Pass `rowA`/`rowB` explicitly to control the
-  order; a single `logos` array is split in half for backwards compatibility.
+- `ProofBar` — client logos in **two rows scrolling in opposite directions** (row A is seen
+  first and runs right→left, row B left→right). **Call it with just a `label`**: the rows come
+  from `src/data/clientLogos.ts`, the single source for the whole site (home, contact, EN,
+  resources). A page with its own selection passes `logos` (short lists stay on one row, no
+  two-logo loops) or `rowA`/`rowB`.
 - Faces belong in more than one place: hero (overlapping avatar row + "Ti rispondiamo entro
   24 ore"), the PMI band, the 3-person journey, the final CTA (3 faces) and the chi-siamo
   "Lavora con noi" band (all 10). Prefer this over a single founder photo.

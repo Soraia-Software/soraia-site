@@ -82,30 +82,8 @@ const jsonLd = {
   sameAs: ["https://www.linkedin.com/company/soraia-digital"],
 };
 
-// Due file che scorrono in direzioni opposte. La prima è quella che si vede per prima
-// al caricamento: ordine deciso da Daniel (2026-10-17).
-const homeLogosA = [
-  { name: "APraise", src: "/logos/clients/apraise.webp" },
-  { name: "Beta Imprese", src: "/logos/clients/betaimprese.webp" },
-  { name: "Lanificio TG", src: "/logos/clients/lanificio-tg.webp" },
-  { name: "Banca Sella", src: "/logos/clients/banca-sella.webp" },
-  { name: "ESCP", src: "/logos/clients/escp.webp" },
-  { name: "Liftt", src: "/logos/clients/liftt.webp" },
-  { name: "Stars Be Original", src: "/logos/clients/starsbeoriginal.webp" },
-  { name: "Numeraria", src: "/logos/clients/numeraria.webp" },
-];
-const homeLogosB = [
-  { name: "Talent Match", src: "/logos/clients/talentmatch.webp" },
-  { name: "Rainplan", src: "/logos/clients/rainplan.webp" },
-  { name: "KB&B", src: "/logos/clients/kbb.webp" },
-  { name: "StoryWonder", src: "/logos/clients/storywonder.webp" },
-  { name: "CXL", src: "/logos/clients/cxl.webp" },
-  { name: "Navily", src: "/logos/clients/navily.webp" },
-  { name: "French Riviera Househunting", src: "/logos/clients/frh.webp" },
-  { name: "ILTEC", src: "/logos/clients/iltec.webp" },
-  { name: "Lyra", src: "/logos/clients/logo-lyra.webp" },
-  { name: "Por Tier", src: "/logos/clients/por-tier-logo.webp" },
-];
+// I loghi clienti (due file, ordine deciso il 2026-10-17) vivono in src/data/clientLogos.ts:
+// ProofBar li usa da solo, così ogni pagina mostra la stessa barra.
 
 const partners = [
   // LLM & AI providers
@@ -299,7 +277,7 @@ const faqs = [
   <!-- ============================================================
        2. TRUSTED BY, proof bar + featured-in
        ============================================================ -->
-  <ProofBar label="Si fidano di noi" rowA={homeLogosA} rowB={homeLogosB} />
+  <ProofBar label="Si fidano di noi" />
 
   <!-- ============================================================
        2a-bis. POSIZIONAMENTO PMI, sfondo tech + griglia, facce del team

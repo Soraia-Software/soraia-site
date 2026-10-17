@@ -1,21 +1,31 @@
 ---
-interface Logo {
-  name: string;
-  src?: string;       // path to logo image (svg/png/jpg)
-  detail?: string;
-}
+import { CLIENT_LOGOS_ROW_A, CLIENT_LOGOS_ROW_B, type ClientLogo as Logo } from "~/data/clientLogos";
 
 interface Props {
   label: string;
-  logos?: Logo[];     // compat: una lista sola, divisa a metà sulle due file
+  logos?: Logo[];     // selezione propria della pagina: una fila sola se corta, due se lunga
   rowA?: Logo[];      // prima fila, scorre da destra a sinistra: il primo logo si vede subito
   rowB?: Logo[];      // seconda fila, scorre da sinistra a destra, loghi diversi
 }
 
-const { label, logos = [], rowA, rowB } = Astro.props;
-const half = Math.ceil(logos.length / 2);
-const listA: Logo[] = rowA ?? logos.slice(0, half);
-const listB: Logo[] = rowB ?? logos.slice(half);
+// Senza props i loghi sono quelli canonici di src/data/clientLogos.ts, uguali su tutto il sito.
+// Una lista propria corta (meno di 6) resta su una fila: divisa a metà si vedrebbero
+// gli stessi due loghi ripetuti all'infinito.
+const { label, logos, rowA, rowB } = Astro.props;
+const SPLIT_FROM = 6;
+let listA: Logo[];
+let listB: Logo[];
+if (rowA || rowB) {
+  listA = rowA ?? [];
+  listB = rowB ?? [];
+} else if (logos && logos.length) {
+  const half = logos.length >= SPLIT_FROM ? Math.ceil(logos.length / 2) : logos.length;
+  listA = logos.slice(0, half);
+  listB = logos.slice(half);
+} else {
+  listA = CLIENT_LOGOS_ROW_A;
+  listB = CLIENT_LOGOS_ROW_B;
+}
 
 // Ogni fila è un marquee senza salti: la pista contiene il set due volte e trasla di -50%.
 // Con pochi loghi il set viene ripetuto finché la metà pista copre la viewport.
