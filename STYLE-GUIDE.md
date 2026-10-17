@@ -96,9 +96,12 @@ Use the `.btn` classes, never ad-hoc button styling:
   client does **not** see the hours worked, keep that invariant.
 - `SprintRoadmap` — the mountain + sprint timeline + "aggiorna le priorità" reorder,
   shared by `/analisi-processi` and `/ai-engineering`.
-- Team cards (homepage "Il tuo team") — vertical full-image cards (4:5 portrait,
-  600×750 webp, name overlaid on a bottom gradient), grouped by role (PM, AI Engineer).
-  Multiple profiles per role are shown; one dedicated per role is assigned (see caption).
+- Team deck (homepage "Il tuo team") — one looping card **deck** per role (PM, AI Engineer):
+  vertical full-image cards (4:5 portrait, name on a bottom gradient) stacked with the next
+  cards peeking below; tap/click, drag, dots, or autoplay cycle through (infinite loop, no
+  arrows). Team photos are branded purple-background portraits in `public/team/` (webp+avif,
+  source PNGs kept in `_team-image-sources/`, gitignored). Bump the `?v=N` query on the
+  image URLs whenever a photo is replaced at the same filename (CDN caches by URL).
 
 ## 8. i18n
 

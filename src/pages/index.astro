@@ -416,45 +416,36 @@ const faqs = [
         align="center"
       />
 
-      <!-- ruoli: carosello swipeabile per ruolo, una card alla volta -->
+      <!-- ruoli: mazzo di card impilate per ruolo, tocca o trascina per scoprire gli altri (loop) -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10 max-w-3xl mx-auto">
         {[
           { role: "Project Manager", people: [
             { slug: "eleonora-cogo", name: "Eleonora Cogo" },
             { slug: "davide-silvestri", name: "Davide Silvestri" },
             { slug: "narella-petrocco", name: "Narella Petrocco" },
+            { slug: "daniel-levis", name: "Daniel Levis" },
           ] },
           { role: "AI Engineer", people: [
             { slug: "lorenzo-barbaglia", name: "Lorenzo Barbaglia" },
             { slug: "martina-rochstein", name: "Martina Rochstein" },
             { slug: "mohamed-mejri", name: "Mohamed Mejri" },
             { slug: "sebastian-geido", name: "Sebastian Geido" },
+            { slug: "veronica-pisana", name: "Veronica Pisana" },
+            { slug: "paolo-bacchetti", name: "Paolo Bacchetti" },
           ] },
         ].map((g) => (
           <div class="reveal">
             <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-violet-700 mb-5 text-center">{g.role}</p>
-            <div class="team-car" data-team-car>
-              <button type="button" class="team-nav team-prev" aria-label="Profilo precedente" data-prev>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-              </button>
-              <div class="team-viewport" data-viewport>
-                <div class="team-track" data-track>
-                  {g.people.map((p) => (
-                    <div class="team-slide">
-                      <figure class="team-card">
-                        <picture>
-                          <source srcset={`/team/${p.slug}.avif?v=3`} type="image/avif" />
-                          <img src={`/team/${p.slug}.webp?v=3`} alt={p.name} width="600" height="750" loading="lazy" draggable="false" />
-                        </picture>
-                        <figcaption><span class="tc-name">{p.name}</span></figcaption>
-                      </figure>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <button type="button" class="team-nav team-next" aria-label="Profilo successivo" data-next>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-              </button>
+            <div class="team-deck" data-deck tabindex="0" role="button" aria-label={`Profili ${g.role}: tocca o trascina per scoprire il prossimo`}>
+              {g.people.map((p) => (
+                <figure class="deck-card" data-card>
+                  <picture>
+                    <source srcset={`/team/${p.slug}.avif?v=4`} type="image/avif" />
+                    <img src={`/team/${p.slug}.webp?v=4`} alt={p.name} width="480" height="600" loading="lazy" draggable="false" />
+                  </picture>
+                  <figcaption><span class="tc-name">{p.name}</span></figcaption>
+                </figure>
+              ))}
             </div>
             <div class="team-dots" data-dots></div>
           </div>
@@ -465,113 +456,99 @@ const faqs = [
       </p>
 
       <style>
-        .team-car { position: relative; }
-        .team-viewport { overflow: hidden; touch-action: pan-y; }
-        .team-track { display: flex; will-change: transform; }
-        .team-slide { flex: 0 0 100%; display: flex; justify-content: center; padding: 2px 0; box-sizing: border-box; }
-        .team-card { position: relative; width: clamp(190px, 62%, 240px); border-radius: var(--radius-lg); overflow: hidden; background: var(--color-ink-100); box-shadow: var(--shadow-sm); }
-        .team-card picture { display: block; }
-        .team-card img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; -webkit-user-drag: none; user-select: none; }
-        .team-card figcaption { position: absolute; inset: auto 0 0 0; padding: 30px 14px 12px; background: linear-gradient(to top, rgba(26,10,32,0.82) 0%, rgba(26,10,32,0.3) 55%, transparent 100%); }
+        .team-deck { position: relative; width: clamp(190px, 72%, 240px); margin: 0 auto 44px; cursor: pointer; outline: none; -webkit-tap-highlight-color: transparent; touch-action: pan-y; }
+        .team-deck::before { content: ""; display: block; aspect-ratio: 4 / 5; }
+        .team-deck:focus-visible { box-shadow: 0 0 0 3px var(--color-violet-200, #E9D5F0); border-radius: var(--radius-lg); }
+        .deck-card { position: absolute; inset: 0; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-ink-100); box-shadow: 0 12px 30px -14px rgba(63,21,72,0.5); transition: transform .5s cubic-bezier(.4,0,.2,1), opacity .45s ease; will-change: transform, opacity; }
+        .deck-card picture { display: block; }
+        .deck-card img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; -webkit-user-drag: none; user-select: none; pointer-events: none; }
+        .deck-card figcaption { position: absolute; inset: auto 0 0 0; padding: 30px 14px 12px; background: linear-gradient(to top, rgba(26,10,32,0.82) 0%, rgba(26,10,32,0.3) 55%, transparent 100%); }
         .tc-name { color: #fff; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
-        .team-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 34px; height: 34px; border-radius: 999px; background: #fff; border: 1px solid var(--color-line); color: var(--color-brand); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow-sm); transition: background .15s, border-color .15s; }
-        .team-nav:hover { background: var(--color-ink-50); border-color: var(--color-line-strong); }
-        .team-prev { left: 0; } .team-next { right: 0; }
-        .team-dots { display: flex; gap: 6px; justify-content: center; margin-top: 16px; }
+        .team-dots { display: flex; gap: 6px; justify-content: center; margin-top: 4px; }
         .team-dots button { width: 7px; height: 7px; border-radius: 999px; background: rgba(63,21,72,0.18); border: 0; padding: 0; cursor: pointer; transition: background .2s, transform .2s; }
         .team-dots button.active { background: var(--color-brand); transform: scale(1.3); }
       </style>
       <script is:inline>
         (function () {
-          document.querySelectorAll("[data-team-car]").forEach(function (car) {
-            var viewport = car.querySelector("[data-viewport]");
-            var track = car.querySelector("[data-track]");
-            var dots = car.parentElement.querySelector("[data-dots]");
-            var real = Array.prototype.slice.call(track.children);
-            var n = real.length;
-            if (n <= 1) { car.querySelectorAll(".team-nav").forEach(function (b) { b.style.display = "none"; }); return; }
-
-            // cloni per il loop senza salti: [ultimo, ...reali, primo]
-            var firstClone = real[0].cloneNode(true);
-            var lastClone = real[n - 1].cloneNode(true);
-            firstClone.setAttribute("aria-hidden", "true");
-            lastClone.setAttribute("aria-hidden", "true");
-            track.appendChild(firstClone);
-            track.insertBefore(lastClone, real[0]);
-
-            var index = 1;        // prima slide reale (dopo lastClone in testa)
-            var width = 0;
-            var animating = false;
-
-            function setX(animate) {
-              track.style.transition = animate ? "transform .45s cubic-bezier(.4,0,.2,1)" : "none";
-              track.style.transform = "translateX(" + (-index * width) + "px)";
-            }
-            function realIndex() { return ((index - 1) % n + n) % n; }
-            function updateDots() {
-              var a = realIndex();
-              dots.querySelectorAll("button").forEach(function (b, i) { b.classList.toggle("active", i === a); });
-            }
-            function goTo(i) { if (animating) return; index = i; animating = true; setX(true); updateDots(); }
-            function next() { goTo(index + 1); }
-            function prev() { goTo(index - 1); }
-
-            for (var i = 0; i < n; i++) {
-              var d = document.createElement("button");
-              d.type = "button"; d.setAttribute("aria-label", "Vai al profilo " + (i + 1));
-              if (i === 0) d.className = "active";
-              (function (idx) { d.addEventListener("click", function () { goTo(idx + 1); restart(); }); })(i);
-              dots.appendChild(d);
-            }
-
-            track.addEventListener("transitionend", function () {
-              animating = false;
-              if (index === 0) { index = n; setX(false); }
-              else if (index === n + 1) { index = 1; setX(false); }
-              updateDots();
-            });
-
-            function reset() { width = viewport.clientWidth; setX(false); }
-            reset();
-            window.addEventListener("resize", reset);
-            window.addEventListener("load", reset);
-
-            car.querySelector("[data-prev]").addEventListener("click", function () { prev(); restart(); });
-            car.querySelector("[data-next]").addEventListener("click", function () { next(); restart(); });
-
-            // autoplay: propone i profili in loop, si ferma al passaggio del mouse / focus
+          document.querySelectorAll("[data-deck]").forEach(function (deck) {
+            var cards = Array.prototype.slice.call(deck.querySelectorAll("[data-card]"));
+            var dots = deck.parentElement.querySelector("[data-dots]");
+            var n = cards.length;
+            var front = 0;
             var timer = null;
-            function start() { stop(); timer = setInterval(next, 4000); }
+
+            function layout(animate) {
+              cards.forEach(function (card, i) {
+                var depth = (i - front + n) % n;
+                var ty, sc, op, z;
+                if (depth === 0) { ty = 0; sc = 1; op = 1; z = 30; }
+                else if (depth === 1) { ty = 20; sc = 0.93; op = 1; z = 20; }
+                else if (depth === 2) { ty = 40; sc = 0.86; op = 1; z = 10; }
+                else { ty = 40; sc = 0.86; op = 0; z = 1; }
+                card.style.transition = animate ? "transform .5s cubic-bezier(.4,0,.2,1), opacity .45s ease" : "none";
+                card.style.transform = "translateY(" + ty + "px) scale(" + sc + ")";
+                card.style.opacity = op;
+                card.style.zIndex = z;
+                card.setAttribute("aria-hidden", depth === 0 ? "false" : "true");
+              });
+            }
+            function updateDots() {
+              if (!dots) return;
+              dots.querySelectorAll("button").forEach(function (b, i) { b.classList.toggle("active", i === front); });
+            }
+            function go(i) { front = ((i % n) + n) % n; layout(true); updateDots(); restart(); }
+            function next() { go(front + 1); }
+
+            function start() { stop(); if (n > 1) timer = setInterval(next, 4200); }
             function stop() { if (timer) { clearInterval(timer); timer = null; } }
             function restart() { start(); }
-            start();
-            car.addEventListener("pointerenter", stop);
-            car.addEventListener("pointerleave", start);
-            car.addEventListener("focusin", stop);
-            car.addEventListener("focusout", start);
 
-            // swipe / trascinamento
-            var startX = 0, curX = 0, dragging = false;
-            viewport.addEventListener("pointerdown", function (e) {
-              if (animating) return;
-              dragging = true; startX = e.clientX; curX = 0; stop();
-              track.style.transition = "none";
-              try { viewport.setPointerCapture(e.pointerId); } catch (err) {}
+            if (dots) {
+              for (var i = 0; i < n; i++) {
+                var d = document.createElement("button");
+                d.type = "button"; d.setAttribute("aria-label", "Vai al profilo " + (i + 1));
+                if (i === 0) d.className = "active";
+                (function (idx) { d.addEventListener("click", function () { go(idx); }); })(i);
+                dots.appendChild(d);
+              }
+            }
+
+            layout(false);
+            if (n <= 1) return;
+            start();
+
+            // tocco / click -> prossimo (loop)
+            deck.addEventListener("click", function () { if (!suppressClick) next(); suppressClick = false; });
+            deck.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); next(); } });
+
+            // trascinamento della card in cima
+            var startX = 0, cur = 0, dragging = false, suppressClick = false;
+            deck.addEventListener("pointerdown", function (e) {
+              dragging = true; cur = 0; startX = e.clientX; stop();
+              try { deck.setPointerCapture(e.pointerId); } catch (err) {}
             });
-            viewport.addEventListener("pointermove", function (e) {
+            deck.addEventListener("pointermove", function (e) {
               if (!dragging) return;
-              curX = e.clientX - startX;
-              track.style.transform = "translateX(" + (-index * width + curX) + "px)";
+              cur = e.clientX - startX;
+              if (Math.abs(cur) > 4) suppressClick = true;
+              var top = cards[front];
+              top.style.transition = "none";
+              top.style.transform = "translateX(" + cur + "px) rotate(" + (cur * 0.03) + "deg)";
             });
             function endDrag() {
               if (!dragging) return;
               dragging = false;
-              if (Math.abs(curX) > width * 0.2) { curX < 0 ? next() : prev(); }
-              else { setX(true); }
-              start();
+              if (Math.abs(cur) > 55) { next(); }
+              else { layout(true); start(); }
             }
-            viewport.addEventListener("pointerup", endDrag);
-            viewport.addEventListener("pointercancel", endDrag);
+            deck.addEventListener("pointerup", endDrag);
+            deck.addEventListener("pointercancel", endDrag);
+
+            deck.addEventListener("pointerenter", stop);
+            deck.addEventListener("pointerleave", start);
+            deck.addEventListener("focusin", stop);
+            deck.addEventListener("focusout", start);
+            window.addEventListener("resize", function () { layout(false); });
           });
         })();
       </script>
