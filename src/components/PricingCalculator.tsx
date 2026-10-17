@@ -23,7 +23,8 @@ const T = {
     sliderAria: "Ore al mese",
     perMonth: "al mese",
     oreLine: (h: number) => `${h} ore al mese, due figure dedicate sul tuo progetto.`,
-    badge: "Anche solo per un mese, senza vincoli di durata.",
+    badgeStrong: "Anche solo per un mese",
+    badgeRest: ". Nessun vincolo di durata, decidi tu ogni mese se continuare.",
     oreMin: "Pacchetto minimo: 43 ore, 3.000€ al mese.",
     corpoTag: "Compri il risultato",
     corpoTitle: "Un rilascio preciso, a prezzo fisso.",
@@ -54,7 +55,8 @@ const T = {
     sliderAria: "Hours per month",
     perMonth: "per month",
     oreLine: (h: number) => `${h} hours a month, two dedicated people on your project.`,
-    badge: "Even for a single month, no lock-in.",
+    badgeStrong: "Even for a single month",
+    badgeRest: ". No lock-in, you decide each month whether to continue.",
     oreMin: "Minimum package: 43 hours, €3,000 per month.",
     corpoTag: "Buy the outcome",
     corpoTitle: "A precise release, at a fixed price.",
@@ -125,9 +127,9 @@ export default function PricingCalculator({ lang = "it" }: { lang?: Lang }) {
               <span className="text-[15px]" style={{ color: "var(--color-ink-soft)" }}>{C.perMonth}</span>
             </div>
             <p className="mt-3 text-[15px]" style={{ color: "var(--color-ink)" }}>{C.oreLine(hours)}</p>
-            <div className="mt-5 inline-flex items-center gap-2.5 rounded-full px-5 py-2.5" style={{ background: "var(--color-violet-50, #F5EEF7)", border: "1px solid var(--color-violet-200, #E9D5F0)" }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={brand} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              <span className="text-[14px] font-semibold" style={{ color: brand }}>{C.badge}</span>
+            <div className="mt-5 inline-flex items-center gap-2.5 rounded-full px-6 py-3" style={{ background: "var(--color-violet-50, #F5EEF7)", border: "1px solid var(--color-violet-200, #E9D5F0)" }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={brand} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              <span className="text-[15px]" style={{ color: brand }}><b className="font-bold">{C.badgeStrong}</b><span style={{ fontWeight: 500 }}>{C.badgeRest}</span></span>
             </div>
             <p className="mt-4 text-[12.5px]" style={{ color: "var(--color-ink-soft)" }}>{C.oreMin}</p>
           </div>
