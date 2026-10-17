@@ -33,13 +33,15 @@ const T = {
     corpoPriceNote: "per un primo rilascio chiaro",
     corpoPoints: [
       "Lo scope del rilascio si concorda prima di partire",
-      "Avanzamento e ore restano tracciati nella dashboard",
+      "Avanzamento tracciato nella dashboard in tempo reale",
       "I rilasci successivi si quotano a corpo, uno alla volta",
     ],
     guaranteeTitle: "Primo mese soddisfatti o rimborsati",
     guarantee: "Se il primo mese non ti convince, ti rimborsiamo. In alternativa lavoriamo gratis finché non sei soddisfatto.",
     trackTitle: "Tutto tracciato, in tempo reale",
-    track: "In entrambi i modelli si lavora a sprint, con metodo iterativo. Ogni ora e ogni attività sono registrate nella dashboard di progetto a cui hai accesso: chi, quando e cosa ha fatto, oltre al lavoro in corso.",
+    track: "Si lavora a sprint, con metodo iterativo. Ogni ora e ogni attività sono registrate nella dashboard a cui hai accesso: chi, quando e cosa ha fatto, oltre al lavoro in corso.",
+    trackCorpoTitle: "Avanzamento in tempo reale",
+    trackCorpo: "Si lavora a sprint, con metodo iterativo. Nella dashboard vedi l'avanzamento del progetto e il lavoro in corso in tempo reale, rilascio per rilascio.",
     iva: "Tutti i prezzi sono IVA esclusa.",
   },
   en: {
@@ -62,13 +64,15 @@ const T = {
     corpoPriceNote: "for a first clear release",
     corpoPoints: [
       "The release scope is agreed before we start",
-      "Progress and hours are still tracked in the dashboard",
+      "Progress tracked in the dashboard in real time",
       "Later releases are quoted fixed-price, one at a time",
     ],
     guaranteeTitle: "First month, satisfied or refunded",
     guarantee: "If the first month doesn't convince you, we refund it. Or we work for free until you're satisfied.",
     trackTitle: "Everything tracked, in real time",
-    track: "Both models run in sprints, iteratively. Every hour and every task is logged in the project dashboard you have access to: who did what and when, plus the work in progress.",
+    track: "We work in sprints, iteratively. Every hour and every task is logged in the dashboard you have access to: who did what and when, plus the work in progress.",
+    trackCorpoTitle: "Progress in real time",
+    trackCorpo: "We work in sprints, iteratively. In the dashboard you see the project's progress and the work in progress in real time, release by release.",
     iva: "All prices exclude VAT.",
   },
 } as const;
@@ -166,9 +170,9 @@ export default function PricingCalculator({ lang = "it" }: { lang?: Lang }) {
         <div className="rounded-2xl p-6 border border-line" style={{ background: "#FAFAF8" }}>
           <div className="flex items-center gap-2.5 mb-2.5">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={brand} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
-            <strong className="text-[16px] font-semibold" style={{ color: "var(--color-ink)" }}>{C.trackTitle}</strong>
+            <strong className="text-[16px] font-semibold" style={{ color: "var(--color-ink)" }}>{mode === "corpo" ? C.trackCorpoTitle : C.trackTitle}</strong>
           </div>
-          <p className="text-[14.5px] leading-relaxed" style={{ color: "var(--color-ink-muted)" }}>{C.track}</p>
+          <p className="text-[14.5px] leading-relaxed" style={{ color: "var(--color-ink-muted)" }}>{mode === "corpo" ? C.trackCorpo : C.track}</p>
         </div>
       </div>
 
