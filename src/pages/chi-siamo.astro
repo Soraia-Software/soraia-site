@@ -152,7 +152,7 @@ const faqs = [
   <!-- ============================================================
        HERO
        ============================================================ -->
-  <section class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
+  <section class="relative overflow-hidden border-b border-line bg-violet-mesh">
     <div class="container-soraia pt-20 md:pt-28 pb-16 md:pb-20">
       <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
         <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
@@ -252,6 +252,54 @@ const faqs = [
         ))}
       </div>
     </div>
+  </section>
+
+  <!-- ============================================================
+       IL TEAM (mosaico foto, persone reali)
+       ============================================================ -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Il team"
+        title="Dietro Soraia ci sono persone vere."
+        subtitle="Niente stock photo. Un gruppo affiatato, 100% remote, che costruisce e manda in produzione gli agenti IA dei nostri clienti."
+        align="center"
+      />
+
+      <div class="team-mosaic mt-10 md:mt-14">
+        {[
+          { slug: "daniel-levis", name: "Daniel Levis" },
+          { slug: "eleonora-cogo", name: "Eleonora Cogo" },
+          { slug: "lorenzo-barbaglia", name: "Lorenzo Barbaglia" },
+          { slug: "veronica-pisana", name: "Veronica Pisana" },
+          { slug: "mohamed-mejri", name: "Mohamed Mejri" },
+          { slug: "davide-silvestri", name: "Davide Silvestri" },
+          { slug: "martina-rochstein", name: "Martina Rochstein" },
+          { slug: "paolo-bacchetti", name: "Paolo Bacchetti" },
+          { slug: "narella-petrocco", name: "Narella Petrocco" },
+          { slug: "sebastian-geido", name: "Sebastian Geido" },
+        ].map((p, i) => (
+          <figure class={`tm-tile tm-v${i % 4} m-0`}>
+            <picture>
+              <source srcset={`/team/${p.slug}.avif?v=4`} type="image/avif" />
+              <img src={`/team/${p.slug}.webp?v=4`} alt={p.name} loading="lazy" width="480" height="600" />
+            </picture>
+          </figure>
+        ))}
+      </div>
+    </div>
+
+    <style>
+      .team-mosaic { column-count: 2; column-gap: 14px; max-width: 1120px; margin-inline: auto; }
+      @media (min-width: 640px) { .team-mosaic { column-count: 3; } }
+      @media (min-width: 1024px) { .team-mosaic { column-count: 5; column-gap: 16px; } }
+      .tm-tile { break-inside: avoid; margin: 0 0 14px; border-radius: 14px; overflow: hidden; background: var(--color-ink-100); box-shadow: var(--shadow-sm); }
+      @media (min-width: 1024px) { .tm-tile { margin-bottom: 16px; } }
+      .tm-tile img { display: block; width: 100%; height: auto; object-fit: cover; aspect-ratio: 4 / 5; }
+      .tm-v1 img { aspect-ratio: 1 / 1; }
+      .tm-v2 img { aspect-ratio: 5 / 7; }
+      .tm-v3 img { aspect-ratio: 6 / 7; }
+    </style>
   </section>
 
   <!-- ============================================================
