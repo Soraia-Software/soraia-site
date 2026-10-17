@@ -104,12 +104,18 @@ Use the `.btn` classes, never ad-hoc button styling:
   client does **not** see the hours worked, keep that invariant.
 - `SprintRoadmap` — the mountain + sprint timeline + "aggiorna le priorità" reorder,
   shared by `/analisi-processi` and `/ai-engineering`.
-- Team deck (homepage "Il tuo team") — one looping card **deck** per role (PM, AI Engineer):
-  vertical full-image cards (4:5 portrait, name on a bottom gradient) stacked with the next
-  cards peeking below; tap/click, drag, dots, or autoplay cycle through (infinite loop, no
-  arrows). Team photos are branded purple-background portraits in `public/team/` (webp+avif,
-  source PNGs kept in `_team-image-sources/`, gitignored). Bump the `?v=N` query on the
-  image URLs whenever a photo is replaced at the same filename (CDN caches by URL).
+- Team row (homepage "Il tuo team") — one slow looping **row of cards** (photo 4:5, name and
+  surname, role in accent) on a `.bg-tech-grid` band; pure CSS marquee (set duplicated,
+  `translateX(-50%)`, pause on hover, respects reduced-motion). Roles are data in the page.
+  Team photos are branded purple-background portraits in `public/team/` (webp+avif, source
+  PNGs in `_team-image-sources/`, gitignored). Bump the `?v=N` query on the image URLs
+  whenever a photo is replaced at the same filename (CDN caches by URL).
+- `ProofBar` — client logos in **two rows scrolling in opposite directions** (`rowA` is seen
+  first and runs right→left, `rowB` left→right). Pass `rowA`/`rowB` explicitly to control the
+  order; a single `logos` array is split in half for backwards compatibility.
+- Faces belong in more than one place: hero (overlapping avatar row + "Ti rispondiamo entro
+  24 ore"), the PMI band, the 3-person journey, the final CTA (3 faces) and the chi-siamo
+  "Lavora con noi" band (all 10). Prefer this over a single founder photo.
 
 ## 8. i18n
 

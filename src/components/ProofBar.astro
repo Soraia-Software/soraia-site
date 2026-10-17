@@ -7,18 +7,27 @@ interface Logo {
 
 interface Props {
   label: string;
-  logos: Logo[];
+  logos?: Logo[];     // compat: una lista sola, divisa a metà sulle due file
+  rowA?: Logo[];      // prima fila, scorre da destra a sinistra: il primo logo si vede subito
+  rowB?: Logo[];      // seconda fila, scorre da sinistra a destra, loghi diversi
 }
 
-const { label, logos } = Astro.props;
+const { label, logos = [], rowA, rowB } = Astro.props;
+const half = Math.ceil(logos.length / 2);
+const listA: Logo[] = rowA ?? logos.slice(0, half);
+const listB: Logo[] = rowB ?? logos.slice(half);
 
-// Build seamless marquee track: ensure each "half" of the track is wide enough
-// to overflow the widest common viewport. With few logos (e.g. 4), we need
-// multiple repetitions per half so translateX(-50%) loops without visible gaps.
+// Ogni fila è un marquee senza salti: la pista contiene il set due volte e trasla di -50%.
+// Con pochi loghi il set viene ripetuto finché la metà pista copre la viewport.
 const MIN_CELLS_PER_HALF = 8;
-const repeatsPerHalf = Math.max(1, Math.ceil(MIN_CELLS_PER_HALF / Math.max(1, logos.length)));
-const halfTrack = Array.from({ length: repeatsPerHalf }, () => logos).flat();
-const doubled = [...halfTrack, ...halfTrack];
+function buildTrack(list: Logo[]) {
+  if (!list.length) return { half: [] as Logo[], doubled: [] as Logo[] };
+  const reps = Math.max(1, Math.ceil(MIN_CELLS_PER_HALF / list.length));
+  const h = Array.from({ length: reps }, () => list).flat();
+  return { half: h, doubled: [...h, ...h] };
+}
+const A = buildTrack(listA);
+const B = buildTrack(listB);
 ---
 
 <section class="py-14 md:py-16 border-y border-ink-200 bg-white">
@@ -28,43 +37,58 @@ const doubled = [...halfTrack, ...halfTrack];
     </p>
   </div>
 
-  <div class="marquee">
-    <div class="marquee-track">
-      {doubled.map((logo, idx) => (
-        <div
-          class="proofbar-cell shrink-0"
-          aria-hidden={idx >= halfTrack.length ? "true" : undefined}
-          title={logo.name}
-        >
-          {logo.src ? (
-            <img
-              src={logo.src}
-              alt={logo.name}
-              loading="lazy"
-              decoding="async"
-              class="logo-img"
-            />
-          ) : (
-            <span class="text-xl md:text-2xl font-medium tracking-tight text-ink-400 hover:text-ink-900 transition-colors duration-300 whitespace-nowrap">
-              {logo.name}
-            </span>
-          )}
-        </div>
-      ))}
+  <div class="pb-rows">
+    <div class="pb-row">
+      <div class="pb-track pb-track--left">
+        {A.doubled.map((logo, idx) => (
+          <div class="proofbar-cell shrink-0" aria-hidden={idx >= A.half.length ? "true" : undefined} title={logo.name}>
+            {logo.src ? (
+              <img src={logo.src} alt={logo.name} loading="lazy" decoding="async" class="logo-img" />
+            ) : (
+              <span class="text-xl md:text-2xl font-medium tracking-tight text-ink-400 whitespace-nowrap">{logo.name}</span>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
+    {B.doubled.length > 0 && (
+      <div class="pb-row">
+        <div class="pb-track pb-track--right">
+          {B.doubled.map((logo, idx) => (
+            <div class="proofbar-cell shrink-0" aria-hidden={idx >= B.half.length ? "true" : undefined} title={logo.name}>
+              {logo.src ? (
+                <img src={logo.src} alt={logo.name} loading="lazy" decoding="async" class="logo-img" />
+              ) : (
+                <span class="text-xl md:text-2xl font-medium tracking-tight text-ink-400 whitespace-nowrap">{logo.name}</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
   </div>
 </section>
 
 <style is:global>
+  /* Due file in direzioni opposte, bordi sfumati */
+  .pb-rows {
+    display: flex; flex-direction: column; gap: 0.75rem; overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  }
+  .pb-row { overflow: hidden; }
+  .pb-track { display: flex; width: max-content; will-change: transform; }
+  .pb-track--left  { animation: pb-left 48s linear infinite; }
+  .pb-track--right { animation: pb-right 56s linear infinite; }
+  .pb-rows:hover .pb-track { animation-play-state: paused; }
+  @keyframes pb-left  { from { transform: translateX(0); }    to { transform: translateX(-50%); } }
+  @keyframes pb-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+  @media (prefers-reduced-motion: reduce) { .pb-track { animation: none; } }
+
   /* Uniform bounding box per logo: same visual real estate for square / wide / tall logos */
   .proofbar-cell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 150px;
-    height: 60px;
-    padding: 0 0.5rem;
-    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    width: 150px; height: 60px; padding: 0 0.5rem; flex-shrink: 0;
   }
   @media (min-width: 768px) {
     .proofbar-cell { width: 170px; height: 64px; }
@@ -72,26 +96,21 @@ const doubled = [...halfTrack, ...halfTrack];
 
   /* Logo image: fits within cell, max constraints both dimensions */
   .proofbar-cell .logo-img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;
     filter: grayscale(100%) brightness(0.55) contrast(1.1);
     opacity: 0.75;
     transition: filter 0.4s var(--ease-out-quart), opacity 0.4s var(--ease-out-quart);
-    /* mix-blend-mode helps any residual white halo from logo backgrounds disappear into the strip bg */
     mix-blend-mode: multiply;
   }
 
-  /* Square / padded source images look small vs wide logos in a fixed cell.
-     Scale up specific ones to match the perceived size of the others. */
+  /* Square / padded source images look small vs wide logos in a fixed cell. */
   .proofbar-cell .logo-img[src*="navily"],
-  .proofbar-cell .logo-img[src*="storywonder"] {
+  .proofbar-cell .logo-img[src*="storywonder"],
+  .proofbar-cell .logo-img[src*="aegisgroup"] {
     transform: scale(1.45);
     transform-origin: center;
   }
-  .marquee:hover .proofbar-cell .logo-img,
+  .pb-rows:hover .proofbar-cell .logo-img,
   .proofbar-cell .logo-img:hover {
     filter: grayscale(0%) brightness(1);
     opacity: 1;

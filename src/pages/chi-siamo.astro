@@ -186,23 +186,7 @@ const faqs = [
         </div>
       </div>
 
-      <div class="mt-12 md:mt-14 max-w-2xl mx-auto">
-        <a href="/careers/" class="card card-hover group no-underline flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7 !p-7 md:!p-8">
-          <div class="flex-1">
-            <p class="eyebrow mb-2.5">Lavora con noi</p>
-            <h3 class="font-medium tracking-tight" style="font-size: clamp(1.25rem, 1.6vw + 0.6rem, 1.6rem); line-height: 1.15; color: var(--color-ink);">
-              Stiamo crescendo. Unisciti al team.
-            </h3>
-            <p class="mt-2.5 text-[15px] leading-relaxed" style="color: var(--color-ink-muted);">
-              Cerchiamo persone che vogliono costruire agenti IA che le aziende usano davvero. Guarda le posizioni aperte.
-            </p>
-          </div>
-          <span class="btn btn-primary flex-shrink-0 self-start sm:self-auto">
-            Candidati
-            <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-          </span>
-        </a>
-      </div>
+      <!-- l'invito a candidarsi è la fascia dedicata subito sotto la hero -->
     </div>
 
     <style is:global>
@@ -230,9 +214,40 @@ const faqs = [
   </section>
 
   <!-- ============================================================
+       LAVORA CON NOI, fascia dedicata (box grande per candidarsi)
+       ============================================================ -->
+  <section class="section bg-hero-dark relative overflow-hidden">
+    <div class="container-soraia relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div class="lg:col-span-7">
+          <p class="eyebrow eyebrow-light mb-5">Lavora con noi</p>
+          <h2 class="text-balance" style="color: #fff; font-size: clamp(2rem, 3.2vw + 0.5rem, 3rem); line-height: 1.08; letter-spacing: -0.025em; font-weight: 500;">
+            Stiamo crescendo. Unisciti al team.
+          </h2>
+          <p class="mt-5 text-[17px] md:text-[18px] leading-relaxed text-pretty max-w-xl" style="color: rgba(255,255,255,0.8);">
+            Cerchiamo persone che vogliono costruire agenti IA che le aziende usano davvero. Team piccolo, 100% remote, autonomia vera. La selezione è in quattro passaggi, senza sorprese.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="/careers/" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+              Candidati
+              <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            </a>
+            <a href="/careers/#processo" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">Come funziona la selezione</a>
+          </div>
+        </div>
+        <div class="lg:col-span-5 flex flex-wrap gap-3 justify-start lg:justify-end">
+          {["daniel-levis", "veronica-pisana", "eleonora-cogo", "paolo-bacchetti", "davide-silvestri", "lorenzo-barbaglia", "martina-rochstein", "mohamed-mejri", "sebastian-geido", "narella-petrocco"].map((slug) => (
+            <img src={`/team/${slug}.webp?v=4`} alt="" loading="lazy" width="64" height="64" class="rounded-full object-cover" style="width: 64px; height: 64px; border: 2px solid rgba(255,255,255,0.85); box-shadow: 0 2px 12px rgba(0,0,0,0.3);" />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        FOUNDERS
        ============================================================ -->
-  <section class="section bg-ink-50 border-y border-line">
+  <section class="section bg-violet-mesh border-y border-line">
     <div class="container-soraia">
       <SectionHeader
         eyebrow="I fondatori"
@@ -307,7 +322,7 @@ const faqs = [
   <!-- ============================================================
        MODALITÀ DI LAVORO
        ============================================================ -->
-  <section class="section bg-white border-t border-line">
+  <section class="section bg-tech-grid border-t border-line">
     <div class="container-soraia">
       <SectionHeader
         eyebrow="Come lavoriamo"
@@ -352,7 +367,7 @@ const faqs = [
   <!-- ============================================================
        GLOBAL REACH
        ============================================================ -->
-  <section class="section bg-ink-50 border-y border-line">
+  <section class="section bg-violet-mesh border-y border-line">
     <div class="container-soraia">
       <SectionHeader
         eyebrow="Reach globale"

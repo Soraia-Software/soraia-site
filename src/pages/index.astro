@@ -82,23 +82,28 @@ const jsonLd = {
   sameAs: ["https://www.linkedin.com/company/soraia-digital"],
 };
 
-const homeLogos = [
+// Due file che scorrono in direzioni opposte. La prima è quella che si vede per prima
+// al caricamento: ordine deciso da Daniel (2026-10-17).
+const homeLogosA = [
   { name: "APraise", src: "/logos/clients/apraise.webp" },
+  { name: "Beta Imprese", src: "/logos/clients/betaimprese.webp" },
+  { name: "Lanificio TG", src: "/logos/clients/lanificio-tg.webp" },
+  { name: "Banca Sella", src: "/logos/clients/banca-sella.webp" },
+  { name: "Aegis Group", src: "/logos/clients/aegisgroup.webp" },
+  { name: "ESCP", src: "/logos/clients/escp.webp" },
+  { name: "Liftt", src: "/logos/clients/liftt.webp" },
+  { name: "Stars Be Original", src: "/logos/clients/starsbeoriginal.webp" },
+  { name: "Numeraria", src: "/logos/clients/numeraria.webp" },
+];
+const homeLogosB = [
   { name: "Talent Match", src: "/logos/clients/talentmatch.webp" },
   { name: "Rainplan", src: "/logos/clients/rainplan.webp" },
-  { name: "Numeraria", src: "/logos/clients/numeraria.webp" },
   { name: "KB&B", src: "/logos/clients/kbb.webp" },
   { name: "StoryWonder", src: "/logos/clients/storywonder.webp" },
   { name: "CXL", src: "/logos/clients/cxl.webp" },
-  { name: "Stars Be Original", src: "/logos/clients/starsbeoriginal.webp" },
-  { name: "Liftt", src: "/logos/clients/liftt.webp" },
   { name: "Navily", src: "/logos/clients/navily.webp" },
   { name: "French Riviera Househunting", src: "/logos/clients/frh.webp" },
   { name: "ILTEC", src: "/logos/clients/iltec.webp" },
-  { name: "Banca Sella", src: "/logos/clients/banca-sella.webp" },
-  { name: "ESCP", src: "/logos/clients/escp.webp" },
-  { name: "Beta Imprese", src: "/logos/clients/betaimprese.webp" },
-  { name: "Lanificio TG", src: "/logos/clients/lanificio-tg.webp" },
   { name: "Lyra", src: "/logos/clients/logo-lyra.webp" },
   { name: "Por Tier", src: "/logos/clients/por-tier-logo.webp" },
 ];
@@ -244,7 +249,7 @@ const faqs = [
             </div>
             <div>
               <p class="text-white font-medium" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1; letter-spacing: -0.02em;">40+</p>
-              <p class="text-[12px] text-violet-200/70 mt-2 leading-snug">progetti consegnati<br/>in 11 paesi</p>
+              <p class="text-[12px] text-violet-200/70 mt-2 leading-snug">progetti<br/>consegnati</p>
             </div>
             <div>
               <p class="text-white font-medium" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1; letter-spacing: -0.02em;">4 sett.</p>
@@ -282,7 +287,7 @@ const faqs = [
             </div>
             <a href="/parliamone" class="inline-flex items-center text-[13px] leading-tight no-underline group">
               <span class="block">
-                <span class="block text-white/90 font-medium">10 persone, 100% remote. Veronica ti risponde entro 24 ore.</span>
+                <span class="block text-white/90 font-medium">10 persone, 100% remote. Ti rispondiamo entro 24 ore.</span>
                 <span class="block text-violet-200/60 group-hover:text-violet-200/90 transition-colors">Capiamo insieme se ha senso. Senza pitch.</span>
               </span>
             </a>
@@ -300,7 +305,7 @@ const faqs = [
   <!-- ============================================================
        2. TRUSTED BY, proof bar + featured-in
        ============================================================ -->
-  <ProofBar label="Si fidano di noi" logos={homeLogos} />
+  <ProofBar label="Si fidano di noi" rowA={homeLogosA} rowB={homeLogosB} />
 
   <!-- ============================================================
        2a-bis. POSIZIONAMENTO PMI, sfondo tech + griglia, facce del team
@@ -378,52 +383,60 @@ const faqs = [
   <!-- ============================================================
        2c. DOPO IL NOSTRO INTERVENTO, outcome / benefici
        ============================================================ -->
-  <section class="section bg-white border-t border-line">
-    <div class="container-soraia">
+  <section class="section bg-hero-dark relative overflow-hidden">
+    <div class="container-soraia relative z-10">
       <SectionHeader
         eyebrow="Dopo il nostro intervento"
         title="Un'azienda con costi operativi più bassi, che dipende meno da te e vale di più."
         subtitle="Mettiamo ordine nei processi e li automatizziamo con software su misura e agenti AI, che restano di proprietà della tua azienda."
         align="center"
+        variant="dark"
       />
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7 max-w-5xl mx-auto">
-        <div class="card-editorial reveal !p-7 md:!p-8">
-          <span class="inline-flex w-11 h-11 rounded-xl items-center justify-center mb-5" style="background: var(--color-violet-50, #FDF4FF); color: var(--color-brand);">
+        <div class="dk-card reveal">
+          <span class="dk-chip">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </span>
-          <h3 class="font-medium tracking-tight text-ink-900 mb-2.5" style="font-size: 1.3rem;">Meno lavoro ripetitivo</h3>
-          <p class="text-[15.5px] text-ink-700 leading-relaxed">Inserimento dati, controlli, riconciliazioni e report li fa il software. Le stesse persone gestiscono più volume e l'azienda cresce senza far crescere l'amministrazione.</p>
+          <h3 class="font-medium tracking-tight mb-2.5" style="font-size: 1.3rem; color: #fff;">Meno lavoro ripetitivo</h3>
+          <p class="text-[15.5px] leading-relaxed" style="color: rgba(255,255,255,0.75);">Inserimento dati, controlli, riconciliazioni e report li fa il software. Le stesse persone gestiscono più volume e l'azienda cresce senza far crescere l'amministrazione.</p>
         </div>
-        <div class="card-editorial reveal reveal-delay-1 !p-7 md:!p-8">
-          <span class="inline-flex w-11 h-11 rounded-xl items-center justify-center mb-5" style="background: var(--color-violet-50, #FDF4FF); color: var(--color-brand);">
+        <div class="dk-card reveal reveal-delay-1">
+          <span class="dk-chip">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
           </span>
-          <h3 class="font-medium tracking-tight text-ink-900 mb-2.5" style="font-size: 1.3rem;">Non sei più il collo di bottiglia</h3>
-          <p class="text-[15.5px] text-ink-700 leading-relaxed">I processi chiari si delegano. Le attività di routine non passano più da te, l'azienda si managerializza e tu torni a guidarla invece di rincorrerla.</p>
+          <h3 class="font-medium tracking-tight mb-2.5" style="font-size: 1.3rem; color: #fff;">Non sei più il collo di bottiglia</h3>
+          <p class="text-[15.5px] leading-relaxed" style="color: rgba(255,255,255,0.75);">I processi chiari si delegano. Le attività di routine non passano più da te, l'azienda si managerializza e tu torni a guidarla invece di rincorrerla.</p>
         </div>
-        <div class="card-editorial reveal !p-7 md:!p-8">
-          <span class="inline-flex w-11 h-11 rounded-xl items-center justify-center mb-5" style="background: var(--color-violet-50, #FDF4FF); color: var(--color-brand);">
+        <div class="dk-card reveal">
+          <span class="dk-chip">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </span>
-          <h3 class="font-medium tracking-tight text-ink-900 mb-2.5" style="font-size: 1.3rem;">Assumi meglio, formi più in fretta</h3>
-          <p class="text-[15.5px] text-ink-700 leading-relaxed">Dai alle persone gli strumenti moderni che le nuove generazioni si aspettano. Con processi documentati l'onboarding si accorcia e il know-how resta in azienda, anche quando una persona chiave se ne va.</p>
+          <h3 class="font-medium tracking-tight mb-2.5" style="font-size: 1.3rem; color: #fff;">Assumi meglio, formi più in fretta</h3>
+          <p class="text-[15.5px] leading-relaxed" style="color: rgba(255,255,255,0.75);">Dai alle persone gli strumenti moderni che le nuove generazioni si aspettano. Con processi documentati l'onboarding si accorcia e il know-how resta in azienda, anche quando una persona chiave se ne va.</p>
         </div>
-        <div class="card-editorial reveal reveal-delay-1 !p-7 md:!p-8">
-          <span class="inline-flex w-11 h-11 rounded-xl items-center justify-center mb-5" style="background: var(--color-violet-50, #FDF4FF); color: var(--color-brand);">
+        <div class="dk-card reveal reveal-delay-1">
+          <span class="dk-chip">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
           </span>
-          <h3 class="font-medium tracking-tight text-ink-900 mb-2.5" style="font-size: 1.3rem;">Più valore quando arriva il passaggio</h3>
-          <p class="text-[15.5px] text-ink-700 leading-relaxed">Che tu venda o passi l'azienda ai figli, conta quanto funziona senza di te. Processi documentati, dati in ordine e software di proprietà la rendono più solida e più facile da passare di mano.</p>
+          <h3 class="font-medium tracking-tight mb-2.5" style="font-size: 1.3rem; color: #fff;">Più valore quando arriva il passaggio</h3>
+          <p class="text-[15.5px] leading-relaxed" style="color: rgba(255,255,255,0.75);">Che tu venda o passi l'azienda ai figli, conta quanto funziona senza di te. Processi documentati, dati in ordine e software di proprietà la rendono più solida e più facile da passare di mano.</p>
         </div>
       </div>
     </div>
+
+    <style>
+      /* card traslucide su fascia scura */
+      .dk-card { border-radius: 1.375rem; padding: 1.75rem 2rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); transition: transform .22s var(--ease-out-quart), background .22s ease; }
+      .dk-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.08); }
+      .dk-chip { display: inline-flex; width: 44px; height: 44px; border-radius: 12px; align-items: center; justify-content: center; margin-bottom: 1.25rem; background: rgba(137,45,156,0.35); color: var(--color-violet-200); }
+    </style>
   </section>
 
   <!-- ============================================================
        2c-bis. SAI SEMPRE CHI HAI DAVANTI, le persone del percorso
        ============================================================ -->
-  <section class="section bg-white border-t border-line">
+  <section class="section bg-violet-mesh border-t border-line">
     <div class="container-soraia">
       <div class="max-w-2xl mb-12 md:mb-14">
         <p class="eyebrow mb-5">Sempre le stesse persone</p>
@@ -460,7 +473,7 @@ const faqs = [
   <!-- ============================================================
        2d. IL TUO TEAM, pod (PM + AI Engineer) + confronto
        ============================================================ -->
-  <section class="section bg-ink-50 border-t border-line">
+  <section class="section bg-tech-grid border-t border-line">
     <div class="container-soraia">
       <SectionHeader
         eyebrow="Il tuo team"
@@ -469,145 +482,56 @@ const faqs = [
         align="center"
       />
 
-      <!-- ruoli: mazzo di card impilate per ruolo, tocca o trascina per scoprire gli altri (loop) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10 max-w-3xl mx-auto">
-        {[
-          { role: "Project Manager", people: [
-            { slug: "eleonora-cogo", name: "Eleonora Cogo" },
-            { slug: "davide-silvestri", name: "Davide Silvestri" },
-            { slug: "daniel-levis", name: "Daniel Levis" },
-            { slug: "veronica-pisana", name: "Veronica Pisana" },
-            { slug: "paolo-bacchetti", name: "Paolo Bacchetti" },
-          ] },
-          { role: "AI Engineer", people: [
-            { slug: "lorenzo-barbaglia", name: "Lorenzo Barbaglia" },
-            { slug: "martina-rochstein", name: "Martina Rochstein" },
-            { slug: "mohamed-mejri", name: "Mohamed Mejri" },
-            { slug: "sebastian-geido", name: "Sebastian Geido" },
-            { slug: "narella-petrocco", name: "Narella Petrocco" },
-          ] },
-        ].map((g) => (
-          <div class="reveal">
-            <p class="text-[12px] font-semibold uppercase tracking-[0.16em] text-violet-700 mb-5 text-center">{g.role}</p>
-            <div class="team-deck" data-deck tabindex="0" role="button" aria-label={`Profili ${g.role}: tocca o trascina per scoprire il prossimo`}>
-              {g.people.map((p) => (
-                <figure class="deck-card" data-card>
-                  <picture>
-                    <source srcset={`/team/${p.slug}.avif?v=4`} type="image/avif" />
-                    <img src={`/team/${p.slug}.webp?v=4`} alt={p.name} width="480" height="600" loading="lazy" draggable="false" />
-                  </picture>
-                  <figcaption><span class="tc-name">{p.name}</span></figcaption>
-                </figure>
-              ))}
-            </div>
-            <div class="team-dots" data-dots></div>
-          </div>
-        ))}
+      <!-- il team: una riga di card (foto, nome e cognome, ruolo) che scorre lenta in loop -->
+      <div class="team-row-wrap mt-2" aria-label="Il team Soraia">
+        <div class="team-row">
+          {(() => {
+            const people = [
+              { slug: "daniel-levis", name: "Daniel Levis", role: "Account Manager" },
+              { slug: "veronica-pisana", name: "Veronica Pisana", role: "Account Manager" },
+              { slug: "eleonora-cogo", name: "Eleonora Cogo", role: "Project Manager" },
+              { slug: "paolo-bacchetti", name: "Paolo Bacchetti", role: "Project Manager" },
+              { slug: "davide-silvestri", name: "Davide Silvestri", role: "AI Engineer" },
+              { slug: "lorenzo-barbaglia", name: "Lorenzo Barbaglia", role: "AI Engineer" },
+              { slug: "martina-rochstein", name: "Martina Rochstein", role: "AI Engineer" },
+              { slug: "mohamed-mejri", name: "Mohamed Mejri", role: "AI Engineer" },
+              { slug: "sebastian-geido", name: "Sebastian Geido", role: "AI Engineer" },
+              { slug: "narella-petrocco", name: "Narella Petrocco", role: "AI Engineer" },
+            ];
+            return [...people, ...people].map((p, i) => (
+              <figure class="team-card m-0" aria-hidden={i >= people.length ? "true" : undefined}>
+                <picture>
+                  <source srcset={`/team/${p.slug}.avif?v=4`} type="image/avif" />
+                  <img src={`/team/${p.slug}.webp?v=4`} alt={i < people.length ? p.name : ""} width="480" height="600" loading="lazy" draggable="false" />
+                </picture>
+                <figcaption>
+                  <span class="tr-name">{p.name}</span>
+                  <span class="tr-role">{p.role}</span>
+                </figcaption>
+              </figure>
+            ));
+          })()}
+        </div>
       </div>
       <p class="text-center text-[14.5px] mt-8 max-w-xl mx-auto" style="color: var(--color-ink-muted);">
         Più profili disponibili. Al tuo progetto ne assegniamo <strong style="color: var(--color-ink);">uno dedicato</strong> per ruolo, lo stesso per tutto il percorso.
       </p>
 
       <style>
-        .team-deck { position: relative; width: clamp(190px, 72%, 240px); margin: 0 auto; cursor: pointer; outline: none; -webkit-tap-highlight-color: transparent; touch-action: pan-y; }
-        .team-deck::before { content: ""; display: block; aspect-ratio: 4 / 5; }
-        .team-deck:focus-visible { box-shadow: 0 0 0 3px var(--color-violet-200, #E9D5F0); border-radius: var(--radius-lg); }
-        .deck-card { position: absolute; inset: 0; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-ink-100); box-shadow: 0 12px 30px -14px rgba(63,21,72,0.5); transition: transform .5s cubic-bezier(.4,0,.2,1), opacity .45s ease; will-change: transform, opacity; }
-        .deck-card picture { display: block; }
-        .deck-card img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; -webkit-user-drag: none; user-select: none; pointer-events: none; }
-        .deck-card figcaption { position: absolute; inset: auto 0 0 0; padding: 30px 14px 12px; background: linear-gradient(to top, rgba(26,10,32,0.82) 0%, rgba(26,10,32,0.3) 55%, transparent 100%); }
-        .tc-name { color: #fff; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
-        .team-dots { display: flex; gap: 6px; justify-content: center; margin-top: 16px; }
-        .team-dots button { width: 7px; height: 7px; border-radius: 999px; background: rgba(63,21,72,0.18); border: 0; padding: 0; cursor: pointer; transition: background .2s, transform .2s; }
-        .team-dots button.active { background: var(--color-brand); transform: scale(1.3); }
+        .team-row-wrap { overflow: hidden; padding: 6px 0;
+          -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%); }
+        .team-row { display: flex; width: max-content; animation: team-row-scroll 72s linear infinite; will-change: transform; }
+        .team-row-wrap:hover .team-row { animation-play-state: paused; }
+        @keyframes team-row-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @media (prefers-reduced-motion: reduce) { .team-row { animation: none; } }
+        .team-card { width: clamp(170px, 18vw, 220px); margin-right: 16px; flex: 0 0 auto; background: #fff; border: 1px solid var(--color-line); border-radius: 1.375rem; overflow: hidden; box-shadow: var(--shadow-sm); }
+        .team-card picture { display: block; }
+        .team-card img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; -webkit-user-drag: none; user-select: none; }
+        .team-card figcaption { padding: 12px 14px 14px; }
+        .tr-name { display: block; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--color-ink); line-height: 1.2; }
+        .tr-role { display: block; margin-top: 3px; font-size: 12.5px; font-weight: 500; color: var(--color-brand-accent); }
       </style>
-      <script is:inline>
-        (function () {
-          document.querySelectorAll("[data-deck]").forEach(function (deck) {
-            var cards = Array.prototype.slice.call(deck.querySelectorAll("[data-card]"));
-            var dots = deck.parentElement.querySelector("[data-dots]");
-            var n = cards.length;
-            var front = 0;
-            var timer = null;
-
-            function layout(animate) {
-              cards.forEach(function (card, i) {
-                var depth = (i - front + n) % n;
-                var tx, sc, op, z;
-                // card impilate di lato (a sinistra), il mazzo scorre da sinistra a destra
-                if (depth === 0) { tx = 0; sc = 1; op = 1; z = 30; }
-                else if (depth === 1) { tx = -24; sc = 0.92; op = 1; z = 20; }
-                else if (depth === 2) { tx = -46; sc = 0.85; op = 1; z = 10; }
-                else { tx = -46; sc = 0.85; op = 0; z = 1; }
-                card.style.transition = animate ? "transform .5s cubic-bezier(.4,0,.2,1), opacity .45s ease" : "none";
-                card.style.transform = "translateX(" + tx + "px) scale(" + sc + ")";
-                card.style.opacity = op;
-                card.style.zIndex = z;
-                card.setAttribute("aria-hidden", depth === 0 ? "false" : "true");
-              });
-            }
-            function updateDots() {
-              if (!dots) return;
-              dots.querySelectorAll("button").forEach(function (b, i) { b.classList.toggle("active", i === front); });
-            }
-            function go(i) { front = ((i % n) + n) % n; layout(true); updateDots(); restart(); }
-            function next() { go(front + 1); }
-            function prev() { go(front - 1); }
-
-            function start() { stop(); if (n > 1) timer = setInterval(next, 4200); }
-            function stop() { if (timer) { clearInterval(timer); timer = null; } }
-            function restart() { start(); }
-
-            if (dots) {
-              for (var i = 0; i < n; i++) {
-                var d = document.createElement("button");
-                d.type = "button"; d.setAttribute("aria-label", "Vai al profilo " + (i + 1));
-                if (i === 0) d.className = "active";
-                (function (idx) { d.addEventListener("click", function () { go(idx); }); })(i);
-                dots.appendChild(d);
-              }
-            }
-
-            layout(false);
-            if (n <= 1) return;
-            start();
-
-            // tocco / click -> prossimo (loop)
-            deck.addEventListener("click", function () { if (!suppressClick) next(); suppressClick = false; });
-            deck.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); next(); } });
-
-            // trascinamento della card in cima
-            var startX = 0, cur = 0, dragging = false, suppressClick = false;
-            deck.addEventListener("pointerdown", function (e) {
-              dragging = true; cur = 0; startX = e.clientX; stop();
-              try { deck.setPointerCapture(e.pointerId); } catch (err) {}
-            });
-            deck.addEventListener("pointermove", function (e) {
-              if (!dragging) return;
-              cur = e.clientX - startX;
-              if (Math.abs(cur) > 4) suppressClick = true;
-              var top = cards[front];
-              top.style.transition = "none";
-              top.style.transform = "translateX(" + cur + "px) rotate(" + (cur * 0.03) + "deg)";
-            });
-            function endDrag() {
-              if (!dragging) return;
-              dragging = false;
-              if (cur <= -55) { next(); }
-              else if (cur >= 55) { prev(); }
-              else { layout(true); start(); }
-            }
-            deck.addEventListener("pointerup", endDrag);
-            deck.addEventListener("pointercancel", endDrag);
-
-            deck.addEventListener("pointerenter", stop);
-            deck.addEventListener("pointerleave", start);
-            deck.addEventListener("focusin", stop);
-            deck.addEventListener("focusout", start);
-            window.addEventListener("resize", function () { layout(false); });
-          });
-        })();
-      </script>
 
       <!-- confronto -->
       <h3 class="text-center font-medium tracking-tight text-ink-900 mt-16 md:mt-20 mb-8" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1.15;">
@@ -673,45 +597,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- ============================================================
-       5b. QUANTO COSTA, pricing anchor
-       ============================================================ -->
-  <section id="quanto-costa" class="section bg-white">
-    <div class="container-soraia">
-      <SectionHeader
-        eyebrow="Quanto costa"
-        title="Un solo modello, semplice."
-        subtitle="Niente preventivi infiniti e niente listini a sorpresa. Due figure dedicate e un monte ore al mese, a partire da 3.000 € al mese."
-        align="center"
-      />
-
-      <div class="max-w-3xl mx-auto">
-        <div class="card-editorial reveal !p-8 md:!p-12 text-center">
-          <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-500">Due figure dedicate, un monte ore al mese</span>
-          <p class="text-[44px] md:text-[56px] font-medium text-ink leading-none tracking-tight mt-4 mb-2">Da 3.000 € <span class="text-[20px] md:text-[24px] text-ink-500 font-normal align-baseline">/ mese</span></p>
-          <p class="text-sm text-ink-500 mb-5">IVA esclusa, ore flessibili.</p>
-
-          <div class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 mb-7" style="background: var(--color-violet-50, #FDF4FF); border: 1px solid var(--color-violet-200, #E9D5F0);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="text-[14px]" style="color: var(--color-brand);"><strong class="font-bold">Anche solo per un mese.</strong> Nessun vincolo di durata.</span>
-          </div>
-
-          <p class="text-[16px] md:text-[17px] text-ink-700 leading-relaxed max-w-2xl mx-auto mb-8">
-            Un <strong>Project Manager</strong> e un <strong>AI Engineer</strong> sul tuo progetto per tutta la durata, con un monte ore combinato al mese. Sposti lo slider e vedi il prezzo. Le milestone e i rilasci sono l'obbligo di risultato: li approvi tu.
-          </p>
-
-          <a href="/prezzi" class="btn btn-primary">
-            Vedi i prezzi
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <p class="text-center text-sm text-ink-500 mt-8 max-w-2xl mx-auto reveal">
-        Tariffe al netto di IVA 22%. Tutti i progetti partono con una <a href="/parliamone" class="link-violet font-semibold">call gratuita di 20 minuti</a>.
-      </p>
-    </div>
-  </section>
+  <!-- (sezione "Quanto costa" rimossa il 2026-10-17: il prezzo vive solo su /prezzi) -->
 
   <!-- ============================================================
        6. CASE STUDY CAROUSEL (JetHR style)
@@ -735,7 +621,7 @@ const faqs = [
   <!-- ============================================================
        8. GLOBAL REACH + STATS (aligned with /chi-siamo)
        ============================================================ -->
-  <section class="section bg-ink-50 border-y border-line">
+  <section class="section bg-violet-mesh border-y border-line">
     <div class="container-soraia">
       <SectionHeader
         eyebrow="Reach globale"
