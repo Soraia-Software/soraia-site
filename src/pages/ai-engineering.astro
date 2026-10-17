@@ -1,6 +1,7 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 import SectionHeader from "~/components/SectionHeader.astro";
+import SprintRoadmap from "~/components/analisi/SprintRoadmap.tsx";
 import "~/styles/prezzi.css";
 
 const title = "AI engineering | Soraia";
@@ -151,6 +152,10 @@ const jsonLd = {
           <p class="text-[15.5px] text-ink-700 leading-relaxed">Quello che conta di più sale in cima. Quello che non serve più esce. L'obiettivo resta fisso, la rotta si corregge ogni mese.</p>
         </div>
       </div>
+
+      <div class="mt-14 md:mt-20">
+        <SprintRoadmap client:load />
+      </div>
     </div>
   </section>
 
@@ -163,7 +168,7 @@ const jsonLd = {
         subtitle="Non un team che ruota su dieci clienti. Due persone che conoscono i vostri processi e restano le stesse per tutto il percorso. Le ore al mese sono combinate tra le due figure."
         align="left"
       />
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
         <!-- Project Manager -->
         <div class="card-editorial !p-8 md:!p-10">
           <div class="flex flex-col items-center text-center mb-6">
