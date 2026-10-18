@@ -126,6 +126,8 @@ const mosaicPool = [
   { slug: "agent-accounting",  name: "Accounting Agent",  role: "Agente IA", src: "/team/agent-accounting.svg",  agent: true },
   { slug: "agent-marketing",   name: "Marketing Agent",   role: "Agente IA", src: "/team/agent-marketing.svg",   agent: true },
   { slug: "agent-development", name: "Development Agent", role: "Agente IA", src: "/team/agent-development.svg", agent: true },
+  { slug: "agent-uxui",        name: "UX/UI Agent",       role: "Agente IA", src: "/team/agent-uxui.svg",        agent: true },
+  { slug: "agent-compliance",  name: "Compliance Agent",  role: "Agente IA", src: "/team/agent-compliance.svg",  agent: true },
 ];
 // sei tessere: a, b, c grandi; d alta; e, f piccole (vedi CSS .tm-*); dir = verso di scorrimento
 const mosaicSlots = [
@@ -233,23 +235,19 @@ const faqs = [
         const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         const reflow = (el: HTMLElement) => void el.offsetWidth;
         if (!reduce && slots.length && pool.length > slots.length) {
-          let last = -1;
+          // Cambio in blocco: a ogni giro scorrono BATCH tessere insieme (sfalsate di poco),
+          // scelte a rotazione su un ordine mescolato, così ogni tessera cambia davvero.
+          const BATCH = 3;
+          const PERIOD = 3400;
+          const STAGGER = 160;
+          let order: number[] = [];
           let busy = false;
-          window.setInterval(() => {
-            if (busy || document.hidden) return;
-            let i = Math.floor(Math.random() * slots.length);
-            if (i === last) i = (i + 1) % slots.length;
-            last = i;
-            const slot = slots[i];
-            const candidates = pool.filter((p) => !current.includes(p.slug));
-            const next = candidates[Math.floor(Math.random() * candidates.length)];
-            if (!next) return;
+          const shuffle = <T,>(a: T[]) => { for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; };
+          const slideSlot = (slot: HTMLElement, i: number, next: P) => {
             const imgs = Array.from(slot.querySelectorAll<HTMLImageElement>(".tm-img"));
             const on = imgs.find((im) => im.classList.contains("is-on")) || imgs[0];
             const off = imgs.find((im) => im !== on) || imgs[1];
-            busy = true;
             const slide = () => {
-              // la nuova parte dalla posizione di ingresso senza animazione, poi scorre dentro
               off.classList.add("no-anim");
               off.classList.remove("is-out");
               reflow(off);
@@ -267,21 +265,34 @@ const faqs = [
                 if (role) role.textContent = next.role;
                 slot.classList.toggle("is-agent", !!next.agent);
                 slot.dataset.slug = next.slug;
-                current[i] = next.slug;
               });
               window.setTimeout(() => {
-                // la vecchia torna alla posizione di ingresso, pronta per il giro dopo
                 on.classList.add("no-anim");
                 on.classList.remove("is-out");
                 reflow(on);
                 on.classList.remove("no-anim");
-                busy = false;
               }, 800);
             };
+            current[i] = next.slug;
             off.onload = slide;
             off.src = next.src;
             if (off.complete && off.naturalWidth > 0) { off.onload = null; slide(); }
-          }, 2400);
+          };
+          window.setInterval(() => {
+            if (busy || document.hidden) return;
+            busy = true;
+            if (order.length < BATCH) order = shuffle(slots.map((_, i) => i));
+            const picks = order.splice(0, BATCH);
+            const used = new Set(current);
+            picks.forEach((i, k) => {
+              const candidates = pool.filter((p) => !used.has(p.slug));
+              const next = candidates[Math.floor(Math.random() * candidates.length)];
+              if (!next) return;
+              used.add(next.slug);
+              window.setTimeout(() => slideSlot(slots[i], i, next), k * STAGGER);
+            });
+            window.setTimeout(() => { busy = false; }, 900 + BATCH * STAGGER);
+          }, PERIOD);
         }
       }
     </script>

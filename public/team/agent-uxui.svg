@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600" role="img" aria-label="UX/UI Agent, agente IA del team Soraia">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="46%" r="64%">
+      <stop offset="0" stop-color="#4D246A"/>
+      <stop offset="0.55" stop-color="#260C3C"/>
+      <stop offset="1" stop-color="#120621"/>
+    </radialGradient>
+    <linearGradient id="gA" x1="1799.04" y1="2854.1" x2="4655.49" y2="4242.14" gradientUnits="userSpaceOnUse">
+      <stop offset="0.27" stop-color="#B376C0"/>
+      <stop offset="0.74" stop-color="#CF92DB"/>
+    </linearGradient>
+    <linearGradient id="gB" x1="2222.14" y1="2033.23" x2="3400.73" y2="3931.34" gradientUnits="userSpaceOnUse">
+      <stop offset="0.18" stop-color="#B376C0"/>
+      <stop offset="0.82" stop-color="#892D9C"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="26"/></filter>
+  </defs>
+  <rect width="480" height="600" fill="url(#bg)"/>
+  <!-- archi di sfondo, come le hero del sito -->
+  <g fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1.2">
+    <circle cx="240" cy="282" r="190"/>
+    <circle cx="240" cy="282" r="236"/>
+    <path d="M-40 520 C 120 440, 360 470, 520 380"/>
+  </g>
+  <!-- alone -->
+  <ellipse cx="240" cy="290" rx="150" ry="140" fill="#A855C8" opacity="0.35" filter="url(#glow)"/>
+  <!-- emblema: il marchio Soraia -->
+  <g transform="translate(57.08 80.23) scale(0.06201)">
+    <path d="M3142.53 2517.9C2975.81 2421.64 2777.3 2396.19 2590.69 2447.14C2404.09 2498.09 2244.66 2621.27 2147.48 2789.58L1170.4 4481.94C1092.18 4617.37 1058.94 4774.03 1075.53 4929.02C1092.11 5084.01 1157.66 5229.2 1262.58 5343.35C1367.51 5457.51 1506.3 5534.64 1658.67 5563.47C1811.05 5592.3 1969 5571.32 2109.45 5503.6L4239.05 4476.65C4358.81 4418.93 4460.88 4329.6 4534.29 4218.28C4607.69 4106.96 4649.64 3977.88 4655.61 3844.94C4661.57 3712 4631.34 3580.24 4568.16 3463.86C4504.98 3347.47 4411.25 3250.88 4297.07 3184.47L3142.53 2517.9Z" fill="#892D9C"/>
+    <path d="M2757.41 3990.1C2924.14 4086.36 3122.64 4111.81 3309.25 4060.86C3495.85 4009.91 3655.28 3886.73 3752.46 3718.42L4729.54 2026.06C4807.76 1890.63 4841 1733.97 4824.42 1578.98C4807.83 1423.99 4742.28 1278.8 4637.36 1164.64C4532.44 1050.49 4393.64 973.359 4241.27 944.527C4088.89 915.695 3930.94 936.676 3790.49 1004.4L1660.89 2031.35C1540.96 2089.16 1438.76 2178.67 1365.33 2290.21C1291.91 2401.75 1250.05 2531.08 1244.29 2664.23C1238.52 2797.38 1269.07 2929.28 1332.62 3045.68C1396.17 3162.08 1490.32 3258.56 1604.89 3324.69L2757.41 3990.1Z" fill="url(#gA)"/>
+    <path d="M3439.59 4393.42L1603.73 3333.49C1470.94 3256.83 1382.49 3115.92 1357.85 2941.76C1333.2 2767.61 1374.37 2574.47 1472.3 2404.85C1570.24 2235.22 1716.91 2103 1880.05 2037.27C2043.2 1971.54 2209.46 1977.68 2342.25 2054.35L4178.1 3114.28C4310.89 3190.95 4399.34 3331.86 4423.99 3506.01C4448.63 3680.17 4407.46 3873.3 4309.53 4042.92C4211.6 4212.55 4064.92 4344.77 3901.78 4410.5C3738.63 4476.23 3572.38 4470.09 3439.59 4393.42Z" fill="url(#gB)"/>
+  </g>
+  <!-- badge con l'icona del dominio -->
+  <circle cx="352" cy="404" r="44" fill="#1A0820" stroke="#CF92DB" stroke-opacity="0.6" stroke-width="2"/>
+  <g transform="translate(332.8 384.8) scale(1.6)" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+  </g>
+</svg>
