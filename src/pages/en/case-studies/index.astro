@@ -34,6 +34,39 @@ function cardQuote(c: typeof cases[number]): string {
   return q.length > 140 ? q.slice(0, 137).trimEnd() + "…" : q;
 }
 
+// Video testimonials at the top of the page, clickable (one click and the video plays).
+// Video testimonials in the hero. Intended order: Gabriella (Stars Be Original), Gianluca (Utravel),
+// Margherita (40Factory, as soon as her videoTestimonial lands in the frontmatter), then the others.
+// Gianluca has no case-study entry: he lives here as an "extra" voice with the same fields.
+type VideoTile = { key: string; speaker: string; role: string; client: string; thumb: string; fallback: string; embed: string };
+const ytThumb = (id: string) => `https://i.ytimg.com/vi/${id}/oar2.jpg`; // vertical thumbnail (Shorts)
+const ytEmbed = (id: string) => `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+const extraVideos: VideoTile[] = [
+  { key: "utravel", speaker: "Gianluca Di Donato", role: "Ex Founder & CEO", client: "Utravel", thumb: ytThumb("fLxkNFEMarM"), fallback: "https://i.ytimg.com/vi/fLxkNFEMarM/hqdefault.jpg", embed: ytEmbed("fLxkNFEMarM") },
+];
+const caseVideos: VideoTile[] = cases.filter((c) => c.data.videoTestimonial).map((c) => {
+  const v = c.data.videoTestimonial!;
+  const fallback = v.poster || c.data.stakeholder.photo || photoMap[bare(c.id)];
+  return {
+    key: bare(c.id),
+    speaker: v.speaker || c.data.stakeholder.name,
+    role: v.role || c.data.stakeholder.role,
+    client: c.data.client,
+    // if the vertical YouTube thumbnail does not exist, fall back to the stakeholder photo
+    thumb: v.provider === "youtube" ? ytThumb(v.id) : fallback,
+    fallback,
+    embed: v.provider === "youtube" ? ytEmbed(v.id) : `https://player.vimeo.com/video/${v.id}?autoplay=1&title=0&byline=0&portrait=0`,
+  };
+});
+const videoOrder = ["stars-be-original", "utravel", "40factory", "rainplan", "storywonder", "talent-match"];
+const allVideos = [...caseVideos, ...extraVideos];
+const videoTiles: VideoTile[] = [
+  ...videoOrder.map((key) => allVideos.find((t) => t.key === key)).filter((t): t is VideoTile => Boolean(t)),
+  ...allVideos.filter((t) => !videoOrder.includes(t.key)),
+];
+
+// Industry filter taxonomy, aligned with the site's 6 Ops clusters.
+// A case can belong to a primary industry + additionalIndustries (e.g. ILTEC: sales-marketing + customer-support).
 const matchesIndustry = (c: typeof cases[number], id: string) =>
   c.data.industry === id || (c.data.additionalIndustries || []).includes(id as any);
 
@@ -50,26 +83,82 @@ const industryFilters = [
 
 <Layout title={title} description={description} lang="en" altHref="/case-studies">
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
-    <div class="container-soraia pt-20 md:pt-28 pb-16 md:pb-20">
+  <!-- HERO + VIDEO TESTIMONIALS: right away, photo as thumbnail, one click and the video plays -->
+  <section class="relative overflow-hidden border-b border-line bg-violet-mesh">
+    <div class="container-soraia pt-16 md:pt-24 pb-16 md:pb-20">
       <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
         <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
         Case studies
       </p>
-      <h1 class="text-balance max-w-3xl" style="font-size: clamp(2.25rem, 5vw + 1rem, 4rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
-        AI agents in production. Real numbers.
+      <h1 class="text-balance max-w-4xl" style="font-size: clamp(2.125rem, 4.2vw + 1rem, 3.75rem); line-height: 1.06; letter-spacing: -0.025em; font-weight: 500;">
+        Listen to the real, unprompted feedback of our clients.
       </h1>
       <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
-        The processes we automated for Italian and European SMEs, what we built, and the results. No vanity metrics, just agents in production handling real work.
+        AI agents in production for Italian and European SMEs: what we built and the results, told by the people who use them every day.
       </p>
+
+      {videoTiles.length > 0 && (
+        <div class="mt-12 md:mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+          {videoTiles.map((t) => (
+            <div class="vt">
+              <button type="button" class="vt-card" data-video-embed={t.embed} aria-label={`Watch the testimonial from ${t.speaker}, ${t.client}`}>
+                <img src={t.thumb} alt="" loading="eager" decoding="async" class="vt-poster" onerror={`this.onerror=null;this.src='${t.fallback}'`} />
+                <span class="vt-play" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </button>
+              <p class="vt-title">
+                <strong>{t.speaker}</strong>
+                <span>{t.role} · {t.client}</span>
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
+
+    <script is:inline>
+      (function () {
+        document.querySelectorAll("[data-video-embed]").forEach(function (card) {
+          card.addEventListener("click", function () {
+            if (card.dataset.playing) return;
+            card.dataset.playing = "1";
+            var frame = document.createElement("iframe");
+            frame.src = card.getAttribute("data-video-embed");
+            frame.title = card.getAttribute("aria-label") || "Video";
+            frame.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture; fullscreen");
+            frame.setAttribute("allowfullscreen", "");
+            frame.className = "vt-frame";
+            card.innerHTML = "";
+            card.appendChild(frame);
+            card.classList.add("is-playing");
+          }, { once: true });
+        });
+      })();
+    </script>
+    <style is:global>
+      /* vertical tiles like on the YouTube channel: 9:16 thumbnail, play in the centre, title below */
+      .vt-card { position: relative; display: block; width: 100%; aspect-ratio: 9 / 16; border-radius: 1.125rem; overflow: hidden; border: 0; padding: 0; background: #1A0820; cursor: pointer; box-shadow: var(--shadow-sm); transition: transform .22s var(--ease-out-quart), box-shadow .22s ease; }
+      .vt-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+      .vt-card:focus-visible { outline: 3px solid var(--color-violet-200); outline-offset: 2px; }
+      .vt-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .5s var(--ease-out-quart); }
+      .vt-card:hover .vt-poster { transform: scale(1.03); }
+      .vt-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border-radius: 999px; background: rgba(255,255,255,0.92); color: var(--color-brand); display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(26,10,32,0.35); transition: transform .22s var(--ease-out-quart), background .22s ease; }
+      .vt-play svg { margin-left: 3px; }
+      .vt-card:hover .vt-play { transform: translate(-50%, -50%) scale(1.06); background: #fff; }
+      .vt-card.is-playing { cursor: default; transform: none; }
+      .vt-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      .vt-title { margin: 12px 2px 0; display: flex; flex-direction: column; gap: 2px; line-height: 1.3; }
+      .vt-title strong { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--color-ink); }
+      .vt-title span { font-size: 13px; color: var(--color-ink-muted); }
+    </style>
   </section>
 
   <!-- FILTER BAR + GRID -->
   <section class="bg-white" style="padding-bottom: 5rem;">
     <div class="container-soraia">
 
+      <!-- Filter pills -->
       <div class="flex flex-wrap items-center gap-2 mt-12 mb-10" data-filter-bar>
         {industryFilters.map((f, i) => (
           <button
@@ -84,6 +173,8 @@ const industryFilters = [
         ))}
       </div>
 
+      <!-- Case study grid (JetHR-style cards, JS filters via data attr).
+           data-industries = CSV (primary + additionalIndustries). Filter logic checks contains. -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" data-case-grid>
         {cases.map((c) => {
           const industries = [c.data.industry, ...(c.data.additionalIndustries || [])].join(",");
@@ -104,6 +195,7 @@ const industryFilters = [
         })}
       </div>
 
+      <!-- Empty state -->
       <div class="hidden text-center py-12" data-empty-state>
         <p class="text-[15px]" style="color: var(--color-ink-muted);">No case study for this industry. Try another filter or <a href="/en/contact" style="color: var(--color-brand); text-decoration: underline;">talk to us</a> about your sector.</p>
       </div>
@@ -118,7 +210,7 @@ const industryFilters = [
         Got a similar challenge?
       </p>
       <h2 class="text-balance" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 2.75rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">
-        Let's figure out together if it makes sense to work.
+        Let's figure out together whether it makes sense to work with us.
       </h2>
       <p class="mt-5 text-[17px] leading-relaxed" style="color: var(--color-ink-muted);">
         20 minutes with the CEO. No pitch, no surprise quotes. Just a practical conversation about your processes.
@@ -169,6 +261,7 @@ const industryFilters = [
   </script>
 
   <style is:global>
+    /* === Filter pills === */
     .cs-filter {
       display: inline-flex;
       align-items: center;
@@ -212,6 +305,7 @@ const industryFilters = [
       color: var(--color-brand);
     }
 
+    /* === Case card === */
     .cs-card {
       background: white;
       border: 1px solid var(--color-line-strong);
@@ -225,6 +319,7 @@ const industryFilters = [
       box-shadow: 0 12px 28px -12px rgba(74, 30, 92, 0.16);
     }
 
+    /* Logo band */
     .cs-card-logo {
       background: var(--color-ink-50);
       border-bottom: 1px solid var(--color-line);
@@ -257,6 +352,7 @@ const industryFilters = [
       opacity: 0.7;
     }
 
+    /* Body */
     .cs-card-body {
       padding: 1.5rem 1.75rem 1.75rem;
       display: flex;

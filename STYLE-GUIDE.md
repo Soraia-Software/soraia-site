@@ -115,7 +115,14 @@ Use the `.btn` classes, never ad-hoc button styling:
 - **Nav order (both languages): Servizi · Casi studio · Chi siamo · Prezzi.** "Prodotti" is
   footer-only. Decided 2026-10-17; don't reshuffle.
 - **Servizi dropdown = exactly two items: "Analisi dei processi" + "AI Engineering"**
-  (IT). All other pages live in the footer only. The EN nav keeps its fuller list.
+  (IT) / "Process audit" + "AI Engineering" (EN, the audit item points to `/en/contact` because
+  the deck is Italian-only). All other pages live in the footer only. EN pages mirror the IT
+  ones one to one (home, about, case studies, pricing, contact, `/en/ai-engineering`); IT-only
+  pages (`/careers`, `/bando`, `/analisi-processi`, `/demo-portale`) pass `hideLangSwitch`.
+- Chi-siamo hero = text + a bento **team mosaic** (6 rounded-square tiles cycling through the
+  10 people and the two "Agente IA" SVG tiles in `public/team/agente-ia-*.svg`, data in the
+  page); the events/retreat marquee sits in its own band right below. Founder photos are
+  rounded squares (`rounded-2xl`), not circles.
 - Primary nav CTA: "20 min con Daniel".
 - `/case-studies` opens with the **video testimonials** (vertical 9:16 tiles, YouTube
   `oar2.jpg` thumbnail with photo fallback, name + role below, one click = inline autoplay).

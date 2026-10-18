@@ -14,10 +14,55 @@ const STEP_POS = [
 const BRAND = "var(--color-brand)";
 const ACCENT = "var(--color-brand-accent)";
 
-export default function SprintRoadmap() {
+type Lang = "it" | "en";
+
+/* English copy of ROADMAP plus the UI labels, so the same island runs on
+   /en/ai-engineering. IT stays the default and keeps reading data.ts, so the
+   Italian pages do not change. */
+const ROADMAP_EN: typeof ROADMAP = {
+  steps: [
+    { id: "analisi", label: "Process audit", note: "the starting point" },
+    { id: "s1", label: "Sprint 1", note: "first release in use after 4 weeks" },
+    { id: "s2", label: "Sprint 2", note: "builds on the first release" },
+    { id: "s3", label: "Sprint 3", note: "gets closer to the goal" },
+  ],
+  planned: [
+    { id: "A", label: "Single customer master data" },
+    { id: "B", label: "Reports and KPIs" },
+    { id: "C", label: "Structured order handover" },
+    { id: "D", label: "Activity schedule" },
+  ],
+  revised: [
+    { id: "A", label: "Single customer master data", tag: "done" },
+    { id: "C", label: "Structured order handover", tag: "moves up: needed now" },
+    { id: "E", label: "Tracked support requests", tag: "new priority" },
+    { id: "D", label: "Activity schedule", tag: "postponed" },
+  ],
+  mountainCaption:
+    "The summit is the final goal, the complete tool. Each sprint is a step. After every release, priorities are updated based on real usage.",
+};
+
+const UI = {
+  it: {
+    goal: "Obiettivo: lo strumento completo",
+    planned: "L'ordine previsto delle attività",
+    revised: "Dopo il primo rilascio, in base all'uso reale",
+    toggle: "Aggiorna le priorità",
+  },
+  en: {
+    goal: "Goal: the complete tool",
+    planned: "The planned order of work",
+    revised: "After the first release, based on real usage",
+    toggle: "Update priorities",
+  },
+} as const;
+
+export default function SprintRoadmap({ lang = "it" }: { lang?: Lang }) {
   const [revised, setRevised] = useState(false);
   const reduce = useReducedMotion();
-  const list = revised ? ROADMAP.revised : ROADMAP.planned;
+  const roadmap = lang === "en" ? ROADMAP_EN : ROADMAP;
+  const ui = UI[lang];
+  const list = revised ? roadmap.revised : roadmap.planned;
 
   return (
     <div>
@@ -41,7 +86,7 @@ export default function SprintRoadmap() {
           </g>
         </svg>
 
-        {ROADMAP.steps.map((s, i) => {
+        {roadmap.steps.map((s, i) => {
           const p = STEP_POS[i];
           return (
             <motion.div key={s.id}
@@ -55,18 +100,18 @@ export default function SprintRoadmap() {
           );
         })}
         <span style={{ position: "absolute", left: "88%", top: "2%", fontSize: "clamp(11px,0.9vw,13px)", fontWeight: 600, color: "var(--color-ink)", width: 120, lineHeight: 1.15 }}>
-          Obiettivo: lo strumento completo
+          {ui.goal}
         </span>
       </div>
 
       <p style={{ maxWidth: "62ch", margin: "clamp(1.5rem,3vh,2.25rem) auto 0", textAlign: "center", fontSize: "clamp(1.0625rem,1.3vw,1.25rem)", lineHeight: 1.6, color: "var(--color-ink-muted)" }}>
-        {ROADMAP.mountainCaption}
+        {roadmap.mountainCaption}
       </p>
 
       <div className="card" style={{ marginTop: 20, padding: "18px 20px", maxWidth: 760, marginInline: "auto" }}>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
           <strong style={{ fontSize: "clamp(15px,1.2vw,18px)", fontWeight: 600, letterSpacing: "-0.01em", color: "var(--color-ink)" }}>
-            {revised ? "Dopo il primo rilascio, in base all'uso reale" : "L'ordine previsto delle attività"}
+            {revised ? ui.revised : ui.planned}
           </strong>
           <button type="button" onClick={() => setRevised((v) => !v)} aria-pressed={revised}
             style={{
@@ -78,7 +123,7 @@ export default function SprintRoadmap() {
             <span style={{ width: 16, height: 16, borderRadius: 999, flex: "0 0 auto", border: `2px solid ${revised ? "transparent" : BRAND}`, background: revised ? "#fff" : "transparent", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
               {revised && <span style={{ width: 7, height: 7, borderRadius: 999, background: BRAND }} />}
             </span>
-            Aggiorna le priorità
+            {ui.toggle}
           </button>
         </div>
         <LayoutGroup>

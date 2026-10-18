@@ -1,0 +1,275 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import SprintRoadmap from "~/components/analisi/SprintRoadmap.tsx";
+import "~/styles/prezzi.css";
+
+const title = "AI Engineering: from idea to production, one sprint at a time | Soraia";
+const description =
+  "How we build: short iterative sprints, first agent in production in 4 weeks, priorities that update on real usage. Three dedicated people: an Account Manager, a Project Manager and an AI Engineer.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "AI Engineering",
+  serviceType: "Sprint-based development of AI agents",
+  provider: { "@type": "Organization", name: "Soraia" },
+  areaServed: "IT",
+  description,
+  inLanguage: "en",
+};
+---
+
+<Layout title={title} description={description} lang="en" jsonLd={jsonLd}>
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-hero-dark">
+    <div class="container-soraia pt-20 md:pt-28 pb-20 md:pb-28 relative z-10">
+      <div class="max-w-[900px]" style="color: #fff;">
+        <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6 fade-up" style="color: var(--color-violet-200);">
+          <span class="w-1 h-1 rounded-full bg-amber"></span>
+          Services · AI Engineering
+        </p>
+
+        <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;" class="text-balance fade-up fade-up-delay-1">
+          From idea to production,<br/>one sprint at a time.
+        </h1>
+
+        <p style="color: rgba(255,255,255,0.78);" class="mt-7 text-[18px] md:text-[19px] leading-relaxed max-w-2xl fade-up fade-up-delay-2 text-pretty">
+          You know what you want to automate. We build it in <strong style="color: #fff; font-weight: 500;">short iterative sprints</strong>: the first agent runs on your real processes in <strong style="color: #fff; font-weight: 500;">four weeks</strong>, then improves one release at a time.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
+          <a href="/en/contact" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            20 min with Daniel
+            <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+          <a href="/en/pricing" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">See pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Method"
+        title="How we build your AI agents."
+        subtitle="<strong>Short iterative sprints</strong>: at every cycle the agent already does something useful in production. No six-month projects that end in a demo. You see the value from the first week."
+        align="center"
+      />
+
+      <figure class="m-0 mt-8 max-w-[1180px] mx-auto">
+        <div class="rounded-2xl bg-ink-50 border border-line px-4 py-6 md:px-8 md:py-8">
+          <img src="/agile/sprint.webp" alt="Iterative sprints: every cycle delivers value in production" loading="lazy" decoding="async" class="w-full h-auto block" />
+        </div>
+        <figcaption class="mt-3.5 text-[12.5px] text-center" style="color: var(--color-ink-soft);">
+          Iterative sprints: at every cycle the agent is already in production.
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- THE DIFFERENCE -->
+  <section class="section pt-0">
+    <div class="container-soraia">
+      <div class="rounded-3xl p-8 md:p-14 text-center" style="background: var(--color-brand); color: #fff;">
+        <p class="eyebrow mb-4" style="color: rgba(255,255,255,0.7);">The difference</p>
+        <h2 class="text-balance mx-auto max-w-3xl" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 3rem); line-height: 1.08; letter-spacing: -0.025em; font-weight: 500; color: #fff;">
+          In 4 weeks you are already in production
+        </h2>
+        <p class="mt-5 text-[17px] md:text-[19px] leading-relaxed text-pretty max-w-2xl mx-auto" style="color: rgba(255,255,255,0.82);">
+          Many agencies, four weeks in, still haven't sent you a quote. With us, within that same month, the first release is already running on your real processes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE ITERATE -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        title="After every release, priorities are updated."
+        subtitle="Instead of planning six months of work on paper, each sprint starts from what is really needed, measured on the real usage of the previous release. We build only what brings value, in the right order."
+        align="left"
+      />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div class="card-editorial !p-7 md:!p-8">
+          <h3 class="font-medium tracking-tight text-ink-900 mb-2" style="font-size: 1.25rem;">Release early</h3>
+          <p class="text-[15.5px] text-ink-700 leading-relaxed">The first agent goes into production in four weeks. From there you work on something real, in daily use, instead of on a presentation.</p>
+        </div>
+        <div class="card-editorial !p-7 md:!p-8">
+          <h3 class="font-medium tracking-tight text-ink-900 mb-2" style="font-size: 1.25rem;">Measure real usage</h3>
+          <p class="text-[15.5px] text-ink-700 leading-relaxed">We see what gets used, what doesn't, where it gets stuck. What the data say about the release drives the next sprint.</p>
+        </div>
+        <div class="card-editorial !p-7 md:!p-8">
+          <h3 class="font-medium tracking-tight text-ink-900 mb-2" style="font-size: 1.25rem;">Re-rank priorities</h3>
+          <p class="text-[15.5px] text-ink-700 leading-relaxed">What matters most moves to the top. What is no longer needed drops out. The goal stays fixed, the route is corrected every month.</p>
+        </div>
+      </div>
+
+      <div class="mt-14 md:mt-20">
+        <SprintRoadmap client:load lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE DEDICATED PEOPLE -->
+  <section class="section bg-ink-50 border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="The team"
+        title="Three dedicated people on your project."
+        subtitle="One per role: an Account Manager, a Project Manager and an AI Engineer. They know your processes and stay the same for the whole journey. Monthly hours are shared across the three roles."
+        align="left"
+      />
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <!-- Account Manager -->
+        <div class="card-editorial !p-8 md:!p-10">
+          <div class="flex flex-col items-center text-center mb-6">
+            <span class="inline-flex w-12 h-12 rounded-full items-center justify-center mb-4" style="background: var(--color-violet-50, #FDF4FF); color: var(--color-brand);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <h3 class="font-medium tracking-tight" style="font-size: clamp(1.4rem, 2vw, 1.75rem); color: var(--color-brand);">Account Manager</h3>
+          </div>
+          <p class="text-[16px] text-ink-700 leading-relaxed mb-5">Knows your business and keeps the relationship going over time. Takes care of:</p>
+          <ul class="space-y-3.5 mb-6">
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug"><strong class="font-semibold">Goals:</strong> understands the business context and what really needs to change</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug"><strong class="font-semibold">Priorities:</strong> decides with you what goes into the sprint and what waits</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug"><strong class="font-semibold">Value:</strong> measures results against the investment, month after month</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug"><strong class="font-semibold">Continuity:</strong> the same point of contact before, during and after the project</span>
+            </li>
+          </ul>
+          <p class="text-[15.5px] text-ink-600 leading-relaxed">This is the person you talk to from the first call: they turn business goals into priorities for the team and tell you frankly when something is not worth doing.</p>
+        </div>
+
+        <!-- Project Manager -->
+        <div class="card-editorial !p-8 md:!p-10">
+          <div class="flex flex-col items-center text-center mb-6">
+            <span class="inline-flex w-12 h-12 rounded-full items-center justify-center mb-4" style="background: var(--color-violet-50, #FDF4FF); color: var(--color-brand);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+            </span>
+            <h3 class="font-medium tracking-tight" style="font-size: clamp(1.4rem, 2vw, 1.75rem); color: var(--color-brand);">Project Manager</h3>
+          </div>
+          <p class="text-[16px] text-ink-700 leading-relaxed mb-5">Your single point of contact for the whole engagement. Guarantees four things:</p>
+          <ul class="space-y-3.5 mb-6">
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug"><strong class="font-semibold">Communication:</strong> a weekly progress update and a contact you can always reach</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug"><strong class="font-semibold">Budget:</strong> control against the quoted scope and early warning of any deviation</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug"><strong class="font-semibold">Timing:</strong> the phased plan, always up to date</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug"><strong class="font-semibold">Quality:</strong> the acceptance test of every delivery</span>
+            </li>
+          </ul>
+          <p class="text-[15.5px] text-ink-600 leading-relaxed">Keeps the log of hours and work in the project dashboard, which you can access at any time, and at every milestone brings you the delivery to check: the point where you approve or ask for corrections before moving on.</p>
+        </div>
+
+        <!-- AI Engineer -->
+        <div class="card-editorial !p-8 md:!p-10">
+          <div class="flex flex-col items-center text-center mb-6">
+            <span class="inline-flex w-12 h-12 rounded-full items-center justify-center mb-4" style="background: var(--color-violet-50, #FDF4FF); color: var(--color-brand);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8l-4 4 4 4"/><path d="M17 8l4 4-4 4"/><path d="M14 4l-4 16"/></svg>
+            </span>
+            <h3 class="font-medium tracking-tight" style="font-size: clamp(1.4rem, 2vw, 1.75rem); color: var(--color-brand);">AI Engineer</h3>
+          </div>
+          <p class="text-[16px] text-ink-700 leading-relaxed mb-5">Responsible for the whole technical build.</p>
+          <ul class="space-y-3.5 mb-6">
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug">Design and UX/UI</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug">Full-stack development and architecture</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug">AI agent optimisation: output checks, document quality, lower processing cost</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug">Quality assurance and large-scale stress tests</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="text-[15.5px] text-ink-900 leading-snug">DevOps in secure environments, deployment and controlled production releases</span>
+            </li>
+          </ul>
+          <p class="text-[15.5px] text-ink-600 leading-relaxed">Agent optimisation gets its own line for a reason: we tune the system so it leaves out the information it doesn't have instead of guessing it, and we keep going until it passes the test on the real cases that come from actual use.</p>
+        </div>
+      </div>
+      <p class="mt-7 text-[15.5px]" style="color: var(--color-ink-soft);">
+        The model and the monthly hours are on the <a href="/en/pricing" style="color: var(--color-brand); font-weight: 600;">pricing</a> page, from €3,000 per month.
+      </p>
+    </div>
+  </section>
+
+  <!-- CLIENT PORTAL -->
+  <section class="section bg-white border-t border-line">
+    <div class="container-soraia">
+      <div class="max-w-2xl mb-10">
+        <p class="eyebrow mb-4">Transparency</p>
+        <h2 class="text-balance" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 2.5rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">The client portal, in real time</h2>
+        <p class="mt-5 text-[17px] md:text-[18px] text-ink-700 leading-relaxed text-pretty">
+          During the sprints you have this portal: the tickets in progress, the hours per sprint and per person, the project's progress. No black box, no reports to chase. Try it below, with sample data (the demo is in Italian).
+        </p>
+      </div>
+      <div class="portal-embed">
+        <div class="portal-embed__bar">
+          <span class="portal-embed__dot" style="background:#ff5f57;"></span>
+          <span class="portal-embed__dot" style="background:#febc2e;"></span>
+          <span class="portal-embed__dot" style="background:#28c840;"></span>
+          <span class="portal-embed__url">Client portal · Nordica HR (demo)</span>
+          <button type="button" id="portalExpand" class="portal-embed__expand" aria-label="Open fullscreen">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </button>
+        </div>
+        <iframe id="portalFrame" src="/demo-portale?embed=1" title="Soraia client portal, interactive demo" loading="lazy"></iframe>
+      </div>
+    </div>
+    <script is:inline>
+      (function () {
+        var b = document.getElementById("portalExpand");
+        if (b) b.addEventListener("click", function () { window.open("/demo-portale", "_blank"); });
+      })();
+    </script>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container-soraia text-center max-w-2xl">
+      <h2 class="text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">We start with a conversation, the quote comes later</h2>
+      <p class="mt-5 text-[17px] text-ink-700 leading-relaxed text-pretty">
+        Tell us about the process you want to automate. In 20 minutes we work out together whether it makes sense and which sprint to start from.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/en/contact" class="btn btn-primary">
+          20 min with Daniel
+          <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="/en/contact" class="btn btn-secondary">Not sure where to start</a>
+      </div>
+    </div>
+  </section>
+</Layout>

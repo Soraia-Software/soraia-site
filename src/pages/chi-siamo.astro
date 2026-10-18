@@ -6,7 +6,7 @@ import FAQ from "~/components/FAQ.astro";
 import CTABanner from "~/components/CTABanner.astro";
 
 const title = "Chi siamo, AI Agency italiana per le PMI | Soraia";
-const description = "AI consultants 100% remote distribuiti tra Italia, Europa e Sudamerica. 40+ progetti consegnati, focus su PMI italiane, nessun lock-in tecnologico.";
+const description = "Un team 100% remote di più di 10 persone distribuito in Italia. 40+ progetti consegnati, focus sulle PMI italiane, nessun lock-in tecnologico.";
 
 // Loghi di università/aziende dei founder. Metti i file ufficiali in
 // src/assets/logos/experience/<slug>.{svg,png,webp,avif}: se il file c'è si vede
@@ -73,7 +73,7 @@ const founders = [
   {
     name: "Daniel Levis",
     role: "Co-Founder & CEO",
-    photo: "/team/daniel-levis.avif",
+    photo: "/team/daniel-levis.avif?v=4",
     bio: "Più di 10 anni tra IT e management consulting. Daniel guida la parte commerciale, change management e adoption sui 40+ progetti consegnati. Convinto che il valore dell'AI per una PMI dipenda al 70% da come la introduci nel team, non da quale modello scegli.",
     education: ["Politecnico di Torino", "ESCP"],
     companies: ["Reply", "Accenture", "Alten", "Satispay"],
@@ -81,7 +81,7 @@ const founders = [
   {
     name: "Davide Silvestri",
     role: "Co-Founder & CTO",
-    photo: "/team/davide-silvestri.avif",
+    photo: "/team/davide-silvestri.avif?v=4",
     bio: "Più di 10 anni in technical project management, technical leadership e backend architecture. Davide guida lo stack tecnico Soraia: garantisce qualità del codice, performance degli agenti, scalabilità delle soluzioni. Owner architetturale dei progetti più complessi del portfolio.",
     education: ["Politecnico di Torino", "ESCP"],
     companies: ["Simon-Kucher", "Amazon", "Dott", "Satispay"],
@@ -107,6 +107,32 @@ const teamEvents = [
 // due file per il marquee orizzontale in loop
 const eventsRowA = teamEvents.filter((_, i) => i % 2 === 0);
 const eventsRowB = teamEvents.filter((_, i) => i % 2 === 1);
+
+// Mosaico della hero: le persone del team più l'agente IA, che compare tra le tessere
+// come un collega in più. Le tessere pescano a caso da questo pool e cambiano in loop.
+const mosaicPool = [
+  { slug: "daniel-levis",      name: "Daniel Levis",      role: "Account Manager", src: "/team/daniel-levis.webp?v=4" },
+  { slug: "veronica-pisana",   name: "Veronica Pisana",   role: "Account Manager", src: "/team/veronica-pisana.webp?v=4" },
+  { slug: "paolo-bacchetti",   name: "Paolo Bacchetti",   role: "Account Manager", src: "/team/paolo-bacchetti.webp?v=4" },
+  { slug: "eleonora-cogo",     name: "Eleonora Cogo",     role: "Project Manager", src: "/team/eleonora-cogo.webp?v=4" },
+  { slug: "davide-silvestri",  name: "Davide Silvestri",  role: "Project Manager", src: "/team/davide-silvestri.webp?v=4" },
+  { slug: "lorenzo-barbaglia", name: "Lorenzo Barbaglia", role: "AI Engineer",     src: "/team/lorenzo-barbaglia.webp?v=4" },
+  { slug: "martina-rochstein", name: "Martina Rochstein", role: "AI Engineer",     src: "/team/martina-rochstein.webp?v=4" },
+  { slug: "mohamed-mejri",     name: "Mohamed Mejri",     role: "AI Engineer",     src: "/team/mohamed-mejri.webp?v=4" },
+  { slug: "sebastian-geido",   name: "Sebastian Geido",   role: "AI Engineer",     src: "/team/sebastian-geido.webp?v=4" },
+  { slug: "narella-petrocco",  name: "Narella Petrocco",  role: "AI Engineer",     src: "/team/narella-petrocco.webp?v=4" },
+  { slug: "agente-ia-1",       name: "Agente IA",         role: "Fa il lavoro ripetitivo", src: "/team/agente-ia-1.svg", agent: true },
+  { slug: "agente-ia-2",       name: "Agente IA",         role: "In turno 24 ore su 24",   src: "/team/agente-ia-2.svg", agent: true },
+];
+// sei tessere: a, b, c grandi; d alta; e, f piccole (vedi CSS .tm-*)
+const mosaicSlots = [
+  { area: "a", slug: "daniel-levis" },
+  { area: "b", slug: "veronica-pisana" },
+  { area: "c", slug: "eleonora-cogo" },
+  { area: "d", slug: "lorenzo-barbaglia" },
+  { area: "e", slug: "agente-ia-1" },
+  { area: "f", slug: "martina-rochstein" },
+];
 
 const worldRegions = [
   {
@@ -160,38 +186,115 @@ const faqs = [
   <!-- ============================================================
        HERO
        ============================================================ -->
-  <section class="relative overflow-hidden border-b border-line bg-violet-mesh">
+  <section class="relative overflow-hidden bg-violet-mesh">
     <div class="container-soraia pt-20 md:pt-28 pb-16 md:pb-20">
-      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
-        <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
-        Chi siamo
-      </p>
-      <div class="max-w-3xl">
-        <h1 class="text-balance" style="font-size: clamp(2.25rem, 5vw + 1rem, 4rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
-          Dietro Soraia ci sono persone vere.
-        </h1>
-      </div>
-
-      <!-- marquee eventi / retreat: scorre lento in loop per mostrare piano piano tutte le foto -->
-      <div class="events-marquee mt-12 md:mt-16" aria-label="Momenti e retreat del team Soraia">
-        <div class="em-row em-row--a">
-          {[...eventsRowA, ...eventsRowA].map((e, i) => (
-            <img src={e.src} alt={i < eventsRowA.length ? e.caption : ""} aria-hidden={i >= eventsRowA.length ? "true" : undefined} loading="lazy" decoding="async" />
-          ))}
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div class="lg:col-span-5">
+          <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
+            <span class="w-1 h-1 rounded-full" style="background: var(--color-brand);"></span>
+            Chi siamo
+          </p>
+          <h1 class="text-balance" style="font-size: clamp(2.25rem, 3.6vw + 0.5rem, 3.5rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+            Dietro Soraia ci sono persone vere.
+          </h1>
+          <p class="mt-6 text-[17px] md:text-[18px] leading-relaxed text-pretty max-w-md" style="color: var(--color-ink-muted);">
+            Più di 10 persone in Italia, 100% remote. E qualche agente IA che lavora con noi ogni giorno, come un collega in più.
+          </p>
         </div>
-        <div class="em-row em-row--b">
-          {[...eventsRowB, ...eventsRowB].map((e, i) => (
-            <img src={e.src} alt={i < eventsRowB.length ? e.caption : ""} aria-hidden={i >= eventsRowB.length ? "true" : undefined} loading="lazy" decoding="async" />
-          ))}
+
+        <!-- mosaico del team: tessere quadrate arrotondate che cambiano in loop; tra le persone compare anche l'agente IA -->
+        <div class="lg:col-span-7">
+          <div class="team-mosaic" data-team-mosaic data-pool={JSON.stringify(mosaicPool)} aria-label="Il team Soraia">
+            {mosaicSlots.map((slot) => {
+              const p = mosaicPool.find((m) => m.slug === slot.slug)!;
+              return (
+                <figure class={`tm-tile tm-${slot.area}${p.agent ? " is-agent" : ""}`} data-mosaic-slot data-slug={p.slug} style="margin: 0;">
+                  <img class="tm-img is-on" src={p.src} alt={p.name} width="480" height="600" loading="eager" decoding="async" />
+                  <img class="tm-img" alt="" aria-hidden="true" width="480" height="600" decoding="async" />
+                  <figcaption class="tm-cap"><span class="tm-name">{p.name}</span><span class="tm-role">{p.role}</span></figcaption>
+                </figure>
+              );
+            })}
+          </div>
         </div>
       </div>
-
-      <!-- l'invito a candidarsi è la fascia dedicata subito sotto la hero -->
     </div>
+
+    <script>
+      // Mosaico del team: ogni ~2,6 s una tessera a caso sfuma su una persona (o un agente)
+      // non ancora in vista. Con prefers-reduced-motion resta fermo.
+      const root = document.querySelector<HTMLElement>("[data-team-mosaic]");
+      if (root) {
+        type P = { slug: string; name: string; role: string; src: string; agent?: boolean };
+        const pool: P[] = JSON.parse(root.dataset.pool || "[]");
+        const slots = Array.from(root.querySelectorAll<HTMLElement>("[data-mosaic-slot]"));
+        const current = slots.map((s) => s.dataset.slug || "");
+        pool.forEach((p) => { const im = new Image(); im.src = p.src; });
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (!reduce && slots.length && pool.length > slots.length) {
+          let last = -1;
+          let busy = false;
+          window.setInterval(() => {
+            if (busy || document.hidden) return;
+            let i = Math.floor(Math.random() * slots.length);
+            if (i === last) i = (i + 1) % slots.length;
+            last = i;
+            const slot = slots[i];
+            const candidates = pool.filter((p) => !current.includes(p.slug));
+            const next = candidates[Math.floor(Math.random() * candidates.length)];
+            if (!next) return;
+            const imgs = Array.from(slot.querySelectorAll<HTMLImageElement>(".tm-img"));
+            const on = imgs.find((im) => im.classList.contains("is-on")) || imgs[0];
+            const off = imgs.find((im) => im !== on) || imgs[1];
+            busy = true;
+            const swap = () => {
+              off.alt = next.name;
+              off.classList.add("is-on");
+              on.classList.remove("is-on");
+              on.setAttribute("aria-hidden", "true");
+              off.removeAttribute("aria-hidden");
+              const name = slot.querySelector(".tm-name");
+              const role = slot.querySelector(".tm-role");
+              if (name) name.textContent = next.name;
+              if (role) role.textContent = next.role;
+              slot.classList.toggle("is-agent", !!next.agent);
+              slot.dataset.slug = next.slug;
+              current[i] = next.slug;
+              window.setTimeout(() => { busy = false; }, 900);
+            };
+            off.onload = swap;
+            off.src = next.src;
+            if (off.complete && off.naturalWidth > 0) { off.onload = null; swap(); }
+          }, 2600);
+        }
+      }
+    </script>
 
     <style is:global>
       /* Logo strip formazione/esperienza fondatori (sezione "I fondatori") */
       .exp-logo { height: 28px; width: auto; max-width: 88px; object-fit: contain; flex: 0 1 auto; min-width: 0; }
+      /* Mosaico team (hero): bento di tessere quadrate arrotondate, immagini a dissolvenza */
+      .team-mosaic { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .tm-tile { position: relative; overflow: hidden; border-radius: 18px; aspect-ratio: 1 / 1; background: var(--color-ink-100); box-shadow: var(--shadow-sm); }
+      .tm-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; opacity: 0; transform: scale(1.05); transition: opacity .9s ease, transform 5s ease; }
+      .tm-img.is-on { opacity: 1; transform: scale(1); }
+      .tm-cap { position: absolute; left: 10px; bottom: 10px; display: flex; flex-direction: column; gap: 1px; padding: 6px 10px; border-radius: 10px; background: rgba(26, 8, 32, 0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: #fff; line-height: 1.2; max-width: calc(100% - 20px); transition: background .4s ease; }
+      .tm-name { font-size: 12.5px; font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .tm-role { font-size: 11px; color: rgba(255, 255, 255, 0.78); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .tm-tile.is-agent .tm-cap { background: rgba(137, 45, 156, 0.72); }
+      @media (min-width: 1024px) {
+        .team-mosaic { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr); aspect-ratio: 1 / 1; gap: 12px; }
+        .tm-tile { aspect-ratio: auto; }
+        .tm-a { grid-column: 1 / 3; grid-row: 1 / 3; }
+        .tm-b { grid-column: 3 / 5; grid-row: 1 / 3; }
+        .tm-c { grid-column: 1 / 3; grid-row: 3 / 5; }
+        .tm-d { grid-column: 3 / 4; grid-row: 3 / 5; }
+        .tm-e { grid-column: 4 / 5; grid-row: 3 / 4; }
+        .tm-f { grid-column: 4 / 5; grid-row: 4 / 5; }
+        .tm-e .tm-role, .tm-f .tm-role { display: none; }
+        .tm-e .tm-cap, .tm-f .tm-cap { left: 8px; bottom: 8px; padding: 4px 8px; }
+      }
+      @media (prefers-reduced-motion: reduce) { .tm-img { transition: none; } }
       /* Marquee eventi (hero): due file che scorrono lente in loop, in direzioni opposte */
       .events-marquee {
         display: flex; flex-direction: column; gap: 14px; overflow: hidden;
@@ -211,6 +314,24 @@ const faqs = [
       @keyframes em-marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
       @media (prefers-reduced-motion: reduce) { .em-row { animation: none; } }
     </style>
+  </section>
+
+  <!-- ============================================================
+       MOMENTI INSIEME: marquee eventi / retreat, scorre lento in loop
+       ============================================================ -->
+  <section class="py-10 md:py-14 border-y border-line bg-white">
+    <div class="events-marquee" aria-label="Momenti e retreat del team Soraia">
+      <div class="em-row em-row--a">
+        {[...eventsRowA, ...eventsRowA].map((e, i) => (
+          <img src={e.src} alt={i < eventsRowA.length ? e.caption : ""} aria-hidden={i >= eventsRowA.length ? "true" : undefined} loading="lazy" decoding="async" />
+        ))}
+      </div>
+      <div class="em-row em-row--b">
+        {[...eventsRowB, ...eventsRowB].map((e, i) => (
+          <img src={e.src} alt={i < eventsRowB.length ? e.caption : ""} aria-hidden={i >= eventsRowB.length ? "true" : undefined} loading="lazy" decoding="async" />
+        ))}
+      </div>
+    </div>
   </section>
 
   <!-- ============================================================
@@ -260,7 +381,9 @@ const faqs = [
         {founders.map((f) => (
           <article class="card-editorial !p-8 md:!p-10 flex flex-col">
             <div class="flex items-center gap-5 mb-7">
-              <img src={f.photo} alt={f.name} loading="lazy" width="80" height="80" class="w-20 h-20 rounded-full object-cover" />
+              <div class="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-2xl overflow-hidden bg-ink-50 ring-1 ring-violet-100">
+                <img src={f.photo} alt={f.name} loading="lazy" width="96" height="96" class="w-full h-full object-cover" />
+              </div>
               <div>
                 <h3 style="font-size: 1.375rem; line-height: 1.2; letter-spacing: -0.02em; font-weight: 500; color: var(--color-ink);">{f.name}</h3>
                 <p class="mt-1 text-[14px]" style="color: var(--color-ink-soft);">{f.role}</p>
@@ -393,8 +516,8 @@ const faqs = [
           <p class="mt-3 text-[13px] font-medium text-ink-900">Progetti consegnati</p>
         </div>
         <div class="bg-white p-7 md:p-9 text-center">
-          <p class="text-[2.5rem] md:text-[3.5rem] font-medium tracking-tight leading-none" style="color: var(--color-brand);">11</p>
-          <p class="mt-3 text-[13px] font-medium text-ink-900">Paesi serviti</p>
+          <p class="text-[2.5rem] md:text-[3.5rem] font-medium tracking-tight leading-none" style="color: var(--color-brand);">10+</p>
+          <p class="mt-3 text-[13px] font-medium text-ink-900">Persone, distribuite in Italia</p>
         </div>
         <div class="bg-white p-7 md:p-9 text-center">
           <p class="text-[2.5rem] md:text-[3.5rem] font-medium tracking-tight leading-none" style="color: var(--color-brand);">4 sett.</p>

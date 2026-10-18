@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600" role="img" aria-label="Agente IA, in turno 24 ore su 24 nel team Soraia">
+  <defs>
+    <radialGradient id="bg2" cx="50%" cy="48%" r="62%">
+      <stop offset="0" stop-color="#5A2B7A"/>
+      <stop offset="0.55" stop-color="#2B0F44"/>
+      <stop offset="1" stop-color="#120621"/>
+    </radialGradient>
+    <radialGradient id="head2" cx="45%" cy="36%" r="70%">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.4" stop-color="#F3E3FA"/>
+      <stop offset="0.78" stop-color="#C08BD6"/>
+      <stop offset="1" stop-color="#8E3BA6"/>
+    </radialGradient>
+    <linearGradient id="shirt2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1C1C1F"/>
+      <stop offset="1" stop-color="#0B0B0D"/>
+    </linearGradient>
+    <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="soft2" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <rect width="480" height="600" fill="url(#bg2)"/>
+
+  <!-- alone -->
+  <circle cx="240" cy="292" r="130" fill="#F4B842" opacity="0.22" filter="url(#glow2)"/>
+  <circle cx="240" cy="292" r="110" fill="#A855C8" opacity="0.45" filter="url(#glow2)"/>
+
+  <!-- maglietta nera -->
+  <path d="M78 600 C 84 486, 150 436, 240 436 C 330 436, 396 486, 402 600 Z" fill="url(#shirt2)"/>
+  <path d="M196 436 C 210 452, 270 452, 284 436" fill="none" stroke="#2A2A2E" stroke-width="6" stroke-linecap="round"/>
+  <path d="M300 520 l6 -14 l6 14 l14 6 l-14 6 l-6 14 l-6 -14 l-14 -6 z" fill="#D8B4E8" opacity="0.9"/>
+
+  <!-- collo -->
+  <rect x="222" y="372" width="36" height="70" rx="18" fill="#B07CC9" opacity="0.9"/>
+
+  <!-- anello orbitale, dietro -->
+  <ellipse cx="240" cy="300" rx="150" ry="38" fill="none" stroke="#F4B842" stroke-width="4" stroke-opacity="0.75" transform="rotate(-14 240 300)" stroke-dasharray="330 160" stroke-dashoffset="-40"/>
+
+  <!-- testa -->
+  <circle cx="240" cy="292" r="98" fill="url(#head2)"/>
+  <circle cx="240" cy="292" r="98" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="2"/>
+  <ellipse cx="208" cy="243" rx="28" ry="16" fill="#FFFFFF" opacity="0.55" filter="url(#soft2)"/>
+
+  <!-- anello orbitale, davanti -->
+  <ellipse cx="240" cy="300" rx="150" ry="38" fill="none" stroke="#F4B842" stroke-width="4" stroke-opacity="0.9" transform="rotate(-14 240 300)" stroke-dasharray="150 340" stroke-dashoffset="-250"/>
+  <circle cx="358" cy="268" r="7" fill="#F4B842"/>
+
+  <!-- volto sorridente, occhi a mezzaluna -->
+  <path d="M196 292 Q212 272 228 292" fill="none" stroke="#2A0E36" stroke-width="8" stroke-linecap="round"/>
+  <path d="M252 292 Q268 272 284 292" fill="none" stroke="#2A0E36" stroke-width="8" stroke-linecap="round"/>
+  <path d="M206 326 Q240 358 274 326" fill="none" stroke="#2A0E36" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- scintille -->
+  <path d="M104 176 l6 -17 l6 17 l17 6 l-17 6 l-6 17 l-6 -17 l-17 -6 z" fill="#D8B4E8" opacity="0.9"/>
+  <path d="M384 150 l5 -14 l5 14 l14 5 l-14 5 l-5 14 l-5 -14 l-14 -5 z" fill="#F4B842" opacity="0.9"/>
+  <circle cx="128" cy="330" r="4" fill="#F4B842" opacity="0.8"/>
+</svg>

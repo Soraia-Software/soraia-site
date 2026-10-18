@@ -6,11 +6,12 @@ import WorldMap from "~/components/WorldMap.astro";
 import CTABanner from "~/components/CTABanner.astro";
 import HeroVisual from "~/components/HeroVisual.astro";
 import FAQ from "~/components/FAQ.astro";
+import PartnersStrip from "~/components/PartnersStrip.astro";
 import AskAISection from "~/components/AskAISection.astro";
 import CaseStudyCarousel from "~/components/CaseStudyCarousel.astro";
 import { getCollection } from "astro:content";
 
-// Fetch featured + most recent case studies, map to Jet card format.
+// Fetch featured + most recent case studies, map to the Jet card format.
 const allCases = (await getCollection("caseStudies")).filter((c) => c.data.lang === "en" && !c.data.draft);
 const photoMap: Record<string, string> = {
   "40factory": "/testimonials/margherita-chifari-40factory.webp",
@@ -29,7 +30,6 @@ const photoMap: Record<string, string> = {
   "talent-match": "/testimonials/guillem-llacuna-talent-match.webp",
 };
 const carouselItems = allCases
-  .filter(e => e.data.lang === "en")
   .sort((a, b) => {
     if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
     return b.data.pubDate.getTime() - a.data.pubDate.getTime();
@@ -45,26 +45,47 @@ const carouselItems = allCases
     cardImage: c.data.cardImage || photoMap[c.id.replace(/^en\//, "")],
   }));
 
-const title = "Soraia. We Bring AI Agents to SMBs";
+const title = "Soraia. We Bring AI Agents to Italian SMEs";
 const description =
-  "Not software your team needs to learn. AI Agents that run your processes. We measure the time recovered, if it doesn't work, you don't pay.";
+  "We bring order to your SME's processes and automate them with custom software and AI agents that stay yours. Process audit and AI Engineering, from €3,000/month with three dedicated people. First month satisfied or refunded.";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://www.soraia.io/#organization",
   name: "Soraia",
+  legalName: "Soraia S.r.l.",
   url: "https://www.soraia.io",
   logo: "https://www.soraia.io/logos/soraia-full.svg",
   description,
   email: "info@soraia.io",
+  vatID: "IT02820060024",
+  foundingDate: "2023",
+  numberOfEmployees: { "@type": "QuantitativeValue", minValue: 10 },
+  knowsAbout: ["Business process audit", "AI agents", "AI Engineering", "Process automation for SMEs"],
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Via Losana 13",
     addressLocality: "Biella",
+    postalCode: "13900",
+    addressRegion: "BI",
     addressCountry: "IT",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 45.5648864,
+    longitude: 8.0542568,
+  },
+  areaServed: ["IT", "EU"],
+  founder: [
+    { "@type": "Person", name: "Daniel Levis", jobTitle: "CEO" },
+    { "@type": "Person", name: "Davide Silvestri", jobTitle: "CTO" },
+  ],
   sameAs: ["https://www.linkedin.com/company/soraia-digital"],
 };
 
+// Client logos (two files, order decided on 2026-10-17) live in src/data/clientLogos.ts:
+// ProofBar reads them on its own, so every page shows the same bar.
 
 const partners = [
   // LLM & AI providers
@@ -163,7 +184,7 @@ const faqs = [
   },
   {
     q: "Who is this for?",
-    a: "<strong>SMBs and teams of 10 to 200 people</strong> in sectors where repetitive processes consume most of the team's time: recruitment, accounting firms, marketing, customer ops, real estate, financial services. If your team spends more than 30% of its time on repetitive tasks, we have something for you.",
+    a: "<strong>Italian SMEs and teams of 10 to 200 people</strong> in sectors where repetitive processes consume most of the team's time: recruitment, accounting firms, marketing, customer ops, real estate, financial services. If your team spends more than 30% of its time on repetitive tasks, we have something for you.",
   },
   {
     q: "How quickly will we see results?",
@@ -192,11 +213,11 @@ const faqs = [
           </p>
 
           <h1 class="text-white text-balance fade-up fade-up-delay-1" style="font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
-            We Bring AI Agents<br/>to SMBs.
+            We bring AI&nbsp;Agents<br/>to Italian SMEs.
           </h1>
 
           <p class="mt-7 text-[18px] md:text-[19px] text-violet-100/85 leading-relaxed max-w-xl fade-up fade-up-delay-2 text-pretty">
-            AI Agents that run your processes end-to-end. Not software your team needs to learn. First delivery in 4 weeks.
+            AI agents that run your processes end-to-end, rather than software your team has to learn. First delivery in 4 weeks.
           </p>
 
           <!-- HARD NUMBERS BAND, upfront credibility -->
@@ -211,7 +232,7 @@ const faqs = [
             </div>
             <div>
               <p class="text-white font-medium" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1; letter-spacing: -0.02em;">4 wks</p>
-              <p class="text-[12px] text-violet-200/70 mt-2 leading-snug">to your first<br/>agent live</p>
+              <p class="text-[12px] text-violet-200/70 mt-2 leading-snug">to the first<br/>agent live</p>
             </div>
           </div>
 
@@ -220,7 +241,7 @@ const faqs = [
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4B842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>
             </svg>
-            <span class="text-[14px] text-amber font-medium">If it doesn't work, you don't pay. Guarantee included.</span>
+            <span class="text-[14px] text-amber font-medium">First month satisfied or refunded.</span>
           </div>
 
           <!-- CTA + CEO CHIP -->
@@ -231,24 +252,18 @@ const faqs = [
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
               </span>
             </a>
-            <a href="#services" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
+            <a href="#where-to-start" class="btn btn-secondary !bg-transparent !text-white !border-white/25 hover:!bg-white/10 hover:!border-white/40">
               See the solutions
             </a>
           </div>
 
-          <!-- CEO CREDIBILITY CHIP -->
-          <a href="/en/contact" class="mt-6 inline-flex items-center gap-3 group fade-up fade-up-delay-4 no-underline">
-            <img
-              src="/team/daniel-levis.avif"
-              alt="Daniel Levis"
-              width="40"
-              height="40"
-              class="w-10 h-10 rounded-full object-cover ring-2 ring-white/20 group-hover:ring-white/40 transition-all"
-              loading="eager"
-            />
-            <span class="text-[13px] leading-tight">
-              <span class="block text-white/85">Daniel Levis, CEO Soraia</span>
-              <span class="block text-violet-200/60">let's figure out together if it makes sense. No pitch.</span>
+          <!-- WHO REPLIES: only Daniel, because he is the one who replies (the team faces are further down) -->
+          <a href="/en/contact" class="mt-8 inline-flex items-center gap-4 text-[13px] leading-tight no-underline group fade-up fade-up-delay-4">
+            <img src="/team/daniel-levis.webp?v=4" alt="Daniel Levis" loading="eager" width="56" height="56" class="w-14 h-14 rounded-full object-cover ring-2 ring-white/20 flex-shrink-0" />
+            <span class="block">
+              <span class="block text-white font-medium">Daniel Levis</span>
+              <span class="block text-violet-200/70">Co-Founder &amp; CEO</span>
+              <span class="block mt-1 text-white/85 group-hover:text-white transition-colors">I personally reply to every request within 24 hours.</span>
             </span>
           </a>
         </div>
@@ -266,175 +281,291 @@ const faqs = [
        ============================================================ -->
   <ProofBar label="Trusted by" />
 
-  <!-- (featured-in row Xano/WeWeb removed on 2026-10-18, as on the Italian home) -->
-
   <!-- ============================================================
-       3. WHAT WE DO, 2 pillars: People + Processes
+       2a-bis. SME POSITIONING, tech background + grid, team faces
        ============================================================ -->
-  <section id="services" class="section bg-ink-50">
+  <section class="section bg-tech-grid relative overflow-hidden">
     <div class="container-soraia">
-      <SectionHeader
-        eyebrow="What we do"
-        title="We operate on two fronts: people and processes."
-        subtitle="Bringing AI to an SMB isn't just deploying a model. It means training your team to understand what changes, and building agents that handle the repetitive work."
-        align="center"
-      />
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="eyebrow mb-5">For growing SMEs</p>
+        <h2 class="text-balance font-medium tracking-tight" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 3rem); line-height: 1.1; color: var(--color-ink);">
+          The ideal solution for Italian SMEs.
+        </h2>
+        <p class="mt-5 text-[17px] md:text-[18px] leading-relaxed text-pretty mx-auto max-w-2xl" style="color: var(--color-ink-muted);">
+          Built for companies without an in-house team of AI engineers, who know that putting AI agents to work opens doors: more time taken back from repetitive processes, fewer errors, operations that scale. We bring the team and the method, you get the results.
+        </p>
+      </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-        <!-- PILLAR 1: PEOPLE / AI ADOPTION -->
-        <a href="/en/ai-adoption" class="card-editorial relative overflow-hidden group reveal !p-8 md:!p-10 flex flex-col no-underline hover:!-translate-y-1 hover:shadow-lg transition-all">
-          <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-violet-100/60 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-          <div class="relative">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-700 to-violet-500 flex items-center justify-center shadow-violet">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-                </svg>
-              </div>
-              <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-500">People</span>
-            </div>
-
-            <h3 class="text-[2rem] md:text-[2.5rem] font-medium tracking-tight leading-[1.05] text-ink-900 mb-4">
-              AI Adoption
-            </h3>
-            <p class="text-[16px] text-ink-700 leading-relaxed text-pretty mb-7 max-w-md">
-              Structured programmes to embed artificial intelligence into the skills of your entire organisation.
-            </p>
-
-            <ul class="space-y-3.5 mb-8 flex-1">
-              <li class="flex items-start gap-3">
-                <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                </span>
-                <span class="text-[15px] text-ink-900"><strong class="font-semibold">Hands-on workshop</strong> built around your team's real processes, in batches of up to 10 people. No theoretical slides, only your own use cases.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                </span>
-                <span class="text-[15px] text-ink-900"><strong class="font-semibold">Monthly coaching</strong> with group check-ins and 1:1 sessions, to ensure real adoption long after the workshop.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                </span>
-                <span class="text-[15px] text-ink-900"><strong class="font-semibold">"AI safe use" governance</strong>: internal policy, shared company-wide skills, approval workflows for deletions and critical actions.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="shrink-0 mt-1 inline-flex w-5 h-5 rounded-full bg-violet-50 items-center justify-center">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4A1E5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                </span>
-                <span class="text-[15px] text-ink-900"><strong class="font-semibold">Company Brain Pilot</strong> for advanced users: the Soraia framework already used internally for 6 months, a knowledge base that grows with your team.</span>
-              </li>
-            </ul>
-
-            <div class="pt-6 border-t border-ink-200 flex items-center justify-between gap-4">
-              <p class="text-sm text-ink-600">
-                <span class="font-semibold text-ink-900">1-to-1 coaching</span> included · <span class="font-semibold text-ink-900">AI policy template</span>
-              </p>
-              <span class="text-sm font-semibold text-violet-700 inline-flex items-center gap-1">
-                Learn more
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
-
-        <!-- PILLAR 2: PROCESSES / AI AGENTS -->
-        <a href="/en/ai-agents" class="card-editorial relative overflow-hidden group reveal reveal-delay-1 !p-8 md:!p-10 flex flex-col no-underline hover:!-translate-y-1 hover:shadow-lg transition-all">
-          <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-violet-100/60 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-          <div class="relative">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-700 to-violet-500 flex items-center justify-center shadow-violet">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
-                </svg>
-              </div>
-              <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-500">Processes</span>
-            </div>
-
-            <h3 class="text-[2rem] md:text-[2.5rem] font-medium tracking-tight leading-[1.05] text-ink-900 mb-4">
-              AI Agents
-            </h3>
-            <p class="text-[16px] text-ink-700 leading-relaxed text-pretty mb-7 max-w-md">
-              AI agents specialised across four high-impact areas, with deep expertise in the Italian business context.
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 flex-1">
-              <div class="rounded-xl bg-violet-50/60 border border-violet-100 p-4">
-                <p class="text-[11px] uppercase tracking-wider text-violet-700 font-semibold mb-1">Talent Ops</p>
-                <p class="text-[15px] font-semibold text-ink-900 leading-tight">Recruitment & HR</p>
-                <p class="text-xs text-ink-600 mt-1.5 leading-snug">Screening, outreach, matching, scheduling.</p>
-              </div>
-              <div class="rounded-xl bg-violet-50/60 border border-violet-100 p-4">
-                <p class="text-[11px] uppercase tracking-wider text-violet-700 font-semibold mb-1">Finance Ops</p>
-                <p class="text-[15px] font-semibold text-ink-900 leading-tight">Finance & Document</p>
-                <p class="text-xs text-ink-600 mt-1.5 leading-snug">Reconciliations, doc prep, intake.</p>
-              </div>
-              <div class="rounded-xl bg-violet-50/60 border border-violet-100 p-4">
-                <p class="text-[11px] uppercase tracking-wider text-violet-700 font-semibold mb-1">Revenue Ops</p>
-                <p class="text-[15px] font-semibold text-ink-900 leading-tight">Sales & Marketing</p>
-                <p class="text-xs text-ink-600 mt-1.5 leading-snug">Lead qualification, content, BD prospecting.</p>
-              </div>
-              <div class="rounded-xl bg-violet-50/60 border border-violet-100 p-4">
-                <p class="text-[11px] uppercase tracking-wider text-violet-700 font-semibold mb-1">Customer Ops</p>
-                <p class="text-[15px] font-semibold text-ink-900 leading-tight">Customer & Compliance</p>
-                <p class="text-xs text-ink-600 mt-1.5 leading-snug">Intake, routing, moderation.</p>
-              </div>
-            </div>
-
-            <div class="pt-6 border-t border-ink-200 flex items-center justify-between gap-4">
-              <p class="text-sm text-ink-600">
-                <span class="font-semibold text-ink-900">Agents in production</span> · <span class="font-semibold text-ink-900">native Italian</span> context
-              </p>
-              <span class="text-sm font-semibold text-violet-700 inline-flex items-center gap-1">
-                Learn more
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
+      <div class="mt-11 flex flex-col items-center gap-4">
+        <div class="flex items-center">
+          {["daniel-levis", "eleonora-cogo", "lorenzo-barbaglia", "veronica-pisana", "davide-silvestri", "martina-rochstein", "mohamed-mejri"].map((slug, i) => (
+            <img src={`/team/${slug}.webp?v=4`} alt="" loading="lazy" width="44" height="44" class={`w-11 h-11 rounded-full object-cover border-2 border-white ${i === 0 ? "" : "-ml-3"}`} style="box-shadow: var(--shadow-sm);" />
+          ))}
+        </div>
+        <p class="text-[15px] md:text-[16px] font-medium text-center" style="color: var(--color-ink);">
+          We're a team of people who know how an SME works.
+        </p>
       </div>
     </div>
   </section>
 
-
   <!-- ============================================================
-       5b. PRICING ANCHOR
+       2b. TWO WAYS TO START, routing by the client's situation
        ============================================================ -->
-  <section id="pricing" class="section bg-white">
+  <section id="where-to-start" class="section bg-white">
     <div class="container-soraia">
       <SectionHeader
-        eyebrow="Pricing"
-        title="One simple model."
-        subtitle="No endless quotes and no surprise price lists. Two dedicated people and a monthly hours pool, from €3,000/month."
+        title="Where to start is up to you."
+        subtitle="Some companies already know what to automate. Others know they want to, but not where to begin. Each has a precise starting point."
         align="center"
       />
 
-      <div class="max-w-3xl mx-auto">
-        <div class="card-editorial reveal !p-8 md:!p-12 text-center">
-          <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-500">Two dedicated people, a monthly hours pool</span>
-          <p class="text-[44px] md:text-[56px] font-medium text-ink leading-none tracking-tight mt-4 mb-2">From €3,000 <span class="text-[20px] md:text-[24px] text-ink-500 font-normal align-baseline">/ month</span></p>
-          <p class="text-sm text-ink-500 mb-6">VAT excluded. Flexible hours, month to month.</p>
-
-          <p class="text-[16px] md:text-[17px] text-ink-700 leading-relaxed max-w-2xl mx-auto mb-8">
-            A <strong>Project Manager</strong> and an <strong>AI Engineer</strong> on your project for its whole duration, with a combined monthly hours pool. Milestones and releases are the obligation of result: you approve them.
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <!-- A: Development -->
+        <div class="card-editorial reveal !p-8 md:!p-10 flex flex-col">
+          <span class="text-[13px] font-semibold text-ink-500 mb-4">AI engineering</span>
+          <h3 class="font-medium tracking-tight leading-[1.12] text-ink-900 mb-3" style="font-size: clamp(1.4rem, 2vw + 0.4rem, 1.9rem);">
+            You already know what you want
+          </h3>
+          <p class="text-[16px] text-ink-700 leading-relaxed text-pretty mb-7 flex-1">
+            You know which processes to automate and where artificial intelligence adds value. You've already spotted the bottlenecks. We build the solutions in iterative sprints.
           </p>
+          <a href="/en/ai-engineering" class="btn btn-ghost btn-arrow self-start !px-0" style="color: var(--color-brand);">
+            Discover AI engineering
+            <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+        </div>
 
-          <a href="/en/contact" class="btn btn-primary">
-            Talk to us
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <!-- B: Process audit (highlighted). The /analisi-processi deck is Italian-only, so the EN link goes to the contact page -->
+        <div class="card-editorial reveal reveal-delay-1 !p-8 md:!p-10 flex flex-col" style="border: 2px solid var(--color-brand); background: var(--color-violet-50, #FDF4FF);">
+          <span class="text-[13px] font-semibold mb-4" style="color: var(--color-brand-accent);">Process audit</span>
+          <h3 class="font-medium tracking-tight leading-[1.12] text-ink-900 mb-3" style="font-size: clamp(1.4rem, 2vw + 0.4rem, 1.9rem);">
+            You want to use AI, but don't know where to start
+          </h3>
+          <p class="text-[16px] text-ink-700 leading-relaxed text-pretty mb-7 flex-1">
+            First we understand how you really work, then we decide what to build. The audit pinpoints where automation and AI bring the most value, before you spend on development.
+          </p>
+          <a href="/en/contact" class="btn btn-primary btn-arrow self-start">
+            Request a process audit
+            <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
           </a>
         </div>
       </div>
-
-      <p class="text-center text-sm text-ink-500 mt-8 max-w-2xl mx-auto reveal">
-        Prices exclude VAT. All projects start with a <a href="/en/contact" class="link-violet font-semibold">free 20-minute call</a>.
-      </p>
     </div>
   </section>
+
+  <!-- ============================================================
+       2c. AFTER WE STEP IN, outcomes / benefits
+       ============================================================ -->
+  <section class="section bg-hero-dark relative overflow-hidden">
+    <div class="container-soraia relative z-10">
+      <SectionHeader
+        eyebrow="After we step in"
+        title="A company with lower operating costs, that depends less on you and is worth more."
+        subtitle="We bring order to your processes and automate them with custom software and AI agents, which remain your company's property."
+        align="center"
+        variant="dark"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7 max-w-5xl mx-auto">
+        <div class="dk-card reveal">
+          <span class="dk-chip">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </span>
+          <h3 class="font-medium tracking-tight mb-2.5" style="font-size: 1.3rem; color: #fff;">Less repetitive work</h3>
+          <p class="text-[15.5px] leading-relaxed" style="color: rgba(255,255,255,0.75);">Data entry, checks, reconciliations and reports are handled by the software. The same people manage more volume and the company grows without growing its back office.</p>
+        </div>
+        <div class="dk-card reveal reveal-delay-1">
+          <span class="dk-chip">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+          </span>
+          <h3 class="font-medium tracking-tight mb-2.5" style="font-size: 1.3rem; color: #fff;">You're no longer the bottleneck</h3>
+          <p class="text-[15.5px] leading-relaxed" style="color: rgba(255,255,255,0.75);">Clear processes can be delegated. Routine tasks no longer go through you, the company gains a proper management layer and you go back to leading it instead of chasing it.</p>
+        </div>
+        <div class="dk-card reveal">
+          <span class="dk-chip">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h3 class="font-medium tracking-tight mb-2.5" style="font-size: 1.3rem; color: #fff;">Hire better, train faster</h3>
+          <p class="text-[15.5px] leading-relaxed" style="color: rgba(255,255,255,0.75);">Give people the modern tools the new generations expect. With documented processes, onboarding gets shorter and know-how stays in the company, even when a key person leaves.</p>
+        </div>
+        <div class="dk-card reveal reveal-delay-1">
+          <span class="dk-chip">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </span>
+          <h3 class="font-medium tracking-tight mb-2.5" style="font-size: 1.3rem; color: #fff;">More value when the handover comes</h3>
+          <p class="text-[15.5px] leading-relaxed" style="color: rgba(255,255,255,0.75);">Whether you sell or pass the company on to your children, what counts is how well it runs without you. Documented processes, tidy data and software you own make it more solid and easier to hand over.</p>
+        </div>
+      </div>
+    </div>
+    <!-- .dk-card / .dk-chip live in globals.css (shared with the about page "What drives us") -->
+  </section>
+
+  <!-- ============================================================
+       2c-bis. YOU ALWAYS KNOW WHO YOU'RE DEALING WITH, the people of the journey
+       ============================================================ -->
+  <section class="section bg-violet-mesh border-t border-line">
+    <div class="container-soraia">
+      <div class="max-w-2xl mb-12 md:mb-14">
+        <p class="eyebrow mb-5">Always the same people</p>
+        <h2 class="text-balance font-medium tracking-tight" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem); line-height: 1.12; color: var(--color-ink);">
+          A journey that never starts from scratch.
+        </h2>
+        <p class="mt-5 text-[17px] md:text-[18px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+          From the first call to the agent's evolution, you always know who you're dealing with.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {[
+          { slug: "veronica-pisana", name: "Veronica", role: "Account Manager", title: "We listen and guide you to the right project", body: "The first call is about understanding your context, your processes and where AI really adds the most value." },
+          { slug: "eleonora-cogo", name: "Eleonora", role: "Project Manager", title: "We stay with you during and after the release", body: "We coordinate sprints, milestones and the agent's evolution based on real use. Everything tracked in the project dashboard." },
+          { slug: "lorenzo-barbaglia", name: "Lorenzo", role: "AI Engineer", title: "We take care of the whole technical side", body: "Data model, integrations with your systems, building and optimising the AI agents." },
+        ].map((p) => (
+          <div class="card !p-7 md:!p-8 flex flex-col">
+            <div class="flex items-center gap-4 mb-6">
+              <img src={`/team/${p.slug}.webp?v=4`} alt={p.name} loading="lazy" width="60" height="60" class="rounded-full object-cover flex-shrink-0" style="width: 60px; height: 60px; box-shadow: var(--shadow-sm);" />
+              <div>
+                <p class="font-medium" style="font-size: 1rem; color: var(--color-ink);">{p.name}</p>
+                <p class="text-[13px] font-medium" style="color: var(--color-brand-accent);">{p.role}</p>
+              </div>
+            </div>
+            <h3 class="font-medium tracking-tight" style="font-size: 1.1875rem; line-height: 1.25; color: var(--color-ink);">{p.title}</h3>
+            <p class="mt-3 text-[15px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2d. YOUR TEAM, pod (Account Manager + PM + AI Engineer) + comparison
+       ============================================================ -->
+  <section class="section bg-tech-grid border-t border-line">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Your team"
+        title="All the skills you need, in a single team."
+        subtitle="You don't need to hire, train or manage new people. You get a team that already works well together, with clear processes: an Account Manager, a Project Manager and an AI Engineer dedicated to your project, up and running from day one."
+        align="center"
+      />
+
+      <!-- the team: one row of cards (photo, name and surname, role) scrolling slowly in a loop -->
+      <div class="team-row-wrap mt-2" aria-label="The Soraia team">
+        <div class="team-row">
+          {(() => {
+            const people = [
+              { slug: "daniel-levis", name: "Daniel Levis", role: "Account Manager" },
+              { slug: "veronica-pisana", name: "Veronica Pisana", role: "Account Manager" },
+              { slug: "paolo-bacchetti", name: "Paolo Bacchetti", role: "Account Manager" },
+              { slug: "eleonora-cogo", name: "Eleonora Cogo", role: "Project Manager" },
+              { slug: "davide-silvestri", name: "Davide Silvestri", role: "Project Manager" },
+              { slug: "lorenzo-barbaglia", name: "Lorenzo Barbaglia", role: "AI Engineer" },
+              { slug: "martina-rochstein", name: "Martina Rochstein", role: "AI Engineer" },
+              { slug: "mohamed-mejri", name: "Mohamed Mejri", role: "AI Engineer" },
+              { slug: "sebastian-geido", name: "Sebastian Geido", role: "AI Engineer" },
+              { slug: "narella-petrocco", name: "Narella Petrocco", role: "AI Engineer" },
+            ];
+            return [...people, ...people].map((p, i) => (
+              <figure class="team-card m-0" aria-hidden={i >= people.length ? "true" : undefined}>
+                <picture>
+                  <source srcset={`/team/${p.slug}.avif?v=4`} type="image/avif" />
+                  <img src={`/team/${p.slug}.webp?v=4`} alt={i < people.length ? p.name : ""} width="480" height="600" loading="lazy" draggable="false" />
+                </picture>
+                <figcaption>
+                  <span class="tr-name">{p.name}</span>
+                  <span class="tr-role">{p.role}</span>
+                </figcaption>
+              </figure>
+            ));
+          })()}
+        </div>
+      </div>
+      <p class="text-center text-[14.5px] mt-8 max-w-xl mx-auto" style="color: var(--color-ink-muted);">
+        Several profiles available. Your project gets <strong style="color: var(--color-ink);">one dedicated person per role</strong>, the same for the whole journey.
+      </p>
+
+      <style>
+        .team-row-wrap { overflow: hidden; padding: 6px 0;
+          -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%); }
+        .team-row { display: flex; width: max-content; animation: team-row-scroll 72s linear infinite; will-change: transform; }
+        .team-row-wrap:hover .team-row { animation-play-state: paused; }
+        @keyframes team-row-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @media (prefers-reduced-motion: reduce) { .team-row { animation: none; } }
+        .team-card { width: clamp(170px, 18vw, 220px); margin-right: 16px; flex: 0 0 auto; background: #fff; border: 1px solid var(--color-line); border-radius: 1.375rem; overflow: hidden; box-shadow: var(--shadow-sm); }
+        .team-card picture { display: block; }
+        .team-card img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; -webkit-user-drag: none; user-select: none; }
+        .team-card figcaption { padding: 12px 14px 14px; }
+        .tr-name { display: block; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--color-ink); line-height: 1.2; }
+        .tr-role { display: block; margin-top: 3px; font-size: 12.5px; font-weight: 500; color: var(--color-brand-accent); }
+      </style>
+
+      <!-- comparison -->
+      <h3 class="text-center font-medium tracking-tight text-ink-900 mt-16 md:mt-20 mb-8" style="font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem); line-height: 1.15;">
+        Hire in-house, rely on a software house, or bring in the Soraia team?
+      </h3>
+      <div class="overflow-x-auto -mx-4 px-4 pb-1">
+        <table class="w-full min-w-[720px] border-collapse text-left">
+          <thead>
+            <tr>
+              <th class="py-4 pr-4 align-bottom"></th>
+              <th class="py-4 px-4 align-bottom text-[15px] font-semibold text-ink-700">In-house team</th>
+              <th class="py-4 px-4 align-bottom text-[15px] font-semibold text-ink-700">Software house</th>
+              <th class="py-4 px-5 align-bottom text-[16px] font-semibold rounded-t-2xl" style="background: var(--color-brand); color: #fff;">Soraia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-ink-200">
+              <th scope="row" class="py-4 pr-4 align-top text-[14px] font-semibold text-ink-900">Costs and people</th>
+              <td class="py-4 px-4 align-top text-[14.5px] text-ink-600">5-6 hires to manage</td>
+              <td class="py-4 px-4 align-top text-[14.5px] text-ink-600">Per-project quotes, high costs</td>
+              <td class="py-4 px-5 align-top text-[14.5px] text-ink-900 font-medium" style="background: var(--color-violet-50, #FDF4FF);">Three dedicated people, one monthly fee</td>
+            </tr>
+            <tr class="border-t border-ink-200">
+              <th scope="row" class="py-4 pr-4 align-top text-[14px] font-semibold text-ink-900">Time to start</th>
+              <td class="py-4 px-4 align-top text-[14.5px] text-ink-600">6-12 months</td>
+              <td class="py-4 px-4 align-top text-[14.5px] text-ink-600">2-4 months per project</td>
+              <td class="py-4 px-5 align-top text-[14.5px] text-ink-900 font-medium" style="background: var(--color-violet-50, #FDF4FF);">First release in 4 weeks</td>
+            </tr>
+            <tr class="border-t border-ink-200">
+              <th scope="row" class="py-4 pr-4 align-top text-[14px] font-semibold text-ink-900">Processes</th>
+              <td class="py-4 px-4 align-top text-[14.5px] text-ink-600">Built from scratch</td>
+              <td class="py-4 px-4 align-top text-[14.5px] text-ink-600">Depend on the vendor</td>
+              <td class="py-4 px-5 align-top text-[14.5px] text-ink-900 font-medium" style="background: var(--color-violet-50, #FDF4FF);">Proven, in iterative sprints</td>
+            </tr>
+            <tr class="border-t border-ink-200">
+              <th scope="row" class="py-4 pr-4 align-top text-[14px] font-semibold text-ink-900">Software ownership</th>
+              <td class="py-4 px-4 align-top text-[14.5px] text-ink-600">Yours</td>
+              <td class="py-4 px-4 align-top text-[14.5px] text-ink-600">Often tied to the vendor</td>
+              <td class="py-4 px-5 align-top text-[14.5px] text-ink-900 font-medium" style="background: var(--color-violet-50, #FDF4FF);">Yours, always</td>
+            </tr>
+            <tr class="border-t border-ink-200">
+              <th scope="row" class="py-4 pr-4 align-top text-[14px] font-semibold text-ink-900">Evolution</th>
+              <td class="py-4 px-4 align-top text-[14.5px] text-ink-600">Tied to internal resources</td>
+              <td class="py-4 px-4 align-top text-[14.5px] text-ink-600">Stops at release</td>
+              <td class="py-4 px-5 align-top text-[14.5px] text-ink-900 font-medium" style="background: var(--color-violet-50, #FDF4FF);">Continuous roadmap based on real use</td>
+            </tr>
+            <tr class="border-t border-ink-200">
+              <th scope="row" class="py-4 pr-4 align-top text-[14px] font-semibold text-ink-900">Management</th>
+              <td class="py-4 px-4 align-top text-[14.5px] text-ink-600">Internal, to be coordinated</td>
+              <td class="py-4 px-4 align-top text-[14.5px] text-ink-600">Lots of calls, different reports</td>
+              <td class="py-4 px-5 align-top text-[14.5px] text-ink-900 font-medium rounded-b-2xl" style="background: var(--color-violet-50, #FDF4FF);">One PM, with a portal and tracked hours</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="/en/contact" class="btn btn-primary">
+          20 min with Daniel
+          <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- (the "Pricing" section was removed on 2026-10-17, as on the Italian home: the price lives only on /en/pricing) -->
 
   <!-- ============================================================
        6. CASE STUDY CAROUSEL (JetHR style)
@@ -447,7 +578,7 @@ const faqs = [
           Switch to Soraia.
         </h2>
         <p class="mt-4 text-[16px] md:text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
-          40+ companies have built AI agents with us. Average time to first agent in production: 4 weeks.
+          40+ companies have built AI agents with us. Average time to the first agent in production: 4 weeks.
         </p>
       </div>
 
@@ -458,12 +589,12 @@ const faqs = [
   <!-- ============================================================
        8. GLOBAL REACH + STATS (aligned with /en/about)
        ============================================================ -->
-  <section class="section bg-ink-50 border-y border-line">
+  <section class="section bg-violet-mesh border-y border-line">
     <div class="container-soraia">
       <SectionHeader
         eyebrow="Global reach"
-        title="Italian company. Clients worldwide."
-        subtitle="<strong>Fully remote team based in Italy</strong>, working with <strong>40+ clients</strong> across Europe, the United States, the UAE, and Australia."
+        title="Italian company. Clients all over the world."
+        subtitle="A <strong>fully remote team based in Italy</strong>, working with <strong>40+ clients</strong> across Europe, the United States, the UAE and Australia."
         align="center"
       />
 
@@ -488,8 +619,8 @@ const faqs = [
           <p class="mt-3 text-[13px] font-medium text-ink-900">Projects delivered</p>
         </div>
         <div class="bg-white p-7 md:p-9 text-center">
-          <p class="text-[2.5rem] md:text-[3.5rem] font-medium tracking-tight leading-none" style="color: var(--color-brand);">11</p>
-          <p class="mt-3 text-[13px] font-medium text-ink-900">Countries served</p>
+          <p class="text-[2.5rem] md:text-[3.5rem] font-medium tracking-tight leading-none" style="color: var(--color-brand);">10+</p>
+          <p class="mt-3 text-[13px] font-medium text-ink-900">People, distributed across Italy</p>
         </div>
         <div class="bg-white p-7 md:p-9 text-center">
           <p class="text-[2.5rem] md:text-[3.5rem] font-medium tracking-tight leading-none" style="color: var(--color-brand);">4 wks</p>
@@ -527,7 +658,7 @@ const faqs = [
               ))}
             </div>
             <p class="text-[1.5rem] md:text-[2rem] font-semibold text-ink-900 leading-[1.2] text-balance">
-              "Using AI to moderate reviews, images, and data enrichment reduced our operational time by over 70%, with high accuracy."
+              "Using AI to moderate reviews, images and data enrichment reduced our operational time by over 70%, with high accuracy."
             </p>
             <p class="mt-6 font-semibold text-ink-900">Edouard Fiess</p>
             <p class="text-sm text-ink-500 mt-0.5">CEO & Co-Founder · Navily</p>
@@ -542,8 +673,6 @@ const faqs = [
       </div>
     </div>
   </section>
-
-  <!-- ("Stack agnostic" section removed on 2026-10-18, as on the Italian home) -->
 
   <!-- ============================================================
        14. FAQ
@@ -567,13 +696,37 @@ const faqs = [
   <!-- ============================================================
        16. FINAL CTA. Call with the CEO
        ============================================================ -->
-  <CTABanner
-    title="20 minutes with the CEO. No pitch."
-    description="Let's figure out together whether it makes sense to work together. No commitment, no surprise quotes, just an operational conversation about your processes."
-    ctaText="20 min with Daniel"
-    ctaHref="/en/contact"
-    avatarName="Daniel Levis"
-    avatarRole="Co-Founder & CEO"
-    avatarSrc="/team/daniel-levis.webp"
-  />
+  <section class="section">
+    <div class="container-soraia">
+      <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-violet-900 via-violet-800 to-violet-700 p-8 md:p-12 lg:p-14">
+        <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-32 opacity-30 float-slow" aria-hidden="true"></div>
+        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8 reveal">
+            <h2 style="color: #fff; font-size: clamp(1.75rem, 2.5vw + 0.5rem, 2.5rem); line-height: 1.13; letter-spacing: -0.02em; font-weight: 500;" class="text-balance">
+              Talk to a real consultant.
+            </h2>
+            <p style="color: rgba(255,255,255,0.8);" class="mt-4 text-[16px] md:text-[18px] leading-relaxed max-w-2xl text-pretty">
+              A team of AI and automation experts, ready to listen to what you need. No pitch: we work out together whether we can really help you.
+            </p>
+            <div class="mt-8">
+              <a href="/en/contact" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+                Apply as a company
+                <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+              </a>
+            </div>
+          </div>
+          <div class="lg:col-span-4 flex flex-col items-start lg:items-end gap-3.5 reveal reveal-delay-2">
+            <div class="flex items-center">
+              {["daniel-levis", "veronica-pisana", "paolo-bacchetti"].map((slug, i) => (
+                <img src={`/team/${slug}.webp?v=4`} alt="" loading="lazy" width="56" height="56" class={`rounded-full object-cover border-2 ${i === 0 ? "" : "-ml-3.5"}`} style="width: 56px; height: 56px; border-color: rgba(255,255,255,0.92); box-shadow: 0 2px 12px rgba(0,0,0,0.28);" />
+              ))}
+            </div>
+            <p style="color: rgba(255,255,255,0.72);" class="text-[13px] font-medium lg:text-right">
+              Daniel, Veronica and Paolo reply to you
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
