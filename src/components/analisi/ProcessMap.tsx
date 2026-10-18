@@ -3,7 +3,7 @@
    è disegnato come poligono SVG (bordo pulito, testo dritto). */
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { COMPANY, FLOW, type FlowNode } from "./data";
+import type { DeckData, FlowNode } from "./data";
 import { RevealButton } from "./shared";
 
 const W = 1180, H = 516;
@@ -36,7 +36,8 @@ function edgePoint(n: Node, tx: number, ty: number): P {
   return { x: n.x + dx * s, y: n.y + dy * s };
 }
 
-export default function ProcessMap() {
+export default function ProcessMap({ data }: { data: DeckData }) {
+  const { ui, flow: FLOW, company: COMPANY } = data;
   const [showBottle, setShowBottle] = useState(false);
   const [showAuto, setShowAuto] = useState(false);
 
@@ -44,16 +45,16 @@ export default function ProcessMap() {
     const m: Record<string, Node> = {};
     FLOW.nodes.forEach((n) => { m[n.id] = { ...n, x: POS[n.id] ?? 200, y: LY(n.lane) }; });
     return m;
-  }, []);
+  }, [FLOW]);
 
   return (
     <div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 20 }}>
         <RevealButton color="arancio" active={showBottle} onClick={() => setShowBottle((v) => !v)}>
-          Mostra i colli di bottiglia
+          {ui.showBottlenecks}
         </RevealButton>
         <RevealButton color="viola" active={showAuto} onClick={() => setShowAuto((v) => !v)}>
-          Mostra cosa si può automatizzare
+          {ui.showAutomation}
         </RevealButton>
       </div>
 
@@ -167,7 +168,7 @@ export default function ProcessMap() {
                   background: "var(--ap-accent)", color: "#fff", borderRadius: 999,
                   padding: "2px 10px", fontSize: "clamp(9px,0.8vw,11.5px)", fontWeight: 700, whiteSpace: "nowrap",
                   boxShadow: "0 6px 14px -8px rgba(137,45,156,0.7)", zIndex: 6,
-                }}>{n.automate!.kind}</motion.span>
+                }}>{ui.automateKind[n.automate!.kind]}</motion.span>
             );
           })}
         </AnimatePresence>

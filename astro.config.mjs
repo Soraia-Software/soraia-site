@@ -10,7 +10,7 @@ export default defineConfig({
     sitemap({
       // Fuori dalla sitemap le pagine noindex o di servizio: deck in call, demo portale,
       // report di esempio del vecchio sito, area admin.
-      filter: (page) => !/\/(analisi-processi|demo-portale|downloads|admin)(\/|$)/.test(page),
+      filter: (page) => !/\/(analisi-processi|process-audit|demo-portale|downloads|admin)(\/|$)/.test(page),
     }),
   ],
   vite: {

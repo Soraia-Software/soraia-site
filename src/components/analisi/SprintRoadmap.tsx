@@ -1,9 +1,10 @@
 /* Montagna + timeline sprint + riordino priorità, riutilizzabile.
    Usa i token globali del sito (niente dipendenze da analisi.css) così gira
-   anche su /ai-engineering. Dati condivisi da ROADMAP. */
+   anche su /ai-engineering e /en/ai-engineering. Roadmap ed etichette arrivano
+   da getDeckData(lang), la stessa fonte del deck /analisi-processi. */
 import { useState } from "react";
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "motion/react";
-import { ROADMAP } from "./data";
+import { getDeckData, type DeckLang } from "./data";
 
 const STEP_POS = [
   { x: 110, y: 232 },
@@ -14,54 +15,10 @@ const STEP_POS = [
 const BRAND = "var(--color-brand)";
 const ACCENT = "var(--color-brand-accent)";
 
-type Lang = "it" | "en";
-
-/* English copy of ROADMAP plus the UI labels, so the same island runs on
-   /en/ai-engineering. IT stays the default and keeps reading data.ts, so the
-   Italian pages do not change. */
-const ROADMAP_EN: typeof ROADMAP = {
-  steps: [
-    { id: "analisi", label: "Process audit", note: "the starting point" },
-    { id: "s1", label: "Sprint 1", note: "first release in use after 4 weeks" },
-    { id: "s2", label: "Sprint 2", note: "builds on the first release" },
-    { id: "s3", label: "Sprint 3", note: "gets closer to the goal" },
-  ],
-  planned: [
-    { id: "A", label: "Single customer master data" },
-    { id: "B", label: "Reports and KPIs" },
-    { id: "C", label: "Structured order handover" },
-    { id: "D", label: "Activity schedule" },
-  ],
-  revised: [
-    { id: "A", label: "Single customer master data", tag: "done" },
-    { id: "C", label: "Structured order handover", tag: "moves up: needed now" },
-    { id: "E", label: "Tracked support requests", tag: "new priority" },
-    { id: "D", label: "Activity schedule", tag: "postponed" },
-  ],
-  mountainCaption:
-    "The summit is the final goal, the complete tool. Each sprint is a step. After every release, priorities are updated based on real usage.",
-};
-
-const UI = {
-  it: {
-    goal: "Obiettivo: lo strumento completo",
-    planned: "L'ordine previsto delle attività",
-    revised: "Dopo il primo rilascio, in base all'uso reale",
-    toggle: "Aggiorna le priorità",
-  },
-  en: {
-    goal: "Goal: the complete tool",
-    planned: "The planned order of work",
-    revised: "After the first release, based on real usage",
-    toggle: "Update priorities",
-  },
-} as const;
-
-export default function SprintRoadmap({ lang = "it" }: { lang?: Lang }) {
+export default function SprintRoadmap({ lang = "it" }: { lang?: DeckLang }) {
   const [revised, setRevised] = useState(false);
   const reduce = useReducedMotion();
-  const roadmap = lang === "en" ? ROADMAP_EN : ROADMAP;
-  const ui = UI[lang];
+  const { roadmap, ui } = getDeckData(lang);
   const list = revised ? roadmap.revised : roadmap.planned;
 
   return (

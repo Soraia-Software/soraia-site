@@ -1,0 +1,30 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import AnalisiProcessi from "~/components/analisi/AnalisiProcessi.tsx";
+import { NOINDEX } from "~/components/analisi/data";
+import "~/styles/analisi.css";
+
+const title = "Process audit | Soraia";
+const description =
+  "How Soraia's process audit works: interviews, workflow mapping, grouping by theme, priority matrix and action plan. The tool we use to find out where automation and artificial intelligence bring the most value.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Process audit",
+  provider: { "@type": "Organization", name: "Soraia" },
+  areaServed: "IT",
+  description,
+  inLanguage: "en",
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  jsonLd={jsonLd}
+  noindex={NOINDEX}
+>
+  <AnalisiProcessi client:load lang="en" />
+</Layout>

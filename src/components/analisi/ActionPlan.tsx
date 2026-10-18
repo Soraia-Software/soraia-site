@@ -1,7 +1,7 @@
 /* Sezione 8, piano d'azione + percorso di sviluppo (timeline sprint, montagna, riordino). */
 import { useState } from "react";
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "motion/react";
-import { ACTION_CARDS, ROADMAP } from "./data";
+import type { DeckData } from "./data";
 import { Icon, RevealButton } from "./shared";
 
 const STEP_POS = [
@@ -11,7 +11,8 @@ const STEP_POS = [
   { x: 880, y: 70 },
 ];
 
-export default function ActionPlan() {
+export default function ActionPlan({ data }: { data: DeckData }) {
+  const { ui, actionCards: ACTION_CARDS, roadmap: ROADMAP } = data;
   const [revised, setRevised] = useState(false);
   const reduce = useReducedMotion();
   const list = revised ? ROADMAP.revised : ROADMAP.planned;
@@ -72,7 +73,7 @@ export default function ActionPlan() {
             );
           })}
           <span className="ap-head" style={{ position: "absolute", left: "88%", top: "2%", fontSize: "clamp(11px,0.9vw,13px)", color: "var(--color-ink)", width: 120, lineHeight: 1.15 }}>
-            Obiettivo: lo strumento completo
+            {ui.goal}
           </span>
         </div>
 
@@ -82,9 +83,9 @@ export default function ActionPlan() {
         <div className="ap-card" style={{ marginTop: 20, padding: "18px 20px", maxWidth: 760, marginInline: "auto" }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
             <strong className="ap-head" style={{ fontSize: "clamp(15px,1.2vw,18px)", color: "var(--color-ink)" }}>
-              {revised ? "Dopo il primo rilascio, in base all'uso reale" : "L'ordine previsto delle attività"}
+              {revised ? ui.revised : ui.planned}
             </strong>
-            <RevealButton active={revised} onClick={() => setRevised((v) => !v)}>Aggiorna le priorità</RevealButton>
+            <RevealButton active={revised} onClick={() => setRevised((v) => !v)}>{ui.toggle}</RevealButton>
           </div>
           <LayoutGroup>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>

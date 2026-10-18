@@ -376,3 +376,438 @@ export const DELIVERABLES = [
    10. CHIUSURA
 ---------------------------------------------------------------------------- */
 export const CLOSING = "Il primo passo è capire come lavorate. Il resto viene da lì.";
+
+/* =============================================================================
+   ETICHETTE DI INTERFACCIA (occhielli, titoli di sezione, pulsanti, legende,
+   assi della matrice). Vivono qui e non nei componenti, così la stessa pagina
+   gira in italiano (/analisi-processi) e in inglese (/en/process-audit).
+   Le chiavi semantiche dei dati (kind "IA" / "senza IA", type "IA" /
+   "automazione") restano identiche nelle due lingue: qui c'è solo come si
+   mostrano.
+   ============================================================================= */
+export type DeckLang = "it" | "en";
+
+export type DeckUI = {
+  /* occhielli + titoli delle sezioni montate dall'orchestratore */
+  objectivesEyebrow: string; objectivesTitle: string;
+  methodEyebrow: string; methodTitle: string;
+  mapEyebrow: string; mapTitle: string;
+  themesEyebrow: string; themesTitle: string;
+  insightsEyebrow: string; insightsTitle: string; insightsLoop: string;
+  priorityEyebrow: string; priorityTitle: string;
+  planEyebrow: string; planTitle: string;
+  deliverablesEyebrow: string; deliverablesTitle: string;
+  /* blocco prezzo: etichetta e prefisso (il prefisso tiene lo spazio finale) */
+  pricingLabel: string; pricingFrom: string;
+  /* rail laterale */
+  railLabel: string;
+  /* 4. mappatura */
+  showBottlenecks: string; showAutomation: string;
+  automateKind: Record<NonNullable<FlowNode["automate"]>["kind"], string>;
+  /* 5. temi */
+  legendCriticita: string; legendOsservazioni: string; legendDesideri: string; groupByTheme: string;
+  /* 7. matrice */
+  effortAxis: string; startHere: string; effortLow: string; effortHigh: string;
+  impactLow: string; impactAxis: string; impactHigh: string;
+  departmentsInvolved: string; solutionAI: string; solutionAuto: string; matrixHint: string;
+  /* 8. piano / SprintRoadmap */
+  goal: string; planned: string; revised: string; toggle: string;
+};
+
+export const UI_IT: DeckUI = {
+  objectivesEyebrow: "Obiettivi dell'analisi", objectivesTitle: "Cosa andiamo a capire",
+  methodEyebrow: "Come funziona", methodTitle: "Il metodo, in quattro passaggi",
+  mapEyebrow: "Mappatura dei processi", mapTitle: "Dalla richiesta del cliente alla fattura",
+  themesEyebrow: "Raggruppamento per temi", themesTitle: "Le parole delle interviste, messe in ordine",
+  insightsEyebrow: "Cosa emerge dall'analisi", insightsTitle: "Tre problemi che si alimentano a vicenda",
+  insightsLoop: "il ciclo si autoalimenta",
+  priorityEyebrow: "Matrice delle priorità", priorityTitle: "Da dove conviene iniziare",
+  planEyebrow: "Piano d'azione e percorso di sviluppo", planTitle: "I primi passi, e come cresce nel tempo",
+  deliverablesEyebrow: "Cosa ricevete", deliverablesTitle: "Alla fine dell'analisi, in mano avete questo",
+  pricingLabel: "Analisi dei processi", pricingFrom: "a partire da ",
+  railLabel: "Sezioni",
+  showBottlenecks: "Mostra i colli di bottiglia", showAutomation: "Mostra cosa si può automatizzare",
+  automateKind: { IA: "IA", "senza IA": "senza IA" },
+  legendCriticita: "Criticità", legendOsservazioni: "Osservazioni", legendDesideri: "Desideri",
+  groupByTheme: "Raggruppa per temi",
+  effortAxis: "Sforzo di sviluppo", startHere: "Da qui si parte", effortLow: "moderato", effortHigh: "elevato",
+  impactLow: "Impatto basso", impactAxis: "Impatto →", impactHigh: "Impatto alto",
+  departmentsInvolved: "Reparti coinvolti", solutionAI: "Soluzione con IA", solutionAuto: "Automazione semplice",
+  matrixHint: "Clicca una bolla per vedere il problema che risolve, i reparti coinvolti e il tipo di soluzione.",
+  goal: "Obiettivo: lo strumento completo",
+  planned: "L'ordine previsto delle attività",
+  revised: "Dopo il primo rilascio, in base all'uso reale",
+  toggle: "Aggiorna le priorità",
+};
+
+export const UI_EN: DeckUI = {
+  objectivesEyebrow: "Objectives of the audit", objectivesTitle: "What we set out to understand",
+  methodEyebrow: "How it works", methodTitle: "The method, in four steps",
+  mapEyebrow: "Process map", mapTitle: "From the customer's request to the invoice",
+  themesEyebrow: "Grouping by theme", themesTitle: "The words from the interviews, put in order",
+  insightsEyebrow: "What the audit reveals", insightsTitle: "Three problems that feed each other",
+  insightsLoop: "the cycle feeds itself",
+  priorityEyebrow: "Priority matrix", priorityTitle: "Where it pays to start",
+  planEyebrow: "Action plan and development path", planTitle: "The first steps, and how it grows over time",
+  deliverablesEyebrow: "What you get", deliverablesTitle: "At the end of the audit, this is what you have in hand",
+  pricingLabel: "Process audit", pricingFrom: "from ",
+  railLabel: "Sections",
+  showBottlenecks: "Show the bottlenecks", showAutomation: "Show what can be automated",
+  automateKind: { IA: "AI", "senza IA": "without AI" },
+  legendCriticita: "Pain points", legendOsservazioni: "Observations", legendDesideri: "Wishes",
+  groupByTheme: "Group by theme",
+  effortAxis: "Development effort", startHere: "Start here", effortLow: "moderate", effortHigh: "high",
+  impactLow: "Low impact", impactAxis: "Impact →", impactHigh: "High impact",
+  departmentsInvolved: "Departments involved", solutionAI: "AI solution", solutionAuto: "Simple automation",
+  matrixHint: "Click a bubble to see the problem it solves, the departments involved and the type of solution.",
+  goal: "Goal: the complete tool",
+  planned: "The planned order of work",
+  revised: "After the first release, based on real usage",
+  toggle: "Update priorities",
+};
+
+/* =============================================================================
+   ENGLISH TWIN of every text-bearing constant above (for /en/process-audit).
+   Same ids, same FLOW geometry (lane/col), same post-it colours and themes,
+   same matrix coordinates and types: only the words change. The fictional
+   client keeps its Italian name on purpose (it is an Italian SME example).
+   Register: "you". No em-dash.
+   ============================================================================= */
+export const PRICING_EN: typeof PRICING = {
+  show: PRICING.show,
+  from: "€3,000",
+  note: "up to 10 interviews",
+  standalone:
+    "You can buy the audit on its own or as the first step of a development project.",
+};
+
+export const COMPANY_EN: typeof COMPANY = {
+  name: COMPANY.name,
+  size: "12 people",
+  what: "Sells, installs and services systems for business and private customers.",
+  departments: ["Sales", "Technical office", "Administration", "Support"],
+  tools: [
+    "A CRM that is barely used",
+    "Lots of Excel files",
+    "Teams used only as a chat",
+    "Cloud invoicing",
+    "Support requests on an Excel sheet",
+  ],
+};
+
+export type DeckSection = { id: (typeof SECTIONS)[number]["id"]; label: string };
+
+export const SECTIONS_EN: readonly DeckSection[] = [
+  { id: "apertura", label: "Opening" },
+  { id: "obiettivi", label: "Objectives" },
+  { id: "metodo", label: "How it works" },
+  { id: "mappatura", label: "Process map" },
+  { id: "temi", label: "Themes" },
+  { id: "emerge", label: "What emerges" },
+  { id: "priorita", label: "Priorities" },
+  { id: "piano", label: "Action plan" },
+  { id: "ricevete", label: "What you get" },
+  { id: "chiusura", label: "Closing" },
+];
+
+export const OPENING_EN: typeof OPENING = {
+  eyebrow: "Process audit",
+  title: "Not sure where to start? Let's start with how you work today.",
+  subtitle:
+    "The process audit shows where automation and artificial intelligence bring the most value, before you spend on development.",
+};
+
+export const OBJECTIVES_EN: typeof OBJECTIVES = [
+  {
+    icon: "eye",
+    title: "How you really work today",
+    body: "Understand how your tools are actually used in day-to-day work.",
+  },
+  {
+    icon: "friction",
+    title: "Where inefficiencies come from",
+    body: "Pinpoint the friction points in your processes.",
+  },
+  {
+    icon: "filter",
+    title: "What adds no value",
+    body: "Find features and steps that are rarely used or barely useful.",
+  },
+  {
+    icon: "exit",
+    title: "Where work leaves the system",
+    body: "Understand when and why things end up on Excel, WhatsApp or the phone.",
+  },
+];
+
+export const METHOD_EN: typeof METHOD = {
+  steps: [
+    {
+      n: 1,
+      title: "Interviews",
+      body: "One person per department walks us through a typical day. Up to 10 interviews, recorded.",
+    },
+    {
+      n: 2,
+      title: "Extracting the insights",
+      body: "From the interviews we pull out pain points, wishes and neutral observations, in people's exact words.",
+    },
+    {
+      n: 3,
+      title: "Process mapping",
+      body: "We draw every workflow in detail.",
+    },
+    {
+      n: 4,
+      title: "Grouping by theme",
+      body: "We organise the insights by area (affinity diagram) and find the main problems.",
+    },
+  ],
+  note: "Sometimes it takes artificial intelligence, sometimes a simple automation is enough, sometimes all it takes is a change in the way you work.",
+};
+
+export const FLOW_EN: typeof FLOW = {
+  nodes: [
+    { id: "contatto", lane: 0, col: 0, type: "activity", label: "Customer enquiry",
+      bottleneck: "Customers with similar names get mixed up.",
+      automate: { kind: "senza IA", note: "Single customer master data" } },
+    { id: "sopralluogo", lane: 0, col: 1, type: "activity", label: "Site survey" },
+    { id: "preventivo", lane: 0, col: 2, type: "activity", label: "Quote on Excel",
+      automate: { kind: "IA", note: "Sizing assistant" } },
+    { id: "accetta", lane: 0, col: 3, type: "decision", label: "Customer accepts?" },
+    { id: "archivia", lane: 0, col: 4, type: "end", label: "Negotiation closed" },
+    { id: "ordine-tec", lane: 1, col: 4, type: "activity", label: "Order to the technical office via Teams",
+      bottleneck: "The order is passed on verbally or by chat, and information gets lost.",
+      automate: { kind: "senza IA", note: "Structured order handover" } },
+    { id: "fornitori", lane: 1, col: 5, type: "activity", label: "Order to suppliers" },
+    { id: "installazione", lane: 1, col: 6, type: "activity", label: "Installation" },
+    { id: "comunica", lane: 2, col: 7, type: "activity", label: "Notification to administration" },
+    { id: "fattura", lane: 2, col: 8, type: "activity", label: "Invoice",
+      bottleneck: "Administration re-enters the quote data by hand." },
+    { id: "assistenza", lane: 3, col: 9, type: "activity", label: "Support request on Excel",
+      bottleneck: "Nobody knows what each support job cost.",
+      automate: { kind: "senza IA", note: "Tracked support requests" } },
+  ],
+  edges: [
+    ["contatto", "sopralluogo"],
+    ["sopralluogo", "preventivo"],
+    ["preventivo", "accetta"],
+    ["accetta", "ordine-tec", "yes"],
+    ["accetta", "archivia", "no"],
+    ["ordine-tec", "fornitori"],
+    ["fornitori", "installazione"],
+    ["installazione", "comunica"],
+    ["comunica", "fattura"],
+    ["fattura", "assistenza"],
+  ],
+};
+
+export const AFFINITY_COLUMNS_EN: string[] = ["Sales", "Technical", "Administration", "Support"];
+
+export const POSTITS_EN: PostIt[] = [
+  // Sales (0)
+  { id: "c1", color: "rosso", text: "Every salesperson has their own Excel file", theme: 0 },
+  { id: "c2", color: "rosso", text: "I can't filter by product in the CRM", theme: 0 },
+  { id: "c3", color: "rosso", text: "I rebuild every quote from scratch", theme: 0 },
+  { id: "c4", color: "rosso", text: "I don't know where a deal stands unless I ask", theme: 0 },
+  { id: "c5", color: "blu", text: "On Mondays we hold a meeting to get aligned", theme: 0 },
+  { id: "c6", color: "blu", text: "We send offers by email", theme: 0 },
+  { id: "c7", color: "verde", text: "I'd like to see where every customer stands, in one place", theme: 0 },
+  { id: "c8", color: "verde", text: "I'd like to find old quotes in two seconds", theme: 0 },
+  // Technical (1)
+  { id: "t1", color: "rosso", text: "Whoever takes the order doesn't talk to whoever delivers it", theme: 1 },
+  { id: "t2", color: "rosso", text: "Orders come in by chat and sometimes get lost", theme: 1 },
+  { id: "t3", color: "rosso", text: "I chase the salesperson to find out what was promised", theme: 1 },
+  { id: "t4", color: "rosso", text: "I don't have a clear list of what to install", theme: 1 },
+  { id: "t5", color: "blu", text: "We only use Teams to send each other files", theme: 1 },
+  { id: "t6", color: "verde", text: "I'd like to receive the order already complete", theme: 1 },
+  { id: "t7", color: "verde", text: "I'd like to know which materials to order without phoning", theme: 1 },
+  // Administration (2)
+  { id: "a1", color: "rosso", text: "I re-enter by hand data that's already in the quote", theme: 2 },
+  { id: "a2", color: "rosso", text: "Sometimes I invoice and find out later that data was missing", theme: 2 },
+  { id: "a3", color: "rosso", text: "The same customers are written three different ways", theme: 2 },
+  { id: "a4", color: "blu", text: "Cloud invoicing works", theme: 2 },
+  { id: "a5", color: "verde", text: "I'd like the quote data to arrive ready to use", theme: 2 },
+  { id: "a6", color: "verde", text: "I'd like to stop copying data from one file to another", theme: 2 },
+  // Support (3)
+  { id: "s1", color: "rosso", text: "We write calls down on a sheet and then can't find them", theme: 3 },
+  { id: "s2", color: "rosso", text: "Nobody knows what each job cost", theme: 3 },
+  { id: "s3", color: "rosso", text: "If the customer calls back, we start from scratch", theme: 3 },
+  { id: "s4", color: "rosso", text: "We don't know which units we installed, or who installed them", theme: 3 },
+  { id: "s5", color: "blu", text: "We pass urgent jobs on by word of mouth", theme: 3 },
+  { id: "s6", color: "verde", text: "I'd like support requests to arrive already complete", theme: 3 },
+  { id: "s7", color: "verde", text: "I'd like a service history for every customer", theme: 3 },
+];
+
+export const INSIGHTS_EN: typeof INSIGHTS = [
+  {
+    title: "The management system isn't where the work gets done",
+    body: "People use it to record things, while the real work happens on Excel, in chats and on the phone.",
+  },
+  {
+    title: "Duplicated, scattered data",
+    body: "Parallel tools create duplicates and manual entry: the database becomes unreliable.",
+  },
+  {
+    title: "Knowledge lives in people's heads instead of the system",
+    body: "It becomes hard to get visibility, coordinate and make processes the same for everyone.",
+  },
+];
+
+export const MATRIX_EN: Bubble[] = [
+  // High impact, moderate effort (top right, "start here")
+  { id: "anagrafica", label: "Single customer master data", x: 83, y: 20, type: "automazione",
+    problem: "The same customers written in different ways, data scattered across files.",
+    departments: ["Sales", "Administration", "Support"] },
+  { id: "assistenza", label: "Tracked support requests", x: 66, y: 33, type: "automazione",
+    problem: "Requests on an Excel sheet can't be found, and costs aren't visible.",
+    departments: ["Support"] },
+  { id: "ordine", label: "Structured order handover", x: 88, y: 45, type: "automazione",
+    problem: "The order passes verbally or by chat between sales and the technical office.",
+    departments: ["Sales", "Technical office"] },
+  // Low impact, moderate effort (top left)
+  { id: "report", label: "Reports and KPIs", x: 27, y: 24, type: "automazione",
+    problem: "No overview of sales and jobs.",
+    departments: ["All departments"] },
+  { id: "agenda", label: "Activity schedule", x: 19, y: 40, type: "automazione",
+    problem: "Installation and support activities aren't planned in one place.",
+    departments: ["Technical office", "Support"] },
+  // High impact, high effort (bottom right)
+  { id: "crm-fatt", label: "CRM-invoicing integration", x: 62, y: 60, type: "automazione",
+    problem: "Quote data is re-entered by hand into the invoice.",
+    departments: ["Sales", "Administration"] },
+  { id: "pulizia", label: "Historical data clean-up", x: 66, y: 83, type: "automazione",
+    problem: "Years of duplicates and incomplete data in files and in the CRM.",
+    departments: ["Administration"] },
+  // Low impact, high effort (bottom left)
+  { id: "ia-dim", label: "AI sizing assistant", x: 25, y: 78, type: "IA",
+    problem: "Sizing a system takes experience and a technician's time.",
+    departments: ["Sales", "Technical office"] },
+];
+
+export const MATRIX_NOTE_EN =
+  "The rest still gets done. What this tells us is where it pays to start: less effort, more results.";
+
+export const ACTION_CARDS_EN: typeof ACTION_CARDS = [
+  {
+    n: 1,
+    title: "Single customer master data",
+    goal: "One place to find everything about every customer.",
+  },
+  {
+    n: 2,
+    title: "Structured order handover",
+    goal: "From the signed order to the technical office without losing information.",
+  },
+  {
+    n: 3,
+    title: "Tracked support",
+    goal: "Every request recorded, with time and costs visible.",
+  },
+];
+
+/* Same strings that /en/ai-engineering already shows through SprintRoadmap. */
+export const ROADMAP_EN: typeof ROADMAP = {
+  steps: [
+    { id: "analisi", label: "Process audit", note: "the starting point" },
+    { id: "s1", label: "Sprint 1", note: "first release in use after 4 weeks" },
+    { id: "s2", label: "Sprint 2", note: "builds on the first release" },
+    { id: "s3", label: "Sprint 3", note: "gets closer to the goal" },
+  ],
+  planned: [
+    { id: "A", label: "Single customer master data" },
+    { id: "B", label: "Reports and KPIs" },
+    { id: "C", label: "Structured order handover" },
+    { id: "D", label: "Activity schedule" },
+  ],
+  revised: [
+    { id: "A", label: "Single customer master data", tag: "done" },
+    { id: "C", label: "Structured order handover", tag: "moves up: needed now" },
+    { id: "E", label: "Tracked support requests", tag: "new priority" },
+    { id: "D", label: "Activity schedule", tag: "postponed" },
+  ],
+  mountainCaption:
+    "The summit is the final goal, the complete tool. Each sprint is a step. After every release, priorities are updated based on real usage.",
+};
+
+export const DELIVERABLES_EN: typeof DELIVERABLES = [
+  { icon: "report", title: "Final report", body: "The results of the audit, explained." },
+  { icon: "map", title: "Complete process map", body: "Every workflow, drawn out." },
+  { icon: "matrix", title: "Priority matrix", body: "Where it pays to start, and why." },
+  { icon: "plan", title: "Action plan", body: "With the recommended development path." },
+];
+
+export const CLOSING_EN = "The first step is understanding how you work. Everything else follows from there.";
+
+/* =============================================================================
+   ACCESSORE UNICO. I componenti leggono solo da qui: getDeckData("it") è
+   esattamente l'insieme delle costanti italiane sopra (stessi oggetti, nessuna
+   copia), getDeckData("en") il gemello inglese. Le parti neutre (SEM,
+   POSTIT_COLOR, NOINDEX, geometria) restano export diretti.
+   ============================================================================= */
+export type DeckData = {
+  lang: DeckLang;
+  ui: DeckUI;
+  pricing: typeof PRICING;
+  company: typeof COMPANY;
+  sections: readonly DeckSection[];
+  opening: typeof OPENING;
+  objectives: typeof OBJECTIVES;
+  method: typeof METHOD;
+  flow: typeof FLOW;
+  affinityColumns: string[];
+  postits: PostIt[];
+  insights: typeof INSIGHTS;
+  matrix: Bubble[];
+  matrixNote: string;
+  actionCards: typeof ACTION_CARDS;
+  roadmap: typeof ROADMAP;
+  deliverables: typeof DELIVERABLES;
+  closing: string;
+};
+
+const DECK_IT: DeckData = {
+  lang: "it",
+  ui: UI_IT,
+  pricing: PRICING,
+  company: COMPANY,
+  sections: SECTIONS,
+  opening: OPENING,
+  objectives: OBJECTIVES,
+  method: METHOD,
+  flow: FLOW,
+  affinityColumns: AFFINITY_COLUMNS,
+  postits: POSTITS,
+  insights: INSIGHTS,
+  matrix: MATRIX,
+  matrixNote: MATRIX_NOTE,
+  actionCards: ACTION_CARDS,
+  roadmap: ROADMAP,
+  deliverables: DELIVERABLES,
+  closing: CLOSING,
+};
+
+const DECK_EN: DeckData = {
+  lang: "en",
+  ui: UI_EN,
+  pricing: PRICING_EN,
+  company: COMPANY_EN,
+  sections: SECTIONS_EN,
+  opening: OPENING_EN,
+  objectives: OBJECTIVES_EN,
+  method: METHOD_EN,
+  flow: FLOW_EN,
+  affinityColumns: AFFINITY_COLUMNS_EN,
+  postits: POSTITS_EN,
+  insights: INSIGHTS_EN,
+  matrix: MATRIX_EN,
+  matrixNote: MATRIX_NOTE_EN,
+  actionCards: ACTION_CARDS_EN,
+  roadmap: ROADMAP_EN,
+  deliverables: DELIVERABLES_EN,
+  closing: CLOSING_EN,
+};
+
+export function getDeckData(lang: DeckLang = "it"): DeckData {
+  return lang === "en" ? DECK_EN : DECK_IT;
+}

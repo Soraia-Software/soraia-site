@@ -1,8 +1,9 @@
-/* Primitivi condivisi della pagina /analisi-processi:
-   icone inline, guscio Sezione, marchio Soraia, pulsante "rivela", rail laterale. */
+/* Primitivi condivisi della pagina /analisi-processi (e /en/process-audit):
+   icone inline, guscio Sezione, marchio Soraia, pulsante "rivela", rail laterale.
+   Nessun testo visibile vive qui: le etichette arrivano via props da getDeckData(). */
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { SECTIONS } from "./data";
+import type { DeckSection } from "./data";
 
 /* ----------------------------------- icone ---------------------------------- */
 const I = (p: React.SVGProps<SVGSVGElement>) => ({
@@ -94,11 +95,19 @@ export function RevealButton({
 }
 
 /* --------------------------------- rail laterale ---------------------------- */
-export function ProgressRail({ active, onJump }: { active: number; onJump: (i: number) => void }) {
+export function ProgressRail({
+  active, onJump, sections, label,
+}: {
+  active: number; onJump: (i: number) => void;
+  /** getDeckData(lang).sections */
+  sections: readonly DeckSection[];
+  /** getDeckData(lang).ui.railLabel (aria-label della nav) */
+  label: string;
+}) {
   return (
-    <nav className="ap-rail" aria-label="Sezioni">
+    <nav className="ap-rail" aria-label={label}>
       <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 4 }}>
-        {SECTIONS.map((s, i) => (
+        {sections.map((s, i) => (
           <li key={s.id}>
             <button
               type="button"

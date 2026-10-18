@@ -115,22 +115,26 @@ Use the `.btn` classes, never ad-hoc button styling:
 - **Nav order (both languages): Servizi · Casi studio · Chi siamo · Prezzi.** "Prodotti" is
   footer-only. Decided 2026-10-17; don't reshuffle.
 - **Servizi dropdown = exactly two items: "Analisi dei processi" + "AI Engineering"**
-  (IT) / "Process audit" + "AI Engineering" (EN, the audit item points to `/en/contact` because
-  the deck is Italian-only). All other pages live in the footer only. EN pages mirror the IT
-  ones one to one (home, about, case studies, pricing, contact, `/en/ai-engineering`); IT-only
-  pages (`/careers`, `/bando`, `/analisi-processi`, `/demo-portale`) pass `hideLangSwitch`.
-- Chi-siamo hero = text + a bento **team mosaic** (6 rounded-square tiles cycling through the
-  10 people and the two "Agente IA" SVG tiles in `public/team/agente-ia-*.svg`, data in the
-  page); the events/retreat marquee sits in its own band right below. Founder photos are
-  rounded squares (`rounded-2xl`), not circles.
+  (IT) / "Process audit" + "AI Engineering" (EN). All other pages live in the footer only. EN
+  pages mirror the IT ones one to one (home, about, case studies, pricing, contact,
+  `/en/ai-engineering`, `/en/process-audit` = the deck, copy from `getDeckData("en")` in
+  `src/components/analisi/data.ts`); IT-only pages (`/careers`, `/bando`, `/demo-portale`) pass
+  `hideLangSwitch`.
+- Chi-siamo: centered hero header with the events/retreat marquee right below it; the
+  "Lavora con noi" dark band carries the bento **team mosaic** (6 rounded-square tiles that
+  *slide* in loop, horizontal or vertical per tile, through the 10 people and five AI-agent
+  tiles: Security, Sales, Accounting, Marketing, Development Agent). The agent tiles are the
+  Soraia mark on the portrait background plus a domain badge, `public/team/agent-*.svg`
+  (generated, professional, no faces). Founder photos are rounded squares (`rounded-2xl`).
 - Primary nav CTA: "20 min con Daniel".
 - `/case-studies` opens with the **video testimonials** (vertical 9:16 tiles, YouTube
   `oar2.jpg` thumbnail with photo fallback, name + role below, one click = inline autoplay).
   They come from the collection field `videoTestimonial` (`provider`, `id`, optional
   `poster`, `speaker`, `role`); order is the `videoOrder` list in the page.
-- `/analisi-processi` is **noindex** (`noindex` prop on `Layout`, driven from
-  `data.ts`). Keep it out of indexes and sitemaps: `astro.config.mjs` filters
-  `/analisi-processi`, `/demo-portale`, `/downloads/*` and `/admin/*` out of the sitemap.
+- `/analisi-processi` and `/en/process-audit` are **noindex** (`noindex` prop on `Layout`,
+  driven from `data.ts`). Keep them out of indexes and sitemaps: `astro.config.mjs` filters
+  `/analisi-processi`, `/process-audit`, `/demo-portale`, `/downloads/*` and `/admin/*` out of
+  the sitemap.
 - Client logos: one source, `src/data/clientLogos.ts`; `ProofBar` with just a `label`.
 
 ## 7. Components to reuse (don't re-implement)

@@ -14,6 +14,7 @@ export const IT_TO_EN_SLUG: Record<string, string> = {
   parliamone: "contact",
   "offerta-team-dedicato": "dedicated-team-offer",
   prezzi: "pricing",
+  "analisi-processi": "process-audit",
 };
 export const EN_TO_IT_SLUG: Record<string, string> = Object.fromEntries(
   Object.entries(IT_TO_EN_SLUG).map(([it, en]) => [en, it]),

@@ -47,9 +47,8 @@ const labels = {
 
 const homeHref = lang === "en" ? "/en/" : "/";
 const contactHref = path("/parliamone", lang);
-// The /analisi-processi deck is Italian-only (noindex, used in call): in EN the
-// "Process audit" item sends to the contact page, where the audit is requested.
-const analisiHref = lang === "en" ? contactHref : path("/analisi-processi", lang);
+// The deck exists in both languages: /analisi-processi and /en/process-audit (both noindex).
+const analisiHref = path("/analisi-processi", lang);
 const aiEngHref = path("/ai-engineering", lang);
 const prodottiHref = path("/prodotti", lang);
 const prezziHref = path("/prezzi", lang);

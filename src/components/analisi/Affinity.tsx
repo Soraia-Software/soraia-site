@@ -1,7 +1,7 @@
 /* Sezione 5, affinity diagram: post-it sparsi -> raggruppati per tema. */
 import { useState } from "react";
 import { LayoutGroup, motion, useReducedMotion } from "motion/react";
-import { AFFINITY_COLUMNS, POSTITS, POSTIT_COLOR, SEM } from "./data";
+import { POSTIT_COLOR, SEM, type DeckData } from "./data";
 import { RevealButton } from "./shared";
 
 function rot(id: string) {
@@ -25,14 +25,15 @@ function PostIt({ id, text, color }: { id: string; text: string; color: "rosso" 
   );
 }
 
-export default function Affinity() {
+export default function Affinity({ data }: { data: DeckData }) {
+  const { ui, affinityColumns: AFFINITY_COLUMNS, postits: POSTITS } = data;
   const [grouped, setGrouped] = useState(false);
   const reduce = useReducedMotion();
 
   const legend = [
-    { c: SEM.criticita, label: "Criticità" },
-    { c: SEM.osservazione, label: "Osservazioni" },
-    { c: SEM.desiderio, label: "Desideri" },
+    { c: SEM.criticita, label: ui.legendCriticita },
+    { c: SEM.osservazione, label: ui.legendOsservazioni },
+    { c: SEM.desiderio, label: ui.legendDesideri },
   ];
 
   return (
@@ -47,7 +48,7 @@ export default function Affinity() {
             </span>
           ))}
         </div>
-        <RevealButton active={grouped} onClick={() => setGrouped((v) => !v)}>Raggruppa per temi</RevealButton>
+        <RevealButton active={grouped} onClick={() => setGrouped((v) => !v)}>{ui.groupByTheme}</RevealButton>
       </div>
 
       <LayoutGroup>
