@@ -32,7 +32,7 @@ section rather than inventing a new treatment.
   **Three dedicated people, one per role: Account Manager, Project Manager, AI Engineer.**
   "Anche solo per un mese." Guarantee: **primo mese soddisfatti o rimborsati**.
 - **Team**: "più di 10 persone" (never a fixed 10 or 11), **distributed in Italy**, 100%
-  remote, registered office in Biella. Daniel replies personally within 24 hours.
+  remote, registered office in Biella. The response-time line is always "Daniel, Veronica e Paolo ti rispondono entro 24 ore." (EN "Daniel, Veronica and Paolo reply within 24 hours."), never a Daniel-only version.
 - **Stats**: "40+ progetti consegnati". Never "in 11 paesi".
 - **Retired old-site concepts** (do not reintroduce): AI Readiness Assessment, "assessment
   iniziale 1-2 settimane", AI Adoption workshop as a pillar, Co-Building Sprint, the week-by-week

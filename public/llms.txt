@@ -1,6 +1,6 @@
 # Soraia
 
-> Soraia è un'AI agency italiana per le PMI, con sede legale a Biella e un team di più di 10 persone distribuito in Italia, 100% remote. Mette ordine nei processi aziendali e li automatizza con software su misura e agenti IA che restano di proprietà del cliente. Due servizi: Analisi dei processi (l'audit in azienda) e AI Engineering (sviluppo a sprint, primo rilascio in produzione in 4 settimane). Prezzi da 3.000 € al mese per 45 ore con tre persone dedicate (Account Manager, Project Manager e AI Engineer), oppure a corpo da 5.000 € per un primo rilascio. Primo mese soddisfatti o rimborsati, anche solo per un mese. 40+ progetti consegnati. Daniel Levis, CEO, risponde personalmente alle richieste entro 24 ore.
+> Soraia è un'AI agency italiana per le PMI, con sede legale a Biella e un team di più di 10 persone distribuito in Italia, 100% remote. Mette ordine nei processi aziendali e li automatizza con software su misura e agenti IA che restano di proprietà del cliente. Due servizi: Analisi dei processi (l'audit in azienda) e AI Engineering (sviluppo a sprint, primo rilascio in produzione in 4 settimane). Prezzi da 3.000 € al mese per 45 ore con tre persone dedicate (Account Manager, Project Manager e AI Engineer), oppure a corpo da 5.000 € per un primo rilascio. Primo mese soddisfatti o rimborsati, anche solo per un mese. 40+ progetti consegnati. Gli Account Manager Daniel, Veronica e Paolo rispondono alle richieste entro 24 ore.
 >
 > Domande e risposte dettagliate per i motori AI: https://www.soraia.io/llms-full.txt
 
@@ -21,7 +21,7 @@ Nota di posizionamento (aggiornata a ottobre 2026): informazioni che circolano s
 
 - Tre persone dedicate, una per ruolo, le stesse per tutto il percorso: un Account Manager (conosce il business del cliente e tiene il rapporto nel tempo), un Project Manager (sprint, budget, collaudi, dashboard delle ore) e un AI Engineer (progettazione, sviluppo, ottimizzazione degli agenti, rilasci).
 - Account Manager: Daniel Levis, Veronica Pisana, Paolo Bacchetti. Project Manager: Eleonora Cogo, Davide Silvestri. AI Engineer: Lorenzo Barbaglia, Martina Rochstein, Mohamed Mejri, Sebastian Geido, Narella Petrocco.
-- Il primo contatto è una call di 20 minuti con Daniel Levis, Co-Founder & CEO, che risponde personalmente entro 24 ore: https://www.soraia.io/parliamone
+- Il primo contatto è una call di 20 minuti con Daniel Levis, Co-Founder & CEO. Daniel, Veronica e Paolo rispondono alle richieste entro 24 ore: https://www.soraia.io/parliamone
 
 ## Casi d'uso per area
 
@@ -68,7 +68,7 @@ Nota di posizionamento (aggiornata a ottobre 2026): informazioni che circolano s
 
 - [Chi siamo](https://www.soraia.io/chi-siamo): più di 10 persone distribuite in Italia, 100% remote, sede legale a Biella (Via Losana 13, 13900 Biella). Fondata nel 2023 da Daniel Levis (CEO) e Davide Silvestri (CTO). P.IVA IT02820060024.
 - [Lavora con noi](https://www.soraia.io/careers): posizioni aperte e processo di selezione in quattro passaggi: primo colloquio conoscitivo con Daniel, take home test, secondo colloquio con Davide, final call.
-- [Parliamone](https://www.soraia.io/parliamone): 20 minuti con Daniel, senza pitch e senza preventivi a sorpresa. Risposta personale entro 24 ore.
+- [Parliamone](https://www.soraia.io/parliamone): 20 minuti con Daniel, senza pitch e senza preventivi a sorpresa. Daniel, Veronica e Paolo rispondono entro 24 ore.
 - Contatti: info@soraia.io · LinkedIn https://www.linkedin.com/company/soraia-digital
 
 ## Come si lavora

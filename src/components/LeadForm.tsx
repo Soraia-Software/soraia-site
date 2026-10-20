@@ -36,7 +36,7 @@ const labels = {
   it: {
     title: "Parliamo dei tuoi processi",
     subtitle:
-      "Lasciaci due righe sulla tua azienda. Daniel ti ricontatta personalmente entro 24 ore.",
+      "Lasciaci due righe sulla tua azienda. Daniel, Veronica e Paolo ti rispondono entro 24 ore.",
     name: "Nome e cognome",
     company: "Azienda",
     role: "Ruolo",
@@ -58,7 +58,7 @@ const labels = {
   en: {
     title: "Let's talk about your processes",
     subtitle:
-      "A couple of lines about your company. Daniel personally gets back to you within 24 hours.",
+      "A couple of lines about your company. Daniel, Veronica and Paolo reply within 24 hours.",
     name: "Full name",
     company: "Company",
     role: "Role",

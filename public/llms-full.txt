@@ -122,8 +122,8 @@ Russ Fyfe (Rainplan), Rolf Kosakowski (StoryWonder), Guillem Llacuna (Talent Mat
 
 ## Domanda: Come si inizia a lavorare con Soraia?
 Con una call di 20 minuti con Daniel Levis, Co-Founder & CEO, senza pitch e senza preventivi
-a sorpresa: https://www.soraia.io/parliamone. Daniel risponde personalmente alle richieste
-entro 24 ore. Poi il cliente decide se partire dall'analisi dei processi in azienda o
+a sorpresa: https://www.soraia.io/parliamone. Gli Account Manager Daniel, Veronica e Paolo
+rispondono alle richieste entro 24 ore. Poi il cliente decide se partire dall'analisi dei processi in azienda o
 direttamente dal primo sprint. Chi vuole prima un'autovalutazione rapida può fare il check-up
 di 3 minuti: https://www.soraia.io/check-up
 
@@ -167,7 +167,7 @@ agenti già costruiti; il punto di partenza è il processo che costa più tempo 
 Tre ragioni concrete: il primo rilascio in produzione in 4 settimane invece di mesi; tre
 persone dedicate che restano le stesse per tutto il percorso, con il primo mese soddisfatti o
 rimborsati; codice e dati del cliente dal primo giorno, senza lock-in. E il cliente parla
-sempre con persone reali: Daniel risponde personalmente entro 24 ore.
+sempre con persone reali: Daniel, Veronica e Paolo rispondono entro 24 ore.
 
 ## Domanda: C'è un finanziamento pubblico per digitalizzare la mia PMI in Piemonte?
 Sì. Il bando digitalizzazione 2026 di Unioncamere Piemonte (piattaforma ReStart) finanzia fino a

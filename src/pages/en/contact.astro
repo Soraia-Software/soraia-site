@@ -1,12 +1,11 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 import LeadForm from "~/components/LeadForm.tsx";
-import AvatarCircle from "~/components/AvatarCircle.astro";
 import ProofBar from "~/components/ProofBar.astro";
 
 const title = "Let's talk, contact us | Soraia";
 const description =
-  "Tell us about your operations. Daniel personally gets back to you within 24 hours with a concrete proposal, scoped to your context.";
+  "Tell us about your operations. Daniel, Veronica and Paolo reply within 24 hours with a concrete proposal, scoped to your context.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -37,7 +36,7 @@ const jsonLd = {
           </h1>
 
           <p class="mt-6 text-[18px] md:text-[19px] text-ink-700 leading-relaxed text-pretty fade-up fade-up-delay-2 max-w-lg">
-            Tell us about your operations. Daniel personally gets back to you within 24 hours with a concrete proposal, scoped to your context.
+            Tell us about your operations. Daniel, Veronica and Paolo reply within 24 hours with a concrete proposal, scoped to your context.
           </p>
 
           <!-- GUARANTEE, more prominent -->
@@ -56,7 +55,7 @@ const jsonLd = {
           <ul class="mt-7 space-y-3 fade-up fade-up-delay-3">
             {[
               "Three dedicated people, from €3,000/month, even for a single month",
-              "Daniel personally replies within 24 hours",
+              "Daniel, Veronica and Paolo reply within 24 hours",
               "No commitment to proceed",
             ].map((item) => (
               <li class="flex items-start gap-3">
@@ -68,16 +67,17 @@ const jsonLd = {
             ))}
           </ul>
 
-          <!-- CEO card -->
+          <!-- Who replies: the Account Managers -->
           <div class="mt-8 p-5 rounded-2xl bg-white border border-ink-200 shadow-sm fade-up fade-up-delay-4 max-w-md">
             <div class="flex items-center gap-4">
-              <AvatarCircle name="Daniel Levis" src="/team/daniel-levis.webp" size="lg" />
+              <div class="flex items-center flex-shrink-0">
+                <img src="/team/daniel-levis.webp?v=4" alt="Daniel Levis" width="56" height="56" loading="lazy" class="w-14 h-14 rounded-full object-cover ring-2 ring-white shadow-sm" />
+                <img src="/team/veronica-pisana.webp?v=4" alt="Veronica Pisana" width="56" height="56" loading="lazy" class="w-14 h-14 rounded-full object-cover ring-2 ring-white shadow-sm -ml-4" />
+                <img src="/team/paolo-bacchetti.webp?v=4" alt="Paolo Bacchetti" width="56" height="56" loading="lazy" class="w-14 h-14 rounded-full object-cover ring-2 ring-white shadow-sm -ml-4" />
+              </div>
               <div>
-                <p class="font-semibold text-ink-900 text-[15px] leading-tight">Daniel Levis</p>
-                <p class="text-sm text-ink-500 mt-0.5">Co-Founder & CEO</p>
-                <p class="text-xs text-ink-500 mt-1.5 leading-snug">
-                  I personally respond to all enquiries within 24 hours.
-                </p>
+                <p class="font-semibold text-ink-900 text-[15px] leading-tight">Daniel, Veronica and Paolo reply within 24 hours.</p>
+                <p class="text-sm text-ink-500 mt-1">Soraia Account Managers</p>
               </div>
             </div>
           </div>
