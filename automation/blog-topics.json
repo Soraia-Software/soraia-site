@@ -1645,5 +1645,450 @@
     ],
     "discovered_at": "2026-07-25",
     "drafted_at": "2026-08-25"
+  },
+  {
+    "id": "vendor-lock-in-proprieta-codice-ai",
+    "status": "drafted",
+    "archetype": "opinion",
+    "slug_it": "vendor-lock-in-proprieta-codice-ai",
+    "slug_en": "vendor-lock-in-code-ownership-ai",
+    "title_hint": "Di chi e' il tuo agente IA? Proprieta' del codice e vendor lock-in: le domande da fare prima di firmare",
+    "cluster": "custom-software",
+    "primaryKeyword": "vendor lock-in software ai",
+    "targetPersona": "CEO / CFO",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/guide/costi-consulenza-ai"
+    ],
+    "dedupNotes": "Build-vs-buy and custom-vs-SaaS posts compare options; this is specifically about contractual ownership and lock-in risk (codice e dati che restano del cliente), a brand-new Oct-2026 search angle that maps 1:1 to Soraia's positioning. Not covered by any owned theme.",
+    "freshnessExpiry": null,
+    "score": 75,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.9,
+      "winnability": 0.7,
+      "freshness": 0.75,
+      "geo": 0.75
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.iaflux.it/vendor-lock-in-proprieta-codice-automazione-pmi/",
+      "https://www.sitiwebshop.it/software-su-misura-pmi-proprieta-codice-legge-633"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "centralino-vocale-ai-pmi",
+    "status": "drafted",
+    "archetype": "pillar",
+    "slug_it": "centralino-ai-vocale-aziende",
+    "slug_en": "ai-voice-agent-phone-business",
+    "title_hint": "Centralino AI che risponde al telefono: conviene a una PMI o fa scappare i clienti?",
+    "cluster": "ai-agents",
+    "primaryKeyword": "centralino ai per aziende",
+    "targetPersona": "COO / Head of Customer Support",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/sales-marketing"
+    ],
+    "dedupNotes": "Backlog covers WhatsApp Business Agent and text customer-service automation, but nothing on voice/phone agents (centralino vocale, segreteria AI, prenotazioni telefoniche). Distinct keyword and distinct channel with heavy vendor competition and buyer intent.",
+    "freshnessExpiry": null,
+    "score": 70,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.75,
+      "winnability": 0.55,
+      "freshness": 0.7,
+      "geo": 0.65
+    },
+    "sources": [
+      "topic-radar",
+      "https://ainora.lt/it/blog/migliori-centralini-ai-segreterie-telefoniche-2026",
+      "https://yourang.ai/en/blog/migliori-assistenti-telefonici-ai-2026",
+      "https://www.agent24.it/agenti-ai/"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "poc-ai-dal-pilota-alla-produzione",
+    "status": "drafted",
+    "archetype": "opinion",
+    "slug_it": "poc-ai-dal-pilota-alla-produzione",
+    "slug_en": "ai-pilot-to-production",
+    "title_hint": "Il 95% dei progetti IA resta una demo: come portare un agente dal pilota alla produzione (davvero)",
+    "cluster": "ai-agents",
+    "primaryKeyword": "progetti ai dal pilota alla produzione",
+    "targetPersona": "CEO / COO",
+    "supportingCaseStudy": "40factory",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/ai-adoption",
+      "/software-development"
+    ],
+    "dedupNotes": "Change-management-anti-pattern is about why automation projects fail organizationally; this is the specific 2026 'pilot-to-production' gap for agentic AI (integrazione nei sistemi reali, scalare un POC), tied to the MIT/enterprise-AI stat trending now. Different keyword and angle.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 70,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.8,
+      "winnability": 0.6,
+      "freshness": 0.8,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.tomshw.it/business/enterprise-ai-proof-concept-produzione-2026",
+      "https://mimir.bot/da-pilot-a-produzione-scalare-agente-ai-azienda/",
+      "https://bi-rex.it/ai-agentica-pmi/"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "agenti-ia-agenzie-immobiliari",
+    "status": "drafted",
+    "archetype": "pillar",
+    "slug_it": "agenti-ia-agenzie-immobiliari",
+    "slug_en": "ai-agents-real-estate-agencies",
+    "title_hint": "Agenti IA per agenzie immobiliari: dal match cliente-immobile ai dossier, cosa automatizzare nel 2026",
+    "cluster": "ai-agents",
+    "primaryKeyword": "agente ai agenzia immobiliare",
+    "targetPersona": "Titolare agenzia / Head of Sales",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/real-estate",
+      "/ai-agents",
+      "/sales-marketing"
+    ],
+    "dedupNotes": "Soraia has an owned /real-estate service page with zero blog support in the backlog. Net-new vertical with its own commercial keyword; no existing post targets 'agente ai agenzia immobiliare'.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 70,
+    "subScores": {
+      "intent": 0.72,
+      "biz": 0.78,
+      "winnability": 0.6,
+      "freshness": 0.7,
+      "geo": 0.65
+    },
+    "sources": [
+      "topic-radar",
+      "https://vendiamoimmobili.it/academy/ai-real-estate-report-italia-2026/36",
+      "https://www.charliecinolo.it/post-divario-ai.html"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "assistente-ia-documenti-interni-rag",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "assistente-ia-documenti-aziendali",
+    "slug_en": "internal-knowledge-base-ai-assistant",
+    "title_hint": "Un assistente IA che risponde sui documenti interni: come costruirlo senza mandare i tuoi dati in giro",
+    "cluster": "ai-agents",
+    "primaryKeyword": "assistente ai documenti aziendali",
+    "targetPersona": "COO / Head of Operations",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/customer-support"
+    ],
+    "dedupNotes": "MCP post explains connecting an agent to data for technical readers; this is the business-facing use case of an internal RAG assistant (procedure, contratti, manuali, policy) for employees. No backlog item targets 'knowledge base aziendale' / 'chatbot interno documenti'.",
+    "freshnessExpiry": null,
+    "score": 69,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.8,
+      "winnability": 0.55,
+      "freshness": 0.6,
+      "geo": 0.7
+    },
+    "sources": [
+      "topic-radar",
+      "https://giallostudio.it/blog/ai-per-knowledge-base-aziendale",
+      "https://gaulin.ai/chatbot-documenti.html",
+      "https://polarisai.it/servizi/rag-knowledge"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "controllo-gestione-report-cfo-ai",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "controllo-gestione-report-direzionali-ai",
+    "slug_en": "ai-management-reporting-cfo",
+    "title_hint": "Il report che arriva sempre tardi: come un agente IA prepara controllo di gestione e report direzionali per il CFO",
+    "cluster": "process-automation",
+    "primaryKeyword": "controllo di gestione intelligenza artificiale",
+    "targetPersona": "CFO / Controller",
+    "supportingCaseStudy": "liftt",
+    "internalLinkTargets": [
+      "/finance",
+      "/ai-agents",
+      "/software-development"
+    ],
+    "dedupNotes": "Finance backlog covers reconciliation, invoices and commissions; nothing targets management reporting / controllo di gestione / dashboard direzionali for the CFO. Distinct keyword and decision-maker; liftt (auto-generated monthly report) supports it.",
+    "freshnessExpiry": null,
+    "score": 69,
+    "subScores": {
+      "intent": 0.65,
+      "biz": 0.82,
+      "winnability": 0.6,
+      "freshness": 0.6,
+      "geo": 0.65
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.ai4business.it/intelligenza-artificiale/come-calcolare-il-roi-di-un-progetto-ai-le-voci-che-mancano-nel-business-case/",
+      "https://www.aruba.it/magazine/intelligenza-artificiale/kpi-ai-misurare-valore-progetti-intelligenza-artificiale.aspx"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "agenti-ia-studi-legali",
+    "status": "drafted",
+    "archetype": "pillar",
+    "slug_it": "agenti-ia-studi-legali",
+    "slug_en": "ai-agents-law-firms",
+    "title_hint": "Agenti IA per studi legali: quali attivita' si automatizzano davvero (e dove serve ancora l'avvocato)",
+    "cluster": "ai-agents",
+    "primaryKeyword": "agenti ai studi legali",
+    "targetPersona": "Managing Partner / Titolare studio",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/customer-support"
+    ],
+    "dedupNotes": "Automazione-studio-commercialista covers accounting/payroll firms; this is a distinct vertical (studi legali) with its own search intent and use cases (revisione contratti, ricerche, gestione pratiche). No overlap with the commercialista post.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 67,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.7,
+      "winnability": 0.55,
+      "freshness": 0.75,
+      "geo": 0.65
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.ai4business.it/intelligenza-artificiale/ai-per-avvocati-le-piattaforme-disponibili-in-italia-e-come-sceglierle/",
+      "https://www.webnovation.it/blog/agenti-ai-per-studio-professionale"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "agenti-ia-turismo-hospitality",
+    "status": "drafted",
+    "archetype": "pillar",
+    "slug_it": "agenti-ia-hotel-strutture-ricettive",
+    "slug_en": "ai-agents-hospitality",
+    "title_hint": "Agenti IA per hotel e strutture ricettive: prenotazioni, richieste ospiti e upsell senza perdere il tocco umano",
+    "cluster": "ai-agents",
+    "primaryKeyword": "agente ai hotel strutture ricettive",
+    "targetPersona": "Direttore struttura / Revenue Manager",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/customer-support",
+      "/sales-marketing"
+    ],
+    "dedupNotes": "Event-management is a separate vertical (fiere B2B/Linkly); hospitality (hotel, B&B, strutture ricettive) is a large, untouched Italian vertical with its own use cases and keyword. No backlog overlap.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 67,
+    "subScores": {
+      "intent": 0.72,
+      "biz": 0.72,
+      "winnability": 0.55,
+      "freshness": 0.75,
+      "geo": 0.62
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.tecnoandroid.it/news/turismo-in-italia-ricettivo-a-407-miliardi-ia-usata-dal-44-1996369/",
+      "https://www.agendadigitale.eu/mercati-digitali/turismodigitale/lia-nel-turismo-corre-ma-non-per-tutti-la-mappa-italiana-e-globale/"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "preventivi-edilizia-computo-metrico-ai",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "preventivi-edilizia-computo-metrico-ai",
+    "slug_en": "ai-construction-estimating",
+    "title_hint": "Preventivi e computo metrico in ore, non giorni: come un agente IA aiuta le imprese edili a fare offerte",
+    "cluster": "ai-agents",
+    "primaryKeyword": "preventivi edilizia ai computo metrico",
+    "targetPersona": "Titolare impresa edile / Direttore tecnico",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/sales-marketing",
+      "/software-development"
+    ],
+    "dedupNotes": "Generic 'preventivi automatici' post exists; this is a construction-specific vertical (computo metrico, listini edilizia, cantiere) with distinct keyword and audience. Different vertical, not a duplicate of the generic quoting post.",
+    "freshnessExpiry": null,
+    "score": 66,
+    "subScores": {
+      "intent": 0.7,
+      "biz": 0.72,
+      "winnability": 0.6,
+      "freshness": 0.6,
+      "geo": 0.6
+    },
+    "sources": [
+      "topic-radar",
+      "https://enlaps.io/it/blog/post/ai-construction-estimating-software",
+      "https://agenti-ai.it/soluzioni/agente-ai-edilizia/"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "ai-export-internazionalizzazione-pmi",
+    "status": "drafted",
+    "archetype": "pillar",
+    "slug_it": "ai-export-internazionalizzazione-pmi",
+    "slug_en": "ai-export-market-expansion",
+    "title_hint": "Vendere all'estero con l'IA: agenti per analisi mercati, scouting prospect e localizzazione per le PMI che esportano",
+    "cluster": "ai-agents",
+    "primaryKeyword": "ai per internazionalizzazione pmi",
+    "targetPersona": "CEO / Export Manager",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/sales-marketing",
+      "/software-development"
+    ],
+    "dedupNotes": "No backlog item addresses export/internationalization, a core Italian-SMB priority. Distinct from outbound-B2B lead qualification: focus is foreign-market analysis, prospect scouting and multilingual localization.",
+    "freshnessExpiry": "2026-12-31",
+    "score": 66,
+    "subScores": {
+      "intent": 0.62,
+      "biz": 0.72,
+      "winnability": 0.6,
+      "freshness": 0.75,
+      "geo": 0.62
+    },
+    "sources": [
+      "topic-radar",
+      "https://forbes.it/2026/09/07/export-dati-e-ia-cosi-le-pmi-possono-trasformare-linternazionalizzazione-in-crescita",
+      "https://www.carlo-russo.it/blog/come-lintelligenza-artificiale-agentiva-sta-cambiando-lanalisi-dei-mercati-esteri-strumenti-e-limiti-per-le-pmi/"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "agente-ia-ufficio-gare-appalto",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "agente-ia-gare-appalto-bandi",
+    "slug_en": "ai-agent-tender-bid-office",
+    "title_hint": "Ufficio gare agentico: come un agente IA trova i bandi giusti e prepara la documentazione per le gare",
+    "cluster": "process-automation",
+    "primaryKeyword": "agente ai gare d'appalto",
+    "targetPersona": "COO / Responsabile ufficio gare",
+    "supportingCaseStudy": "startup-govtech",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/finance",
+      "/software-development"
+    ],
+    "dedupNotes": "No backlog item covers tender/bid search and document assembly (ricerca bandi, ufficio gare). Distinct, high-commercial niche for firms selling to the PA and large contractors; govtech case supports it.",
+    "freshnessExpiry": null,
+    "score": 65,
+    "subScores": {
+      "intent": 0.6,
+      "biz": 0.72,
+      "winnability": 0.65,
+      "freshness": 0.6,
+      "geo": 0.6
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.fareappalti.ai/",
+      "https://appalti.ai/"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "previsione-domanda-scorte-ai",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "previsione-domanda-scorte-ai",
+    "slug_en": "ai-demand-forecasting-inventory",
+    "title_hint": "Smettere di rincorrere gli ordini: previsione della domanda e riordino scorte con un agente IA",
+    "cluster": "process-automation",
+    "primaryKeyword": "previsione domanda scorte ai",
+    "targetPersona": "COO / Responsabile operations-magazzino",
+    "supportingCaseStudy": "40factory",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/finance",
+      "/software-development"
+    ],
+    "dedupNotes": "Manifatturiero post lists 5 generic use cases; this zooms into one specific, high-value supply-chain problem (demand planning, riordino automatico, rotture di stock) with its own keyword. Different search intent than the overview post.",
+    "freshnessExpiry": null,
+    "score": 65,
+    "subScores": {
+      "intent": 0.68,
+      "biz": 0.75,
+      "winnability": 0.55,
+      "freshness": 0.6,
+      "geo": 0.6
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.sivaf.it/demand-forecasting-previsione-domanda-pmi-manifatturiere/",
+      "https://tripdigitalsolutions.it/blog/ai-gestione-magazzino"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "agente-ia-email-aziendale",
+    "status": "drafted",
+    "archetype": "how-to",
+    "slug_it": "agente-ia-casella-email-aziendale",
+    "slug_en": "ai-agent-company-inbox",
+    "title_hint": "La casella info@ che nessuno riesce a smaltire: come un agente IA smista, risponde e assegna le email",
+    "cluster": "process-automation",
+    "primaryKeyword": "agente ai email aziendale",
+    "targetPersona": "COO / Office Manager",
+    "supportingCaseStudy": null,
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/customer-support",
+      "/finance"
+    ],
+    "dedupNotes": "Customer-service post is about client-facing replies; this targets internal shared inboxes (smistamento, categorizzazione, bozze, assegnazione) across ops/amministrazione. Distinct keyword and use case.",
+    "freshnessExpiry": null,
+    "score": 64,
+    "subScores": {
+      "intent": 0.68,
+      "biz": 0.7,
+      "winnability": 0.55,
+      "freshness": 0.65,
+      "geo": 0.6
+    },
+    "sources": [
+      "topic-radar",
+      "https://www.omarhandouk.com/blog/agent-ai-email-aziendale.html",
+      "https://virtualworkforce.ai/it/agente-ia-casella-di-posta-aziendale/"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
   }
 ]
