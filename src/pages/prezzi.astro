@@ -8,7 +8,7 @@ import "~/styles/prezzi.css";
 
 const title = "Prezzi | Soraia";
 const description =
-  "Un team che dà vita al software di cui hai bisogno. Sprint da 5.000 € al mese, Sprint Pro da 8.000 € con sicurezza e compliance dimostrabili, Partner da 12.000 €. Prezzo fisso, un rilascio ogni mese.";
+  "Un team che dà vita al software di cui hai bisogno. Sprint da 5.000 € al mese, Sprint Pro da 8.000 € con sicurezza dimostrabile e conformità a GDPR e AI Act, Partner da 12.000 €. Prezzo fisso, un rilascio ogni mese.";
 
 const faqs = [
   {
@@ -26,6 +26,10 @@ const faqs = [
   {
     q: "La documentazione sostituisce il DPO o il legale?",
     a: "No. Prepariamo la documentazione tecnica che il tuo DPO e il tuo legale usano per le loro valutazioni. La valutazione giuridica resta a loro.",
+  },
+  {
+    q: "Cosa fate per l’AI Act?",
+    a: "Classifichiamo il livello di rischio del sistema, prepariamo la documentazione tecnica e il registro delle decisioni, rendiamo esplicito all’utente quando sta interagendo con l’AI e documentiamo i punti di sorveglianza umana. Il riferimento è il Regolamento (UE) 2024/1689. Come per il GDPR, la valutazione giuridica resta al tuo legale.",
   },
   {
     q: "Cosa succede se a fine Sprint resta lavoro da fare?",
@@ -71,7 +75,7 @@ const jsonLd = [
         price: "8000",
         priceCurrency: "EUR",
         description:
-          "Tutto lo Sprint, più pentest esterno con report, documentazione tecnica per DPO e legale, log di audit, test di carico, SLA e CTO a tempo parziale. IVA esclusa.",
+          "Tutto lo Sprint, più pentest esterno con report, documentazione tecnica per DPO e legale su GDPR e AI Act, log di audit, test di carico, SLA e CTO a tempo parziale. IVA esclusa.",
       },
       {
         "@type": "Offer",
@@ -187,6 +191,7 @@ const confronto = {
     { label: "Codice e dati su account intestati a te", values: ["Incluso", "Incluso", "Incluso"] as [string, string, string] },
     { label: "Pentest esterno prima del rilascio, con report", values: ["No", "Incluso", "Incluso"] as [string, string, string] },
     { label: "Documentazione tecnica per DPO e legale (art. 32 GDPR, DPIA, flussi dati)", values: ["No", "Incluso", "Incluso"] as [string, string, string] },
+    { label: "Conformità all’AI Act (classificazione del rischio, documentazione, trasparenza)", values: ["No", "Incluso", "Incluso"] as [string, string, string] },
     { label: "Cifratura dei campi sensibili, log di audit, policy di conservazione", values: ["No", "Incluso", "Incluso"] as [string, string, string] },
     { label: "Test di carico, monitoraggio e SLA di disponibilità", values: ["No", "Incluso", "Incluso"] as [string, string, string] },
     { label: "CTO a tempo parziale", values: ["No", "Incluso", "Incluso"] as [string, string, string] },
@@ -225,7 +230,7 @@ const confronto = {
     <div class="container-soraia">
       <SectionHeader
         title="Lo stesso team e lo stesso metodo. Scegli il livello giusto per il tuo applicativo."
-        subtitle="Ogni livello costruisce software solido. Cambia quanto deve essere dimostrabile: sicurezza verificata, documentazione per il DPO, prestazioni garantite. Prezzi IVA esclusa."
+        subtitle="Ogni livello costruisce software solido. Cambia quanto deve essere dimostrabile: sicurezza verificata, documentazione per il DPO e per l’AI Act, prestazioni garantite. Prezzi IVA esclusa."
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
@@ -277,6 +282,7 @@ const confronto = {
             {[
               "Pentest esterno prima del rilascio, con report consegnabile",
               "Documentazione tecnica per DPO e legale: misure art. 32 GDPR, supporto alla DPIA, mappa dei flussi di dati",
+              "Conformità all’AI Act: classificazione del rischio, documentazione tecnica, trasparenza verso gli utenti e sorveglianza umana",
               "Cifratura dei campi sensibili, log di audit, policy di conservazione dei dati",
               "Test di carico, monitoraggio e SLA di disponibilità",
               "Davide Silvestri come CTO a tempo parziale sul tuo progetto",

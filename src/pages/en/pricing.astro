@@ -8,7 +8,7 @@ import "~/styles/prezzi.css";
 
 const title = "Pricing | Soraia";
 const description =
-  "A team that brings to life the software you need. Sprint from €5,000 a month, Sprint Pro from €8,000 with demonstrable security and compliance, Partner from €12,000. Fixed price, one release every month.";
+  "A team that brings to life the software you need. Sprint from €5,000 a month, Sprint Pro from €8,000 with demonstrable security and compliance with GDPR and the AI Act, Partner from €12,000. Fixed price, one release every month.";
 
 const faqs = [
   {
@@ -26,6 +26,10 @@ const faqs = [
   {
     q: "Does the documentation replace my DPO or my lawyer?",
     a: "No. We prepare the technical documentation your DPO and your legal team use for their assessments. The legal judgement stays with them.",
+  },
+  {
+    q: "What do you do about the AI Act?",
+    a: "We classify the risk level of the system, prepare the technical documentation and the record of decisions, make it explicit to users when they are interacting with AI, and document the human oversight points. The reference is Regulation (EU) 2024/1689. As with the GDPR, the legal judgement stays with your lawyer.",
   },
   {
     q: "What happens if work is left over at the end of a Sprint?",
@@ -71,7 +75,7 @@ const jsonLd = [
         price: "8000",
         priceCurrency: "EUR",
         description:
-          "Everything in Sprint, plus an external pentest with a report, technical documentation for your DPO and legal team, audit logs, load tests, SLAs and a part-time CTO. VAT excluded.",
+          "Everything in Sprint, plus an external pentest with a report, technical documentation for your DPO and legal team on GDPR and the AI Act, audit logs, load tests, SLAs and a part-time CTO. VAT excluded.",
       },
       {
         "@type": "Offer",
@@ -187,6 +191,7 @@ const confronto = {
     { label: "Code and data on accounts in your name", values: ["Included", "Included", "Included"] as [string, string, string] },
     { label: "External pentest before release, with a report", values: ["No", "Included", "Included"] as [string, string, string] },
     { label: "Technical documentation for DPO and legal (art. 32 GDPR, DPIA, data flows)", values: ["No", "Included", "Included"] as [string, string, string] },
+    { label: "AI Act compliance (risk classification, documentation, transparency)", values: ["No", "Included", "Included"] as [string, string, string] },
     { label: "Encryption of sensitive fields, audit logs, retention policy", values: ["No", "Included", "Included"] as [string, string, string] },
     { label: "Load testing, monitoring and availability SLA", values: ["No", "Included", "Included"] as [string, string, string] },
     { label: "Part-time CTO", values: ["No", "Included", "Included"] as [string, string, string] },
@@ -225,7 +230,7 @@ const confronto = {
     <div class="container-soraia">
       <SectionHeader
         title="The same team and the same method. Pick the right level for your application."
-        subtitle="Every level builds solid software. What changes is how demonstrable it has to be: verified security, documentation for your DPO, guaranteed performance. Prices exclude VAT."
+        subtitle="Every level builds solid software. What changes is how demonstrable it has to be: verified security, documentation for your DPO and the AI Act, guaranteed performance. Prices exclude VAT."
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
@@ -277,6 +282,7 @@ const confronto = {
             {[
               "External pentest before release, with a report you can hand over",
               "Technical documentation for your DPO and legal team: art. 32 GDPR measures, DPIA support, a map of the data flows",
+              "AI Act compliance: risk classification of the system, technical documentation, transparency towards users and human oversight",
               "Encryption of sensitive fields, audit logs, data retention policy",
               "Load testing, monitoring and availability SLA",
               "Davide Silvestri as a part-time CTO on your project",
