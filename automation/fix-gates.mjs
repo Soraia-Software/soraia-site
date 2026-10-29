@@ -77,7 +77,7 @@ for (const itPath of files) {
 
   const user = [
     REWRITE
-      ? "A Soraia blog draft has FAILED the quality gates repeatedly and minimal edits keep oscillating (fixing one gate re-breaks another). REWRITE the article IN FULL (IT + EN) so it passes EVERY gate at once. Keep the topic, the approved numbers, the operationally-honest voice and the 'paghi solo se funziona' guarantee, but you may freely restructure sections, headings, the TL;DR block and wording. Resolve all flagged issues together rather than one at a time."
+      ? "A Soraia blog draft has FAILED the quality gates repeatedly and minimal edits keep oscillating (fixing one gate re-breaks another). REWRITE the article IN FULL (IT + EN) so it passes EVERY gate at once. Keep the topic, the approved numbers, the operationally-honest voice and the 'primo mese soddisfatti o rimborsati' guarantee, but you may freely restructure sections, headings, the TL;DR block and wording. Resolve all flagged issues together rather than one at a time."
       : "A Soraia blog draft FAILED one or more quality gates. Apply the MINIMAL edits needed to resolve EXACTLY the flagged issues. Do not rewrite the article, do not change the voice or the argument, do not touch anything unrelated to a finding. If a finding is NOT fixable by editing the text (e.g. the topic substantially overlaps an existing post), leave the files unchanged and say so in `changes`.",
     "",
     "GATE FINDINGS TO RESOLVE:\n" + findings,
