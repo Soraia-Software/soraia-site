@@ -161,7 +161,7 @@
   },
   {
     "id": "ai-agency-vs-big4",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "ai-agency-specializzata-vs-big4",
     "slug_en": "specialized-ai-agency-vs-big4",
     "categoria": "Fornitori",
@@ -189,7 +189,7 @@
       "seed"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-10-25"
   },
   {
     "id": "sostituire-vs-affiancare-gestionale",
@@ -505,7 +505,7 @@
   },
   {
     "id": "rag-vs-fine-tuning",
-    "status": "parked",
+    "status": "drafted",
     "slug_it": "rag-vs-fine-tuning",
     "slug_en": "rag-vs-fine-tuning",
     "categoria": "Architettura AI",
@@ -536,7 +536,7 @@
       "https://datamotion.com/rag-vs-fine-tuning/"
     ],
     "discovered_at": "2026-07-16",
-    "drafted_at": null
+    "drafted_at": "2026-10-25"
   },
   {
     "id": "chatgpt-enterprise-vs-copilot",
@@ -1618,6 +1618,359 @@
       "https://briefme.one/blog/verbali-di-riunione-2-0-creare-un-verbale-con-l-ai-in-pochi-minuti"
     ],
     "discovered_at": "2026-09-25",
+    "drafted_at": null
+  },
+  {
+    "id": "salesforce-agentforce-vs-agente-ia-su-misura",
+    "status": "drafted",
+    "slug_it": "salesforce-agentforce-vs-agente-ia-su-misura",
+    "slug_en": "salesforce-agentforce-vs-custom-ai-agent",
+    "categoria": "Platform vs Custom (build-vs-buy)",
+    "optionA_name": "Salesforce Agentforce (agenti pronti sulla piattaforma)",
+    "optionB_name": "Agente IA su misura (build custom, di proprieta)",
+    "title_hint": "Salesforce Agentforce o agente IA su misura: cosa conviene alla tua PMI",
+    "primaryKeyword": "Salesforce Agentforce vs agente IA su misura",
+    "targetPersona": "COO / Head of CRM / Sales Ops",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/customer-support",
+      "/sales-marketing",
+      "/software-development",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: backlog has copilot-studio and SaaS-verticale build-vs-buy, but no Agentforce-specific decision. Agentforce is a distinct, vendor-specific, high-search topic (Agentforce World Tour/Summit 2026 Italy).",
+    "freshnessExpiry": "2027-10-25",
+    "score": 86,
+    "subScores": {
+      "intent": 0.9,
+      "biz": 0.9,
+      "winnability": 0.8,
+      "freshness": 0.95,
+      "geo": 0.75
+    },
+    "sources": [
+      "confronto-radar",
+      "https://sombrainc.com/blog/salesforce-agentforce-vs-custom-ai-agents",
+      "https://atlan.com/know/ai-agent/ai-agent-applications/agentforce-vs-building-agents-in-house/",
+      "https://forbes.it/2026/06/23/agentforce-world-tour-2026-salesforce-guida-la-trasformazione-verso-un-modello-di-ai-agentica"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "openai-agentkit-vs-agente-ia-su-misura",
+    "status": "drafted",
+    "slug_it": "openai-agentkit-vs-agente-ia-su-misura",
+    "slug_en": "openai-agentkit-vs-custom-ai-agent",
+    "categoria": "Platform vs Custom (build-vs-buy)",
+    "optionA_name": "OpenAI AgentKit (builder di agenti pronto)",
+    "optionB_name": "Agente IA su misura integrato nei processi",
+    "title_hint": "OpenAI AgentKit o agente IA su misura: quando basta il builder e quando serve il custom",
+    "primaryKeyword": "OpenAI AgentKit vs agente IA su misura",
+    "targetPersona": "CTO / IT Manager / Innovation Manager",
+    "internalLinkTargets": [
+      "/ai-agents",
+      "/software-development",
+      "/ai-adoption",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: no AgentKit entry in backlog; distinct from copilot-studio (Microsoft) and no-code tools. AgentKit is a 2025/2026 OpenAI launch, highly citable fresh decision.",
+    "freshnessExpiry": "2027-06-30",
+    "score": 81,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.85,
+      "winnability": 0.8,
+      "freshness": 0.95,
+      "geo": 0.6
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.sim.ai/comparisons/openai-agentkit",
+      "https://www.eesel.ai/blog/openai-agentkit-pricing",
+      "https://inkeep.com/blog/make-vs-openai-agentkit"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "agenzia-ai-vs-software-house-tradizionale",
+    "status": "drafted",
+    "slug_it": "agenzia-ai-vs-software-house-tradizionale",
+    "slug_en": "ai-agency-vs-traditional-software-house",
+    "categoria": "Who to hire (partner choice)",
+    "optionA_name": "Agenzia AI specializzata (agenti IA + software su misura)",
+    "optionB_name": "Software house tradizionale",
+    "title_hint": "Agenzia AI o software house tradizionale: a chi affidare il progetto",
+    "primaryKeyword": "agenzia AI vs software house tradizionale",
+    "targetPersona": "CEO / COO PMI",
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/case-studies/40factory",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: distinct from agenzia-ai-vs-team-interno, consulente-ai-freelance-vs-agenzia-ai, and the parked ai-agency-vs-big4. This compares an AI-native agency vs a classic software house (process/delivery model), Soraia's exact positioning.",
+    "freshnessExpiry": null,
+    "score": 81,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.9,
+      "winnability": 0.75,
+      "freshness": 0.5,
+      "geo": 0.85
+    },
+    "sources": [
+      "confronto-radar",
+      "https://atlan.com/know/ai-agent/ai-agent-applications/agentforce-vs-building-agents-in-house/",
+      "https://sombrainc.com/blog/salesforce-agentforce-vs-custom-ai-agents"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "ai-sdr-platform-vs-agente-ia-su-misura",
+    "status": "drafted",
+    "slug_it": "ai-sdr-pronto-vs-agente-ia-su-misura",
+    "slug_en": "ready-ai-sdr-tool-vs-custom-ai-agent",
+    "categoria": "Platform vs Custom (build-vs-buy)",
+    "optionA_name": "AI SDR pronto (tool in abbonamento, es. 11x/Artisan)",
+    "optionB_name": "Agente IA SDR su misura sui tuoi dati e CRM",
+    "title_hint": "AI SDR pronto o agente IA su misura: quale genera piu pipeline",
+    "primaryKeyword": "AI SDR vs agente IA su misura vendite",
+    "targetPersona": "Head of Sales / Sales Ops",
+    "internalLinkTargets": [
+      "/sales-marketing",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: backlog's ai-sdr-vs-agenzia-lead-generation compares AI vs a traditional agency. This is the build-vs-buy fork (ready AI SDR SaaS vs bespoke agent), a different decision with its own search intent.",
+    "freshnessExpiry": "2027-06-30",
+    "score": 80,
+    "subScores": {
+      "intent": 0.85,
+      "biz": 0.85,
+      "winnability": 0.75,
+      "freshness": 0.8,
+      "geo": 0.65
+    },
+    "sources": [
+      "confronto-radar",
+      "https://overloop.com/blog/9-best-ai-agent-tools-for-sales",
+      "https://aisdr.com/blog/ai-sdr-vs-ai-agent/",
+      "https://www.salesforge.ai/blog/ai-sales-agents"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "analisi-contratti-ia-vs-consulenza-legale",
+    "status": "drafted",
+    "slug_it": "analisi-contratti-ia-vs-consulenza-legale",
+    "slug_en": "ai-contract-review-vs-legal-counsel",
+    "categoria": "AI vs traditional service",
+    "optionA_name": "Analisi contratti con agente IA (clausole, rischi)",
+    "optionB_name": "Revisione contratti con consulenza legale / avvocato",
+    "title_hint": "Analisi contratti con IA o avvocato: quando usare l'uno, quando l'altro",
+    "primaryKeyword": "analisi contratti con IA vs consulenza legale",
+    "targetPersona": "COO / Legal & Compliance / Titolare PMI",
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/guide/ai-act-aziende",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: no legal/contract-review comparison in backlog. Ties to Soraia's compliance (GDPR/AI Act) use cases; the parked traduzione-ia topic is a different service.",
+    "freshnessExpiry": "2027-10-25",
+    "score": 73,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.7,
+      "winnability": 0.65,
+      "freshness": 0.75,
+      "geo": 0.75
+    },
+    "sources": [
+      "confronto-radar",
+      "https://aihero.it/analisi-contratti-ai/",
+      "https://www.advant-nctm.com/news-e-approfondimenti/lai-in-azienda-alza-la-posta-per-lavvocato",
+      "https://www.agendadigitale.eu/documenti/ai-per-avvocati-e-commercialisti-ecco-gli-usi-e-le-soluzioni-sul-mercato/"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "agente-ia-social-media-vs-social-media-manager",
+    "status": "drafted",
+    "slug_it": "agente-ia-social-media-vs-social-media-manager",
+    "slug_en": "ai-social-media-agent-vs-social-media-manager",
+    "categoria": "AI vs traditional service",
+    "optionA_name": "Agente IA per i social media (su misura)",
+    "optionB_name": "Social media manager / agenzia social tradizionale",
+    "title_hint": "Agente IA per i social o social media manager: cosa scegliere per la tua PMI",
+    "primaryKeyword": "agente IA social media vs social media manager",
+    "targetPersona": "Marketing Manager / Titolare PMI",
+    "internalLinkTargets": [
+      "/sales-marketing",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: backlog's contenuti-marketing-ia-vs-agenzia-copywriting covers content/copy, not social-media management (planning, publishing multi-canale, community). Distinct role and workflow.",
+    "freshnessExpiry": null,
+    "score": 72,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.7,
+      "winnability": 0.65,
+      "freshness": 0.6,
+      "geo": 0.8
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.postpickr.com/futuro-del-social-media-management/",
+      "https://www.socialmentemedia.it/blog/intelligenza-artificiale-e-social-media-manager",
+      "https://www.studium.it/come-lai-puo-supportare-il-lavoro-dei-social-media-manager/"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "agente-ia-help-desk-it-vs-supporto-it-outsourcing",
+    "status": "drafted",
+    "slug_it": "agente-ia-help-desk-it-vs-supporto-it-outsourcing",
+    "slug_en": "ai-it-help-desk-vs-outsourced-it-support",
+    "categoria": "AI vs traditional service",
+    "optionA_name": "Agente IA per l'help desk IT interno",
+    "optionB_name": "Help desk IT in outsourcing (MSP / service desk esterno)",
+    "title_hint": "Agente IA per l'help desk IT o supporto IT in outsourcing: cosa conviene",
+    "primaryKeyword": "agente IA help desk IT vs supporto IT outsourcing",
+    "targetPersona": "IT Manager / COO",
+    "internalLinkTargets": [
+      "/customer-support",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: backlog's outsourcing-bpo-vs-agente-ia-support targets external customer support (BPO). This is internal IT help desk (L1/ticketing) vs an IT MSP, a distinct buyer and workflow.",
+    "freshnessExpiry": null,
+    "score": 72,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.7,
+      "winnability": 0.7,
+      "freshness": 0.6,
+      "geo": 0.75
+    },
+    "sources": [
+      "confronto-radar",
+      "https://bulltech.it/servizi/help-desk-outsourcing",
+      "https://bulltech.it/blog/help-desk-outsourcing-guida-pmi"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": "2026-10-25"
+  },
+  {
+    "id": "demand-forecasting-ia-vs-forecasting-excel",
+    "status": "parked",
+    "slug_it": "previsione-domanda-ia-vs-forecasting-excel",
+    "slug_en": "ai-demand-forecasting-vs-excel",
+    "categoria": "AI vs manual tool",
+    "optionA_name": "Previsione della domanda con IA (agente su misura)",
+    "optionB_name": "Forecasting manuale in Excel",
+    "title_hint": "Previsione della domanda con IA o in Excel: cosa cambia davvero",
+    "primaryKeyword": "previsione domanda con IA vs Excel",
+    "targetPersona": "Operations / Supply Chain Manager / CFO",
+    "internalLinkTargets": [
+      "/finance",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: distinct from the parked report-ia-vs-report-manuale-excel (recurring reporting) and published analisi-dati-conversazionale-vs-dashboard-bi. This is predictive planning (demand forecasting), a specific ops/finance use case.",
+    "freshnessExpiry": null,
+    "score": 70,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.7,
+      "winnability": 0.65,
+      "freshness": 0.7,
+      "geo": 0.7
+    },
+    "sources": [
+      "confronto-radar",
+      "https://dcommerce.it/tecnologia/ia-machine-learning/demand-forecasting-2/",
+      "https://www.sivaf.it/demand-forecasting-previsione-domanda-pmi-manifatturiere/",
+      "https://www.liuc.it/ricerca/in-evidenza/i-log-centro-sulla-logistica-e-la-supply-chain/formazione/la-previsione-della-domanda/"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": null
+  },
+  {
+    "id": "gemini-vs-chatgpt-aziende",
+    "status": "parked",
+    "slug_it": "gemini-vs-chatgpt-per-le-aziende",
+    "slug_en": "gemini-vs-chatgpt-for-business",
+    "categoria": "LLM selection for business",
+    "optionA_name": "Google Gemini",
+    "optionB_name": "ChatGPT (OpenAI)",
+    "title_hint": "Gemini o ChatGPT per le aziende: quale conviene nel 2026",
+    "primaryKeyword": "Gemini vs ChatGPT per le aziende",
+    "targetPersona": "General Manager / IT Manager PMI",
+    "internalLinkTargets": [
+      "/ai-adoption",
+      "/guide/formazione-ai-aziendale",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: backlog has claude-vs-chatgpt (published) but not Gemini-vs-ChatGPT, a distinct and heavily searched 2026 business comparison (Workspace vs OpenAI). Not the parked Gemini-Workspace-vs-Copilot (different pair).",
+    "freshnessExpiry": "2027-06-30",
+    "score": 69,
+    "subScores": {
+      "intent": 0.8,
+      "biz": 0.6,
+      "winnability": 0.6,
+      "freshness": 0.85,
+      "geo": 0.7
+    },
+    "sources": [
+      "confronto-radar",
+      "https://neuraltrust.ai/blog/gemini-vs-chatgpt-benchmark",
+      "https://pasqualepillitteri.it/en/news/3713/chatgpt-vs-claude-vs-gemini-2026",
+      "https://biz-academy.it/gemini-vs-chatgpt-quale-conviene/"
+    ],
+    "discovered_at": "2026-10-25",
+    "drafted_at": null
+  },
+  {
+    "id": "cursor-vs-github-copilot",
+    "status": "parked",
+    "slug_it": "cursor-vs-github-copilot-team-sviluppo",
+    "slug_en": "cursor-vs-github-copilot-dev-teams",
+    "categoria": "Coding agent selection",
+    "optionA_name": "Cursor",
+    "optionB_name": "GitHub Copilot",
+    "title_hint": "Cursor o GitHub Copilot: quale coding agent per il team di sviluppo",
+    "primaryKeyword": "Cursor vs GitHub Copilot per team di sviluppo",
+    "targetPersona": "CTO / Lead Developer PMI software",
+    "internalLinkTargets": [
+      "/software-development",
+      "/ai-agents",
+      "/parliamone"
+    ],
+    "dedupNotes": "Net-new: backlog's claude-code-vs-sviluppo-tradizionale compares AI coding vs traditional dev; this is a tool-vs-tool choice for teams already adopting AI coding. Soraia runs software development, so winnable, though more dev-focused.",
+    "freshnessExpiry": "2027-06-30",
+    "score": 59,
+    "subScores": {
+      "intent": 0.75,
+      "biz": 0.55,
+      "winnability": 0.5,
+      "freshness": 0.75,
+      "geo": 0.4
+    },
+    "sources": [
+      "confronto-radar",
+      "https://www.digitalocean.com/resources/articles/github-copilot-vs-cursor",
+      "https://www.tembo.io/blog/cursor-vs-copilot",
+      "https://www.f22labs.com/blogs/cursor-vs-github-copilot-a-comparative-guide/"
+    ],
+    "discovered_at": "2026-10-25",
     "drafted_at": null
   }
 ]

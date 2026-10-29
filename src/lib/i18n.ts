@@ -33,6 +33,15 @@ export const GUIDE_SLUG_MAP: Record<string, string> = {
 };
 // IT confronto slug -> EN slug. Filled by automation/confronto-author.mjs as pairs are created.
 export const CONFRONTO_SLUG_MAP: Record<string, string> = {
+  "rag-vs-fine-tuning": "rag-vs-fine-tuning",
+  "ai-agency-specializzata-vs-big4": "specialized-ai-agency-vs-big4",
+  "agente-ia-help-desk-it-vs-supporto-it-outsourcing": "ai-it-help-desk-vs-outsourced-it-support",
+  "agente-ia-social-media-vs-social-media-manager": "ai-social-media-agent-vs-social-media-manager",
+  "analisi-contratti-ia-vs-consulenza-legale": "ai-contract-review-vs-legal-counsel",
+  "ai-sdr-pronto-vs-agente-ia-su-misura": "ready-ai-sdr-tool-vs-custom-ai-agent",
+  "agenzia-ai-vs-software-house-tradizionale": "ai-agency-vs-traditional-software-house",
+  "openai-agentkit-vs-agente-ia-su-misura": "openai-agentkit-vs-custom-ai-agent",
+  "salesforce-agentforce-vs-agente-ia-su-misura": "salesforce-agentforce-vs-custom-ai-agent",
   "crm-con-agenti-ia-vs-crm-tradizionale": "ai-agent-crm-vs-traditional-crm",
   "assumere-junior-vs-agente-ia": "hiring-junior-vs-ai-agent",
   "knowledge-base-ia-vs-wiki-aziendale": "ai-knowledge-base-vs-company-wiki",
@@ -73,6 +82,19 @@ export const CONFRONTO_SLUG_MAP: Record<string, string> = {
   "ai-in-casa-vs-partner": "ai-in-house-vs-partner",
 };
 export const BLOG_SLUG_MAP: Record<string, string> = {
+  "agente-ia-casella-email-aziendale": "ai-agent-company-inbox",
+  "previsione-domanda-scorte-ai": "ai-demand-forecasting-inventory",
+  "agente-ia-gare-appalto-bandi": "ai-agent-tender-bid-office",
+  "ai-export-internazionalizzazione-pmi": "ai-export-market-expansion",
+  "preventivi-edilizia-computo-metrico-ai": "ai-construction-estimating",
+  "agenti-ia-hotel-strutture-ricettive": "ai-agents-hospitality",
+  "agenti-ia-studi-legali": "ai-agents-law-firms",
+  "controllo-gestione-report-direzionali-ai": "ai-management-reporting-cfo",
+  "assistente-ia-documenti-aziendali": "internal-knowledge-base-ai-assistant",
+  "agenti-ia-agenzie-immobiliari": "ai-agents-real-estate-agencies",
+  "poc-ai-dal-pilota-alla-produzione": "ai-pilot-to-production",
+  "centralino-ai-vocale-aziende": "ai-voice-agent-phone-business",
+  "vendor-lock-in-proprieta-codice-ai": "vendor-lock-in-code-ownership-ai",
   "voucher-cloud-cybersecurity-2026-finanziare-ai": "voucher-cloud-cybersecurity-2026-fund-ai",
   "adozione-ai-pmi-italiane-dati-2026": "ai-adoption-italian-smb-data-2026",
   "calcolo-provvigioni-automatico-agente-ia": "automated-commission-calculation-ai",
