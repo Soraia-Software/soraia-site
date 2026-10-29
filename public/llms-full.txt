@@ -49,15 +49,17 @@ comprano pacchetti di ore. Sprint: 5.000 euro al mese, anche solo un mese, consi
 applicativi interni o meno strategici; include Account Manager, Project Manager e AI
 Engineer, lo Sprint Goal firmato a inizio mese, la demo a metà mese, il rilascio a fine
 mese, crittografia dei dati, backup, accessi per ruolo, sviluppo secondo le best practice
-OWASP e il portale cliente. Sprint Pro: 8.000 euro al mese, per applicativi critici, con
-un massimo di 3 clienti alla volta; aggiunge il pentest esterno prima del rilascio con
+OWASP e il portale cliente. Sprint Pro: 8.000 euro al mese, anche solo un mese come lo
+Sprint (nessun impegno minimo: solo Partner ne ha uno, di 3 mesi), per applicativi
+critici, con un massimo di 3 clienti alla volta; aggiunge il pentest esterno prima del rilascio con
 report consegnabile, la documentazione tecnica per DPO e legale (misure art. 32 GDPR,
 supporto alla DPIA, mappa dei flussi di dati), la conformita' all'AI Act (classificazione
 del rischio del sistema, documentazione tecnica, trasparenza verso gli utenti e
 sorveglianza umana, Regolamento (UE) 2024/1689), la cifratura dei campi sensibili, i log di
 audit, la policy di conservazione, i test di carico, il monitoraggio e gli SLA di
-disponibilità, Davide Silvestri come CTO a tempo parziale e l'avvio entro 5 giorni
-lavorativi. Partner: da 12.000 euro al mese con un minimo di 3 mesi; aggiunge il team
+disponibilità, l'import dello storico e la migrazione dei dati dai sistemi in uso, Davide
+Silvestri come CTO a tempo parziale, l'avvio entro 5 giorni lavorativi e tre mesi di
+richieste di cambiamento incluse dopo il rilascio. Partner: da 12.000 euro al mese con un minimo di 3 mesi; aggiunge il team
 continuo, la review trimestrale sui risultati, Hypercare inclusa e la priorità su
 richieste e urgenze. Hypercare: da 500 euro al mese con contratto annuale, opzionale dopo
 il go-live. Un costruttore sulla pagina compone il percorso e mostra il totale.
