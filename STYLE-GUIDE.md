@@ -27,17 +27,26 @@ section rather than inventing a new treatment.
   `/analisi-processi` deck is noindex, the service is requested from `/parliamone`) and
   *AI Engineering* (sprint-based development, first release in production in 4 weeks).
   "Da dove partire dipende da te."
-- **Pricing lives on `/prezzi` only**: hour packages from **45 h = 3.000 €/month, 67 €/h,
-  1.000 € steps (15 h), up to 195 h**, or fixed-price from **5.000 € per first release**.
-  **Three dedicated people, one per role: Account Manager, Project Manager, AI Engineer.**
-  "Anche solo per un mese." Guarantee: **primo mese soddisfatti o rimborsati**.
+- **Pricing lives on `/prezzi` only**, and it is **monthly Sprints, never hour packages**:
+  **Sprint 5.000 €/month** (the solid base, also for a single month), **Sprint Pro
+  8.000 €/month** (demonstrable security and compliance, badge "Posti limitati", max 3 Pro
+  clients at a time), **Partner from 12.000 €/month** (3-month minimum). **Hypercare from
+  500 €/month**, annual contract, optional after go-live, and it maintains rather than
+  builds: new features go into a Sprint. All prices VAT excluded.
+  **Three dedicated people, one per role: Account Manager, Project Manager, AI Engineer**,
+  one release in production every Sprint. "Anche solo per un mese." Guarantee: **primo mese
+  soddisfatti o rimborsati**. The part-time CTO on Sprint Pro is **Davide Silvestri**, never
+  a placeholder name.
 - **Team**: "più di 10 persone" (never a fixed 10 or 11), **distributed in Italy**, 100%
   remote, registered office in Biella. The response-time line is always "Daniel, Veronica e Paolo ti rispondono entro 24 ore." (EN "Daniel, Veronica and Paolo reply within 24 hours."), never a Daniel-only version.
 - **Stats**: "40+ progetti consegnati". Never "in 11 paesi".
 - **Retired old-site concepts** (do not reintroduce): AI Readiness Assessment, "assessment
   iniziale 1-2 settimane", AI Adoption workshop as a pillar, Co-Building Sprint, the week-by-week
   sprint timeline, "Stack agnostic", the Xano/WeWeb featured row, "se non funziona non paghi",
-  "rimborsiamo lo sprint", "due figure dedicate", "Nessun vincolo di durata", 43 ore.
+  "rimborsiamo lo sprint", "due figure dedicate", "Nessun vincolo di durata", 43 ore, and the
+  whole **hour-package model** retired on 2026-10-29: "45 ore", "195 ore", "67 €/ora",
+  "scaglioni da 1.000 €", "monte ore combinato", "pacchetti di ore", the "a corpo" fixed-price
+  alternative and the hours slider. The portal shows Sprint progress, not hours per person.
   `/downloads/ai-assessment-sample` still exists but is noindex, out of the sitemap and unlinked.
 - `public/llms.txt` and `public/llms-full.txt` restate all of the above for AI answer engines:
   update them whenever one of these facts changes.
@@ -140,17 +149,18 @@ Use the `.btn` classes, never ad-hoc button styling:
 ## 7. Components to reuse (don't re-implement)
 
 - `SectionHeader` — every section intro.
-- `PricingCalculator` — the two-model pricing. **Ore**: base 45h = 3.000€, then steps of
-  1.000€ = 15h (slider `step=15`), up to 195h = 13.000€. Real rate is `200/3` =
-  66,6667 €/h but **displayed as 67€/ora** so every €1.000 tier lands on a round
-  thousand; price is `Math.round(...)`. **A corpo**: from 5.000€/primo rilascio, and the
-  client does **not** see the hours worked, keep that invariant.
+- `PathBuilder` — the "costruisci il tuo percorso" island on `/prezzi` and `/en/pricing`
+  (it replaced `PricingCalculator`, deleted 2026-10-29). Level Sprint 5.000€ / Sprint Pro
+  8.000€, 1 to 6 months, Hypercare checkbox on by default. **Totale = mesi × tariffa**;
+  Hypercare shows as a recurring "da 500€/mese" line and **never adds to the total**.
+  Default state is Sprint Pro / 3 mesi = 24.000€. Real `<button>`s with `aria-pressed`
+  and `aria-label` on +/−. Thousands are grouped manually, as everywhere else.
 - `SprintRoadmap` — the mountain + sprint timeline + "aggiorna le priorità" reorder,
   shared by `/analisi-processi` and `/ai-engineering`.
 - `PricingTwoSteps` — the "Da dove partire dipende da te" two-card block (01 Analisi dei
   processi / 02 AI Engineering, or Discovery & Scoping / Build Sprint with `variant="software"`),
   used on `/ai-agents` and `/software-development`. Pricing tail: three dedicated people, from
-  3.000 €/month, even for a single month.
+  5.000 €/month, even for a single month.
 - Team row (homepage "Il tuo team") — one slow looping **row of cards** (photo 4:5, name and
   surname, role in accent) on a `.bg-tech-grid` band; pure CSS marquee (set duplicated,
   `translateX(-50%)`, pause on hover, respects reduced-motion). Roles are data in the page.
