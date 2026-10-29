@@ -20,7 +20,7 @@ faq:
   - q: "Cos'è un agente AI per un'agenzia immobiliare?"
     a: "È un software che esegue un task operativo ripetitivo in autonomia: capture degli immobili da un portale, arricchimento dei dati, match tra richiesta del cliente e stock disponibile, o generazione di un dossier comparativo. Riceve un trigger, esegue, e notifica l'agente umano solo quando serve una decisione. Non è un chatbot generico, è un processo automatizzato sui tuoi dati."
   - q: "Quanto costa un agente AI per un'agenzia immobiliare?"
-    a: "In Soraia si lavora a pacchetti di ore (da <strong>3.000 € al mese per 45 ore</strong> con tre persone dedicate) oppure a corpo (<strong>da 5.000 € per un primo rilascio</strong>). Il primo agente in produzione gira sui processi reali in <strong>4 settimane</strong>. Primo mese soddisfatti o rimborsati."
+    a: "In Soraia si lavora a Sprint mensili: <strong>da 5.000 € al mese</strong>, con tre persone dedicate e un rilascio in produzione a fine mese. Il primo agente in produzione gira sui processi reali in <strong>4 settimane</strong>. Primo mese soddisfatti o rimborsati."
   - q: "L'agente AI sostituisce l'agente immobiliare?"
     a: "No. L'AI toglie il lavoro di raccolta, data entry e matching, non la relazione con il cliente né la trattativa. In <a href=\"/case-studies/frh\">French Riviera Househunting</a> due agenti IA gestiscono lead qualificati e capture immobili, ma la chiusura resta umana. L'obiettivo è restituire ore alla vendita, non eliminare il venditore."
   - q: "Da dove conviene partire?"
@@ -47,7 +47,7 @@ L'**agente AI per l'agenzia immobiliare** attacca esattamente quel tempo morto. 
 
 **In breve:**
 - Un agente AI immobiliare automatizza i task operativi ad alto volume (capture, enrichment, match, dossier), non la relazione con il cliente né la trattativa.
-- In Soraia il primo agente gira sui processi reali in **4 settimane**, a partire da **3.000 € al mese** o **5.000 € a corpo** per un primo rilascio.
+- In Soraia il primo agente gira sui processi reali in **4 settimane**, a partire da **5.000 € al mese**, con un rilascio in produzione a fine mese.
 - In [French Riviera Househunting](/case-studies/frh) due agenti IA gestiscono lead qualificati e capture immobili; la chiusura resta umana.
 - Si parte dal data entry, non dal match: senza dati puliti a monte, il matching produce solo rumore.
 - Il match cliente-immobile ricade in rischio limitato dell'AI Act in vigore da agosto 2026: serve trasparenza e audit log, non obblighi pesanti.

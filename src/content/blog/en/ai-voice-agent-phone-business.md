@@ -23,7 +23,7 @@ faq:
   - q: "Will an AI phone agent scare customers away?"
     a: "It depends on two things: voice quality and the escalation path. If the agent never understands and never hands off to a human, yes, you lose calls. Our rule at Soraia: after two failed attempts to understand, hand off to a person immediately. An AI phone agent should filter the repetitive, not trap people with a real problem."
   - q: "How much does an AI phone agent cost for an SME?"
-    a: "At Soraia we do not sell a fixed subscription: we work in sprints. A first fixed-scope release starts at <strong>€5,000</strong>, or hour packages from <strong>€3,000/month</strong> (45 hours, three dedicated people). The first release runs on your real flows in 4 weeks. Compare the cost to your current baseline: what missed calls and switchboard time cost you today."
+    a: "At Soraia we do not sell a fixed subscription: we work in sprints. A Sprint starts at <strong>€5,000/month</strong>: three dedicated people and a release in production at the end of the month. The first release runs on your real flows in 4 weeks. Compare the cost to your current baseline: what missed calls and switchboard time cost you today."
   - q: "Is it compatible with the AI Act and GDPR?"
     a: "A customer-facing AI phone agent usually falls under the AI Act limited-risk tier: the main obligation is to tell the caller they are talking to an AI system. For GDPR you need an Article 28 DPA, call logging with a clear legal basis, and EU hosting where required. At Soraia audit logs, DPA and EU hosting are included by default."
   - q: "AI phone agent or a WhatsApp/chat agent?"
@@ -98,7 +98,7 @@ An AI phone agent that talks to external customers is almost always **limited ri
 
 ## How we approach it at Soraia
 
-We do not sell a black-box subscription. We start from the baseline (volumes, missed calls, average duration, request types), define a tight scope (which intents the agent handles, which it hands off), and ship a first live agent on your real flows in **4 weeks**. First fixed-scope release from **€5,000**, or hour packages from **€3,000/month**. Code and data stay yours. And the guarantee holds: first month satisfied or refunded.
+We do not sell a black-box subscription. We start from the baseline (volumes, missed calls, average duration, request types), define a tight scope (which intents the agent handles, which it hands off), and ship a first live agent on your real flows in **4 weeks**. First release with a Sprint from **€5,000/month**. Code and data stay yours. And the guarantee holds: first month satisfied or refunded.
 
 Often the AI phone agent does not live alone: it integrates with the [sales and marketing](/en/sales-marketing) flow (an info call that becomes a qualified lead) and with the rest of customer support. The channel is the phone, the brain is the same.
 

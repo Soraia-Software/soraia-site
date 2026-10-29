@@ -67,7 +67,7 @@ faq:
   - q: "Un agente IA puo' sostituire del tutto il social media manager?"
     a: "No, non per la parte che conta di piu'. L'agente IA e' fortissimo sul lavoro ripetitivo: <strong>programmazione, pubblicazione multi-canale, bozze e triage dei commenti</strong>. Strategia, creativita' originale e gestione delle situazioni delicate restano un lavoro umano. Il modello che funziona di piu' nelle PMI e' un manager (interno o agenzia) che usa un agente IA per scalare l'esecuzione."
   - q: "Quanto costa far costruire un agente IA per i social?"
-    a: "Con Soraia si lavora a sprint: un primo rilascio in produzione parte da <strong>5.000 € a corpo</strong>, oppure a pacchetti di ore da <strong>3.000 € al mese</strong> (45 ore, tre persone dedicate). Il primo rilascio gira sui tuoi processi reali in 4 settimane. Per capire se ha senso nel tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia si lavora a Sprint mensili: si parte da <strong>5.000 € al mese</strong>, con tre persone dedicate e un rilascio in produzione a fine mese. Il primo rilascio gira sui tuoi processi reali in 4 settimane. Per capire se ha senso nel tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "Chi controlla cosa viene pubblicato?"
     a: "Un agente ben costruito lavora con <strong>approvazione umana sui contenuti</strong> prima della pubblicazione, o almeno su quelli sensibili. Vedi come impostiamo questi flussi nella pagina <a href='/sales-marketing'>Sales & Marketing Automation</a> e nella panoramica <a href='/ai-agents'>AI Agents</a>."
   - q: "E se provo l'agente IA e non funziona?"

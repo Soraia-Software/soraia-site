@@ -21,7 +21,7 @@ faq:
   - q: "L'IA può davvero aiutarmi ad aprire un nuovo mercato estero?"
     a: "Può accelerare le parti ripetitive: screening di mercati candidati, scouting di prospect e distributori, localizzazione di contenuti e primo outreach. Non decide al posto tuo <strong>in quale paese entrare</strong>: quella resta una scelta strategica umana basata su margini, logistica e rischio. L'IA ti porta alla decisione più in fretta e con più dati verificati."
   - q: "Quanto costa un agente IA per l'export?"
-    a: "In Soraia si parte da <strong>5.000 €</strong> a corpo per un primo rilascio in produzione, oppure da 3.000 €/mese per 45 ore con tre persone dedicate. Il primo rilascio gira sui tuoi processi reali in <strong>4 settimane</strong>. Il primo mese è soddisfatti o rimborsati."
+    a: "In Soraia si parte da <strong>5.000 € al mese</strong> con uno Sprint: tre persone dedicate e un rilascio in produzione a fine mese. Il primo rilascio gira sui tuoi processi reali in <strong>4 settimane</strong>. Il primo mese è soddisfatti o rimborsati."
   - q: "Un agente IA sostituisce il mio Export Manager o il distributore locale?"
     a: "No. Sostituisce le ore di data entry e ricerca manuale, non la relazione commerciale. Un distributore locale conosce usi, contatti e dinamiche di prezzo che nessun modello ha nel training. L'agente libera tempo al tuo Export Manager per fare esattamente quelle cose."
   - q: "E la privacy dei contatti esteri che raccolgo?"

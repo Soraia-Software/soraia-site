@@ -24,7 +24,7 @@ faq:
   - q: "Which documents can it assemble automatically?"
     a: "The repetitive part: the ESPD/DGUE pre-filled from your company data and recurring requirements, standard declarations, a checklist of required documents with completion status, and a first draft of the technical report built from your templates. The commercial offer and strategic parts stay with you."
   - q: "How much does it cost and how fast is it live?"
-    a: "At Soraia the first release runs on your real processes in 4 weeks, fixed-scope from €5,000 or hour packages from €3,000/month. The first month is satisfied-or-refunded. But first you need a baseline: how many hours you spend today on bid search and document assembly."
+    a: "At Soraia the first release runs on your real processes in 4 weeks, with a Sprint from €5,000/month. The first month is satisfied-or-refunded. But first you need a baseline: how many hours you spend today on bid search and document assembly."
   - q: "Is it compatible with the AI Act and GDPR?"
     a: "Yes. An agent that searches tenders and assembles documents is minimal-risk under the AI Act: it makes no decisions about people. We still keep an audit log on every action, art. 28 DPA in the contract and EU hosting when required. The decision to bid stays human."
 lang: "en"

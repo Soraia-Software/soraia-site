@@ -67,7 +67,7 @@ faq:
   - q: "Can an AI agent fully replace a social media manager?"
     a: "No, not for the part that matters most. The AI agent is very strong on repetitive work: <strong>scheduling, multi-channel publishing, drafts and comment triage</strong>. Strategy, original creativity and handling delicate situations remain human work. The model that works best in SMEs is a manager (in-house or agency) who uses an AI agent to scale execution."
   - q: "How much does building an AI agent for social media cost?"
-    a: "With Soraia the work runs in sprints: a first production release starts from <strong>5.000 € fixed</strong>, or in hour packages from <strong>3.000 € a month</strong> (45 hours, three dedicated people). The first release runs on your real processes in 4 weeks. To see if it makes sense in your case, <a href='/parliamone'>let's talk</a>."
+    a: "With Soraia the work runs in monthly Sprints: it starts from <strong>5.000 € a month</strong>, with three dedicated people and a release in production at the end of the month. The first release runs on your real processes in 4 weeks. To see if it makes sense in your case, <a href='/parliamone'>let's talk</a>."
   - q: "Who controls what gets published?"
     a: "A well-built agent works with <strong>human approval on content</strong> before publishing, or at least on sensitive posts. See how we design these flows on the <a href='/sales-marketing'>Sales & Marketing Automation</a> page and the <a href='/ai-agents'>AI Agents</a> overview."
   - q: "What if I try the AI agent and it doesn't work?"

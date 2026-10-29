@@ -71,7 +71,7 @@ faq:
   - q: "Perche' un agente su misura dovrebbe generare pipeline migliore?"
     a: "Perche' qualifica con i <strong>tuoi criteri</strong> e scrive usando il contesto reale dei tuoi clienti dal CRM, non template buoni per tutti. Il risultato tipico non e' piu' email, ma email piu' pertinenti e meno opportunita' che si bruciano in qualifica. Vedi come lavoriamo su <a href='/sales-marketing'>Sales & Marketing Automation</a>."
   - q: "Quanto costa un agente SDR su misura rispetto a un tool?"
-    a: "Un tool costa poco al mese ma resta generico. Con Soraia un primo rilascio su misura parte da <strong>5.000 € a corpo</strong> (paghi il risultato approvato), oppure a pacchetto di ore da <strong>3.000 € al mese</strong> con tre persone dedicate. Codice e dati restano tuoi, niente lock-in. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Un tool costa poco al mese ma resta generico. Con Soraia un primo rilascio su misura parte da <strong>5.000 € al mese</strong> con uno Sprint, tre persone dedicate e un rilascio in produzione a fine mese. Codice e dati restano tuoi, niente lock-in. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "Resto legato al fornitore con l'uno o con l'altro?"
     a: "Con un SaaS pronto, dati e logica di outreach vivono dentro la sua piattaforma: se te ne vai, parti da zero. Con un agente su misura Soraia il <strong>codice e i dati sono tuoi dal primo giorno</strong>, documentati e mantenibili: nessun lock-in."
   - q: "E se provo il su misura e non funziona?"

@@ -71,7 +71,7 @@ faq:
   - q: "Why would a custom agent generate better pipeline?"
     a: "Because it qualifies by <strong>your criteria</strong> and writes using the real context of your customers from the CRM, not one-size-fits-all templates. The typical result isn't more emails, but more relevant ones and fewer opportunities burned in qualification. See how we work on <a href='/sales-marketing'>Sales & Marketing Automation</a>."
   - q: "How much does a custom SDR agent cost versus a tool?"
-    a: "A tool is cheap monthly but stays generic. With Soraia a custom first release starts from <strong>5,000 € fixed-scope</strong> (you pay for the approved result), or on an hours package from <strong>3,000 € per month</strong> with three dedicated people. Code and data stay yours, no lock-in. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
+    a: "A tool is cheap monthly but stays generic. With Soraia a custom first release starts from <strong>5,000 € per month</strong> with a Sprint, three dedicated people and a release in production at the end of the month. Code and data stay yours, no lock-in. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
   - q: "Am I locked in with either option?"
     a: "With a ready SaaS, data and outreach logic live inside its platform: if you leave, you start over. With a custom Soraia agent the <strong>code and data are yours from day one</strong>, documented and maintainable: no lock-in."
   - q: "And if I try the custom route and it doesn't work?"

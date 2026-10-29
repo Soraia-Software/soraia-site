@@ -21,7 +21,7 @@ faq:
   - q: "Can AI really help me open a new foreign market?"
     a: "It can speed up the repetitive parts: screening candidate markets, scouting prospects and distributors, localizing content and the first outreach. It won't decide <strong>which country to enter</strong> for you, that stays a human call based on margins, logistics and risk. AI gets you to the decision faster and with more verified data."
   - q: "How much does an AI agent for export cost?"
-    a: "At Soraia it starts at <strong>€5,000</strong> fixed-fee for a first production release, or €3,000/month for 45 hours with three dedicated people. The first release runs on your real processes in <strong>4 weeks</strong>. The first month is satisfied-or-refunded."
+    a: "At Soraia it starts at <strong>€5,000/month</strong> with a Sprint: three dedicated people and a release in production at the end of the month. The first release runs on your real processes in <strong>4 weeks</strong>. The first month is satisfied-or-refunded."
   - q: "Does an AI agent replace my Export Manager or my local distributor?"
     a: "No. It replaces the data-entry and manual-research hours, not the commercial relationship. A local distributor knows customs, contacts and pricing dynamics no model has in its training. The agent frees your Export Manager's time to do exactly those things."
   - q: "What about privacy for the foreign contacts I collect?"
