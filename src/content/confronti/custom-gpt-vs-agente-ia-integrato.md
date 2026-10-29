@@ -63,7 +63,7 @@ tabella:
     valoreB: "Codice del cliente, model-agnostico"
   - criterio: "Costo"
     valoreA: "Basso (dentro ChatGPT)"
-    valoreB: "Sprint da 3.000 €/mese"
+    valoreB: "Sprint da 5.000 €/mese"
 verdetto: "Non e' 'uno o l'altro per sempre', ma una questione di profondita'. Se il tuo bisogno e' rispondere, riassumere e ragionare su documenti, il Custom GPT e' spesso la scelta giusta: lo costruisci in ore e validi il caso d'uso a costo quasi zero. Ma se il valore sta nell'esecuzione - aggiornare il CRM, mandare comunicazioni, chiudere il processo - il Custom GPT si ferma dove serve davvero, e l'agente integrato via API diventa l'unica opzione che agisce. La sequenza sensata per molte PMI: valida col Custom GPT, poi costruisci l'agente integrato dove il ritorno lo giustifica."
 faq:
   - q: "Un Custom GPT puo' aggiornare il mio CRM o mandare email?"
@@ -71,7 +71,7 @@ faq:
   - q: "Allora il Custom GPT e' inutile?"
     a: "No. E' <strong>ottimo per validare in fretta</strong>: capisci in poche ore se un assistente su knowledge base porta valore, prima di investire in sviluppo. Spesso e' il primo passo giusto proprio perche' costa quasi nulla e non tocca i sistemi core."
   - q: "Quanto costa passare a un agente integrato?"
-    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato, con prima delivery in 4 settimane. Il codice e' tuo dal primo giorno, nessun lock-in. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia si parte da <strong>5.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese, con prima delivery in 4 settimane. Il codice e' tuo dal primo giorno, nessun lock-in. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "Con l'agente integrato resto legato a OpenAI?"
     a: "No. Un agente costruito su misura e' <strong>model-agnostico</strong>: puoi cambiare LLM senza rifare tutto. Col Custom GPT invece vivi dentro l'ecosistema ChatGPT, con i suoi limiti, regole e prezzi. Vedi anche lo <a href='/software-development'>sviluppo software su misura</a>."
   - q: "E la compliance sui dati?"

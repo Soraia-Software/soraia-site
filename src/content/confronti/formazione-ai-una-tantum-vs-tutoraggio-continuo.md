@@ -47,7 +47,7 @@ optionB:
 tabella:
   - criterio: "Costo"
     valoreA: "Singola spesa contenuta"
-    valoreB: "Da 3.000 €/mese"
+    valoreB: "Da 5.000 €/mese"
   - criterio: "Effetto sull'adozione"
     valoreA: "Consapevolezza, ma svanisce in fretta"
     valoreB: "Abitudini che si consolidano nel tempo"
@@ -70,7 +70,7 @@ faq:
   - q: "Perche' un workshop da solo spesso non cambia nulla?"
     a: "Perche' senza applicazione sui casi reali gran parte di quanto appreso si dimentica in poche settimane. L'adozione vera nasce quando le persone usano l'AI sul proprio lavoro con un riferimento a cui chiedere. E' la logica dei percorsi di <a href='/ai-adoption'>AI Adoption</a> di Soraia, che affiancano il workshop a un tutoraggio mensile."
   - q: "Quanto costa il tutoraggio continuo rispetto al workshop?"
-    a: "Con Soraia formazione e tutoraggio seguono un unico modello, a partire da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese. Sui casi seguiti liberiamo in media 110 ore/anno per persona. Vedi i <a href='/prezzi'>prezzi</a> e gli approfondimenti nella <a href='/guide/formazione-ai-aziendale'>guida alla formazione AI aziendale</a>."
+    a: "Con Soraia formazione e tutoraggio seguono un unico modello, a partire da <strong>5.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Sui casi seguiti liberiamo in media 110 ore/anno per persona. Vedi i <a href='/prezzi'>prezzi</a> e gli approfondimenti nella <a href='/guide/formazione-ai-aziendale'>guida alla formazione AI aziendale</a>."
   - q: "Posso partire dal workshop e aggiungere il tutoraggio dopo?"
     a: "Si', ed e' spesso la scelta piu' sensata. Il workshop alza la consapevolezza e fa emergere i casi d'uso; il tutoraggio poi lavora proprio su quelli. Cosi' investi sul continuo solo dove c'e' valore concreto da liberare."
 related: []

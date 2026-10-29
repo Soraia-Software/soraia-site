@@ -18,7 +18,7 @@ faq:
   - q: "What is an internal AI assessment?"
     a: "It's a 1-2 week exercise where you map <strong>processes, data, wasted hours and constraints</strong> before talking to any vendor. It's not about picking the technology: it tells you where AI makes sense, where it doesn't, and gives you a <strong>measurable baseline</strong> to judge the quotes you'll receive."
   - q: "Should I do it myself or pay a consultant?"
-    a: "The lightweight version you do internally in 1-2 weeks, at zero cost, with this guide. You only need management and department-head time. A <strong>paid assessment</strong> (typically €1,500-3,000, often refunded if you proceed) makes sense afterward, when you want a detailed operative plan with a baseline timed by whoever will build."
+    a: "The lightweight version you do internally in 1-2 weeks, at zero cost, with this guide. You only need management and department-head time. A <strong>paid assessment</strong> (typically from €3,000, often refunded if you proceed) makes sense afterward, when you want a detailed operative plan with a baseline timed by whoever will build."
   - q: "How do I calculate wasted hours on a process?"
     a: "Take the process, count its monthly runs, time 3-5 real runs (not memory-based estimates), then multiply. Next, separate the <strong>repetitive, rule-based</strong> part (an AI candidate) from the part that needs human judgment. The first is your recoverable potential, the second isn't."
   - q: "What data do I need to know if a process is automatable?"
@@ -114,7 +114,7 @@ At the end of the internal assessment you should have **one page** containing:
 
 With this page in hand, the conversation with a vendor changes nature. You no longer ask "what can you do for us": you present a defined problem with numbers, and you see who replies with a serious plan versus who replies with marketing slides.
 
-If you want an even faster read on your company's AI maturity before starting, our [3-minute check-up](/en/check-up) is a good starting point. And if you then want to hand the deep assessment to whoever builds, our [AI agents](/en/ai-agents) start with three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and a baseline timed by the team, from €3,000/month. [Let's talk](/en/contact).
+If you want an even faster read on your company's AI maturity before starting, our [3-minute check-up](/en/check-up) is a good starting point. And if you then want to hand the deep assessment to whoever builds, our [AI agents](/en/ai-agents) start with three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and a baseline timed by the team, from €5,000/month. [Let's talk](/en/contact).
 
 ## Important note
 

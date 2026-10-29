@@ -77,7 +77,7 @@ faq:
   - q: "Quanto ci vuole per avere un voicebot outbound funzionante?"
     a: "Con Soraia la <strong>prima delivery e' in 4 settimane</strong>: agente vocale connesso al CRM su un caso d'uso concreto (es. qualifica del primo contatto o promemoria appuntamenti). Si parte da un target misurabile concordato in fase di analisi. Per il tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "Quanto costa rispetto a un'agenzia di telemarketing?"
-    a: "Il nostro modello parte da <strong>3.000 € al mese</strong> con tre persone dedicate (Account Manager, Project Manager e AI Engineer) e codice del cliente dal primo giorno. Un'agenzia di telemarketing si paga a ora/operatore o a contatto: conveniente sui piccoli volumi, cara e difficile da scalare quando i volumi salgono. Il voicebot conviene proprio dove i numeri crescono."
+    a: "Il nostro modello parte da <strong>5.000 € al mese</strong> con tre persone dedicate (Account Manager, Project Manager e AI Engineer) e codice del cliente dal primo giorno. Un'agenzia di telemarketing si paga a ora/operatore o a contatto: conveniente sui piccoli volumi, cara e difficile da scalare quando i volumi salgono. Il voicebot conviene proprio dove i numeri crescono."
   - q: "E se il voicebot non converte come speravo?"
     a: "Vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: il target (es. numero di lead qualificati o appuntamenti fissati) si fissa in fase di analisi e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto. Il codice resta comunque tuo: nessun lock-in."
 related: []

@@ -17,7 +17,7 @@ related:
   - "ai-act-aziende"
 faq:
   - q: "Quanto costa una consulenza AI in Italia?"
-    a: "Range tipico 2026: <strong>assessment iniziale €1.500-3.000</strong>, sprint di build <strong>€10.000-50.000</strong>, retainer continuativo <strong>€3.000-15.000/mese</strong>. Le tariffe variano per scope, settore regolamentato (recruitment, finance), numero di integrazioni. Per il dettaglio completo vedi la <a href='/guide/costi-consulenza-ai'>guida sui costi</a>."
+    a: "Range tipico 2026: <strong>assessment iniziale da €3.000</strong>, sprint di build <strong>€10.000-50.000</strong>, retainer continuativo <strong>€3.000-15.000/mese</strong>. Le tariffe variano per scope, settore regolamentato (recruitment, finance), numero di integrazioni. Per il dettaglio completo vedi la <a href='/guide/costi-consulenza-ai'>guida sui costi</a>."
   - q: "Meglio Big4 o agency specializzata?"
     a: "Per una PMI italiana 10-200 dipendenti, agency specializzata vince quasi sempre: <strong>tempi 4 settimane vs 6-12 mesi</strong>, prezzo 1/3-1/10, accountability diretta CEO-CEO (in Big4 parli con un junior). I Big4 hanno senso per progetti enterprise multi-paese, multi-stakeholder, con vincoli compliance pesanti."
   - q: "Conviene un partner italiano o estero?"
@@ -70,7 +70,7 @@ Il mercato si divide in 3 famiglie con caratteristiche, prezzi, e use case molto
 
 **Profilo**: team 5-30 persone, focus AI, settori specifici (recruitment, finance, real estate, etc.).
 
-**Prezzo tipico**: assessment €1.500-3.000, sprint €10-50k, retainer €3-15k/mese.
+**Prezzo tipico**: assessment da €3.000, sprint €10-50k, retainer €3-15k/mese.
 
 **Tempi**: 4 settimane dal kick-off al primo agente in produzione.
 
@@ -127,7 +127,7 @@ Soraia per esempio offre **"primo mese soddisfatti o rimborsati"** come standard
 
 ### 3. Skin in the game sull'assessment
 
-Il provider serio propone un **assessment pagato** (€1.500-3.000), che viene **rimborsato se procedi** con uno sprint. Significa:
+Il provider serio propone un **assessment pagato** (da €3.000), che viene **rimborsato se procedi** con uno sprint. Significa:
 
 - Il provider ti dedica tempo serio (cronometra processi, intervista team, scrive piano operativo).
 - Tu paghi per qualcosa di valore concreto (report che resta tuo anche se non procedi).
@@ -193,7 +193,7 @@ Il processo che funziona per una PMI italiana 10-200 dipendenti:
 
 1. **Definisci il caso d'uso prioritario** (es. "screening candidati recruitment"). Non chiedere "consulenza AI generale", non si valuta.
 2. **Senti 3 provider** (1 Big4 per sanity check, 2 agency specializzate). Skip i freelance se è il tuo primo agente.
-3. **Fai assessment pagato con quello che ti convince di più**. €1.500-3.000 è investimento, non spesa.
+3. **Fai assessment pagato con quello che ti convince di più**. I €3.000 di partenza sono un investimento, non una spesa.
 4. **Confronta gli output dell'assessment** se ne hai fatti 2. Quello più operativo, con baseline misurata, vince.
 5. **Negozia la garanzia** nel contratto sprint. Senza, non firmare.
 6. **Parti dal singolo workflow** più impattante. Espandi solo dopo aver visto risultati misurati a 60 giorni.
@@ -202,7 +202,7 @@ Il processo che funziona per una PMI italiana 10-200 dipendenti:
 
 Pieno disclaimer: questa guida la scrive Soraia, AI agency italiana 100% focus PMI. Il nostro approccio differisce dagli standard di mercato su 4 punti.
 
-**1. Tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 3.000 € al mese.** <a href="/prezzi">Vedi i prezzi</a>.
+**1. Tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 5.000 € al mese.** <a href="/prezzi">Vedi i prezzi</a>.
 
 **2. Garanzia "primo mese soddisfatti o rimborsati" scritta nel contratto.** È una clausola operativa, con metric primario e finestra di misurazione.
 

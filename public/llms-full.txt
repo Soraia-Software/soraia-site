@@ -24,8 +24,10 @@ titolare e vale di più.
 È l'audit con cui si parte quando uno schermo condiviso non basta. Il team Soraia viene in
 azienda, intervista le persone alla loro scrivania, osserva il lavoro com'è davvero e mappa i
 flussi sul campo. Ne escono le priorità giuste (dove automazione e agenti IA portano più
-valore) e un piano d'azione che il team riconosce come suo. Si richiede con una call di 20
-minuti con Daniel: https://www.soraia.io/parliamone
+valore) e un piano d'azione che il team riconosce come suo. Costa da 3.000 euro, IVA esclusa,
+per un massimo di 10 interviste, e si può comprare da sola oppure come primo passo di un
+progetto di sviluppo. Si richiede con una call di 20 minuti con Daniel:
+https://www.soraia.io/parliamone
 
 ## Domanda: Cos'è l'AI Engineering di Soraia?
 È lo sviluppo di agenti IA e software su misura a sprint iterativi. Il primo rilascio gira
@@ -39,13 +41,24 @@ processi in azienda; chi ha già le idee chiare parte direttamente dal primo spr
 Engineering. In entrambi i casi il primo passo è una call di 20 minuti con Daniel.
 
 ## Domanda: Quanto costa lavorare con Soraia?
-Due modi, entrambi su https://www.soraia.io/prezzi. A pacchetti di ore: il minimo è 45 ore al
-mese per 3.000 euro al mese, IVA esclusa, cioè 67 euro l'ora, con scaglioni da 1.000 euro (15
-ore) fino a 195 ore per 13.000 euro. Le ore sono combinate tra le tre persone dedicate; quelle
-non consumate si recuperano nei mesi successivi, quelle in eccesso si scontano sui seguenti.
-A corpo: da 5.000 euro per un primo rilascio, si paga il risultato approvato e non le ore. In
-entrambi i casi: tre persone dedicate, una quota mensile, anche solo per un mese. Uno slider
-sulla pagina calcola prezzo e ore.
+L'analisi dei processi si paga a parte: da 3.000 euro, IVA esclusa, per un massimo di 10
+interviste in azienda, da sola o come primo passo di un progetto di sviluppo. Lo sviluppo
+invece va a Sprint mensili, tre livelli, tutti su https://www.soraia.io/prezzi, tutti a
+prezzo fisso mensile, IVA esclusa, con un rilascio in produzione ogni Sprint. Non si
+comprano pacchetti di ore. Sprint: 5.000 euro al mese, anche solo un mese, consigliato per
+applicativi interni o meno strategici; include Account Manager, Project Manager e AI
+Engineer, lo Sprint Goal firmato a inizio mese, la demo a metà mese, il rilascio a fine
+mese, crittografia dei dati, backup, accessi per ruolo, sviluppo secondo le best practice
+OWASP e il portale cliente. Sprint Pro: 8.000 euro al mese, per applicativi critici, con
+un massimo di 3 clienti alla volta; aggiunge il pentest esterno prima del rilascio con
+report consegnabile, la documentazione tecnica per DPO e legale (misure art. 32 GDPR,
+supporto alla DPIA, mappa dei flussi di dati), la cifratura dei campi sensibili, i log di
+audit, la policy di conservazione, i test di carico, il monitoraggio e gli SLA di
+disponibilità, Davide Silvestri come CTO a tempo parziale e l'avvio entro 5 giorni
+lavorativi. Partner: da 12.000 euro al mese con un minimo di 3 mesi; aggiunge il team
+continuo, la review trimestrale sui risultati, Hypercare inclusa e la priorità su
+richieste e urgenze. Hypercare: da 500 euro al mese con contratto annuale, opzionale dopo
+il go-live. Un costruttore sulla pagina compone il percorso e mostra il totale.
 
 ## Domanda: Chi lavora sul mio progetto?
 Tre persone dedicate, una per ruolo, le stesse per tutto il percorso: un Account Manager che
@@ -72,8 +85,8 @@ lì si prosegue a sprint, un rilascio alla volta, con l'affiancamento del team S
 go-live. Il punto è vedere presto se funziona, invece di un cantiere da 12-18 mesi.
 
 ## Domanda: Posso vedere come procede il lavoro?
-Sì. Ogni cliente ha un portale di progetto con i ticket in lavorazione, le ore per sprint e
-per persona e l'avanzamento del progetto. Niente scatola nera, niente report da chiedere. Una
+Sì. Ogni cliente ha un portale di progetto con i ticket in lavorazione, l'avanzamento dello
+Sprint e cosa è stato rilasciato. Niente scatola nera, niente report da chiedere. Una
 demo con dati di esempio è su https://www.soraia.io/demo-portale
 
 ## Domanda: Il codice e i dati restano miei?
@@ -128,9 +141,11 @@ direttamente dal primo sprint. Chi vuole prima un'autovalutazione rapida può fa
 di 3 minuti: https://www.soraia.io/check-up
 
 ## Domanda: Fate assistenza dopo il go-live?
-Sì: dopo la messa in produzione il team segue l'agente sui casi reali e si continua con
-sprint mensili per estenderlo e liberare altro tempo. Il codice resta del cliente, quindi
-non c'è dipendenza obbligata.
+Sì, con Hypercare: da 500 euro al mese, contratto annuale, opzionale dopo il go-live. Copre
+monitoraggio, correzione dei malfunzionamenti, aggiornamenti di sicurezza e tecnici e un
+report mensile su sicurezza, prestazioni e utilizzo reale, con proposte di miglioramento. Le
+nuove funzionalità non rientrano in Hypercare: si fanno in uno Sprint. Il codice resta del
+cliente, quindi non c'è dipendenza obbligata.
 
 ## Domanda: Che ROI posso aspettarmi?
 Il ROI si fissa e si misura all'inizio, non si promette a vuoto: dall'analisi dei processi
