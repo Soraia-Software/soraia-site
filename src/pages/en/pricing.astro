@@ -8,7 +8,7 @@ import "~/styles/prezzi.css";
 
 const title = "Pricing | Soraia";
 const description =
-  "A team that brings to life the software you need. Sprint from €5,000 a month, Sprint Pro from €8,000 with demonstrable security and compliance, Partner from €12,000. Fixed price, one release every month.";
+  "A team that brings to life the software you need. Sprint from €5,000 a month, Sprint Pro from €8,000 with demonstrable security and compliance with GDPR and the AI Act, Partner from €12,000. Fixed price, one release every month.";
 
 const faqs = [
   {
@@ -26,6 +26,10 @@ const faqs = [
   {
     q: "Does the documentation replace my DPO or my lawyer?",
     a: "No. We prepare the technical documentation your DPO and your legal team use for their assessments. The legal judgement stays with them.",
+  },
+  {
+    q: "What do you do about the AI Act?",
+    a: "We classify the risk level of the system, prepare the technical documentation and the record of decisions, make it explicit to users when they are interacting with AI, and document the human oversight points. The reference is Regulation (EU) 2024/1689. As with the GDPR, the legal judgement stays with your lawyer.",
   },
   {
     q: "What happens if work is left over at the end of a Sprint?",
@@ -71,7 +75,7 @@ const jsonLd = [
         price: "8000",
         priceCurrency: "EUR",
         description:
-          "Everything in Sprint, plus an external pentest with a report, technical documentation for your DPO and legal team, audit logs, load tests, SLAs and a part-time CTO. VAT excluded.",
+          "Everything in Sprint, plus an external pentest with a report, technical documentation for your DPO and legal team on GDPR and the AI Act, audit logs, load tests, SLAs, historical data import and migration, a part-time CTO and three months of change requests after release. VAT excluded.",
       },
       {
         "@type": "Offer",
@@ -106,6 +110,10 @@ const guarantees = [
   {
     text: "First month satisfied or refunded",
     icon: `<path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"></path><path d="M9 12l2 2 4-4"></path>`,
+  },
+  {
+    text: "Even a single month, no lock-in",
+    icon: `<rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M3 11h18"></path>`,
   },
   {
     text: "Fixed price, no surprises on the invoice",
@@ -187,10 +195,14 @@ const confronto = {
     { label: "Code and data on accounts in your name", values: ["Included", "Included", "Included"] as [string, string, string] },
     { label: "External pentest before release, with a report", values: ["No", "Included", "Included"] as [string, string, string] },
     { label: "Technical documentation for DPO and legal (art. 32 GDPR, DPIA, data flows)", values: ["No", "Included", "Included"] as [string, string, string] },
+    { label: "AI Act compliance (risk classification, documentation, transparency)", values: ["No", "Included", "Included"] as [string, string, string] },
     { label: "Encryption of sensitive fields, audit logs, retention policy", values: ["No", "Included", "Included"] as [string, string, string] },
     { label: "Load testing, monitoring and availability SLA", values: ["No", "Included", "Included"] as [string, string, string] },
+    { label: "Historical data import and data migration", values: ["No", "Included", "Included"] as [string, string, string] },
     { label: "Part-time CTO", values: ["No", "Included", "Included"] as [string, string, string] },
+    { label: "Minimum commitment", values: ["One month", "One month", "3 months"] as [string, string, string] },
     { label: "Start", values: ["Subject to availability", "Within 5 working days", "Continuous"] as [string, string, string] },
+    { label: "Change requests after release", values: ["No", "3 months included", "3 months included"] as [string, string, string] },
     { label: "Quarterly review of results", values: ["No", "No", "Included"] as [string, string, string] },
     { label: "Hypercare after release", values: ["From €500/month", "From €500/month", "Included"] as [string, string, string] },
   ],
@@ -225,7 +237,7 @@ const confronto = {
     <div class="container-soraia">
       <SectionHeader
         title="The same team and the same method. Pick the right level for your application."
-        subtitle="Every level builds solid software. What changes is how demonstrable it has to be: verified security, documentation for your DPO, guaranteed performance. Prices exclude VAT."
+        subtitle="Every level builds solid software. What changes is how demonstrable it has to be: verified security, documentation for your DPO and the AI Act, guaranteed performance. Prices exclude VAT."
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
@@ -238,7 +250,7 @@ const confronto = {
           </div>
           <div>
             <span class="bignum">€5,000</span><span class="text-[16px]" style="color: var(--color-ink-soft);"> /month</span>
-            <p class="text-[14px] mt-1" style="color: var(--color-ink-soft);">Even for a single month. Paid at the start of the Sprint.</p>
+            <p class="text-[14px] mt-1" style="color: var(--color-ink-soft);"><span class="font-semibold" style="color: var(--color-brand);">Even a single month, no lock-in.</span> Paid at the start of the Sprint.</p>
           </div>
           <ul class="flex flex-col gap-2.5 text-[15px] list-none p-0 m-0">
             {[
@@ -270,17 +282,20 @@ const confronto = {
           </div>
           <div>
             <span class="bignum">€8,000</span><span class="text-[16px]" style="color: var(--color-ink-soft);"> /month</span>
-            <p class="text-[14px] mt-1" style="color: var(--color-ink-soft);">A maximum of 3 Pro clients at a time.</p>
+            <p class="text-[14px] mt-1" style="color: var(--color-ink-soft);"><span class="font-semibold" style="color: var(--color-brand);">Even a single month, no lock-in.</span> A maximum of 3 Pro clients at a time.</p>
           </div>
           <p class="text-[14px] font-semibold" style="color: var(--color-brand);">Everything in Sprint, plus:</p>
           <ul class="flex flex-col gap-2.5 text-[15px] list-none p-0 m-0">
             {[
               "External pentest before release, with a report you can hand over",
               "Technical documentation for your DPO and legal team: art. 32 GDPR measures, DPIA support, a map of the data flows",
+              "AI Act compliance: risk classification of the system, technical documentation, transparency towards users and human oversight",
               "Encryption of sensitive fields, audit logs, data retention policy",
               "Load testing, monitoring and availability SLA",
+              "Historical data import and migration from the systems you use today",
               "Davide Silvestri as a part-time CTO on your project",
               "Start within 5 working days",
+              "Three months of change requests included after release",
             ].map((item) => (
               <li class="flex items-start gap-2.5">
                 <svg class="shrink-0 mt-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>

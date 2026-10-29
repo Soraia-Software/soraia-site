@@ -29,12 +29,23 @@ section rather than inventing a new treatment.
   "Da dove partire dipende da te."
 - **Pricing lives on `/prezzi` only**, and it is **monthly Sprints, never hour packages**:
   **Sprint 5.000 €/month** (the solid base, also for a single month), **Sprint Pro
-  8.000 €/month** (demonstrable security and compliance, badge "Posti limitati", max 3 Pro
-  clients at a time), **Partner from 12.000 €/month** (3-month minimum). **Hypercare from
+  8.000 €/month** (demonstrable security and compliance, also for a single month,
+  badge "Posti limitati", max 3 Pro
+  clients at a time; the compliance work is **both GDPR and AI Act**: art. 32 measures,
+  DPIA support and data-flow map on one side, risk classification, technical documentation,
+  user-facing transparency and human oversight on the other, citing Regolamento (UE)
+  2024/1689. The legal judgement always stays with the client's lawyer, never claimed as ours.
+  Sprint Pro also includes **historical data import and migration** and **three months of
+  change requests after release**; Hypercare is still what keeps the software alive, and new
+  features, modules and integrations still go into a Sprint), **Partner from 12.000 €/month** (3-month minimum). **Hypercare from
   500 €/month**, annual contract, optional after go-live, and it maintains rather than
   builds: new features go into a Sprint. All prices VAT excluded.
   **Three dedicated people, one per role: Account Manager, Project Manager, AI Engineer**,
-  one release in production every Sprint. "Anche solo per un mese." Guarantee: **primo mese
+  one release in production every Sprint. **Sprint and Sprint Pro have no minimum
+  commitment**, and the pages say so in three places each: a hero chip ("Anche un solo mese,
+  senza vincolo" / "Even a single month, no lock-in"), the line under each price, and the
+  "Impegno minimo" row of the comparison table. **Only Partner has a minimum, of 3 months.**
+  Guarantee: **primo mese
   soddisfatti o rimborsati**. The part-time CTO on Sprint Pro is **Davide Silvestri**, never
   a placeholder name.
 - **Team**: "più di 10 persone" (never a fixed 10 or 11), **distributed in Italy**, 100%
