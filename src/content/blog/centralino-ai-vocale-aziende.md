@@ -23,7 +23,7 @@ faq:
   - q: "Un centralino AI fa scappare i clienti?"
     a: "Dipende da due cose: la qualità della voce e il percorso di escalation. Se l'agente non capisce e non passa mai a un umano, sì, perdi chiamate. La regola che usiamo in Soraia: dopo due tentativi mancati di comprensione, passaggio immediato a persona. Il centralino AI deve filtrare il ripetitivo, non intrappolare chi ha un problema vero."
   - q: "Quanto costa un centralino AI per una PMI?"
-    a: "In Soraia non vendiamo un canone fisso: lavoriamo a sprint. Un primo rilascio a corpo parte da <strong>5.000 €</strong>, oppure a pacchetti di ore da <strong>3.000 € al mese</strong> (45 ore, tre persone dedicate). Il primo rilascio gira sui tuoi flussi reali in 4 settimane. Il costo va confrontato con la baseline attuale: quanto ti costano oggi le chiamate perse e il tempo in centralino."
+    a: "In Soraia non vendiamo un canone fisso: lavoriamo a sprint. Uno Sprint parte da <strong>5.000 € al mese</strong>: tre persone dedicate e un rilascio in produzione a fine mese. Il primo rilascio gira sui tuoi flussi reali in 4 settimane. Il costo va confrontato con la baseline attuale: quanto ti costano oggi le chiamate perse e il tempo in centralino."
   - q: "È compatibile con l'AI Act e il GDPR?"
     a: "Un centralino AI client-facing ricade di norma nel livello di rischio limitato dell'AI Act: l'obbligo principale è dichiarare al chiamante che parla con un sistema AI. Sul GDPR servono DPA art. 28, logging delle chiamate con base giuridica chiara e, dove richiesto, hosting UE. In Soraia audit log, DPA e hosting europeo sono inclusi di default."
   - q: "Meglio un centralino AI o un agente WhatsApp/chat?"
@@ -52,7 +52,7 @@ Risposta onesta: può funzionare molto bene, oppure può farti perdere i clienti
 - Conviene quando hai **alto volume di chiamate ripetitive** (prenotazioni, orari, stato ordine) e una baseline misurata di chiamate perse e tempo speso.
 - Fa scappare i clienti quando non capisce e non passa mai a un umano: la regola è escalation dopo due tentativi mancati.
 - Per l'AI Act è di norma **rischio limitato**: va dichiarato al chiamante che parla con un sistema AI. Servono DPA art. 28 e logging a norma GDPR.
-- In Soraia non vendiamo un canone: primo rilascio a corpo da **5.000 €**, live sui tuoi flussi reali in **4 settimane**, misurato su una baseline definita insieme.
+- In Soraia il primo rilascio arriva con uno Sprint da **5.000 € al mese**, live sui tuoi flussi reali in **4 settimane**, misurato su una baseline definita insieme.
 
 ## Che cos'è un centralino AI (e cosa non è)
 
@@ -98,7 +98,7 @@ Un centralino AI che parla con clienti esterni è quasi sempre **rischio limitat
 
 ## Come lo affrontiamo in Soraia
 
-Non vendiamo un canone a scatola chiusa. Partiamo dalla baseline (volumi, chiamate perse, durata media, tipi di richiesta), definiamo un perimetro stretto (quali intenti gestisce l'agente, quali passa all'umano), e rilasciamo un primo agente vivo sui tuoi flussi reali in **4 settimane**. Primo rilascio a corpo da **5.000 €** oppure a pacchetti di ore da **3.000 € al mese**. Codice e dati restano tuoi. E vale la garanzia: primo mese soddisfatti o rimborsati.
+Non vendiamo un canone a scatola chiusa. Partiamo dalla baseline (volumi, chiamate perse, durata media, tipi di richiesta), definiamo un perimetro stretto (quali intenti gestisce l'agente, quali passa all'umano), e rilasciamo un primo agente vivo sui tuoi flussi reali in **4 settimane**. Primo rilascio con uno Sprint da **5.000 € al mese**. Codice e dati restano tuoi. E vale la garanzia: primo mese soddisfatti o rimborsati.
 
 Spesso il centralino AI non vive da solo: si integra con il flusso di [sales e marketing](/sales-marketing) (una chiamata di info che diventa un lead qualificato) e con il resto del customer support. Il canale è il telefono, il cervello è lo stesso.
 

@@ -70,7 +70,7 @@ faq:
   - q: "Un CRM con agenti IA fa risparmiare davvero tempo?"
     a: "Dipende da quanto lavoro ripetitivo hanno oggi i tuoi venditori. Dove qualifica, follow-up e data entry pesano molto, l'agente li esegue al posto loro e libera tempo di vendita. Fissiamo sempre un <strong>target misurabile</strong> (es. ore recuperate a venditore) prima di partire."
   - q: "Quanto costa aggiungere agenti IA a un CRM?"
-    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) con un monte ore combinato, e prima delivery in 4 settimane. Il codice e' tuo dal primo giorno, senza lock-in. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia si parte da <strong>5.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese, e prima delivery in 4 settimane. Il codice e' tuo dal primo giorno, senza lock-in. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "E se il processo di vendita non e' ancora chiaro?"
     a: "Allora conviene prima un CRM tradizionale per mettere ordine e mappare il processo. Un agente automatizza bene solo cio' che e' definito: senza un processo chiaro rischi di automatizzare il caos."
   - q: "Che differenza c'e' rispetto a un CRM custom su misura?"

@@ -25,7 +25,7 @@ faq:
   - q: "How is this different from the SEO or GEO I already do?"
     a: "GEO (being cited by ChatGPT and Perplexity) helps you get found for content and leads. Agentic commerce is the <strong>transactional</strong> layer: structured product data, machine-readable prices, real-time availability, clear return terms. An agent cites whoever it finds; it buys (or recommends buying) from whoever it can read and trust."
   - q: "How much does preparing the catalog for agents cost?"
-    a: "The first step is an audit of product data and site architecture. The content and AI-ready site re-architecture depends on the catalog. Pricing is a single model: from €3,000/month, three dedicated people (an Account Manager, a Project Manager and an AI Engineer). You don't need to rebuild the e-commerce from scratch: you need to make the data you already have machine-readable."
+    a: "The first step is an audit of product data and site architecture. The content and AI-ready site re-architecture depends on the catalog. Pricing is a single model: from €5,000/month, three dedicated people (an Account Manager, a Project Manager and an AI Engineer). You don't need to rebuild the e-commerce from scratch: you need to make the data you already have machine-readable."
   - q: "When should you NOT invest in agentic commerce yet?"
     a: "If your product catalog has dirty data, prices misaligned across systems, or unreliable availability, fix those first. An agent reading wrong data costs you the order and your reputation. And if you sell only via tenders or direct relationships with no public catalog, the urgency is low."
 lang: "en"

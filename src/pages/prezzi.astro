@@ -1,38 +1,369 @@
 ---
 import Layout from "~/layouts/Layout.astro";
-import PricingCalculator from "~/components/PricingCalculator.tsx";
+import PathBuilder from "~/components/PathBuilder.tsx";
 import SectionHeader from "~/components/SectionHeader.astro";
+import ComparisonTable from "~/components/ComparisonTable.astro";
+import FAQ from "~/components/FAQ.astro";
 import "~/styles/prezzi.css";
 
 const title = "Prezzi | Soraia";
 const description =
-  "Prezzi semplici e trasparenti: a pacchetti di ore (da 3.000 euro per 45 ore al mese) o a corpo a prezzo fisso (da 5.000 euro per un primo rilascio). Primo mese soddisfatti o rimborsati.";
+  "Un team che dà vita al software di cui hai bisogno. Sprint da 5.000 € al mese, Sprint Pro da 8.000 € con sicurezza e compliance dimostrabili, Partner da 12.000 €. Prezzo fisso, un rilascio ogni mese.";
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: title,
-  url: "https://www.soraia.io/prezzi",
-  inLanguage: "it-IT",
+const faqs = [
+  {
+    q: "Cosa è incluso esattamente in un mese di Sprint?",
+    a: "Il team dedicato, il metodo e un rilascio in produzione. Cosa costruire lo definiamo insieme nello Sprint Goal a inizio mese: è il documento che dice cosa arriva.",
+  },
+  {
+    q: "Lo Sprint base è meno sicuro?",
+    a: "No. Crittografia, backup, accessi per ruolo e sviluppo secondo le best practice sono sempre inclusi. Sprint Pro aggiunge le verifiche e i documenti che servono quando qualcuno ti chiede di dimostrarlo: DPO, soci, clienti, auditor.",
+  },
+  {
+    q: "Quando conviene Sprint Pro?",
+    a: "Quando l’applicativo tratta dati sensibili, è usato da clienti o fornitori esterni, regge un processo core o deve superare un audit. Per strumenti interni lo Sprint è la scelta giusta.",
+  },
+  {
+    q: "La documentazione sostituisce il DPO o il legale?",
+    a: "No. Prepariamo la documentazione tecnica che il tuo DPO e il tuo legale usano per le loro valutazioni. La valutazione giuridica resta a loro.",
+  },
+  {
+    q: "Cosa succede se a fine Sprint resta lavoro da fare?",
+    a: "Lo trovi nel portale, già in ordine di priorità. Puoi attivare un altro Sprint subito, più avanti o mai: decidi tu.",
+  },
+  {
+    q: "Chi paga hosting e servizi di AI?",
+    a: "Tu, direttamente, su account intestati alla tua azienda. Nessun ricarico, nessuna dipendenza da noi.",
+  },
+  {
+    q: "E se il primo mese non mi convince?",
+    a: "Ti rimborsiamo. In alternativa lavoriamo gratis finché non sei soddisfatto.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    url: "https://www.soraia.io/prezzi",
+    inLanguage: "it-IT",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Sviluppo software e agenti IA a Sprint mensili. Soraia",
+    provider: { "@type": "Organization", name: "Soraia", url: "https://www.soraia.io" },
+    areaServed: "IT",
+    serviceType: "Sviluppo software su misura e agenti IA",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Sprint",
+        price: "5000",
+        priceCurrency: "EUR",
+        description:
+          "Account Manager, Project Manager e AI Engineer, Sprint Goal firmato a inizio mese, demo a metà mese e rilascio in produzione a fine mese. IVA esclusa.",
+      },
+      {
+        "@type": "Offer",
+        name: "Sprint Pro",
+        price: "8000",
+        priceCurrency: "EUR",
+        description:
+          "Tutto lo Sprint, più pentest esterno con report, documentazione tecnica per DPO e legale, log di audit, test di carico, SLA e CTO a tempo parziale. IVA esclusa.",
+      },
+      {
+        "@type": "Offer",
+        name: "Partner",
+        price: "12000",
+        priceCurrency: "EUR",
+        description:
+          "Tutto lo Sprint Pro, più team continuo, review trimestrale sui risultati, Hypercare inclusa e priorità. Minimo 3 mesi. IVA esclusa.",
+      },
+      {
+        "@type": "Offer",
+        name: "Hypercare",
+        price: "500",
+        priceCurrency: "EUR",
+        description:
+          "Dopo il go-live: monitoraggio, correzione dei malfunzionamenti, aggiornamenti di sicurezza e tecnici, report mensile. Contratto annuale. IVA esclusa.",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+];
+
+const guarantees = [
+  {
+    text: "Primo mese soddisfatti o rimborsati",
+    icon: `<path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"></path><path d="M9 12l2 2 4-4"></path>`,
+  },
+  {
+    text: "Prezzo fisso, nessuna sorpresa in fattura",
+    icon: `<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path>`,
+  },
+  {
+    text: "Codice e dati su account intestati a te",
+    icon: `<rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 018 0v4"></path>`,
+  },
+  {
+    text: "Sicurezza di base inclusa in ogni Sprint",
+    icon: `<path d="M5 12l5 5L20 7"></path>`,
+  },
+];
+
+const metodo = [
+  {
+    n: "01",
+    title: "Blueprint",
+    body: "Nel primo Sprint mappiamo processi, priorità e criteri di accettazione.",
+  },
+  {
+    n: "02",
+    title: "Sprint Goal firmato",
+    body: "Una pagina con l’obiettivo del mese e cosa entra. La approvi tu.",
+  },
+  {
+    n: "03",
+    title: "Demo a metà mese",
+    body: "Vedi il lavoro funzionante e correggi la rotta prima che sia tardi.",
+    milestone: true,
+  },
+  {
+    n: "04",
+    title: "Rilascio a fine mese",
+    body: "In produzione, sui tuoi account, con report di quanto fatto.",
+    milestone: true,
+  },
+  {
+    n: "05",
+    title: "Hypercare",
+    body: "Dal go-live teniamo il software monitorato, sicuro e aggiornato.",
+  },
+];
+
+const regole = [
+  {
+    title: "Lo Sprint Goal è il patto del mese",
+    body: "Lo scriviamo insieme e lo approvi tu. È il riferimento per capire cosa è stato consegnato.",
+  },
+  {
+    title: "A Sprint in corso: prossimo mese o cambio",
+    body: "Una richiesta nuova va allo Sprint successivo, oppure entra subito al posto di qualcos’altro.",
+  },
+  {
+    title: "Le priorità le decidi tu",
+    body: "Il tempo è fisso, l’ordine del lavoro è tuo. Tutto è visibile nel portale cliente.",
+  },
+  {
+    title: "Accessi e feedback puntuali",
+    body: "Lo Sprint ha date fisse. Se mancano accessi o risposte, lo slittamento massimo è di 5 giorni lavorativi.",
+  },
+  {
+    title: "Costi di terzi sui tuoi account",
+    body: "Hosting e servizi di intelligenza artificiale li paghi direttamente tu, al costo, senza ricarichi.",
+  },
+  {
+    title: "Hypercare mantiene, lo Sprint costruisce",
+    body: "Hypercare tiene il software sano e sicuro. Nuove funzionalità, moduli e integrazioni si fanno in uno Sprint.",
+  },
+];
+
+const confronto = {
+  columns: ["Sprint", "Sprint Pro", "Partner"] as [string, string, string],
+  rows: [
+    { label: "Crittografia dei dati in transito e a riposo", values: ["Incluso", "Incluso", "Incluso"] as [string, string, string] },
+    { label: "Backup e accessi per ruolo", values: ["Incluso", "Incluso", "Incluso"] as [string, string, string] },
+    { label: "Sviluppo secondo best practice OWASP", values: ["Incluso", "Incluso", "Incluso"] as [string, string, string] },
+    { label: "Codice e dati su account intestati a te", values: ["Incluso", "Incluso", "Incluso"] as [string, string, string] },
+    { label: "Pentest esterno prima del rilascio, con report", values: ["No", "Incluso", "Incluso"] as [string, string, string] },
+    { label: "Documentazione tecnica per DPO e legale (art. 32 GDPR, DPIA, flussi dati)", values: ["No", "Incluso", "Incluso"] as [string, string, string] },
+    { label: "Cifratura dei campi sensibili, log di audit, policy di conservazione", values: ["No", "Incluso", "Incluso"] as [string, string, string] },
+    { label: "Test di carico, monitoraggio e SLA di disponibilità", values: ["No", "Incluso", "Incluso"] as [string, string, string] },
+    { label: "CTO a tempo parziale", values: ["No", "Incluso", "Incluso"] as [string, string, string] },
+    { label: "Avvio", values: ["Secondo disponibilità", "Entro 5 giorni lavorativi", "Continuo"] as [string, string, string] },
+    { label: "Review trimestrale sui risultati", values: ["No", "No", "Incluso"] as [string, string, string] },
+    { label: "Hypercare dopo il rilascio", values: ["Da 500€/mese", "Da 500€/mese", "Inclusa"] as [string, string, string] },
+  ],
 };
-
 ---
 
 <Layout title={title} description={description} lang="it" jsonLd={jsonLd}>
-  <!-- HERO = due modi di lavorare + calcolatore -->
+  <!-- HERO -->
   <section class="relative overflow-hidden bg-violet-mesh">
     <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
-    <div class="container-soraia pt-16 md:pt-24 pb-14 md:pb-16 relative z-10">
-      <header class="max-w-3xl text-center mx-auto mb-12 md:mb-14">
-        <p class="eyebrow mb-5">Due modi di lavorare</p>
-        <h1 class="text-ink text-balance" style="font-size: clamp(2.5rem, 5vw + 1rem, 3.75rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
-          Scegli come preferisci lavorare con noi.
-        </h1>
-        <p class="mt-6 text-[17px] md:text-[18px] leading-relaxed text-pretty max-w-2xl mx-auto" style="color: var(--color-ink-muted);">
-          A pacchetti di ore o a corpo, a prezzo fisso, da 3.000 euro al mese. In entrambi i casi si lavora a sprint, con metodo iterativo, e vedi tutto nella dashboard di progetto. <a href="/ai-engineering" style="color: var(--color-brand); font-weight: 600;">Come lavoriamo, in dettaglio &rarr;</a>
+    <div class="container-soraia pt-16 md:pt-24 pb-14 md:pb-20 relative z-10">
+      <p class="eyebrow mb-5">Prezzi</p>
+      <h1 class="text-ink text-balance" style="font-size: clamp(2.5rem, 5vw + 1rem, 3.75rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500; max-width: 20ch;">
+        Un team che dà vita al software di cui hai bisogno.
+      </h1>
+      <p class="mt-6 text-[17px] md:text-[18px] leading-relaxed text-pretty max-w-2xl" style="color: var(--color-ink-muted);">
+        Account Manager, Project Manager e AI Engineer, con un metodo rodato. Prezzo fisso al mese, un rilascio garantito ogni Sprint. <a href="/ai-engineering" style="color: var(--color-brand); font-weight: 600;">Come lavoriamo, in dettaglio &rarr;</a>
+      </p>
+      <ul class="flex flex-wrap gap-3 mt-10 list-none p-0">
+        {guarantees.map((g) => (
+          <li class="card !py-3.5 !px-5 flex items-center gap-2.5 text-[15px] font-medium">
+            <svg class="shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={g.icon} />
+            {g.text}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- TRE LIVELLI -->
+  <section class="section" id="livelli">
+    <div class="container-soraia">
+      <SectionHeader
+        title="Lo stesso team e lo stesso metodo. Scegli il livello giusto per il tuo applicativo."
+        subtitle="Ogni livello costruisce software solido. Cambia quanto deve essere dimostrabile: sicurezza verificata, documentazione per il DPO, prestazioni garantite. Prezzi IVA esclusa."
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+        <!-- SPRINT -->
+        <div class="card card-hover flex flex-col gap-5 !p-8">
+          <div>
+            <p class="eyebrow" style="color: var(--color-brand);">Sprint</p>
+            <h3 class="mt-2 text-[1.5rem] font-medium tracking-tight">La base solida</h3>
+            <p class="mt-2 text-[15px]" style="color: var(--color-ink-muted);">Consigliato per applicativi interni o meno strategici.</p>
+          </div>
+          <div>
+            <span class="bignum">5.000€</span><span class="text-[16px]" style="color: var(--color-ink-soft);"> /mese</span>
+            <p class="text-[14px] mt-1" style="color: var(--color-ink-soft);">Anche solo un mese. Pagamento a inizio Sprint.</p>
+          </div>
+          <ul class="flex flex-col gap-2.5 text-[15px] list-none p-0 m-0">
+            {[
+              "Account Manager, Project Manager e AI Engineer",
+              "Sprint Goal concordato e firmato a inizio mese",
+              "Demo a metà mese, rilascio in produzione a fine mese",
+              "Crittografia dei dati, backup, accessi per ruolo",
+              "Sviluppo secondo le best practice di sicurezza OWASP",
+              "Portale cliente con avanzamento in tempo reale",
+            ].map((item) => (
+              <li class="flex items-start gap-2.5">
+                <svg class="shrink-0 mt-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <a href="/parliamone" class="btn btn-secondary mt-auto justify-center">Attiva uno Sprint</a>
+        </div>
+
+        <!-- SPRINT PRO -->
+        <div class="card card-hover flex flex-col gap-5 !p-8" style="border: 2px solid var(--color-brand); box-shadow: 0 18px 40px -20px rgba(74,30,92,0.35);">
+          <div>
+            <div class="flex items-center justify-between gap-3">
+              <p class="eyebrow" style="color: var(--color-brand);">Sprint Pro</p>
+              <span class="shrink-0 text-[12.5px] font-semibold rounded-full px-3 py-1.5 whitespace-nowrap" style="background: var(--color-brand); color: #fff;">Posti limitati</span>
+            </div>
+            <h3 class="mt-2 text-[1.5rem] font-medium tracking-tight text-balance">Sicurezza e compliance dimostrabili</h3>
+            <p class="mt-2 text-[15px]" style="color: var(--color-ink-muted);">Per applicativi critici: dati sensibili, utenti esterni, processi core, audit di soci o clienti.</p>
+          </div>
+          <div>
+            <span class="bignum">8.000€</span><span class="text-[16px]" style="color: var(--color-ink-soft);"> /mese</span>
+            <p class="text-[14px] mt-1" style="color: var(--color-ink-soft);">Massimo 3 clienti Pro alla volta.</p>
+          </div>
+          <p class="text-[14px] font-semibold" style="color: var(--color-brand);">Tutto lo Sprint, più:</p>
+          <ul class="flex flex-col gap-2.5 text-[15px] list-none p-0 m-0">
+            {[
+              "Pentest esterno prima del rilascio, con report consegnabile",
+              "Documentazione tecnica per DPO e legale: misure art. 32 GDPR, supporto alla DPIA, mappa dei flussi di dati",
+              "Cifratura dei campi sensibili, log di audit, policy di conservazione dei dati",
+              "Test di carico, monitoraggio e SLA di disponibilità",
+              "Davide Silvestri come CTO a tempo parziale sul tuo progetto",
+              "Avvio entro 5 giorni lavorativi",
+            ].map((item) => (
+              <li class="flex items-start gap-2.5">
+                <svg class="shrink-0 mt-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <a href="/parliamone" class="btn btn-primary mt-auto justify-center">Verifica la disponibilità</a>
+        </div>
+
+        <!-- PARTNER -->
+        <div class="rounded-[1.375rem] !p-8 flex flex-col gap-5 bg-lines-dark" style="background-color: #1A0820; color: #fff;">
+          <div>
+            <p class="eyebrow eyebrow-light">Partner</p>
+            <h3 class="mt-2 text-[1.5rem] font-medium tracking-tight text-balance" style="color: #fff;">Il tuo reparto tecnico, senza assumere</h3>
+            <p class="mt-2 text-[15px]" style="color: rgba(255,255,255,0.72);">Per chi ha più applicativi e una roadmap continua.</p>
+          </div>
+          <div>
+            <span class="text-[15px]" style="color: rgba(255,255,255,0.72);">da </span><span class="bignum" style="color: #fff;">12.000€</span><span class="text-[16px]" style="color: rgba(255,255,255,0.72);"> /mese</span>
+            <p class="text-[14px] mt-1" style="color: rgba(255,255,255,0.68);">Minimo 3 mesi. Su misura.</p>
+          </div>
+          <p class="text-[14px] font-semibold" style="color: var(--color-violet-200);">Tutto lo Sprint Pro, più:</p>
+          <ul class="flex flex-col gap-2.5 text-[15px] list-none p-0 m-0">
+            {[
+              "Team continuo, senza ripartenze tra un progetto e l’altro",
+              "Review trimestrale sui risultati: ore risparmiate, costi, processi",
+              "Hypercare inclusa su tutti gli applicativi",
+              "Priorità su richieste e urgenze",
+            ].map((item) => (
+              <li class="flex items-start gap-2.5">
+                <svg class="shrink-0 mt-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-violet-200)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50 mt-auto justify-center">Parliamone</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOPO IL RILASCIO -->
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container-soraia">
+      <SectionHeader eyebrow="Dopo il rilascio" title="Hypercare, perché il software resti vivo" />
+      <div class="card !p-8 md:!p-10 max-w-3xl">
+        <div class="flex flex-wrap items-baseline justify-between gap-3">
+          <h3 class="text-[1.375rem] font-medium tracking-tight">Hypercare</h3>
+          <div>
+            <span class="text-[15px]" style="color: var(--color-ink-soft);">da </span><span class="bignum" style="font-size: clamp(1.875rem, 3vw, 2.25rem);">500€</span><span class="text-[15px]" style="color: var(--color-ink-soft);"> /mese</span>
+          </div>
+        </div>
+        <p class="mt-4 text-[16px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
+          Contratto annuale. Dal go-live il software resta seguito: monitoraggio, correzione dei malfunzionamenti, aggiornamenti di sicurezza e tecnici, report mensile su sicurezza, prestazioni e utilizzo reale, con proposte di miglioramento.
         </p>
-      </header>
-      <PricingCalculator client:load />
+        <p class="mt-3 text-[14px]" style="color: var(--color-ink-soft);">
+          Il prezzo dipende da utenti e integrazioni. Nuove funzionalità, moduli e integrazioni entrano in uno Sprint.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IL METODO -->
+  <section class="section">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Il metodo"
+        title="Cosa è incluso in un mese di Sprint? Il team, il metodo e un rilascio."
+        subtitle="Cosa costruire lo decidiamo insieme a inizio mese e lo mettiamo per iscritto. Tu sai cosa arriva, noi sappiamo cosa consegnare."
+      />
+      <ol class="sprint-timeline sprint-timeline--five">
+        {metodo.map((s) => (
+          <li class={`sprint-step${s.milestone ? " sprint-step--milestone" : ""}`}>
+            <div class="sprint-step-head">
+              <span class={`sprint-num${s.milestone ? " sprint-num--milestone" : ""}`}>{s.n}</span>
+              <div class="sprint-step-meta">
+                <span class="sprint-step-title">{s.title}</span>
+              </div>
+            </div>
+            <p class="sprint-step-body">{s.body}</p>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 
@@ -43,7 +374,7 @@ const jsonLd = {
         <p class="eyebrow mb-4">Trasparenza</p>
         <h2 class="text-balance" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 2.5rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">Il portale cliente, in tempo reale</h2>
         <p class="mt-4 text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
-          Ogni cliente ha questo portale: i ticket in lavorazione, le ore per sprint e per persona, l'avanzamento del progetto. Niente scatola nera, niente report da chiedere. Provalo qui sotto, sono dati di esempio.
+          Ogni cliente ha questo portale: i ticket in lavorazione, l’avanzamento dello Sprint, cosa è stato rilasciato. Niente scatola nera, niente report da chiedere. Provalo qui sotto, sono dati di esempio.
         </p>
       </div>
       <div class="portal-embed">
@@ -60,7 +391,7 @@ const jsonLd = {
         <iframe id="portalFrame" src="/demo-portale?embed=1" title="Portale cliente Soraia, demo interattiva" loading="lazy"></iframe>
       </div>
       <p class="text-center text-[13px] mt-4" style="color: var(--color-ink-soft);">
-        Muoviti liberamente: cambia sprint, apri il dettaglio ore di ogni persona, filtra e cerca i ticket.
+        Muoviti liberamente: cambia sprint, apri il dettaglio di ogni persona, filtra e cerca i ticket.
       </p>
     </div>
   </section>
@@ -76,12 +407,75 @@ const jsonLd = {
     })();
   </script>
 
+  <!-- COSTRUTTORE DEL PERCORSO -->
+  <section class="section" id="percorso" style="background: var(--color-surface);">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Costruisci il tuo percorso"
+        title="Quanto costa un progetto? Lo vedi da solo."
+        subtitle="Esempio di partenza: un CRM su misura in 3 mesi di Sprint Pro. Cambia i valori per il tuo caso e scegli se aggiungere Hypercare."
+      />
+      <PathBuilder client:load />
+    </div>
+  </section>
+
+  <!-- CONFRONTO -->
+  <section class="section">
+    <div class="container-soraia">
+      <SectionHeader
+        title="Sicurezza, compliance e prestazioni a confronto"
+        subtitle="Nello Sprint la sicurezza è fatta bene. Nello Sprint Pro è anche dimostrabile, a chi te la chiede."
+      />
+      <ComparisonTable columns={confronto.columns} rows={confronto.rows} highlightCol={1} />
+    </div>
+  </section>
+
+  <!-- REGOLE -->
+  <section class="section bg-hero-dark">
+    <div class="container-soraia">
+      <SectionHeader
+        variant="dark"
+        title="Regole chiare, uguali per tutti"
+        subtitle="Sono scritte nel contratto. Proteggono te quanto noi, ed evitano le discussioni a fine mese."
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {regole.map((r) => (
+          <div class="dk-card">
+            <h3 class="text-[1.0625rem] font-medium tracking-tight" style="color: #fff;">{r.title}</h3>
+            <p class="mt-2.5 text-[15px] leading-relaxed text-pretty" style="color: rgba(255,255,255,0.72);">{r.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER BANDO -->
+  <section class="section !py-14" style="background: var(--color-surface);">
+    <div class="container-soraia flex flex-wrap items-center justify-between gap-6">
+      <div class="flex-1 min-w-0" style="flex-basis: 520px;">
+        <h3 class="text-[1.5rem] font-medium tracking-tight text-balance">Hai un bando o ti serve un preventivo chiuso?</h3>
+        <p class="mt-2 text-[16px] text-pretty" style="color: var(--color-ink-muted);">
+          Partiamo dal blueprint, poi ti diamo un preventivo con l’elenco dei risultati fissato per iscritto.
+        </p>
+      </div>
+      <a href="/bando" class="btn btn-secondary whitespace-nowrap">Verifica il bando</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container-soraia max-w-3xl">
+      <SectionHeader title="Domande frequenti" />
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="section">
     <div class="container-soraia max-w-2xl text-center">
       <h2 class="text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">Partiamo da una conversazione, non da un preventivo</h2>
       <p class="mt-4 text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
-        Mezz'ora per capire il problema, il perimetro e quante ore servono davvero nel tuo caso. Senza impegno.
+        Venti minuti per capire il tuo applicativo, il livello giusto e il percorso. Senza impegno.
       </p>
       <div class="mt-7">
         <a href="/parliamone" class="btn btn-primary">
@@ -92,4 +486,3 @@ const jsonLd = {
     </div>
   </section>
 </Layout>
-

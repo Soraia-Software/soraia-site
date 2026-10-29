@@ -56,7 +56,7 @@ tabella:
 verdetto: "Non e' una scelta binaria per sempre. Per una PMI che non ha ancora un team AI, partire con un partner esterno riduce tempi e rischio: vedi in 4 settimane se il processo funziona, con il codice gia' tuo, e decidi dopo. Man mano che l'AI diventa centrale, ha senso internalizzare le competenze, spesso proprio a partire da quello che il partner ha costruito e documentato. La domanda giusta non e' 'in casa o fuori', ma 'cosa mi conviene fare adesso, dato dove sono'."
 faq:
   - q: "Quanto costa partire con un partner rispetto ad assumere?"
-    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese. Un singolo sviluppatore senior interno, tra stipendio caricato e mesi di ramp-up, costa di piu' e rende molto piu' tardi. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>5.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Un singolo sviluppatore senior interno, tra stipendio caricato e mesi di ramp-up, costa di piu' e rende molto piu' tardi. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "Se parto con un partner, resto dipendente da lui?"
     a: "No. Il <strong>codice e' tuo dal primo giorno</strong>, documentato e mantenibile: niente lock-in. Puoi internalizzare quando vuoi, spesso proprio a partire da quello che e' stato costruito."
   - q: "E se non funziona?"

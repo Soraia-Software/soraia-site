@@ -22,7 +22,7 @@ faq:
   - q: "È sicuro dare a un coding agent accesso al nostro codice?"
     a: "Dipende dalla configurazione. Va usato in un ambiente isolato, con permessi limitati e senza credenziali di produzione. Per settori con obblighi GDPR serve un <strong>DPA art. 28</strong> con il vendor e nessun training dei modelli sui tuoi dati. In Soraia questo è preincluso nel contratto."
   - q: "Quanto costa costruire uno strumento interno con Claude Code?"
-    a: "Il coding agent abbatte le ore di scrittura, non l'intero costo. In Soraia si parte da <strong>3.000 € al mese</strong> (IVA esclusa), con tre persone dedicate (Account Manager, Project Manager e AI Engineer) e primo rilascio in 4 settimane. Il codice è tuo dal primo giorno."
+    a: "Il coding agent abbatte le ore di scrittura, non l'intero costo. In Soraia si parte da <strong>5.000 € al mese</strong> (IVA esclusa), con tre persone dedicate (Account Manager, Project Manager e AI Engineer) e primo rilascio in 4 settimane. Il codice è tuo dal primo giorno."
   - q: "Meglio Claude Code o un SaaS già pronto?"
     a: "Se esiste un SaaS che copre il processo a un costo ragionevole a 2-3 anni, compralo. Un coding agent conviene quando il processo è core, specifico e mal servito dagli strumenti sul mercato. La scelta build vs buy resta la prima domanda."
 lang: "it"
@@ -87,7 +87,7 @@ Ecco la parte che nessuno dice. Quando scrivere codice costa poco, il costo si s
 
 Lo stack tecnico è strumentale: quello che consegniamo è un risultato misurabile, non il tool con cui lo costruiamo. Un coding agent è una delle leve che ci permette di consegnare il primo rilascio in **4 settimane** invece di mesi.
 
-Il modello resta lo stesso dello sviluppo custom: si parte da 3.000 € al mese (IVA esclusa), con tre persone dedicate (Account Manager, Project Manager e AI Engineer), codice tuo dal primo giorno, nessun lock-in. Il coding agent taglia le ore di scrittura. Non taglia lo scoping, i test, la governance dei dati, e la garanzia "primo mese soddisfatti o rimborsati".
+Il modello resta lo stesso dello sviluppo custom: si parte da 5.000 € al mese (IVA esclusa), con tre persone dedicate (Account Manager, Project Manager e AI Engineer), codice tuo dal primo giorno, nessun lock-in. Il coding agent taglia le ore di scrittura. Non taglia lo scoping, i test, la governance dei dati, e la garanzia "primo mese soddisfatti o rimborsati".
 
 ## Quando NON serve un team esterno
 

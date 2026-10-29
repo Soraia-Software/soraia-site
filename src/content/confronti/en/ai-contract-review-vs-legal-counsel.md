@@ -72,7 +72,7 @@ faq:
   - q: "What about privacy and AI Act compliance?"
     a: "That is the critical point. An agent that reads contracts handles sensitive data and falls within the scope of the EU AI Regulation. We work with European infrastructure when required, <strong>a DPA under art. 28 in the contract, audit logs on every decision and no LLM training on your data</strong>. See our <a href='/en/guide'>guide to the AI Act for companies</a> and our <a href='/en/customer-support'>Customer & Compliance Automation</a> use cases."
   - q: "How much does it cost to set up a contract-review agent?"
-    a: "It depends on volumes and integrations. With Soraia you start from <strong>EUR 5,000 fixed-price for a first release</strong> live in production in 4 weeks, or hour packages from <strong>EUR 3,000 per month</strong>. The first month is satisfied-or-refunded and the code stays yours. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
+    a: "It depends on volumes and integrations. With Soraia you start from <strong>EUR 5,000 per month</strong> with a Sprint, and the first release is live in production in 4 weeks. The first month is satisfied-or-refunded and the code stays yours. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
   - q: "Does the AI agent remove manual work entirely?"
     a: "No: you still need a human check on flagged cases and ambiguous clauses. The goal is to remove low-risk repetitive work, not to eliminate judgement. See how our <a href='/en/ai-agents'>AI agents</a> work by area."
 related: []

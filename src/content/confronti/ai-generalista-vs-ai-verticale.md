@@ -47,7 +47,7 @@ optionB:
 tabella:
   - criterio: "Costo di partenza"
     valoreA: "Pochi euro/persona al mese"
-    valoreB: "Da 3.000 €/mese"
+    valoreB: "Da 5.000 €/mese"
   - criterio: "Tempo per iniziare"
     valoreA: "Oggi stesso"
     valoreB: "Prima delivery in 4 settimane"
@@ -68,7 +68,7 @@ faq:
   - q: "Se uso gia' ChatGPT in azienda, mi serve ancora un agente verticale?"
     a: "Dipende dal processo. ChatGPT e' ottimo per produttivita' individuale, ma non esegue lavoro end-to-end nei tuoi sistemi ne' conosce le tue regole. Quando un processo e' ripetitivo, ad alto volume e core (screening CV, riconciliazioni, qualifica lead), un <a href='/ai-agents'>agente verticale</a> porta ROI misurabile che uno strumento generico non da'. I due si integrano, non si escludono."
   - q: "Quanto costa passare da un tool generalista a un agente verticale?"
-    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in 4 settimane. Il salto ha senso quando il tempo perso su un singolo processo giustifica l'investimento. Per capire su quali processi conviene, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>5.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese, con prima delivery in 4 settimane. Il salto ha senso quando il tempo perso su un singolo processo giustifica l'investimento. Per capire su quali processi conviene, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "L'AI verticale sostituisce quella generalista?"
     a: "No. La generalista resta lo strumento quotidiano per mille attivita' non standardizzate. La verticale interviene sui processi core e ripetitivi dove serve precisione, esecuzione e tracciabilita'. Nella pratica una PMI usa entrambe: <a href='/guide/agenti-ai-aziende'>qui trovi come funzionano gli agenti verticali</a>."
   - q: "Come faccio a capire quali processi meritano un agente verticale?"

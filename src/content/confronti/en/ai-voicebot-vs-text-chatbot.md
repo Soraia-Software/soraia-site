@@ -70,7 +70,7 @@ faq:
   - q: "Does the voicebot understand accents and dialects?"
     a: "It depends on speech recognition quality and tuning. Strong accents, background noise and dialect stay the most fragile part of voice: that is why it must be tested on your real audience before going live, and it always needs a clean handoff to a human when it fails to understand."
   - q: "How much does it cost to start with a support agent?"
-    a: "With Soraia it starts from <strong>€3,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and a combined monthly hours pool, with first delivery in 4 weeks. Text is usually simpler to build, voice more involved due to the added complexity. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
+    a: "With Soraia it starts from <strong>€5,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month, with first delivery in 4 weeks. Text is usually simpler to build, voice more involved due to the added complexity. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
   - q: "How do I avoid the agent worsening the customer experience?"
     a: "You set a measurable target in the process audit (e.g. share of requests resolved without an operator) and the <strong>first month satisfied or refunded</strong> guarantee applies: if the first month doesn't convince you, we refund it or keep working for free until you're satisfied. The code is yours from day one."
   - q: "Are both channels compatible with GDPR and the AI Act?"

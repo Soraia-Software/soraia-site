@@ -72,7 +72,7 @@ faq:
   - q: "Posso usarli insieme?"
     a: "Si', ed e' spesso la scelta migliore. L'agente IA <strong>interpreta e decide</strong> (es. legge una fattura variabile, capisce la casistica), poi passa il risultato strutturato alla RPA che <strong>esegue i click deterministici</strong> sui sistemi legacy. Ognuno fa cio' in cui e' forte."
   - q: "Quanto costa partire con un agente IA?"
-    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in 4 settimane e codice del cliente dal primo giorno. Per capire se il tuo processo e' da RPA, da agente o da entrambi, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>5.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese, con prima delivery in 4 settimane e codice del cliente dal primo giorno. Per capire se il tuo processo e' da RPA, da agente o da entrambi, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "Un agente IA e' auditabile come un bot RPA?"
     a: "Si', se costruito bene. Con Soraia ogni decisione dell'agente ha un <strong>audit log immutabile</strong> e sono previsti guardrail per i casi ad alto rischio. Il comportamento resta probabilistico, quindi serve validazione, ma la tracciabilita' e' garantita."
 related: []

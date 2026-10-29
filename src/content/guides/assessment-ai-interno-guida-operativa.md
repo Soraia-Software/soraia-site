@@ -18,7 +18,7 @@ faq:
   - q: "Cos'è un assessment AI aziendale interno?"
     a: "È un esercizio di 1-2 settimane in cui mappi <strong>processi, dati, ore perse e vincoli</strong> prima di parlare con qualunque fornitore. Non serve a decidere la tecnologia: serve a capire dove l'IA ha senso, dove non ne ha, e a costruire una <strong>baseline misurabile</strong> per giudicare i preventivi che riceverai."
   - q: "Devo farlo io o pagare un consulente?"
-    a: "La versione leggera la fai internamente in 1-2 settimane, a costo zero, con questa guida. Ti serve solo tempo del management e dei responsabili di reparto. Un <strong>assessment pagato</strong> (tipicamente €1.500-3.000, spesso rimborsato se procedi) ha senso dopo, quando vuoi un piano operativo dettagliato con baseline cronometrata da chi poi costruisce."
+    a: "La versione leggera la fai internamente in 1-2 settimane, a costo zero, con questa guida. Ti serve solo tempo del management e dei responsabili di reparto. Un <strong>assessment pagato</strong> (tipicamente da €3.000, spesso rimborsato se procedi) ha senso dopo, quando vuoi un piano operativo dettagliato con baseline cronometrata da chi poi costruisce."
   - q: "Come calcolo le ore perse su un processo?"
     a: "Prendi il processo, contane le esecuzioni al mese, cronometra 3-5 esecuzioni reali (non stime a memoria), moltiplica. Poi separa la parte <strong>ripetitiva e a regole</strong> (candidata all'IA) dalla parte che richiede giudizio umano. La prima è il tuo potenziale recuperabile, la seconda no."
   - q: "Quali dati servono per capire se un processo è automatizzabile?"
@@ -114,7 +114,7 @@ Alla fine dell'assessment interno dovresti avere **una pagina** che contiene:
 
 Con questa pagina in mano, la conversazione con un fornitore cambia natura. Non chiedi più "cosa potete fare per noi": presenti un problema definito con numeri, e vedi chi ti risponde con un piano serio e chi con slide di marketing.
 
-Se vuoi una versione ancora più rapida per capire la maturità AI della tua azienda prima di iniziare, il nostro [check-up in 3 minuti](/check-up) è un buon punto di partenza. E se poi vuoi affidare l'assessment approfondito a chi costruisce, i nostri [agenti IA](/ai-agents) partono con tre persone dedicate (Account Manager, Project Manager e AI Engineer) e una baseline cronometrata dal team, a partire da 3.000 € al mese. [Vedi i prezzi](/prezzi).
+Se vuoi una versione ancora più rapida per capire la maturità AI della tua azienda prima di iniziare, il nostro [check-up in 3 minuti](/check-up) è un buon punto di partenza. E se poi vuoi affidare l'assessment approfondito a chi costruisce, i nostri [agenti IA](/ai-agents) partono con tre persone dedicate (Account Manager, Project Manager e AI Engineer) e una baseline cronometrata dal team, a partire da 5.000 € al mese. [Vedi i prezzi](/prezzi).
 
 ## Nota importante
 

@@ -70,7 +70,7 @@ faq:
   - q: "Il voicebot capisce accenti e dialetti italiani?"
     a: "Dipende dalla qualita' del riconoscimento vocale e dal tuning. Accenti marcati, rumore di fondo e dialetto restano il punto piu' fragile del voice: per questo va testato sul tuo pubblico reale prima di metterlo in produzione, e serve sempre un handoff pulito all'operatore quando non capisce."
   - q: "Quanto costa partire con un agente di assistenza?"
-    a: "Con Soraia si parte da <strong>3.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un monte ore combinato al mese, con prima delivery in 4 settimane. Il testo di solito richiede meno ore, il voice di piu' per la complessita' aggiuntiva. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>5.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese, con prima delivery in 4 settimane. Il testo di solito richiede meno ore, il voice di piu' per la complessita' aggiuntiva. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "Come evito che l'agente peggiori l'esperienza cliente?"
     a: "Si fissa un target misurabile in fase di analisi (es. quota di richieste risolte senza operatore) e vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto. Il codice e' tuo dal primo giorno."
   - q: "Entrambi i canali sono compatibili con GDPR e AI Act?"

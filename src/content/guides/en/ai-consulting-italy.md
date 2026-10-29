@@ -18,7 +18,7 @@ related:
   - "ai-act-for-business"
 faq:
   - q: "How much does AI consulting cost in Italy?"
-    a: "Typical 2026 ranges: <strong>initial assessment €1,500–3,000</strong>, build sprint <strong>€10,000–50,000</strong>, ongoing retainer <strong>€3,000–15,000/month</strong>. Rates vary by scope, regulated sector (recruitment, finance), and number of integrations. For the full breakdown see the <a href='/en/guide/ai-consulting-costs'>guide on AI consulting costs</a>."
+    a: "Typical 2026 ranges: <strong>initial assessment from €3,000</strong>, build sprint <strong>€10,000–50,000</strong>, ongoing retainer <strong>€3,000–15,000/month</strong>. Rates vary by scope, regulated sector (recruitment, finance), and number of integrations. For the full breakdown see the <a href='/en/guide/ai-consulting-costs'>guide on AI consulting costs</a>."
   - q: "Big4 or specialist agency, which is better?"
     a: "For an Italian SME with 10–200 employees, a specialist agency almost always wins: <strong>4 weeks vs 6–12 months</strong>, price 1/3–1/10, direct CEO-to-CEO accountability (at the Big4 you deal with a junior). The Big4 make sense for multi-country, multi-stakeholder enterprise projects with heavy compliance requirements."
   - q: "Is it better to go with an Italian or a foreign partner?"
@@ -71,7 +71,7 @@ The market divides into 3 families with very different profiles, prices, and use
 
 **Profile**: 5–30 person teams, AI-focused, specific verticals (recruitment, finance, real estate, etc.).
 
-**Typical price**: assessment €1,500–3,000, sprint €10–50k, retainer €3–15k/month.
+**Typical price**: assessment from €3,000, sprint €10–50k, retainer €3–15k/month.
 
 **Timeline**: 4 weeks from kick-off to first agent in production.
 
@@ -128,7 +128,7 @@ Soraia, for instance, offers **"first month satisfied or refunded"** as a standa
 
 ### 3. Skin in the Game on the Assessment
 
-A credible provider proposes a **paid assessment** (€1,500–3,000) that is **refunded if you proceed** with a sprint. This means:
+A credible provider proposes a **paid assessment** (from €3,000) that is **refunded if you proceed** with a sprint. This means:
 
 - The provider dedicates serious time to you (mapping processes, interviewing the team, writing an operational plan).
 - You pay for something of concrete value (a report that's yours to keep even if you don't proceed).
@@ -194,7 +194,7 @@ The process that works for an Italian SME with 10–200 employees:
 
 1. **Define the priority use case** (e.g. "recruitment candidate screening"). Don't ask for "general AI consulting", it can't be evaluated.
 2. **Talk to 3 providers** (1 Big4 for a sanity check, 2 specialist agencies). Skip freelancers if this is your first agent.
-3. **Run a paid assessment with the one you're most convinced by**. €1,500–3,000 is an investment, not a cost.
+3. **Run a paid assessment with the one you're most convinced by**. The €3,000 starting point is an investment, not a cost.
 4. **Compare the assessment outputs** if you ran 2. The one that's more operational, with a measured baseline, wins.
 5. **Negotiate the guarantee** into the sprint contract. Without it, don't sign.
 6. **Start with the single most impactful workflow**. Expand only after you've seen measurable results at 60 days.
@@ -203,7 +203,7 @@ The process that works for an Italian SME with 10–200 employees:
 
 Full disclosure: this guide is written by Soraia, an Italian AI agency 100% focused on SMEs. Our approach differs from market standards on 4 points.
 
-**1. Three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €3,000/month.** <a href="/en/contact">Let's talk</a>.
+**1. Three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €5,000/month.** <a href="/en/contact">Let's talk</a>.
 
 **2. "First month satisfied or refunded" guarantee written into the contract.** An operational clause with a primary metric and a measurement window.
 

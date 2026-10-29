@@ -1,67 +1,5 @@
 /* Shared styles for the pricing pages (IT /prezzi and EN /en/pricing):
-   the slider, the sprint-methodology timeline, and the embedded portal frame. */
-
-/* The element is as tall as the thumb; the 6px fill line is painted as the
-   background, vertically centered, so the thumb sits exactly on the line. */
-.pricing-range {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 26px;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 6px;
-  border-radius: 999px;
-  outline: none;
-  cursor: pointer;
-}
-.pricing-range::-webkit-slider-runnable-track {
-  -webkit-appearance: none;
-  height: 6px;
-  background: transparent;
-  border-radius: 999px;
-}
-.pricing-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  box-sizing: border-box;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: #fff;
-  border: 3px solid var(--color-brand);
-  box-shadow: 0 2px 10px rgba(74, 30, 92, 0.3);
-  cursor: pointer;
-  margin-top: -10px; /* (6 - 26) / 2: centra il cerchio sulla linea da 6px */
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
-}
-.pricing-range:hover::-webkit-slider-thumb { transform: scale(1.08); }
-.pricing-range:active::-webkit-slider-thumb {
-  transform: scale(1.12);
-  box-shadow: 0 3px 14px rgba(74, 30, 92, 0.4);
-}
-.pricing-range::-moz-range-track {
-  height: 6px;
-  border-radius: 999px;
-  background: transparent;
-}
-.pricing-range::-moz-range-thumb {
-  box-sizing: border-box;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: #fff;
-  border: 3px solid var(--color-brand);
-  box-shadow: 0 2px 10px rgba(74, 30, 92, 0.3);
-  cursor: pointer;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
-}
-.pricing-range:hover::-moz-range-thumb { transform: scale(1.08); }
-.pricing-range:active::-moz-range-thumb {
-  transform: scale(1.12);
-  box-shadow: 0 3px 14px rgba(74, 30, 92, 0.4);
-}
+   the method timeline and the embedded portal frame. */
 
 /* === Sprint timeline (metodologia) === */
 .sprint-timeline {
@@ -234,4 +172,19 @@
 @media (max-width: 640px) {
   .portal-embed iframe { height: 600px; }
   .portal-embed__url { display: none; }
+}
+
+/* Variante a 5 passi del metodo (/prezzi, /en/pricing): stessa timeline,
+   una colonna in più da lg in su. */
+@media (min-width: 1024px) {
+  .sprint-timeline--five {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .sprint-timeline--five::before {
+    left: 6%;
+    right: 6%;
+  }
+}
+.sprint-timeline--five .sprint-step-title {
+  font-size: 16px;
 }

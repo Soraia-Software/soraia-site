@@ -56,10 +56,18 @@ Authoritative but never arrogant; clear over clever. Short sentences. Concrete o
    relevant pillar instead of re-explaining it.
 
 ### Approved metric corpus (the only Soraia/client numbers you may use)
-- Pricing: AI Readiness Assessment ~€2.000 (rimborsato se procedi); Co-Building Sprint €10-50k;
-  AI Adoption Foundation €8-10k; AI Search Optimization audit €2.000, sprint €3-15k; Linkly €1.900/anno.
-- Delivery: prima delivery / primo agente live in **4 settimane**; 30 giorni di hypercare.
-- Footprint: **40+ progetti consegnati**, **11 paesi**, team di 11 persone, sede a Biella.
+- Pricing: analisi dei processi da **€3.000** (fino a 10 interviste, si compra anche da sola).
+  Poi Sprint mensili, mai pacchetti di ore: **Sprint €5.000/mese**, **Sprint Pro €8.000/mese**
+  (sicurezza e compliance dimostrabili, max 3 clienti alla volta), **Partner da €12.000/mese**
+  (minimo 3 mesi). **Hypercare da €500/mese** dopo il go-live, contratto annuale, opzionale.
+  AI Search Optimization audit €2.000, sprint €3-15k; Linkly €1.900/anno early adopter.
+- Delivery: primo rilascio in produzione in **4 settimane**; uno Sprint al mese, con Sprint Goal
+  firmato a inizio mese, demo a meta' mese e rilascio a fine mese.
+- Footprint: **40+ progetti consegnati**, team di **piu' di 10 persone** distribuito in Italia,
+  sede legale a Biella.
+- Never use (modello ritirato): pacchetti di ore, "45 ore", "195 ore", "67 €/ora", monte ore,
+  lavoro "a corpo", AI Readiness Assessment, Co-Building Sprint, AI Adoption Foundation,
+  "11 paesi", un numero fisso di persone nel team.
 - Published client results (link only these): **APraise** 100k+ candidati gestiti (circa 4 recruiter
   in più); **Navily** -70% tempo operativo su moderazione+enrichment; **Numeraria** circa metà mese
   restituito al management; **Stars Be Original** 20.000+ candidati, <1 minuto di risposta; **CXL**,

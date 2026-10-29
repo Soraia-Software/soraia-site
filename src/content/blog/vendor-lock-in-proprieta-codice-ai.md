@@ -63,7 +63,7 @@ La clausola da pretendere suona così: *"tutti i diritti di proprietà intellett
 
 Facciamo chiarezza, perché qui si fanno confusioni che costano. Un canone mensile **non è** vendor lock-in di per sé.
 
-Noi stessi lavoriamo a pacchetti di ore con una quota mensile (da 3.000 € al mese per 45 ore). È un canone-servizio: paghi sviluppo, manutenzione e miglioramento continuo. Puoi fermarti anche dopo un mese e resti proprietario di tutto quello che è stato costruito fino a lì.
+Noi stessi lavoriamo a Sprint mensili con una quota fissa (da 5.000 € al mese). È un canone-servizio: paghi sviluppo, manutenzione e miglioramento continuo. Puoi fermarti anche dopo un mese e resti proprietario di tutto quello che è stato costruito fino a lì.
 
 Il canone-ostaggio è un'altra cosa: smetti di pagare e il sistema si spegne, i dati restano sul server del fornitore, il codice non l'hai mai visto. Quello è lock-in.
 

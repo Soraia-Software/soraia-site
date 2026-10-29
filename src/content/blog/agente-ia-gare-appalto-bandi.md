@@ -24,7 +24,7 @@ faq:
   - q: "Quali documenti può assemblare in automatico?"
     a: "La parte ripetitiva: DGUE precompilato dai dati anagrafici e dai requisiti ricorrenti, dichiarazioni sostitutive, elenco dei documenti richiesti con stato di completamento, e un primo draft della relazione tecnica partendo dai tuoi template. L'offerta economica e le parti strategiche le scrivi tu."
   - q: "Quanto costa e in quanto tempo è live?"
-    a: "In Soraia il primo rilascio gira sui tuoi processi reali in 4 settimane, a corpo da 5.000 € oppure a pacchetti di ore da 3.000 € al mese. Il primo mese è soddisfatti o rimborsati. Prima però serve una baseline: quante ore oggi spendi su ricerca bandi e assemblaggio documenti."
+    a: "In Soraia il primo rilascio gira sui tuoi processi reali in 4 settimane, con uno Sprint da 5.000 € al mese. Il primo mese è soddisfatti o rimborsati. Prima però serve una baseline: quante ore oggi spendi su ricerca bandi e assemblaggio documenti."
   - q: "È compatibile con l'AI Act e il GDPR?"
     a: "Sì. Un agente che cerca bandi e assembla documenti è a rischio minimo secondo l'AI Act: non decide su persone. Manteniamo comunque audit log su ogni azione, DPA art. 28 nel contratto e hosting UE quando serve. La decisione di partecipare resta umana."
 lang: "it"
