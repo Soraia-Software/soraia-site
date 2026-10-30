@@ -40,10 +40,13 @@ one-sided ad.
 5. **Do not duplicate an existing comparison** (see the backlog / existing confronti slugs).
 
 ### Approved metric corpus (the only Soraia/client numbers you may use)
-- Pricing: analisi dei processi da 3.000 euro (fino a 10 interviste, si compra anche da sola).
-  Poi Sprint mensili, mai pacchetti di ore: Sprint 5.000/mese, Sprint Pro 8.000/mese (sicurezza
-  e compliance dimostrabili, max 3 clienti alla volta), Partner da 12.000/mese (minimo 3 mesi).
-  Hypercare da 500/mese dopo il go-live, contratto annuale, opzionale.
+- Pricing: tre servizi a prezzo fisso piu' add-on opzionali, mai pacchetti di ore.
+  Analisi 3.000 una tantum (facoltativa, fino a 10 interviste, si compra anche da sola,
+  scalata dal primo Sprint entro 30 giorni), Sprint 5.000/mese (anche un solo mese),
+  Hypercare da 500/mese dopo il go-live, contratto annuale, facoltativa. Add-on, ognuno
+  agganciato a un solo servizio: Compliance & Audit 2.000 per ogni mese di Sprint, Pentest
+  4.000 una tantum, Formazione e adozione 2.500 una tantum (con lo Sprint); Supporto bandi
+  1.000 una tantum (con l'Analisi); AI Quality 500/mese (con Hypercare).
   AI Search Optimization audit 2.000, sprint 3-15k; Linkly 1.900/anno.
 - Delivery: primo rilascio in produzione in 4 settimane; uno Sprint al mese, con Sprint Goal
   firmato a inizio mese, demo a meta' mese e rilascio a fine mese.
@@ -52,7 +55,8 @@ one-sided ad.
   legale a Biella.
 - Never use (modello ritirato): pacchetti di ore, "45 ore", "195 ore", "67 €/ora", monte ore,
   lavoro "a corpo", AI Readiness Assessment, Co-Building Sprint, AI Adoption Foundation,
-  "11 paesi", un numero fisso di persone nel team.
+  "11 paesi", un numero fisso di persone nel team, e i livelli **Sprint Pro (€8.000/mese)** e
+  **Partner (da €12.000/mese)**, sostituiti dagli add-on il 30 ottobre 2026.
 - Any external stat: attribute to a named source or cut it.
 
 ## Output, strict JSON only

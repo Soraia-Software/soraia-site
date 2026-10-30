@@ -42,7 +42,8 @@ export const PRICING = {
   from: "3.000 euro",
   note: "fino a 10 interviste",
   standalone:
-    "L'analisi si può acquistare da sola oppure come primo passo di un progetto di sviluppo.",
+    "L'analisi si può acquistare da sola oppure come primo passo di un progetto di sviluppo. "+
+    "Se parti con uno Sprint entro 30 giorni, i 3.000 euro vengono scalati.",
 };
 
 /* ----------------------------------------------------------------------------
@@ -478,7 +479,8 @@ export const PRICING_EN: typeof PRICING = {
   from: "€3,000",
   note: "up to 10 interviews",
   standalone:
-    "You can buy the audit on its own or as the first step of a development project.",
+    "You can buy the audit on its own or as the first step of a development project. "+
+    "If you start a Sprint within 30 days, the €3,000 is deducted.",
 };
 
 export const COMPANY_EN: typeof COMPANY = {

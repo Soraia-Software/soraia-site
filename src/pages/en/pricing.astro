@@ -2,26 +2,25 @@
 import Layout from "~/layouts/Layout.astro";
 import PathBuilder from "~/components/PathBuilder.tsx";
 import SectionHeader from "~/components/SectionHeader.astro";
-import ComparisonTable from "~/components/ComparisonTable.astro";
 import FAQ from "~/components/FAQ.astro";
 import "~/styles/prezzi.css";
 
 const title = "Pricing | Soraia";
 const description =
-  "A team that brings to life the software you need. Sprint from €5,000 a month, Sprint Pro from €8,000 with demonstrable security and compliance with GDPR and the AI Act, Partner from €12,000. Fixed price, one release every month.";
+  "A team that brings to life the software you need. Analysis €3,000, Sprint €5,000 a month, Hypercare from €500, plus the add-ons you need: Compliance & Audit, Pentest, Training. Fixed price, one release every month.";
 
 const faqs = [
   {
+    q: "Why is the Analysis paid?",
+    a: "Because it is real work: you come out of it with a blueprint, priorities and a fixed-price quote, and it stays yours even if you decide not to go on. If you start a Sprint within 30 days, the €3,000 is deducted. It is not compulsory: if you already know what to build, you start straight from the Sprint.",
+  },
+  {
     q: "What exactly is included in a month of Sprint?",
-    a: "The dedicated team, the method and one release in production. What we build is defined together in the Sprint Goal at the start of the month: that document says what you get.",
+    a: "The dedicated team, the method and a release in production. What to build we define together in the Sprint Goal at the start of the month: it is the document that says what arrives.",
   },
   {
-    q: "Is the base Sprint less secure?",
-    a: "No. Encryption, backups, role-based access and development to best practice are always included. Sprint Pro adds the checks and the documents you need when someone asks you to prove it: your DPO, shareholders, clients, auditors.",
-  },
-  {
-    q: "When is Sprint Pro worth it?",
-    a: "When the application handles sensitive data, is used by external clients or suppliers, carries a core process or has to pass an audit. For internal tools, Sprint is the right choice.",
+    q: "Without Compliance & Audit, is the software less secure?",
+    a: "No. Encryption, backups, role-based access and development to best practice are always included. Compliance & Audit adds the checks and documents for anyone who has to prove it to someone: your DPO, shareholders, clients, auditors.",
   },
   {
     q: "Does the documentation replace my DPO or my lawyer?",
@@ -29,11 +28,15 @@ const faqs = [
   },
   {
     q: "What do you do about the AI Act?",
-    a: "We classify the risk level of the system, prepare the technical documentation and the record of decisions, make it explicit to users when they are interacting with AI, and document the human oversight points. The reference is Regulation (EU) 2024/1689. As with the GDPR, the legal judgement stays with your lawyer.",
+    a: "With Compliance & Audit we classify the risk level of the system, prepare the technical documentation and the record of decisions, make it explicit to users when they are interacting with AI, and document the human oversight points. The reference is Regulation (EU) 2024/1689. As with the GDPR, the legal judgement stays with your lawyer.",
   },
   {
     q: "What happens if work is left over at the end of a Sprint?",
     a: "You find it in the portal, already in priority order. You can start another Sprint right away, later or never: it’s your call.",
+  },
+  {
+    q: "Can I keep the team all year?",
+    a: "Yes, with consecutive Sprints. For long commitments or several applications in parallel we build a tailored path.",
   },
   {
     q: "Who pays for hosting and AI services?",
@@ -41,7 +44,7 @@ const faqs = [
   },
   {
     q: "What if the first month doesn’t convince me?",
-    a: "We refund you. Or we work for free until you’re satisfied.",
+    a: "We refund you. Or we work for free until you are satisfied.",
   },
 ];
 
@@ -63,27 +66,19 @@ const jsonLd = [
     offers: [
       {
         "@type": "Offer",
+        name: "Analysis",
+        price: "3000",
+        priceCurrency: "EUR",
+        description:
+          "Process mapping, software blueprint, priorities and acceptance criteria, an estimate in Sprint months and a fixed-price quote. Optional, deducted from the first Sprint if you start within 30 days. VAT excluded.",
+      },
+      {
+        "@type": "Offer",
         name: "Sprint",
         price: "5000",
         priceCurrency: "EUR",
         description:
-          "Account Manager, Project Manager and AI Engineer, a Sprint Goal signed at the start of the month, a demo mid-month and a release in production at the end of the month. VAT excluded.",
-      },
-      {
-        "@type": "Offer",
-        name: "Sprint Pro",
-        price: "8000",
-        priceCurrency: "EUR",
-        description:
-          "Everything in Sprint, plus an external pentest with a report, technical documentation for your DPO and legal team on GDPR and the AI Act, audit logs, load tests, SLAs, historical data import and migration, a part-time CTO and three months of change requests after release. VAT excluded.",
-      },
-      {
-        "@type": "Offer",
-        name: "Partner",
-        price: "12000",
-        priceCurrency: "EUR",
-        description:
-          "Everything in Sprint Pro, plus a continuous team, a quarterly review of results, Hypercare included and priority. Three-month minimum. VAT excluded.",
+          "Account Manager, Project Manager and AI Engineer, a Sprint Goal signed at the start of the month, a demo mid-month and a release in production at the end of the month. Even for a single month. VAT excluded.",
       },
       {
         "@type": "Offer",
@@ -91,7 +86,47 @@ const jsonLd = [
         price: "500",
         priceCurrency: "EUR",
         description:
-          "After go-live: monitoring, bug fixes, security and technical updates, a monthly report. Annual contract. VAT excluded.",
+          "After go-live: monitoring, bug fixing, security and technical updates, a monthly report. Optional, annual contract. VAT excluded.",
+      },
+      {
+        "@type": "Offer",
+        name: "Compliance & Audit",
+        price: "2000",
+        priceCurrency: "EUR",
+        description:
+          "Sprint add-on, for every Sprint month: technical documentation for your DPO and legal team on GDPR and the AI Act, encryption of sensitive fields, audit logs, retention policy, load testing, monitoring and SLAs. VAT excluded.",
+      },
+      {
+        "@type": "Offer",
+        name: "Pentest",
+        price: "4000",
+        priceCurrency: "EUR",
+        description:
+          "Sprint add-on: a security test run by an external partner before release, a report you can hand over and the fixing of critical vulnerabilities. VAT excluded.",
+      },
+      {
+        "@type": "Offer",
+        name: "Training and adoption",
+        price: "2500",
+        priceCurrency: "EUR",
+        description:
+          "Sprint add-on: two sessions with your team, video tutorials and a user manual, a check-in session after 30 days. VAT excluded.",
+      },
+      {
+        "@type": "Offer",
+        name: "Grant support",
+        price: "1000",
+        priceCurrency: "EUR",
+        description:
+          "Analysis add-on: requirements check, a quote that complies with the grant, technical documentation for the application and support with reporting. VAT excluded.",
+      },
+      {
+        "@type": "Offer",
+        name: "AI Quality",
+        price: "500",
+        priceCurrency: "EUR",
+        description:
+          "Hypercare add-on: a monthly test of the agents’ answers on real cases, instruction tuning and control of API costs. VAT excluded.",
       },
     ],
   },
@@ -124,26 +159,152 @@ const guarantees = [
     icon: `<rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 018 0v4"></path>`,
   },
   {
-    text: "Baseline security included in every Sprint",
+    text: "Baseline security always included",
     icon: `<path d="M5 12l5 5L20 7"></path>`,
+  },
+];
+
+const servizi = [
+  {
+    n: "1",
+    name: "Analysis",
+    title: "You know what to build, and what it costs",
+    price: "€3,000",
+    unit: " one-off",
+    note: "Optional. Deducted from the first Sprint if you start within 30 days.",
+    items: [
+      "Process mapping with the people who live them",
+      "Software blueprint and technical choices",
+      "Priorities and acceptance criteria in writing",
+      "An estimate in Sprint months and a fixed-price quote",
+    ],
+    addons: "Grant support",
+    cta: "Book the Analysis",
+    featured: false,
+  },
+  {
+    n: "2",
+    name: "Sprint",
+    title: "The dedicated team, one month at a time",
+    price: "€5,000",
+    unit: " /month",
+    note: "Even a single month, no lock-in. Paid at the start of the Sprint.",
+    items: [
+      "Account Manager, Project Manager and AI Engineer",
+      "Sprint Goal agreed and signed at the start of the month",
+      "Demo mid-month, release in production at the end of the month",
+      "Data encryption, backups, role-based access, OWASP best practice",
+      "Historical data import and migration from the systems you use today",
+      "Client portal with progress in real time",
+      "Three months of change requests included after release",
+    ],
+    addons: "Compliance & Audit, Pentest, Training and adoption",
+    cta: "Start a Sprint",
+    featured: true,
+  },
+  {
+    n: "3",
+    name: "Hypercare",
+    title: "The software stays looked after",
+    price: "€500",
+    unit: " /month",
+    from: true,
+    note: "Optional. Annual contract from go-live.",
+    items: [
+      "Monitoring and bug fixing",
+      "Security and technical updates",
+      "Monthly report on security, performance and real usage",
+      "Improvement proposals for the next Sprints",
+    ],
+    foot: "The price depends on users and integrations. New features go into a Sprint.",
+    addons: "AI Quality",
+    cta: "Let’s talk",
+    featured: false,
+  },
+];
+
+const addonSprint = [
+  {
+    name: "Compliance & Audit",
+    price: "€2,000",
+    unit: " /month",
+    claim: "For sensitive data, external users, audits by shareholders or clients",
+    items: [
+      "Technical documentation for your DPO and legal team: art. 32 GDPR measures, DPIA support, a map of the data flows",
+      "AI Act compliance: risk classification, technical documentation, transparency towards users and human oversight",
+      "Encryption of sensitive fields, audit logs, retention and deletion policy",
+      "Load testing, monitoring and availability SLA",
+    ],
+    foot: "For every month of Sprint.",
+  },
+  {
+    name: "Pentest",
+    price: "€4,000",
+    unit: " one-off",
+    claim: "To prove the software holds up against an attack",
+    items: [
+      "Security test run by an external partner before release",
+      "A report you can hand to auditors, clients and your insurer",
+      "Fixing of critical vulnerabilities included",
+    ],
+  },
+  {
+    name: "Training and adoption",
+    price: "€2,500",
+    unit: " one-off",
+    claim: "So that people actually use it",
+    items: [
+      "2 sessions with your team, in person or online",
+      "Video tutorials on the main features and a user manual",
+      "A check-in session after 30 days",
+    ],
+  },
+];
+
+const addonAltri = [
+  {
+    group: "With the Analysis",
+    name: "Grant support",
+    price: "€1,000",
+    unit: " one-off",
+    claim: "To fund the project with a grant",
+    items: [
+      "Requirements check and a quote that complies with the grant",
+      "Technical documentation for the application",
+      "Support with reporting",
+    ],
+    cta: { label: "Check whether your project can be funded", href: "/en/contact" },
+  },
+  {
+    group: "With Hypercare",
+    name: "AI Quality",
+    price: "€500",
+    unit: " /month",
+    claim: "For AI agents that stay reliable over time",
+    items: [
+      "Monthly test of the agents’ answers on real cases",
+      "Instruction tuning when quality drops",
+      "Control of API costs with alerts and a monthly report",
+    ],
+    foot: "With Hypercare active.",
   },
 ];
 
 const metodo = [
   {
     n: "01",
-    title: "Blueprint",
-    body: "In the first Sprint we map processes, priorities and acceptance criteria.",
+    title: "Analysis",
+    body: "Processes, priorities, acceptance criteria and an estimate in Sprints.",
   },
   {
     n: "02",
-    title: "Signed Sprint Goal",
+    title: "Sprint Goal signed",
     body: "One page with the goal of the month and what goes in. You approve it.",
   },
   {
     n: "03",
     title: "Demo mid-month",
-    body: "You see the work running and correct course before it’s too late.",
+    body: "You see the work running and correct course before it is too late.",
     milestone: true,
   },
   {
@@ -159,14 +320,29 @@ const metodo = [
   },
 ];
 
+const sicurezzaBase = [
+  "Data encryption in transit and at rest",
+  "Backups and role-based access",
+  "Development to OWASP best practice",
+  "Code and data on accounts in your name",
+];
+
+const sicurezzaPlus = [
+  "Technical documentation for your DPO and legal team",
+  "AI Act compliance: risk, documentation, transparency",
+  "Encryption of sensitive fields and audit logs",
+  "Load testing, monitoring and SLAs",
+  "External pentest before release, with a report",
+];
+
 const regole = [
   {
-    title: "The Sprint Goal is the month’s agreement",
-    body: "We write it together and you approve it. It’s the reference for what was delivered.",
+    title: "The Sprint Goal is the pact of the month",
+    body: "We write it together and you approve it. It is the reference for what was delivered.",
   },
   {
     title: "Mid-Sprint: next month or a swap",
-    body: "A new request goes into the next Sprint, or comes in right away in place of something else.",
+    body: "A new request goes to the next Sprint, or comes in straight away in place of something else.",
   },
   {
     title: "You decide the priorities",
@@ -185,28 +361,6 @@ const regole = [
     body: "Hypercare keeps the software healthy and secure. New features, modules and integrations happen in a Sprint.",
   },
 ];
-
-const confronto = {
-  columns: ["Sprint", "Sprint Pro", "Partner"] as [string, string, string],
-  rows: [
-    { label: "Encryption of data in transit and at rest", values: ["Included", "Included", "Included"] as [string, string, string] },
-    { label: "Backups and role-based access", values: ["Included", "Included", "Included"] as [string, string, string] },
-    { label: "Development to OWASP best practice", values: ["Included", "Included", "Included"] as [string, string, string] },
-    { label: "Code and data on accounts in your name", values: ["Included", "Included", "Included"] as [string, string, string] },
-    { label: "External pentest before release, with a report", values: ["No", "Included", "Included"] as [string, string, string] },
-    { label: "Technical documentation for DPO and legal (art. 32 GDPR, DPIA, data flows)", values: ["No", "Included", "Included"] as [string, string, string] },
-    { label: "AI Act compliance (risk classification, documentation, transparency)", values: ["No", "Included", "Included"] as [string, string, string] },
-    { label: "Encryption of sensitive fields, audit logs, retention policy", values: ["No", "Included", "Included"] as [string, string, string] },
-    { label: "Load testing, monitoring and availability SLA", values: ["No", "Included", "Included"] as [string, string, string] },
-    { label: "Historical data import and data migration", values: ["No", "Included", "Included"] as [string, string, string] },
-    { label: "Part-time CTO", values: ["No", "Included", "Included"] as [string, string, string] },
-    { label: "Minimum commitment", values: ["One month", "One month", "3 months"] as [string, string, string] },
-    { label: "Start", values: ["Subject to availability", "Within 5 working days", "Continuous"] as [string, string, string] },
-    { label: "Change requests after release", values: ["No", "3 months included", "3 months included"] as [string, string, string] },
-    { label: "Quarterly review of results", values: ["No", "No", "Included"] as [string, string, string] },
-    { label: "Hypercare after release", values: ["From €500/month", "From €500/month", "Included"] as [string, string, string] },
-  ],
-};
 ---
 
 <Layout title={title} description={description} lang="en" jsonLd={jsonLd}>
@@ -219,7 +373,7 @@ const confronto = {
         A team that brings to life the software you need.
       </h1>
       <p class="mt-6 text-[17px] md:text-[18px] leading-relaxed text-pretty max-w-2xl" style="color: var(--color-ink-muted);">
-        An Account Manager, a Project Manager and an AI Engineer, with a method that works. A fixed price per month, one guaranteed release every Sprint. <a href="/en/ai-engineering" style="color: var(--color-brand); font-weight: 600;">How we work, in detail &rarr;</a>
+        Account Manager, Project Manager and AI Engineer, with a proven method. Three steps at a fixed price, plus the add-ons your project needs. No hour packages to count. <a href="/en/ai-engineering" style="color: var(--color-brand); font-weight: 600;">How we work, in detail &rarr;</a>
       </p>
       <ul class="flex flex-wrap gap-3 mt-10 list-none p-0">
         {guarantees.map((g) => (
@@ -232,128 +386,105 @@ const confronto = {
     </div>
   </section>
 
-  <!-- THREE LEVELS -->
-  <section class="section" id="levels">
+  <!-- THREE SERVICES -->
+  <section class="section" id="services">
     <div class="container-soraia">
       <SectionHeader
-        title="The same team and the same method. Pick the right level for your application."
-        subtitle="Every level builds solid software. What changes is how demonstrable it has to be: verified security, documentation for your DPO and the AI Act, guaranteed performance. Prices exclude VAT."
+        eyebrow="How it works"
+        title="Three steps, each with its own fixed price"
+        subtitle="Start with the Analysis if you need it, turn on the team for as many months as you want, then choose whether to keep the software looked after. Prices exclude VAT."
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-        <!-- SPRINT -->
-        <div class="card card-hover flex flex-col gap-5 !p-8">
-          <div>
-            <p class="eyebrow" style="color: var(--color-brand);">Sprint</p>
-            <h3 class="mt-2 text-[1.5rem] font-medium tracking-tight">The solid base</h3>
-            <p class="mt-2 text-[15px]" style="color: var(--color-ink-muted);">Recommended for internal or less strategic applications.</p>
-          </div>
-          <div>
-            <span class="bignum">€5,000</span><span class="text-[16px]" style="color: var(--color-ink-soft);"> /month</span>
-            <p class="text-[14px] mt-1" style="color: var(--color-ink-soft);"><span class="font-semibold" style="color: var(--color-brand);">Even a single month, no lock-in.</span> Paid at the start of the Sprint.</p>
-          </div>
-          <ul class="flex flex-col gap-2.5 text-[15px] list-none p-0 m-0">
-            {[
-              "An Account Manager, a Project Manager and an AI Engineer",
-              "Sprint Goal agreed and signed at the start of the month",
-              "Demo mid-month, release in production at the end of the month",
-              "Data encryption, backups, role-based access",
-              "Development to OWASP security best practice",
-              "Client portal with progress in real time",
-            ].map((item) => (
-              <li class="flex items-start gap-2.5">
-                <svg class="shrink-0 mt-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <a href="/en/contact" class="btn btn-secondary mt-auto justify-center">Start a Sprint</a>
-        </div>
-
-        <!-- SPRINT PRO -->
-        <div class="card card-hover flex flex-col gap-5 !p-8" style="border: 2px solid var(--color-brand); box-shadow: 0 18px 40px -20px rgba(74,30,92,0.35);">
-          <div>
-            <div class="flex items-center justify-between gap-3">
-              <p class="eyebrow" style="color: var(--color-brand);">Sprint Pro</p>
-              <span class="shrink-0 text-[12.5px] font-semibold rounded-full px-3 py-1.5 whitespace-nowrap" style="background: var(--color-brand); color: #fff;">Limited slots</span>
+        {servizi.map((s) => (
+          <div
+            class="card card-hover flex flex-col gap-5 !p-8"
+            style={s.featured ? "border: 2px solid var(--color-brand); box-shadow: 0 18px 40px -20px rgba(74,30,92,0.35);" : undefined}
+          >
+            <div>
+              <p class="eyebrow" style="color: var(--color-brand);">{s.n} &middot; {s.name}</p>
+              <h3 class="mt-2 text-[1.5rem] font-medium tracking-tight text-balance">{s.title}</h3>
             </div>
-            <h3 class="mt-2 text-[1.5rem] font-medium tracking-tight text-balance">Demonstrable security and compliance</h3>
-            <p class="mt-2 text-[15px]" style="color: var(--color-ink-muted);">For critical applications: sensitive data, external users, core processes, audits by shareholders or clients.</p>
+            <div>
+              {s.from && <span class="text-[15px]" style="color: var(--color-ink-soft);">from </span>}
+              <span class="bignum">{s.price}</span><span class="text-[16px]" style="color: var(--color-ink-soft);">{s.unit}</span>
+              <p class="text-[14px] mt-1" style="color: var(--color-ink-soft);">{s.note}</p>
+            </div>
+            <ul class="flex flex-col gap-2.5 text-[15px] list-none p-0 m-0">
+              {s.items.map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <svg class="shrink-0 mt-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            {s.foot && <p class="text-[13.5px]" style="color: var(--color-ink-soft);">{s.foot}</p>}
+            <p class="text-[13.5px] mt-auto pt-2" style="color: var(--color-ink-soft); border-top: 1px solid var(--color-line);">
+              <span class="font-semibold" style="color: var(--color-brand);">Add-ons:</span> {s.addons}
+            </p>
+            <a href="/en/contact" class={`btn ${s.featured ? "btn-primary" : "btn-secondary"} justify-center`}>{s.cta}</a>
           </div>
-          <div>
-            <span class="bignum">€8,000</span><span class="text-[16px]" style="color: var(--color-ink-soft);"> /month</span>
-            <p class="text-[14px] mt-1" style="color: var(--color-ink-soft);"><span class="font-semibold" style="color: var(--color-brand);">Even a single month, no lock-in.</span> A maximum of 3 Pro clients at a time.</p>
-          </div>
-          <p class="text-[14px] font-semibold" style="color: var(--color-brand);">Everything in Sprint, plus:</p>
-          <ul class="flex flex-col gap-2.5 text-[15px] list-none p-0 m-0">
-            {[
-              "External pentest before release, with a report you can hand over",
-              "Technical documentation for your DPO and legal team: art. 32 GDPR measures, DPIA support, a map of the data flows",
-              "AI Act compliance: risk classification of the system, technical documentation, transparency towards users and human oversight",
-              "Encryption of sensitive fields, audit logs, data retention policy",
-              "Load testing, monitoring and availability SLA",
-              "Historical data import and migration from the systems you use today",
-              "Davide Silvestri as a part-time CTO on your project",
-              "Start within 5 working days",
-              "Three months of change requests included after release",
-            ].map((item) => (
-              <li class="flex items-start gap-2.5">
-                <svg class="shrink-0 mt-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <a href="/en/contact" class="btn btn-primary mt-auto justify-center">Check availability</a>
-        </div>
-
-        <!-- PARTNER -->
-        <div class="rounded-[1.375rem] !p-8 flex flex-col gap-5 bg-lines-dark" style="background-color: #1A0820; color: #fff;">
-          <div>
-            <p class="eyebrow eyebrow-light">Partner</p>
-            <h3 class="mt-2 text-[1.5rem] font-medium tracking-tight text-balance" style="color: #fff;">Your technical department, without hiring</h3>
-            <p class="mt-2 text-[15px]" style="color: rgba(255,255,255,0.72);">For those with several applications and a continuous roadmap.</p>
-          </div>
-          <div>
-            <span class="text-[15px]" style="color: rgba(255,255,255,0.72);">from </span><span class="bignum" style="color: #fff;">€12,000</span><span class="text-[16px]" style="color: rgba(255,255,255,0.72);"> /month</span>
-            <p class="text-[14px] mt-1" style="color: rgba(255,255,255,0.68);">Three-month minimum. Tailored.</p>
-          </div>
-          <p class="text-[14px] font-semibold" style="color: var(--color-violet-200);">Everything in Sprint Pro, plus:</p>
-          <ul class="flex flex-col gap-2.5 text-[15px] list-none p-0 m-0">
-            {[
-              "A continuous team, with no restarts between one project and the next",
-              "Quarterly review of results: hours saved, costs, processes",
-              "Hypercare included on every application",
-              "Priority on requests and urgent work",
-            ].map((item) => (
-              <li class="flex items-start gap-2.5">
-                <svg class="shrink-0 mt-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-violet-200)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <a href="/en/contact" class="btn !bg-white !text-violet-900 hover:!bg-violet-50 mt-auto justify-center">Let’s talk</a>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- AFTER THE RELEASE -->
-  <section class="section" style="background: var(--color-surface);">
+  <!-- ADD-ONS -->
+  <section class="section" id="add-ons" style="background: var(--color-surface);">
     <div class="container-soraia">
-      <SectionHeader eyebrow="After the release" title="Hypercare, so the software stays alive" />
-      <div class="card !p-8 md:!p-10 max-w-3xl">
-        <div class="flex flex-wrap items-baseline justify-between gap-3">
-          <h3 class="text-[1.375rem] font-medium tracking-tight">Hypercare</h3>
-          <div>
-            <span class="text-[15px]" style="color: var(--color-ink-soft);">from </span><span class="bignum" style="font-size: clamp(1.875rem, 3vw, 2.25rem);">€500</span><span class="text-[15px]" style="color: var(--color-ink-soft);"> /month</span>
+      <SectionHeader
+        eyebrow="Add-ons"
+        title="Every add-on completes one of the three services"
+        subtitle="Analysis, Sprint and Hypercare are the services. Add-ons are optional and attach to one of them only: you pick them when you turn that service on."
+      />
+
+      <p class="eyebrow mb-4" style="color: var(--color-brand);">With the Sprint</p>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+        {addonSprint.map((a) => (
+          <div class="card flex flex-col gap-4 !p-7">
+            <div>
+              <h3 class="text-[1.25rem] font-medium tracking-tight">{a.name}</h3>
+              <div class="mt-1 whitespace-nowrap">
+                <span class="bignum" style="font-size: clamp(1.5rem, 2.5vw, 1.75rem);">{a.price}</span><span class="text-[14px]" style="color: var(--color-ink-soft);">{a.unit}</span>
+              </div>
+            </div>
+            <p class="text-[15px]" style="color: var(--color-ink-muted);">{a.claim}</p>
+            <ul class="flex flex-col gap-2.5 text-[14.5px] list-none p-0 m-0">
+              {a.items.map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <svg class="shrink-0 mt-1" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            {a.foot && <p class="text-[13.5px] mt-auto" style="color: var(--color-ink-soft);">{a.foot}</p>}
           </div>
-        </div>
-        <p class="mt-4 text-[16px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
-          Annual contract. From go-live the software stays looked after: monitoring, bug fixes, security and technical updates, a monthly report on security, performance and real usage, with proposals for improvement.
-        </p>
-        <p class="mt-3 text-[14px]" style="color: var(--color-ink-soft);">
-          The price depends on users and integrations. New features, modules and integrations go into a Sprint.
-        </p>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mt-10">
+        {addonAltri.map((a) => (
+          <div class="card flex flex-col gap-4 !p-7">
+            <p class="eyebrow" style="color: var(--color-brand);">{a.group}</p>
+            <div>
+              <h3 class="text-[1.25rem] font-medium tracking-tight">{a.name}</h3>
+              <div class="mt-1 whitespace-nowrap">
+                <span class="bignum" style="font-size: clamp(1.5rem, 2.5vw, 1.75rem);">{a.price}</span><span class="text-[14px]" style="color: var(--color-ink-soft);">{a.unit}</span>
+              </div>
+            </div>
+            <p class="text-[15px]" style="color: var(--color-ink-muted);">{a.claim}</p>
+            <ul class="flex flex-col gap-2.5 text-[14.5px] list-none p-0 m-0">
+              {a.items.map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <svg class="shrink-0 mt-1" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            {a.foot && <p class="text-[13.5px]" style="color: var(--color-ink-soft);">{a.foot}</p>}
+            {a.cta && <a href={a.cta.href} class="btn btn-secondary mt-auto justify-center">{a.cta.label}</a>}
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -363,8 +494,8 @@ const confronto = {
     <div class="container-soraia">
       <SectionHeader
         eyebrow="The method"
-        title="What’s included in a month of Sprint? The team, the method and a release."
-        subtitle="What to build is decided together at the start of the month and put in writing. You know what’s coming, we know what to deliver."
+        title="What is included in a month of Sprint? The team, the method and a release."
+        subtitle="What to build we decide together at the start of the month and put in writing. You know what arrives, we know what to deliver."
       />
       <ol class="sprint-timeline sprint-timeline--five">
         {metodo.map((s) => (
@@ -382,66 +513,49 @@ const confronto = {
     </div>
   </section>
 
-  <!-- CLIENT PORTAL (embedded live demo) -->
-  <section class="section pt-0">
-    <div class="container-soraia">
-      <div class="max-w-2xl mb-8">
-        <p class="eyebrow mb-4">Transparency</p>
-        <h2 class="text-balance" style="font-size: clamp(1.875rem, 3vw + 0.5rem, 2.5rem); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500;">The client portal, in real time</h2>
-        <p class="mt-4 text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
-          Every client gets this portal: the tickets in progress, the Sprint’s progress, what has been released. No black box, no reports to chase. Try it below, with sample data.
-        </p>
-      </div>
-      <div class="portal-embed">
-        <div class="portal-embed__bar">
-          <span class="portal-embed__dot" style="background:#ff5f57;"></span>
-          <span class="portal-embed__dot" style="background:#febc2e;"></span>
-          <span class="portal-embed__dot" style="background:#28c840;"></span>
-          <span class="portal-embed__url">Client portal · Nordica HR (demo)</span>
-          <button type="button" id="portalExpand" class="portal-embed__expand" aria-label="Open fullscreen">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M16 21h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-            Fullscreen
-          </button>
-        </div>
-        <iframe id="portalFrame" src="/demo-portale?embed=1" title="Soraia client portal, interactive demo" loading="lazy"></iframe>
-      </div>
-      <p class="text-center text-[13px] mt-4" style="color: var(--color-ink-soft);">
-        Move around freely: switch sprint, open each person’s detail, filter and search the tickets.
-      </p>
-    </div>
-  </section>
-  <script is:inline>
-    (function () {
-      var b = document.getElementById("portalExpand"), f = document.getElementById("portalFrame");
-      if (!b || !f) return;
-      b.addEventListener("click", function () {
-        var req = f.requestFullscreen || f.webkitRequestFullscreen || f.msRequestFullscreen;
-        if (req) { try { req.call(f); return; } catch (e) {} }
-        window.open("/demo-portale", "_blank");
-      });
-    })();
-  </script>
-
   <!-- PATH BUILDER -->
   <section class="section" id="path" style="background: var(--color-surface);">
     <div class="container-soraia">
       <SectionHeader
         eyebrow="Build your path"
-        title="How much does a project cost? See for yourself."
-        subtitle="A starting example: a custom CRM in 3 months of Sprint Pro. Change the values for your own case and choose whether to add Hypercare."
+        title="What does a project cost? See for yourself."
+        subtitle="Starting example: a custom CRM holding client data, over 3 months of Sprint. Change the values for your case."
       />
       <PathBuilder client:load lang="en" />
     </div>
   </section>
 
-  <!-- COMPARISON -->
+  <!-- SECURITY -->
   <section class="section">
     <div class="container-soraia">
       <SectionHeader
-        title="Security, compliance and performance compared"
-        subtitle="In Sprint, security is done properly. In Sprint Pro it’s also demonstrable, to whoever asks you for it."
+        title="Security: done well always, demonstrable when it matters"
+        subtitle="Every Sprint builds secure software. Compliance & Audit and Pentest add the checks and the documents for anyone who asks you to prove it: your DPO, shareholders, clients, auditors, your insurer."
       />
-      <ComparisonTable columns={confronto.columns} rows={confronto.rows} highlightCol={1} />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        <div class="card flex flex-col gap-4 !p-8">
+          <h3 class="text-[1.25rem] font-medium tracking-tight">Always included in every Sprint</h3>
+          <ul class="flex flex-col gap-3 text-[15px] list-none p-0 m-0">
+            {sicurezzaBase.map((item) => (
+              <li class="flex items-start gap-2.5">
+                <svg class="shrink-0 mt-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-[1.375rem] !p-8 flex flex-col gap-4 bg-lines-dark" style="background-color: #1A0820; color: #fff;">
+          <h3 class="text-[1.25rem] font-medium tracking-tight" style="color: #fff;">With Compliance &amp; Audit and Pentest</h3>
+          <ul class="flex flex-col gap-3 text-[15px] list-none p-0 m-0">
+            {sicurezzaPlus.map((item) => (
+              <li class="flex items-start gap-2.5">
+                <svg class="shrink-0 mt-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-violet-200)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                <span style="color: rgba(255,255,255,0.86);">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -451,7 +565,7 @@ const confronto = {
       <SectionHeader
         variant="dark"
         title="Clear rules, the same for everyone"
-        subtitle="They’re written into the contract. They protect you as much as us, and they avoid arguments at the end of the month."
+        subtitle="They are written into the contract. They protect you as much as us, and they avoid arguments at the end of the month."
       />
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {regole.map((r) => (
@@ -464,13 +578,13 @@ const confronto = {
     </div>
   </section>
 
-  <!-- QUOTE BANNER -->
+  <!-- GRANT BANNER -->
   <section class="section !py-14" style="background: var(--color-surface);">
     <div class="container-soraia flex flex-wrap items-center justify-between gap-6">
       <div class="flex-1 min-w-0" style="flex-basis: 520px;">
-        <h3 class="text-[1.5rem] font-medium tracking-tight text-balance">Do you have a public grant, or need a closed quote?</h3>
+        <h3 class="text-[1.5rem] font-medium tracking-tight text-balance">Have a grant application, or need a closed quote?</h3>
         <p class="mt-2 text-[16px] text-pretty" style="color: var(--color-ink-muted);">
-          We start from the blueprint, then give you a quote with the list of deliverables fixed in writing.
+          We start from the Analysis, then give you a quote with the list of results fixed in writing.
         </p>
       </div>
       <a href="/en/contact" class="btn btn-secondary whitespace-nowrap">Let’s talk</a>
@@ -488,9 +602,9 @@ const confronto = {
   <!-- CTA -->
   <section class="section">
     <div class="container-soraia max-w-2xl text-center">
-      <h2 class="text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">Let’s start with a conversation, not a quote</h2>
+      <h2 class="text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">We start from a conversation, not from a quote</h2>
       <p class="mt-4 text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
-        Twenty minutes to understand your application, the right level and the path. No commitment.
+        Twenty minutes to understand your project, the add-ons that actually matter and the path. No commitment.
       </p>
       <div class="mt-7">
         <a href="/en/contact" class="btn btn-primary">
