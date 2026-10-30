@@ -41,28 +41,32 @@ processi in azienda; chi ha già le idee chiare parte direttamente dal primo spr
 Engineering. In entrambi i casi il primo passo è una call di 20 minuti con Daniel.
 
 ## Domanda: Quanto costa lavorare con Soraia?
-L'analisi dei processi si paga a parte: da 3.000 euro, IVA esclusa, per un massimo di 10
-interviste in azienda, da sola o come primo passo di un progetto di sviluppo. Lo sviluppo
-invece va a Sprint mensili, tre livelli, tutti su https://www.soraia.io/prezzi, tutti a
-prezzo fisso mensile, IVA esclusa, con un rilascio in produzione ogni Sprint. Non si
-comprano pacchetti di ore. Sprint: 5.000 euro al mese, anche solo un mese, consigliato per
-applicativi interni o meno strategici; include Account Manager, Project Manager e AI
-Engineer, lo Sprint Goal firmato a inizio mese, la demo a metà mese, il rilascio a fine
-mese, crittografia dei dati, backup, accessi per ruolo, sviluppo secondo le best practice
-OWASP e il portale cliente. Sprint Pro: 8.000 euro al mese, anche solo un mese come lo
-Sprint (nessun impegno minimo: solo Partner ne ha uno, di 3 mesi), per applicativi
-critici, con un massimo di 3 clienti alla volta; aggiunge il pentest esterno prima del rilascio con
-report consegnabile, la documentazione tecnica per DPO e legale (misure art. 32 GDPR,
-supporto alla DPIA, mappa dei flussi di dati), la conformita' all'AI Act (classificazione
-del rischio del sistema, documentazione tecnica, trasparenza verso gli utenti e
-sorveglianza umana, Regolamento (UE) 2024/1689), la cifratura dei campi sensibili, i log di
-audit, la policy di conservazione, i test di carico, il monitoraggio e gli SLA di
-disponibilità, l'import dello storico e la migrazione dei dati dai sistemi in uso, Davide
-Silvestri come CTO a tempo parziale, l'avvio entro 5 giorni lavorativi e tre mesi di
-richieste di cambiamento incluse dopo il rilascio. Partner: da 12.000 euro al mese con un minimo di 3 mesi; aggiunge il team
-continuo, la review trimestrale sui risultati, Hypercare inclusa e la priorità su
-richieste e urgenze. Hypercare: da 500 euro al mese con contratto annuale, opzionale dopo
-il go-live. Un costruttore sulla pagina compone il percorso e mostra il totale.
+Tre servizi a prezzo fisso piu' add-on opzionali, tutti su https://www.soraia.io/prezzi,
+IVA esclusa, con un rilascio in produzione ogni Sprint. Non si comprano pacchetti di ore.
+Analisi: 3.000 euro una tantum, facoltativa, scalata dal primo Sprint se si parte entro 30
+giorni; mappatura dei processi con le persone che li vivono (fino a 10 interviste),
+blueprint del software e scelte tecniche, priorita' e criteri di accettazione scritti,
+stima in mesi di Sprint e preventivo a prezzo fisso. Si compra anche da sola. Sprint:
+5.000 euro al mese, anche un solo mese senza vincolo, pagamento a inizio Sprint; include
+Account Manager, Project Manager e AI Engineer, lo Sprint Goal firmato a inizio mese, la
+demo a meta' mese, il rilascio a fine mese, crittografia dei dati, backup, accessi per
+ruolo, sviluppo secondo le best practice OWASP, l'import dello storico e la migrazione dei
+dati dai sistemi in uso, il portale cliente e tre mesi di richieste di cambiamento incluse
+dopo il rilascio. Hypercare: da 500 euro al mese, facoltativa, con contratto annuale dal
+go-live; monitoraggio, correzione dei malfunzionamenti, aggiornamenti di sicurezza e
+tecnici, report mensile con proposte di miglioramento. Le nuove funzionalita' entrano in
+uno Sprint. Gli add-on sono opzionali e si agganciano a un solo servizio. Con lo Sprint:
+Compliance & Audit a 2.000 euro per ogni mese di Sprint (documentazione tecnica per DPO e
+legale con misure art. 32 GDPR, supporto alla DPIA e mappa dei flussi di dati; conformita'
+all'AI Act con classificazione del rischio del sistema, documentazione tecnica, trasparenza
+verso gli utenti e sorveglianza umana, Regolamento (UE) 2024/1689; cifratura dei campi
+sensibili, log di audit, policy di conservazione e cancellazione; test di carico,
+monitoraggio e SLA di disponibilita'), Pentest a 4.000 euro una tantum (test di sicurezza
+eseguito da un partner esterno prima del rilascio, report consegnabile ad auditor, clienti
+e assicurazione, correzione delle vulnerabilita' critiche inclusa) e Formazione e adozione
+a 2.500 euro una tantum. Con l'Analisi: Supporto bandi a 1.000 euro una tantum. Con
+l'Hypercare: AI Quality a 500 euro al mese. Un costruttore sulla pagina compone il percorso
+e mostra il totale.
 
 ## Domanda: Chi lavora sul mio progetto?
 Tre persone dedicate, una per ruolo, le stesse per tutto il percorso: un Account Manager che

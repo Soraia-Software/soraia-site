@@ -27,27 +27,26 @@ section rather than inventing a new treatment.
   `/analisi-processi` deck is noindex, the service is requested from `/parliamone`) and
   *AI Engineering* (sprint-based development, first release in production in 4 weeks).
   "Da dove partire dipende da te."
-- **Pricing lives on `/prezzi` only**, and it is **monthly Sprints, never hour packages**:
-  **Sprint 5.000 €/month** (the solid base, also for a single month), **Sprint Pro
-  8.000 €/month** (demonstrable security and compliance, also for a single month,
-  badge "Posti limitati", max 3 Pro
-  clients at a time; the compliance work is **both GDPR and AI Act**: art. 32 measures,
-  DPIA support and data-flow map on one side, risk classification, technical documentation,
-  user-facing transparency and human oversight on the other, citing Regolamento (UE)
-  2024/1689. The legal judgement always stays with the client's lawyer, never claimed as ours.
-  Sprint Pro also includes **historical data import and migration** and **three months of
-  change requests after release**; Hypercare is still what keeps the software alive, and new
-  features, modules and integrations still go into a Sprint), **Partner from 12.000 €/month** (3-month minimum). **Hypercare from
-  500 €/month**, annual contract, optional after go-live, and it maintains rather than
-  builds: new features go into a Sprint. All prices VAT excluded.
+- **Pricing lives on `/prezzi` only**, and it is **three fixed-price services plus optional
+  add-ons, never hour packages**. Services: **Analisi 3.000 €** one-off (**optional**: say so,
+  it is deducted from the first Sprint if the client starts within 30 days), **Sprint
+  5.000 €/month** (also for a single month, no minimum commitment) and **Hypercare from
+  500 €/month** (optional, annual contract from go-live; it maintains rather than builds, so
+  new features, modules and integrations go into a Sprint). Add-ons attach to **one** service
+  only. With the Sprint: **Compliance & Audit 2.000 €** for every Sprint month, **Pentest
+  4.000 €** one-off, **Formazione e adozione 2.500 €** one-off. With the Analisi: **Supporto
+  bandi 1.000 €** one-off. With Hypercare: **AI Quality 500 €/month**. All prices VAT excluded.
+  Compliance & Audit is where compliance lives, and it is **both GDPR and AI Act**: art. 32
+  measures, DPIA support and data-flow map on one side, risk classification, technical
+  documentation, user-facing transparency and human oversight on the other, citing Regolamento
+  (UE) 2024/1689. The legal judgement always stays with the client's lawyer, never claimed as
+  ours. The Sprint itself includes **historical data import and migration** and **three months
+  of change requests after release**.
   **Three dedicated people, one per role: Account Manager, Project Manager, AI Engineer**,
-  one release in production every Sprint. **Sprint and Sprint Pro have no minimum
-  commitment**, and the pages say so in three places each: a hero chip ("Anche un solo mese,
-  senza vincolo" / "Even a single month, no lock-in"), the line under each price, and the
-  "Impegno minimo" row of the comparison table. **Only Partner has a minimum, of 3 months.**
-  Guarantee: **primo mese
-  soddisfatti o rimborsati**. The part-time CTO on Sprint Pro is **Davide Silvestri**, never
-  a placeholder name.
+  one release in production every Sprint. **The Sprint has no minimum commitment**, and the
+  pages say so twice each: a hero chip ("Anche un solo mese, senza vincolo" / "Even a single
+  month, no lock-in") and the line under the price. Guarantee: **primo mese soddisfatti o
+  rimborsati**.
 - **Team**: "più di 10 persone" (never a fixed 10 or 11), **distributed in Italy**, 100%
   remote, registered office in Biella. The response-time line is always "Daniel, Veronica e Paolo ti rispondono entro 24 ore." (EN "Daniel, Veronica and Paolo reply within 24 hours."), never a Daniel-only version.
 - **Stats**: "40+ progetti consegnati". Never "in 11 paesi".
@@ -161,11 +160,15 @@ Use the `.btn` classes, never ad-hoc button styling:
 
 - `SectionHeader` — every section intro.
 - `PathBuilder` — the "costruisci il tuo percorso" island on `/prezzi` and `/en/pricing`
-  (it replaced `PricingCalculator`, deleted 2026-10-29). Level Sprint 5.000€ / Sprint Pro
-  8.000€, 1 to 6 months, Hypercare checkbox on by default. **Totale = mesi × tariffa**;
-  Hypercare shows as a recurring "da 500€/mese" line and **never adds to the total**.
-  Default state is Sprint Pro / 3 mesi = 24.000€. Real `<button>`s with `aria-pressed`
-  and `aria-label` on +/−. Thousands are grouped manually, as everywhere else.
+  (it replaced `PricingCalculator`, deleted 2026-10-29; rewritten for the add-on model
+  2026-10-30). Three blocks: Analisi (a toggle, **on by default but switchable off**, since the
+  Analisi is not compulsory), Sprint (1 to 6 months, 5.000€ each) and Hypercare. Add-on toggles
+  appear under their own service only, and AI Quality only shows when Hypercare is on.
+  **Totale progetto** sums the one-off and per-Sprint-month items; **Hypercare and AI Quality
+  are recurring and never enter that total**. The 3.000€ credit line shows only when the Analisi
+  is on. Default state is Analisi + 3 mesi + Compliance & Audit + Pentest = 28.000€. Real
+  `<button>`s with `aria-pressed`, and `aria-label` on +/−. Thousands are grouped manually,
+  as everywhere else.
 - `SprintRoadmap` — the mountain + sprint timeline + "aggiorna le priorità" reorder,
   shared by `/analisi-processi` and `/ai-engineering`.
 - `PricingTwoSteps` — the "Da dove partire dipende da te" two-card block (01 Analisi dei
