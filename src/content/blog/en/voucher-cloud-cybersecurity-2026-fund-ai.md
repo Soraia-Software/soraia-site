@@ -96,7 +96,7 @@ It's the same principle behind our "first month satisfied or refunded" guarantee
 
 The MIMIT measure is on a chronological window. Translation: funds run out in order of arrival. Whoever submits with project, quotes and documentation ready on opening day has a chance. Whoever "starts thinking about it" after opening usually finds the till empty.
 
-This applies to other incentives too. If you're a Piedmont SME, for example, the [Piedmont Digitalization Grant 2026](/bando) covers up to 65% as a grant for software, AI agents and automation, also window-based, from 22/10 to 15/12/2026. It often pays to map several grants together and figure out which line item goes where.
+This applies to many regional and Chamber of Commerce incentives too, which you'll find in our [list of digitalization grants](/bandi) (in Italian), filterable by region. It often pays to map several grants together and figure out which line item goes where.
 
 ## When NOT to waste time on the voucher
 

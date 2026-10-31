@@ -47,7 +47,7 @@ Positioning note: from 2026 Soraia has repositioned from a no-code/automation ag
 
 - [All case studies](https://www.soraia.io/en/case-studies): 13 public cases filterable by Ops cluster.
 - [AI Guides](https://www.soraia.io/en/guide): AI agents for business, AI Act, AI consulting in Italy, AI consulting costs, corporate AI training.
-- [Piedmont digitalization grant 2026](https://www.soraia.io/bando): Up to €25,000 non-repayable voucher for Piedmont SMEs (Unioncamere Piemonte) for software, AI agents and automation: 65% micro, 60% small, 50% medium. Applications on a first-come basis from 22/10 to 15/12/2026. Includes a 2-minute eligibility questionnaire; Soraia checks eligibility and supports the project and application. (Landing page in Italian.)
+- [Grants for digitalization](https://www.soraia.io/bandi): a filterable list of Italian grants and incentives for digitalizing a business (non-repayable grants, subsidized loans, tax incentives; national, regional and Chamber of Commerce), filterable by region, type, company size and what they fund. Each entry links its official source and the date it was checked. (Page in Italian.)
   - [AI Agents for Business](https://www.soraia.io/en/guide/ai-agents-for-business)
   - [AI Act for Business](https://www.soraia.io/en/guide/ai-act-for-business)
   - [AI Consulting Italy](https://www.soraia.io/en/guide/ai-consulting-italy)

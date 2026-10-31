@@ -35,9 +35,10 @@ section rather than inventing a new treatment.
   500 €/month** (optional, annual contract from go-live; it maintains rather than builds, so
   new features, modules and integrations go into a Sprint). Hypercare **absorbed AI Quality**
   on 2026-10-31: monthly test of the agents' answers on real cases, instruction tuning, API
-  cost control. Add-ons are **one-off** and attach to **one** service only. With the Sprint:
-  **Compliance & Audit 4.000 €**, **Pentest 4.000 €**, **Formazione e adozione 3.000 €**. With
-  the Analisi: **Supporto bandi 2.000 €, paid only if the grant is won**. **Hour packages**:
+  cost control. Add-ons are **one-off** and **independent** (since 2026-10-31): bought on
+  their own or with any service, no Analisi or Sprint required, so never group them under a
+  service. **Compliance & Audit 4.000 €**, **Pentest 4.000 €**, **Formazione e adozione
+  3.000 €**, **Supporto bandi 2.000 €, paid only if the grant is won**. **Hour packages**:
   **50 ore 4.000 €** and **100 ore 7.500 €**, for small self-contained jobs with no continuous
   team. All prices VAT excluded.
   **The Sprint itself includes** encryption of sensitive fields, audit logs, retention and
@@ -66,6 +67,20 @@ section rather than inventing a new treatment.
   the tiers **"Sprint Pro"** and **"Partner"** (2026-10-30) and the add-on **"AI Quality"**
   (2026-10-31, folded into Hypercare). The portal shows Sprint progress, not hours per person.
   `/downloads/ai-assessment-sample` still exists but is noindex, out of the sitemap and unlinked.
+- **Grants live on `/bandi`** (Italian only, `hideLangSwitch`). The data is in
+  `src/components/bandi/data.ts`, one entry per grant, and **every entry must be checked on its
+  official source** (the regional, ministerial or Chamber of Commerce page, never an aggregator
+  or a consultant's blog) and carry that date in `verificato`. Aggregators were wrong more often
+  than right on dates and status in October 2026: Arezzo-Siena showed 15 December when it had
+  closed in August, and the Piedmont voucher showed 15 December when it had closed on opening day.
+  **Never write the status by hand**: give `apertura`, `scadenza` and, for early closures,
+  `chiusoIl`; the page computes open, opening, always-on, yearly and closed. For each grant,
+  `daSapere` says what we know about **which suppliers are allowed**, because that decides whether
+  Soraia can be the supplier: say so plainly when a measure only accepts a closed supplier list
+  (Voucher Cloud e Cybersecurity) or a qualified catalogue (Fondimpresa). Bump `AGGIORNATO` on
+  every review. The site-wide announcement bar points to `/bandi`. `/bando`, the funnel of the
+  Piedmont Unioncamere voucher, was removed after its 2026 window closed on 22 October: it
+  301-redirects to `/bandi/` in `public/_redirects`.
 - `public/llms.txt` and `public/llms-full.txt` restate all of the above for AI answer engines:
   update them whenever one of these facts changes.
 
@@ -145,7 +160,7 @@ Use the `.btn` classes, never ad-hoc button styling:
   (IT) / "Process audit" + "AI Engineering" (EN). All other pages live in the footer only. EN
   pages mirror the IT ones one to one (home, about, case studies, pricing, contact,
   `/en/ai-engineering`, `/en/process-audit` = the deck, copy from `getDeckData("en")` in
-  `src/components/analisi/data.ts`); IT-only pages (`/careers`, `/bando`, `/demo-portale`) pass
+  `src/components/analisi/data.ts`); IT-only pages (`/careers`, `/bandi`, `/demo-portale`) pass
   `hideLangSwitch`.
 - Chi-siamo: centered hero header with the events/retreat marquee right below it; the
   "Lavora con noi" dark band carries the bento **team mosaic** (6 rounded-square tiles that
@@ -169,15 +184,20 @@ Use the `.btn` classes, never ad-hoc button styling:
 - `SectionHeader` — every section intro.
 - `PathBuilder` — the "costruisci il tuo percorso" island on `/prezzi` and `/en/pricing`
   (it replaced `PricingCalculator`, deleted 2026-10-29; rewritten for the add-on model
-  2026-10-30 and 2026-10-31). Three blocks: Analisi (a toggle, **on by default but switchable
-  off**, since the Analisi is not compulsory, with Supporto bandi under it), Sprint (1 to 6
-  months, 8.000€ each, with Compliance & Audit, Pentest and Formazione as one-off toggles) and
-  Hypercare. **Totale progetto** sums the one-off items and the Sprint months; **Hypercare is
-  recurring and never enters that total**. The 3.000€ credit line shows only when the Analisi
-  is on. Default state is Analisi + 3 mesi + Compliance & Audit + Pentest = 35.000€. Hour
+  2026-10-30 and 2026-10-31). Four independent blocks: Analisi (a toggle, **on by default but
+  switchable off**, since the Analisi is not compulsory), Sprint (a toggle, then 1 to 6 months at
+  8.000€ each), Hypercare (a toggle) and the four add-ons as one-off toggles, **independent of
+  Analisi and Sprint**. **Totale progetto** sums the one-off items and the Sprint months; **Hypercare is
+  recurring and never enters that total**. The 3.000€ credit line shows only when **both** the
+  Analisi and the Sprint are on, since it is deducted from the first Sprint. Default state is Analisi + 3 mesi + Compliance & Audit + Pentest = 35.000€. Hour
   packages are **not** in the builder: they are an alternative for small jobs, shown in their
   own section. Real `<button>`s with `aria-pressed`, and `aria-label` on +/−. Thousands are
   grouped manually, as everywhere else.
+- `BandiFinder` — the filterable grants list on `/bandi` (`src/components/bandi/`). Filters
+  by region (a region shows its own grants plus the national ones), type, company size and what
+  is funded; closed grants are hidden unless asked for. The first render uses the build date
+  (passed as `oggiBuild`) so server and hydrated HTML match, then it switches to the visitor's
+  date. Dates are formatted by hand in Italian, like thousands everywhere else.
 - `SprintRoadmap` — the mountain + sprint timeline + "aggiorna le priorità" reorder,
   shared by `/analisi-processi` and `/ai-engineering`.
 - `PricingTwoSteps` — the "Da dove partire dipende da te" two-card block (01 Analisi dei

@@ -98,7 +98,7 @@ const jsonLd = [
         price: "4000",
         priceCurrency: "EUR",
         description:
-          "Add-on dello Sprint, una tantum: documentazione tecnica per DPO e legale su GDPR e AI Act, e un dossier di conformità pronto per auditor ed enti di certificazione. IVA esclusa.",
+          "Add-on indipendente, una tantum: documentazione tecnica per DPO e legale su GDPR e AI Act, e un dossier di conformità pronto per auditor ed enti di certificazione. IVA esclusa.",
       },
       {
         "@type": "Offer",
@@ -106,7 +106,7 @@ const jsonLd = [
         price: "4000",
         priceCurrency: "EUR",
         description:
-          "Add-on dello Sprint: test di sicurezza eseguito da un partner esterno prima del rilascio, report consegnabile e correzione delle vulnerabilità critiche. IVA esclusa.",
+          "Add-on indipendente, una tantum: test di sicurezza eseguito da un partner esterno prima del rilascio, report consegnabile e correzione delle vulnerabilità critiche. IVA esclusa.",
       },
       {
         "@type": "Offer",
@@ -114,7 +114,7 @@ const jsonLd = [
         price: "3000",
         priceCurrency: "EUR",
         description:
-          "Add-on dello Sprint: due sessioni con il team, video tutorial e manuale utente, sessione di verifica dopo 30 giorni. IVA esclusa.",
+          "Add-on indipendente, una tantum: due sessioni con il team, video tutorial e manuale utente, sessione di verifica dopo 30 giorni. IVA esclusa.",
       },
       {
         "@type": "Offer",
@@ -122,7 +122,7 @@ const jsonLd = [
         price: "2000",
         priceCurrency: "EUR",
         description:
-          "Add-on dell’Analisi: verifica dei requisiti, preventivo conforme al bando, documentazione tecnica per la domanda e supporto alla rendicontazione. Si paga solo se il bando è vinto. IVA esclusa.",
+          "Add-on indipendente, una tantum: verifica dei requisiti, preventivo conforme al bando, documentazione tecnica per la domanda e supporto alla rendicontazione. Si paga solo se il bando è vinto. IVA esclusa.",
       },
       {
         "@type": "Offer",
@@ -163,7 +163,7 @@ const guarantees = [
     icon: `<rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M3 11h18"></path>`,
   },
   {
-    text: "Prezzo fisso, nessuna sorpresa in fattura",
+    text: "Prezzo fisso o pacchetto di ore, scegli tu",
     icon: `<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path>`,
   },
   {
@@ -190,7 +190,6 @@ const servizi = [
       "Priorità e criteri di accettazione scritti",
       "Stima in mesi di Sprint e preventivo a prezzo fisso",
     ],
-    addons: "Supporto bandi",
     cta: "Prenota l’Analisi",
     featured: false,
   },
@@ -213,7 +212,6 @@ const servizi = [
       "Portale cliente con avanzamento in tempo reale",
       "Tre mesi di richieste di cambiamento incluse dopo il rilascio",
     ],
-    addons: "Compliance & Audit, Pentest, Formazione e adozione",
     cta: "Attiva uno Sprint",
     featured: true,
   },
@@ -240,7 +238,7 @@ const servizi = [
   },
 ];
 
-const addonSprint = [
+const addons = [
   {
     name: "Compliance & Audit",
     price: "4.000€",
@@ -274,22 +272,21 @@ const addonSprint = [
       "Sessione di verifica dopo 30 giorni",
     ],
   },
+  {
+    name: "Supporto bandi",
+    price: "2.000€",
+    unit: " una tantum",
+    claim: "Per finanziare il progetto a fondo perduto",
+    items: [
+      "Verifica dei requisiti e preventivo conforme al bando",
+      "Documentazione tecnica per la domanda",
+      "Supporto alla rendicontazione",
+    ],
+    foot: "Lo paghi solo se il bando è vinto.",
+    cta: { label: "Vedi i bandi aperti", href: "/bandi" },
+  },
 ];
 
-const addonAnalisi = {
-  group: "Con l’Analisi",
-  name: "Supporto bandi",
-  price: "2.000€",
-  unit: " una tantum",
-  claim: "Per finanziare il progetto a fondo perduto",
-  items: [
-    "Verifica dei requisiti e preventivo conforme al bando",
-    "Documentazione tecnica per la domanda",
-    "Supporto alla rendicontazione",
-  ],
-  foot: "Lo paghi solo se il bando è vinto.",
-  cta: { label: "Verifica se il tuo progetto è finanziabile", href: "/bando" },
-};
 
 const pacchettiOre = [
   { ore: "50 ore", price: "4.000€", rate: "80€ l’ora" },
@@ -426,13 +423,7 @@ const regole = [
               ))}
             </ul>
             {s.foot && <p class="text-[13.5px]" style="color: var(--color-ink-soft);">{s.foot}</p>}
-            {s.addons ? (
-              <p class="text-[13.5px] mt-auto pt-2" style="color: var(--color-ink-soft); border-top: 1px solid var(--color-line);">
-                <span class="font-semibold" style="color: var(--color-brand);">Add-on:</span> {s.addons}
-              </p>
-            ) : (
-              <div class="mt-auto"></div>
-            )}
+            <div class="mt-auto"></div>
             <a href="/parliamone" class={`btn ${s.featured ? "btn-primary" : "btn-secondary"} justify-center`}>{s.cta}</a>
           </div>
         ))}
@@ -445,13 +436,12 @@ const regole = [
     <div class="container-soraia">
       <SectionHeader
         eyebrow="Add-on"
-        title="Ogni add-on completa uno dei servizi"
-        subtitle="Analisi, Sprint e Hypercare sono i servizi. Gli add-on sono opzionali, si pagano una volta sola e si agganciano a un solo servizio: li scegli quando attivi quel servizio."
+        title="Gli add-on si comprano da soli o insieme ai servizi"
+        subtitle="Sono opzionali, si pagano una volta sola e sono indipendenti: non serve aver fatto l’Analisi né avere uno Sprint in corso."
       />
 
-      <p class="eyebrow mb-4" style="color: var(--color-brand);">Con lo Sprint</p>
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-        {addonSprint.map((a) => (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        {addons.map((a) => (
           <div class="card flex flex-col gap-4 !p-7">
             <div>
               <h3 class="text-[1.25rem] font-medium tracking-tight">{a.name}</h3>
@@ -468,29 +458,10 @@ const regole = [
                 </li>
               ))}
             </ul>
+            {a.foot && <p class="text-[14px] font-semibold" style="color: var(--color-brand);">{a.foot}</p>}
+            {a.cta && <a href={a.cta.href} class="btn btn-secondary mt-auto justify-center">{a.cta.label}</a>}
           </div>
         ))}
-      </div>
-
-      <div class="card flex flex-col gap-4 !p-7 max-w-2xl mt-10">
-        <p class="eyebrow" style="color: var(--color-brand);">{addonAnalisi.group}</p>
-        <div>
-          <h3 class="text-[1.25rem] font-medium tracking-tight">{addonAnalisi.name}</h3>
-          <div class="mt-1 whitespace-nowrap">
-            <span class="bignum" style="font-size: clamp(1.5rem, 2.5vw, 1.75rem);">{addonAnalisi.price}</span><span class="text-[14px]" style="color: var(--color-ink-soft);">{addonAnalisi.unit}</span>
-          </div>
-        </div>
-        <p class="text-[15px]" style="color: var(--color-ink-muted);">{addonAnalisi.claim}</p>
-        <ul class="flex flex-col gap-2.5 text-[14.5px] list-none p-0 m-0">
-          {addonAnalisi.items.map((item) => (
-            <li class="flex items-start gap-2.5">
-              <svg class="shrink-0 mt-1" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-        <p class="text-[14px] font-semibold" style="color: var(--color-brand);">{addonAnalisi.foot}</p>
-        <a href={addonAnalisi.cta.href} class="btn btn-secondary mt-auto justify-center">{addonAnalisi.cta.label}</a>
       </div>
     </div>
   </section>
@@ -618,7 +589,7 @@ const regole = [
           Partiamo dall’Analisi, poi ti diamo un preventivo con l’elenco dei risultati fissato per iscritto.
         </p>
       </div>
-      <a href="/bando" class="btn btn-secondary whitespace-nowrap">Verifica il bando</a>
+      <a href="/bandi" class="btn btn-secondary whitespace-nowrap">Vedi i bandi aperti</a>
     </div>
   </section>
 

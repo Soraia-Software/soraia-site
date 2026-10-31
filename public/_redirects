@@ -37,6 +37,11 @@
 /terms-conditions  /terms/  301
 /cookie-policy  /cookies/  301
 
+# Bandi: /bando era il funnel del voucher digitalizzazione Piemonte 2026,
+# chiuso il 22/10/2026 e tolto dal sito. I bandi aperti sono su /bandi.
+/bando  /bandi/  301
+/bando/  /bandi/  301
+
 # ============================================================
 # SERVICES → AI AGENTS
 # ============================================================

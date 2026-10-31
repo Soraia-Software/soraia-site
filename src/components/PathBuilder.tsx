@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-// Costruttore del percorso. Modello a tre servizi più add-on:
-// Analisi 3.000€ una tantum (facoltativa), Sprint da 8.000€/mese, Hypercare da 500€/mese.
-// Gli add-on si agganciano a un solo servizio e sono tutti una tantum. Hypercare è
+// Costruttore del percorso. Tre servizi più add-on, tutti indipendenti tra loro:
+// Analisi 3.000€ una tantum, Sprint da 8.000€/mese, Hypercare da 500€/mese, e quattro
+// add-on una tantum che si comprano con o senza Analisi e Sprint. Hypercare è
 // ricorrente e resta fuori dal totale del progetto.
 const P_ANALISI = 3000;
-const P_BANDI = 2000;
 const P_SPRINT = 8000;
 const P_COMPLIANCE = 4000;
 const P_PENTEST = 4000;
 const P_TRAINING = 3000;
+const P_BANDI = 2000;
 const MIN_MONTHS = 1;
 const MAX_MONTHS = 6;
 const brand = "#4A1E5C";
@@ -24,31 +24,36 @@ const T = {
     s2Note: "da 8.000€ al mese",
     s3: "Hypercare",
     s3Note: "facoltativa, dopo il go-live",
+    s4: "Add-on",
+    s4Note: "una tantum, indipendenti dai servizi",
     analisi: "Includi l’Analisi",
     analisiPrice: "3.000€ una tantum",
-    bandi: "Supporto bandi",
-    bandiPrice: "2.000€, e lo paghi solo se il bando è vinto",
+    sprint: "Attiva lo Sprint",
+    sprintPrice: "da 8.000€ al mese, anche un solo mese",
+    hyper: "Attiva Hypercare",
+    hyperPrice: "da 500€/mese, contratto annuale",
     compliance: "Compliance & Audit",
     compliancePrice: "4.000€ una tantum",
     pentest: "Pentest",
     pentestPrice: "4.000€ una tantum",
     training: "Formazione e adozione",
     trainingPrice: "3.000€ una tantum",
-    hyper: "Attiva Hypercare",
-    hyperPrice: "da 500€/mese, contratto annuale",
+    bandi: "Supporto bandi",
+    bandiPrice: "2.000€, e lo paghi solo se il bando è vinto",
     minusAria: "Un mese di Sprint in meno",
     plusAria: "Un mese di Sprint in più",
     months: (n: number) => `${n} ${n === 1 ? "mese" : "mesi"}`,
     sprLabel: (n: number) => `${n} ${n === 1 ? "mese" : "mesi"} di team dedicato`,
     lineAnalisi: "Analisi",
-    lineBandi: "+ Supporto bandi",
     lineSprint: (m: string, rate: string) => `${m} di Sprint × ${rate}`,
     lineCompliance: "+ Compliance & Audit",
     linePentest: "+ Pentest",
     lineTraining: "+ Formazione e adozione",
+    lineBandi: "+ Supporto bandi",
     summaryTag: "Il tuo percorso",
     totalLabel: "Totale progetto",
-    credit: (n: string) => `Se parti entro 30 giorni dall’Analisi, i 3.000€ vengono scalati: ${n}.`,
+    empty: "Scegli almeno un servizio o un add-on.",
+    credit: (n: string) => `Se parti con lo Sprint entro 30 giorni dall’Analisi, i 3.000€ vengono scalati: ${n}.`,
     recTitle: "Hypercare, dopo il go-live",
     recHyper: "Hypercare",
     recHyperPrice: "da 500€/mese",
@@ -63,31 +68,36 @@ const T = {
     s2Note: "from €8,000 a month",
     s3: "Hypercare",
     s3Note: "optional, after go-live",
+    s4: "Add-ons",
+    s4Note: "one-off, independent of the services",
     analisi: "Include the Analysis",
     analisiPrice: "€3,000 one-off",
-    bandi: "Grant support",
-    bandiPrice: "€2,000, and you pay only if the grant is won",
+    sprint: "Turn on the Sprint",
+    sprintPrice: "from €8,000 a month, even a single month",
+    hyper: "Turn on Hypercare",
+    hyperPrice: "from €500/month, annual contract",
     compliance: "Compliance & Audit",
     compliancePrice: "€4,000 one-off",
     pentest: "Pentest",
     pentestPrice: "€4,000 one-off",
     training: "Training and adoption",
     trainingPrice: "€3,000 one-off",
-    hyper: "Turn on Hypercare",
-    hyperPrice: "from €500/month, annual contract",
+    bandi: "Grant support",
+    bandiPrice: "€2,000, and you pay only if the grant is won",
     minusAria: "One Sprint month less",
     plusAria: "One Sprint month more",
     months: (n: number) => `${n} ${n === 1 ? "month" : "months"}`,
     sprLabel: (n: number) => `${n} ${n === 1 ? "month" : "months"} of a dedicated team`,
     lineAnalisi: "Analysis",
-    lineBandi: "+ Grant support",
     lineSprint: (m: string, rate: string) => `${m} of Sprint × ${rate}`,
     lineCompliance: "+ Compliance & Audit",
     linePentest: "+ Pentest",
     lineTraining: "+ Training and adoption",
+    lineBandi: "+ Grant support",
     summaryTag: "Your path",
     totalLabel: "Project total",
-    credit: (n: string) => `If you start within 30 days of the Analysis, the €3,000 is deducted: ${n}.`,
+    empty: "Pick at least one service or add-on.",
+    credit: (n: string) => `If you start the Sprint within 30 days of the Analysis, the €3,000 is deducted: ${n}.`,
     recTitle: "Hypercare, after go-live",
     recHyper: "Hypercare",
     recHyperPrice: "from €500/month",
@@ -189,32 +199,29 @@ function StepHead({ n, title, note }: { n: string; title: string; note: string }
 
 export default function PathBuilder({ lang = "it" }: { lang?: Lang }) {
   const [analisi, setAnalisi] = useState(true);
-  const [bandi, setBandi] = useState(false);
+  const [sprint, setSprint] = useState(true);
   const [sprints, setSprints] = useState(3);
+  const [hyper, setHyper] = useState(true);
   const [compliance, setCompliance] = useState(true);
   const [pentest, setPentest] = useState(true);
   const [training, setTraining] = useState(false);
-  const [hyper, setHyper] = useState(true);
+  const [bandi, setBandi] = useState(false);
 
   const C = T[lang];
   // Raggruppamento manuale delle migliaia: deterministico, non dipende dall'ICU dell'host.
   const group = (n: number) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, lang === "en" ? "," : ".");
   const eur = (n: number) => (lang === "en" ? `€${group(n)}` : `${group(n)}€`);
 
-  const mesi = C.months(sprints);
-
   const lines: { label: string; amount: string }[] = [];
   let total = 0;
   if (analisi) {
     lines.push({ label: C.lineAnalisi, amount: eur(P_ANALISI) });
     total += P_ANALISI;
-    if (bandi) {
-      lines.push({ label: C.lineBandi, amount: eur(P_BANDI) });
-      total += P_BANDI;
-    }
   }
-  lines.push({ label: C.lineSprint(mesi, eur(P_SPRINT)), amount: eur(sprints * P_SPRINT) });
-  total += sprints * P_SPRINT;
+  if (sprint) {
+    lines.push({ label: C.lineSprint(C.months(sprints), eur(P_SPRINT)), amount: eur(sprints * P_SPRINT) });
+    total += sprints * P_SPRINT;
+  }
   if (compliance) {
     lines.push({ label: C.lineCompliance, amount: eur(P_COMPLIANCE) });
     total += P_COMPLIANCE;
@@ -226,6 +233,10 @@ export default function PathBuilder({ lang = "it" }: { lang?: Lang }) {
   if (training) {
     lines.push({ label: C.lineTraining, amount: eur(P_TRAINING) });
     total += P_TRAINING;
+  }
+  if (bandi) {
+    lines.push({ label: C.lineBandi, amount: eur(P_BANDI) });
+    total += P_BANDI;
   }
 
   const stepStyle: React.CSSProperties = {
@@ -241,6 +252,8 @@ export default function PathBuilder({ lang = "it" }: { lang?: Lang }) {
     transition: "border-color .18s, opacity .18s",
   };
 
+  const block: React.CSSProperties = { borderTop: "1px solid var(--color-line)", paddingTop: 24 };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch">
       {/* ===== CONTROLLI ===== */}
@@ -249,47 +262,53 @@ export default function PathBuilder({ lang = "it" }: { lang?: Lang }) {
         <div className="flex flex-col gap-3">
           <StepHead n="1" title={C.s1} note={C.s1Note} />
           <Toggle on={analisi} onClick={() => setAnalisi((v) => !v)} label={C.analisi} price={C.analisiPrice} />
-          {analisi && (
-            <Toggle on={bandi} onClick={() => setBandi((v) => !v)} label={C.bandi} price={C.bandiPrice} />
-          )}
         </div>
 
         {/* 2 · SPRINT */}
-        <div className="flex flex-col gap-3" style={{ borderTop: "1px solid var(--color-line)", paddingTop: 24 }}>
+        <div className="flex flex-col gap-3" style={block}>
           <StepHead n="2" title={C.s2} note={C.s2Note} />
-          <div className="flex items-center gap-4">
-            <button
-              type="button"
-              onClick={() => setSprints((m) => Math.max(MIN_MONTHS, m - 1))}
-              disabled={sprints <= MIN_MONTHS}
-              aria-label={C.minusAria}
-              style={{ ...stepStyle, opacity: sprints <= MIN_MONTHS ? 0.35 : 1, cursor: sprints <= MIN_MONTHS ? "not-allowed" : "pointer" }}
-            >
-              &minus;
-            </button>
-            <span className="bignum text-center" style={{ fontSize: "clamp(2rem, 4vw, 2.25rem)", minWidth: 40 }} aria-live="polite">
-              {sprints}
-            </span>
-            <button
-              type="button"
-              onClick={() => setSprints((m) => Math.min(MAX_MONTHS, m + 1))}
-              disabled={sprints >= MAX_MONTHS}
-              aria-label={C.plusAria}
-              style={{ ...stepStyle, opacity: sprints >= MAX_MONTHS ? 0.35 : 1, cursor: sprints >= MAX_MONTHS ? "not-allowed" : "pointer" }}
-            >
-              +
-            </button>
-            <span className="text-[14px]" style={{ color: "var(--color-ink-soft)" }}>{C.sprLabel(sprints)}</span>
-          </div>
-          <Toggle on={compliance} onClick={() => setCompliance((v) => !v)} label={C.compliance} price={C.compliancePrice} />
-          <Toggle on={pentest} onClick={() => setPentest((v) => !v)} label={C.pentest} price={C.pentestPrice} />
-          <Toggle on={training} onClick={() => setTraining((v) => !v)} label={C.training} price={C.trainingPrice} />
+          <Toggle on={sprint} onClick={() => setSprint((v) => !v)} label={C.sprint} price={C.sprintPrice} />
+          {sprint && (
+            <div className="flex items-center gap-4">
+              <button
+                type="button"
+                onClick={() => setSprints((m) => Math.max(MIN_MONTHS, m - 1))}
+                disabled={sprints <= MIN_MONTHS}
+                aria-label={C.minusAria}
+                style={{ ...stepStyle, opacity: sprints <= MIN_MONTHS ? 0.35 : 1, cursor: sprints <= MIN_MONTHS ? "not-allowed" : "pointer" }}
+              >
+                &minus;
+              </button>
+              <span className="bignum text-center" style={{ fontSize: "clamp(2rem, 4vw, 2.25rem)", minWidth: 40 }} aria-live="polite">
+                {sprints}
+              </span>
+              <button
+                type="button"
+                onClick={() => setSprints((m) => Math.min(MAX_MONTHS, m + 1))}
+                disabled={sprints >= MAX_MONTHS}
+                aria-label={C.plusAria}
+                style={{ ...stepStyle, opacity: sprints >= MAX_MONTHS ? 0.35 : 1, cursor: sprints >= MAX_MONTHS ? "not-allowed" : "pointer" }}
+              >
+                +
+              </button>
+              <span className="text-[14px]" style={{ color: "var(--color-ink-soft)" }}>{C.sprLabel(sprints)}</span>
+            </div>
+          )}
         </div>
 
         {/* 3 · HYPERCARE */}
-        <div className="flex flex-col gap-3" style={{ borderTop: "1px solid var(--color-line)", paddingTop: 24 }}>
+        <div className="flex flex-col gap-3" style={block}>
           <StepHead n="3" title={C.s3} note={C.s3Note} />
           <Toggle on={hyper} onClick={() => setHyper((v) => !v)} label={C.hyper} price={C.hyperPrice} />
+        </div>
+
+        {/* + · ADD-ON, indipendenti */}
+        <div className="flex flex-col gap-3" style={block}>
+          <StepHead n="+" title={C.s4} note={C.s4Note} />
+          <Toggle on={compliance} onClick={() => setCompliance((v) => !v)} label={C.compliance} price={C.compliancePrice} />
+          <Toggle on={pentest} onClick={() => setPentest((v) => !v)} label={C.pentest} price={C.pentestPrice} />
+          <Toggle on={training} onClick={() => setTraining((v) => !v)} label={C.training} price={C.trainingPrice} />
+          <Toggle on={bandi} onClick={() => setBandi((v) => !v)} label={C.bandi} price={C.bandiPrice} />
         </div>
       </div>
 
@@ -311,6 +330,10 @@ export default function PathBuilder({ lang = "it" }: { lang?: Lang }) {
           </div>
         ))}
 
+        {lines.length === 0 && (
+          <p className="text-[14px]" style={{ color: "rgba(255,255,255,0.68)" }}>{C.empty}</p>
+        )}
+
         <div className="flex justify-between items-baseline gap-3 mt-1">
           <span className="font-semibold">{C.totalLabel}</span>
           <span className="bignum" style={{ color: "#fff", fontSize: "clamp(2rem, 4vw, 2.5rem)" }} aria-live="polite">
@@ -318,7 +341,7 @@ export default function PathBuilder({ lang = "it" }: { lang?: Lang }) {
           </span>
         </div>
 
-        {analisi && (
+        {analisi && sprint && (
           <p className="text-[14px]" style={{ color: "rgba(255,255,255,0.68)" }}>{C.credit(eur(total - P_ANALISI))}</p>
         )}
 

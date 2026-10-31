@@ -60,10 +60,9 @@ Authoritative but never arrogant; clear over clever. Short sentences. Concrete o
   piccoli. **Analisi €3.000** una tantum (facoltativa, fino a 10 interviste, si compra anche
   da sola, scalata dal primo Sprint entro 30 giorni), **Sprint da €8.000/mese** (team
   continuativo, ma attivabile anche per un solo mese), **Hypercare da €500/mese** dopo il
-  go-live, contratto annuale, facoltativa. Add-on una tantum, ognuno agganciato a un solo
-  servizio: **Compliance & Audit €4.000**, **Pentest €4.000**, **Formazione e adozione
-  €3.000** (con lo Sprint); **Supporto bandi €2.000**, pagato solo se il bando e' vinto (con
-  l'Analisi). Pacchetti di ore: **50 ore €4.000**, **100 ore €7.500**.
+  go-live, contratto annuale, facoltativa. Add-on una tantum e indipendenti, comprabili anche
+  senza Analisi o Sprint: **Compliance & Audit €4.000**, **Pentest €4.000**, **Formazione e
+  adozione €3.000**, **Supporto bandi €2.000**, pagato solo se il bando e' vinto. Pacchetti di ore: **50 ore €4.000**, **100 ore €7.500**.
   AI Search Optimization audit €2.000, sprint €3-15k; Linkly €1.900/anno early adopter.
 - Delivery: primo rilascio in produzione in **4 settimane**; uno Sprint al mese, con Sprint Goal
   firmato a inizio mese, demo a meta' mese e rilascio a fine mese.

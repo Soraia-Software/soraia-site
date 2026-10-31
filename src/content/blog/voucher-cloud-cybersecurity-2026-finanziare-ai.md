@@ -96,7 +96,7 @@ Prima del voucher serve la stessa cosa che chiediamo in ogni sprint: una **basel
 
 La misura MIMIT è a sportello cronologico. Traduzione: i fondi finiscono in ordine di arrivo. Chi presenta la domanda con progetto, preventivi e documentazione già pronti il giorno dell'apertura ha una chance. Chi "inizia a pensarci" dopo l'apertura di solito trova la cassa vuota.
 
-Questo vale anche per altri incentivi. Se sei una PMI piemontese, per esempio, il [Bando digitalizzazione Piemonte 2026](/bando) copre fino al 65% a fondo perduto per software, agenti IA e automazione, sempre a sportello, dal 22/10 al 15/12/2026. Spesso conviene mappare più bandi insieme e capire quale voce mettere dove.
+Questo vale anche per molti incentivi regionali e delle Camere di commercio, che trovi nel nostro [elenco dei bandi per la digitalizzazione](/bandi), filtrabile per regione. Spesso conviene mappare più bandi insieme e capire quale voce mettere dove.
 
 ## Quando NON perdere tempo con il voucher
 
