@@ -78,8 +78,9 @@ section rather than inventing a new treatment.
   `daSapere` says what we know about **which suppliers are allowed**, because that decides whether
   Soraia can be the supplier: say so plainly when a measure only accepts a closed supplier list
   (Voucher Cloud e Cybersecurity) or a qualified catalogue (Fondimpresa). Bump `AGGIORNATO` on
-  every review. The site-wide announcement bar points to `/bandi`; `/bando` is the old Piedmont
-  Unioncamere funnel, kept with a notice that the 2026 window closed on 22 October.
+  every review. The site-wide announcement bar points to `/bandi`. `/bando`, the funnel of the
+  Piedmont Unioncamere voucher, was removed after its 2026 window closed on 22 October: it
+  301-redirects to `/bandi/` in `public/_redirects`.
 - `public/llms.txt` and `public/llms-full.txt` restate all of the above for AI answer engines:
   update them whenever one of these facts changes.
 
@@ -159,7 +160,7 @@ Use the `.btn` classes, never ad-hoc button styling:
   (IT) / "Process audit" + "AI Engineering" (EN). All other pages live in the footer only. EN
   pages mirror the IT ones one to one (home, about, case studies, pricing, contact,
   `/en/ai-engineering`, `/en/process-audit` = the deck, copy from `getDeckData("en")` in
-  `src/components/analisi/data.ts`); IT-only pages (`/careers`, `/bando`, `/demo-portale`) pass
+  `src/components/analisi/data.ts`); IT-only pages (`/careers`, `/bandi`, `/demo-portale`) pass
   `hideLangSwitch`.
 - Chi-siamo: centered hero header with the events/retreat marquee right below it; the
   "Lavora con noi" dark band carries the bento **team mosaic** (6 rounded-square tiles that

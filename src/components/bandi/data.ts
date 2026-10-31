@@ -262,26 +262,6 @@ export const BANDI: Bando[] = [
     verificato: "2026-10-31",
   },
   {
-    id: "piemonte-voucher-digitalizzazione-2026",
-    nome: "Voucher digitalizzazione PMI 2026",
-    ente: "Regione Piemonte e Unioncamere Piemonte",
-    ambito: "regionale",
-    regioni: ["Piemonte"],
-    tipo: "fondo-perduto",
-    beneficiari: ["micro", "piccole", "medie", "professionisti"],
-    copre: ["software", "ia", "consulenza", "formazione"],
-    aiuto: "Da 4.000€ a 25.000€, dal 50% al 65% delle spese secondo la dimensione",
-    sintesi:
-      "Lo sportello ha aperto alle 11 del 22 ottobre 2026 e ha chiuso alle 17 dello stesso giorno, perché le domande avevano superato il 120% della dotazione di 19,2 milioni. Le domande arrivate oltre la dotazione restano in lista d’attesa, se si liberano fondi.",
-    daSapere:
-      "Consulenza e formazione erano ammesse fino al 30% delle spese. Non era cumulabile con la Linea A sullo stesso intervento.",
-    apertura: "2026-10-22",
-    scadenza: "2026-12-15",
-    chiusoIl: "2026-10-22",
-    fonte: "https://bandi.regione.piemonte.it/contributi-finanziamenti/voucher-digitalizzazione-pmi-2026",
-    verificato: "2026-10-31",
-  },
-  {
     id: "lazio-voucher-digitalizzazione-2026",
     nome: "Voucher Digitalizzazione PMI 2026",
     ente: "Regione Lazio, gestito da Lazio Innova",

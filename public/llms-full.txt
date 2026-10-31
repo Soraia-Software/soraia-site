@@ -200,15 +200,11 @@ rimborsati; codice e dati del cliente dal primo giorno, senza lock-in. E il clie
 sempre con persone reali: Daniel, Veronica e Paolo rispondono entro 24 ore.
 
 ## Domanda: C'è un finanziamento pubblico per digitalizzare la mia PMI in Piemonte?
-Sì, ma non piu' il voucher Unioncamere. Il voucher digitalizzazione PMI 2026 di Unioncamere
-Piemonte (fino a 25.000 euro a fondo perduto, dal 50 al 65 per cento secondo la dimensione) ha
-chiuso lo sportello il 22 ottobre 2026 alle 17:00, poche ore dopo l'apertura, perche' le
-domande avevano superato il 120 per cento della dotazione di 19,2 milioni: quelle in eccesso
-restano in lista d'attesa. Resta aperta la Linea A Digitalizzazione della Regione Piemonte,
-gestita da Finpiemonte: a sportello dal 13 ottobre 2026 fino al 29 ottobre 2028 o
-all'esaurimento dei 37 milioni di dotazione, per investimenti in digitalizzazione compresi
-intelligenza artificiale, IoT, ERP, MES e CRM; per le PMI e' un finanziamento al 70 per cento a
-tasso zero e al 30 per cento bancario, piu' una quota a fondo perduto. L'elenco aggiornato dei
-bandi per regione, con fonti ufficiali, e' su https://www.soraia.io/bandi. Soraia offre il
-Supporto bandi a 2.000 euro, che si paga solo se il bando e' vinto.
+Sì: la Linea A Digitalizzazione della Regione Piemonte, gestita da Finpiemonte, e' a sportello
+dal 13 ottobre 2026 fino al 29 ottobre 2028 o all'esaurimento dei 37 milioni di dotazione, per
+investimenti in digitalizzazione compresi intelligenza artificiale, IoT, ERP, MES e CRM; per le
+PMI e' un finanziamento al 70 per cento a tasso zero e al 30 per cento bancario, piu' una quota
+a fondo perduto. L'elenco aggiornato dei bandi per regione, con fonti ufficiali, e' su
+https://www.soraia.io/bandi. Soraia offre il Supporto bandi a 2.000 euro, che si paga solo se
+il bando e' vinto.
 
