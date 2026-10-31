@@ -68,7 +68,7 @@ faq:
   - q: "Do I really have to pick just one channel?"
     a: "No. The hard, expensive part is the <strong>AI agent on the process</strong> (triage, answers, routing to humans): once that exists, exposing it on both WhatsApp and the website widget is integration work, not a second project from scratch. See how we work on <a href='/customer-support'>customer support</a>."
   - q: "How much does it cost to start with an AI agent on one channel?"
-    a: "With Soraia it starts from <strong>€5,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month, with first delivery in <strong>4 weeks</strong>. Meta's WhatsApp fees are a separate, variable cost that depends on volume. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
+    a: "With Soraia it starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month, with first delivery in <strong>4 weeks</strong>. Meta's WhatsApp fees are a separate, variable cost that depends on volume. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
   - q: "Is an agent on WhatsApp or the website GDPR-compliant?"
     a: "Yes. In both cases we work GDPR-compliant, with an art. 28 DPA in the contract, an immutable audit log and no LLM training on your data. On the site you keep full control over data; on WhatsApp you also route through Meta's infrastructure, so you should assess which data transits."
   - q: "Can an AI agent really cut the load on my team?"

@@ -50,7 +50,7 @@ tabella:
     valoreB: "4 settimane (prima delivery)"
   - criterio: "Costo d'ingresso"
     valoreA: "Basso (es. Linkly su linkly.events)"
-    valoreB: "Da 5.000 €/mese"
+    valoreB: "Da 8.000 €/mese"
   - criterio: "Costo nel tempo"
     valoreA: "Canone ricorrente perpetuo"
     valoreB: "Sprint una tantum + eventuale retainer"

@@ -72,7 +72,7 @@ faq:
   - q: "E la privacy e la conformita' all'AI Act?"
     a: "Sono il punto critico. Un agente che legge contratti tratta dati sensibili e rientra nel perimetro del Regolamento europeo IA. Noi lavoriamo con infrastruttura europea quando richiesto, <strong>DPA art. 28 nel contratto, audit log su ogni decisione e nessun training degli LLM sui tuoi dati</strong>. Vedi la nostra <a href='/guide/ai-act-aziende'>guida all'AI Act per le aziende</a> e i casi di <a href='/customer-support'>Customer & Compliance Automation</a>."
   - q: "Quanto costa mettere in piedi un agente di analisi contratti?"
-    a: "Dipende dai volumi e dalle integrazioni. Con Soraia si parte da <strong>5.000 € al mese</strong> con uno Sprint, e il primo rilascio è in produzione in 4 settimane. Il primo mese e' soddisfatti o rimborsati e il codice resta tuo. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Dipende dai volumi e dalle integrazioni. Con Soraia si parte da <strong>8.000 € al mese</strong> con uno Sprint, e il primo rilascio è in produzione in 4 settimane. Il primo mese e' soddisfatti o rimborsati e il codice resta tuo. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "L'agente IA va a sostituire del tutto il lavoro manuale?"
     a: "No: serve comunque un controllo umano sui casi segnalati e sulle clausole ambigue. L'obiettivo e' togliere il lavoro ripetitivo a basso rischio, non eliminare il giudizio. Vedi come funzionano i nostri <a href='/ai-agents'>agenti IA</a> per area."
 related: []

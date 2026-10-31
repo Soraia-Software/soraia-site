@@ -202,7 +202,7 @@ Il processo che funziona per una PMI italiana 10-200 dipendenti:
 
 Pieno disclaimer: questa guida la scrive Soraia, AI agency italiana 100% focus PMI. Il nostro approccio differisce dagli standard di mercato su 4 punti.
 
-**1. Tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 5.000 € al mese.** <a href="/prezzi">Vedi i prezzi</a>.
+**1. Tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 8.000 € al mese.** <a href="/prezzi">Vedi i prezzi</a>.
 
 **2. Garanzia "primo mese soddisfatti o rimborsati" scritta nel contratto.** È una clausola operativa, con metric primario e finestra di misurazione.
 

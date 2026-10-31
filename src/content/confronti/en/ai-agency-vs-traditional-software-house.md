@@ -68,7 +68,7 @@ faq:
   - q: "Can't a traditional software house also do AI?"
     a: "It can, but the AI expertise needs checking: many added it recently on top of a classic stack. Ask for real AI agents in production, not just demos. If AI is the heart of the project, an AI-native partner starts with a proven method: at Soraia development runs in sprints and the <a href='/en/ai-agents'>first agent runs on your processes</a> in 4 weeks."
   - q: "With an AI agency, do I risk paying for a project that never closes?"
-    a: "That's a real risk of the sprint model if it isn't governed. With Soraia the client <strong>approves each milestone before proceeding</strong> and there's a <strong>first month satisfied or refunded</strong> guarantee. There's also a fixed-price option from 5,000 euro, where you pay for the approved result, not the hours."
+    a: "That's a real risk of the sprint model if it isn't governed. With Soraia the client <strong>approves each milestone before proceeding</strong> and there's a <strong>first month satisfied or refunded</strong> guarantee. For smaller, self-contained jobs there is also an hour package: 50 hours for 4,000 euro or 100 for 7,500."
   - q: "What if my project is management software, not 'AI'?"
     a: "An AI-native agency also builds <a href='/en/software-development'>custom software</a> (web apps, CRMs, internal tools) with the same sprint model, and adds AI only where it genuinely helps. You don't have to put agents everywhere: often you start with the software and automate later."
   - q: "Who's a better fit for a very large project?"

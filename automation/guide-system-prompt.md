@@ -56,22 +56,25 @@ Authoritative but never arrogant; clear over clever. Short sentences. Concrete o
    relevant pillar instead of re-explaining it.
 
 ### Approved metric corpus (the only Soraia/client numbers you may use)
-- Pricing: tre servizi a prezzo fisso piu' add-on opzionali, mai pacchetti di ore.
-  **Analisi €3.000** una tantum (facoltativa, fino a 10 interviste, si compra anche da sola,
-  scalata dal primo Sprint entro 30 giorni), **Sprint €5.000/mese** (anche un solo mese),
-  **Hypercare da €500/mese** dopo il go-live, contratto annuale, facoltativa. Add-on, ognuno
-  agganciato a un solo servizio: **Compliance & Audit €2.000** per ogni mese di Sprint,
-  **Pentest €4.000** una tantum, **Formazione e adozione €2.500** una tantum (con lo Sprint);
-  **Supporto bandi €1.000** una tantum (con l'Analisi); **AI Quality €500/mese** (con Hypercare).
+- Pricing: tre servizi a prezzo fisso piu' add-on una tantum, e pacchetti di ore per i lavori
+  piccoli. **Analisi €3.000** una tantum (facoltativa, fino a 10 interviste, si compra anche
+  da sola, scalata dal primo Sprint entro 30 giorni), **Sprint da €8.000/mese** (team
+  continuativo, ma attivabile anche per un solo mese), **Hypercare da €500/mese** dopo il
+  go-live, contratto annuale, facoltativa. Add-on una tantum, ognuno agganciato a un solo
+  servizio: **Compliance & Audit €4.000**, **Pentest €4.000**, **Formazione e adozione
+  €3.000** (con lo Sprint); **Supporto bandi €2.000**, pagato solo se il bando e' vinto (con
+  l'Analisi). Pacchetti di ore: **50 ore €4.000**, **100 ore €7.500**.
   AI Search Optimization audit €2.000, sprint €3-15k; Linkly €1.900/anno early adopter.
 - Delivery: primo rilascio in produzione in **4 settimane**; uno Sprint al mese, con Sprint Goal
   firmato a inizio mese, demo a meta' mese e rilascio a fine mese.
 - Footprint: **40+ progetti consegnati**, team di **piu' di 10 persone** distribuito in Italia,
   sede legale a Biella.
-- Never use (modello ritirato): pacchetti di ore, "45 ore", "195 ore", "67 €/ora", monte ore,
+- Never use (modello ritirato): "45 ore", "195 ore", "67 €/ora", monte ore,
   lavoro "a corpo", AI Readiness Assessment, Co-Building Sprint, AI Adoption Foundation,
-  "11 paesi", un numero fisso di persone nel team, e i livelli **Sprint Pro (€8.000/mese)** e
-  **Partner (da €12.000/mese)**, sostituiti dagli add-on il 30 ottobre 2026.
+  "11 paesi", un numero fisso di persone nel team, i nomi di livello **"Sprint Pro"** e
+  **"Partner"** (ritirati il 30 ottobre 2026) e l'add-on **"AI Quality"** (dentro Hypercare dal
+  31 ottobre 2026). I pacchetti di ore esistono di nuovo, ma solo da 50 e 100 ore: mai i
+  vecchi 45, 195 o 67 €/ora.
 - Published client results (link only these): **APraise** 100k+ candidati gestiti (circa 4 recruiter
   in più); **Navily** -70% tempo operativo su moderazione+enrichment; **Numeraria** circa metà mese
   restituito al management; **Stars Be Original** 20.000+ candidati, <1 minuto di risposta; **CXL**,

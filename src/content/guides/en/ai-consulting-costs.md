@@ -20,7 +20,7 @@ faq:
   - q: "What is the minimum price for a serious AI project in a company?"
     a: "Below <strong>€10,000</strong> total, it is hard to build a serious custom AI agent (with baseline measurement, build, deploy, and 30-day hypercare). Below this threshold you only get: (a) very small workflows (single Make/n8n automation with AI), (b) shallow pilots that never reach real production, (c) providers selling hours without a clear scope. The real sweet spot for a first agent: <strong>€15,000–35,000</strong>."
   - q: "How much does the first AI Readiness Assessment cost?"
-    a: "<strong>From €3,000</strong> for a serious assessment (1–2 weeks, timed baseline, scope definition, expected ROI, action plan). Serious providers offer it <strong>refunded if you proceed</strong> with a sprint. Soraia's model is a single, simple one: three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €5,000/month. <a href='/en/contact'>Let's talk</a>."
+    a: "<strong>From €3,000</strong> for a serious assessment (1–2 weeks, timed baseline, scope definition, expected ROI, action plan). Serious providers offer it <strong>refunded if you proceed</strong> with a sprint. Soraia's model is a single, simple one: three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €8,000/month. <a href='/en/contact'>Let's talk</a>."
   - q: "How much does an ongoing retainer cost after the initial sprint?"
     a: "<strong>€3,000–15,000/month</strong> depending on: scope (1 agent vs. a portfolio), criticality (24h SLA vs. best effort), number of integrations, and sector (regulated industries require more compliance hours). For a typical mid-market SMB after the first agent: <strong>€5,000–8,000/month</strong> is the typical range."
   - q: "Fixed price or time & material: which should I choose?"
@@ -56,7 +56,7 @@ Data based on Soraia's internal benchmark plus feedback from clients who evaluat
 
 **Timeline**: 1–2 weeks of consulting.
 
-**Market standard**: serious providers offer it **refunded if you proceed** with a sprint, skin in the game for both sides. Soraia's model is a single, simple one: three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €5,000/month. <a href="/en/contact">Let's talk</a>.
+**Market standard**: serious providers offer it **refunded if you proceed** with a sprint, skin in the game for both sides. Soraia's model is a single, simple one: three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €8,000/month. <a href="/en/contact">Let's talk</a>.
 
 **Provider that skips the assessment**: red flag. It means they will sell you a sprint without understanding your real processes.
 
@@ -130,7 +130,7 @@ The provider invoices hours worked × rate. E.g. €120/h senior, €60/h junior
 
 ### 3. Retainer with hour bucket
 
-The provider quotes a fixed monthly price with an hour bucket (e.g. "€5,000/month, up to 50 h/month included, €100/h extra").
+The provider quotes a fixed monthly price with an hour bucket (e.g. "€8,000/month, up to 50 h/month included, €100/h extra").
 
 **Advantages**: predictability + flexibility. Aligned incentives.
 
@@ -234,7 +234,7 @@ Same timing exercise after the agent has been in stable production. Example:
 Using a standard recruitment sprint as an example:
 
 - Sprint build: €25,000 (one-off).
-- Ongoing retainer: €5,000/month × 12 = €60,000/year.
+- Ongoing retainer: €8,000/month × 12 = €60,000/year.
 - Team training: €8,000 (one-off).
 
 **Year 1**: cost €93,000, saving €31,590 → nominally negative ROI.
@@ -275,7 +275,7 @@ On €10M revenue: a 1% budget = **€100,000/year total** (sprints + retainer +
 
 ## What Soraia does differently on costs
 
-Disclaimer: this guide is written by Soraia, an AI agency. Soraia's model is a single, simple one: three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €5,000/month. <a href="/en/contact">Let's talk</a>.
+Disclaimer: this guide is written by Soraia, an AI agency. Soraia's model is a single, simple one: three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €8,000/month. <a href="/en/contact">Let's talk</a>.
 
 **Our "first month satisfied or refunded" guarantee.** The primary metric is written into the contract. If the first month doesn't convince you, we refund it or keep working for free until you're satisfied.
 

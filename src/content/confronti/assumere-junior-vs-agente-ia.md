@@ -70,7 +70,7 @@ faq:
   - q: "Quanto ci mette un agente IA a essere operativo rispetto a un junior?"
     a: "Con Soraia la <strong>prima delivery e' in 4 settimane</strong>. Un junior richiede in genere settimane o mesi di ramp-up prima di essere pienamente produttivo, e quel tempo e' investito anche se poi la persona cambia ruolo o azienda."
   - q: "Quanto costa un agente IA rispetto a uno stipendio?"
-    a: "Con Soraia si parte da <strong>5.000 € al mese</strong> (Account Manager, Project Manager e AI Engineer dedicati). Lo stipendio caricato di una figura junior e' ricorrente anche nei mesi di picco basso; l'agente ha un costo iniziale di costruzione e poi un costo marginale basso sui volumi. La scelta dipende dal ruolo: <a href='/parliamone'>parliamone</a> e stimiamo il tuo caso."
+    a: "Con Soraia si parte da <strong>8.000 € al mese</strong> (Account Manager, Project Manager e AI Engineer dedicati). Lo stipendio caricato di una figura junior e' ricorrente anche nei mesi di picco basso; l'agente ha un costo iniziale di costruzione e poi un costo marginale basso sui volumi. La scelta dipende dal ruolo: <a href='/parliamone'>parliamone</a> e stimiamo il tuo caso."
   - q: "E se sbaglio a scegliere?"
     a: "Con Soraia si fissa un target misurabile in fase di analisi (es. ore recuperate a settimana) e vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>. Cosi' validi presto se l'agente porta valore sul ruolo, prima di impegnarti su un'assunzione o su un percorso lungo."
   - q: "Posso usare sia il junior sia l'agente?"

@@ -47,7 +47,7 @@ optionB:
 tabella:
   - criterio: "Cost"
     valoreA: "Single contained expense"
-    valoreB: "From €5,000/month"
+    valoreB: "From €8,000/month"
   - criterio: "Impact on adoption"
     valoreA: "Awareness, but it fades fast"
     valoreB: "Habits that consolidate over time"
@@ -70,7 +70,7 @@ faq:
   - q: "Why does a workshop alone often change nothing?"
     a: "Because without application to real cases most of what's learned is forgotten within weeks. Real adoption happens when people use AI on their own work with someone to ask. That's the logic of Soraia's <a href='/ai-adoption'>AI Adoption</a> paths, which pair the workshop with monthly mentoring."
   - q: "How much does ongoing mentoring cost compared to a workshop?"
-    a: "With Soraia both now sit in one model that starts from <strong>€5,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month. On the tracked use cases we free on average 110 hours/year per person. More in the <a href='/guide/formazione-ai-aziendale'>company AI training guide</a>. <a href='/en/contact'>Let's talk</a>."
+    a: "With Soraia both now sit in one model that starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month. On the tracked use cases we free on average 110 hours/year per person. More in the <a href='/guide/formazione-ai-aziendale'>company AI training guide</a>. <a href='/en/contact'>Let's talk</a>."
   - q: "Can I start with the workshop and add mentoring later?"
     a: "Yes, and it's often the smartest choice. The workshop raises awareness and surfaces use cases; the mentoring then works exactly on those. This way you invest in the continuous path only where there's concrete value to free."
 related: []

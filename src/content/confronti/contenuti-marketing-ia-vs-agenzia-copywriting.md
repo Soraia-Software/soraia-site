@@ -70,7 +70,7 @@ faq:
   - q: "La qualita' dei contenuti IA e' accettabile?"
     a: "Dipende da due cose: quanto bene addestri l'agente sul <strong>tono di voce e i dati del brand</strong>, e se c'e' revisione umana. Senza queste, i testi risultano generici. Con un agente costruito sui tuoi contenuti reali e un controllo finale, la qualita' e' buona per la maggior parte dei formati di volume. Vedi come lavoriamo su <a href='/sales-marketing'>Sales & Marketing</a>."
   - q: "Quanto costa costruire un agente per i contenuti?"
-    a: "Con Soraia si parte da <strong>5.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. La <strong>prima delivery e' in 4 settimane</strong> e il codice e' tuo dal primo giorno. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. La <strong>prima delivery e' in 4 settimane</strong> e il codice e' tuo dal primo giorno. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "I contenuti IA sono penalizzati sui motori di ricerca e AI?"
     a: "Non e' l'origine che conta, ma se il contenuto e' utile, accurato e ben strutturato. Contenuti IA rivisti e ricchi di dati reali possono essere <strong>piu' visibili sui motori AI</strong> se strutturati bene. Ce ne occupiamo con <a href='/ai-search-optimization'>AI Search Optimization</a>."
   - q: "Posso mantenere la voce del mio brand con un agente?"

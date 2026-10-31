@@ -70,7 +70,7 @@ faq:
   - q: "Does an AI-agent CRM really save time?"
     a: "It depends on how much repetitive work your reps carry today. Where qualification, follow-up and data entry weigh heavily, the agent runs them instead and frees up selling time. We always set a <strong>measurable target</strong> (e.g. hours recovered per rep) before starting."
   - q: "How much does adding AI agents to a CRM cost?"
-    a: "With Soraia it starts at <strong>5,000 € per month</strong>: three dedicated people (Account Manager, Project Manager and AI Engineer) and one release in production every month, and a first delivery in 4 weeks. The code is yours from day one, no lock-in. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
+    a: "With Soraia it starts at <strong>8,000 € per month</strong>: three dedicated people (Account Manager, Project Manager and AI Engineer) and one release in production every month, and a first delivery in 4 weeks. The code is yours from day one, no lock-in. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
   - q: "What if my sales process isn't clear yet?"
     a: "Then a traditional CRM first makes sense, to get organised and map the process. An agent automates well only what is defined: without a clear process you risk automating the chaos."
   - q: "How is this different from a custom-built CRM?"

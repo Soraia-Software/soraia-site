@@ -68,7 +68,7 @@ faq:
   - q: "Se automatizzo il primo livello, elimino l'MSP?"
     a: "Non necessariamente. L'agente IA e l'outsourcing coprono cose diverse: l'agente smaltisce il ripetitivo, l'MSP gestisce interventi fisici, on-site e casi complessi. Molte PMI tengono entrambi e usano l'agente per <strong>ridurre i volumi</strong> che pagano al fornitore."
   - q: "Quanto costa partire con un agente IA sull'help desk?"
-    a: "Con Soraia si lavora a Sprint mensili: si parte da <strong>5.000 € al mese</strong>, con tre persone dedicate e un rilascio in produzione a fine mese. Il primo rilascio gira sui processi reali in 4 settimane e vale la garanzia primo mese soddisfatti o rimborsati. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia si lavora a Sprint mensili: si parte da <strong>8.000 € al mese</strong>, con tre persone dedicate e un rilascio in produzione a fine mese. Il primo rilascio gira sui processi reali in 4 settimane e vale la garanzia primo mese soddisfatti o rimborsati. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "I dati dei ticket restano al sicuro?"
     a: "Si'. Codice e dati restano del cliente dal primo giorno, con audit log su ogni risposta dell'agente, allineamento all'AI Act e nessun training degli LLM sui tuoi dati. Infrastruttura europea quando richiesto."
   - q: "Non ho un IT interno: ha senso un agente IA?"

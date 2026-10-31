@@ -68,7 +68,7 @@ faq:
   - q: "Una software house tradizionale non puo' fare anche AI?"
     a: "Puo' farlo, ma la competenza AI va verificata: molte l'hanno aggiunta di recente sopra uno stack classico. Chiedi casi reali di agenti IA in produzione, non solo demo. Se l'AI e' il cuore del progetto, un partner AI-native parte con un metodo gia' rodato: in Soraia lo sviluppo e' a sprint e il <a href='/ai-agents'>primo agente gira sui tuoi processi</a> in 4 settimane."
   - q: "Con un'agenzia AI rischio di pagare un progetto che non si chiude mai?"
-    a: "E' un rischio reale del modello a sprint se non e' governato. Con Soraia ogni milestone la <strong>approva il cliente prima di proseguire</strong> ed esiste il <strong>primo mese soddisfatti o rimborsati</strong>. Gli add-on Compliance &amp; Audit (2.000 euro al mese) e Pentest (4.000 euro) aggiungono le verifiche e i documenti, quando sicurezza e compliance devono essere dimostrabili."
+    a: "E' un rischio reale del modello a sprint se non e' governato. Con Soraia ogni milestone la <strong>approva il cliente prima di proseguire</strong> ed esiste il <strong>primo mese soddisfatti o rimborsati</strong>. Gli add-on Compliance &amp; Audit e Pentest, 4.000 euro ciascuno una tantum, aggiungono le verifiche e i documenti, quando sicurezza e compliance devono essere dimostrabili."
   - q: "E se il mio progetto e' software gestionale, non 'AI'?"
     a: "Un'agenzia AI-native fa anche <a href='/software-development'>software su misura</a> (web app, CRM, tool interni) con lo stesso modello a sprint, e aggiunge AI solo dove serve davvero. Non sei obbligato a mettere agenti ovunque: spesso si parte dal software e si automatizza dopo."
   - q: "Chi e' piu' adatto per un progetto molto grande?"

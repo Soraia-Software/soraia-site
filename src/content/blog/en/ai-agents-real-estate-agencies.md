@@ -20,7 +20,7 @@ faq:
   - q: "What is an AI agent for a real estate agency?"
     a: "It's software that runs a repetitive operational task autonomously: capturing listings from a portal, enriching data, matching a client's request to available stock, or generating a comparative dossier. It receives a trigger, executes, and notifies the human agent only when a decision is needed. It's not a generic chatbot, it's an automated process on your own data."
   - q: "How much does an AI agent for a real estate agency cost?"
-    a: "At Soraia you work in monthly Sprints: <strong>from €5,000/month</strong>, with three dedicated people and a release in production at the end of the month. The first agent runs on your real processes in <strong>4 weeks</strong>. First month satisfied or refunded."
+    a: "At Soraia you work in monthly Sprints: <strong>from €8,000/month</strong>, with three dedicated people and a release in production at the end of the month. The first agent runs on your real processes in <strong>4 weeks</strong>. First month satisfied or refunded."
   - q: "Does an AI agent replace the real estate agent?"
     a: "No. AI removes data collection, data entry and matching, not the client relationship or the negotiation. At <a href=\"/en/case-studies/frh\">French Riviera Househunting</a> two AI agents handle qualified leads and property capture, but closing stays human. The goal is to give hours back to selling, not to remove the seller."
   - q: "Where should you start?"
@@ -47,7 +47,7 @@ The **AI agent for a real estate agency** attacks exactly that dead time. But on
 
 **Key takeaways:**
 - A real estate AI agent automates high-volume operational tasks (capture, enrichment, matching, dossiers), not the client relationship or the negotiation.
-- At Soraia the first agent runs on real processes in **4 weeks**, from **€5,000/month**, with a release in production at the end of the month.
+- At Soraia the first agent runs on real processes in **4 weeks**, from **€8,000/month**, with a release in production at the end of the month.
 - At [French Riviera Househunting](/en/case-studies/frh) two AI agents handle qualified leads and property capture; closing stays human.
 - Start from data entry, not matching: without clean upstream data, matching only produces noise.
 - Client-property matching falls under limited risk of the AI Act in force since August 2026: it needs transparency and an audit log, not heavy obligations.

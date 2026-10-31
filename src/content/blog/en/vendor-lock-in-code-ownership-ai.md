@@ -63,7 +63,7 @@ The clause to demand reads like this: *"all intellectual property rights in the 
 
 Let's clear this up, because the confusion here is costly. A monthly fee **is not** vendor lock-in by itself.
 
-We ourselves work in monthly Sprints with a fixed quota (from €5,000/month). It's a service-fee: you pay for development, maintenance and continuous improvement. You can stop even after one month and still own everything built so far.
+We ourselves work in monthly Sprints with a fixed quota (from €8,000/month). It's a service-fee: you pay for development, maintenance and continuous improvement. You can stop even after one month and still own everything built so far.
 
 The hostage-fee is something else: you stop paying and the system shuts down, the data sits on the vendor's server, you've never seen the code. That's lock-in.
 

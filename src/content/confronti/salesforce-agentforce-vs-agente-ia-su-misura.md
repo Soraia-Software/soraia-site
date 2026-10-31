@@ -50,7 +50,7 @@ tabella:
     valoreB: "Primo rilascio in produzione in 4 settimane"
   - criterio: "Modello di costo"
     valoreA: "A consumo (cresce col volume)"
-    valoreB: "A Sprint da 5.000 € al mese, prevedibile"
+    valoreB: "A Sprint da 8.000 € al mese, prevedibile"
   - criterio: "Proprieta'"
     valoreA: "Dentro Salesforce, nessuna"
     valoreB: "Codice e dati del cliente dal primo giorno"
@@ -72,7 +72,7 @@ faq:
   - q: "Con un agente su misura perdo l'integrazione con Salesforce?"
     a: "No. Un <a href='/ai-agents'>agente IA su misura</a> puo' integrare Salesforce come qualsiasi altro sistema, e in piu' il gestionale, l'email e i documenti che Agentforce non tocca. La differenza e' che il codice resta tuo, non vive dentro la piattaforma."
   - q: "Quanto costa partire con un agente su misura?"
-    a: "Con Soraia si parte da <strong>5.000 € al mese</strong> con uno Sprint, tre persone dedicate e un rilascio in produzione a fine mese. Il <strong>primo rilascio e' in produzione in 4 settimane</strong> e il codice e' tuo dal primo giorno. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Con Soraia si parte da <strong>8.000 € al mese</strong> con uno Sprint, tre persone dedicate e un rilascio in produzione a fine mese. Il <strong>primo rilascio e' in produzione in 4 settimane</strong> e il codice e' tuo dal primo giorno. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "E se non funziona?"
     a: "Con Soraia vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: si fissa un obiettivo misurabile in analisi e, se il primo mese non convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto."
 related: []
