@@ -69,7 +69,7 @@ faq:
   - q: "Does an AI agent risk giving customers wrong answers?"
     a: "That's the real risk if you don't constrain it. That's why it must be built with guardrails, a curated knowledge base and escalation to a human on edge cases. In <a href='/customer-support'>customer support</a> we add an <strong>immutable audit log</strong> on every decision and AI Act alignment."
   - q: "How much does moving from a chatbot to an AI agent cost?"
-    a: "With Soraia it starts from <strong>€5,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month, with first delivery in <strong>4 weeks</strong>. Cost depends on integrations (help desk, order system). For an estimate on your case, <a href='/parliamone'>let's talk</a>."
+    a: "With Soraia it starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month, with first delivery in <strong>4 weeks</strong>. Cost depends on integrations (help desk, order system). For an estimate on your case, <a href='/parliamone'>let's talk</a>."
   - q: "How do I know which one I actually need?"
     a: "Look at your tickets: if most are a few repeated questions, rules are enough. If many customers write in free language or ask for actions on their order, the tree won't cut it. With Soraia we set a measurable target (e.g. share of tickets resolved without a human) and the <strong>first month satisfied or refunded</strong> guarantee applies."
 related: []

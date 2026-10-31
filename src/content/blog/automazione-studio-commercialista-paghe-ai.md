@@ -23,7 +23,7 @@ faq:
   - q: "Si integra con TeamSystem o Zucchetti?"
     a: "L'agente si aggancia ai gestionali via export/import o API dove disponibili. Non ti chiediamo di cambiare gestionale: costruiamo sopra lo stack che già usi, incluso il flusso di fatturazione elettronica."
   - q: "Quanto costa e in quanto tempo parte?"
-    a: "Si parte da <strong>5.000 € al mese</strong> (IVA esclusa), con tre persone dedicate (un Account Manager, un Project Manager e un AI Engineer). Primo agente live in <strong>4 settimane</strong> e 30 giorni di hypercare. La garanzia resta: <strong>primo mese soddisfatti o rimborsati</strong>."
+    a: "Si parte da <strong>8.000 € al mese</strong> (IVA esclusa), con tre persone dedicate (un Account Manager, un Project Manager e un AI Engineer). Primo agente live in <strong>4 settimane</strong> e 30 giorni di hypercare. La garanzia resta: <strong>primo mese soddisfatti o rimborsati</strong>."
 lang: "it"
 gates:
   passedAt: 2026-07-16T14:53:45.191Z
@@ -47,7 +47,7 @@ draft: false
 > - Un agente IA non decide da solo: prepara la bozza, riconcilia il facile, escala all'umano solo le anomalie.
 > - In [Numeraria](/case-studies/numeraria) il risultato è stato circa **mezzo mese restituito al management** ogni mese.
 > - Per un agente contabile interno l'AI Act ti colloca in genere a rischio minimo: nessuna decisione autonoma che impatta persone.
-> - Prezzo: a partire da **5.000 € al mese** (IVA esclusa), tre persone dedicate (Account Manager, Project Manager e AI Engineer), primo agente live in **4 settimane**, garanzia primo mese soddisfatti o rimborsati.
+> - Prezzo: a partire da **8.000 € al mese** (IVA esclusa), tre persone dedicate (Account Manager, Project Manager e AI Engineer), primo agente live in **4 settimane**, garanzia primo mese soddisfatti o rimborsati.
 
 Uno studio paghe e contabilità non perde tempo sulle cose difficili. Lo perde su quelle ripetitive: preparare l'ennesimo preventivo, aggregare le ore del team, riconciliare estratti conto.
 
@@ -91,7 +91,7 @@ Il risultato pubblicato: circa **mezzo mese restituito al management** ogni mese
 
 ## Cosa serve per partire
 
-Si parte da **5.000 € al mese** (IVA esclusa), con tre persone dedicate (Account Manager, Project Manager e AI Engineer), per misurare la baseline e portare live il primo processo. Primo agente live in **4 settimane**, 30 giorni di hypercare. Il target è scritto nel contratto, con la garanzia primo mese soddisfatti o rimborsati.
+Si parte da **8.000 € al mese** (IVA esclusa), con tre persone dedicate (Account Manager, Project Manager e AI Engineer), per misurare la baseline e portare live il primo processo. Primo agente live in **4 settimane**, 30 giorni di hypercare. Il target è scritto nel contratto, con la garanzia primo mese soddisfatti o rimborsati.
 
 ---
 

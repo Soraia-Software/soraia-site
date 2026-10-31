@@ -50,7 +50,7 @@ tabella:
     valoreB: "First release in production in 4 weeks"
   - criterio: "Cost model"
     valoreA: "Consumption-based (grows with volume)"
-    valoreB: "Per sprint or fixed from 5,000 €, predictable"
+    valoreB: "Per Sprint from 8,000 € a month, predictable"
   - criterio: "Ownership"
     valoreA: "Inside Salesforce, none"
     valoreB: "Client's code and data from day one"
@@ -72,7 +72,7 @@ faq:
   - q: "With a custom agent, do I lose the Salesforce integration?"
     a: "No. A <a href='/en/ai-agents'>custom AI agent</a> can integrate Salesforce like any other system, plus the ERP, email and documents Agentforce does not touch. The difference is that the code stays yours, it does not live inside the platform."
   - q: "How much does it cost to start with a custom agent?"
-    a: "With Soraia you start from <strong>5,000 € per month</strong> with a Sprint, three dedicated people and a release in production at the end of the month. The <strong>first release is in production in 4 weeks</strong> and the code is yours from day one. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
+    a: "With Soraia you start from <strong>8,000 € per month</strong> with a Sprint, three dedicated people and a release in production at the end of the month. The <strong>first release is in production in 4 weeks</strong> and the code is yours from day one. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
   - q: "What if it does not work?"
     a: "With Soraia the <strong>first month satisfied or refunded</strong> guarantee applies: we set a measurable target during analysis and, if the first month does not convince you, we refund or keep working for free until you are satisfied."
 related: []

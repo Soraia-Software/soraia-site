@@ -203,7 +203,7 @@ The process that works for an Italian SME with 10–200 employees:
 
 Full disclosure: this guide is written by Soraia, an Italian AI agency 100% focused on SMEs. Our approach differs from market standards on 4 points.
 
-**1. Three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €5,000/month.** <a href="/en/contact">Let's talk</a>.
+**1. Three dedicated people (an Account Manager, a Project Manager and an AI Engineer), from €8,000/month.** <a href="/en/contact">Let's talk</a>.
 
 **2. "First month satisfied or refunded" guarantee written into the contract.** An operational clause with a primary metric and a measurement window.
 

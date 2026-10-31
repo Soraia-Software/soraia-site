@@ -66,7 +66,7 @@ faq:
   - q: "Un agente IA sostituisce i recruiter?"
     a: "No, li potenzia. L'agente fa il lavoro ripetitivo (screening, parsing, primo contatto), i recruiter si concentrano su colloqui, valutazione e chiusura. Nel case <a href='/case-studies/apraise'>APraise</a> l'agente equivale a <strong>4 recruiter aggiuntivi</strong> senza sostituire il team esistente."
   - q: "Quanto costa un agente IA rispetto a un'agenzia?"
-    a: "Con Soraia si parte da <strong>5.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Un'agenzia tradizionale costa in genere il 15-25% della RAL per ogni assunzione: su volumi alti, il costo per assunzione dell'agente scende molto piu' velocemente. <a href='/parliamone'>Parliamone</a> per una stima sul tuo volume di hiring, o vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Un'agenzia tradizionale costa in genere il 15-25% della RAL per ogni assunzione: su volumi alti, il costo per assunzione dell'agente scende molto piu' velocemente. <a href='/parliamone'>Parliamone</a> per una stima sul tuo volume di hiring, o vedi i <a href='/prezzi'>prezzi</a>."
   - q: "E per i ruoli executive o molto rari?"
     a: "Li' l'agenzia tradizionale resta spesso la scelta migliore: la rete di contatti e il giudizio umano su fit e negoziazione contano piu' dell'automazione. L'AI eccelle sul volume e sul primo filtro, non sul headhunting di pochi profili rari."
   - q: "E se l'agente non porta il risultato promesso?"

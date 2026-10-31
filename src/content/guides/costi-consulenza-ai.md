@@ -19,7 +19,7 @@ faq:
   - q: "Qual è il prezzo minimo per un progetto AI serio in azienda?"
     a: "Sotto i <strong>€10.000</strong> totali, è difficile fare un agente IA custom serio (con baseline, build, deploy, 30gg hypercare). Sotto questa soglia trovi solo: (a) workflow molto piccoli (single automation Make/n8n con AI), (b) pilot superficiali che non vanno mai in produzione vera, (c) provider che vendono ore senza scope chiaro. Sweet spot reale per il primo agente: <strong>€15-35k</strong>."
   - q: "Quanto costa il primo AI Readiness Assessment?"
-    a: "<strong>Da €3.000</strong> per un assessment serio (1-2 settimane, baseline cronometrata, scope, ROI atteso, action plan). I provider seri lo offrono <strong>rimborsato se procedi</strong> con uno sprint. Il modello di Soraia è unico e semplice: tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 5.000 € al mese. Il dettaglio nella <a href='/prezzi'>pagina prezzi</a>."
+    a: "<strong>Da €3.000</strong> per un assessment serio (1-2 settimane, baseline cronometrata, scope, ROI atteso, action plan). I provider seri lo offrono <strong>rimborsato se procedi</strong> con uno sprint. Il modello di Soraia è unico e semplice: tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 8.000 € al mese. Il dettaglio nella <a href='/prezzi'>pagina prezzi</a>."
   - q: "Quanto costa un retainer continuativo dopo lo sprint iniziale?"
     a: "<strong>€3.000-15.000/mese</strong> a seconda di: scope (1 agente vs portfolio), criticità (SLA 24h vs best effort), numero di integrazioni, settore (regolamentato richiede più ore di compliance). Per una PMI media post-primo agente: <strong>€5-8k/mese</strong> è il range tipico."
   - q: "Modello fix price o time & material: cosa scegliere?"
@@ -55,7 +55,7 @@ Dato basato su benchmark interno Soraia + sentito da clienti che hanno valutato 
 
 **Tempo**: 1-2 settimane di consulenza.
 
-**Standard di mercato**: provider seri lo offrono **rimborsato se procedi** con uno sprint. Skin in the game per entrambe le parti. Il modello di Soraia è unico e semplice: tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 5.000 € al mese. Il dettaglio nella <a href="/prezzi">pagina prezzi</a>.
+**Standard di mercato**: provider seri lo offrono **rimborsato se procedi** con uno sprint. Skin in the game per entrambe le parti. Il modello di Soraia è unico e semplice: tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 8.000 € al mese. Il dettaglio nella <a href="/prezzi">pagina prezzi</a>.
 
 **Provider che salta l'assessment**: red flag. Significa che ti venderà uno sprint senza capire i tuoi processi reali.
 
@@ -129,7 +129,7 @@ Il provider fattura ore lavorate × tariffa. Es. €120/h senior, €60/h junior
 
 ### 3. Retainer con bucket di ore
 
-Il provider quota un fix price mensile con un bucket di ore (es. "€5.000/mese, fino a 50h/mese inclusi, €100/h extra").
+Il provider quota un fix price mensile con un bucket di ore (es. "€8.000/mese, fino a 50h/mese inclusi, €100/h extra").
 
 **Vantaggi**: prevedibilità + flessibilità. Allineamento incentivi.
 
@@ -233,7 +233,7 @@ Stessa cronometrazione dopo che l'agente è in produzione stabile. Esempio:
 Su un esempio di sprint recruitment standard:
 
 - Sprint build: €25.000 (one-shot).
-- Retainer continuativo: €5.000/mese × 12 = €60.000/anno.
+- Retainer continuativo: €8.000/mese × 12 = €60.000/anno.
 - Formazione team: €8.000 (una tantum).
 
 **Anno 1**: costo €93.000, risparmio €31.590 → ROI negativo nominale.
@@ -274,7 +274,7 @@ Su €10M fatturato: budget 1% = **€100k/anno totale** (sprint + retainer + fo
 
 ## Cosa fa Soraia in modo diverso sui costi
 
-Disclaimer: questa guida la scrive Soraia, AI agency italiana. Il modello di Soraia è unico e semplice: tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 5.000 € al mese. Il dettaglio nella <a href="/prezzi">pagina prezzi</a>.
+Disclaimer: questa guida la scrive Soraia, AI agency italiana. Il modello di Soraia è unico e semplice: tre persone dedicate (Account Manager, Project Manager e AI Engineer), a partire da 8.000 € al mese. Il dettaglio nella <a href="/prezzi">pagina prezzi</a>.
 
 **Garanzia "primo mese soddisfatti o rimborsati".** Il metric primario è scritto nel contratto. Se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto.
 

@@ -77,7 +77,7 @@ faq:
   - q: "How long until I have a working outbound voicebot?"
     a: "With Soraia the <strong>first delivery is in 4 weeks</strong>: a voice agent connected to your CRM on a concrete use case (e.g. first-contact qualification or appointment reminders). It starts from a measurable target agreed in the process audit. For your case, <a href='/parliamone'>let's talk</a>."
   - q: "How does it cost compared to a telemarketing agency?"
-    a: "Our model starts at <strong>5,000 € per month</strong> with three dedicated people (Account Manager, Project Manager and AI Engineer) and client-owned code from day one. A telemarketing agency is paid per agent-hour or per contact: cheap on small volumes, expensive and hard to scale as volumes grow. The voicebot pays off exactly where numbers rise."
+    a: "Our model starts at <strong>8,000 € per month</strong> with three dedicated people (Account Manager, Project Manager and AI Engineer) and client-owned code from day one. A telemarketing agency is paid per agent-hour or per contact: cheap on small volumes, expensive and hard to scale as volumes grow. The voicebot pays off exactly where numbers rise."
   - q: "What if the voicebot does not convert as hoped?"
     a: "Our <strong>first month satisfied or refunded</strong> guarantee applies: the target (e.g. number of qualified leads or booked appointments) is set in the process audit and, if the first month doesn't convince you, we refund it or keep working for free until you're satisfied. The code stays yours anyway: no lock-in."
 related: []

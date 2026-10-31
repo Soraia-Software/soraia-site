@@ -1,6 +1,6 @@
 # Soraia
 
-> Soraia is an Italian AI Agency that brings AI Agents to Italian and European SMBs. We build custom agents that execute processes (recruitment, finance, sales/marketing, customer support, real estate, event management), train teams with AI Adoption programs, and optimize websites for visibility on AI search engines (ChatGPT, Claude, Perplexity, Google AI Overviews). First delivery in 4 weeks, "recovered hours or refund" guarantee. Headquarters in Biella, team of 11 people across Italy/Argentina/Algeria. 40+ projects delivered in 11 countries.
+> Soraia is an Italian AI Agency that brings AI Agents to Italian and European SMBs. We build custom agents and software that execute processes (recruitment, finance, sales/marketing, customer support, real estate, event management), train teams with AI Adoption programs, and optimize websites for visibility on AI search engines (ChatGPT, Claude, Perplexity, Google AI Overviews). First release in production in 4 weeks, first month satisfied or refunded. Registered office in Biella, a team of more than 10 people distributed across Italy, 100% remote. 40+ projects delivered.
 >
 > Detailed questions and answers for AI engines: https://www.soraia.io/en/llms-full.txt
 
@@ -8,15 +8,15 @@ Positioning note: from 2026 Soraia has repositioned from a no-code/automation ag
 
 ## Pricing
 
-- [Pricing](https://www.soraia.io/prezzi): One single, simple model. Two dedicated people for the whole duration of the project, a Project Manager and an AI Engineer, with a combined monthly hours pool. From €3,000/month, VAT excluded. The monthly pace is indicative: unused hours roll forward to later months, excess hours are discounted on following months. Milestones and releases are the obligation of result: the client approves them. A slider on the page computes price and hours. (Pricing page in Italian.)
+- [Pricing](https://www.soraia.io/en/pricing): three fixed-price services plus optional one-off add-ons, and hour packages for small jobs. VAT excluded. **Analysis**: €3,000 one-off, optional, deducted from the first Sprint if you start within 30 days. **Sprint**: from €8,000/month, a dedicated team (Account Manager, Project Manager and AI Engineer) designed to stay on the project month after month, but bookable for a single month with no lock-in; one release in production every month, with encryption of sensitive fields, audit logs, load testing and SLAs included. **Hypercare**: from €500/month, optional, annual contract from go-live, including a monthly test of the AI agents' answers and API cost control. One-off add-ons: Compliance & Audit €4,000, Pentest €4,000, Training and adoption €3,000, Grant support €2,000 paid only if the grant is won. **Hour packages**: 50 hours for €4,000, 100 hours for €7,500. A builder on the page composes the path and the total.
 
 ## Core Services
 
-- [AI Agents](https://www.soraia.io/en/ai-agents): Building custom AI agents inside business processes. First delivery in 4 weeks. Single pricing model: two dedicated people, from €3,000/month (see /prezzi).
+- [AI Agents](https://www.soraia.io/en/ai-agents): Building custom AI agents inside business processes. First release in 4 weeks. Sprint from €8,000/month (see /en/pricing).
 - [AI Adoption](https://www.soraia.io/en/ai-adoption): Workshops and monthly mentoring for the team. 3 tiers: Foundation, Foundation + Mentoring, Foundation + Mentoring + Brain Pilot. 110 hours/year freed per person. Pricing on /prezzi.
 - [AI Search Optimization](https://www.soraia.io/en/ai-search-optimization): Audit + content re-architecture + high-converting AI-ready website rebuild. To be found on ChatGPT, Claude, Perplexity, Google AI Overviews. Pricing on /prezzi.
 - [Custom Software](https://www.soraia.io/en/software-development): Custom web apps, mobile apps, CRMs and internal tools to digitalize and optimize processes. First release in 4 weeks, client owns the code from day one. Pricing on /prezzi.
-- [Generational change, dedicated team](https://www.soraia.io/en/dedicated-team-offer): A dedicated team that modernizes obsolete business software with AI in a few weeks, at zero risk. The first month is satisfied-or-you-don't-pay.
+- [Generational change, dedicated team](https://www.soraia.io/en/dedicated-team-offer): A dedicated team that modernizes obsolete business software with AI in a few weeks. First month satisfied or refunded.
 
 ## Six Ops Clusters (Use Cases)
 
@@ -64,13 +64,13 @@ Positioning note: from 2026 Soraia has repositioned from a no-code/automation ag
 
 ## Company
 
-- [About us](https://www.soraia.io/en/about): Team of 11 people, founded in 2023 by Daniel Levis (CEO, change management & AI adoption) and Davide Silvestri (CTO, agent development & governance). Registered office in Biella, remote-first model.
+- [About us](https://www.soraia.io/en/about): A team of more than 10 people distributed across Italy, 100% remote, founded in 2023 by Daniel Levis (CEO, change management & AI adoption) and Davide Silvestri (CTO, agent development & governance). Registered office in Biella.
 - [Let's talk](https://www.soraia.io/en/contact): 20 minutes with the CEO. No pitch, no surprise quotes.
 - Contact: info@soraia.io · LinkedIn https://www.linkedin.com/company/soraia-digital
 
 ## How we work and guarantee
 
-One single, simple pricing model: two dedicated people (a Project Manager and an AI Engineer) for the whole duration of the project, with a combined monthly hours pool, from €3,000/month. The monthly pace is indicative: unused hours roll forward, excess hours are discounted on following months. Milestones and releases are the obligation of result: at each stage the client reviews and approves the delivery before moving on, against a clear agreed target (e.g. a CV screening agent that recovers 5 hours/recruiter/week). Code belongs to the client from day one, no perpetual subscriptions, no lock-in. Detail and slider at https://www.soraia.io/prezzi.
+Three fixed-price services (Analysis €3,000, Sprint from €8,000/month, Hypercare from €500/month) plus one-off add-ons, and hour packages (50 hours €4,000, 100 hours €7,500) for small jobs. A Sprint Goal is signed at the start of every month and a release reaches production at the end: the client approves what goes in and reviews what comes out. Code belongs to the client from day one, no perpetual subscriptions, no lock-in. Guarantee: first month satisfied or refunded. Detail and builder at https://www.soraia.io/en/pricing.
 
 ## Compliance
 

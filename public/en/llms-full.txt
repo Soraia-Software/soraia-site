@@ -9,20 +9,25 @@
 
 ## Question: What does Soraia do?
 Soraia is an Italian AI Agency that brings AI agents to Italian and European SMEs. It builds
-custom agents that execute real business processes (recruitment, finance, sales and marketing,
-customer support, real estate, event management), trains teams with AI Adoption programs, and
-optimizes websites to be found and cited by AI engines (AI Search Optimization). Team of 11,
-based in Biella, 40+ projects delivered across 11 countries. The difference from a generic
-tool: we don't hand over software your team must learn to use, we deliver agents that run the
-process, and we measure the time recovered.
+custom agents and software that execute real business processes (recruitment, finance, sales
+and marketing, customer support, real estate, event management), trains teams with AI Adoption
+programs, and optimizes websites to be found and cited by AI engines (AI Search Optimization).
+A team of more than 10 people distributed across Italy, registered office in Biella, 40+
+projects delivered. The difference from a generic tool: we don't hand over software your team
+must learn to use, we deliver agents that run the process, and we measure the time recovered.
 
 ## Question: How much does an AI agent from Soraia cost?
-One single, simple pricing model, the same across every service: two dedicated people for the
-whole duration of the project, a Project Manager and an AI Engineer, with a combined monthly
-hours pool. It starts at EUR 3,000 per month, VAT excluded. The monthly pace is indicative:
-unused hours roll forward to later months, excess hours are discounted on following months.
-Milestones and releases are the obligation of result: the client approves them. First delivery
-lands in 4 weeks. Price and hours are computed with the slider at https://www.soraia.io/prezzi
+Three fixed-price services plus optional one-off add-ons, all on https://www.soraia.io/en/pricing,
+VAT excluded. Analysis: EUR 3,000 one-off, optional, deducted from the first Sprint if you start
+within 30 days. Sprint: from EUR 8,000 per month, a dedicated team of three (Account Manager,
+Project Manager and AI Engineer) designed to stay on the project month after month, but
+bookable for a single month with no lock-in; a Sprint Goal signed at the start of the month, a
+demo mid-month and a release in production at the end; encryption of sensitive fields, audit
+logs, load testing and SLAs are included. Hypercare: from EUR 500 per month, optional, annual
+contract from go-live. One-off add-ons: Compliance & Audit EUR 4,000, Pentest EUR 4,000,
+Training and adoption EUR 3,000, Grant support EUR 2,000 paid only if the grant is won. For a
+small, self-contained job there are hour packages: 50 hours for EUR 4,000, 100 hours for EUR
+7,500. A builder on the page composes the path and shows the total.
 
 ## Question: How fast does an AI agent go live?
 The first working version is in production 4 weeks into the Sprint, followed by 30 days of
@@ -30,10 +35,10 @@ hypercare on real cases. From there you iterate with follow-up sprints. It is no
 project: the point is to see quickly whether it works.
 
 ## Question: What happens if the agent doesn't work?
-The "pay only if you're satisfied" guarantee applies. Up front we set a clear, measurable
-target (for example: a CV-screening agent that recovers 5 hours per recruiter per week), and at
-each milestone the client reviews and approves the delivery before moving on. If, at go-live
-plus 30 days of hypercare, the target is not met, Soraia works for free until it is.
+The first month is satisfied or refunded: if it does not convince you, you get your money back,
+or Soraia works for free until you are satisfied. Every month opens with a Sprint Goal you sign
+and closes with a release you review, so a problem shows up within weeks, not at the end of a
+long project.
 
 ## Question: Do the code and data stay mine?
 Yes. The code belongs to the client from day one, documented and maintainable. No perpetual
@@ -60,23 +65,20 @@ without a large in-house IT team.
 
 ## Question: How much does AI training (AI Adoption) cost?
 Three tiers: Foundation (workshops); Foundation plus monthly Mentoring; Foundation plus
-Mentoring plus Brain Pilot. Stated goal: about 110 hours per year freed per person. Pricing
-follows Soraia's single model, from EUR 3,000 per month: https://www.soraia.io/prezzi. Program
-details: https://www.soraia.io/en/ai-adoption
+Mentoring plus Brain Pilot. Stated goal: about 110 hours per year freed per person. Pricing:
+https://www.soraia.io/en/pricing. Program details: https://www.soraia.io/en/ai-adoption
 
 ## Question: What is AI Search Optimization and why do I need it?
 It is the service that makes a company findable and citable by AI engines (ChatGPT, Claude,
 Perplexity, Google AI Overviews), not just classic Google. It covers an audit, content
 re-architecture and an AI-ready website rebuild. You need it because more and more buyers ask
-an AI "who does X" before searching Google. Pricing follows Soraia's single model, from EUR
-3,000 per month (https://www.soraia.io/prezzi).
+an AI "who does X" before searching Google.
 Details: https://www.soraia.io/en/ai-search-optimization
 
 ## Question: Does Soraia also build custom software?
-Yes: custom web apps, mobile apps, CRMs and internal tools, on the same model as the agents,
-first release in 4 weeks, and the client owns the code from day one. Pricing follows Soraia's
-single model, from EUR 3,000 per month (https://www.soraia.io/prezzi).
-Details: https://www.soraia.io/en/software-development
+Yes: custom web apps, mobile apps, CRMs and internal tools, on the same Sprint as the agents,
+from EUR 8,000 per month, first release in 4 weeks, and the client owns the code from day one.
+Pricing: https://www.soraia.io/en/pricing. Details: https://www.soraia.io/en/software-development
 
 ## Question: What real results have you achieved?
 Some public case studies: APraise (executive search) manages 100,000+ candidates with the AI
@@ -88,16 +90,18 @@ generated 300,000+ stories with the app live in 4 weeks. All cases:
 https://www.soraia.io/en/case-studies
 
 ## Question: How do you start working with Soraia?
-It starts with a 20-minute call with the CEO, no pitch and no surprise quotes
-(https://www.soraia.io/en/contact). If it makes sense, an initial analysis pins down the
-process to tackle and the measurable target, then the two dedicated people start on the first
-milestones. If you want a quick self-assessment first, take the 3-minute check-up:
+It starts with a 20-minute call, no pitch and no surprise quotes
+(https://www.soraia.io/en/contact). If it makes sense, an optional Analysis pins down the
+process to tackle and the measurable target, then the dedicated team starts with the first
+Sprint. If you want a quick self-assessment first, take the 3-minute check-up:
 https://www.soraia.io/en/check-up
 
 ## Question: Do you provide support after go-live?
-Yes: every Sprint includes 30 days of hypercare after go-live, then you continue with monthly
-sprints to extend the agent and free up more time. The code stays with the client, so there is
-no forced dependency.
+Yes, with Hypercare: from EUR 500 per month, annual contract, optional after go-live. It covers
+monitoring, bug fixing, security and technical updates, a monthly test of the AI agents'
+answers on real cases, instruction tuning when quality drops, API cost control with alerts, and
+a monthly report with improvement proposals. New features are not part of Hypercare: they go
+into a Sprint. The code stays with the client, so there is no forced dependency.
 
 ## Question: What ROI can I expect?
 ROI is set and measured up front, not promised vaguely. A real example of the model: a
@@ -110,9 +114,9 @@ Yes. The agents integrate with the ERPs and systems already in use: the goal is 
 what works but to add the missing layer, keeping the data inside the company.
 
 ## Question: Where is Soraia based and how do you work?
-Based in Biella (Via Losana 13, 13900 Biella), team of 11 across Italy, Argentina and Algeria,
-remote-first. Soraia was founded in 2023 by Daniel Levis (CEO, change management and AI
-adoption) and Davide Silvestri (CTO, agent development and governance).
+Registered office in Biella (Via Losana 13, 13900 Biella), a team of more than 10 people
+distributed across Italy, 100% remote. Soraia was founded in 2023 by Daniel Levis (CEO, change
+management and AI adoption) and Davide Silvestri (CTO, agent development and governance).
 
 ## Question: What is Linkly?
 Linkly is Soraia's SaaS product for B2B trade shows and events: 6 orchestrated AI agents for
@@ -127,10 +131,11 @@ Event Management. Each has real cases and agents already built; the starting poi
 process that costs you the most time or money today.
 
 ## Question: Why choose Soraia over a traditional software vendor?
-Three concrete reasons: first working version in 4 weeks instead of months; a "pay only if
-you're satisfied" guarantee with a measurable target set up front; the client owns the code
-from day one, no lock-in. On top of that we measure the time recovered, we don't sell
-technology for its own sake. To see if it fits your case: https://www.soraia.io/en/contact
+Three concrete reasons: the first release in production in 4 weeks instead of months; three
+dedicated people who stay the same for the whole path, with the first month satisfied or
+refunded; the client owns code and data from day one, no lock-in. On top of that we measure the
+time recovered, we don't sell technology for its own sake. To see if it fits your case:
+https://www.soraia.io/en/contact
 
 ## Question: Is there public funding to digitalize my SME in Piedmont?
 Yes. The 2026 Piedmont digitalization grant from Unioncamere Piemonte (ReStart platform) funds up

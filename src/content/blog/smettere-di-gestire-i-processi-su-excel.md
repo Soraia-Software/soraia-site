@@ -27,7 +27,7 @@ faq:
   - q: "Un agente IA può semplicemente leggere il mio Excel?"
     a: "Sì, e spesso è il primo passo più sensato. Un agente può estrarre dati dal foglio, validarli, riconciliarli e riportarli nei sistemi a valle senza che tu rifaccia tutto da capo. È il pattern di <a href=\"/case-studies/numeraria\">Numeraria</a>: gli agenti gestiscono preventivi, ore e riconciliazioni, e il team usa il sistema senza nemmeno accorgersene."
   - q: "Quanto serve per uscire dal foglio Excel?"
-    a: "Con il nostro modello la prima delivery utile arriva in 4 settimane, non in sei mesi. Si parte da 5.000 € al mese (IVA esclusa), con tre persone dedicate (un Account Manager, un Project Manager e un AI Engineer), per capire se il caso regge e portarlo live. E se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto."
+    a: "Con il nostro modello la prima delivery utile arriva in 4 settimane, non in sei mesi. Si parte da 8.000 € al mese (IVA esclusa), con tre persone dedicate (un Account Manager, un Project Manager e un AI Engineer), per capire se il caso regge e portarlo live. E se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto."
 lang: "it"
 draft: false
 ---

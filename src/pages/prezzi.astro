@@ -7,7 +7,7 @@ import "~/styles/prezzi.css";
 
 const title = "Prezzi | Soraia";
 const description =
-  "Un team che dà vita al software di cui hai bisogno. Analisi 3.000 €, Sprint 5.000 € al mese, Hypercare da 500 €, più gli add-on che servono: Compliance & Audit, Pentest, Formazione. Prezzo fisso, un rilascio ogni mese.";
+  "Un team che dà vita al software di cui hai bisogno. Analisi 3.000 €, Sprint da 8.000 € al mese, Hypercare da 500 €, più gli add-on che servono. Per un lavoro piccolo, pacchetti da 50 o 100 ore.";
 
 const faqs = [
   {
@@ -19,8 +19,12 @@ const faqs = [
     a: "Il team dedicato, il metodo e un rilascio in produzione. Cosa costruire lo definiamo insieme nello Sprint Goal a inizio mese: è il documento che dice cosa arriva.",
   },
   {
+    q: "Quando conviene il pacchetto di ore invece dello Sprint?",
+    a: "Quando il lavoro è piccolo e circoscritto, e un team continuativo sarebbe sprecato: un’integrazione, una correzione, un modulo che sta in piedi da solo. 50 ore costano 4.000€, 100 ore 7.500€. Se il lavoro cresce, si passa allo Sprint.",
+  },
+  {
     q: "Senza Compliance & Audit il software è meno sicuro?",
-    a: "No. Crittografia, backup, accessi per ruolo e sviluppo secondo le best practice sono sempre inclusi. Compliance & Audit aggiunge verifiche e documenti per chi deve dimostrarlo a qualcuno: DPO, soci, clienti, auditor.",
+    a: "No. Crittografia, backup, accessi per ruolo, cifratura dei campi sensibili, log di audit, test di carico e SLA sono inclusi in ogni Sprint. Compliance & Audit non aggiunge sicurezza: aggiunge le prove, cioè i documenti che servono a dimostrarla a un auditor, a un ente di certificazione o a un cliente che te li chiede.",
   },
   {
     q: "La documentazione sostituisce il DPO o il legale?",
@@ -36,7 +40,7 @@ const faqs = [
   },
   {
     q: "Posso tenere il team tutto l’anno?",
-    a: "Sì, con Sprint consecutivi. Per impegni lunghi o più applicativi in parallelo costruiamo un percorso su misura.",
+    a: "Sì, ed è il modo in cui lo Sprint è pensato: un team che resta sul tuo progetto mese dopo mese. Per impegni lunghi o più applicativi in parallelo costruiamo un percorso su misura.",
   },
   {
     q: "Chi paga hosting e servizi di AI?",
@@ -75,10 +79,10 @@ const jsonLd = [
       {
         "@type": "Offer",
         name: "Sprint",
-        price: "5000",
+        price: "8000",
         priceCurrency: "EUR",
         description:
-          "Account Manager, Project Manager e AI Engineer, Sprint Goal firmato a inizio mese, demo a metà mese e rilascio in produzione a fine mese. Anche solo un mese. IVA esclusa.",
+          "Il team dedicato mese dopo mese: Account Manager, Project Manager e AI Engineer, Sprint Goal firmato a inizio mese, demo a metà mese e rilascio in produzione a fine mese, con cifratura dei campi sensibili, log di audit, test di carico e SLA inclusi. Anche un solo mese. IVA esclusa.",
       },
       {
         "@type": "Offer",
@@ -86,15 +90,15 @@ const jsonLd = [
         price: "500",
         priceCurrency: "EUR",
         description:
-          "Dopo il go-live: monitoraggio, correzione dei malfunzionamenti, aggiornamenti di sicurezza e tecnici, report mensile. Facoltativa, contratto annuale. IVA esclusa.",
+          "Dopo il go-live: monitoraggio, correzione dei malfunzionamenti, aggiornamenti di sicurezza e tecnici, controllo della qualità degli agenti IA e dei costi delle API, report mensile. Facoltativa, contratto annuale. IVA esclusa.",
       },
       {
         "@type": "Offer",
         name: "Compliance & Audit",
-        price: "2000",
+        price: "4000",
         priceCurrency: "EUR",
         description:
-          "Add-on dello Sprint, per ogni mese di Sprint: documentazione tecnica per DPO e legale su GDPR e AI Act, cifratura dei campi sensibili, log di audit, policy di conservazione, test di carico, monitoraggio e SLA. IVA esclusa.",
+          "Add-on dello Sprint, una tantum: documentazione tecnica per DPO e legale su GDPR e AI Act, e un dossier di conformità pronto per auditor ed enti di certificazione. IVA esclusa.",
       },
       {
         "@type": "Offer",
@@ -107,7 +111,7 @@ const jsonLd = [
       {
         "@type": "Offer",
         name: "Formazione e adozione",
-        price: "2500",
+        price: "3000",
         priceCurrency: "EUR",
         description:
           "Add-on dello Sprint: due sessioni con il team, video tutorial e manuale utente, sessione di verifica dopo 30 giorni. IVA esclusa.",
@@ -115,18 +119,26 @@ const jsonLd = [
       {
         "@type": "Offer",
         name: "Supporto bandi",
-        price: "1000",
+        price: "2000",
         priceCurrency: "EUR",
         description:
-          "Add-on dell’Analisi: verifica dei requisiti, preventivo conforme al bando, documentazione tecnica per la domanda e supporto alla rendicontazione. IVA esclusa.",
+          "Add-on dell’Analisi: verifica dei requisiti, preventivo conforme al bando, documentazione tecnica per la domanda e supporto alla rendicontazione. Si paga solo se il bando è vinto. IVA esclusa.",
       },
       {
         "@type": "Offer",
-        name: "AI Quality",
-        price: "500",
+        name: "Pacchetto 50 ore",
+        price: "4000",
         priceCurrency: "EUR",
         description:
-          "Add-on dell’Hypercare: test mensile delle risposte degli agenti su casi reali, ottimizzazione delle istruzioni e controllo dei costi delle API. IVA esclusa.",
+          "Per un lavoro piccolo e circoscritto, senza team continuativo: 50 ore da usare quando servono. IVA esclusa.",
+      },
+      {
+        "@type": "Offer",
+        name: "Pacchetto 100 ore",
+        price: "7500",
+        priceCurrency: "EUR",
+        description:
+          "Per un lavoro piccolo e circoscritto, senza team continuativo: 100 ore da usare quando servono. IVA esclusa.",
       },
     ],
   },
@@ -185,15 +197,18 @@ const servizi = [
   {
     n: "2",
     name: "Sprint",
-    title: "Il team dedicato, un mese alla volta",
-    price: "5.000€",
+    title: "Il team dedicato, mese dopo mese",
+    price: "8.000€",
     unit: " /mese",
+    from: true,
     note: "Anche un solo mese, senza vincolo. Pagamento a inizio Sprint.",
     items: [
       "Account Manager, Project Manager e AI Engineer",
       "Sprint Goal concordato e firmato a inizio mese",
       "Demo a metà mese, rilascio in produzione a fine mese",
       "Crittografia dei dati, backup, accessi per ruolo, best practice OWASP",
+      "Cifratura dei campi sensibili, log di audit, policy di conservazione e cancellazione",
+      "Test di carico, monitoraggio e SLA di disponibilità",
       "Import dello storico e migrazione dei dati dai sistemi che usi oggi",
       "Portale cliente con avanzamento in tempo reale",
       "Tre mesi di richieste di cambiamento incluse dopo il rilascio",
@@ -213,11 +228,13 @@ const servizi = [
     items: [
       "Monitoraggio e correzione dei malfunzionamenti",
       "Aggiornamenti di sicurezza e tecnici",
+      "Test mensile delle risposte degli agenti IA su casi reali",
+      "Ottimizzazione delle istruzioni quando la qualità cala",
+      "Controllo dei costi delle API, con avvisi",
       "Report mensile su sicurezza, prestazioni e utilizzo reale",
       "Proposte di miglioramento per i prossimi Sprint",
     ],
     foot: "Il prezzo dipende da utenti e integrazioni. Le nuove funzionalità entrano in uno Sprint.",
-    addons: "AI Quality",
     cta: "Parliamone",
     featured: false,
   },
@@ -226,16 +243,14 @@ const servizi = [
 const addonSprint = [
   {
     name: "Compliance & Audit",
-    price: "2.000€",
-    unit: " /mese",
-    claim: "Per dati sensibili, utenti esterni, audit di soci o clienti",
+    price: "4.000€",
+    unit: " una tantum",
+    claim: "Per dimostrare che il software è conforme, a chi te lo chiede",
     items: [
       "Documentazione tecnica per DPO e legale: misure art. 32 GDPR, supporto alla DPIA, mappa dei flussi di dati",
       "Conformità all’AI Act: classificazione del rischio, documentazione tecnica, trasparenza verso gli utenti e sorveglianza umana",
-      "Cifratura dei campi sensibili, log di audit, policy di conservazione e cancellazione",
-      "Test di carico, monitoraggio e SLA di disponibilità",
+      "Dossier di conformità pronto da consegnare a un auditor o da allegare a una certificazione",
     ],
-    foot: "Per ogni mese di Sprint.",
   },
   {
     name: "Pentest",
@@ -250,7 +265,7 @@ const addonSprint = [
   },
   {
     name: "Formazione e adozione",
-    price: "2.500€",
+    price: "3.000€",
     unit: " una tantum",
     claim: "Perché le persone lo usino davvero",
     items: [
@@ -261,33 +276,24 @@ const addonSprint = [
   },
 ];
 
-const addonAltri = [
-  {
-    group: "Con l’Analisi",
-    name: "Supporto bandi",
-    price: "1.000€",
-    unit: " una tantum",
-    claim: "Per finanziare il progetto a fondo perduto",
-    items: [
-      "Verifica dei requisiti e preventivo conforme al bando",
-      "Documentazione tecnica per la domanda",
-      "Supporto alla rendicontazione",
-    ],
-    cta: { label: "Verifica se il tuo progetto è finanziabile", href: "/bando" },
-  },
-  {
-    group: "Con l’Hypercare",
-    name: "AI Quality",
-    price: "500€",
-    unit: " /mese",
-    claim: "Per agenti IA che restano affidabili nel tempo",
-    items: [
-      "Test mensile delle risposte degli agenti su casi reali",
-      "Ottimizzazione delle istruzioni quando la qualità cala",
-      "Controllo dei costi delle API con avvisi e report mensile",
-    ],
-    foot: "Con Hypercare attiva.",
-  },
+const addonAnalisi = {
+  group: "Con l’Analisi",
+  name: "Supporto bandi",
+  price: "2.000€",
+  unit: " una tantum",
+  claim: "Per finanziare il progetto a fondo perduto",
+  items: [
+    "Verifica dei requisiti e preventivo conforme al bando",
+    "Documentazione tecnica per la domanda",
+    "Supporto alla rendicontazione",
+  ],
+  foot: "Lo paghi solo se il bando è vinto.",
+  cta: { label: "Verifica se il tuo progetto è finanziabile", href: "/bando" },
+};
+
+const pacchettiOre = [
+  { ore: "50 ore", price: "4.000€", rate: "80€ l’ora" },
+  { ore: "100 ore", price: "7.500€", rate: "75€ l’ora" },
 ];
 
 const metodo = [
@@ -324,14 +330,15 @@ const sicurezzaBase = [
   "Crittografia dei dati in transito e a riposo",
   "Backup e accessi per ruolo",
   "Sviluppo secondo le best practice OWASP",
+  "Cifratura dei campi sensibili, log di audit, policy di conservazione",
+  "Test di carico, monitoraggio e SLA di disponibilità",
   "Codice e dati su account intestati a te",
 ];
 
 const sicurezzaPlus = [
   "Documentazione tecnica per DPO e legale",
   "Conformità all’AI Act: rischio, documentazione, trasparenza",
-  "Cifratura dei campi sensibili e log di audit",
-  "Test di carico, monitoraggio e SLA",
+  "Dossier pronto per auditor ed enti di certificazione",
   "Pentest esterno prima del rilascio, con report",
 ];
 
@@ -373,7 +380,7 @@ const regole = [
         Un team che dà vita al software di cui hai bisogno.
       </h1>
       <p class="mt-6 text-[17px] md:text-[18px] leading-relaxed text-pretty max-w-2xl" style="color: var(--color-ink-muted);">
-        Account Manager, Project Manager e AI Engineer, con un metodo rodato. Tre passi a prezzo fisso, più gli add-on che servono al tuo progetto. Nessun pacchetto di ore da contare. <a href="/ai-engineering" style="color: var(--color-brand); font-weight: 600;">Come lavoriamo, in dettaglio &rarr;</a>
+        Account Manager, Project Manager e AI Engineer, con un metodo rodato. Tre passi a prezzo fisso, più gli add-on che servono al tuo progetto. Se il lavoro è piccolo, c’è il pacchetto di ore. <a href="/ai-engineering" style="color: var(--color-brand); font-weight: 600;">Come lavoriamo, in dettaglio &rarr;</a>
       </p>
       <ul class="flex flex-wrap gap-3 mt-10 list-none p-0">
         {guarantees.map((g) => (
@@ -392,7 +399,7 @@ const regole = [
       <SectionHeader
         eyebrow="Come funziona"
         title="Tre passi, ognuno con il suo prezzo fisso"
-        subtitle="Parti dall’Analisi se serve, attivi il team per i mesi che vuoi, poi scegli se tenere il software seguito. Prezzi IVA esclusa."
+        subtitle="Parti dall’Analisi se serve, tieni il team per i mesi che vuoi, poi scegli se tenere il software seguito. Prezzi IVA esclusa."
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
@@ -419,9 +426,13 @@ const regole = [
               ))}
             </ul>
             {s.foot && <p class="text-[13.5px]" style="color: var(--color-ink-soft);">{s.foot}</p>}
-            <p class="text-[13.5px] mt-auto pt-2" style="color: var(--color-ink-soft); border-top: 1px solid var(--color-line);">
-              <span class="font-semibold" style="color: var(--color-brand);">Add-on:</span> {s.addons}
-            </p>
+            {s.addons ? (
+              <p class="text-[13.5px] mt-auto pt-2" style="color: var(--color-ink-soft); border-top: 1px solid var(--color-line);">
+                <span class="font-semibold" style="color: var(--color-brand);">Add-on:</span> {s.addons}
+              </p>
+            ) : (
+              <div class="mt-auto"></div>
+            )}
             <a href="/parliamone" class={`btn ${s.featured ? "btn-primary" : "btn-secondary"} justify-center`}>{s.cta}</a>
           </div>
         ))}
@@ -434,8 +445,8 @@ const regole = [
     <div class="container-soraia">
       <SectionHeader
         eyebrow="Add-on"
-        title="Ogni add-on completa uno dei tre servizi"
-        subtitle="Analisi, Sprint e Hypercare sono i servizi. Gli add-on sono opzionali e si aggiungono a uno solo di questi: li scegli quando attivi quel servizio."
+        title="Ogni add-on completa uno dei servizi"
+        subtitle="Analisi, Sprint e Hypercare sono i servizi. Gli add-on sono opzionali, si pagano una volta sola e si agganciano a un solo servizio: li scegli quando attivi quel servizio."
       />
 
       <p class="eyebrow mb-4" style="color: var(--color-brand);">Con lo Sprint</p>
@@ -457,40 +468,60 @@ const regole = [
                 </li>
               ))}
             </ul>
-            {a.foot && <p class="text-[13.5px] mt-auto" style="color: var(--color-ink-soft);">{a.foot}</p>}
           </div>
         ))}
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mt-10">
-        {addonAltri.map((a) => (
-          <div class="card flex flex-col gap-4 !p-7">
-            <p class="eyebrow" style="color: var(--color-brand);">{a.group}</p>
-            <div>
-              <h3 class="text-[1.25rem] font-medium tracking-tight">{a.name}</h3>
-              <div class="mt-1 whitespace-nowrap">
-                <span class="bignum" style="font-size: clamp(1.5rem, 2.5vw, 1.75rem);">{a.price}</span><span class="text-[14px]" style="color: var(--color-ink-soft);">{a.unit}</span>
-              </div>
-            </div>
-            <p class="text-[15px]" style="color: var(--color-ink-muted);">{a.claim}</p>
-            <ul class="flex flex-col gap-2.5 text-[14.5px] list-none p-0 m-0">
-              {a.items.map((item) => (
-                <li class="flex items-start gap-2.5">
-                  <svg class="shrink-0 mt-1" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            {a.foot && <p class="text-[13.5px]" style="color: var(--color-ink-soft);">{a.foot}</p>}
-            {a.cta && <a href={a.cta.href} class="btn btn-secondary mt-auto justify-center">{a.cta.label}</a>}
+      <div class="card flex flex-col gap-4 !p-7 max-w-2xl mt-10">
+        <p class="eyebrow" style="color: var(--color-brand);">{addonAnalisi.group}</p>
+        <div>
+          <h3 class="text-[1.25rem] font-medium tracking-tight">{addonAnalisi.name}</h3>
+          <div class="mt-1 whitespace-nowrap">
+            <span class="bignum" style="font-size: clamp(1.5rem, 2.5vw, 1.75rem);">{addonAnalisi.price}</span><span class="text-[14px]" style="color: var(--color-ink-soft);">{addonAnalisi.unit}</span>
           </div>
-        ))}
+        </div>
+        <p class="text-[15px]" style="color: var(--color-ink-muted);">{addonAnalisi.claim}</p>
+        <ul class="flex flex-col gap-2.5 text-[14.5px] list-none p-0 m-0">
+          {addonAnalisi.items.map((item) => (
+            <li class="flex items-start gap-2.5">
+              <svg class="shrink-0 mt-1" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-[14px] font-semibold" style="color: var(--color-brand);">{addonAnalisi.foot}</p>
+        <a href={addonAnalisi.cta.href} class="btn btn-secondary mt-auto justify-center">{addonAnalisi.cta.label}</a>
       </div>
     </div>
   </section>
 
+  <!-- PACCHETTI A ORE -->
+  <section class="section" id="ore">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Oppure a ore"
+        title="Non ti serve un team continuativo? Compra un pacchetto di ore"
+        subtitle="Per un lavoro piccolo e circoscritto, dove uno Sprint intero sarebbe troppo: un’integrazione, una correzione, un modulo che sta in piedi da solo. Le ore si usano quando servono. Prezzi IVA esclusa."
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
+        {pacchettiOre.map((p) => (
+          <div class="card flex flex-col gap-2 !p-8">
+            <h3 class="text-[1.25rem] font-medium tracking-tight">{p.ore}</h3>
+            <div>
+              <span class="bignum">{p.price}</span>
+            </div>
+            <p class="text-[14px]" style="color: var(--color-ink-soft);">{p.rate}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 text-[15px] max-w-3xl text-pretty" style="color: var(--color-ink-muted);">
+        Se il lavoro cresce, si passa allo Sprint. Ne parliamo prima, così non firmi la cosa sbagliata.
+      </p>
+    </div>
+  </section>
+
   <!-- IL METODO -->
-  <section class="section">
+  <section class="section" style="background: var(--color-surface);">
     <div class="container-soraia">
       <SectionHeader
         eyebrow="Il metodo"
@@ -514,7 +545,7 @@ const regole = [
   </section>
 
   <!-- COSTRUTTORE DEL PERCORSO -->
-  <section class="section" id="percorso" style="background: var(--color-surface);">
+  <section class="section" id="percorso">
     <div class="container-soraia">
       <SectionHeader
         eyebrow="Costruisci il tuo percorso"
@@ -526,11 +557,11 @@ const regole = [
   </section>
 
   <!-- SICUREZZA -->
-  <section class="section">
+  <section class="section" style="background: var(--color-surface);">
     <div class="container-soraia">
       <SectionHeader
         title="Sicurezza: fatta bene sempre, dimostrabile quando serve"
-        subtitle="Ogni Sprint costruisce software sicuro. Compliance & Audit e Pentest aggiungono le verifiche e i documenti per chi ti chiede di dimostrarlo: DPO, soci, clienti, auditor, assicurazione."
+        subtitle="Ogni Sprint costruisce software sicuro, cifratura dei campi sensibili, log di audit e SLA compresi. Compliance & Audit e Pentest non aggiungono sicurezza: aggiungono le prove per chi te la chiede, cioè auditor, enti di certificazione, DPO, soci e clienti."
       />
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
         <div class="card flex flex-col gap-4 !p-8">

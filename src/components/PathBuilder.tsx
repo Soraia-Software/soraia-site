@@ -1,15 +1,15 @@
 import { useState } from "react";
 
 // Costruttore del percorso. Modello a tre servizi più add-on:
-// Analisi 3.000€ una tantum (facoltativa), Sprint 5.000€/mese, Hypercare da 500€/mese.
-// Gli add-on si agganciano a un solo servizio. Hypercare e AI Quality sono ricorrenti
-// e restano fuori dal totale del progetto, che è tutto una tantum o a mese di Sprint.
+// Analisi 3.000€ una tantum (facoltativa), Sprint da 8.000€/mese, Hypercare da 500€/mese.
+// Gli add-on si agganciano a un solo servizio e sono tutti una tantum. Hypercare è
+// ricorrente e resta fuori dal totale del progetto.
 const P_ANALISI = 3000;
-const P_BANDI = 1000;
-const P_SPRINT = 5000;
-const P_COMPLIANCE = 2000;
+const P_BANDI = 2000;
+const P_SPRINT = 8000;
+const P_COMPLIANCE = 4000;
 const P_PENTEST = 4000;
-const P_TRAINING = 2500;
+const P_TRAINING = 3000;
 const MIN_MONTHS = 1;
 const MAX_MONTHS = 6;
 const brand = "#4A1E5C";
@@ -21,23 +21,21 @@ const T = {
     s1: "Analisi",
     s1Note: "3.000€, il primo passo consigliato",
     s2: "Sprint",
-    s2Note: "5.000€ al mese",
+    s2Note: "da 8.000€ al mese",
     s3: "Hypercare",
     s3Note: "facoltativa, dopo il go-live",
     analisi: "Includi l’Analisi",
     analisiPrice: "3.000€ una tantum",
     bandi: "Supporto bandi",
-    bandiPrice: "1.000€ una tantum",
+    bandiPrice: "2.000€, e lo paghi solo se il bando è vinto",
     compliance: "Compliance & Audit",
-    compliancePrice: "2.000€ per ogni mese di Sprint",
+    compliancePrice: "4.000€ una tantum",
     pentest: "Pentest",
     pentestPrice: "4.000€ una tantum",
     training: "Formazione e adozione",
-    trainingPrice: "2.500€ una tantum",
+    trainingPrice: "3.000€ una tantum",
     hyper: "Attiva Hypercare",
     hyperPrice: "da 500€/mese, contratto annuale",
-    aiq: "Add-on AI Quality",
-    aiqPrice: "500€/mese",
     minusAria: "Un mese di Sprint in meno",
     plusAria: "Un mese di Sprint in più",
     months: (n: number) => `${n} ${n === 1 ? "mese" : "mesi"}`,
@@ -45,7 +43,7 @@ const T = {
     lineAnalisi: "Analisi",
     lineBandi: "+ Supporto bandi",
     lineSprint: (m: string, rate: string) => `${m} di Sprint × ${rate}`,
-    lineCompliance: (m: string) => `+ Compliance & Audit × ${m}`,
+    lineCompliance: "+ Compliance & Audit",
     linePentest: "+ Pentest",
     lineTraining: "+ Formazione e adozione",
     summaryTag: "Il tuo percorso",
@@ -54,10 +52,6 @@ const T = {
     recTitle: "Hypercare, dopo il go-live",
     recHyper: "Hypercare",
     recHyperPrice: "da 500€/mese",
-    recAiq: "+ AI Quality",
-    recAiqPrice: "500€/mese",
-    recTotal: "Totale mensile",
-    recTotalPrice: "da 1.000€/mese",
     iva: "Prezzi IVA esclusa. Sprint pagati a inizio mese.",
     cta: "Parliamone in 20 minuti",
     ctaHref: "/parliamone",
@@ -66,23 +60,21 @@ const T = {
     s1: "Analysis",
     s1Note: "€3,000, the recommended first step",
     s2: "Sprint",
-    s2Note: "€5,000 a month",
+    s2Note: "from €8,000 a month",
     s3: "Hypercare",
     s3Note: "optional, after go-live",
     analisi: "Include the Analysis",
     analisiPrice: "€3,000 one-off",
     bandi: "Grant support",
-    bandiPrice: "€1,000 one-off",
+    bandiPrice: "€2,000, and you pay only if the grant is won",
     compliance: "Compliance & Audit",
-    compliancePrice: "€2,000 for every Sprint month",
+    compliancePrice: "€4,000 one-off",
     pentest: "Pentest",
     pentestPrice: "€4,000 one-off",
     training: "Training and adoption",
-    trainingPrice: "€2,500 one-off",
+    trainingPrice: "€3,000 one-off",
     hyper: "Turn on Hypercare",
     hyperPrice: "from €500/month, annual contract",
-    aiq: "AI Quality add-on",
-    aiqPrice: "€500/month",
     minusAria: "One Sprint month less",
     plusAria: "One Sprint month more",
     months: (n: number) => `${n} ${n === 1 ? "month" : "months"}`,
@@ -90,7 +82,7 @@ const T = {
     lineAnalisi: "Analysis",
     lineBandi: "+ Grant support",
     lineSprint: (m: string, rate: string) => `${m} of Sprint × ${rate}`,
-    lineCompliance: (m: string) => `+ Compliance & Audit × ${m}`,
+    lineCompliance: "+ Compliance & Audit",
     linePentest: "+ Pentest",
     lineTraining: "+ Training and adoption",
     summaryTag: "Your path",
@@ -99,10 +91,6 @@ const T = {
     recTitle: "Hypercare, after go-live",
     recHyper: "Hypercare",
     recHyperPrice: "from €500/month",
-    recAiq: "+ AI Quality",
-    recAiqPrice: "€500/month",
-    recTotal: "Monthly total",
-    recTotalPrice: "from €1,000/month",
     iva: "Prices exclude VAT. Sprints paid at the start of the month.",
     cta: "Let’s talk, 20 minutes",
     ctaHref: "/en/contact",
@@ -207,7 +195,6 @@ export default function PathBuilder({ lang = "it" }: { lang?: Lang }) {
   const [pentest, setPentest] = useState(true);
   const [training, setTraining] = useState(false);
   const [hyper, setHyper] = useState(true);
-  const [aiq, setAiq] = useState(false);
 
   const C = T[lang];
   // Raggruppamento manuale delle migliaia: deterministico, non dipende dall'ICU dell'host.
@@ -229,8 +216,8 @@ export default function PathBuilder({ lang = "it" }: { lang?: Lang }) {
   lines.push({ label: C.lineSprint(mesi, eur(P_SPRINT)), amount: eur(sprints * P_SPRINT) });
   total += sprints * P_SPRINT;
   if (compliance) {
-    lines.push({ label: C.lineCompliance(mesi), amount: eur(sprints * P_COMPLIANCE) });
-    total += sprints * P_COMPLIANCE;
+    lines.push({ label: C.lineCompliance, amount: eur(P_COMPLIANCE) });
+    total += P_COMPLIANCE;
   }
   if (pentest) {
     lines.push({ label: C.linePentest, amount: eur(P_PENTEST) });
@@ -239,15 +226,6 @@ export default function PathBuilder({ lang = "it" }: { lang?: Lang }) {
   if (training) {
     lines.push({ label: C.lineTraining, amount: eur(P_TRAINING) });
     total += P_TRAINING;
-  }
-
-  const recLines: { label: string; amount: string }[] = [];
-  if (hyper) {
-    recLines.push({ label: C.recHyper, amount: C.recHyperPrice });
-    if (aiq) {
-      recLines.push({ label: C.recAiq, amount: C.recAiqPrice });
-      recLines.push({ label: C.recTotal, amount: C.recTotalPrice });
-    }
   }
 
   const stepStyle: React.CSSProperties = {
@@ -312,7 +290,6 @@ export default function PathBuilder({ lang = "it" }: { lang?: Lang }) {
         <div className="flex flex-col gap-3" style={{ borderTop: "1px solid var(--color-line)", paddingTop: 24 }}>
           <StepHead n="3" title={C.s3} note={C.s3Note} />
           <Toggle on={hyper} onClick={() => setHyper((v) => !v)} label={C.hyper} price={C.hyperPrice} />
-          {hyper && <Toggle on={aiq} onClick={() => setAiq((v) => !v)} label={C.aiq} price={C.aiqPrice} />}
         </div>
       </div>
 
@@ -345,15 +322,13 @@ export default function PathBuilder({ lang = "it" }: { lang?: Lang }) {
           <p className="text-[14px]" style={{ color: "rgba(255,255,255,0.68)" }}>{C.credit(eur(total - P_ANALISI))}</p>
         )}
 
-        {recLines.length > 0 && (
+        {hyper && (
           <div className="mt-2 pt-3" style={{ borderTop: "1px solid var(--color-line-dark)" }}>
             <p className="text-[13px] mb-2" style={{ color: "rgba(255,255,255,0.55)" }}>{C.recTitle}</p>
-            {recLines.map((l) => (
-              <div key={l.label} className="flex justify-between gap-3 text-[15px] py-1">
-                <span style={{ color: "rgba(255,255,255,0.72)" }}>{l.label}</span>
-                <span className="font-semibold whitespace-nowrap">{l.amount}</span>
-              </div>
-            ))}
+            <div className="flex justify-between gap-3 text-[15px] py-1">
+              <span style={{ color: "rgba(255,255,255,0.72)" }}>{C.recHyper}</span>
+              <span className="font-semibold whitespace-nowrap">{C.recHyperPrice}</span>
+            </div>
           </div>
         )}
 

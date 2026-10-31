@@ -27,26 +27,31 @@ section rather than inventing a new treatment.
   `/analisi-processi` deck is noindex, the service is requested from `/parliamone`) and
   *AI Engineering* (sprint-based development, first release in production in 4 weeks).
   "Da dove partire dipende da te."
-- **Pricing lives on `/prezzi` only**, and it is **three fixed-price services plus optional
-  add-ons, never hour packages**. Services: **Analisi 3.000 €** one-off (**optional**: say so,
-  it is deducted from the first Sprint if the client starts within 30 days), **Sprint
-  5.000 €/month** (also for a single month, no minimum commitment) and **Hypercare from
+- **Pricing lives on `/prezzi` only**: **three fixed-price services plus optional one-off
+  add-ons**, and **hour packages** for small jobs. Services: **Analisi 3.000 €** one-off
+  (**optional**: say so; deducted from the first Sprint if the client starts within 30 days),
+  **Sprint from 8.000 €/month** (always "da"/"from"; framed as a continuous team, "mese dopo
+  mese", **but still bookable for a single month with no lock-in**) and **Hypercare from
   500 €/month** (optional, annual contract from go-live; it maintains rather than builds, so
-  new features, modules and integrations go into a Sprint). Add-ons attach to **one** service
-  only. With the Sprint: **Compliance & Audit 2.000 €** for every Sprint month, **Pentest
-  4.000 €** one-off, **Formazione e adozione 2.500 €** one-off. With the Analisi: **Supporto
-  bandi 1.000 €** one-off. With Hypercare: **AI Quality 500 €/month**. All prices VAT excluded.
-  Compliance & Audit is where compliance lives, and it is **both GDPR and AI Act**: art. 32
-  measures, DPIA support and data-flow map on one side, risk classification, technical
-  documentation, user-facing transparency and human oversight on the other, citing Regolamento
-  (UE) 2024/1689. The legal judgement always stays with the client's lawyer, never claimed as
-  ours. The Sprint itself includes **historical data import and migration** and **three months
-  of change requests after release**.
+  new features, modules and integrations go into a Sprint). Hypercare **absorbed AI Quality**
+  on 2026-10-31: monthly test of the agents' answers on real cases, instruction tuning, API
+  cost control. Add-ons are **one-off** and attach to **one** service only. With the Sprint:
+  **Compliance & Audit 4.000 €**, **Pentest 4.000 €**, **Formazione e adozione 3.000 €**. With
+  the Analisi: **Supporto bandi 2.000 €, paid only if the grant is won**. **Hour packages**:
+  **50 ore 4.000 €** and **100 ore 7.500 €**, for small self-contained jobs with no continuous
+  team. All prices VAT excluded.
+  **The Sprint itself includes** encryption of sensitive fields, audit logs, retention and
+  deletion policy, load testing, monitoring and availability SLA, historical data import and
+  migration, and three months of change requests after release. **Compliance & Audit does not
+  add security, it adds the proof**: documents for whoever asks (auditors, certification bodies,
+  DPO, clients). It is **both GDPR and AI Act**: art. 32 measures, DPIA support and data-flow
+  map on one side, risk classification, technical documentation, user-facing transparency and
+  human oversight on the other, citing Regolamento (UE) 2024/1689, plus a compliance dossier.
+  The legal judgement always stays with the client's lawyer, never claimed as ours.
   **Three dedicated people, one per role: Account Manager, Project Manager, AI Engineer**,
-  one release in production every Sprint. **The Sprint has no minimum commitment**, and the
-  pages say so twice each: a hero chip ("Anche un solo mese, senza vincolo" / "Even a single
-  month, no lock-in") and the line under the price. Guarantee: **primo mese soddisfatti o
-  rimborsati**.
+  one release in production every Sprint. The pages say "Anche un solo mese, senza vincolo" /
+  "Even a single month, no lock-in" in a hero chip and under the Sprint price. Guarantee:
+  **primo mese soddisfatti o rimborsati**.
 - **Team**: "più di 10 persone" (never a fixed 10 or 11), **distributed in Italy**, 100%
   remote, registered office in Biella. The response-time line is always "Daniel, Veronica e Paolo ti rispondono entro 24 ore." (EN "Daniel, Veronica and Paolo reply within 24 hours."), never a Daniel-only version.
 - **Stats**: "40+ progetti consegnati". Never "in 11 paesi".
@@ -54,9 +59,12 @@ section rather than inventing a new treatment.
   iniziale 1-2 settimane", AI Adoption workshop as a pillar, Co-Building Sprint, the week-by-week
   sprint timeline, "Stack agnostic", the Xano/WeWeb featured row, "se non funziona non paghi",
   "rimborsiamo lo sprint", "due figure dedicate", "Nessun vincolo di durata", 43 ore, and the
-  whole **hour-package model** retired on 2026-10-29: "45 ore", "195 ore", "67 €/ora",
-  "scaglioni da 1.000 €", "monte ore combinato", "pacchetti di ore", the "a corpo" fixed-price
-  alternative and the hours slider. The portal shows Sprint progress, not hours per person.
+  **old hour-package model** retired on 2026-10-29: "45 ore", "195 ore", "67 €/ora",
+  "scaglioni da 1.000 €", "monte ore combinato", the "a corpo" fixed-price alternative and the
+  hours slider. Hour packages came back on 2026-10-31 in a different form (50 ore 4.000 €,
+  100 ore 7.500 €, for small jobs only): use those numbers, never the old ones. Also retired:
+  the tiers **"Sprint Pro"** and **"Partner"** (2026-10-30) and the add-on **"AI Quality"**
+  (2026-10-31, folded into Hypercare). The portal shows Sprint progress, not hours per person.
   `/downloads/ai-assessment-sample` still exists but is noindex, out of the sitemap and unlinked.
 - `public/llms.txt` and `public/llms-full.txt` restate all of the above for AI answer engines:
   update them whenever one of these facts changes.
@@ -161,20 +169,21 @@ Use the `.btn` classes, never ad-hoc button styling:
 - `SectionHeader` — every section intro.
 - `PathBuilder` — the "costruisci il tuo percorso" island on `/prezzi` and `/en/pricing`
   (it replaced `PricingCalculator`, deleted 2026-10-29; rewritten for the add-on model
-  2026-10-30). Three blocks: Analisi (a toggle, **on by default but switchable off**, since the
-  Analisi is not compulsory), Sprint (1 to 6 months, 5.000€ each) and Hypercare. Add-on toggles
-  appear under their own service only, and AI Quality only shows when Hypercare is on.
-  **Totale progetto** sums the one-off and per-Sprint-month items; **Hypercare and AI Quality
-  are recurring and never enter that total**. The 3.000€ credit line shows only when the Analisi
-  is on. Default state is Analisi + 3 mesi + Compliance & Audit + Pentest = 28.000€. Real
-  `<button>`s with `aria-pressed`, and `aria-label` on +/−. Thousands are grouped manually,
-  as everywhere else.
+  2026-10-30 and 2026-10-31). Three blocks: Analisi (a toggle, **on by default but switchable
+  off**, since the Analisi is not compulsory, with Supporto bandi under it), Sprint (1 to 6
+  months, 8.000€ each, with Compliance & Audit, Pentest and Formazione as one-off toggles) and
+  Hypercare. **Totale progetto** sums the one-off items and the Sprint months; **Hypercare is
+  recurring and never enters that total**. The 3.000€ credit line shows only when the Analisi
+  is on. Default state is Analisi + 3 mesi + Compliance & Audit + Pentest = 35.000€. Hour
+  packages are **not** in the builder: they are an alternative for small jobs, shown in their
+  own section. Real `<button>`s with `aria-pressed`, and `aria-label` on +/−. Thousands are
+  grouped manually, as everywhere else.
 - `SprintRoadmap` — the mountain + sprint timeline + "aggiorna le priorità" reorder,
   shared by `/analisi-processi` and `/ai-engineering`.
 - `PricingTwoSteps` — the "Da dove partire dipende da te" two-card block (01 Analisi dei
   processi / 02 AI Engineering, or Discovery & Scoping / Build Sprint with `variant="software"`),
   used on `/ai-agents` and `/software-development`. Pricing tail: three dedicated people, from
-  5.000 €/month, even for a single month.
+  8.000 €/month, even for a single month.
 - Team row (homepage "Il tuo team") — one slow looping **row of cards** (photo 4:5, name and
   surname, role in accent) on a `.bg-tech-grid` band; pure CSS marquee (set duplicated,
   `translateX(-50%)`, pause on hover, respects reduced-motion). Roles are data in the page.

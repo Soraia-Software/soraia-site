@@ -23,7 +23,7 @@ faq:
   - q: "Does it integrate with our accounting software?"
     a: "The agent hooks into your management system via export/import or API where available. We don't ask you to switch tools: we build on top of the stack you already run, including e-invoicing flows."
   - q: "What does it cost and how fast does it launch?"
-    a: "Our pricing is one model: from <strong>€5,000/month</strong>, three dedicated people (an Account Manager, a Project Manager and an AI Engineer), with the first agent live in <strong>4 weeks</strong> and 30 days of hypercare. The guarantee stands: <strong>first month satisfied or refunded</strong>."
+    a: "Our pricing is one model: from <strong>€8,000/month</strong>, three dedicated people (an Account Manager, a Project Manager and an AI Engineer), with the first agent live in <strong>4 weeks</strong> and 30 days of hypercare. The guarantee stands: <strong>first month satisfied or refunded</strong>."
 lang: "en"
 gates:
   passedAt: 2026-07-16T14:53:45.191Z
@@ -47,7 +47,7 @@ draft: false
 > - An AI agent doesn't decide alone: it drafts, reconciles the easy lines, and escalates only anomalies to a human.
 > - At [Numeraria](/en/case-studies/numeraria) the result was roughly **half a month handed back to management** every month.
 > - For an internal accounting agent the AI Act typically places you at minimal risk: no autonomous decision that affects people.
-> - Pricing: from **€5,000/month**, three dedicated people (an Account Manager, a Project Manager and an AI Engineer), first agent live in **4 weeks**, first month satisfied or refunded.
+> - Pricing: from **€8,000/month**, three dedicated people (an Account Manager, a Project Manager and an AI Engineer), first agent live in **4 weeks**, first month satisfied or refunded.
 
 An accounting and payroll firm doesn't lose time on the hard work. It loses it on the repetitive stuff: drafting yet another quote, aggregating the team's hours, reconciling bank statements.
 
@@ -91,7 +91,7 @@ The published result: roughly **half a month handed back to management** every m
 
 ## What it takes to start
 
-We start by measuring the baseline and picking the first process. Our pricing is one model: from **€5,000/month**, three dedicated people (an Account Manager, a Project Manager and an AI Engineer), first agent live in **4 weeks**, 30 days of hypercare. The target is written into the contract, with the first month satisfied or refunded guarantee.
+We start by measuring the baseline and picking the first process. Our pricing is one model: from **€8,000/month**, three dedicated people (an Account Manager, a Project Manager and an AI Engineer), first agent live in **4 weeks**, 30 days of hypercare. The target is written into the contract, with the first month satisfied or refunded guarantee.
 
 ---
 

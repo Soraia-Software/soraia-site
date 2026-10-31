@@ -26,7 +26,7 @@ faq:
   - q: "Una PMI può davvero farsi citare dai motori AI?"
     a: "Sì, e spesso è più facile che scalare Google. I motori AI premiano contenuti specifici e verificabili, non solo i domini con più backlink. Una PMI con casi reali, numeri propri e contenuto ben strutturato su una nicchia può essere citata dove i grandi player restano generici."
   - q: "Quanto costa un intervento di AI Search Optimization?"
-    a: "In Soraia partiamo da un <strong>audit</strong> che misura quanto sei già citabile, poi lo sprint di re-architettura contenuti e rifacimento sito AI-ready, dimensionato sullo scope. Si parte da 5.000 € al mese (IVA esclusa), con tre persone dedicate (Account Manager, Project Manager e AI Engineer). Prima ti diciamo se ha senso, poi costruiamo."
+    a: "In Soraia partiamo da un <strong>audit</strong> che misura quanto sei già citabile, poi lo sprint di re-architettura contenuti e rifacimento sito AI-ready, dimensionato sullo scope. Si parte da 8.000 € al mese (IVA esclusa), con tre persone dedicate (Account Manager, Project Manager e AI Engineer). Prima ti diciamo se ha senso, poi costruiamo."
   - q: "Quanto tempo serve per vedere risultati nella AI search?"
     a: "Dipende dal motore. Perplexity e ChatGPT con browsing aggiornano in giorni o settimane; gli indici interni dei modelli e Google AI Overviews richiedono più tempo. Realisticamente la finestra è di 2-4 mesi per vedere citazioni stabili sulle query che contano per te."
 lang: "it"

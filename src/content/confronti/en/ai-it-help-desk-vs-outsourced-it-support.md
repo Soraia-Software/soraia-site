@@ -68,7 +68,7 @@ faq:
   - q: "If I automate the first level, do I drop the MSP?"
     a: "Not necessarily. An AI agent and outsourcing cover different things: the agent clears the repetitive load, the MSP handles physical, on-site and complex cases. Many SMEs keep both and use the agent to <strong>reduce the volumes</strong> they pay the provider for."
   - q: "How much does it cost to start with an AI help desk agent?"
-    a: "With Soraia we work in monthly Sprints: it starts at <strong>5,000 € per month</strong>, with three dedicated people and a release in production at the end of the month. The first release runs on your real processes in 4 weeks and comes with a first-month satisfied-or-refunded guarantee. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
+    a: "With Soraia we work in monthly Sprints: it starts at <strong>8,000 € per month</strong>, with three dedicated people and a release in production at the end of the month. The first release runs on your real processes in 4 weeks and comes with a first-month satisfied-or-refunded guarantee. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
   - q: "Is ticket data kept safe?"
     a: "Yes. Code and data stay the client's from day one, with an audit log on every agent answer, AI Act alignment and no LLM training on your data. European infrastructure when required."
   - q: "I have no internal IT: does an AI agent make sense?"

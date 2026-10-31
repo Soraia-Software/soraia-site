@@ -26,7 +26,7 @@ faq:
   - q: "Can an SMB really get cited by AI engines?"
     a: "Yes, and it's often easier than ranking on Google. AI engines reward specific, verifiable content, not just domains with the most backlinks. An SMB with real cases, its own numbers and well-structured content on a niche can get cited where big players stay generic."
   - q: "How much does an AI Search Optimization project cost?"
-    a: "At Soraia we start with an <strong>audit</strong> that measures how citable you already are. The content re-architecture and AI-ready site rebuild depend on scope. Our pricing is a single model: from €5,000/month, three dedicated people (an Account Manager, a Project Manager and an AI Engineer). We tell you whether it makes sense first, then build."
+    a: "At Soraia we start with an <strong>audit</strong> that measures how citable you already are. The content re-architecture and AI-ready site rebuild depend on scope. Our pricing is a single model: from €8,000/month, three dedicated people (an Account Manager, a Project Manager and an AI Engineer). We tell you whether it makes sense first, then build."
   - q: "How long does it take to see results in AI search?"
     a: "It depends on the engine. Perplexity and ChatGPT with browsing update in days or weeks; models' internal indexes and Google AI Overviews take longer. Realistically the window is 2-4 months to see stable citations on the queries that matter to you."
 lang: "en"
