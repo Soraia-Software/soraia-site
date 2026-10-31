@@ -1,0 +1,179 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import SectionHeader from "~/components/SectionHeader.astro";
+import FAQ from "~/components/FAQ.astro";
+import BandiFinder from "~/components/bandi/BandiFinder.tsx";
+import { AGGIORNATO } from "~/components/bandi/data";
+
+const title = "Bandi per la digitalizzazione delle PMI 2026 | Soraia";
+const description =
+  "Bandi aperti per software su misura, agenti IA, digitalizzazione dei processi e formazione: fondo perduto, finanziamenti agevolati e agevolazioni fiscali, filtrabili per regione. Verificati sulle fonti ufficiali.";
+
+// Data di build: il primo render dell'elenco la usa, poi passa alla data reale nel browser.
+const oggiBuild = new Date().toISOString().slice(0, 10);
+
+const MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
+const [ay, am, ad] = AGGIORNATO.split("-").map(Number);
+const aggiornatoTesto = `${ad} ${MESI[am - 1]} ${ay}`;
+
+const tipi = [
+  {
+    t: "Fondo perduto",
+    d: "Un contributo che non si restituisce. Di solito copre una percentuale della spesa, fino a un massimale.",
+  },
+  {
+    t: "Finanziamento agevolato",
+    d: "Un prestito a tasso zero o molto basso, da restituire in alcuni anni.",
+  },
+  {
+    t: "Finanziamento e fondo perduto",
+    d: "Un prestito agevolato con una parte che non va restituita.",
+  },
+  {
+    t: "Agevolazione fiscale",
+    d: "Un risparmio sulle tasse che si usa con il commercialista: niente graduatoria, ma regole precise sui beni ammessi.",
+  },
+];
+
+const faqs = [
+  {
+    q: "Il software su misura si può finanziare con un bando?",
+    a: "Dipende dal bando. Molti voucher regionali e camerali ammettono licenze o sviluppo di software e la consulenza, come Trasformazioni in Puglia. Altri coprono solo interventi predefiniti, come il voucher del Lazio, o abbonamenti cloud da fornitori in elenco, come il Voucher Cloud e Cybersecurity. Per le agevolazioni fiscali il software deve essere iscritto a bilancio: gli abbonamenti a canone non rientrano. Nell’elenco lo indichiamo bando per bando.",
+  },
+  {
+    q: "Soraia può essere il fornitore del mio progetto finanziato?",
+    a: "Spesso sì, quando il bando ammette software, consulenza o formazione da fornitori esterni senza un elenco chiuso. Alcune misure però accettano solo fornitori iscritti a un elenco, come il Voucher Cloud e Cybersecurity, o percorsi erogati da soggetti scelti dall’ente. Nella scheda di ogni bando, alla voce «Da sapere», trovi quello che sappiamo sui fornitori ammessi.",
+  },
+  {
+    q: "Cosa vuol dire «a sportello»?",
+    a: "Le domande si esaminano in ordine di arrivo finché ci sono fondi, non a una data fissa. Alcuni sportelli chiudono in poche ore: il voucher digitalizzazione del Piemonte, nel 2026, ha chiuso il giorno stesso dell’apertura. Conviene avere documenti e preventivi pronti prima che apra.",
+  },
+  {
+    q: "Posso usare più agevolazioni per lo stesso progetto?",
+    a: "A volte sì, spesso non sulla stessa spesa. Molti contributi rientrano nel regime «de minimis», che ha un tetto complessivo per impresa di 300.000€ in tre esercizi, e diversi bandi vietano il cumulo sullo stesso costo. Va verificato bando per bando, insieme al commercialista.",
+  },
+  {
+    q: "Quanto è aggiornato l’elenco?",
+    a: "Ogni scheda riporta la data in cui l’abbiamo verificata sulla fonte ufficiale, e lo stato si aggiorna da solo quando una scadenza passa. Dotazioni e date però cambiano, e uno sportello può chiudere prima del previsto: prima di candidarti controlla sempre il bando ufficiale, che trovi in ogni scheda.",
+  },
+  {
+    q: "Come funziona il Supporto bandi di Soraia?",
+    a: "Verifichiamo i requisiti, prepariamo un preventivo conforme al bando e la documentazione tecnica per la domanda, e ti seguiamo nella rendicontazione. Costa 2.000€ e lo paghi solo se il bando è vinto. Si può attivare anche senza Analisi e senza Sprint.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    url: "https://www.soraia.io/bandi",
+    inLanguage: "it-IT",
+    dateModified: AGGIORNATO,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+];
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd} hideLangSwitch>
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-violet-mesh">
+    <div class="orb orb-violet w-[500px] h-[500px] -top-32 -right-20 opacity-40 float-slow" aria-hidden="true"></div>
+    <div class="container-soraia pt-16 md:pt-24 pb-14 md:pb-20 relative z-10">
+      <p class="eyebrow mb-5">Bandi e incentivi</p>
+      <h1 class="text-ink text-balance" style="font-size: clamp(2.5rem, 5vw + 1rem, 3.75rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500; max-width: 22ch;">
+        Bandi per digitalizzare la tua azienda, verificati uno per uno.
+      </h1>
+      <p class="mt-6 text-[17px] md:text-[18px] leading-relaxed text-pretty max-w-2xl" style="color: var(--color-ink-muted);">
+        Fondo perduto, finanziamenti agevolati e agevolazioni fiscali per software su misura, agenti IA, digitalizzazione dei processi e formazione. Li leggiamo sulle fonti ufficiali e indichiamo per ognuno cosa finanzia, per chi è e cosa sapere sui fornitori.
+      </p>
+      <p class="mt-6 text-[14px]" style="color: var(--color-ink-soft);">Elenco aggiornato al {aggiornatoTesto}.</p>
+    </div>
+  </section>
+
+  <!-- COME LEGGERE L'ELENCO -->
+  <section class="section !pb-0">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="Come leggere l’elenco"
+        title="Quattro modi in cui lo Stato ti aiuta a pagare"
+        subtitle="La maggior parte dei bandi è «a sportello»: le domande si esaminano in ordine di arrivo finché ci sono fondi, e alcuni chiudono in poche ore."
+      />
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {tipi.map((x) => (
+          <div class="card !p-6">
+            <h3 class="text-[1.0625rem] font-medium tracking-tight">{x.t}</h3>
+            <p class="mt-2 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">{x.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ELENCO FILTRABILE -->
+  <section class="section" id="elenco">
+    <div class="container-soraia">
+      <SectionHeader
+        eyebrow="L’elenco"
+        title="Trova i bandi per la tua azienda"
+        subtitle="Filtra per regione, tipo di agevolazione, dimensione dell’impresa e cosa vuoi finanziare. In alto i bandi aperti con la scadenza più vicina."
+      />
+      <BandiFinder client:load oggiBuild={oggiBuild} />
+    </div>
+  </section>
+
+  <!-- CAMERE DI COMMERCIO -->
+  <section class="section !py-14" style="background: var(--color-surface);">
+    <div class="container-soraia flex flex-wrap items-center justify-between gap-6">
+      <div class="flex-1 min-w-0" style="flex-basis: 520px;">
+        <h2 class="text-[1.5rem] font-medium tracking-tight text-balance">Il voucher della tua Camera di commercio</h2>
+        <p class="mt-2 text-[16px] text-pretty" style="color: var(--color-ink-muted);">
+          Quasi ogni Camera pubblica ogni anno un voucher per il digitale, con date e regole sue. Il portale Punto Impresa Digitale li raccoglie tutti: cerca quello della tua provincia.
+        </p>
+      </div>
+      <a href="https://www.puntoimpresadigitale.camcom.it/bandi-incentivi/voucher-digitali" target="_blank" rel="noopener" class="btn btn-secondary whitespace-nowrap">
+        Vai al portale PID
+      </a>
+    </div>
+  </section>
+
+  <!-- SUPPORTO BANDI -->
+  <section class="section">
+    <div class="container-soraia">
+      <div class="rounded-[1.375rem] p-8 md:p-12 bg-lines-dark flex flex-col lg:flex-row lg:items-center gap-8" style="background-color: #1A0820; color: #fff;">
+        <div class="flex-1">
+          <p class="eyebrow eyebrow-light">Supporto bandi</p>
+          <h2 class="mt-3 text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500; color: #fff;">
+            Il bando lo prepariamo con te, e lo paghi solo se lo vinci
+          </h2>
+          <p class="mt-4 text-[16.5px] leading-relaxed text-pretty max-w-2xl" style="color: rgba(255,255,255,0.78);">
+            Verifichiamo i requisiti, prepariamo un preventivo conforme al bando e la documentazione tecnica per la domanda, e ti seguiamo nella rendicontazione. Costa 2.000€, e si attiva anche senza Analisi e senza Sprint.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
+          <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50 justify-center">Parliamone in 20 minuti</a>
+          <a href="/prezzi#add-on" class="btn justify-center" style="border: 1.5px solid rgba(255,255,255,0.4); color: #fff;">Vedi gli add-on</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section !pt-0">
+    <div class="container-soraia max-w-3xl">
+      <SectionHeader title="Domande frequenti" />
+      <FAQ items={faqs} />
+      <p class="mt-10 text-[13px] leading-relaxed text-pretty" style="color: var(--color-ink-soft);">
+        Le informazioni hanno scopo orientativo e non sostituiscono il testo ufficiale dei bandi. Soraia non è collegata agli enti che li gestiscono.
+      </p>
+    </div>
+  </section>
+</Layout>

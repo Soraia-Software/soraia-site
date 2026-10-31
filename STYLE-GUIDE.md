@@ -67,6 +67,19 @@ section rather than inventing a new treatment.
   the tiers **"Sprint Pro"** and **"Partner"** (2026-10-30) and the add-on **"AI Quality"**
   (2026-10-31, folded into Hypercare). The portal shows Sprint progress, not hours per person.
   `/downloads/ai-assessment-sample` still exists but is noindex, out of the sitemap and unlinked.
+- **Grants live on `/bandi`** (Italian only, `hideLangSwitch`). The data is in
+  `src/components/bandi/data.ts`, one entry per grant, and **every entry must be checked on its
+  official source** (the regional, ministerial or Chamber of Commerce page, never an aggregator
+  or a consultant's blog) and carry that date in `verificato`. Aggregators were wrong more often
+  than right on dates and status in October 2026: Arezzo-Siena showed 15 December when it had
+  closed in August, and the Piedmont voucher showed 15 December when it had closed on opening day.
+  **Never write the status by hand**: give `apertura`, `scadenza` and, for early closures,
+  `chiusoIl`; the page computes open, opening, always-on, yearly and closed. For each grant,
+  `daSapere` says what we know about **which suppliers are allowed**, because that decides whether
+  Soraia can be the supplier: say so plainly when a measure only accepts a closed supplier list
+  (Voucher Cloud e Cybersecurity) or a qualified catalogue (Fondimpresa). Bump `AGGIORNATO` on
+  every review. The site-wide announcement bar points to `/bandi`; `/bando` is the old Piedmont
+  Unioncamere funnel, kept with a notice that the 2026 window closed on 22 October.
 - `public/llms.txt` and `public/llms-full.txt` restate all of the above for AI answer engines:
   update them whenever one of these facts changes.
 
@@ -179,6 +192,11 @@ Use the `.btn` classes, never ad-hoc button styling:
   packages are **not** in the builder: they are an alternative for small jobs, shown in their
   own section. Real `<button>`s with `aria-pressed`, and `aria-label` on +/−. Thousands are
   grouped manually, as everywhere else.
+- `BandiFinder` — the filterable grants list on `/bandi` (`src/components/bandi/`). Filters
+  by region (a region shows its own grants plus the national ones), type, company size and what
+  is funded; closed grants are hidden unless asked for. The first render uses the build date
+  (passed as `oggiBuild`) so server and hydrated HTML match, then it switches to the visitor's
+  date. Dates are formatted by hand in Italian, like thousands everywhere else.
 - `SprintRoadmap` — the mountain + sprint timeline + "aggiorna le priorità" reorder,
   shared by `/analisi-processi` and `/ai-engineering`.
 - `PricingTwoSteps` — the "Da dove partire dipende da te" two-card block (01 Analisi dei
