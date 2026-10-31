@@ -59,15 +59,16 @@ contratto annuale dal go-live; monitoraggio, correzione dei malfunzionamenti, ag
 di sicurezza e tecnici, test mensile delle risposte degli agenti IA su casi reali,
 ottimizzazione delle istruzioni quando la qualita' cala, controllo dei costi delle API con
 avvisi, report mensile con proposte di miglioramento. Le nuove funzionalita' entrano in uno
-Sprint. Gli add-on sono opzionali, una tantum, e si agganciano a un solo servizio. Con lo
-Sprint: Compliance & Audit a 4.000 euro, che non aggiunge sicurezza ma le prove per
+Sprint. Gli add-on sono opzionali, una tantum e indipendenti: si comprano da soli o insieme ai
+servizi, senza bisogno di Analisi o Sprint. Compliance & Audit a 4.000 euro, che non aggiunge sicurezza ma le prove per
 dimostrarla (documentazione tecnica per DPO e legale con misure art. 32 GDPR, supporto alla
 DPIA e mappa dei flussi di dati; conformita' all'AI Act con classificazione del rischio,
 documentazione tecnica, trasparenza verso gli utenti e sorveglianza umana, Regolamento (UE)
 2024/1689; un dossier di conformita' pronto per auditor ed enti di certificazione), Pentest a
 4.000 euro (test di sicurezza eseguito da un partner esterno prima del rilascio, report
 consegnabile ad auditor, clienti e assicurazione, correzione delle vulnerabilita' critiche
-inclusa) e Formazione e adozione a 3.000 euro. Con l'Analisi: Supporto bandi a 2.000 euro,
+inclusa) Formazione e adozione a 3.000 euro e Supporto
+bandi a 2.000 euro,
 che si paga solo se il bando e' vinto. Pacchetti di ore, per un lavoro piccolo e
 circoscritto senza team continuativo: 50 ore a 4.000 euro, 100 ore a 7.500 euro. Un
 costruttore sulla pagina compone il percorso e mostra il totale.

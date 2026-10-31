@@ -35,9 +35,10 @@ section rather than inventing a new treatment.
   500 €/month** (optional, annual contract from go-live; it maintains rather than builds, so
   new features, modules and integrations go into a Sprint). Hypercare **absorbed AI Quality**
   on 2026-10-31: monthly test of the agents' answers on real cases, instruction tuning, API
-  cost control. Add-ons are **one-off** and attach to **one** service only. With the Sprint:
-  **Compliance & Audit 4.000 €**, **Pentest 4.000 €**, **Formazione e adozione 3.000 €**. With
-  the Analisi: **Supporto bandi 2.000 €, paid only if the grant is won**. **Hour packages**:
+  cost control. Add-ons are **one-off** and **independent** (since 2026-10-31): bought on
+  their own or with any service, no Analisi or Sprint required, so never group them under a
+  service. **Compliance & Audit 4.000 €**, **Pentest 4.000 €**, **Formazione e adozione
+  3.000 €**, **Supporto bandi 2.000 €, paid only if the grant is won**. **Hour packages**:
   **50 ore 4.000 €** and **100 ore 7.500 €**, for small self-contained jobs with no continuous
   team. All prices VAT excluded.
   **The Sprint itself includes** encryption of sensitive fields, audit logs, retention and
@@ -169,12 +170,12 @@ Use the `.btn` classes, never ad-hoc button styling:
 - `SectionHeader` — every section intro.
 - `PathBuilder` — the "costruisci il tuo percorso" island on `/prezzi` and `/en/pricing`
   (it replaced `PricingCalculator`, deleted 2026-10-29; rewritten for the add-on model
-  2026-10-30 and 2026-10-31). Three blocks: Analisi (a toggle, **on by default but switchable
-  off**, since the Analisi is not compulsory, with Supporto bandi under it), Sprint (1 to 6
-  months, 8.000€ each, with Compliance & Audit, Pentest and Formazione as one-off toggles) and
-  Hypercare. **Totale progetto** sums the one-off items and the Sprint months; **Hypercare is
-  recurring and never enters that total**. The 3.000€ credit line shows only when the Analisi
-  is on. Default state is Analisi + 3 mesi + Compliance & Audit + Pentest = 35.000€. Hour
+  2026-10-30 and 2026-10-31). Four independent blocks: Analisi (a toggle, **on by default but
+  switchable off**, since the Analisi is not compulsory), Sprint (a toggle, then 1 to 6 months at
+  8.000€ each), Hypercare (a toggle) and the four add-ons as one-off toggles, **independent of
+  Analisi and Sprint**. **Totale progetto** sums the one-off items and the Sprint months; **Hypercare is
+  recurring and never enters that total**. The 3.000€ credit line shows only when **both** the
+  Analisi and the Sprint are on, since it is deducted from the first Sprint. Default state is Analisi + 3 mesi + Compliance & Audit + Pentest = 35.000€. Hour
   packages are **not** in the builder: they are an alternative for small jobs, shown in their
   own section. Real `<button>`s with `aria-pressed`, and `aria-label` on +/−. Thousands are
   grouped manually, as everywhere else.
