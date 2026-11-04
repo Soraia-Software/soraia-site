@@ -87,7 +87,10 @@ section rather than inventing a new treatment.
 ## 2. Typography
 
 One typeface: **Inter** (`--font-sans`), self-hosted. Mono is **JetBrains Mono**
-(`--font-mono`) for tabular numbers / tags only. No Google Fonts CDN.
+(`--font-mono`) for tabular numbers / tags only. No Google Fonts CDN: stand-alone pages that
+skip the Layout import the `@fontsource` CSS themselves. The one exception to Inter is
+`/demo-portale`, which reproduces the client portal in its own typeface, **DM Sans**
+(`@fontsource/dm-sans`, self-hosted too).
 
 - **Headings: `font-medium` (weight 500) + `tracking-tight`.** Never `font-semibold` for
   headings. The pairing `font-semibold tracking-tight` is the old signature and must not
