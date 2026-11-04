@@ -1,6 +1,12 @@
 ---
 // AI Readiness Assessment, sample anonymized report (printable to PDF via Cmd+P)
 // Stand-alone page, NOT using the global Layout (no header/footer for print)
+// Fonts self-hosted via @fontsource like the rest of the site: no Google Fonts CDN
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/jetbrains-mono/500.css";
 const title = "AI Readiness Assessment. Sample Report | Soraia";
 const description = "Anonymous sample of a Soraia AI Readiness Assessment: what a client receives within 1-2 weeks.";
 ---
@@ -14,9 +20,6 @@ const description = "Anonymous sample of a Soraia AI Readiness Assessment: what 
   <!-- Old-site material: still reachable for whoever has the link, kept out of indexes -->
   <meta name="robots" content="noindex, nofollow" />
   <meta name="description" content={description} />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <style>
