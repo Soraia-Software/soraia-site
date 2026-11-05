@@ -151,6 +151,11 @@ export const BLOG_SLUG_MAP: Record<string, string> = {
   "scadenziario-sicurezza-lavoro-rspp-sopralluoghi": "safety-compliance-deadlines-hse-consultants",
   "schedulazione-produzione-capacita-finita-pmi": "finite-capacity-production-scheduling-smb",
   "riconciliazione-incassi-amazon-distinte": "amazon-settlement-reconciliation",
+  "scheda-tecnica-offerta-forni-industriali": "technical-offer-industrial-furnaces",
+  "schede-prodotto-distributori-esteri": "product-sheets-foreign-distributors",
+  "crm-rete-agenti-rivenditori-tende-pergole": "crm-sales-agents-dealers-awnings-pergolas",
+  "assistente-ia-famiglie-assistenza-domiciliare": "ai-assistant-families-home-care-agency",
+  "crm-acquisto-crediti-imposta-solleciti": "crm-tax-credit-acquisition-follow-ups",
 };
 
 export function reverseMap(map: Record<string, string>): Record<string, string> {
