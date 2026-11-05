@@ -2,6 +2,7 @@
 title: "Migrating from an AI agent platform to a custom agent"
 description: "Operational guide to migrating from an AI agent platform to a custom agent: exit signals, technical checklist, data to export and a no-downtime sequence."
 pubDate: 2026-07-29
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai agents"

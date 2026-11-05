@@ -2,6 +2,7 @@
 title: "Cloud and Cybersecurity Voucher 2026: fund 50% of AI"
 description: "Italy's MIMIT Cloud and Cybersecurity voucher covers up to 50% as a grant. How SMEs can use it to fund custom software and AI agents in 2026."
 pubDate: 2026-09-21
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "incentives"

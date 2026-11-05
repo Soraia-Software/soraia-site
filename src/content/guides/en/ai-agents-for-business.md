@@ -4,7 +4,7 @@ h1: "AI Agents for Business: the operational guide for European SMEs"
 description: "What is an AI agent in business, when it makes sense, how it's built, what it costs, 4 real AI agents live in production at European SMEs. Updated guide 2026."
 lang: "en"
 pubDate: 2026-04-10
-updatedDate: 2026-05-24
+updatedDate: 2026-10-31
 author: daniel
 readMinutes: 12
 featured: true

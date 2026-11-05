@@ -2,6 +2,7 @@
 title: "Replacing legacy business software: the hidden cost"
 description: "Legacy ERP in industrial SMEs costs more than you think: slow onboarding, key-person risk, vendor lock-in. When to modernise and when to replace."
 pubDate: 2026-06-24
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "custom software"

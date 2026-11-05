@@ -57,7 +57,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: title,
-    url: "https://www.soraia.io/en/pricing",
+    url: "https://www.soraia.io/en/pricing/",
     inLanguage: "en",
   },
   {
@@ -283,7 +283,7 @@ const addons = [
       "Support with reporting",
     ],
     foot: "You pay only if the grant is won.",
-    cta: { label: "Check whether your project can be funded", href: "/en/contact" },
+    cta: { label: "Check whether your project can be funded", href: "/en/contact/" },
   },
 ];
 
@@ -377,7 +377,7 @@ const regole = [
         A team that brings to life the software you need.
       </h1>
       <p class="mt-6 text-[17px] md:text-[18px] leading-relaxed text-pretty max-w-2xl" style="color: var(--color-ink-muted);">
-        Account Manager, Project Manager and AI Engineer, with a proven method. Three steps at a fixed price, plus the add-ons your project needs. If the job is small, there is the hour package. <a href="/en/ai-engineering" style="color: var(--color-brand); font-weight: 600;">How we work, in detail &rarr;</a>
+        Account Manager, Project Manager and AI Engineer, with a proven method. Three steps at a fixed price, plus the add-ons your project needs. If the job is small, there is the hour package. <a href="/en/ai-engineering/" style="color: var(--color-brand); font-weight: 600;">How we work, in detail &rarr;</a>
       </p>
       <ul class="flex flex-wrap gap-3 mt-10 list-none p-0">
         {guarantees.map((g) => (
@@ -424,7 +424,7 @@ const regole = [
             </ul>
             {s.foot && <p class="text-[13.5px]" style="color: var(--color-ink-soft);">{s.foot}</p>}
             <div class="mt-auto"></div>
-            <a href="/en/contact" class={`btn ${s.featured ? "btn-primary" : "btn-secondary"} justify-center`}>{s.cta}</a>
+            <a href="/en/contact/" class={`btn ${s.featured ? "btn-primary" : "btn-secondary"} justify-center`}>{s.cta}</a>
           </div>
         ))}
       </div>
@@ -589,7 +589,7 @@ const regole = [
           We start from the Analysis, then give you a quote with the list of results fixed in writing.
         </p>
       </div>
-      <a href="/en/contact" class="btn btn-secondary whitespace-nowrap">Let’s talk</a>
+      <a href="/en/contact/" class="btn btn-secondary whitespace-nowrap">Let’s talk</a>
     </div>
   </section>
 
@@ -609,7 +609,7 @@ const regole = [
         Twenty minutes to understand your project, the add-ons that actually matter and the path. No commitment.
       </p>
       <div class="mt-7">
-        <a href="/en/contact" class="btn btn-primary">
+        <a href="/en/contact/" class="btn btn-primary">
           20 min with Daniel
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>

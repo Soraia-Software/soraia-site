@@ -81,7 +81,7 @@ const industryFilters = [
 ];
 ---
 
-<Layout title={title} description={description} lang="en" altHref="/case-studies">
+<Layout title={title} description={description} lang="en" altHref="/case-studies/">
 
   <!-- HERO + VIDEO TESTIMONIALS: right away, photo as thumbnail, one click and the video plays -->
   <section class="relative overflow-hidden border-b border-line bg-violet-mesh">
@@ -182,7 +182,7 @@ const industryFilters = [
             <div class="cs-grid-item" data-industries={industries}>
               <CaseStudyCardJet
                 lang="en"
-                href={`/en/case-studies/${bare(c.id)}`}
+                href={`/en/case-studies/${bare(c.id)}/`}
                 client={c.data.client}
                 clientLogo={c.data.clientLogo}
                 quote={cardQuote(c)}
@@ -197,7 +197,7 @@ const industryFilters = [
 
       <!-- Empty state -->
       <div class="hidden text-center py-12" data-empty-state>
-        <p class="text-[15px]" style="color: var(--color-ink-muted);">No case study for this industry. Try another filter or <a href="/en/contact" style="color: var(--color-brand); text-decoration: underline;">talk to us</a> about your sector.</p>
+        <p class="text-[15px]" style="color: var(--color-ink-muted);">No case study for this industry. Try another filter or <a href="/en/contact/" style="color: var(--color-brand); text-decoration: underline;">talk to us</a> about your sector.</p>
       </div>
     </div>
   </section>
@@ -216,7 +216,7 @@ const industryFilters = [
         20 minutes with the CEO. No pitch, no surprise quotes. Just a practical conversation about your processes.
       </p>
       <div class="mt-9">
-        <a href="/en/contact" class="btn btn-primary">
+        <a href="/en/contact/" class="btn btn-primary">
           20 min with Daniel
           <span class="btn-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>

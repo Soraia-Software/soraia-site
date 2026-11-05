@@ -2,6 +2,7 @@
 title: "Dati aziendali pronti per un agente IA? La checklist"
 description: "Prima di spendere un euro in automazione: la checklist di data readiness (fonti, dedupe, permessi, ground truth) che decide se un agente IA funziona."
 pubDate: 2026-07-24
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai agents"

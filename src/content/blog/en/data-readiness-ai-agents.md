@@ -2,6 +2,7 @@
 title: "Is your company data ready for an AI agent? Checklist"
 description: "Before spending a euro on automation: the data readiness checklist (sources, dedupe, permissions, ground truth) that decides whether an AI agent works."
 pubDate: 2026-07-24
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai agents"

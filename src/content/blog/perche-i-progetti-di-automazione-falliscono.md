@@ -2,6 +2,7 @@
 title: "Perché falliscono i progetti di automazione nelle PMI"
 description: "I progetti di automazione nelle PMI raramente falliscono per la tecnologia. Ecco i 4 anti-pattern di change management che vediamo sempre, e come evitarli."
 pubDate: 2026-07-02
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "automazione"

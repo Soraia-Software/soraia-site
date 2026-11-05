@@ -179,7 +179,7 @@ const industryFilters = [
           return (
             <div class="cs-grid-item" data-industries={industries}>
               <CaseStudyCardJet
-                href={`/case-studies/${c.id}`}
+                href={`/case-studies/${c.id}/`}
                 client={c.data.client}
                 clientLogo={c.data.clientLogo}
                 quote={cardQuote(c)}
@@ -194,7 +194,7 @@ const industryFilters = [
 
       <!-- Empty state -->
       <div class="hidden text-center py-12" data-empty-state>
-        <p class="text-[15px]" style="color: var(--color-ink-muted);">Nessun case study per questa industry. Prova un altro filtro o <a href="/parliamone" style="color: var(--color-brand); text-decoration: underline;">parla con noi</a> del tuo settore.</p>
+        <p class="text-[15px]" style="color: var(--color-ink-muted);">Nessun case study per questa industry. Prova un altro filtro o <a href="/parliamone/" style="color: var(--color-brand); text-decoration: underline;">parla con noi</a> del tuo settore.</p>
       </div>
     </div>
   </section>
@@ -213,7 +213,7 @@ const industryFilters = [
         20 minuti col CEO. Senza pitch, senza preventivi a sorpresa. Solo una conversazione operativa sui tuoi processi.
       </p>
       <div class="mt-9">
-        <a href="/parliamone" class="btn btn-primary">
+        <a href="/parliamone/" class="btn btn-primary">
           20 min con Daniel
           <span class="btn-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>

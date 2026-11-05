@@ -118,7 +118,7 @@ const faqs = [
   },
   {
     q: "Quanto costa davvero?",
-    a: "Da <strong>8.000 € al mese</strong> con tre persone dedicate (Account Manager, Project Manager e AI Engineer), più gli add-on quando servono: Compliance &amp; Audit e Pentest, 4.000 € ciascuno una tantum, quando sicurezza e compliance devono essere dimostrabili. Primo mese soddisfatti o rimborsati. Il dettaglio è nei <a href='/prezzi' style='color: var(--color-brand); text-decoration: underline;'>prezzi</a>.",
+    a: "Da <strong>8.000 € al mese</strong> con tre persone dedicate (Account Manager, Project Manager e AI Engineer), più gli add-on quando servono: Compliance &amp; Audit e Pentest, 4.000 € ciascuno una tantum, quando sicurezza e compliance devono essere dimostrabili. Primo mese soddisfatti o rimborsati. Il dettaglio è nei <a href='/prezzi/' style='color: var(--color-brand); text-decoration: underline;'>prezzi</a>.",
   },
 ];
 ---
@@ -145,7 +145,7 @@ const faqs = [
             <span class="text-[14px] font-medium" style="color: #F4B842;">Primo mese soddisfatti o rimborsati.</span>
           </div>
           <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
-            <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            <a href="/parliamone/" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
               20 min con Daniel
               <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
             </a>
@@ -168,7 +168,7 @@ const faqs = [
     <div class="container-soraia text-center">
       <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-500 mb-4">Già scelto da PMI B2B con sales consulenziale</p>
       <p class="text-[16px]" style="color: var(--color-ink-muted);">
-        <a href="/case-studies/iltec" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">ILTEC</a>
+        <a href="/case-studies/iltec/" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">ILTEC</a>
         · B2B office technology · sito AI-ready + AI agent commerciale via QR
       </p>
     </div>
@@ -231,7 +231,7 @@ const faqs = [
     <div class="container-soraia">
       <SectionHeader eyebrow="Caso studio" title="Agenti IA in azione su ILTEC." align="center" />
       <div class="max-w-md mx-auto">
-        <CaseStudyCardJet href={`/case-studies/${cases[0].slug}`} client={cases[0].client} clientLogo={cases[0].clientLogo} quote={cases[0].quote} dimensioni={cases[0].dimensioni} sector={cases[0].sector} cardImage={cases[0].cardImage} />
+        <CaseStudyCardJet href={`/case-studies/${cases[0].slug}/`} client={cases[0].client} clientLogo={cases[0].clientLogo} quote={cases[0].quote} dimensioni={cases[0].dimensioni} sector={cases[0].sector} cardImage={cases[0].cardImage} />
         <p class="mt-6 text-center text-[14px]" style="color: var(--color-ink-soft);">
           <strong style="color: var(--color-ink); font-weight: 500;">{cases[0].stakeholder.name}</strong>, {cases[0].stakeholder.role} · {cases[0].client}
         </p>
@@ -271,7 +271,7 @@ const faqs = [
         Si parte da una call di 20 minuti con Daniel. Da lì, analisi dei processi in azienda o direttamente il primo sprint: dipende da te.
       </p>
       <div class="mt-10 reveal reveal-delay-2">
-        <a href="/parliamone" class="btn btn-primary">
+        <a href="/parliamone/" class="btn btn-primary">
           20 min con Daniel
           <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </a>

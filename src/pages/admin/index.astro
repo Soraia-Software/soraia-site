@@ -7,9 +7,9 @@ const [blog, guides, confronti] = await Promise.all([
 ]);
 const pub = (c: any[]) => c.filter((x) => !x.data.draft).length;
 const cards = [
-  { href: "/admin/contatti", title: "Contatti", desc: "I lead ricevuti dai form del sito." },
-  { href: "/admin/contenuti", title: "Contenuti", desc: `${pub(blog)} articoli · ${pub(guides)} guide · ${pub(confronti)} confronti pubblicati.` },
-  { href: "/admin/utenti", title: "Utenti", desc: "Chi può accedere a quest'area (solo admin)." },
+  { href: "/admin/contatti/", title: "Contatti", desc: "I lead ricevuti dai form del sito." },
+  { href: "/admin/contenuti/", title: "Contenuti", desc: `${pub(blog)} articoli · ${pub(guides)} guide · ${pub(confronti)} confronti pubblicati.` },
+  { href: "/admin/utenti/", title: "Utenti", desc: "Chi può accedere a quest'area (solo admin)." },
 ];
 ---
 <AdminLayout title="Panoramica" active="home">

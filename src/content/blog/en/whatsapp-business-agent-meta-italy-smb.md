@@ -2,6 +2,7 @@
 title: "Meta's WhatsApp Business Agent in Italy: worth it?"
 description: "Meta launches the WhatsApp Business Agent in Italy. Generic bot or vertical agent on your processes? An honest guide for SMB Heads of Support and COOs."
 pubDate: 2026-08-03
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "ai agents"

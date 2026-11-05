@@ -3,7 +3,7 @@ title: "Consulenza AI in Italia: come scegliere il partner giusto"
 h1: "Consulenza AI in Italia: cosa cercare, cosa evitare, come decidere"
 description: "Mappa operativa della consulenza AI in Italia 2026: i 3 tipi di provider, criteri di selezione, red flag, come valutare un preventivo. Guida per CEO PMI."
 pubDate: 2026-04-15
-updatedDate: 2026-05-24
+updatedDate: 2026-10-31
 readMinutes: 14
 featured: true
 keywords:

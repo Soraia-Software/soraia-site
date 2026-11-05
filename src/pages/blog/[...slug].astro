@@ -1,7 +1,7 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
-import { BLOG_SLUG_MAP } from "~/lib/i18n";
+import { BLOG_SLUG_MAP, withSlashLinks } from "~/lib/i18n";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog")).filter((p) => p.data.lang === "it" && (import.meta.env.DEV || (!p.data.draft && p.data.pubDate <= new Date())));
@@ -26,7 +26,7 @@ function formatDate(d: Date) {
 const title = `${post.data.title} | Soraia`;
 const description = post.data.description;
 const h1 = post.data.h1 || post.data.title;
-const altHref = BLOG_SLUG_MAP[post.id] ? `/en/blog/${BLOG_SLUG_MAP[post.id]}` : "/en/blog";
+const altHref = BLOG_SLUG_MAP[post.id] ? `/en/blog/${BLOG_SLUG_MAP[post.id]}/` : "/en/blog";
 
 const articleJsonLd = {
   "@context": "https://schema.org",
@@ -38,7 +38,7 @@ const articleJsonLd = {
   author: {
     "@type": post.data.author === "Soraia" ? "Organization" : "Person",
     name: post.data.author,
-    url: "https://www.soraia.io/chi-siamo",
+    url: "https://www.soraia.io/chi-siamo/",
   },
   publisher: { "@type": "Organization", name: "Soraia", logo: { "@type": "ImageObject", url: "https://www.soraia.io/logos/soraia-full.svg" } },
   keywords: post.data.keywords.join(", "),
@@ -58,7 +58,7 @@ const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
          ============================================================ -->
     <header class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
       <div class="container-soraia max-w-3xl pt-20 md:pt-24 pb-12 md:pb-14">
-        <a href="/blog" class="inline-flex items-center gap-1.5 text-[12px] font-medium tracking-[0.1em] uppercase mb-8 hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">
+        <a href="/blog/" class="inline-flex items-center gap-1.5 text-[12px] font-medium tracking-[0.1em] uppercase mb-8 hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
           Tutti gli articoli
         </a>
@@ -102,7 +102,7 @@ const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-ink-muted);"><path d="M12 5v14M5 12h14"/></svg>
                     </span>
                   </summary>
-                  <div class="px-6 pb-5 -mt-1 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);" set:html={f.a}></div>
+                  <div class="px-6 pb-5 -mt-1 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);" set:html={withSlashLinks(f.a)}></div>
                 </details>
               ))}
             </div>
@@ -128,7 +128,7 @@ const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
           <p class="eyebrow mb-8">Continua a leggere</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {related.map((p) => (
-              <a href={`/blog/${p.id}`} class="card-editorial !p-7 group no-underline flex flex-col transition-all hover:!-translate-y-0.5 hover:shadow-md">
+              <a href={`/blog/${p.id}/`} class="card-editorial !p-7 group no-underline flex flex-col transition-all hover:!-translate-y-0.5 hover:shadow-md">
                 <div class="flex items-center gap-3 text-[11px] font-medium tracking-[0.14em] uppercase mb-4" style="color: var(--color-ink-soft);">
                   <time datetime={p.data.pubDate.toISOString()}>{formatDate(p.data.pubDate)}</time>
                   <span>·</span>
@@ -159,13 +159,13 @@ const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
           Il check-up ti dà un punteggio di prontezza IA (0-100) + 3 next-step concreti. 3 minuti, no email.
         </p>
         <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a href="/check-up" class="btn btn-primary">
+          <a href="/check-up/" class="btn btn-primary">
             Inizia il check-up
             <span class="btn-arrow">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </span>
           </a>
-          <a href="/parliamone" class="btn btn-secondary">Parliamone direttamente</a>
+          <a href="/parliamone/" class="btn btn-secondary">Parliamone direttamente</a>
         </div>
       </div>
     </section>

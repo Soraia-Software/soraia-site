@@ -2,6 +2,7 @@
 title: "Software su misura o SaaS: come decidere bene"
 description: "Software su misura o SaaS pronto? I 4 criteri che usiamo per decidere senza pentirsene tra 2 anni: TCO reale, lock-in, processo core, lifecycle."
 pubDate: 2026-06-17
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "software su misura"

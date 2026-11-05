@@ -2,6 +2,7 @@
 title: "EU AI Act 2026 for SMEs: What Actually Changes in Practice"
 description: "The EU AI Regulation is in force. For most European SMEs the direct obligations are limited, but there are 4 things you need to do. A practical guide."
 pubDate: 2026-04-22
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 lang: "en"
 tags: ["ai act", "compliance", "gdpr", "guides"]

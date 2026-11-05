@@ -2,6 +2,7 @@
 title: "Claude Code for business: internal tools in days"
 description: "How a coding agent like Claude Code builds your internal tools in days. What it does well, where a human is needed, and when to hand it to a team."
 pubDate: 2026-09-04
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "claude code"

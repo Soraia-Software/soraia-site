@@ -2,6 +2,7 @@
 title: "Automazione a regole o agente AI: come scegliere"
 description: "Automazione a regole (RPA, Make, Zapier) o agente AI? La checklist decisionale per COO e Head of Ops su quale processo dare a quale livello."
 pubDate: 2026-09-07
+updatedDate: 2026-10-18
 author: "Davide Silvestri"
 tags:
   - "process-automation"

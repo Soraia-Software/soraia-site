@@ -2,6 +2,7 @@
 title: "Agenti IA nel gestionale: TeamSystem, Zucchetti, Odoo"
 description: "Integrare agenti IA col gestionale (TeamSystem, Zucchetti, Odoo): i pattern che reggono in produzione e gli errori che fanno fallire i progetti."
 pubDate: 2026-06-17
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai agents"

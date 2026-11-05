@@ -13,9 +13,9 @@ type Row = { type: string; title: string; cat: string; date: Date; status: Statu
 // col drip); draft:false and past/today → pubblicato (live).
 const statusOf = (draft: boolean, date: Date): Status => (draft ? "draft" : date > now ? "scheduled" : "published");
 const items: Row[] = [
-  ...blog.filter(itOnly).map((x) => ({ type: "Blog", title: x.data.title, cat: (x.data.tags || []).slice(0, 2).join(", "), date: x.data.pubDate, status: statusOf(!!x.data.draft, x.data.pubDate), url: `/blog/${x.id}` })),
-  ...guides.filter(itOnly).map((x) => ({ type: "Guida", title: x.data.title, cat: "", date: x.data.pubDate, status: statusOf(!!x.data.draft, x.data.pubDate), url: `/guide/${x.id}` })),
-  ...confronti.filter(itOnly).map((x) => ({ type: "Confronto", title: x.data.titolo, cat: x.data.categoria, date: x.data.pubDate, status: statusOf(!!x.data.draft, x.data.pubDate), url: `/confronto/${x.id}` })),
+  ...blog.filter(itOnly).map((x) => ({ type: "Blog", title: x.data.title, cat: (x.data.tags || []).slice(0, 2).join(", "), date: x.data.pubDate, status: statusOf(!!x.data.draft, x.data.pubDate), url: `/blog/${x.id}/` })),
+  ...guides.filter(itOnly).map((x) => ({ type: "Guida", title: x.data.title, cat: "", date: x.data.pubDate, status: statusOf(!!x.data.draft, x.data.pubDate), url: `/guide/${x.id}/` })),
+  ...confronti.filter(itOnly).map((x) => ({ type: "Confronto", title: x.data.titolo, cat: x.data.categoria, date: x.data.pubDate, status: statusOf(!!x.data.draft, x.data.pubDate), url: `/confronto/${x.id}/` })),
 ].sort((a, b) => b.date.valueOf() - a.date.valueOf());
 const fmt = (d: Date) => d.toLocaleDateString("it-IT", { day: "2-digit", month: "short", year: "2-digit" });
 const published = items.filter((i) => i.status === "published").length;

@@ -180,6 +180,17 @@ Use the `.btn` classes, never ad-hoc button styling:
   driven from `data.ts`). Keep them out of indexes and sitemaps: `astro.config.mjs` filters
   `/analisi-processi`, `/process-audit`, `/demo-portale`, `/downloads/*` and `/admin/*` out of
   the sitemap.
+- **Internal links end with `/`** (`/parliamone/`, `/prezzi/#add-on`): Cloudflare Pages answers
+  the bare form with a 308, and canonicals already carry the slash. In code write the slash, or
+  use `path()` / `localizePath()` from `src/lib/i18n.ts`, which add it. Markdown links and the
+  HTML in FAQ answers get it at build time (`src/lib/rehype-trailing-slash.mjs`,
+  `withSlashLinks()`), so posts from `automation/` can keep the bare form.
+- **`updatedDate` means a real change.** When a published post, guide or confronto changes in
+  substance (prices, facts, links), set `updatedDate` to that day: it becomes the JSON-LD
+  `dateModified` and, through it, the sitemap `lastmod` (`astro.config.mjs` reads it from the
+  built page). Punctuation sweeps don't count.
+- `public/robots.txt` must never disallow `/_astro/`: Googlebot needs its CSS, JS, fonts and
+  images to render the pages.
 - Client logos: one source, `src/data/clientLogos.ts`; `ProofBar` with just a `label`.
 
 ## 7. Components to reuse (don't re-implement)

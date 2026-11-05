@@ -2,6 +2,7 @@
 title: "Agentic commerce for SMBs: selling to AI agents"
 description: "Agentic commerce for SMBs: when the buyer is your customer's AI agent, are your product data, prices and checkout ready? A practical guide for sales leads."
 pubDate: 2026-08-19
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "agentic commerce"

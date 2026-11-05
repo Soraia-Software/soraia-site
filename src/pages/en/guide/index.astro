@@ -19,7 +19,7 @@ function formatDate(d: Date) {
 }
 ---
 
-<Layout title={title} description={description} lang="en" altHref="/guide">
+<Layout title={title} description={description} lang="en" altHref="/guide/">
 
   <section class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
     <div class="container-soraia pt-20 md:pt-28 pb-16 md:pb-20">
@@ -42,7 +42,7 @@ function formatDate(d: Date) {
         <p class="eyebrow mb-8">Featured guides</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {featured.map((g) => (
-            <a href={`/en/guide/${bare(g.id)}`} class="card-editorial !p-8 group no-underline flex flex-col transition-all hover:!-translate-y-1 hover:shadow-md">
+            <a href={`/en/guide/${bare(g.id)}/`} class="card-editorial !p-8 group no-underline flex flex-col transition-all hover:!-translate-y-1 hover:shadow-md">
               <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-4" style="color: var(--color-ink-soft);">
                 Guide · {g.data.readMinutes} min
               </p>
@@ -66,7 +66,7 @@ function formatDate(d: Date) {
         <ul class="divide-y divide-[color:var(--color-line)] border-t border-[color:var(--color-line)]">
           {others.map((g) => (
             <li>
-              <a href={`/en/guide/${bare(g.id)}`} class="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 md:gap-8 py-7 group">
+              <a href={`/en/guide/${bare(g.id)}/`} class="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 md:gap-8 py-7 group">
                 <div class="text-[11px] font-medium tracking-[0.14em] uppercase pt-1" style="color: var(--color-ink-soft);">
                   <span>Guide · {g.data.readMinutes} min</span>
                   <div class="mt-1.5 text-[11px] normal-case tracking-normal font-normal" style="color: var(--color-ink-soft);">Updated {formatDate(g.data.updatedDate || g.data.pubDate)}</div>
@@ -96,13 +96,13 @@ function formatDate(d: Date) {
         20 minutes with the CEO. No pitch, no surprise quotes.
       </p>
       <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
-        <a href="/en/contact" class="btn btn-primary">
+        <a href="/en/contact/" class="btn btn-primary">
           20 min with Daniel
           <span class="btn-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </span>
         </a>
-        <a href="/en/check-up" class="btn btn-secondary">Take the check-up · 3 min</a>
+        <a href="/en/check-up/" class="btn btn-secondary">Take the check-up · 3 min</a>
       </div>
     </div>
   </section>

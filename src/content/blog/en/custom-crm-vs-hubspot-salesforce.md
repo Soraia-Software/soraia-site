@@ -2,6 +2,7 @@
 title: "Custom CRM or Standard: When to Build Your Own"
 description: "Custom CRM or HubSpot/Salesforce? The concrete criteria to know when a standard CRM is enough and when building your own pays off. No hype."
 pubDate: 2026-07-09
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "crm"

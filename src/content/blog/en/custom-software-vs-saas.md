@@ -2,6 +2,7 @@
 title: "Custom Software vs SaaS: How to Decide Well"
 description: "Custom software vs SaaS? The 4 criteria we use to decide without regretting it in 2 years: real TCO over 3 years, lock-in, core process, lifecycle."
 pubDate: 2026-06-17
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "custom software"

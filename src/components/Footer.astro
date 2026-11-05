@@ -90,7 +90,7 @@ const labels = {
 const homeHref = lang === "en" ? "/en/" : "/";
 const p = (route: string) => i18nPath(route, lang);
 const guideHref = (itSlug: string) =>
-  lang === "en" ? `/en/guide/${GUIDE_SLUG_MAP[itSlug]}` : `/guide/${itSlug}`;
+  lang === "en" ? `/en/guide/${GUIDE_SLUG_MAP[itSlug]}/` : `/guide/${itSlug}/`;
 const featuredGuides = [
   { slug: "agenti-ai-aziende", it: "Agenti AI per Aziende", en: "AI Agents for Business" },
   { slug: "consulenza-ai-italia", it: "Consulenza AI Italia", en: "AI Consulting Italy" },
@@ -162,7 +162,7 @@ const featuredGuides = [
           <li><a href={p("/guide")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.guides_label}</a></li>
           <li><a href={p("/blog")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_blog}</a></li>
           <li><a href={p("/confronto")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_confronti}</a></li>
-          {lang === "it" && <li><a href="/bandi" class="link-underline-anim hover:opacity-80 transition-opacity">Bandi e incentivi</a></li>}
+          {lang === "it" && <li><a href="/bandi/" class="link-underline-anim hover:opacity-80 transition-opacity">Bandi e incentivi</a></li>}
         </ul>
       </div>
 
@@ -171,7 +171,7 @@ const featuredGuides = [
         <ul class="space-y-3 text-[14px]" style="color: var(--color-ink);">
           <li><a href={p("/")} class="link-underline-anim hover:opacity-80 transition-opacity">Home</a></li>
           <li><a href={p("/chi-siamo")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_about}</a></li>
-          <li><a href="/careers" class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_careers}</a></li>
+          <li><a href="/careers/" class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_careers}</a></li>
           <li><a href={p("/parliamone")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.nav_contact}</a></li>
           <li><a href="mailto:info@soraia.io" class="link-underline-anim hover:opacity-80 transition-opacity">info@soraia.io</a></li>
           <li><a href="https://www.linkedin.com/company/soraia-digital" target="_blank" rel="noopener" class="link-underline-anim hover:opacity-80 transition-opacity">LinkedIn ↗</a></li>
@@ -184,7 +184,7 @@ const featuredGuides = [
           <li><a href={p("/privacy")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.privacy}</a></li>
           <li><a href={p("/terms")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.terms}</a></li>
           <li><a href={p("/cookies")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.cookies}</a></li>
-          <li><a href="/admin" class="link-underline-anim hover:opacity-80 transition-opacity">{labels.admin}</a></li>
+          <li><a href="/admin/" class="link-underline-anim hover:opacity-80 transition-opacity">{labels.admin}</a></li>
         </ul>
       </div>
     </div>

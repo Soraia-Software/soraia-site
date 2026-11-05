@@ -4,7 +4,7 @@ import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
 import AskAIWidget from "~/components/AskAIWidget.astro";
 import AnnouncementBar from "~/components/AnnouncementBar.astro";
-import { localizePath, path as i18nPath } from "~/lib/i18n";
+import { localizePath, path as i18nPath, withSlash } from "~/lib/i18n";
 
 interface Props {
   title: string;
@@ -41,7 +41,6 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString(
 
 // hreflang alternates (it / en / x-default). Normalize to trailing slash so
 // the alternates match the canonical convention (no duplicate-URL signals).
-const withSlash = (p: string) => (p === "/" || p.endsWith("/") ? p : p + "/");
 const otherLang = lang === "it" ? "en" : "it";
 const otherPath = withSlash(altHref ?? localizePath(Astro.url.pathname, otherLang));
 const itPath = withSlash(lang === "it" ? Astro.url.pathname : otherPath);
@@ -135,7 +134,7 @@ const contactHref = i18nPath("/parliamone", lang);
       <AnnouncementBar
         text="Bandi aperti per digitalizzare la tua azienda."
         ctaText="Trova quelli della tua regione"
-        ctaHref="/bandi"
+        ctaHref="/bandi/"
         dismissId="bandi-2026"
       />
     )}

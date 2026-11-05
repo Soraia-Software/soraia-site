@@ -2,6 +2,7 @@
 title: "Agentic commerce PMI: vendere agli agenti IA"
 description: "Agentic commerce PMI: quando a comprare e' l'agente IA del cliente, i tuoi dati prodotto, prezzi e checkout sono pronti? Guida pratica per Head of Sales."
 pubDate: 2026-08-19
+updatedDate: 2026-09-12
 author: "Daniel Levis"
 tags:
   - "agentic commerce"
