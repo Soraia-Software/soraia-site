@@ -2,6 +2,7 @@
 title: "Why automation projects fail in SMEs"
 description: "Automation projects in SMEs rarely fail because of the technology. Here are the 4 change-management anti-patterns we see every time, and how to avoid them."
 pubDate: 2026-07-02
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "automation"

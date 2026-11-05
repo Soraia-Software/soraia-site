@@ -2,6 +2,7 @@
 title: "AI systems inventory for SMBs: your August 2026 register"
 description: "How to build the AI systems register the EU AI Act expects by August 2026: template, risk classification and the first operational step for every COO and DPO."
 pubDate: 2026-07-22
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai act"

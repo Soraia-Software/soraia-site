@@ -2,6 +2,7 @@
 title: "Automated commission calculation with an AI agent"
 description: "Still calculating sales commissions by hand each month across contracts and deals? Here's how an AI agent reads the rules and does it for you, without errors."
 pubDate: 2026-09-16
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai agents"

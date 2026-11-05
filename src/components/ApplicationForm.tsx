@@ -175,7 +175,7 @@ export default function ApplicationForm({ roleSlug, roleTitle }: Props) {
         <label className="flex items-start gap-3 text-[13.5px] leading-relaxed text-ink-600">
           <input type="checkbox" name="presa_visione" required className="mt-1 w-4 h-4 flex-shrink-0 accent-violet-600" />
           <span>
-            Ho letto l'<a href="/privacy#candidati" target="_blank" rel="noopener" className="text-violet-700 underline">informativa privacy per i candidati</a> e confermo che i dati e il CV che invio possono essere usati per valutare questa candidatura. <span className="text-violet-600">*</span>
+            Ho letto l'<a href="/privacy/#candidati" target="_blank" rel="noopener" className="text-violet-700 underline">informativa privacy per i candidati</a> e confermo che i dati e il CV che invio possono essere usati per valutare questa candidatura. <span className="text-violet-600">*</span>
           </span>
         </label>
 

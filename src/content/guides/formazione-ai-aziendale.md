@@ -3,7 +3,7 @@ title: "Formazione AI Aziendale: i 3 livelli e come scegliere"
 h1: "Formazione AI Aziendale: i 3 livelli, contenuti, come misurare l'adoption reale"
 description: "Perché la formazione AI è il vero collo di bottiglia, i 3 livelli (Foundation, Business, Tecnico), cosa deve coprire un programma serio, come misurare l'adoption."
 pubDate: 2026-04-18
-updatedDate: 2026-05-24
+updatedDate: 2026-10-18
 readMinutes: 11
 featured: true
 keywords:

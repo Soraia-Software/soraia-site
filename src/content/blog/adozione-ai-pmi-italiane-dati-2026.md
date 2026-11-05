@@ -2,6 +2,7 @@
 title: "Adozione AI PMI italiane: i dati 2026 e dove sono ferme"
 description: "Quanto usano davvero l'IA le PMI italiane nel 2026? I numeri Istat, il freno delle competenze e un benchmark onesto per capire dove ti trovi."
 pubDate: 2026-09-18
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai adoption"

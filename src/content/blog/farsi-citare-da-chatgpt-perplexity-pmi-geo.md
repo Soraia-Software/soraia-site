@@ -2,6 +2,7 @@
 title: "Farsi citare da ChatGPT e Perplexity: la GEO per PMI"
 description: "Come farsi citare da ChatGPT, Perplexity e Google AI Overviews: la GEO spiegata a una PMI, senza fuffa. Cos'è, cosa cambia rispetto alla SEO, cosa fare."
 pubDate: 2026-06-24
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "geo"

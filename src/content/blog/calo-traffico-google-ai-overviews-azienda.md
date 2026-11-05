@@ -2,6 +2,7 @@
 title: "Calo traffico da Google AI Overviews: come misurarlo"
 description: "Il traffico organico cala e non sai perche? Ecco come misurare quanto ti sta togliendo Google AI Overviews e cosa fare, senza panico e senza SEO magica."
 pubDate: 2026-07-20
+updatedDate: 2026-09-12
 author: "Daniel Levis"
 tags:
   - "ai search"

@@ -131,7 +131,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: "We work on a small number of high-value mandates, not volumes. Is it worth it?",
-    a: "Yes, in fact that's where agents deliver the best ROI. With low volume and high value, every hour of the senior consultant counts: <strong>freeing them from data entry and memory-based matching</strong> means more time on selection and relationship-building, where value is actually created. See the <a href='/en/case-studies/frh'>French Riviera Househunting</a> case study.",
+    a: "Yes, in fact that's where agents deliver the best ROI. With low volume and high value, every hour of the senior consultant counts: <strong>freeing them from data entry and memory-based matching</strong> means more time on selection and relationship-building, where value is actually created. See the <a href='/en/case-studies/frh/'>French Riviera Househunting</a> case study.",
   },
   {
     q: "Which systems does it integrate with?",
@@ -147,7 +147,7 @@ const faqs = [
   },
   {
     q: "How much does it cost?",
-    a: "From <strong>€8,000/month</strong> with three dedicated people (an Account Manager, a Project Manager and an AI Engineer), plus the add-ons when you need them: Compliance &amp; Audit and Pentest, €4,000 each one-off, when security and compliance have to be demonstrable. <strong>First month satisfied or refunded</strong>. Details on the <a href='/en/pricing' style='color: var(--color-brand); text-decoration: underline;'>pricing page</a>.",
+    a: "From <strong>€8,000/month</strong> with three dedicated people (an Account Manager, a Project Manager and an AI Engineer), plus the add-ons when you need them: Compliance &amp; Audit and Pentest, €4,000 each one-off, when security and compliance have to be demonstrable. <strong>First month satisfied or refunded</strong>. Details on the <a href='/en/pricing/' style='color: var(--color-brand); text-decoration: underline;'>pricing page</a>.",
   },
 ];
 ---
@@ -181,7 +181,7 @@ const faqs = [
           </div>
 
           <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
-            <a href="/en/contact" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            <a href="/en/contact/" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
               20 min with Daniel
               <span class="btn-arrow">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -224,9 +224,9 @@ const faqs = [
         Already trusted by real estate agencies and real estate tech companies
       </p>
       <p class="text-[16px]" style="color: var(--color-ink-muted);">
-        <a href="/en/case-studies/frh" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">French Riviera Househunting</a>
+        <a href="/en/case-studies/frh/" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">French Riviera Househunting</a>
         ·
-        <a href="/en/case-studies/rainplan" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">Rainplan</a>
+        <a href="/en/case-studies/rainplan/" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">Rainplan</a>
         · active clients
       </p>
     </div>
@@ -321,7 +321,7 @@ const faqs = [
         {featuredCases.map((c) => (
           <CaseStudyCardJet
             lang="en"
-            href={`/en/case-studies/${c.slug}`}
+            href={`/en/case-studies/${c.slug}/`}
             client={c.client}
             clientLogo={c.clientLogo}
             quote={c.quote}
@@ -373,7 +373,7 @@ const faqs = [
     title="20 minutes with the CEO. No pitch."
     description="We figure out together where to start on your case: a process audit on site or straight into the first sprint. No commitment, no sales."
     ctaText="20 min with Daniel"
-    ctaHref="/en/contact"
+    ctaHref="/en/contact/"
     avatarName="Daniel Levis"
     avatarRole="Co-Founder & CEO"
     avatarSrc="/team/daniel-levis.webp"

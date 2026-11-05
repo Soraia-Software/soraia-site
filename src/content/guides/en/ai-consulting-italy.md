@@ -3,7 +3,7 @@ title: "AI Consulting in Italy: How to Choose the Right Partner"
 h1: "AI Consulting in Italy: What to Look For, What to Avoid, How to Decide"
 description: "Operational map of AI consulting in Italy 2026: the 3 types of providers, selection criteria, red flags, and how to evaluate a quote. A guide for SME CEOs."
 pubDate: 2026-04-15
-updatedDate: 2026-05-24
+updatedDate: 2026-10-31
 lang: "en"
 readMinutes: 14
 featured: true

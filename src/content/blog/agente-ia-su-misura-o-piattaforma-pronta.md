@@ -2,6 +2,7 @@
 title: "Migrare da una piattaforma agenti IA a un agente su misura"
 description: "Guida operativa alla migrazione da una piattaforma agenti IA a un agente su misura: segnali, checklist tecnica, dati da esportare e sequenza senza fermo."
 pubDate: 2026-07-29
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai agents"

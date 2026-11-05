@@ -2,6 +2,7 @@
 title: "CRM su misura o standard: quando costruirne uno tuo"
 description: "CRM su misura o HubSpot/Salesforce? I criteri concreti per capire quando un CRM standard basta e quando conviene costruirne uno tuo. Senza hype."
 pubDate: 2026-07-09
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "crm"

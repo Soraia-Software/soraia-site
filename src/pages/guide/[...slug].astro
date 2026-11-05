@@ -2,7 +2,7 @@
 import Layout from "~/layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 import CTABanner from "~/components/CTABanner.astro";
-import { GUIDE_SLUG_MAP } from "~/lib/i18n";
+import { GUIDE_SLUG_MAP, withSlashLinks } from "~/lib/i18n";
 
 export async function getStaticPaths() {
   const guides = (await getCollection("guides")).filter((g) => g.data.lang === "it" && (import.meta.env.DEV || !g.data.draft));
@@ -61,7 +61,7 @@ const faqJsonLd = guide.data.faq.length > 0 ? {
 } : null;
 
 const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
-const altHref = GUIDE_SLUG_MAP[guide.id] ? `/en/guide/${GUIDE_SLUG_MAP[guide.id]}` : "/en/guide";
+const altHref = GUIDE_SLUG_MAP[guide.id] ? `/en/guide/${GUIDE_SLUG_MAP[guide.id]}/` : "/en/guide";
 ---
 
 <Layout title={title} description={description} lang="it" jsonLd={jsonLd} altHref={altHref}>
@@ -74,7 +74,7 @@ const altHref = GUIDE_SLUG_MAP[guide.id] ? `/en/guide/${GUIDE_SLUG_MAP[guide.id]
         <nav class="flex items-center gap-2 text-[13px] mb-8 flex-wrap" style="color: var(--color-ink-soft);">
           <a href="/" class="hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">Home</a>
           <span>›</span>
-          <a href="/guide" class="hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">Guide</a>
+          <a href="/guide/" class="hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">Guide</a>
           <span>›</span>
           <span style="color: var(--color-ink-muted);">{guide.data.title}</span>
         </nav>
@@ -156,7 +156,7 @@ const altHref = GUIDE_SLUG_MAP[guide.id] ? `/en/guide/${GUIDE_SLUG_MAP[guide.id]
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-ink-muted);"><path d="M12 5v14M5 12h14"/></svg>
                   </span>
                 </summary>
-                <div class="px-6 pb-5 -mt-1 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);" set:html={f.a}></div>
+                <div class="px-6 pb-5 -mt-1 text-[14.5px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);" set:html={withSlashLinks(f.a)}></div>
               </details>
             ))}
           </div>
@@ -173,7 +173,7 @@ const altHref = GUIDE_SLUG_MAP[guide.id] ? `/en/guide/${GUIDE_SLUG_MAP[guide.id]
           <p class="eyebrow mb-8">Continua a leggere</p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 max-w-6xl">
             {related.map((g) => (
-              <a href={`/guide/${g.id}`} class="card-editorial !p-7 group no-underline flex flex-col transition-all hover:!-translate-y-0.5 hover:shadow-md">
+              <a href={`/guide/${g.id}/`} class="card-editorial !p-7 group no-underline flex flex-col transition-all hover:!-translate-y-0.5 hover:shadow-md">
                 <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-4" style="color: var(--color-ink-soft);">Guida · {g.data.readMinutes} min</p>
                 <h3 class="mb-3 text-balance" style="font-size: 1.0625rem; line-height: 1.25; letter-spacing: -0.015em; font-weight: 500;">{g.data.title}</h3>
                 <p class="text-[13.5px] leading-relaxed text-pretty flex-1" style="color: var(--color-ink-muted);">{g.data.description}</p>
@@ -195,9 +195,9 @@ const altHref = GUIDE_SLUG_MAP[guide.id] ? `/en/guide/${GUIDE_SLUG_MAP[guide.id]
       title="Vuoi un'opinione sul tuo caso?"
       description="20 minuti col CEO per capire insieme se ha senso. Nessun impegno, nessun pitch: solo una conversazione operativa sui tuoi processi."
       ctaText="20 min con Daniel"
-      ctaHref="/parliamone"
+      ctaHref="/parliamone/"
       secondaryText="Oppure fai il Check-up IA gratuito · 3 min"
-      secondaryHref="/check-up"
+      secondaryHref="/check-up/"
       avatarName="Daniel Levis"
       avatarRole="Co-Founder & CEO"
       avatarSrc="/team/daniel-levis.webp"

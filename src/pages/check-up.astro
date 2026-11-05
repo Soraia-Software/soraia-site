@@ -9,7 +9,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Quiz",
   name: "Check-up IA",
-  url: "https://www.soraia.io/check-up",
+  url: "https://www.soraia.io/check-up/",
   about: "Assessment for SMEs to evaluate AI adoption readiness",
 };
 
@@ -233,7 +233,7 @@ const questions = [
 
       <!-- CTA: book call -->
       <div class="max-w-xl mx-auto">
-        <a href="/parliamone" class="card-editorial !p-6 group no-underline transition-all hover:!-translate-y-1 hover:shadow-md" style="border-color: var(--color-violet-200); background: #FDF4FF;">
+        <a href="/parliamone/" class="card-editorial !p-6 group no-underline transition-all hover:!-translate-y-1 hover:shadow-md" style="border-color: var(--color-violet-200); background: #FDF4FF;">
           <div class="flex items-start gap-4">
             <div class="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0" style="background: var(--color-brand); color: white;">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
@@ -330,17 +330,17 @@ const questions = [
           title: "Early stage, serve una base.",
           desc: "Sei in una fase esplorativa. Prima di costruire agenti, conviene capire come lavora davvero il team e fissare i processi di base.",
           recs: [
-            { title: "Inizia dall'analisi dei processi", body: "Veniamo in azienda, intervistiamo le persone alla loro scrivania e mappiamo i flussi sul campo. Ne escono le priorità giuste e un piano d'azione che il team riconosce come suo. <a href='/parliamone' style='color: var(--color-brand); text-decoration: underline;'>Si richiede da una call di 20 minuti</a>." },
+            { title: "Inizia dall'analisi dei processi", body: "Veniamo in azienda, intervistiamo le persone alla loro scrivania e mappiamo i flussi sul campo. Ne escono le priorità giuste e un piano d'azione che il team riconosce come suo. <a href='/parliamone/' style='color: var(--color-brand); text-decoration: underline;'>Si richiede da una call di 20 minuti</a>." },
             { title: "Misura una baseline prima di automatizzare", body: "Capisci chi fa cosa e dove si perde tempo. Senza baseline, gli agenti non hanno target." },
-            { title: "Tieniti pronto per il primo sprint", body: "Una volta chiare le priorità, scegli 1-2 processi ad alto impatto e costruisci il primo agente con l'<a href='/ai-engineering' style='color: var(--color-brand); text-decoration: underline;'>AI Engineering</a>: primo rilascio in produzione in 4 settimane." },
+            { title: "Tieniti pronto per il primo sprint", body: "Una volta chiare le priorità, scegli 1-2 processi ad alto impatto e costruisci il primo agente con l'<a href='/ai-engineering/' style='color: var(--color-brand); text-decoration: underline;'>AI Engineering</a>: primo rilascio in produzione in 4 settimane." },
           ],
         };
         if (score < 70) return {
           title: "Ready. Sei pronto a costruire.",
           desc: "Hai i bottleneck giusti, il team motivato e probabilmente un budget. Adesso serve un piano d'azione preciso e un primo agente in produzione.",
           recs: [
-            { title: "Fai l'analisi dei processi", body: "Audit in azienda: interviste alla scrivania, osservazione del lavoro com'è davvero, mappa dei flussi. Esce con le priorità giuste e un piano d'azione operativo. <a href='/parliamone' style='color: var(--color-brand); text-decoration: underline;'>Parti da una call di 20 minuti</a>." },
-            { title: "AI Engineering: primo rilascio in 4 settimane", body: "Agenti IA e software su misura a sprint: il primo rilascio gira sui tuoi processi reali in 4 settimane, poi migliora un rilascio alla volta. Primo mese soddisfatti o rimborsati. <a href='/ai-engineering' style='color: var(--color-brand); text-decoration: underline;'>Scopri come lavoriamo</a>." },
+            { title: "Fai l'analisi dei processi", body: "Audit in azienda: interviste alla scrivania, osservazione del lavoro com'è davvero, mappa dei flussi. Esce con le priorità giuste e un piano d'azione operativo. <a href='/parliamone/' style='color: var(--color-brand); text-decoration: underline;'>Parti da una call di 20 minuti</a>." },
+            { title: "AI Engineering: primo rilascio in 4 settimane", body: "Agenti IA e software su misura a sprint: il primo rilascio gira sui tuoi processi reali in 4 settimane, poi migliora un rilascio alla volta. Primo mese soddisfatti o rimborsati. <a href='/ai-engineering/' style='color: var(--color-brand); text-decoration: underline;'>Scopri come lavoriamo</a>." },
             { title: "Porta il team con te", body: "Mentre costruiamo gli agenti, formiamo il team che li userà. Senza adozione, gli agenti finiscono dimenticati." },
           ],
         };
@@ -348,7 +348,7 @@ const questions = [
           title: "Advanced. Costruiamo agenti specifici.",
           desc: "Stai già sfruttando AI a un livello base. Il prossimo salto è costruire agenti custom sui tuoi processi specifici, con codice tuo e zero lock-in.",
           recs: [
-            { title: "Salta direttamente all'AI Engineering", body: "Hai le basi. Andiamo dritti su 2-3 processi a ROI più alto: primo rilascio in produzione in 4 settimane, poi un rilascio alla volta, primo mese soddisfatti o rimborsati. <a href='/ai-engineering' style='color: var(--color-brand); text-decoration: underline;'>Vedi il metodo</a> oppure <a href='/parliamone' style='color: var(--color-brand); text-decoration: underline;'>20 min con Daniel</a>." },
+            { title: "Salta direttamente all'AI Engineering", body: "Hai le basi. Andiamo dritti su 2-3 processi a ROI più alto: primo rilascio in produzione in 4 settimane, poi un rilascio alla volta, primo mese soddisfatti o rimborsati. <a href='/ai-engineering/' style='color: var(--color-brand); text-decoration: underline;'>Vedi il metodo</a> oppure <a href='/parliamone/' style='color: var(--color-brand); text-decoration: underline;'>20 min con Daniel</a>." },
             { title: "Considera il Brain pilot", body: "Per i power user, deploy framework Soraia Brain: ogni persona ha un AI intern personale che conosce il suo lavoro. Differenziatore reale." },
             { title: "Pensa lungo termine: codice tuo, no lock-in", body: "Il codice degli agenti è tuo dalla prima settimana. Se vuoi internalizzare dopo, ti diamo training + docs. Zero abbonamenti perpetui." },
           ],

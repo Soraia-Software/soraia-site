@@ -2,6 +2,7 @@
 title: "Beyond Excel: digitising business processes"
 description: "That one spreadsheet running half your company is sometimes the right call. Here is when it starts costing you, and how to know it is time to digitise."
 pubDate: 2026-06-17
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "business process automation"

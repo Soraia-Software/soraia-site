@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     q: "Quanto costa davvero?",
-    a: "Da <strong>8.000 € al mese</strong> con tre persone dedicate (Account Manager, Project Manager e AI Engineer), più gli add-on quando servono: Compliance &amp; Audit e Pentest, 4.000 € ciascuno una tantum, quando sicurezza e compliance devono essere dimostrabili. Primo mese soddisfatti o rimborsati. Il dettaglio è nei <a href='/prezzi' style='color: var(--color-brand); text-decoration: underline;'>prezzi</a>.",
+    a: "Da <strong>8.000 € al mese</strong> con tre persone dedicate (Account Manager, Project Manager e AI Engineer), più gli add-on quando servono: Compliance &amp; Audit e Pentest, 4.000 € ciascuno una tantum, quando sicurezza e compliance devono essere dimostrabili. Primo mese soddisfatti o rimborsati. Il dettaglio è nei <a href='/prezzi/' style='color: var(--color-brand); text-decoration: underline;'>prezzi</a>.",
   },
   {
     q: "Cosa succede in 4 settimane esattamente?",
@@ -185,7 +185,7 @@ const faqs = [
         </div>
 
         <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
-          <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+          <a href="/parliamone/" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
             20 min con Daniel
             <span class="btn-arrow">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -318,7 +318,7 @@ const faqs = [
         {cases.map((c) => (
           <div>
             <CaseStudyCardJet
-              href={`/case-studies/${c.slug}`}
+              href={`/case-studies/${c.slug}/`}
               client={c.client}
               quote={c.quote}
               dimensioni={c.dimensioni}
@@ -333,7 +333,7 @@ const faqs = [
       </div>
 
       <p class="mt-10 text-center text-[14px]" style="color: var(--color-ink-muted);">
-        Tra gli altri clienti recruitment: <a href="/case-studies/talent-match" style="color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">Talent Match</a> (gruppo spagnolo, 150k+ candidati).
+        Tra gli altri clienti recruitment: <a href="/case-studies/talent-match/" style="color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">Talent Match</a> (gruppo spagnolo, 150k+ candidati).
       </p>
     </div>
   </section>
@@ -391,7 +391,7 @@ const faqs = [
       </p>
 
       <div class="mt-10 reveal reveal-delay-2">
-        <a href="/parliamone" class="btn btn-primary">
+        <a href="/parliamone/" class="btn btn-primary">
           20 min con Daniel
           <span class="btn-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>

@@ -2,6 +2,7 @@
 title: "Digitalizzare i processi aziendali oltre Excel"
 description: "Quel foglio Excel che regge mezza azienda a volte è la scelta giusta. Quando invece ti sta costando, e come capire il momento di digitalizzare i processi."
 pubDate: 2026-06-17
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "business process automation"

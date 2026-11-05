@@ -2,6 +2,7 @@
 title: "Rule-Based Automation or AI Agent: How to Choose"
 description: "Rule-based automation (RPA, Make, Zapier) or an AI agent? A decision checklist for COOs and Heads of Ops on which process goes to which layer."
 pubDate: 2026-09-07
+updatedDate: 2026-10-18
 author: "Davide Silvestri"
 tags:
   - "process-automation"

@@ -2,6 +2,7 @@
 title: "Get cited by ChatGPT & Perplexity: GEO for SMBs"
 description: "How to get cited by ChatGPT, Perplexity and Google AI Overviews: GEO explained to an SMB, no fluff. What it is, how it differs from SEO, what to do."
 pubDate: 2026-06-24
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "geo"

@@ -70,14 +70,14 @@ const jsonLd = {
 };
 ---
 
-<Layout title={title} description={description} lang="en" jsonLd={jsonLd} altHref={`/case-studies/${slug}`}>
+<Layout title={title} description={description} lang="en" jsonLd={jsonLd} altHref={`/case-studies/${slug}/`}>
   <article>
     <section class="relative bg-white border-b border-line">
       <div class="container-soraia pt-14 md:pt-20 pb-16 md:pb-24">
         <nav class="flex items-center gap-2 text-[13px] mb-10" style="color: var(--color-ink-soft);">
           <a href="/en/" class="hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">Home</a>
           <span>›</span>
-          <a href="/en/case-studies" class="hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">Case studies</a>
+          <a href="/en/case-studies/" class="hover:opacity-70 transition-opacity" style="color: var(--color-ink-soft);">Case studies</a>
           <span>›</span>
           <span style="color: var(--color-ink-muted);">{study.data.client}</span>
         </nav>
@@ -318,7 +318,7 @@ const jsonLd = {
       title="Got a similar challenge?"
       description="20 minutes with the CEO to figure out together whether it makes sense. No commitment, no surprise quotes: just a practical conversation about your processes."
       ctaText="20 min with Daniel"
-      ctaHref="/en/contact"
+      ctaHref="/en/contact/"
       avatarName="Daniel Levis"
       avatarRole="Co-Founder & CEO"
       avatarSrc="/team/daniel-levis.webp"

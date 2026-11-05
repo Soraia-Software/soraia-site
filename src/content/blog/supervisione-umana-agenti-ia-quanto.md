@@ -2,6 +2,7 @@
 title: "Supervisione umana agenti AI: dove mettere l'umano"
 description: "Quanta autonomia dare a un agente IA senza perdere il risparmio di tempo? Dove mettere i checkpoint umani e gli approval gate, con un caso reale."
 pubDate: 2026-07-27
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai agents"

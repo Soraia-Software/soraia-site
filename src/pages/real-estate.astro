@@ -131,7 +131,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: "Lavoriamo su mandati di pochi immobili di alto valore, non su volumi. Vale la pena?",
-    a: "Sì, anzi è dove gli agenti danno il ROI migliore. Su volumi bassi e alto valore, ogni ora del consulente senior pesa: <strong>liberarlo dal data entry e dal match a memoria</strong> significa più tempo su selezione e relazione, dove il valore si crea davvero. Vedi il caso <a href='/case-studies/frh'>French Riviera Househunting</a>.",
+    a: "Sì, anzi è dove gli agenti danno il ROI migliore. Su volumi bassi e alto valore, ogni ora del consulente senior pesa: <strong>liberarlo dal data entry e dal match a memoria</strong> significa più tempo su selezione e relazione, dove il valore si crea davvero. Vedi il caso <a href='/case-studies/frh/'>French Riviera Househunting</a>.",
   },
   {
     q: "Su quali sistemi si integra?",
@@ -147,7 +147,7 @@ const faqs = [
   },
   {
     q: "Quanto costa?",
-    a: "Da <strong>8.000 € al mese</strong> con tre persone dedicate (Account Manager, Project Manager e AI Engineer), più gli add-on quando servono: Compliance &amp; Audit e Pentest, 4.000 € ciascuno una tantum, quando sicurezza e compliance devono essere dimostrabili. <strong>Primo mese soddisfatti o rimborsati</strong>. Il dettaglio è nei <a href='/prezzi' style='color: var(--color-brand); text-decoration: underline;'>prezzi</a>.",
+    a: "Da <strong>8.000 € al mese</strong> con tre persone dedicate (Account Manager, Project Manager e AI Engineer), più gli add-on quando servono: Compliance &amp; Audit e Pentest, 4.000 € ciascuno una tantum, quando sicurezza e compliance devono essere dimostrabili. <strong>Primo mese soddisfatti o rimborsati</strong>. Il dettaglio è nei <a href='/prezzi/' style='color: var(--color-brand); text-decoration: underline;'>prezzi</a>.",
   },
 ];
 ---
@@ -181,7 +181,7 @@ const faqs = [
           </div>
 
           <div class="mt-10 flex flex-col sm:flex-row gap-3 fade-up fade-up-delay-3">
-            <a href="/parliamone" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
+            <a href="/parliamone/" class="btn !bg-white !text-violet-900 hover:!bg-violet-50">
               20 min con Daniel
               <span class="btn-arrow">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -224,9 +224,9 @@ const faqs = [
         Già scelto da agenzie immobiliari e real estate tech
       </p>
       <p class="text-[16px]" style="color: var(--color-ink-muted);">
-        <a href="/case-studies/frh" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">French Riviera Househunting</a>
+        <a href="/case-studies/frh/" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">French Riviera Househunting</a>
         ·
-        <a href="/case-studies/rainplan" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">Rainplan</a>
+        <a href="/case-studies/rainplan/" style="color: var(--color-ink); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-violet-200);">Rainplan</a>
         · clienti attivi
       </p>
     </div>
@@ -320,7 +320,7 @@ const faqs = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         {featuredCases.map((c) => (
           <CaseStudyCardJet
-            href={`/case-studies/${c.slug}`}
+            href={`/case-studies/${c.slug}/`}
             client={c.client}
             clientLogo={c.clientLogo}
             quote={c.quote}
@@ -372,7 +372,7 @@ const faqs = [
     title="20 minuti col CEO. Senza pitch."
     description="Capiamo insieme da dove partire sul tuo caso: analisi dei processi in azienda o direttamente il primo sprint. Nessun impegno, nessuna vendita."
     ctaText="20 min con Daniel"
-    ctaHref="/parliamone"
+    ctaHref="/parliamone/"
     avatarName="Daniel Levis"
     avatarRole="Co-Founder & CEO"
     avatarSrc="/team/daniel-levis.webp"

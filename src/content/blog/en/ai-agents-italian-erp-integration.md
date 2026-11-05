@@ -2,6 +2,7 @@
 title: "AI Agents in Your ERP: TeamSystem, Zucchetti, Odoo"
 description: "Integrate AI agents with your ERP (TeamSystem, Zucchetti, Odoo): the patterns that hold up in production and the mistakes that sink projects."
 pubDate: 2026-06-17
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai agents"

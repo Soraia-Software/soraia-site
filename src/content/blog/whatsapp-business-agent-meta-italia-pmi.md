@@ -2,6 +2,7 @@
 title: "WhatsApp Business Agent Meta in Italia: conviene?"
 description: "Meta lancia il WhatsApp Business Agent in Italia. Bot generico o agente verticale sui tuoi processi? Guida onesta per Head of Support e COO di PMI."
 pubDate: 2026-08-03
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "ai agents"

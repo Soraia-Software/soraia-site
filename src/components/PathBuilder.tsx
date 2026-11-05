@@ -59,7 +59,7 @@ const T = {
     recHyperPrice: "da 500€/mese",
     iva: "Prezzi IVA esclusa. Sprint pagati a inizio mese.",
     cta: "Parliamone in 20 minuti",
-    ctaHref: "/parliamone",
+    ctaHref: "/parliamone/",
   },
   en: {
     s1: "Analysis",
@@ -103,7 +103,7 @@ const T = {
     recHyperPrice: "from €500/month",
     iva: "Prices exclude VAT. Sprints paid at the start of the month.",
     cta: "Let’s talk, 20 minutes",
-    ctaHref: "/en/contact",
+    ctaHref: "/en/contact/",
   },
 } as const;
 

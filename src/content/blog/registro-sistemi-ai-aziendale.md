@@ -2,6 +2,7 @@
 title: "Registro sistemi AI aziendale: template entro agosto 2026"
 description: "Come costruire il registro dei sistemi IA che l'AI Act ti chiede entro agosto 2026: template, classificazione del rischio e primo passo operativo per COO e DPO."
 pubDate: 2026-07-22
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai act"

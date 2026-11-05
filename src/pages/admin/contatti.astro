@@ -35,7 +35,7 @@ import AdminLayout from "~/layouts/AdminLayout.astro";
       const rows = document.getElementById("rows");
       try {
         const r = await fetch("/api/admin/leads");
-        if (r.status === 403) { location.href = "/admin/login"; return; }
+        if (r.status === 403) { location.href = "/admin/login/"; return; }
         const d = await r.json();
         const leads = d.leads || [];
         document.getElementById("count").textContent = `${leads.length} contatti`;

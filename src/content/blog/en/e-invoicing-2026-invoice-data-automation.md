@@ -2,6 +2,7 @@
 title: "E-invoicing 2026: stop re-typing invoice data by hand"
 description: "From 2026 e-invoicing covers everyone in Italy, flat-rate taxpayers included. Here is how to automate invoice data extraction and reconciliation with AI agents."
 pubDate: 2026-07-06
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "finance"

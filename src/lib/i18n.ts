@@ -177,14 +177,26 @@ function toItPath(pathname: string): string {
  */
 export function localizePath(pathname: string, target: Lang): string {
   const itPath = toItPath(pathname);
-  if (target === "it") return itPath;
+  if (target === "it") return withSlash(itPath);
   if (itPath === "/") return "/en/";
   const seg = itPath.split("/"); // ["", "<slug>", ...]
   if (seg[1] && IT_TO_EN_SLUG[seg[1]]) seg[1] = IT_TO_EN_SLUG[seg[1]];
-  return "/en" + seg.join("/");
+  return withSlash("/en" + seg.join("/"));
 }
 
 /** Convenience: localize a known IT path (e.g. "/parliamone") for the given lang. */
 export function path(itPath: string, lang: Lang): string {
-  return lang === "it" ? itPath : localizePath(itPath, "en");
+  return lang === "it" ? withSlash(itPath) : localizePath(itPath, "en");
+}
+
+/** Canonical URLs end with "/": Cloudflare Pages answers the bare form with a 308. */
+export function withSlash(p: string): string {
+  return p.endsWith("/") ? p : p + "/";
+}
+
+/** The same rule for internal links inside HTML strings, e.g. FAQ answers rendered with set:html. */
+export function withSlashLinks(html: string): string {
+  return html.replace(/href=(["'])(\/[^"'#?]*)([^"']*)\1/g, (link, q, p, rest) =>
+    p.startsWith("//") || p.endsWith("/") || /\.[a-z0-9]+$/i.test(p) ? link : `href=${q}${p}/${rest}${q}`,
+  );
 }

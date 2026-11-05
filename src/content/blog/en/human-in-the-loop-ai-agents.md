@@ -2,6 +2,7 @@
 title: "Human oversight in AI agents: where the human goes"
 description: "How much autonomy should an AI agent get without killing your time savings? Where to place human checkpoints and approval gates, with a real case."
 pubDate: 2026-07-27
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai agents"

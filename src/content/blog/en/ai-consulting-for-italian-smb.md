@@ -2,6 +2,7 @@
 title: "AI Agents in SMB Recruitment: What Changes"
 description: "How an AI agent changes CV screening and candidate contact in an SMB: baseline, real case numbers, when it's worth it and when not. A guide for Heads of HR."
 pubDate: 2026-09-09
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "recruitment"

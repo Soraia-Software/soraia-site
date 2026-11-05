@@ -2,6 +2,7 @@
 title: "Italian AI Law 132/2025: what it means for firms"
 description: "Italy's national AI law (132/2025) is in force since October 2025. What it adds to the EU AI Act for companies: AgID, ACN and the 1bn fund for SMEs."
 pubDate: 2026-08-17
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai act"

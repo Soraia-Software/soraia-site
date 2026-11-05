@@ -2,6 +2,7 @@
 title: "AI Act 2026 per le PMI italiane, cosa cambia davvero in operatività"
 description: "Il Regolamento europeo IA è in vigore. Per la maggior parte delle PMI italiane gli obblighi sono limitati, ma le 4 cose da fare ci sono. Guida pratica."
 pubDate: 2026-04-22
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags: ["ai act", "compliance", "gdpr", "guide"]
 readMinutes: 7

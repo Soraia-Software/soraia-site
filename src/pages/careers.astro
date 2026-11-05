@@ -14,7 +14,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: title,
-  url: "https://www.soraia.io/careers",
+  url: "https://www.soraia.io/careers/",
   inLanguage: "it-IT",
 };
 ---
@@ -46,7 +46,7 @@ const jsonLd = {
       ) : (
         <div class="space-y-5">
           {jobs.map((j) => (
-            <a href={`/careers/${j.id}`} class="card-editorial !p-7 md:!p-8 block group hover:border-ink-300 transition-colors">
+            <a href={`/careers/${j.id}/`} class="card-editorial !p-7 md:!p-8 block group hover:border-ink-300 transition-colors">
               <div class="flex items-start justify-between gap-4">
                 <div>
                   <h2 style="font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; font-weight: 500;" class="group-hover:text-[var(--color-brand)] transition-colors">{j.data.title}</h2>

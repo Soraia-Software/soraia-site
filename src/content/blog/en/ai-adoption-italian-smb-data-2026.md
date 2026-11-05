@@ -2,6 +2,7 @@
 title: "AI adoption in Italian SMBs: the 2026 data and the real gap"
 description: "How much do Italian SMBs really use AI in 2026? The Istat numbers, why skills are the real brake, and an honest benchmark to see where you stand."
 pubDate: 2026-09-18
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai adoption"

@@ -2,6 +2,7 @@
 title: "Accounting & payroll firm AI automation: 3 wins"
 description: "Quotes, billable hours, bank reconciliations: the three processes an AI agent hands back to an accounting and payroll firm. Practical guide, with baseline."
 pubDate: 2026-07-31
+updatedDate: 2026-10-31
 author: "Davide Silvestri"
 tags:
   - "ai agents"

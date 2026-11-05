@@ -57,7 +57,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: title,
-    url: "https://www.soraia.io/prezzi",
+    url: "https://www.soraia.io/prezzi/",
     inLanguage: "it-IT",
   },
   {
@@ -283,7 +283,7 @@ const addons = [
       "Supporto alla rendicontazione",
     ],
     foot: "Lo paghi solo se il bando è vinto.",
-    cta: { label: "Vedi i bandi aperti", href: "/bandi" },
+    cta: { label: "Vedi i bandi aperti", href: "/bandi/" },
   },
 ];
 
@@ -377,7 +377,7 @@ const regole = [
         Un team che dà vita al software di cui hai bisogno.
       </h1>
       <p class="mt-6 text-[17px] md:text-[18px] leading-relaxed text-pretty max-w-2xl" style="color: var(--color-ink-muted);">
-        Account Manager, Project Manager e AI Engineer, con un metodo rodato. Tre passi a prezzo fisso, più gli add-on che servono al tuo progetto. Se il lavoro è piccolo, c’è il pacchetto di ore. <a href="/ai-engineering" style="color: var(--color-brand); font-weight: 600;">Come lavoriamo, in dettaglio &rarr;</a>
+        Account Manager, Project Manager e AI Engineer, con un metodo rodato. Tre passi a prezzo fisso, più gli add-on che servono al tuo progetto. Se il lavoro è piccolo, c’è il pacchetto di ore. <a href="/ai-engineering/" style="color: var(--color-brand); font-weight: 600;">Come lavoriamo, in dettaglio &rarr;</a>
       </p>
       <ul class="flex flex-wrap gap-3 mt-10 list-none p-0">
         {guarantees.map((g) => (
@@ -424,7 +424,7 @@ const regole = [
             </ul>
             {s.foot && <p class="text-[13.5px]" style="color: var(--color-ink-soft);">{s.foot}</p>}
             <div class="mt-auto"></div>
-            <a href="/parliamone" class={`btn ${s.featured ? "btn-primary" : "btn-secondary"} justify-center`}>{s.cta}</a>
+            <a href="/parliamone/" class={`btn ${s.featured ? "btn-primary" : "btn-secondary"} justify-center`}>{s.cta}</a>
           </div>
         ))}
       </div>
@@ -589,7 +589,7 @@ const regole = [
           Partiamo dall’Analisi, poi ti diamo un preventivo con l’elenco dei risultati fissato per iscritto.
         </p>
       </div>
-      <a href="/bandi" class="btn btn-secondary whitespace-nowrap">Vedi i bandi aperti</a>
+      <a href="/bandi/" class="btn btn-secondary whitespace-nowrap">Vedi i bandi aperti</a>
     </div>
   </section>
 
@@ -609,7 +609,7 @@ const regole = [
         Venti minuti per capire il tuo progetto, gli add-on che servono davvero e il percorso. Senza impegno.
       </p>
       <div class="mt-7">
-        <a href="/parliamone" class="btn btn-primary">
+        <a href="/parliamone/" class="btn btn-primary">
           20 min con Daniel
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>

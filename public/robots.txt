@@ -4,9 +4,10 @@ User-agent: *
 Allow: /
 # AIPREF Content Signals (contentsignals.org): Soraia is an AI agency, be found + cited + trained.
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
-# Private/asset paths that don't need crawling
+# Old-site material that doesn't need crawling
 Disallow: /downloads/
-Disallow: /_astro/
+# Never disallow /_astro/: it holds the CSS, JS, fonts and optimized images
+# Googlebot needs to render the pages (it falls under the * group above).
 
 # --- AI answer-engine + search crawlers: explicitly welcome (Soraia wants to be cited) ---
 # OPERATOR NOTE: Cloudflare's "Block AI bots" toggle (Security > Bots) must stay OFF,

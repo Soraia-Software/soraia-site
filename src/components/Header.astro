@@ -1,5 +1,5 @@
 ---
-import { path, localizePath, type Lang } from "~/lib/i18n";
+import { path, localizePath, withSlash, type Lang } from "~/lib/i18n";
 
 interface Props {
   lang?: Lang;
@@ -57,7 +57,7 @@ const casesHref = path("/case-studies", lang);
 const blogHref = path("/blog", lang);
 const aboutHref = path("/chi-siamo", lang);
 const otherLang: Lang = lang === "it" ? "en" : "it";
-const otherHref = altHref ?? localizePath(Astro.url.pathname, otherLang);
+const otherHref = withSlash(altHref ?? localizePath(Astro.url.pathname, otherLang));
 
 // Servizi dropdown = exactly two items, same structure and order in both
 // languages: Analisi dei processi + AI Engineering. Every other page lives in

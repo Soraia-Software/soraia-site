@@ -1,4 +1,6 @@
 ---
+import { withSlashLinks } from "~/lib/i18n";
+
 interface Item {
   q: string;
   a: string;
@@ -31,7 +33,7 @@ const { items } = Astro.props;
         </svg>
       </summary>
       <div class="mt-4 text-body text-ink-700 leading-relaxed max-w-3xl">
-        <Fragment set:html={item.a} />
+        <Fragment set:html={withSlashLinks(item.a)} />
       </div>
     </details>
   ))}

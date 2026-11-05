@@ -2,6 +2,7 @@
 title: "Calcolo provvigioni automatico: come un agente IA lo fa"
 description: "Calcoli le provvigioni a mano ogni mese leggendo contratti e vendite? Ecco come un agente IA legge le regole e le calcola da solo, senza errori."
 pubDate: 2026-09-16
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "ai agents"

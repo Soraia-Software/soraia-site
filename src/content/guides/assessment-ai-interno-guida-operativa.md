@@ -3,6 +3,7 @@ title: "Assessment AI aziendale: la guida operativa interna"
 h1: "Assessment AI interno: cosa mappare prima di chiamare un fornitore"
 description: "Come fare un assessment AI aziendale interno prima di sentire un fornitore: mappa processi, dati, ore perse e baseline. Guida operativa per CEO e COO di PMI."
 pubDate: 2026-07-15
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 readMinutes: 11
 keywords:

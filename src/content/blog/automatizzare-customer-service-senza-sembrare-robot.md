@@ -2,6 +2,7 @@
 title: "Automatizzare risposte clienti PMI senza sembrare robot"
 description: "Come automatizzare le risposte ai clienti in una PMI senza suonare finti: triage, escalation e tono. Dove l'agente IA aiuta e dove deve passare all'umano."
 pubDate: 2026-08-07
+updatedDate: 2026-10-18
 author: "Daniel Levis"
 tags:
   - "customer support"

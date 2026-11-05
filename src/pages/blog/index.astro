@@ -45,7 +45,7 @@ function formatDate(d: Date) {
         <p class="eyebrow mb-8">In evidenza</p>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {featured.map((post) => (
-            <a href={`/blog/${post.id}`} class="card-editorial !p-8 md:!p-10 group no-underline flex flex-col transition-all hover:!-translate-y-1 hover:shadow-md">
+            <a href={`/blog/${post.id}/`} class="card-editorial !p-8 md:!p-10 group no-underline flex flex-col transition-all hover:!-translate-y-1 hover:shadow-md">
               <div class="flex items-center gap-3 text-[11px] font-medium tracking-[0.14em] uppercase mb-5" style="color: var(--color-ink-soft);">
                 <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
                 <span>·</span>
@@ -78,7 +78,7 @@ function formatDate(d: Date) {
         <ul class="divide-y divide-[color:var(--color-line)] border-t border-[color:var(--color-line)]">
           {others.map((post) => (
             <li>
-              <a href={`/blog/${post.id}`} class="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 md:gap-8 py-7 group">
+              <a href={`/blog/${post.id}/`} class="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 md:gap-8 py-7 group">
                 <div class="text-[11px] font-medium tracking-[0.14em] uppercase pt-1" style="color: var(--color-ink-soft);">
                   <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
                   <div class="mt-1">{post.data.readMinutes ?? 5} min</div>
@@ -111,7 +111,7 @@ function formatDate(d: Date) {
         Il check-up ti dà un punteggio di prontezza IA (0-100) + 3 next-step concreti per il tuo caso specifico.
       </p>
       <div class="mt-9">
-        <a href="/check-up" class="btn btn-primary">
+        <a href="/check-up/" class="btn btn-primary">
           Inizia il check-up, è gratis
           <span class="btn-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>

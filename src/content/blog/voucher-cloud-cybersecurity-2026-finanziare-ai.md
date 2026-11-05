@@ -2,6 +2,7 @@
 title: "Voucher Cloud e Cybersecurity 2026: copri il 50%"
 description: "Il voucher MIMIT Cloud e Cybersecurity copre fino al 50% a fondo perduto. Come le PMI possono usarlo per finanziare software custom e agenti IA nel 2026."
 pubDate: 2026-09-21
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 tags:
   - "incentivi"

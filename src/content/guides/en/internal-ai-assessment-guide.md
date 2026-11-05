@@ -3,6 +3,7 @@ title: "Internal AI Assessment: The Operative Guide"
 h1: "Internal AI Assessment: What to Map Before You Call a Vendor"
 description: "How to run an internal AI readiness assessment before hiring anyone: map processes, data, wasted hours and baseline. Operative guide for SME CEOs and COOs."
 pubDate: 2026-07-15
+updatedDate: 2026-10-31
 author: "Daniel Levis"
 readMinutes: 11
 keywords:

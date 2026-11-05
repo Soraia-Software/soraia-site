@@ -2,6 +2,7 @@
 title: "Automazione studio commercialista AI: 3 processi"
 description: "Preventivi, tracciamento ore e riconciliazioni: i tre processi che un agente IA restituisce a uno studio paghe e contabilità. Guida pratica, con baseline."
 pubDate: 2026-07-31
+updatedDate: 2026-10-31
 author: "Davide Silvestri"
 tags:
   - "ai agents"
