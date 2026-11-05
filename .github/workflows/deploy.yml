@@ -55,3 +55,10 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=soraia-site --branch=main
+
+      # Tell Bing and the other IndexNow engines which pages changed (lastmod in the last 3 days).
+      # Runs on merges and on the weekday drip, which re-triggers this workflow.
+      - name: Notify IndexNow of changed pages
+        if: steps.check.outputs.ready == 'true'
+        continue-on-error: true
+        run: node automation/indexnow.mjs

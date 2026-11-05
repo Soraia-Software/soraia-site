@@ -27,8 +27,6 @@ lang: "en"
 draft: false
 ---
 
-# Which processes to automate: 5 signs yes, 2 no
-
 The question isn't *whether* to automate. It's *what* to automate first, without burning budget on processes that don't deserve it.
 
 This is the operational checklist we use in the first calls with a COO. No FOMO: two of the seven signs tell you to stop.

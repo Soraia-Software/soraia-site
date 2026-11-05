@@ -39,8 +39,6 @@ gates:
 draft: false
 ---
 
-# Accounting & payroll firm AI automation: the 3 processes an agent hands back
-
 > **What it is.** Accounting firm AI automation is the use of AI agents to handle three specific repetitive workflows: quote drafting, billable-hour aggregation, and bank reconciliation. The agent runs the mechanical work and escalates only anomalies and client decisions to a human. It only makes sense on these processes, and only if you first measure what they cost today.
 >
 > **Key takeaways:**

@@ -63,7 +63,17 @@ const faqJsonLd = guide.data.faq.length > 0 ? {
   })),
 } : null;
 
-const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.soraia.io/en/" },
+    { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.soraia.io/en/guide/" },
+    { "@type": "ListItem", position: 3, name: guide.data.title, item: `https://www.soraia.io/en/guide/${slug}/` },
+  ],
+};
+
+const jsonLd = [articleJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])];
 ---
 
 <Layout title={title} description={description} lang="en" jsonLd={jsonLd} altHref={altHref}>

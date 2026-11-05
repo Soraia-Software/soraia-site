@@ -43,7 +43,7 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://www.soraia.io/en/" },
     { "@type": "ListItem", position: 2, name: "Comparisons", item: "https://www.soraia.io/en/confronto/" },
-    { "@type": "ListItem", position: 3, name: d.titolo, item: `https://www.soraia.io/en/confronto/${slug}` },
+    { "@type": "ListItem", position: 3, name: d.titolo, item: `https://www.soraia.io/en/confronto/${slug}/` },
   ],
 };
 const jsonLd = [articleJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])];

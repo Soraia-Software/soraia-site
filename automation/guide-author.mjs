@@ -11,6 +11,7 @@
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from "node:fs";
 import Anthropic from "@anthropic-ai/sdk";
 import { normalizeDashes } from "./house-style.mjs";
+import { SOURCES_INSTRUCTION, createWithWebTools, textAfterTools } from "./web-sources.mjs";
 
 const DRY = process.argv.includes("--dry-run");
 const MODEL = process.env.AUTHOR_MODEL || "claude-opus-4-8"; // set to claude-sonnet-4-6 for steady-state cost
@@ -109,15 +110,17 @@ const user = [
   "SOURCE OF TRUTH for every Soraia/client number (public/llms.txt), invent nothing, never cite oggi-lavoro or aegis (draft, 404). Attribute every external regulatory/fiscal fact to a named source or cut it:",
   llms,
   "",
+  SOURCES_INSTRUCTION,
+  "",
   "Return ONLY the JSON object from your instructions (frontmatter_it, it_body, frontmatter_en, en_body, slug_it, slug_en, guide_slug_map_entry, llms_txt_line_it?, llms_txt_line_en?). Do NOT include pubDate/lang/draft/updatedDate in the frontmatter objects. The body MUST contain the contact CTA (/parliamone in IT, /en/contact in EN) inviting an honest expert opinion from Soraia. No code fences, no prose outside the JSON.",
 ].join("\n");
 
 const client = new Anthropic(); // ANTHROPIC_API_KEY from env
 let resp;
 try {
-  resp = await client.messages.create({ model: MODEL, max_tokens: 12000, system, messages: [{ role: "user", content: user }] });
+  resp = await createWithWebTools(client, { model: MODEL, max_tokens: 16000, system }, user);
 } catch (e) { die("Anthropic API error: " + (e?.message || e)); }
-const text = resp.content.filter((b) => b.type === "text").map((b) => b.text).join("");
+const text = textAfterTools(resp);
 const art = extractJson(text);
 for (const k of ["frontmatter_it", "it_body", "frontmatter_en", "en_body"]) if (!art[k]) die("Model output missing field: " + k);
 

@@ -16,7 +16,7 @@ keywords:
   - "ai act pmi"
 readMinutes: 7
 featured: false
-h1: "Shadow AI: i tuoi dipendenti gia' usano l'IA senza dirtelo"
+h1: "Shadow AI: i tuoi dipendenti già usano l’IA senza dirtelo"
 faq:
   - q: "Cos'e' la Shadow AI in azienda?"
     a: "E' l'uso di strumenti di intelligenza artificiale pubblici (ChatGPT free, Gemini, Copilot personale, traduttori AI) da parte dei dipendenti senza autorizzazione o controllo aziendale. Il rischio principale non e' l'IA in se', ma i dati aziendali che finiscono incollati in tool su cui non hai un <strong>DPA art. 28 GDPR</strong> ne' controllo su dove viaggiano."
@@ -39,8 +39,6 @@ gates:
     - { name: "geo-citability", score: 8, pass: true }
 draft: false
 ---
-
-# Shadow AI: i tuoi dipendenti gia' usano l'IA senza dirtelo
 
 > **Shadow AI** e' l'uso non autorizzato di strumenti IA pubblici (ChatGPT, Gemini, traduttori AI) da parte dei dipendenti, senza autorizzazione aziendale, senza un DPA art. 28 GDPR e senza controllo su dove finiscono i dati aziendali.
 

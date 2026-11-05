@@ -31,6 +31,9 @@ via Brevo so the backlog can be topped up.
 - `house-style.mjs` — single source of truth for the punctuation house style (`FANCY_DASH` detector + `normalizeDashes`), shared by gate, author and autofix so the rule can't drift.
 - `topic-radar.mjs` / `confronto-radar.mjs` — discovery agents: Claude + web search find recent news/keywords/questions, score + dedupe candidates, append survivors as `status:"parked"`. Run as the backlog-refill step inside `monthly-content.yml`.
 - `monthly-orchestrator.mjs` — the conductor (see above). Flags: `--self-test` (calendar math only), `--dry-run` (plan, no API), `--month=YYYY-MM`. Env: `FIX_ROUNDS` (default 3), `EXTRA_ATTEMPTS` (topic re-rolls per slot, default 1).
+- `web-sources.mjs`: web search + fetch for the three authors, so every external fact links an official source the model actually opened (the "link the sources" rule in the system prompts). Same tools and `pause_turn` loop as the radars; web search is billed.
+- `indexnow.mjs`: after each deploy, sends IndexNow (Bing and the other IndexNow engines) the sitemap URLs whose `lastmod` falls in the last 3 days. The key file is `public/031cb8c96df92ffebf73d394f88d25ef.txt`. `--dry-run` prints what it would send.
+- `ai-visibility.mjs` + `ai-visibility-questions.json`: the monthly AI visibility monitor. Asks the question panel to Claude (and to ChatGPT, Perplexity and Gemini when their keys exist), records whether Soraia is named or cited and which domains are cited instead, and writes `ai-visibility/YYYY-MM.json`. Flags: `--dry-run`, `--limit N`.
 
 ## Operative guides engine (`/guide/`) — FROZEN
 A third fork (`guide-*.mjs`, `guide-topics.json`, `guide-system-prompt.md`) previously auto-published
@@ -40,9 +43,10 @@ generation can be re-enabled later (wire them into a workflow) without rebuildin
 collection keeps its `draft` filter; existing guides are past-dated so they render normally.
 
 ## Workflows (`.github/workflows/`)
-- `deploy.yml` — build + `wrangler pages deploy` on every push to `main` (and on dispatch). Unchanged.
+- `deploy.yml` — build + `wrangler pages deploy` on every push to `main` (and on dispatch), then `indexnow.mjs`.
 - `monthly-content.yml` — monthly generate + gate + schedule + commit (see above).
 - `scheduled-publish.yml` — weekday drip: re-triggers `deploy.yml` so the day's scheduled piece appears.
+- `ai-visibility.yml`: on the 2nd of each month, runs `ai-visibility.mjs` and commits the report with `[skip ci]`.
 
 ## Secrets & variables (GitHub → Settings → Secrets and variables → Actions)
 - `CLOUDFLARE_API_TOKEN` — scoped **Account › Cloudflare Pages › Edit** (never the Global key).
@@ -51,6 +55,7 @@ collection keeps its `draft` filter; existing guides are past-dated so they rend
 - `BLOG_BOT_TOKEN` — scoped PAT so the monthly batch can push to `main`.
 - `BREVO_API_KEY` (secret) + `LEAD_FROM_EMAIL` / `ALERT_EMAIL` (vars) — shortfall alert email.
 - `AUTHOR_MODEL` / `GATE_MODEL` (vars) — model overrides (default author `claude-opus-4-8`, gate `claude-sonnet-4-6`).
+- `OPENAI_API_KEY`, `PERPLEXITY_API_KEY`, `GEMINI_API_KEY` (optional): extra engines for the AI visibility monitor; without a key that engine is skipped.
 
 ## Guardrails (non-negotiable)
 - `draft:false` is stamped **only after all gates pass**, so a piece that fails stays hidden in prod even though it was committed. Future `pubDate` keeps a passed piece hidden until its scheduled day.

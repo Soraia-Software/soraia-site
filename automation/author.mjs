@@ -11,6 +11,7 @@
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from "node:fs";
 import Anthropic from "@anthropic-ai/sdk";
 import { normalizeDashes } from "./house-style.mjs";
+import { SOURCES_INSTRUCTION, createWithWebTools, textAfterTools } from "./web-sources.mjs";
 
 const DRY = process.argv.includes("--dry-run");
 const MODEL = process.env.AUTHOR_MODEL || "claude-opus-4-8"; // set to claude-sonnet-4-6 for steady-state cost
@@ -123,15 +124,17 @@ const user = [
   "SOURCE OF TRUTH for every number/claim (public/llms.txt) — invent nothing, never cite oggi-lavoro or aegis (draft, 404):",
   llms,
   "",
+  SOURCES_INSTRUCTION,
+  "",
   "Return ONLY the JSON object from your instructions (frontmatter_it, it_body, frontmatter_en, en_body, slug_it, slug_en, blog_slug_map_entry, llms_txt_line_it?, llms_txt_line_en?). Do NOT include pubDate/lang/draft in the frontmatter objects. No code fences, no prose outside the JSON.",
 ].join("\n");
 
 const client = new Anthropic(); // ANTHROPIC_API_KEY from env
 let resp;
 try {
-  resp = await client.messages.create({ model: MODEL, max_tokens: 8000, system, messages: [{ role: "user", content: user }] });
+  resp = await createWithWebTools(client, { model: MODEL, max_tokens: 12000, system }, user);
 } catch (e) { die("Anthropic API error: " + (e?.message || e)); }
-const text = resp.content.filter((b) => b.type === "text").map((b) => b.text).join("");
+const text = textAfterTools(resp);
 const art = extractJson(text);
 for (const k of ["frontmatter_it", "it_body", "frontmatter_en", "en_body"]) if (!art[k]) die("Model output missing field: " + k);
 

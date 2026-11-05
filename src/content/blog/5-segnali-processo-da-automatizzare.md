@@ -27,8 +27,6 @@ lang: "it"
 draft: false
 ---
 
-# Quali processi automatizzare in azienda: 5 segnali sì, 2 no
-
 La domanda non è *se* automatizzare. È *cosa* automatizzare per primo, senza bruciare budget su processi che non lo meritano.
 
 Questa è la checklist operativa che usiamo nelle prime call con un COO. Niente FOMO: due dei sette segnali ti dicono di fermarti.

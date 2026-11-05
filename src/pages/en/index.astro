@@ -78,10 +78,11 @@ const jsonLd = {
   },
   areaServed: ["IT", "EU"],
   founder: [
-    { "@type": "Person", name: "Daniel Levis", jobTitle: "CEO" },
-    { "@type": "Person", name: "Davide Silvestri", jobTitle: "CTO" },
+    { "@type": "Person", name: "Daniel Levis", jobTitle: "CEO", sameAs: ["https://www.linkedin.com/in/daniel-levis/"] },
+    { "@type": "Person", name: "Davide Silvestri", jobTitle: "CTO", sameAs: ["https://www.linkedin.com/in/davide-silvestri/"] },
   ],
-  sameAs: ["https://www.linkedin.com/company/soraia-digital"],
+  memberOf: { "@type": "Organization", name: "Unione Industriale Biellese", url: "https://www.ui.biella.it/" },
+  sameAs: ["https://www.linkedin.com/company/soraia-digital", "https://github.com/Soraia-Software"],
 };
 
 // Client logos (two files, order decided on 2026-10-17) live in src/data/clientLogos.ts:

@@ -29,8 +29,6 @@ lang: "it"
 draft: false
 ---
 
-# Fatturazione elettronica 2026: basta reinserire i dati a mano
-
 > **Cos'è l'automazione dei dati delle fatture elettroniche?** È l'uso di un agente IA che legge l'XML della fattura ed esegue il lavoro che oggi si fa a mano: reinserimento dei dati nel gestionale, codifica su conti e centri di costo, matching a tre vie tra fattura, ordine e movimento bancario. L'umano passa dal ribattere tutto al gestire solo le eccezioni. Il risparmio di tempo amministrativo si colloca tipicamente nell'ordine del 30-50%.
 
 Dal 2026 l'obbligo di fatturazione elettronica via Sistema di Interscambio si estende anche ai forfettari finora esclusi. Traduzione operativa per te che gestisci l'amministrazione: quasi ogni fattura in entrata e in uscita sarà un file XML strutturato.

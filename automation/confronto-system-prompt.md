@@ -31,7 +31,8 @@ one-sided ad.
    `contro` (non-empty). A comparison where one side has no downsides is banned.
 2. **No invented numbers.** Every Soraia/client figure must trace to `public/llms.txt` or a
    published case study. External facts (laws, market data) must be attributed to a named
-   source. Never fabricate.
+   source. Never fabricate. When a description or FAQ answer cites a law or a statistic, link
+   the official source you opened with web_fetch (never an aggregator or a competitor).
 3. **Only real published internal links** (in FAQ answers / descriptions): use routes that
    exist. Never link oggi-lavoro or aegis (draft, 404). The page template already adds the
    final contact CTA, so you do NOT need to add a hard-sell.
