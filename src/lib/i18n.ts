@@ -146,6 +146,11 @@ export const BLOG_SLUG_MAP: Record<string, string> = {
   "software-su-misura-o-saas": "custom-software-vs-saas",
   "agenti-ia-gestionali-teamsystem-zucchetti-odoo": "ai-agents-italian-erp-integration",
   "smettere-di-gestire-i-processi-su-excel": "stop-running-your-business-on-spreadsheets",
+  "schede-di-sicurezza-liste-echa-tintorie": "safety-data-sheets-echa-lists-textile-finishing",
+  "campionamenti-laboratorio-analisi-ambientali-lims": "environmental-lab-field-sampling-lims",
+  "scadenziario-sicurezza-lavoro-rspp-sopralluoghi": "safety-compliance-deadlines-hse-consultants",
+  "schedulazione-produzione-capacita-finita-pmi": "finite-capacity-production-scheduling-smb",
+  "riconciliazione-incassi-amazon-distinte": "amazon-settlement-reconciliation",
 };
 
 export function reverseMap(map: Record<string, string>): Record<string, string> {
