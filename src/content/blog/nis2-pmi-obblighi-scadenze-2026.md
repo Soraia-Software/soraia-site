@@ -2,6 +2,7 @@
 title: "NIS2 e PMI: obblighi 2026 (anche di riflesso)"
 description: "La tua PMI non e' un soggetto NIS2 diretto ma e' nella catena di fornitura di uno? Ecco cosa cambia nel 2026, cosa ti chiederanno e dove entra l'IA."
 pubDate: 2026-08-31
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "nis2"
@@ -54,9 +55,11 @@ Molte PMI italiane pensano "non e' roba mia, sono troppo piccolo". Nel 2026 ques
 
 ## Sei un soggetto NIS2 diretto o "di riflesso"?
 
-La direttiva classifica soggetti **essenziali** e **importanti** in una lista di settori (energia, trasporti, banche, sanita', infrastrutture digitali, PA, manifatturiero critico, gestione rifiuti, alimentare, e altri), con soglie dimensionali che tipicamente escludono le micro e piccole imprese.
+La [direttiva NIS2](https://eur-lex.europa.eu/eli/dir/2022/2555/oj), recepita in Italia con il [D.Lgs. 138/2024](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2024-09-04;138), classifica soggetti **essenziali** e **importanti** in una lista di settori (energia, trasporti, banche, sanita', infrastrutture digitali, PA, manifatturiero critico, gestione rifiuti, alimentare, e altri), con soglie dimensionali che tipicamente escludono le micro e piccole imprese.
 
 Traduzione operativa: se sei una PMI da 10-200 persone fuori da quei settori, **quasi certamente non sei un obbligato diretto**.
+
+In Italia l'autorità di riferimento è l'ACN, che sul suo [portale NIS](https://www.acn.gov.it/portale/nis) pubblica obblighi e scadenze per i soggetti.
 
 Il punto e' il secondo canale. La NIS2 impone agli obbligati di gestire la **sicurezza della catena di fornitura**. Quindi il tuo cliente obbligato deve garantire che anche i suoi fornitori (tu) abbiano un livello di sicurezza adeguato. E lo fa nel modo piu' semplice per lui: **te lo mette nel contratto**.
 
@@ -66,7 +69,7 @@ Non riceverai una lettera dallo Stato. Riceverai un questionario di sicurezza fo
 
 - Policy di sicurezza e gestione degli accessi documentate.
 - Log delle attivita' sui sistemi che toccano i suoi dati.
-- Un piano di risposta agli incidenti con **tempi di notifica** (la NIS2 impone all'obbligato tempi stretti: se l'incidente parte da te, deve saperlo in fretta).
+- Un piano di risposta agli incidenti con **tempi di notifica** (la NIS2 impone all'obbligato un preallarme entro 24 ore da quando viene a conoscenza di un incidente significativo e una notifica entro 72 ore: se l'incidente parte da te, deve saperlo in fretta).
 - Clausole che estendono i suoi obblighi a te.
 
 Se non sai rispondere, non prendi una multa. Rischi di uscire dalla shortlist fornitori. Per una PMI questo e' il costo vero.

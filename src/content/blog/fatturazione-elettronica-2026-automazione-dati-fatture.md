@@ -1,8 +1,9 @@
 ---
 title: "Fatturazione elettronica 2026: basta reinserire dati a mano"
-description: "Dal 2026 la fattura elettronica riguarda anche i forfettari. Come automatizzare estrazione e riconciliazione dei dati fattura con agenti IA."
+h1: "Fatturazione elettronica 2026: basta reinserire i dati a mano"
+description: "Dal 2024 la fattura elettronica è obbligatoria anche per tutti i forfettari. Come automatizzare estrazione e riconciliazione dei dati fattura con agenti IA."
 pubDate: 2026-07-06
-updatedDate: 2026-10-18
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "finance"
@@ -17,29 +18,29 @@ keywords:
 readMinutes: 6
 featured: false
 faq:
-  - q: "Dal 2026 la fatturazione elettronica è obbligatoria per tutti?"
-    a: "L'obbligo di fatturazione elettronica via SdI si estende anche ai contribuenti in regime forfettario finora esclusi. In pratica quasi tutti i tuoi fornitori e clienti passeranno per formato XML: il volume di dati strutturati da gestire aumenta, ma anche l'opportunità di automatizzarli senza reinserimento manuale."
+  - q: "La fatturazione elettronica è obbligatoria anche per i forfettari?"
+    a: "Sì: dal 1° gennaio 2024 l’obbligo di fatturazione elettronica via SdI vale anche per tutti i contribuenti in regime forfettario, come prevede l’<a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2022-04-30;36'>art. 18 del DL 36/2022</a>. In pratica quasi tutti i tuoi fornitori e clienti emettono in formato XML: il volume di dati strutturati da gestire è alto, e lo è anche l’opportunità di automatizzarli senza reinserimento manuale."
   - q: "L'XML della fattura elettronica non basta già a evitare il data entry?"
     a: "No. L'XML è strutturato, ma raramente entra pulito nel tuo gestionale: causali, centri di costo, matching con ordini e contratti restano lavoro manuale. Un agente IA legge l'XML, applica le tue regole di codifica e propone la riconciliazione, lasciando all'umano solo le eccezioni."
   - q: "Un agente che tocca le fatture rientra nell'AI Act ad alto rischio?"
     a: "No, se resta interno. Un agente che estrae dati, valida IVA e propone riconciliazioni è rischio minimo secondo l'AI Act: non prende decisioni autonome che impattano persone. L'obbligo principale è la trasparenza interna. Servono comunque DPA art. 28 e audit log, che includiamo di default."
   - q: "Quanto tempo serve per avere il primo agente sulle fatture operativo?"
-    a: "La prima delivery in Soraia è di 4 settimane, con 30 giorni di hypercare successivi. La prima settimana la usiamo per la baseline cronometrata: senza sapere quanto costa oggi processare una fattura, non possiamo garantire il risparmio."
+    a: "Il primo rilascio in produzione arriva in 4 settimane, e dopo il rilascio è incluso un mese di richieste di cambiamento. La prima settimana la usiamo per la baseline cronometrata: senza sapere quanto costa oggi processare una fattura, non possiamo garantire il risparmio."
 lang: "it"
 draft: false
 ---
 
-> **Cos'è l'automazione dei dati delle fatture elettroniche?** È l'uso di un agente IA che legge l'XML della fattura ed esegue il lavoro che oggi si fa a mano: reinserimento dei dati nel gestionale, codifica su conti e centri di costo, matching a tre vie tra fattura, ordine e movimento bancario. L'umano passa dal ribattere tutto al gestire solo le eccezioni. Il risparmio di tempo amministrativo si colloca tipicamente nell'ordine del 30-50%.
+> **Cos'è l'automazione dei dati delle fatture elettroniche?** È l'uso di un agente IA che legge l'XML della fattura ed esegue il lavoro che oggi si fa a mano: reinserimento dei dati nel gestionale, codifica su conti e centri di costo, matching a tre vie tra fattura, ordine e movimento bancario. L'umano passa dal ribattere tutto al gestire solo le eccezioni.
 
-Dal 2026 l'obbligo di fatturazione elettronica via Sistema di Interscambio si estende anche ai forfettari finora esclusi. Traduzione operativa per te che gestisci l'amministrazione: quasi ogni fattura in entrata e in uscita sarà un file XML strutturato.
+Dal 1° gennaio 2024 l'obbligo di fatturazione elettronica via Sistema di Interscambio vale anche per tutti i forfettari, come prevede l'[art. 18 del DL 36/2022](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2022-04-30;36); le regole operative sono sul [portale dell'Agenzia delle Entrate](https://www.agenziaentrate.gov.it/portale/web/guest/aree-tematiche/fatturazione-elettronica). Traduzione operativa per te che gestisci l'amministrazione: quasi ogni fattura in entrata e in uscita è un file XML strutturato.
 
 Suona come una buona notizia. Lo è solo se smetti di trattare quell'XML come un PDF da ribattere a mano.
 
 **In breve:**
-- Dal 2026 la fattura elettronica riguarda anche i forfettari: più dati strutturati, ma anche più volume da gestire ogni mese.
+- Dal 2024 la fattura elettronica è obbligatoria anche per tutti i forfettari: quasi ogni fattura è un XML strutturato, e il volume da gestire ogni mese resta alto.
 - L'XML strutturato NON elimina il data entry: causali, centri di costo e matching con ordini restano lavoro manuale.
 - L'**automazione dei dati delle fatture elettroniche** con un agente IA sposta l'umano dal reinserimento alla sola gestione delle eccezioni.
-- Un agente interno su estrazione e riconciliazione è rischio minimo secondo l'AI Act: niente decisioni autonome su persone.
+- Un agente interno su estrazione e riconciliazione è rischio minimo secondo l'[AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj): niente decisioni autonome su persone.
 - Con [Numeraria](/case-studies/numeraria), studio paghe e contabilità, gli agenti IA hanno restituito circa metà mese al management.
 
 ## Perché l'XML da solo non ti salva dal data entry
@@ -52,7 +53,7 @@ L'XML dice cosa c'è nella fattura. Non dice:
 - Quale **causale contabile** applicare secondo le tue regole interne.
 - Se l'importo è **coerente** con quanto pattuito o è un'anomalia da segnalare.
 
-Questo è il lavoro che oggi mangia le giornate del tuo team amministrativo. L'obbligo esteso dal 2026 non lo riduce: lo moltiplica, perché aumenta il numero di controparti che emettono in formato strutturato.
+Questo è il lavoro che oggi mangia le giornate del tuo team amministrativo. L'obbligo esteso ai forfettari non lo ha ridotto: lo ha moltiplicato, perché è aumentato il numero di controparti che emettono in formato strutturato.
 
 ## Cosa fa davvero un agente IA sulle fatture
 
@@ -87,7 +88,7 @@ Te lo dico prima di venderti uno sprint:
 ## Come partire, in pratica
 
 1. Cronometra un sample di 10-20 fatture reali: quanto tempo tra estrazione, codifica e riconciliazione.
-2. Isola il perimetro stabile (i fornitori ricorrenti con regole chiare sono l'80% del volume).
+2. Isola il perimetro stabile: i fornitori ricorrenti con regole chiare, che di solito fanno gran parte del volume.
 3. Costruisci un agente su quel perimetro, con l'umano sulle eccezioni.
 4. Misura a 30 giorni sulla baseline.
 

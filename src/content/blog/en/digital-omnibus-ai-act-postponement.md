@@ -2,6 +2,7 @@
 title: "Digital Omnibus: AI Act high-risk rules slip to 2027"
 description: "The Digital Omnibus defers Annex III to 2027. But in August 2026 transparency (art. 50), literacy (art. 4) and the bans stay live. What SMEs must do now."
 pubDate: 2026-08-21
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "ai act"
@@ -19,11 +20,11 @@ featured: false
 h1: "Digital Omnibus: high-risk slips to 2027, what stays live in August 2026"
 faq:
   - q: "Does the Digital Omnibus cancel my AI Act obligations?"
-    a: "No. It pushes back the <strong>high-risk</strong> obligations under Annex III (to end of 2027 per the proposal). Still fully in force in August 2026: the bans, the art. 50 transparency duty (telling users they are talking to an AI) and art. 4 AI literacy (training your team). Anyone running client-facing chatbots or agents must still comply."
+    a: "No. It pushes back the <strong>high-risk</strong> obligations under Annex III, to 2 December 2027. Still fully in force in August 2026: the bans, the art. 50 transparency duty (telling users they are talking to an AI) and art. 4 AI literacy (training your team). Anyone running client-facing chatbots or agents must still comply."
   - q: "My SME uses a website chatbot: what do I need to do in August 2026?"
     a: "Art. 50 requires that users clearly know they are interacting with an AI system, not a person. A plain disclosure inside the chatbot plus a route to a human is enough. It is a matter of hours, not months. We handle it by default in our <a href=\"/en/customer-support\">customer support</a> work."
   - q: "What is art. 4 AI literacy and when does it apply?"
-    a: "Art. 4 requires anyone who develops or uses AI systems to ensure adequate competence among the staff operating them. It already applies and is not deferred by the Digital Omnibus. In practice: an internal policy and basic team training. We cover it with our <a href=\"/en/ai-adoption\">AI Adoption</a> tracks."
+    a: "Art. 4 asks anyone who develops or uses AI systems to take measures so the staff operating them know how to use them. It has applied since 2 February 2025, and the Digital Omnibus did not defer it: it reworded it, dropping the duty to guarantee a specific level of competence. In practice: an internal policy and basic team training. We cover it with our <a href=\"/en/ai-adoption\">AI Adoption</a> tracks."
   - q: "If my agent screens CVs, does the Annex III deferral save me?"
     a: "Automated recruitment is in Annex III (high-risk), so the postponement pushes back heavy duties like risk assessment and formal logging. But we advise not to wait: building an immutable audit log and keeping a human on the final offer costs little now and a lot if you bolt it on later."
 lang: "en"
@@ -40,24 +41,24 @@ gates:
 draft: false
 ---
 
-The June 2026 Digital Omnibus did one simple thing and one thing that got misread.
+The Digital Omnibus on AI, approved in June 2026 and in force since 27 July, did one simple thing and one thing that got misread.
 
-The simple thing: it proposed deferring the **high-risk** obligations under Annex III to end of 2027. The misread thing: half the AI consulting newsletters read it as "the AI Act is postponed, you can relax until 2027".
+The simple thing: it deferred the **high-risk** obligations under Annex III to 2 December 2027, and those for AI embedded in Annex I products to 2 August 2028, as the [European Parliament's file on Regulation (EU) 2026/1744](https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai) records. The misread thing: half the AI consulting newsletters read it as "the AI Act is postponed, you can relax until 2027".
 
 Not true. In August 2026, obligations that touch far more SMEs than the high-risk tier stay live. Here is the honest map of what slips and what does not.
 
 **Key takeaways:**
-- The Digital Omnibus defers the **Annex III (high-risk)** obligations to end of 2027, not the whole AI Act.
+- The Digital Omnibus defers the **Annex III (high-risk)** obligations to 2 December 2027, not the whole AI Act.
 - Still mandatory in **August 2026**: the bans (unacceptable risk), the **art. 50** transparency duty (tell users they are talking to an AI) and **art. 4 AI literacy** (train the team).
 - If you run a **chatbot or a client-facing agent**, the art. 50 fix has to happen anyway: a matter of hours, not months.
 - The high-risk deferral is **no excuse to postpone the audit log**: building it now is cheap, adding it later is expensive.
-- For 90% of SMEs the real work stays small: a policy, basic training, a transparency notice.
+- For most SMEs the real work stays small: a policy, basic training, a transparency notice.
 
 ## What actually slips: Annex III
 
-Annex III lists the **high-risk** systems: automated recruitment, credit scoring, critical infrastructure management, educational assessment, some healthcare uses.
+Annex III of the [AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) lists the **high-risk** systems: automated recruitment, credit scoring, critical infrastructure management, educational assessment, some healthcare uses.
 
-For these, the Digital Omnibus proposal pushes back (to end of 2027 per the text under discussion) the heavy obligations: formal risk assessment, structured logging, technical documentation, EU database registration.
+For these, the Digital Omnibus pushes the heavy obligations back to 2 December 2027: formal risk assessment, structured logging, technical documentation, EU database registration.
 
 If you use AI to **decide or significantly influence** hiring or evaluations, you fall here. The deferral buys you breathing room, not absolution.
 
@@ -75,9 +76,11 @@ AI-generated or manipulated content (images, audio, client-facing text) must als
 
 The practical fix is small: an explicit line in the chatbot, a route to a human, a label on generated content. Hours of work, not weeks.
 
+The Digital Omnibus only adjusts this for providers: for systems already on the market before 2 August 2026, the duty to mark generated content starts on 2 December 2026.
+
 ### 3. AI literacy, art. 4
 
-Anyone who develops or uses AI systems must ensure staff operating them have an **adequate level of competence**. This is not deferred by the Digital Omnibus and already applies.
+Anyone who develops or uses AI systems must **take measures** so the staff operating them know how to use them. The Digital Omnibus did not defer this: it reworded it, dropping the duty to guarantee a specific level of competence. The obligation stays, and it has applied since 2 February 2025.
 
 For an SME that means: a 1-page internal policy (what is allowed, what is not, how to report issues) and basic training for whoever uses the tools. Nothing heroic, but it has to be documented.
 

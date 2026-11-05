@@ -2,6 +2,7 @@
 title: "Labeling AI-generated marketing content: a guide"
 description: "AI-generated images and copy in marketing: how to meet AI Act art. 50 and the machine-readable marking rules live from August 2026. A practical guide."
 pubDate: 2026-08-14
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "ai act"
@@ -19,9 +20,9 @@ faq:
   - q: "Do I need a label on every AI-assisted post?"
     a: "No. The art. 50 obligation covers <strong>synthetic content</strong>: images, audio and video generated or manipulated by AI that could look authentic. Copy assisted by AI but reviewed and signed off by a person needs no explicit label. The test is: could the audience mistake it for real? If yes, mark it."
   - q: "What does machine-readable marking mean?"
-    a: "Beyond the label a human sees, synthetic content must carry a marker readable by machines (metadata or a digital watermark) certifying its artificial origin. It keeps the content traceable even when re-shared. Most serious generative tools already embed it, but you must verify it survives every publish step."
+    a: "It is a marker readable by machines (metadata or a digital watermark) that certifies the content’s artificial origin and keeps it traceable even when re-shared. It is a duty of the generative tool’s provider (art. 50, para. 2), not of whoever publishes: your part is choosing tools that apply it and checking it survives every publish step."
   - q: "When do the obligations kick in?"
-    a: "The art. 50 transparency obligations apply from <strong>August 2026</strong>, with the machine-readable marking side fully operational by late 2026. Anyone producing commercial communication has a short window to fix process and tooling."
+    a: "The art. 50 transparency obligations apply from <strong>2 August 2026</strong>. The <a href='https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai'>Digital Omnibus</a> gave providers of systems already on the market before that date until 2 December 2026 for machine-readable marking. Anyone producing commercial communication has a short window to fix process and tooling."
   - q: "Do I risk a fine if I don't label?"
     a: "Art. 50 sits among the sanctionable transparency obligations. But for most SMEs the practical issue is not an immediate fine, it is audience trust and consistency with GDPR and consumer law. A clear labeling process protects you on all three fronts."
 lang: "en"
@@ -40,15 +41,15 @@ draft: false
 
 The AI Act does not ban using AI-generated images or copy in marketing. It just asks you to say so, in a way the user understands and the machine recognises.
 
-**AI Act art. 50 requires anyone deploying synthetic content (images, audio or video generated or manipulated by AI that could look authentic) to disclose it clearly to the user and to mark the content in a machine-readable format. In marketing, the obligation applies from August 2026.**
+**[AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) art. 50 requires anyone publishing synthetic content (images, audio or video generated or manipulated by AI that could look authentic) to disclose it clearly to the user, and requires the providers of generative tools to mark it in a machine-readable format. In marketing, the obligation applies from 2 August 2026.**
 
 From August 2026 this becomes an operational obligation, not a best practice. Here is how to label AI-generated marketing content without slowing down your publishing flow.
 
 **Key takeaways:**
-- AI Act art. 50 requires transparency on **synthetic content** (images, audio, video) that could look real: it must be disclosed to the user and marked in a machine-readable way.
-- The obligations apply from **August 2026**, with the technical marking fully operational by late 2026.
+- AI Act art. 50 requires transparency on **synthetic content** (images, audio, video) that could look real: whoever publishes it discloses it to the user, the tool that generates it marks it in a machine-readable way.
+- The obligations apply from **2 August 2026**; for systems already on the market before that date, the providers' marking duty starts on 2 December 2026.
 - Not every AI-assisted text needs a label: the test is the risk of it being mistaken for authentic.
-- Machine-readable marking (metadata / watermark) is distinct from the visible label: you need both.
+- Machine-readable marking (metadata, watermark) is distinct from the visible label: the tool applies the first, you decide the second, and you need both.
 - A clear labeling process covers AI Act, GDPR and consumer law together.
 
 ## What art. 50 actually asks
@@ -56,7 +57,7 @@ From August 2026 this becomes an operational obligation, not a best practice. He
 Art. 50 of the AI Act is about **transparency**. It splits into two obligations that, in marketing, often overlap:
 
 1. **Disclosure to the user**: when you publish content generated or manipulated by AI that could appear authentic (a person, place or event that looks real), you must say so clearly and understandably.
-2. **Machine-readable marking**: the content must carry a marker readable by machines, typically metadata or a digital watermark, certifying its artificial origin even when re-shared beyond your channel.
+2. **Machine-readable marking**: the content must carry a marker readable by machines, typically metadata or a digital watermark, certifying its artificial origin even when re-shared beyond your channel. It is a duty of the generative tool's provider (para. 2): your part is not losing it along the way.
 
 The difference matters. The visible label serves the human looking at the post. The machine-readable marking serves platforms, engines and other systems that process the content downstream.
 
@@ -82,7 +83,7 @@ A short, consistent wording (e.g. "Image generated with AI") applied uniformly. 
 
 ### 3. Verify the machine-readable marking
 
-Many serious generative tools already embed provenance metadata (standards like C2PA). Don't assume: check it survives the export and the publish step on your platform. If your flow strips the metadata, that is the point to fix.
+Many serious generative tools already embed provenance metadata (standards such as [C2PA](https://c2pa.org/)). Don't assume: check it survives the export and the publish step on your platform. If your flow strips the metadata, that is the point to fix.
 
 ### 4. Write one line in your AI policy
 

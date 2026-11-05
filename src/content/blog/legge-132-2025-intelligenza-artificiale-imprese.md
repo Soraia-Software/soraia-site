@@ -2,7 +2,7 @@
 title: "Legge 132/2025 IA: cosa cambia per le imprese"
 description: "La legge italiana sull'IA (132/2025) e' in vigore da ottobre 2025. Cosa aggiunge all'AI Act per le imprese, tra AgID, ACN e il fondo da 1 miliardo per le PMI."
 pubDate: 2026-08-17
-updatedDate: 2026-10-18
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "ai act"
@@ -23,7 +23,7 @@ faq:
   - q: "Chi sono AgID e ACN e cosa devono fare le imprese?"
     a: "<strong>AgID</strong> (Agenzia per l'Italia Digitale) e' l'autorita' per la notifica e la promozione dell'IA; <strong>ACN</strong> (Agenzia per la Cybersicurezza Nazionale) vigila su sicurezza e ispezioni. Per la maggior parte delle PMI non cambia l'operativita' quotidiana, ma sono queste le autorita' con cui ci si interfaccia in caso di controlli o notifiche."
   - q: "Il fondo da 1 miliardo e' accessibile alla mia PMI?"
-    a: "Il fondo previsto e' destinato a investimenti in IA, cybersicurezza e tecnologie emergenti per startup e PMI, gestito tramite veicoli pubblici. Non e' un contributo automatico: dipende dai bandi attuativi. Vale la pena monitorarlo, ma non costruire il business case dell'IA aspettando quei fondi."
+    a: "La legge autorizza fino a 1 miliardo di euro di investimenti in capitale di rischio, gestiti da CDP Venture Capital, in startup e PMI innovative attive in IA, cybersicurezza e tecnologie emergenti. Non è un contributo a fondo perduto: riguarda chi cerca un investitore nel capitale, non chi vuole finanziare un progetto interno. Per quello servono i <a href='/bandi/'>bandi per la digitalizzazione</a>."
   - q: "Devo fare qualcosa di diverso rispetto a quello che gia' faccio per l'AI Act?"
     a: "Se sei gia' allineato all'AI Act (risk assessment, log delle decisioni, supervisione umana, DPA art. 28), sei in larga parte coperto. La legge 132/2025 aggiunge principi nazionali, obblighi di trasparenza rafforzati in alcuni ambiti e le autorita' italiane di riferimento. Un check mirato al tuo caso chiude il gap."
 lang: "it"
@@ -40,24 +40,24 @@ gates:
 draft: false
 ---
 
-In vigore da ottobre 2025, la **legge 132/2025** e' la prima legge italiana organica sull'intelligenza artificiale. La domanda che ci fanno i CEO e i DPO e': *"ho gia' fatto i compiti sull'AI Act, ora devo rifare tutto?"*
+In vigore dal 10 ottobre 2025, la **[legge 132/2025](https://www.normattiva.it/eli/id/2025/09/25/25G00143/CONSOLIDATED)** e' la prima legge italiana organica sull'intelligenza artificiale. La domanda che ci fanno i CEO e i DPO e': *"ho gia' fatto i compiti sull'AI Act, ora devo rifare tutto?"*
 
 Risposta onesta: no. Ma qualcosa si aggiunge, e conviene sapere cosa.
 
 **In breve:**
 - La **legge 132/2025 non sostituisce l'AI Act europeo**: si affianca, definisce principi nazionali e individua le autorita' competenti italiane.
 - Le due autorita' di riferimento sono **AgID** (notifica e promozione) e **ACN** (sicurezza e ispezioni).
-- E' previsto un **fondo fino a 1 miliardo di euro** per investimenti in IA, cybersicurezza e tecnologie emergenti, orientato a startup e PMI, ma subordinato ai bandi attuativi.
+- La legge autorizza fino a **1 miliardo di euro** di investimenti in capitale di rischio, gestiti da CDP Venture Capital, in startup e PMI di IA, cybersicurezza e tecnologie emergenti: non è un contributo a fondo perduto.
 - Per la maggior parte delle PMI gli adempimenti operativi restano quelli dell'AI Act: chi e' gia' allineato deve solo colmare un piccolo delta.
 - Non aspettare i fondi pubblici per costruire il business case dell'IA: il ROI va misurato sul tuo processo, non sul bando.
 
 ## Cosa e' la legge 132/2025 (in 40 parole)
 
-La legge 132/2025 e' la normativa nazionale italiana sull'intelligenza artificiale, entrata in vigore a ottobre 2025. Stabilisce principi generali (centralita' della persona, trasparenza, sicurezza, supervisione umana), individua le autorita' competenti nazionali e introduce misure di sostegno agli investimenti, in coordinamento con il Regolamento europeo IA.
+La legge 132/2025 e' la normativa nazionale italiana sull'intelligenza artificiale, entrata in vigore il 10 ottobre 2025. Stabilisce principi generali (centralita' della persona, trasparenza, sicurezza, supervisione umana), individua le autorita' competenti nazionali e introduce misure di sostegno agli investimenti, in coordinamento con il Regolamento europeo IA.
 
 ## Come si sovrappone all'AI Act
 
-L'AI Act europeo resta la fonte primaria per gli obblighi sostanziali, soprattutto sui sistemi ad **alto rischio** (recruitment automatico, scoring, sanita'). Se hai gia' seguito la nostra [guida all'AI Act per le aziende](/guide/ai-act-aziende), la parte pesante l'hai gia' impostata.
+L'[AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) europeo resta la fonte primaria per gli obblighi sostanziali, soprattutto sui sistemi ad **alto rischio** (recruitment automatico, scoring, sanita'). Se hai gia' seguito la nostra [guida all'AI Act per le aziende](/guide/ai-act-aziende), la parte pesante l'hai gia' impostata.
 
 La legge italiana lavora su tre piani diversi:
 
@@ -78,9 +78,9 @@ Tradotto: gli audit log immutabili, il risk assessment e la documentazione che g
 
 ## Il fondo da 1 miliardo: opportunita', non certezza
 
-La legge prevede un **fondo fino a 1 miliardo di euro** per investimenti in IA, cybersicurezza e tecnologie emergenti, orientato a startup e PMI. E' un segnale forte, ma va letto con calma:
+La legge autorizza fino a **1 miliardo di euro** di investimenti in capitale di rischio in IA, cybersicurezza e tecnologie emergenti, gestiti da CDP Venture Capital e rivolti a startup e PMI innovative. E' un segnale forte, ma va letto con calma:
 
-- Non e' un contributo automatico: dipende dai **bandi attuativi** e dai veicoli di gestione.
+- Non è un contributo a fondo perduto: è **capitale di rischio**, quindi riguarda chi cerca un investitore, non chi vuole finanziare un progetto interno.
 - La platea e' ampia, quindi la competizione sara' alta.
 - Il rischio e' costruire il business case dell'IA *aspettando* il fondo.
 

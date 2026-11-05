@@ -1,8 +1,8 @@
 ---
-title: "Adozione AI PMI italiane: i dati 2026 e dove sono ferme"
-description: "Quanto usano davvero l'IA le PMI italiane nel 2026? I numeri Istat, il freno delle competenze e un benchmark onesto per capire dove ti trovi."
+title: "Adozione AI PMI italiane: i dati Istat e dove sono ferme"
+description: "Quanto usano davvero l’IA le PMI italiane? Gli ultimi numeri Istat, il freno delle competenze e un benchmark onesto per capire dove ti trovi."
 pubDate: 2026-09-18
-updatedDate: 2026-10-18
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "ai adoption"
@@ -16,16 +16,16 @@ keywords:
   - "benchmark ai italia"
 readMinutes: 8
 featured: false
-h1: "Adozione AI nelle PMI italiane: i dati 2026 e dove sono davvero ferme"
+h1: "Adozione AI nelle PMI italiane: i dati Istat e dove sono davvero ferme"
 faq:
-  - q: "Quante PMI italiane usano davvero l'IA nel 2026?"
-    a: "Secondo i dati Istat riportati dal Rapporto 2026, circa il <strong>16,4% delle imprese italiane</strong> usa almeno una tecnologia di intelligenza artificiale. La quota cresce con la dimensione aziendale: le micro e piccole imprese restano molto sotto questa media, le medie e grandi la superano nettamente."
+  - q: "Quante PMI italiane usano davvero l’IA?"
+    a: "Secondo l’ultima <a href='https://www.istat.it/comunicato-stampa/imprese-e-ict-anno-2025/'>rilevazione Istat su imprese e ICT</a>, nel 2025 il <strong>16,4% delle imprese con almeno 10 addetti</strong> usa almeno una tecnologia di intelligenza artificiale, il doppio dell’8,2% del 2024. Tra le PMI la quota è del 15,7%, tra le grandi imprese del 53,1%: un divario di 37 punti percentuali, che nel 2023 era di circa 20."
   - q: "Perche' le PMI italiane sono ferme sull'adozione AI?"
-    a: "Il freno principale non e' il costo del software ne' la tecnologia: sono le <strong>competenze interne</strong>. Senza qualcuno in azienda che sappia dove applicare l'IA, mappare un processo e misurarne il risultato, gli strumenti restano inutilizzati o si fermano a esperimenti individuali su ChatGPT."
+    a: "Il freno principale non è il costo del software né la tecnologia: sono le <strong>competenze interne</strong>. Secondo l’Istat, tra le imprese che hanno valutato l’IA senza adottarla il 58,6% indica la mancanza di competenze, contro il 43,0% che cita i costi elevati. Senza qualcuno in azienda che sappia dove applicare l’IA, mappare un processo e misurarne il risultato, gli strumenti restano inutilizzati o si fermano a esperimenti individuali su ChatGPT."
   - q: "Cosa devo fare prima di adottare l'IA nella mia PMI?"
     a: "Misura una baseline. Prima di comprare qualsiasi cosa, cronometra 2-3 processi ripetitivi ad alto volume e quantifica quanto costano oggi. Senza baseline non puoi capire dove l'IA rende, ne' verificare se ha funzionato. E' anche il motivo per cui la garanzia <strong>primo mese soddisfatti o rimborsati</strong> ha senso solo con numeri di partenza chiari."
   - q: "L'AI Act blocca l'adozione dell'IA nelle PMI?"
-    a: "No. Dal <strong>agosto 2026</strong> l'AI Act e' pienamente applicabile, ma per la maggior parte delle PMI gli obblighi diretti sono limitati (trasparenza, supervisione umana sui casi critici, DPA art. 28 GDPR con i fornitori). Non e' un motivo per non adottare l'IA, e' un motivo per adottarla con governance dal primo giorno."
+    a: "No. Da <strong>agosto 2026</strong> si applica gran parte dell’AI Act, mentre gli obblighi per i sistemi ad alto rischio dell’Allegato III slittano al 2 dicembre 2027 con il Digital Omnibus. Per la maggior parte delle PMI gli obblighi diretti sono limitati (trasparenza verso chi parla con un chatbot, formazione del personale che usa l’IA e, per i dati personali, il DPA art. 28 GDPR con i fornitori). Non è un motivo per non adottare l’IA, è un motivo per adottarla con governance dal primo giorno."
   - q: "Da dove conviene partire con un budget contenuto?"
     a: "Da un <strong>solo processo</strong> ad alto volume con output strutturato che finisce nei tuoi sistemi (CV, fatture, ticket). Un singolo agente ben scelto batte dieci esperimenti sparsi. La prima delivery in Soraia arriva in 4 settimane, cosi' hai un dato reale prima di investire oltre."
 lang: "it"
@@ -44,12 +44,12 @@ draft: false
 
 Ogni settimana un CEO ci chiede la stessa cosa in una versione o nell'altra: *"siamo indietro rispetto agli altri?"*.
 
-La domanda giusta non e' quella. E' *"indietro rispetto a chi, e su cosa?"*. Perche' i dati 2026 raccontano un'Italia dove l'adozione media e' bassa, ma il divario reale non e' tra chi ha comprato l'IA e chi no. E' tra chi ha le competenze per usarla e chi no.
+La domanda giusta non e' quella. E' *"indietro rispetto a chi, e su cosa?"*. Perché gli ultimi dati Istat raccontano un'Italia dove l'adozione media è bassa, ma il divario reale non è tra chi ha comprato l'IA e chi no. E' tra chi ha le competenze per usarla e chi no.
 
 **In breve:**
-- Secondo i dati Istat 2026, circa il **16,4% delle imprese italiane** usa almeno una tecnologia di intelligenza artificiale: la media e' bassa e trainata dalle imprese piu' grandi.
-- Il freno numero uno non e' il costo ne' la tecnologia, sono le **competenze interne**: senza chi sa dove applicarla, l'IA resta un esperimento individuale su ChatGPT.
-- Dal **agosto 2026** l'AI Act e' pienamente applicabile, ma per la maggior parte delle PMI gli obblighi diretti sono limitati e non giustificano l'attesa.
+- Secondo l'[Istat](https://www.istat.it/comunicato-stampa/imprese-e-ict-anno-2025/), nel 2025 il **16,4% delle imprese con almeno 10 addetti** usa almeno una tecnologia di intelligenza artificiale, il doppio del 2024: tra le grandi imprese è al 53,1%, tra le PMI al 15,7%.
+- Il freno numero uno non è il costo né la tecnologia, sono le **competenze interne** (le cita il 58,6% delle imprese che hanno valutato l'IA senza adottarla): senza chi sa dove applicarla, l'IA resta un esperimento individuale su ChatGPT.
+- Da **agosto 2026** si applica gran parte dell'AI Act (l'alto rischio slitta a dicembre 2027), ma per la maggior parte delle PMI gli obblighi diretti sono limitati e non giustificano l'attesa.
 - Il benchmark che conta non e' "quanta IA usi", e' "quanti processi ad alto volume hai automatizzato con un risultato misurato".
 - Prima di comprare qualsiasi cosa serve una **baseline**: senza numeri di partenza non puoi capire dove l'IA rende, ne' verificare se ha funzionato.
 
@@ -59,20 +59,24 @@ Adozione AI, in una PMI, e' l'uso stabile e ripetuto di sistemi di intelligenza 
 
 Questa distinzione e' tutto. Un'azienda dove 30 persone usano ChatGPT a modo loro ha "adottato l'IA" nelle statistiche, ma non ha cambiato un solo processo. Un'azienda con un unico agente che processa fatture in autonomia ha adottato meno strumenti e ottenuto molto di piu'.
 
-## I numeri Istat 2026: dove siamo davvero
+## I numeri Istat: dove siamo davvero
 
-Secondo i dati Istat ripresi dal Rapporto 2026 sulle competenze AI, circa il **16,4% delle imprese italiane** utilizza almeno una tecnologia di intelligenza artificiale. E' una media, e le medie ingannano.
+Secondo la [rilevazione Istat su imprese e ICT](https://www.istat.it/comunicato-stampa/imprese-e-ict-anno-2025/), pubblicata a dicembre 2025, il **16,4% delle imprese con almeno 10 addetti** utilizza almeno una tecnologia di intelligenza artificiale: era l'8,2% nel 2024 e il 5,0% nel 2023. È una media, e le medie ingannano.
 
 La quota si muove con la dimensione:
-- Le **micro imprese** (sotto i 10 addetti) restano molto sotto la media.
-- Le **piccole** (10-49) sono attorno o poco sotto.
-- Le **medie e grandi** superano nettamente la media, in alcuni comparti la doppiano.
+- Le **PMI** sono al 15,7%, il doppio del 7,7% del 2024.
+- Le **grandi imprese** sono al 53,1%, dal 32,5% del 2024.
+- Il **divario** tra grandi imprese e PMI è salito a 37 punti percentuali, da circa 20 nel 2023.
 
-Tradotto: se sei una PMI da 10-200 persone, il tuo vero confronto non e' con la media nazionale, e' con le aziende della tua fascia e del tuo settore. E la fascia media e' esattamente quella dove il divario si sta allargando piu' in fretta.
+La rilevazione riguarda le imprese con almeno 10 addetti: le micro imprese ne restano fuori.
+
+Tradotto: se sei una PMI da 10-200 persone, il tuo vero confronto non e' con la media nazionale, e' con le aziende della tua fascia e del tuo settore. E il divario con le grandi imprese si sta allargando, non chiudendo.
 
 ## Perche' le PMI italiane sono ferme (non e' il costo)
 
-Qui il dato piu' onesto: il freno principale non e' il prezzo del software. E' la **competenza interna**.
+Qui il dato più onesto: il freno principale non è il prezzo del software. È la **competenza interna**.
+
+Lo conferma l'Istat: tra le imprese che hanno valutato l'IA senza adottarla, il 58,6% indica come ostacolo la mancanza di competenze, contro il 43,0% che cita i costi elevati.
 
 Lo vediamo in ogni analisi dei processi. L'azienda ha budget, ha processi ripetitivi evidenti, a volte ha gia' pagato una licenza enterprise. Quello che manca e' qualcuno che sappia:
 - riconoscere quale processo vale la pena automatizzare;
@@ -83,9 +87,9 @@ Senza questa competenza, gli strumenti restano fermi. La licenza ChatGPT diventa
 
 ## E l'AI Act? Non e' l'alibi che sembra
 
-Dal **agosto 2026** l'AI Act e' pienamente applicabile e molti CEO lo usano, consapevolmente o no, come motivo per rimandare. E' un errore di lettura.
+Da **agosto 2026** si applica gran parte dell'[AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj), mentre gli obblighi per i sistemi ad alto rischio dell'Allegato III slittano al 2 dicembre 2027 con il [Digital Omnibus](https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai). Molti CEO usano l'AI Act, consapevolmente o no, come motivo per rimandare. È un errore di lettura.
 
-Per la maggior parte delle PMI gli obblighi diretti sono limitati: trasparenza verso gli utenti dei chatbot, supervisione umana sui casi critici, DPA art. 28 GDPR con i fornitori. Solo alcuni usi (recruitment automatico, scoring credito) ricadono in fascia alta con obblighi pesanti.
+Per la maggior parte delle PMI gli obblighi diretti sono limitati: trasparenza verso chi parla con un chatbot e formazione del personale che usa l'IA, a cui si aggiunge, per i dati personali, il DPA art. 28 GDPR con i fornitori. Solo alcuni usi (recruitment automatico, scoring credito) ricadono in fascia alta con obblighi pesanti.
 
 L'AI Act non e' un motivo per non adottare l'IA. E' un motivo per adottarla con governance dal primo giorno: audit log delle decisioni, umano nel loop sui casi sensibili, hosting UE dove serve. Cose che, se costruite bene fin dall'inizio, costano poco e ti tolgono il problema.
 

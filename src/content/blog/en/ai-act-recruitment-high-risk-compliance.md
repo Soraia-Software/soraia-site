@@ -1,7 +1,8 @@
 ---
-title: "AI Act & recruitment: what to do before August 2026"
+title: "AI Act & recruitment: what to do before December 2027"
 description: "The AI Act classifies AI used for staff selection as a high-risk system. The 5 concrete obligations (human oversight, candidate notice, logs) to avoid fines."
 pubDate: 2026-06-23
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "ai act"
@@ -20,8 +21,8 @@ h1: "AI Act & recruitment: why it's high-risk and what you need to do"
 faq:
   - q: "Is using AI to screen CVs really 'high-risk' under the AI Act?"
     a: "Yes. Annex III of the Regulation classifies as <strong>high-risk</strong> AI systems used for selection, screening, evaluation and decisions that significantly affect hiring or promotion. Automated CV filtering falls inside. This doesn't ban the use: it imposes specific obligations (human oversight, notice, logs, risk assessment)."
-  - q: "What obligations kick in from August 2026 for AI in recruitment?"
-    a: "Five main ones: <strong>effective human oversight</strong> on decisions, <strong>candidate notice</strong> that AI is involved, <strong>immutable logging</strong> of every decision, a <strong>documented risk assessment</strong> (linked to a GDPR DPIA) and record retention. Add the art. 28 DPA with your provider. Note: systems already in use before 2 August 2026 get a longer transition window; for a new project the reference date is August 2026."
+  - q: "What obligations apply to AI in recruitment?"
+    a: "Five main ones: <strong>effective human oversight</strong> on decisions, <strong>candidate notice</strong> that AI is involved, <strong>immutable logging</strong> of every decision, a <strong>documented risk assessment</strong> (linked to a GDPR DPIA) and record retention. Add the art. 28 DPA with your provider. With the Digital Omnibus these obligations apply from 2 December 2027: it pays to get there with the process already in place."
   - q: "If I buy an ATS with built-in AI, is liability the vendor's?"
     a: "No, not entirely. The vendor is the 'provider', but you who use it are the <strong>deployer</strong> with your own duties: ensuring human oversight, informing candidates, keeping logs, using it within scope. Get in writing what the vendor covers and what stays with you."
   - q: "What fines does the AI Act provide?"
@@ -32,7 +33,7 @@ lang: "en"
 draft: false
 ---
 
-From 2 August 2026 the AI Act's obligations for high-risk systems placed on the market kick in. And if you use AI to screen CVs or evaluate candidates, you're inside it: the **AI Act on staff selection** classifies it as a high-risk system.
+From 2 December 2027 the [AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)'s obligations for Annex III high-risk systems kick in: the [Digital Omnibus](https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai) moved them from August 2026. And if you use AI to screen CVs or evaluate candidates, you're inside it: the **AI Act on staff selection** classifies it as a high-risk system.
 
 This isn't the general AI Act guide (that's in our [AI Act for companies guide](/en/guide/ai-act-for-business)). Here we cover only the HR/recruitment angle, where the obligations are heaviest for an SME.
 
@@ -60,7 +61,7 @@ A human rubber-stamping everything with one click isn't enough. You need a perso
 
 ### 2. Candidate notice
 
-Candidates must know an AI system is involved in the process. In Italy this also ties to the Transparency Decree and art. 22 GDPR on automated decisions. Put it in writing in the privacy notice for your selection process.
+Candidates must know an AI system is involved in the process. In Italy this also ties to the [Transparency Decree](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2022-06-27;104) and art. 22 of the [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj) on automated decisions. Put it in writing in the privacy notice for your selection process.
 
 ### 3. Immutable logging
 
