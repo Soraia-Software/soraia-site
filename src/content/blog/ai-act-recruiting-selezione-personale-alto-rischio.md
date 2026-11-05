@@ -1,7 +1,8 @@
 ---
-title: "AI Act e selezione del personale: gli obblighi 2026"
+title: "AI Act e selezione del personale: obblighi per chi assume"
 description: "L'AI Act classifica l'IA per la selezione del personale come sistema ad alto rischio. I 5 obblighi (sorveglianza, informativa, log) per non rischiare multe."
 pubDate: 2026-06-23
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "ai act"
@@ -20,8 +21,8 @@ h1: "AI Act e selezione del personale: perché è alto rischio e cosa serve fare
 faq:
   - q: "Usare l'IA per fare screening dei CV è davvero 'alto rischio' secondo l'AI Act?"
     a: "Sì. L'Allegato III del Regolamento classifica come <strong>alto rischio</strong> i sistemi IA usati per selezione, screening, valutazione e decisioni che influenzano significativamente assunzioni o avanzamenti. Il filtro automatico dei CV ricade dentro. Questo non vieta l'uso: impone obblighi specifici (sorveglianza umana, informativa, log, risk assessment)."
-  - q: "Quali obblighi scattano da agosto 2026 per chi usa IA nel recruiting?"
-    a: "I principali sono cinque: <strong>sorveglianza umana effettiva</strong> sulle decisioni, <strong>informativa ai candidati</strong> che l'IA è coinvolta, <strong>logging immutabile</strong> di ogni decisione, un <strong>risk assessment documentato</strong> (con DPIA GDPR collegata) e la conservazione dei record. Va aggiunto il DPA art. 28 con il fornitore. Nota: i sistemi già in uso prima del 2 agosto 2026 hanno una finestra di adeguamento più lunga; per un nuovo progetto la data di riferimento è agosto 2026."
+  - q: "Quali obblighi ha chi usa l’IA nel recruiting?"
+    a: "I principali sono cinque: <strong>sorveglianza umana effettiva</strong> sulle decisioni, <strong>informativa ai candidati</strong> che l'IA è coinvolta, <strong>logging immutabile</strong> di ogni decisione, un <strong>risk assessment documentato</strong> (con DPIA GDPR collegata) e la conservazione dei record. Va aggiunto il DPA art. 28 con il fornitore. Con il Digital Omnibus questi obblighi si applicano dal 2 dicembre 2027: conviene arrivarci con il processo già impostato."
   - q: "Se compro un software ATS con IA integrata, la responsabilità è del vendor?"
     a: "No, non tutta. Il fornitore è il 'provider', ma tu che lo usi sei il <strong>deployer</strong> e hai obblighi tuoi: garantire la sorveglianza umana, informare i candidati, conservare i log, usarlo nei limiti previsti. Verifica per iscritto cosa copre il vendor e cosa resta a te."
   - q: "Quali sono le multe previste dall'AI Act?"
@@ -32,7 +33,7 @@ lang: "it"
 draft: false
 ---
 
-Dal 2 agosto 2026 scattano gli obblighi dell'AI Act per i sistemi ad alto rischio immessi sul mercato. E se usi l'IA per fare screening dei CV o valutare candidati, ci sei dentro: l'**ai act selezione del personale** la classifica come sistema ad alto rischio.
+Dal 2 dicembre 2027 scattano gli obblighi dell'[AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) per i sistemi ad alto rischio dell'Allegato III: il [Digital Omnibus](https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai) li ha spostati da agosto 2026. E se usi l'IA per fare screening dei CV o valutare candidati, ci sei dentro: l'**ai act selezione del personale** la classifica come sistema ad alto rischio.
 
 Non è la guida generale all'AI Act (quella la trovi nella [guida AI Act per aziende](/guide/ai-act-aziende)). Qui parliamo solo dell'angolo HR/recruiting, dove gli obblighi sono i più pesanti per una PMI.
 
@@ -60,7 +61,7 @@ Non basta un umano che approva tutto con un click. Serve una persona che **possa
 
 ### 2. Informativa ai candidati
 
-I candidati devono sapere che un sistema IA è coinvolto nel processo. In Italia si lega anche al cosiddetto Decreto Trasparenza e all'art. 22 GDPR sulle decisioni automatizzate. Va messo nero su bianco nell'informativa privacy del processo di selezione.
+I candidati devono sapere che un sistema IA è coinvolto nel processo. In Italia si lega anche al [Decreto Trasparenza](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2022-06-27;104) e all'art. 22 del [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj) sulle decisioni automatizzate. Va messo nero su bianco nell'informativa privacy del processo di selezione.
 
 ### 3. Logging immutabile
 

@@ -2,6 +2,7 @@
 title: "GDPR and AI agents on company data: what to fix first"
 description: "An AI agent reading customer or candidate data processes personal data. Legal basis, art. 28 DPA and DPIA: the GDPR checklist to close before you switch it on."
 pubDate: 2026-09-14
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "gdpr"
@@ -22,9 +23,9 @@ faq:
   - q: "Do I need a DPA if I use an external provider for the AI agent?"
     a: "Yes. If the provider (Soraia, OpenAI, Anthropic or others) processes data on your behalf, it is a processor and you need a <strong>Data Processing Agreement under art. 28 GDPR</strong>. At Soraia the DPA is included in every sprint contract, along with a commitment not to use your data to train the LLMs."
   - q: "When do I need a DPIA for an AI agent?"
-    a: "When processing is large-scale, involves special categories of data, or has a significant effect on people, for example automated CV screening. In those cases a data protection impact assessment (DPIA) is mandatory and must be done before go-live."
+    a: "When the processing is likely to result in a high risk to people. The Italian data protection authority’s <a href='https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9058979'>list of processing that requires a DPIA</a> includes artificial intelligence systems whenever at least one other risk criterion applies, such as evaluating or scoring people: automated CV screening qualifies. In those cases a data protection impact assessment (DPIA) is mandatory and must be done before go-live."
   - q: "Can the regulator shut down an AI agent in production?"
-    a: "Yes: the supervisory authority can order suspension of the processing under art. 58(2)(f) GDPR. The practical risk, though, is not the theoretical maximum fine: it is having to switch the agent off because you cannot explain which legal basis covers it, where the data goes, and who supervises the decisions. Closing those three points first removes the main exposure."
+    a: "Yes: the supervisory authority can impose a temporary or definitive limitation on processing, including a ban, under art. 58(2)(f) GDPR. It has already happened to an AI service: in March 2023 the Italian Garante imposed on OpenAI a <a href='https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9870832'>temporary limitation on processing</a> the personal data of people in Italy through ChatGPT. The practical risk, though, is not the theoretical maximum fine: it is having to switch the agent off because you cannot explain which legal basis covers it, where the data goes, and who supervises the decisions. Closing those three points first removes the main exposure."
 lang: "en"
 gates:
   passedAt: 2026-08-25T05:12:40.427Z
@@ -43,7 +44,7 @@ On the first call the technical question is always the same: *"can the agent rea
 
 Honest answer: almost always yes, but only if you close three things before you switch the agent on. Not after. Leave them open and the agent stays a risk that someone eventually asks you to shut down.
 
-The EU AI Act (covered in our [dedicated guide](/en/guide/ai-act-for-business)) answers "what kind of system is this". GDPR answers "can you process this data with this system". Two different lenses. This post is about the second.
+The EU AI Act (covered in our [dedicated guide](/en/guide/ai-act-for-business)) answers "what kind of system is this". [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj) answers "can you process this data with this system". Two different lenses. This post is about the second.
 
 ## What GDPR requires before switching on an AI agent
 
@@ -92,7 +93,7 @@ At Soraia the art. 28 DPA is included in every sprint contract, with an explicit
 
 ## Step 4. Run the DPIA where the impact is high
 
-A data protection impact assessment (DPIA) is mandatory when processing is large-scale, involves special categories of data, or has a significant effect on people. **CV screening** almost always qualifies. An agent reconciling internal invoices usually does not.
+A data protection impact assessment (DPIA) is mandatory when the processing is likely to result in a high risk to people. Art. 35 GDPR names automated evaluations that produce significant effects, large-scale processing of special categories of data and systematic monitoring of publicly accessible areas. For AI agents the key reference is the Italian Garante’s [list of processing that requires a DPIA](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9058979): AI systems are on it whenever at least one other risk criterion from the European guidelines applies, such as evaluating or scoring people. **CV screening** almost always qualifies. An agent reconciling internal invoices usually does not.
 
 The DPIA must be done **before** go-live and kept alive. In our sprints for regulated sectors we deliver it as a deliverable, together with the immutable audit log of every agent decision, which is what lets you answer "why did the system do X".
 

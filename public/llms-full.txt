@@ -53,8 +53,8 @@ Manager e AI Engineer, lo Sprint Goal firmato a inizio mese, la demo a meta' mes
 rilascio a fine mese, crittografia dei dati, backup, accessi per ruolo, sviluppo secondo le
 best practice OWASP, cifratura dei campi sensibili, log di audit, policy di conservazione e
 cancellazione, test di carico, monitoraggio e SLA di disponibilita', l'import dello storico
-e la migrazione dei dati dai sistemi in uso, il portale cliente e tre mesi di richieste di
-cambiamento incluse dopo il rilascio. Hypercare: da 500 euro al mese, facoltativa, con
+e la migrazione dei dati dai sistemi in uso, il portale cliente e un mese di richieste di
+cambiamento incluso dopo il rilascio. Hypercare: da 500 euro al mese, facoltativa, con
 contratto annuale dal go-live; monitoraggio, correzione dei malfunzionamenti, aggiornamenti
 di sicurezza e tecnici, test mensile delle risposte degli agenti IA su casi reali,
 ottimizzazione delle istruzioni quando la qualita' cala, controllo dei costi delle API con

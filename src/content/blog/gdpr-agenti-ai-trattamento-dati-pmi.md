@@ -2,6 +2,7 @@
 title: "GDPR e agente IA sui dati aziendali: cosa fare prima"
 description: "Un agente IA che legge dati di clienti o candidati tratta dati personali. Base giuridica, DPA art. 28 e DPIA: la checklist GDPR da chiudere prima di accenderlo."
 pubDate: 2026-09-14
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "gdpr"
@@ -22,9 +23,9 @@ faq:
   - q: "Serve un DPA se uso un fornitore esterno per l'agente IA?"
     a: "Sì. Se il fornitore (Soraia, OpenAI, Anthropic o altri) tratta dati per tuo conto, è un responsabile del trattamento e serve un <strong>Data Processing Agreement ex art. 28 GDPR</strong>. In Soraia il DPA è incluso nel contratto di ogni sprint, insieme all'impegno a non usare i tuoi dati per addestrare gli LLM."
   - q: "Quando devo fare una DPIA per un agente IA?"
-    a: "Quando il trattamento è su larga scala, riguarda categorie particolari di dati o produce effetti significativi sulle persone: per esempio uno screening CV automatizzato. In questi casi la valutazione d'impatto (DPIA) è obbligatoria e va fatta prima di andare live."
+    a: "Quando il trattamento può presentare un rischio elevato per le persone. L’<a href='https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9058979'>elenco del Garante</a> dei trattamenti soggetti a DPIA include i sistemi di intelligenza artificiale ogni volta che ricorre anche un altro criterio di rischio, come la valutazione o lo scoring delle persone: uno screening CV automatizzato ci rientra. In questi casi la valutazione d’impatto (DPIA) è obbligatoria e va fatta prima di andare live."
   - q: "Il Garante può bloccare un agente IA in produzione?"
-    a: "Sì: l'autorità di controllo può ordinare la sospensione del trattamento ai sensi dell'art. 58(2)(f) GDPR. Il rischio pratico però non è la sanzione massima teorica: è dover spegnere l'agente perché non sai spiegare quale base giuridica lo copre, dove finiscono i dati e chi supervisiona le decisioni. Chiudere questi tre punti prima elimina l'esposizione principale."
+    a: "Sì: l’autorità di controllo può imporre una limitazione provvisoria o definitiva del trattamento, fino al divieto, ai sensi dell’art. 58(2)(f) GDPR. Con un servizio di IA è già successo: nel marzo 2023 il Garante ha imposto a OpenAI la <a href='https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9870832'>limitazione provvisoria del trattamento</a> dei dati delle persone stabilite in Italia tramite ChatGPT. Il rischio pratico però non è la sanzione massima teorica: è dover spegnere l’agente perché non sai spiegare quale base giuridica lo copre, dove finiscono i dati e chi supervisiona le decisioni. Chiudere questi tre punti prima elimina l’esposizione principale."
 lang: "it"
 gates:
   passedAt: 2026-08-25T05:12:40.427Z
@@ -43,7 +44,7 @@ Alla prima call la domanda tecnica è sempre la stessa: *"l'agente può leggere 
 
 La risposta onesta: quasi sempre sì, ma solo se chiudi tre cose prima di accendere l'agente. Non dopo. Se le lasci aperte, l'agente resta un rischio che qualcuno prima o poi ti chiede di spegnere.
 
-L'AI Act (ne parliamo nella [guida dedicata](/guide/ai-act-aziende)) risponde a "che tipo di sistema è". Il GDPR risponde a "puoi trattare questi dati con questo sistema". Sono due lenti diverse. Qui parliamo della seconda.
+L'AI Act (ne parliamo nella [guida dedicata](/guide/ai-act-aziende)) risponde a "che tipo di sistema è". Il [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj) risponde a "puoi trattare questi dati con questo sistema". Sono due lenti diverse. Qui parliamo della seconda.
 
 ## Cosa chiede il GDPR prima di accendere un agente IA
 
@@ -92,7 +93,7 @@ In Soraia il DPA art. 28 è incluso nel contratto di ogni sprint, con impegno es
 
 ## Passo 4. Fai la DPIA dove l'impatto è alto
 
-La valutazione d'impatto (DPIA) è obbligatoria quando il trattamento è su larga scala, tocca categorie particolari di dati o produce effetti significativi sulle persone. Lo **screening CV** rientra quasi sempre. Un agente che riconcilia fatture interne, di norma no.
+La valutazione d'impatto (DPIA) è obbligatoria quando il trattamento può presentare un rischio elevato per le persone. L'art. 35 del GDPR cita le valutazioni automatizzate che producono effetti significativi, il trattamento su larga scala di categorie particolari di dati e la sorveglianza sistematica di zone accessibili al pubblico. Per gli agenti IA conta soprattutto l'[elenco del Garante](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9058979) dei trattamenti da sottoporre a DPIA: i sistemi di intelligenza artificiale ci rientrano ogni volta che ricorre anche un altro dei criteri di rischio delle linee guida europee, per esempio la valutazione o lo scoring delle persone. Lo **screening CV** rientra quasi sempre. Un agente che riconcilia fatture interne, di norma no.
 
 La DPIA va fatta **prima** del go-live e va tenuta viva. Nei nostri sprint su settori regolamentati la consegniamo come deliverable, insieme all'audit log immutabile di ogni decisione dell'agente, che è ciò che ti permette di rispondere "perché il sistema ha fatto X".
 

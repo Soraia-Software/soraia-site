@@ -2,6 +2,7 @@
 title: "Digital Omnibus: l'AI Act alto rischio slitta al 2027"
 description: "Il Digital Omnibus rinvia l'Allegato III al 2027. Ma ad agosto 2026 restano obbligatori trasparenza (art. 50), literacy (art. 4) e i divieti. Cosa fare in PMI."
 pubDate: 2026-08-21
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "ai act"
@@ -19,11 +20,11 @@ featured: false
 h1: "Digital Omnibus: l'alto rischio slitta al 2027, cosa resta live ad agosto 2026"
 faq:
   - q: "Il Digital Omnibus cancella i miei obblighi AI Act?"
-    a: "No. Sposta più avanti gli obblighi <strong>ad alto rischio</strong> dell'Allegato III (fino a fine 2027 secondo la proposta). Restano invece pienamente in vigore ad agosto 2026 i divieti, l'obbligo di trasparenza dell'art. 50 (dire all'utente che parla con un'AI) e l'AI literacy dell'art. 4 (formare il team). Chi usa chatbot o agenti client-facing deve adeguarsi comunque."
+    a: "No. Sposta più avanti gli obblighi <strong>ad alto rischio</strong> dell’Allegato III, al 2 dicembre 2027. Restano invece pienamente in vigore ad agosto 2026 i divieti, l'obbligo di trasparenza dell'art. 50 (dire all'utente che parla con un'AI) e l'AI literacy dell'art. 4 (formare il team). Chi usa chatbot o agenti client-facing deve adeguarsi comunque."
   - q: "La mia PMI usa un chatbot sul sito: cosa devo fare ad agosto 2026?"
     a: "L'art. 50 chiede che l'utente sappia in modo chiaro di interagire con un sistema di AI, non con una persona. Basta una comunicazione esplicita nel chatbot e la possibilità di passare a un umano. È un intervento di ore, non di mesi. Lo trattiamo di default nei nostri progetti su <a href=\"/customer-support\">customer support</a>."
   - q: "Cos'è l'AI literacy dell'art. 4 e da quando vale?"
-    a: "L'art. 4 obbliga chi sviluppa o usa sistemi di AI a garantire un livello adeguato di competenza al personale che li opera. È già applicabile e non è rinviato dal Digital Omnibus. In pratica: una policy interna e una formazione base al team. Lo copriamo con i percorsi di <a href=\"/ai-adoption\">AI Adoption</a>."
+    a: "L’art. 4 chiede a chi sviluppa o usa sistemi di AI di adottare misure perché il personale che li opera sappia usarli. Si applica dal 2 febbraio 2025 e il Digital Omnibus non l’ha rinviato: l’ha riformulato, togliendo l’obbligo di garantire un livello di competenza preciso. In pratica: una policy interna e una formazione base al team. Lo copriamo con i percorsi di <a href=\"/ai-adoption\">AI Adoption</a>."
   - q: "Se il mio agente fa screening CV, il rinvio dell'Allegato III mi salva?"
     a: "Il recruitment automatizzato è nell'Allegato III (alto rischio), quindi la proroga sposta più avanti gli obblighi pesanti come risk assessment e logging formale. Ma noi consigliamo di non aspettare: costruire fin da subito audit log immutabile e umano sempre sull'offer finale costa poco ora e molto se lo aggiungi dopo."
 lang: "it"
@@ -40,24 +41,24 @@ gates:
 draft: false
 ---
 
-Il Digital Omnibus di giugno 2026 ha fatto una cosa semplice e una cosa fraintesa.
+Il Digital Omnibus sull'IA, approvato a giugno 2026 e in vigore dal 27 luglio, ha fatto una cosa semplice e una cosa fraintesa.
 
-La cosa semplice: ha proposto di rinviare gli obblighi ad **alto rischio** dell'Allegato III fino a fine 2027. La cosa fraintesa: mezza newsletter di consulenza AI l'ha letta come "l'AI Act è slittato, potete rilassarvi fino al 2027".
+La cosa semplice: ha rinviato gli obblighi ad **alto rischio** dell'Allegato III al 2 dicembre 2027, e quelli dei sistemi integrati nei prodotti dell'Allegato I al 2 agosto 2028, come riporta la [scheda del Parlamento europeo sul Regolamento (UE) 2026/1744](https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai). La cosa fraintesa: mezza newsletter di consulenza AI l'ha letta come "l'AI Act è slittato, potete rilassarvi fino al 2027".
 
 Non è vero. Ad agosto 2026 restano vivi obblighi che riguardano molte più PMI dell'alto rischio. Ecco la mappa onesta di cosa slitta e cosa no.
 
 **In breve:**
-- Il Digital Omnibus rinvia gli obblighi dell'**Allegato III (alto rischio)** fino a fine 2027, non tutto l'AI Act.
+- Il Digital Omnibus rinvia gli obblighi dell'**Allegato III (alto rischio)** al 2 dicembre 2027, non tutto l'AI Act.
 - Ad **agosto 2026 restano obbligatori**: i divieti (rischio inaccettabile), la trasparenza dell'**art. 50** (dire all'utente che parla con un'AI) e l'**AI literacy dell'art. 4** (formare il team).
 - Se hai un **chatbot o un agente client-facing**, l'adeguamento all'art. 50 va fatto comunque: è un intervento di ore, non di mesi.
 - Il rinvio dell'alto rischio **non è una scusa per rimandare l'audit log**: costruirlo ora costa poco, aggiungerlo dopo costa molto.
-- Per il 90% delle PMI il lavoro reale resta piccolo: una policy, una formazione base, una nota di trasparenza.
+- Per la maggior parte delle PMI il lavoro reale resta piccolo: una policy, una formazione base, una nota di trasparenza.
 
 ## Cosa slitta davvero: l'Allegato III
 
-L'Allegato III elenca i sistemi ad **alto rischio**: recruitment automatico, scoring credito, gestione di infrastrutture critiche, valutazioni scolastiche, alcuni usi in ambito sanitario.
+L'Allegato III dell'[AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) elenca i sistemi ad **alto rischio**: recruitment automatico, scoring credito, gestione di infrastrutture critiche, valutazioni scolastiche, alcuni usi in ambito sanitario.
 
-Per questi sistemi la proposta di Digital Omnibus sposta più avanti (fino a fine 2027, in base al testo in discussione) gli obblighi pesanti: risk assessment formale, logging strutturato, documentazione tecnica, registrazione nel database UE.
+Per questi sistemi il Digital Omnibus sposta al 2 dicembre 2027 gli obblighi pesanti: risk assessment formale, logging strutturato, documentazione tecnica, registrazione nel database UE.
 
 Se usi AI per **decidere o influenzare significativamente** assunzioni o valutazioni, ricadi qui. Il rinvio ti dà respiro, non un'assoluzione.
 
@@ -75,9 +76,11 @@ Anche i contenuti generati o manipolati dall'AI (immagini, audio, testi client-f
 
 L'intervento pratico è piccolo: una frase esplicita nel chatbot, la possibilità di chiedere un umano, un'etichetta sui contenuti generati. Ore di lavoro, non settimane.
 
+L'unico ritocco del Digital Omnibus qui riguarda i fornitori: per i sistemi già sul mercato prima del 2 agosto 2026, l'obbligo di marcare i contenuti generati scatta il 2 dicembre 2026.
+
 ### 3. AI literacy, art. 4
 
-Chi sviluppa o usa sistemi di AI deve garantire che il personale che li opera abbia un **livello adeguato di competenza**. Non è rinviato dal Digital Omnibus ed è già applicabile.
+Chi sviluppa o usa sistemi di AI deve **adottare misure** perché il personale che li opera sappia usarli. Il Digital Omnibus non l'ha rinviato: l'ha riformulato, togliendo l'obbligo di garantire un livello di competenza preciso. L'obbligo resta, e si applica dal 2 febbraio 2025.
 
 In concreto per una PMI significa: una policy interna di 1 pagina (cosa è permesso, cosa no, come si segnalano problemi) e una formazione base per chi usa gli strumenti. Nulla di eroico, ma va documentato.
 

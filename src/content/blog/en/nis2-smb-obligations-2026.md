@@ -2,6 +2,7 @@
 title: "NIS2 and your SMB in 2026: are you in the chain?"
 description: "Your SMB isn't a direct NIS2 entity but you supply one? Here's what changes in 2026, what they'll ask you for, and where AI actually fits in."
 pubDate: 2026-08-31
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "nis2"
@@ -54,9 +55,11 @@ Many Italian and European SMBs assume "not my problem, I'm too small". In 2026 t
 
 ## Are you a direct NIS2 entity, or one "by reflection"?
 
-The directive classifies **essential** and **important** entities across a list of sectors (energy, transport, banking, health, digital infrastructure, public admin, critical manufacturing, waste, food, and others), with size thresholds that typically exclude micro and small firms.
+The [NIS2 directive](https://eur-lex.europa.eu/eli/dir/2022/2555/oj), transposed in Italy by [Legislative Decree 138/2024](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2024-09-04;138), classifies **essential** and **important** entities across a list of sectors (energy, transport, banking, health, digital infrastructure, public admin, critical manufacturing, waste, food, and others), with size thresholds that typically exclude micro and small firms.
 
 Operational translation: if you're a 10-200 person SMB outside those sectors, **you're almost certainly not a direct entity**.
+
+In Italy the competent authority is ACN, the national cybersecurity agency, which publishes obligations and deadlines for regulated entities on its [NIS portal](https://www.acn.gov.it/portale/nis).
 
 The point is the second channel. NIS2 requires regulated entities to manage **supply-chain security**. So your regulated client must ensure its suppliers (you) have an adequate security level too. And it does so the easiest way for itself: **it writes it into the contract**.
 
@@ -66,7 +69,7 @@ You won't get a letter from the State. You'll get a supplier security questionna
 
 - Documented security and access-management policies.
 - Activity logs on the systems touching its data.
-- An incident response plan with **notification timelines** (NIS2 imposes tight timelines on the regulated entity: if an incident starts with you, it needs to know fast).
+- An incident response plan with **notification timelines** (NIS2 requires the regulated entity to send an early warning within 24 hours of becoming aware of a significant incident and a notification within 72 hours: if an incident starts with you, it needs to know fast).
 - Clauses that extend its obligations to you.
 
 Fail to answer and you don't get a fine. You risk dropping off the supplier shortlist. For an SMB, that's the real cost.

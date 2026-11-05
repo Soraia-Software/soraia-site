@@ -2,6 +2,7 @@
 title: "Etichettare contenuti AI nel marketing: la guida"
 description: "Immagini e testi generati dall'IA nel marketing: come rispettare l'art. 50 dell'AI Act e la marcatura machine-readable in vigore da agosto 2026. Guida pratica."
 pubDate: 2026-08-14
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "ai act"
@@ -19,9 +20,9 @@ faq:
   - q: "Devo mettere un'etichetta su ogni post generato con l'IA?"
     a: "No. L'obbligo dell'art. 50 riguarda i <strong>contenuti sintetici</strong>: immagini, audio e video generati o manipolati dall'IA che potrebbero sembrare autentici. Un testo assistito dall'IA ma rivisto e firmato da una persona non richiede etichetta esplicita. Il criterio è: il pubblico potrebbe scambiarlo per reale? Se sì, va marcato."
   - q: "Cosa significa marcatura machine-readable?"
-    a: "Oltre all'etichetta visibile per l'utente, il contenuto sintetico deve portare un marcatore leggibile dalle macchine (metadati o watermark digitale) che ne certifica l'origine artificiale. Serve a rendere il contenuto tracciabile anche quando viene ricondiviso. La maggior parte dei tool generativi seri lo inserisce già, ma va verificato in ogni pubblicazione."
+    a: "È un marcatore leggibile dalle macchine (metadati o watermark digitale) che certifica l’origine artificiale del contenuto e lo rende tracciabile anche quando viene ricondiviso. È un obbligo del fornitore dello strumento generativo (art. 50, par. 2), non di chi pubblica: a te tocca scegliere strumenti che lo applicano e verificare che sopravviva a ogni pubblicazione."
   - q: "Da quando scattano gli obblighi?"
-    a: "Gli obblighi di trasparenza dell'art. 50 si applicano da <strong>agosto 2026</strong>, con la parte tecnica di marcatura machine-readable pienamente operativa entro fine 2026. Chi produce comunicazione commerciale ha quindi una finestra breve per mettere a posto processo e strumenti."
+    a: "Gli obblighi di trasparenza dell’art. 50 si applicano dal <strong>2 agosto 2026</strong>. Il <a href='https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai'>Digital Omnibus</a> ha dato ai fornitori di sistemi già sul mercato prima di quella data tempo fino al 2 dicembre 2026 per la marcatura machine-readable. Chi produce comunicazione commerciale ha quindi una finestra breve per mettere a posto processo e strumenti."
   - q: "Rischio una multa se non etichetto?"
     a: "L'art. 50 rientra tra gli obblighi di trasparenza sanzionabili. Ma per la maggior parte delle PMI la questione pratica non è la multa immediata, è la fiducia del pubblico e la coerenza con GDPR e codice del consumo. Un processo di etichettatura chiaro ti mette al riparo su tutti e tre i fronti."
 lang: "it"
@@ -40,15 +41,15 @@ draft: false
 
 L'AI Act non vieta di usare immagini o testi generati dall'IA nel marketing. Ti chiede solo di dirlo, in modo che l'utente lo capisca e che la macchina lo riconosca.
 
-**L'art. 50 dell'AI Act impone a chi diffonde contenuti sintetici (immagini, audio o video generati o manipolati dall'IA che potrebbero sembrare autentici) di dichiararlo in modo chiaro all'utente e di marcare il contenuto in un formato machine-readable. Nel marketing l'obbligo si applica da agosto 2026.**
+**L'art. 50 dell'[AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) impone a chi pubblica contenuti sintetici (immagini, audio o video generati o manipolati dall'IA che potrebbero sembrare autentici) di dichiararlo in modo chiaro all'utente, e ai fornitori degli strumenti generativi di marcarli in un formato machine-readable. Nel marketing l'obbligo si applica dal 2 agosto 2026.**
 
 Da agosto 2026 questo diventa un obbligo operativo, non una best practice. Ecco come etichettare i contenuti generati dall'IA nel marketing senza appesantire il flusso di pubblicazione.
 
 **In breve:**
-- L'art. 50 dell'AI Act impone la trasparenza sui **contenuti sintetici** (immagini, audio, video) che potrebbero sembrare reali: vanno dichiarati all'utente e marcati in modo machine-readable.
-- Gli obblighi si applicano da **agosto 2026**, con la marcatura tecnica pienamente operativa entro fine 2026.
+- L'art. 50 dell'AI Act impone la trasparenza sui **contenuti sintetici** (immagini, audio, video) che potrebbero sembrare reali: chi li pubblica li dichiara all'utente, lo strumento che li genera li marca in modo machine-readable.
+- Gli obblighi si applicano dal **2 agosto 2026**; per i sistemi già sul mercato prima di quella data, la marcatura dei fornitori scatta il 2 dicembre 2026.
 - Non ogni testo assistito dall'IA va etichettato: il criterio è il rischio di scambiarlo per autentico.
-- La marcatura machine-readable (metadati / watermark) è distinta dall'etichetta visibile: servono entrambe.
+- La marcatura machine-readable (metadati, watermark) è distinta dall'etichetta visibile: la prima la applica lo strumento, la seconda la decidi tu, e servono entrambe.
 - Un processo di etichettatura chiaro copre AI Act, GDPR e codice del consumo insieme.
 
 ## Cosa chiede davvero l'art. 50
@@ -56,7 +57,7 @@ Da agosto 2026 questo diventa un obbligo operativo, non una best practice. Ecco 
 L'art. 50 dell'AI Act riguarda la **trasparenza**. Distingue due obblighi che nel marketing spesso si sovrappongono:
 
 1. **Dichiarazione all'utente**: quando pubblichi un contenuto che è stato generato o manipolato dall'IA e che potrebbe apparire autentico (una persona, un luogo, un evento che sembrano reali), devi dirlo in modo chiaro e comprensibile.
-2. **Marcatura machine-readable**: il contenuto deve portare un marcatore leggibile dalle macchine, tipicamente metadati o un watermark digitale, che ne certifica l'origine artificiale anche quando viene ricondiviso fuori dal tuo canale.
+2. **Marcatura machine-readable**: il contenuto deve portare un marcatore leggibile dalle macchine, tipicamente metadati o un watermark digitale, che ne certifica l'origine artificiale anche quando viene ricondiviso fuori dal tuo canale. È un obbligo del fornitore dello strumento generativo (par. 2): a te tocca non perderlo per strada.
 
 La differenza è importante. L'etichetta visibile serve all'umano che guarda il post. La marcatura machine-readable serve alle piattaforme, ai motori e agli altri sistemi che processano il contenuto a valle.
 
@@ -82,7 +83,7 @@ Una dicitura breve e coerente (es. "Immagine generata con IA") applicata in modo
 
 ### 3. Verifica la marcatura machine-readable
 
-Molti tool generativi seri inseriscono già metadati di provenienza (standard tipo C2PA). Non darlo per scontato: verifica che sopravviva all'export e alla pubblicazione sulla tua piattaforma. Se il tuo flusso rimuove i metadati, quello è il punto da sistemare.
+Molti tool generativi seri inseriscono già metadati di provenienza (standard come [C2PA](https://c2pa.org/)). Non darlo per scontato: verifica che sopravviva all'export e alla pubblicazione sulla tua piattaforma. Se il tuo flusso rimuove i metadati, quello è il punto da sistemare.
 
 ### 4. Scrivi una riga nella tua AI policy
 

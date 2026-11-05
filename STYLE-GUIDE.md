@@ -43,7 +43,7 @@ section rather than inventing a new treatment.
   team. All prices VAT excluded.
   **The Sprint itself includes** encryption of sensitive fields, audit logs, retention and
   deletion policy, load testing, monitoring and availability SLA, historical data import and
-  migration, and three months of change requests after release. **Compliance & Audit does not
+  migration, and one month of change requests after release. **Compliance & Audit does not
   add security, it adds the proof**: documents for whoever asks (auditors, certification bodies,
   DPO, clients). It is **both GDPR and AI Act**: art. 32 measures, DPIA support and data-flow
   map on one side, risk classification, technical documentation, user-facing transparency and

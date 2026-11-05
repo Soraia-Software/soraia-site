@@ -1,8 +1,8 @@
 ---
 title: "E-invoicing 2026: stop re-typing invoice data by hand"
-description: "From 2026 e-invoicing covers everyone in Italy, flat-rate taxpayers included. Here is how to automate invoice data extraction and reconciliation with AI agents."
+description: "Since 2024 e-invoicing has covered all flat-rate taxpayers in Italy too. Here is how to automate invoice data extraction and reconciliation with AI agents."
 pubDate: 2026-07-06
-updatedDate: 2026-10-18
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "finance"
@@ -17,29 +17,29 @@ keywords:
 readMinutes: 6
 featured: false
 faq:
-  - q: "Is e-invoicing mandatory for everyone in Italy from 2026?"
-    a: "The e-invoicing obligation via the SdI exchange system extends to flat-rate (forfettario) taxpayers previously exempt. In practice almost all your suppliers and clients will move to XML format: the volume of structured data to handle grows, and so does the chance to automate it without manual re-entry."
+  - q: "Is e-invoicing mandatory for flat-rate taxpayers in Italy too?"
+    a: "Yes: since 1 January 2024 the e-invoicing obligation via the SdI exchange system has applied to all flat-rate (forfettario) taxpayers as well, under <a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2022-04-30;36'>Article 18 of Decree-Law 36/2022</a>. In practice almost all your suppliers and clients issue XML invoices: the volume of structured data to handle is high, and so is the chance to automate it without manual re-entry."
   - q: "Doesn't the invoice XML already remove the data entry?"
     a: "No. The XML is structured, but it rarely lands clean in your accounting system: ledger codes, cost centres and matching against orders and contracts stay manual. An AI agent reads the XML, applies your coding rules and proposes reconciliation, leaving only exceptions to a human."
   - q: "Does an agent that touches invoices count as high-risk under the AI Act?"
     a: "No, if it stays internal. An agent that extracts data, validates VAT and proposes reconciliations is minimal risk under the AI Act: it makes no autonomous decisions affecting people. The main duty is internal transparency. You still need a GDPR art. 28 DPA and an audit log, which we include by default."
   - q: "How long until a first invoice agent is live?"
-    a: "First delivery at Soraia is 4 weeks, followed by 30 days of hypercare. We spend the first week on a timed baseline: without knowing what processing one invoice costs today, we cannot guarantee the saving."
+    a: "The first production release ships in 4 weeks, and one month of change requests is included after release. We spend the first week on a timed baseline: without knowing what processing one invoice costs today, we cannot guarantee the saving."
 lang: "en"
 draft: false
 ---
 
-> **What is invoice data automation?** It is the use of an AI agent that reads the invoice XML and does the work done by hand today: re-entering data into the accounting system, coding to accounts and cost centres, and three-way matching between invoice, order and bank movement. The human moves from re-typing everything to handling only the exceptions. Admin time saved typically lands in the 30-50% range.
+> **What is invoice data automation?** It is the use of an AI agent that reads the invoice XML and does the work done by hand today: re-entering data into the accounting system, coding to accounts and cost centres, and three-way matching between invoice, order and bank movement. The human moves from re-typing everything to handling only the exceptions.
 
-From 2026 the Italian e-invoicing obligation via the SdI exchange system extends to flat-rate (forfettario) taxpayers who were exempt so far. Operational translation for whoever runs your admin: almost every inbound and outbound invoice will be a structured XML file.
+Since 1 January 2024 the Italian e-invoicing obligation via the SdI exchange system has applied to all flat-rate (forfettario) taxpayers too, under [Article 18 of Decree-Law 36/2022](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2022-04-30;36); the operating rules are on the [Italian Revenue Agency's portal](https://www.agenziaentrate.gov.it/portale/web/guest/aree-tematiche/fatturazione-elettronica). Operational translation for whoever runs your admin: almost every inbound and outbound invoice is a structured XML file.
 
 Sounds like good news. It only is if you stop treating that XML like a PDF to re-type.
 
 **Key takeaways:**
-- From 2026 e-invoicing also covers flat-rate taxpayers: more structured data, but also more monthly volume to handle.
+- Since 2024 e-invoicing has been mandatory for all flat-rate taxpayers too: almost every invoice is structured XML, and the monthly volume to handle stays high.
 - Structured XML does NOT remove data entry: ledger codes, cost centres and order matching stay manual work.
 - **Invoice data automation** with an AI agent moves the human from re-entry to handling exceptions only.
-- An internal agent for extraction and reconciliation is minimal risk under the AI Act: no autonomous decisions about people.
+- An internal agent for extraction and reconciliation is minimal risk under the [AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj): no autonomous decisions about people.
 - With [Numeraria](/en/case-studies/numeraria), a payroll and accounting firm, AI agents gave management back roughly half a month.
 
 ## Why the XML alone won't save you from data entry
@@ -52,7 +52,7 @@ The XML says what is in the invoice. It does not say:
 - Which **accounting code** to apply under your internal rules.
 - Whether the amount is **consistent** with what was agreed or is an anomaly to flag.
 
-This is the work eating your admin team's days today. The obligation extended in 2026 does not reduce it: it multiplies it, because the number of counterparties issuing in structured format grows.
+This is the work eating your admin team's days today. Extending the obligation to flat-rate taxpayers did not reduce it: it multiplied it, because the number of counterparties issuing in structured format grew.
 
 ## What an AI agent actually does with invoices
 
@@ -87,7 +87,7 @@ I'll tell you before selling you a sprint:
 ## How to start, in practice
 
 1. Time a sample of 10-20 real invoices: how long between extraction, coding and reconciliation.
-2. Isolate the stable perimeter (recurring suppliers with clear rules are 80% of the volume).
+2. Isolate the stable perimeter: recurring suppliers with clear rules, which usually make up most of the volume.
 3. Build an agent on that perimeter, with the human on exceptions.
 4. Measure at 30 days against the baseline.
 

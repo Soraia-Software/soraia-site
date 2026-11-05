@@ -2,7 +2,7 @@
 title: "Italian AI Law 132/2025: what it means for firms"
 description: "Italy's national AI law (132/2025) is in force since October 2025. What it adds to the EU AI Act for companies: AgID, ACN and the 1bn fund for SMEs."
 pubDate: 2026-08-17
-updatedDate: 2026-10-18
+updatedDate: 2026-11-05
 author: "Daniel Levis"
 tags:
   - "ai act"
@@ -23,7 +23,7 @@ faq:
   - q: "Who are AgID and ACN and what must companies do?"
     a: "<strong>AgID</strong> (Agency for Digital Italy) is the authority for AI notification and promotion; <strong>ACN</strong> (National Cybersecurity Agency) oversees security and inspections. For most SMEs daily operations do not change, but these are the authorities you deal with in case of checks or notifications."
   - q: "Can my SME access the 1bn fund?"
-    a: "The planned fund targets investment in AI, cybersecurity and emerging tech for startups and SMEs, managed through public vehicles. It is not an automatic grant: it depends on implementing calls. Worth monitoring, but do not build your AI business case waiting for those funds."
+    a: "The law authorises up to 1 billion euro of venture capital investment, managed by CDP Venture Capital, in innovative startups and SMEs working in AI, cybersecurity and emerging tech. It is not a grant: it concerns companies looking for an equity investor, not those wanting to fund an internal project. For that you need the <a href='/bandi/'>digitalization grants</a> (in Italian)."
   - q: "Do I need to do anything beyond what I already do for the AI Act?"
     a: "If you are already aligned with the AI Act (risk assessment, decision logs, human oversight, art. 28 DPA), you are largely covered. Law 132/2025 adds national principles, reinforced transparency in some areas and the Italian reference authorities. A targeted check on your case closes the gap."
 lang: "en"
@@ -40,24 +40,24 @@ gates:
 draft: false
 ---
 
-In force since October 2025, **law 132/2025** is Italy's first comprehensive AI law. The question CEOs and DPOs keep asking us is: *"I already did my AI Act homework, do I now have to redo everything?"*
+In force since 10 October 2025, **[law 132/2025](https://www.normattiva.it/eli/id/2025/09/25/25G00143/CONSOLIDATED)** is Italy's first comprehensive AI law. The question CEOs and DPOs keep asking us is: *"I already did my AI Act homework, do I now have to redo everything?"*
 
 Honest answer: no. But something does get added, and it pays to know what.
 
 **Key takeaways:**
 - **Law 132/2025 does not replace the EU AI Act**: it sits alongside it, sets national principles and names the competent Italian authorities.
 - The two reference authorities are **AgID** (notification and promotion) and **ACN** (security and inspections).
-- A **fund of up to 1 billion euro** is planned for investment in AI, cybersecurity and emerging tech, aimed at startups and SMEs, but subject to implementing calls.
+- The law authorises up to **1 billion euro** of venture capital investment, managed by CDP Venture Capital, in startups and SMEs in AI, cybersecurity and emerging tech: it is not a grant.
 - For most SMEs the operational duties remain those of the AI Act: if you are already aligned you only need to close a small delta.
 - Do not wait for public funds to build your AI business case: measure ROI on your process, not on the grant.
 
 ## What law 132/2025 is (in 40 words)
 
-Law 132/2025 is Italy's national legislation on artificial intelligence, in force since October 2025. It sets general principles (human centrality, transparency, safety, human oversight), designates the national competent authorities and introduces measures to support investment, in coordination with the EU AI Act.
+Law 132/2025 is Italy's national legislation on artificial intelligence, in force since 10 October 2025. It sets general principles (human centrality, transparency, safety, human oversight), designates the national competent authorities and introduces measures to support investment, in coordination with the EU AI Act.
 
 ## How it overlaps with the AI Act
 
-The EU AI Act remains the primary source for substantive obligations, especially on **high-risk** systems (automated recruitment, scoring, healthcare). If you already followed our [guide to the AI Act for companies](/en/guide/ai-act-for-business), the heavy part is already set up.
+The EU [AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) remains the primary source for substantive obligations, especially on **high-risk** systems (automated recruitment, scoring, healthcare). If you already followed our [guide to the AI Act for companies](/en/guide/ai-act-for-business), the heavy part is already set up.
 
 The Italian law works on three different levels:
 
@@ -78,9 +78,9 @@ Translated: the immutable audit logs, the risk assessment and the documentation 
 
 ## The 1bn fund: opportunity, not certainty
 
-The law provides for a **fund of up to 1 billion euro** for investment in AI, cybersecurity and emerging tech, aimed at startups and SMEs. It is a strong signal, but read it calmly:
+The law authorises up to **1 billion euro** of venture capital investment in AI, cybersecurity and emerging tech, managed by CDP Venture Capital and aimed at innovative startups and SMEs. It is a strong signal, but read it calmly:
 
-- It is not an automatic grant: it depends on **implementing calls** and management vehicles.
+- It is not a grant: it is **venture capital**, so it concerns companies looking for an investor, not those wanting to fund an internal project.
 - The pool is broad, so competition will be high.
 - The risk is building your AI business case *while waiting* for the fund.
 
