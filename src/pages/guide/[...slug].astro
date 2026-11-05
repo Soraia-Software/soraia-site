@@ -60,7 +60,17 @@ const faqJsonLd = guide.data.faq.length > 0 ? {
   })),
 } : null;
 
-const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.soraia.io/" },
+    { "@type": "ListItem", position: 2, name: "Guide", item: "https://www.soraia.io/guide/" },
+    { "@type": "ListItem", position: 3, name: guide.data.title, item: `https://www.soraia.io/guide/${guide.id}/` },
+  ],
+};
+
+const jsonLd = [articleJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])];
 const altHref = GUIDE_SLUG_MAP[guide.id] ? `/en/guide/${GUIDE_SLUG_MAP[guide.id]}/` : "/en/guide";
 ---
 

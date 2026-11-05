@@ -33,6 +33,14 @@ const h1 = post.data.h1 || post.data.title;
 const itSlug = EN_TO_IT_BLOG[slug];
 const altHref = itSlug ? `/blog/${itSlug}/` : "/blog";
 
+// Roles as in the Organization JSON-LD on the home (founder).
+const AUTHOR_ROLE: Record<string, string> = { "Daniel Levis": "CEO", "Davide Silvestri": "CTO" };
+// LinkedIn profiles (sameAs), so search engines and AI answers can tell who the author is.
+const AUTHOR_LINKEDIN: Record<string, string> = {
+  "Daniel Levis": "https://www.linkedin.com/in/daniel-levis/",
+  "Davide Silvestri": "https://www.linkedin.com/in/davide-silvestri/",
+};
+
 const articleJsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -44,6 +52,11 @@ const articleJsonLd = {
     "@type": post.data.author === "Soraia" ? "Organization" : "Person",
     name: post.data.author,
     url: "https://www.soraia.io/en/about/",
+    ...(AUTHOR_ROLE[post.data.author] && {
+      jobTitle: AUTHOR_ROLE[post.data.author],
+      worksFor: { "@type": "Organization", name: "Soraia", url: "https://www.soraia.io/" },
+    }),
+    ...(AUTHOR_LINKEDIN[post.data.author] && { sameAs: [AUTHOR_LINKEDIN[post.data.author]] }),
   },
   publisher: { "@type": "Organization", name: "Soraia", logo: { "@type": "ImageObject", url: "https://www.soraia.io/logos/soraia-full.svg" } },
   keywords: post.data.keywords.join(", "),
@@ -53,7 +66,16 @@ const faqJsonLd = post.data.faq.length > 0 ? {
   "@type": "FAQPage",
   mainEntity: post.data.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 } : null;
-const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.soraia.io/en/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.soraia.io/en/blog/" },
+    { "@type": "ListItem", position: 3, name: post.data.title, item: `https://www.soraia.io/en/blog/${slug}/` },
+  ],
+};
+const jsonLd = [articleJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])];
 ---
 
 <Layout title={title} description={description} lang="en" altHref={altHref} jsonLd={jsonLd}>

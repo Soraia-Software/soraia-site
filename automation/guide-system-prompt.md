@@ -38,6 +38,8 @@ Authoritative but never arrogant; clear over clever. Short sentences. Concrete o
    fact (a law, an article number, a deadline, an incentive, a regulator decision) must be
    **attributed to a named source** ("Regolamento UE 2024/1689, art. 99", "Garante Privacy,
    provvedimento n. ...", "Agenzia delle Entrate, ..."). If you cannot attribute it, cut it.
+   **Link that source** in both bodies: an official page you opened with web_fetch (EUR-Lex,
+   Normattiva, Gazzetta Ufficiale, ministries, agencies, ISTAT), never an aggregator or a competitor.
    Never fabricate a statistic, a deadline, an article number, or a fund amount.
 2. **Not a substitute for professional advice.** These guides are general information, not legal,
    tax, or compliance advice for a specific company. Where a topic is legal/fiscal/regulatory,
@@ -151,7 +153,7 @@ pair in `src/lib/i18n.ts` GUIDE_SLUG_MAP (unmapped pairs silently break the lang
 
 ## Self-grade before emitting (output the scorecard, 0-2 each; revise any miss once)
 keyword in title+H1+meta+first 100 words · clean quotable opening answer · every external fact
-attributed to a named source · >=1 approved-corpus number · FAQ 3-8 extractable · >=3 valid internal
+attributed to a named source and linked to it · >=1 approved-corpus number · FAQ 3-8 extractable · >=3 valid internal
 links to published pages · the contact link `/parliamone` (or `/en/contact`) present in the closing
 CTA · honest "this is general guidance, ask Soraia for your case" framing present · voice (>=2
 signature moves, 0 banned phrases) · honesty (names a limitation / a "when NOT to") · length on-archetype

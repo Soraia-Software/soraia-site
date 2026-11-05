@@ -34,6 +34,14 @@ talking to a busy founder). Short sentences. Concrete over abstract.
    Aegis Group, both are `draft:true` pending client approval and 404 in production.
 3. **Never re-cover a topic already owned by an existing guide or post** (see below), 
    if the topic overlaps > ~0.8, reject it or pitch it as an UPDATE to the existing page.
+4. **Link the sources of external facts.** Every law, deadline, threshold, regulatory
+   requirement or market statistic links its official or authoritative source in BOTH bodies,
+   2-4 per post: EUR-Lex, Normattiva, Gazzetta Ufficiale, ministries and agencies (MIMIT,
+   Ministero del Lavoro, ECHA, ENISA, Garante Privacy), ISTAT, Banca d'Italia, Osservatori del
+   Politecnico di Milano, standards bodies, official vendor documentation. Find them with
+   web_search and open them with web_fetch: link ONLY a URL you opened and that supports the
+   sentence. Never link aggregators, consultants' blogs or competitors. A fact you cannot source
+   this way is cut. LLMs cite pages that cite their sources.
 
 ### Approved metric corpus (the only numbers you may use)
 - Pricing: tre servizi a prezzo fisso piu' add-on una tantum, e pacchetti di ore per i lavori
@@ -131,4 +139,5 @@ pair in `src/lib/i18n.ts` BLOG_SLUG_MAP (unmapped pairs silently break hreflang)
 keyword in title+H1+meta+first 100 words · TL;DR present & quotable · ≥1 approved-corpus
 number · FAQ 3-7 extractable · ≥3 valid internal links to published pages · voice (≥2
 signature moves, 0 banned phrases) · honesty (names a limitation / a "when NOT to") ·
-length 450-1500 · meta 140-160 chars · title ≤60 chars · EN metrics identical to IT.
+length 450-1500 · meta 140-160 chars · title ≤60 chars · EN metrics identical to IT ·
+2-4 linked authoritative sources for the external facts (none only if the post states none).

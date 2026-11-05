@@ -11,6 +11,7 @@
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from "node:fs";
 import Anthropic from "@anthropic-ai/sdk";
 import { normalizeDashes } from "./house-style.mjs";
+import { SOURCES_INSTRUCTION, createWithWebTools, textAfterTools } from "./web-sources.mjs";
 
 const DRY = process.argv.includes("--dry-run");
 const MODEL = process.env.AUTHOR_MODEL || "claude-opus-4-8";
@@ -128,14 +129,16 @@ const user = [
   "SOURCE OF TRUTH for every Soraia/client number (public/llms.txt), invent nothing, never cite oggi-lavoro or aegis:",
   llms,
   "",
+  SOURCES_INSTRUCTION,
+  "",
   "Return ONLY the JSON object from your instructions (it, en, slug_it, slug_en, confronto_slug_map_entry). No code fences, no prose outside the JSON.",
 ].join("\n");
 
 const client = new Anthropic();
 let resp;
-try { resp = await client.messages.create({ model: MODEL, max_tokens: 10000, system, messages: [{ role: "user", content: user }] }); }
+try { resp = await createWithWebTools(client, { model: MODEL, max_tokens: 14000, system }, user); }
 catch (e) { die("Anthropic API error: " + (e?.message || e)); }
-const text = resp.content.filter((b) => b.type === "text").map((b) => b.text).join("");
+const text = textAfterTools(resp);
 const art = extractJson(text);
 for (const k of ["it", "en"]) {
   if (!art[k] || !art[k].titolo || !art[k].optionA || !art[k].optionB || !art[k].verdetto) die("Model output missing/invalid field: " + k);

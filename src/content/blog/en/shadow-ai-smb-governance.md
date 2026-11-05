@@ -40,8 +40,6 @@ gates:
 draft: false
 ---
 
-# Shadow AI: Your Employees Already Use AI Without Telling You
-
 > **Shadow AI** is the unsanctioned use of public AI tools (ChatGPT, Gemini, AI translators) by employees without company authorisation, a DPA under Article 28 GDPR, or any oversight of where company data is sent.
 
 It's not a hypothesis. As you read this sentence, someone on your team is pasting an internal document into ChatGPT to summarise a call, or translating a contract in a free tool.

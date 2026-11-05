@@ -39,8 +39,6 @@ gates:
 draft: false
 ---
 
-# Automazione studio commercialista AI: i 3 processi che un agente ti restituisce
-
 > **Cos'è.** L'automazione studio commercialista AI è l'uso di agenti IA per gestire tre workflow ripetitivi specifici: preparazione dei preventivi, aggregazione delle ore fatturabili e riconciliazione bancaria. L'agente esegue il lavoro meccanico e passa all'umano solo le anomalie e le decisioni sul cliente. Ha senso solo su questi processi, e solo se prima misuri quanto costano oggi.
 >
 > **In breve:**
