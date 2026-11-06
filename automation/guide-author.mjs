@@ -10,7 +10,7 @@
 
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from "node:fs";
 import Anthropic from "@anthropic-ai/sdk";
-import { normalizeDashes } from "./house-style.mjs";
+import { normalizeDashes, normalizeAccents } from "./house-style.mjs";
 import { SOURCES_INSTRUCTION, createWithWebTools, textAfterTools } from "./web-sources.mjs";
 
 const DRY = process.argv.includes("--dry-run");
@@ -128,8 +128,9 @@ for (const k of ["frontmatter_it", "it_body", "frontmatter_en", "en_body"]) if (
 art.slug_it = topic.slug_it; art.slug_en = topic.slug_en;
 
 // House style: strip any typographic dash the model emitted before writing (matches the
-// deterministic `house-style` quality gate, so drafts pass it on the first run).
-writeFileSync(itPath, normalizeDashes(mdFile(art.frontmatter_it, "it", art.it_body)));
+// deterministic `house-style` quality gate, so drafts pass it on the first run). The Italian
+// file also gets accents instead of apostrophes typed in their place.
+writeFileSync(itPath, normalizeAccents(normalizeDashes(mdFile(art.frontmatter_it, "it", art.it_body))));
 writeFileSync(enPath, normalizeDashes(mdFile(art.frontmatter_en, "en", art.en_body)));
 console.log("✓ wrote", itPath, "+", enPath);
 

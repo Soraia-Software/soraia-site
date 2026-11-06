@@ -10,7 +10,7 @@
 
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from "node:fs";
 import Anthropic from "@anthropic-ai/sdk";
-import { normalizeDashes } from "./house-style.mjs";
+import { normalizeDashes, normalizeAccents } from "./house-style.mjs";
 import { SOURCES_INSTRUCTION, createWithWebTools, textAfterTools } from "./web-sources.mjs";
 
 const DRY = process.argv.includes("--dry-run");
@@ -145,7 +145,8 @@ for (const k of ["it", "en"]) {
 }
 art.slug_it = topic.slug_it; art.slug_en = topic.slug_en;
 
-writeFileSync(itPath, normalizeDashes(mdFile(art.it, "it")));
+// House style: no typographic dashes; in Italian, accents instead of apostrophes.
+writeFileSync(itPath, normalizeAccents(normalizeDashes(mdFile(art.it, "it"))));
 writeFileSync(enPath, normalizeDashes(mdFile(art.en, "en")));
 console.log("✓ wrote", itPath, "+", enPath);
 
