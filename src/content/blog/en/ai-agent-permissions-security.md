@@ -2,6 +2,7 @@
 title: "AI Agent Security Risks: Give It Only the Access It Needs"
 description: "An AI agent with too many permissions is an internal threat. A practical least-privilege guide: how to give an agent only the access it actually needs."
 pubDate: 2026-08-26
+updatedDate: 2026-11-06
 author: "Davide Silvestri"
 tags:
   - "ai agents"
@@ -53,13 +54,13 @@ In 2026 AI agents are the new internal threat. Not because they are malicious, b
 
 ## Why an agent with too many permissions is dangerous
 
-An LLM answering a person is contained: it gets a reply wrong, the person corrects it. An agent in production is not. It receives a trigger, executes, acts on your systems. If it has access to CRM, ERP, mailbox and file server "for convenience", a single problem (a prompt injection inside ticket text, a logic bug, an exposed credential) propagates to everything the agent can touch.
+An LLM answering a person is contained: it gets a reply wrong, the person corrects it. An agent in production is not. It receives a trigger, executes, acts on your systems. If it has access to CRM, ERP, mailbox and file server "for convenience", a single problem (a prompt injection inside ticket text, a logic bug, an exposed credential) propagates to everything the agent can touch. OWASP, the non-profit foundation that publishes lists of software security risks, calls it ["Excessive Agency"](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) and ranks it among the top ten risks of LLM-based applications.
 
 The right question is not *"is the agent secure?"*. It is *"what can the agent do in the worst case?"*. And the answer depends on one thing only: how much access you gave it.
 
 ## Least privilege in practice, for an AI agent
 
-The principle is as old as information security, but it needs translating to agents. Here is how we apply it in Soraia sprints.
+The principle is as old as information security, but it needs translating to agents. The countermeasures OWASP recommends are the same: permissions limited to the minimum necessary and human approval for high-impact actions. Here is how we apply it in Soraia sprints.
 
 ### 1. A dedicated identity, not a person's
 
@@ -75,7 +76,7 @@ Define exactly which resources the agent operates on. A [customer support](/en/c
 
 ### 4. Human boundary on irreversible operations
 
-Permanent deletions, financial moves, decisions that impact people: here the agent proposes, a human confirms. This is not bureaucracy, it is how you keep the blast radius of a mistake near zero. It is also what keeps you aligned with the AI Act (in force for SMEs from 2026) and GDPR.
+Permanent deletions, financial moves, decisions that impact people: here the agent proposes, a human confirms. This is not bureaucracy, it is how you keep the blast radius of a mistake near zero. It is also what keeps you aligned with the [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj), which requires data protection by design and security of processing (Articles 25 and 32), and with the [AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj), which requires effective human oversight for high-risk systems.
 
 ### 5. Immutable audit log on every decision
 

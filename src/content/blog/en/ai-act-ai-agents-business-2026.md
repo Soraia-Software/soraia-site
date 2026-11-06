@@ -2,6 +2,7 @@
 title: "AI agent audit logs: proof that holds up"
 description: "An audit log is what makes an AI agent defensible in front of a reviewer. How to design it for traceable decisions, not just formal compliance paperwork."
 pubDate: 2026-09-11
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 tags:
   - "audit log"
@@ -45,6 +46,8 @@ When an AI agent decides something, the question that eventually lands is always
 The audit log is the immutable record of how an AI agent reaches each output. It is not a bureaucratic requirement: it is what makes an automated decision defensible and debuggable. A useful log records five things per decision: input, retrieved context, rules or prompts applied, output, human escalation. Designed this way, it serves three purposes in one: proof of compliance, debugging tool, basis of trust with clients and reviewers. Designed badly, it is a text file nobody can read when it matters.
 
 This piece is not about regulation in the abstract. It is about how you build the proof, field by field, inside a production agent.
+
+For high-risk systems, though, the rule exists: the [AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) requires them to record events automatically (Article 12) and whoever uses them to keep those logs for at least six months (Article 26). The obligations apply from 2 December 2027, after the postponement agreed in the [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj). For other agents a log isn't mandatory, but it is the simplest way to answer when someone asks you to account for a decision.
 
 **Key takeaways:**
 - The audit log answers an operational, not a legal, question: **how did the agent decide**. Anyone without one is already behind on every dispute.
@@ -91,7 +94,7 @@ Without the five separate fields, those three cases look like the same bug and y
 
 On internal [finance](/en/finance) agents, the log is what turns an automated reconciliation from "the computer says so" into "here is the rule applied to this data". On [recruitment](/en/recruitment), where we treat projects with maximum caution, the log is the condition for being able to promise volumes like the 100k+ candidates handled by the agent at [APraise](/en/case-studies/apraise) without leaving a single evaluation unexplained.
 
-The log alone is not enough. Pair it with the **GDPR Article 28 DPA** with your vendor: the log explains how the agent decided, the DPA sets who processes the data, where, and with what guarantees. Two different tools, one goal: an automated decision that holds up when someone challenges it.
+The log alone is not enough. Pair it with the **DPA** with your vendor required by [Article 28 of the GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj): the log explains how the agent decided, the DPA sets who processes the data, where, and with what guarantees. Two different tools, one goal: an automated decision that holds up when someone challenges it.
 
 ## When you do NOT need to log everything
 

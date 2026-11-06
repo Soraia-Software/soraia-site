@@ -2,39 +2,40 @@
 title: "AI Act 2026 per le PMI italiane, cosa cambia davvero in operatività"
 description: "Il Regolamento europeo IA è in vigore. Per la maggior parte delle PMI italiane gli obblighi sono limitati, ma le 4 cose da fare ci sono. Guida pratica."
 pubDate: 2026-04-22
-updatedDate: 2026-10-18
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 tags: ["ai act", "compliance", "gdpr", "guide"]
 readMinutes: 7
 featured: false
 ---
 
-L'AI Act europeo è entrato in vigore. Le PMI italiane stanno ricevendo email di consulenze AI che agitano lo spettro di multe fino al 7% del fatturato.
+L'[AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) europeo è entrato in vigore il 1 agosto 2024. Le PMI italiane stanno ricevendo email di consulenze AI che agitano lo spettro di multe fino al 7% del fatturato.
 
-La verità operativa è molto più calma. Per il **90% delle PMI**, gli obblighi diretti sono pochi e gestibili.
+La verità operativa è molto più calma. Per la **maggior parte delle PMI**, gli obblighi diretti sono pochi e gestibili.
 
 Ecco la mappa onesta.
 
 ## Le 4 categorie del Regolamento
 
-L'AI Act classifica i sistemi IA in 4 livelli di rischio:
+L'AI Act classifica i sistemi IA in [4 livelli di rischio](https://digital-strategy.ec.europa.eu/it/policies/regulatory-framework-ai):
 
-1. **Rischio inaccettabile**: vietati (social scoring stile Cina, sfruttamento minori, ecc.). Non ti riguarda.
-2. **Rischio alto**: scoring credito, recruitment automatico, sistemi sanitari, ecc. Obblighi pesanti.
+1. **Rischio inaccettabile**: vietati (social scoring stile Cina, sfruttamento delle vulnerabilità di minori o persone fragili, riconoscimento delle emozioni sul lavoro, ecc.). Di solito non ti riguarda, ma attenzione agli strumenti HR che deducono le emozioni dei dipendenti.
+2. **Rischio alto**: scoring credito, recruitment automatico, sistemi sanitari, ecc. Obblighi pesanti, che si applicano dal 2 dicembre 2027 dopo il rinvio deciso con il [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj).
 3. **Rischio limitato**: chatbot client-facing. Obbligo principale: trasparenza.
-4. **Rischio minimo**: tutto il resto. Obblighi residuali.
+4. **Rischio minimo**: tutto il resto. Nessun obbligo specifico, salvo la formazione di chi usa l'IA (art. 4), che vale per tutti.
 
 **La domanda chiave** per la tua PMI: i tuoi agenti AI ricadono in livello 2 (alto) o 3-4 (limitato/minimo)?
 
 ## Recruitment & HR: attenzione
 
-Se usi AI per **decidere o influenzare significativamente** assunzioni, promozioni, valutazioni, l'AI Act ti classifica nel **livello alto**. Obblighi:
+Se usi AI per **selezionare, filtrare o valutare** candidati, o per decidere su promozioni e valutazioni, l'AI Act ti classifica nel **livello alto**. Dal 2 dicembre 2027, chi usa questi sistemi deve:
 
-- Risk assessment documentato
-- Logging completo delle decisioni
-- Supervisione umana sui casi limite
-- Comunicazione ai candidati che AI è coinvolta nel processo
-- Conservazione record per 6 anni
+- Seguire le istruzioni del fornitore
+- Affidare la supervisione umana a persone competenti
+- Conservare i log del sistema per almeno sei mesi
+- Informare lavoratori e rappresentanti prima dell'uso, e i candidati che sono soggetti al sistema
+
+Sono gli obblighi dell'art. 26; a questi si aggiunge la DPIA prevista dal GDPR.
 
 In pratica nei nostri sprint Soraia per recruitment:
 - L'agente **filtra e ranking** ma il recruiter umano firma sempre la decisione
@@ -42,7 +43,7 @@ In pratica nei nostri sprint Soraia per recruitment:
 - Documenti DPIA generati come deliverable
 - L'agente non genera output legalmente vincolanti
 
-Questo ci tiene **a cavallo tra livello alto (assistito) e limitato (humano sempre nel loop)**. Per essere safe, trattiamo i progetti recruitment come livello alto.
+Anche con il recruiter che firma, filtrare e ordinare candidati resta **alto rischio**: è profilazione, che l'AI Act considera sempre tale (art. 6). Per questo trattiamo i progetti recruitment come livello alto.
 
 ## Finance & Accounting: rischio minimo se fatto bene
 
@@ -50,16 +51,18 @@ Agenti che leggono fatture, fanno OCR, validano IVA, generano report, **livello 
 
 Obbligo principale: trasparenza interna (il team deve sapere che l'agente è AI-driven).
 
-## Sales & Marketing: limitato
+## Sales & Marketing: minimo o limitato
 
-Agenti che fanno outreach personalizzato, scoring lead, drafting email, **livello limitato**. Se l'output va a un cliente esterno (es. email di follow-up automatico), occorre:
+Agenti che fanno outreach personalizzato, scoring lead, drafting email, di solito **livello minimo**. Diventa **limitato** se l'agente dialoga da solo con i clienti (es. follow-up automatici che portano avanti la conversazione). In quel caso:
 
-- Indicazione che è stata generata con assistenza AI (dove appropriato)
-- Possibilità per il destinatario di chiedere intervento umano
+- Va detto in modo chiaro, alla prima interazione, che dall'altra parte c'è un'IA (art. 50)
+- Conviene lasciare al destinatario la possibilità di chiedere una persona
+
+Se l'email la scrive l'IA ma la rivede e la invia una persona, non c'è un obbligo di etichetta.
 
 ## Customer Support: dipende
 
-Chatbot frontline → **livello limitato**, devi comunicare all'utente che parla con AI.
+Chatbot frontline → **livello limitato**, devi comunicare all'utente che parla con AI, in modo chiaro e alla prima interazione.
 
 Routing interno + drafting risposte (con umano che approva e invia) → **livello minimo**.
 
@@ -81,7 +84,7 @@ Definire upfront: quando l'agente decide da solo, quando passa a un umano. Per r
 
 ### 4. DPA con il vendor
 
-Se usi un fornitore esterno (Soraia, OpenAI, Anthropic, qualunque), serve **Data Processing Agreement art. 28 GDPR**. Già lo facciamo in ogni nostro sprint.
+Se usi un fornitore esterno (Soraia, OpenAI, Anthropic, qualunque), serve un **Data Processing Agreement** ([art. 28 GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj)). Già lo facciamo in ogni nostro sprint.
 
 ## Il vantaggio Soraia per la compliance
 
