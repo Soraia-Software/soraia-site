@@ -111,7 +111,7 @@
       "/software-development",
       "/parliamone"
     ],
-    "dedupNotes": "Quando basta un flusso no-code (Make/Zapier/n8n) e quando serve un agente IA che ragiona sui casi. Non e' il post software-su-misura-vs-saas; qui il confronto e' automazione a regole vs agente che decide.",
+    "dedupNotes": "Quando basta un flusso no-code (Make/Zapier/n8n) e quando serve un agente IA che ragiona sui casi. Non è il post software-su-misura-vs-saas; qui il confronto è automazione a regole vs agente che decide.",
     "freshnessExpiry": null,
     "score": 76,
     "subScores": {
@@ -228,7 +228,7 @@
     "status": "drafted",
     "slug_it": "ai-search-optimization-vs-seo-tradizionale",
     "slug_en": "geo-vs-traditional-seo",
-    "categoria": "Visibilita' online",
+    "categoria": "Visibilità online",
     "optionA_name": "AI Search Optimization (GEO)",
     "optionB_name": "SEO tradizionale",
     "title_hint": "AI search optimization vs SEO tradizionale: dove farsi trovare nel 2026",
@@ -239,7 +239,7 @@
       "/case-studies/iltec",
       "/parliamone"
     ],
-    "dedupNotes": "Net-new: decisione su dove investire per la visibilita' (motori AI vs Google classico), collegata al servizio AI Search Optimization; nessun overlap con backlog.",
+    "dedupNotes": "Net-new: decisione su dove investire per la visibilità (motori AI vs Google classico), collegata al servizio AI Search Optimization; nessun overlap con backlog.",
     "freshnessExpiry": "2027-01-31",
     "score": 82,
     "subScores": {
@@ -309,7 +309,7 @@
       "/software-development",
       "/parliamone"
     ],
-    "dedupNotes": "Net-new: la backlog no-code-vs-agenti confronta workflow builder (Make/Zapier/n8n) con agenti; qui il termine di paragone e' la RPA classica (bot rule-based su UI), categoria e buyer diversi.",
+    "dedupNotes": "Net-new: la backlog no-code-vs-agenti confronta workflow builder (Make/Zapier/n8n) con agenti; qui il termine di paragone è la RPA classica (bot rule-based su UI), categoria e buyer diversi.",
     "freshnessExpiry": null,
     "score": 77,
     "subScores": {
@@ -371,7 +371,7 @@
     "categoria": "Recruitment & HR",
     "optionA_name": "Recruitment con agenti IA",
     "optionB_name": "Agenzia di recruiting tradizionale",
-    "title_hint": "Recruitment con AI vs agenzia tradizionale: velocita', costo, qualita'",
+    "title_hint": "Recruitment con AI vs agenzia tradizionale: velocità, costo, qualità",
     "primaryKeyword": "recruitment ai vs agenzia recruiting",
     "targetPersona": "HR Manager / Head of Talent",
     "internalLinkTargets": [
@@ -414,7 +414,7 @@
       "/case-studies/numeraria",
       "/parliamone"
     ],
-    "dedupNotes": "Net-new: il parked 'sostituire vs affiancare gestionale' e' una decisione di migrazione; qui la scelta e' build (su misura) vs buy (pacchetto pronto) a monte dell'acquisto.",
+    "dedupNotes": "Net-new: il parked 'sostituire vs affiancare gestionale' è una decisione di migrazione; qui la scelta è build (su misura) vs buy (pacchetto pronto) a monte dell'acquisto.",
     "freshnessExpiry": null,
     "score": 76,
     "subScores": {
@@ -449,7 +449,7 @@
       "/finance",
       "/parliamone"
     ],
-    "dedupNotes": "Net-new: il backlog chatbot-vs-agente riguarda il customer support; qui il confronto e' assistente che affianca l'umano vs agente che esegue il processo end-to-end, trasversale ai cluster ops.",
+    "dedupNotes": "Net-new: il backlog chatbot-vs-agente riguarda il customer support; qui il confronto è assistente che affianca l'umano vs agente che esegue il processo end-to-end, trasversale ai cluster ops.",
     "freshnessExpiry": null,
     "score": 74,
     "subScores": {
@@ -519,7 +519,7 @@
       "/software-development",
       "/parliamone"
     ],
-    "dedupNotes": "Net-new: decisione tecnica su come alimentare l'AI con conoscenza aziendale, non presente in backlog ne' guide.",
+    "dedupNotes": "Net-new: decisione tecnica su come alimentare l'AI con conoscenza aziendale, non presente in backlog né guide.",
     "freshnessExpiry": null,
     "score": 70,
     "subScores": {
@@ -554,7 +554,7 @@
       "/guide/formazione-ai-aziendale",
       "/parliamone"
     ],
-    "dedupNotes": "Net-new: confronto tra due prodotti di produttivita' AI (adoption), non tra approcci custom; distinto da tutti i topic in backlog.",
+    "dedupNotes": "Net-new: confronto tra due prodotti di produttività AI (adoption), non tra approcci custom; distinto da tutti i topic in backlog.",
     "freshnessExpiry": "2027-01-31",
     "score": 66,
     "subScores": {
@@ -934,7 +934,7 @@
       "/guide/ai-act-aziende",
       "/parliamone"
     ],
-    "dedupNotes": "Diverso da agenzia-ai-vs-team-interno (interno vs esterno) e da ai-agency-vs-big4 (specialista vs system integrator): qui l'asse e' partner locale italiano vs piattaforma/vendor estero self-serve, con focus su GDPR/AI Act, lingua e vicinanza. Net-new.",
+    "dedupNotes": "Diverso da agenzia-ai-vs-team-interno (interno vs esterno) e da ai-agency-vs-big4 (specialista vs system integrator): qui l'asse è partner locale italiano vs piattaforma/vendor estero self-serve, con focus su GDPR/AI Act, lingua e vicinanza. Net-new.",
     "freshnessExpiry": null,
     "score": 81,
     "subScores": {
@@ -970,7 +970,7 @@
       "/guide/costi-consulenza-ai",
       "/parliamone"
     ],
-    "dedupNotes": "Non coperto: agenzia-ai-vs-team-interno confronta interno vs esterno, ai-agency-vs-big4 confronta specialista vs Big4. Qui l'asse e' singolo freelance vs agenzia (continuita', scalabilita', rischio bus-factor). Net-new.",
+    "dedupNotes": "Non coperto: agenzia-ai-vs-team-interno confronta interno vs esterno, ai-agency-vs-big4 confronta specialista vs Big4. Qui l'asse è singolo freelance vs agenzia (continuità, scalabilità, rischio bus-factor). Net-new.",
     "freshnessExpiry": null,
     "score": 80,
     "subScores": {
@@ -1006,7 +1006,7 @@
       "/case-studies/navily",
       "/parliamone"
     ],
-    "dedupNotes": "Diverso da chatbot-a-regole-vs-agente-ia-support (regole vs IA) e da voicebot-ia-vs-chatbot-testuale (voce vs testo): qui la scelta e' di CANALE, WhatsApp vs widget sul sito. Rilancio da lancio Meta WhatsApp Business agent in Italia (2026). Net-new.",
+    "dedupNotes": "Diverso da chatbot-a-regole-vs-agente-ia-support (regole vs IA) e da voicebot-ia-vs-chatbot-testuale (voce vs testo): qui la scelta è di CANALE, WhatsApp vs widget sul sito. Rilancio da lancio Meta WhatsApp Business agent in Italia (2026). Net-new.",
     "freshnessExpiry": "2027-08-25",
     "score": 77,
     "subScores": {
@@ -1041,7 +1041,7 @@
       "/guide/formazione-ai-aziendale",
       "/parliamone"
     ],
-    "dedupNotes": "Diverso da assumere-junior-vs-agente-ia (persona vs agente per ruolo operativo) e da recruitment-ai-vs-agenzia: qui l'asse e' costruire competenza AI assumendo un profilo dedicato vs upskilling del team via programma. Net-new.",
+    "dedupNotes": "Diverso da assumere-junior-vs-agente-ia (persona vs agente per ruolo operativo) e da recruitment-ai-vs-agenzia: qui l'asse è costruire competenza AI assumendo un profilo dedicato vs upskilling del team via programma. Net-new.",
     "freshnessExpiry": null,
     "score": 77,
     "subScores": {
@@ -1075,7 +1075,7 @@
       "/guide/formazione-ai-aziendale",
       "/parliamone"
     ],
-    "dedupNotes": "Nessun confronto esistente sulla MODALITA' di formazione; agenzia-ai-vs-team-interno riguarda il delivery, non il formato del percorso. Rilevante con obbligo formazione AI Act 2026. Mappa sui livelli AI Adoption di Soraia. Net-new.",
+    "dedupNotes": "Nessun confronto esistente sulla MODALITÀ di formazione; agenzia-ai-vs-team-interno riguarda il delivery, non il formato del percorso. Rilevante con obbligo formazione AI Act 2026. Mappa sui livelli AI Adoption di Soraia. Net-new.",
     "freshnessExpiry": null,
     "score": 77,
     "subScores": {
@@ -1110,7 +1110,7 @@
       "/guide/assessment-ai-interno-guida-operativa",
       "/parliamone"
     ],
-    "dedupNotes": "Non e' un confronto tra strumenti ma tra APPROCCI di rollout; nessun confronto esistente affronta pilota vs scala. Tema caldo nella stampa italiana 2026 (fine dei PoC). Net-new.",
+    "dedupNotes": "Non è un confronto tra strumenti ma tra APPROCCI di rollout; nessun confronto esistente affronta pilota vs scala. Tema caldo nella stampa italiana 2026 (fine dei PoC). Net-new.",
     "freshnessExpiry": null,
     "score": 75,
     "subScores": {
@@ -1145,7 +1145,7 @@
       "/case-studies/navily",
       "/parliamone"
     ],
-    "dedupNotes": "Diverso da outsourcing-bpo-vs-agente-ia-support (BPO vs IA) e da chatbot-regole-vs-agente: qui l'asse specifico e' la copertura MULTILINGUA per PMI export/e-commerce. Net-new.",
+    "dedupNotes": "Diverso da outsourcing-bpo-vs-agente-ia-support (BPO vs IA) e da chatbot-regole-vs-agente: qui l'asse specifico è la copertura MULTILINGUA per PMI export/e-commerce. Net-new.",
     "freshnessExpiry": null,
     "score": 72,
     "subScores": {
@@ -1180,7 +1180,7 @@
       "/case-studies/talent-match",
       "/parliamone"
     ],
-    "dedupNotes": "Diverso da software-su-misura-vs-gestionale-pronto (build vs buy generico): qui il confronto e' su un CRM con agenti IA che eseguono task (qualifica, follow-up, reporting) vs un CRM tradizionale come sistema di registrazione. Net-new.",
+    "dedupNotes": "Diverso da software-su-misura-vs-gestionale-pronto (build vs buy generico): qui il confronto è su un CRM con agenti IA che eseguono task (qualifica, follow-up, reporting) vs un CRM tradizionale come sistema di registrazione. Net-new.",
     "freshnessExpiry": "2027-08-25",
     "score": 71,
     "subScores": {
@@ -1203,10 +1203,10 @@
     "status": "parked",
     "slug_it": "gemini-workspace-vs-microsoft-copilot",
     "slug_en": "gemini-workspace-vs-microsoft-copilot",
-    "categoria": "Piattaforma AI produttivita'",
+    "categoria": "Piattaforma AI produttività",
     "optionA_name": "Google Gemini (Workspace)",
     "optionB_name": "Microsoft 365 Copilot",
-    "title_hint": "Google Gemini o Microsoft 365 Copilot: quale AI per la produttivita' del team",
+    "title_hint": "Google Gemini o Microsoft 365 Copilot: quale AI per la produttività del team",
     "primaryKeyword": "Gemini Workspace vs Microsoft 365 Copilot aziende",
     "targetPersona": "IT manager / Direttore operativo",
     "internalLinkTargets": [
@@ -1214,7 +1214,7 @@
       "/guide/formazione-ai-aziendale",
       "/parliamone"
     ],
-    "dedupNotes": "Diverso da claude-vs-chatgpt-aziende e dal parked chatgpt-enterprise-vs-copilot: qui il match e' Gemini-in-Workspace vs 365 Copilot, cioe' la scelta tra le due suite di produttivita' gia' in uso nelle PMI. Net-new.",
+    "dedupNotes": "Diverso da claude-vs-chatgpt-aziende e dal parked chatgpt-enterprise-vs-copilot: qui il match è Gemini-in-Workspace vs 365 Copilot, cioè la scelta tra le due suite di produttività già in uso nelle PMI. Net-new.",
     "freshnessExpiry": "2027-08-25",
     "score": 67,
     "subScores": {
@@ -1248,7 +1248,7 @@
       "/ai-agents",
       "/parliamone"
     ],
-    "dedupNotes": "Nessun confronto esistente su come connettere gli agenti ai sistemi aziendali; e' una scelta architetturale build-vs-standard (MCP emergente vs API su misura), non un glossario mono-tool. Net-new.",
+    "dedupNotes": "Nessun confronto esistente su come connettere gli agenti ai sistemi aziendali; è una scelta architetturale build-vs-standard (MCP emergente vs API su misura), non un glossario mono-tool. Net-new.",
     "freshnessExpiry": "2027-08-25",
     "score": 60,
     "subScores": {
@@ -1283,7 +1283,7 @@
       "/software-development",
       "/parliamone"
     ],
-    "dedupNotes": "Net-new: 'no-code-vs-agenti-ia' riguarda Make/Zapier/n8n e 'saas-verticale-pronto-vs-agente-ia-su-misura' un SaaS pronto; qui e' l'agent-builder Microsoft (crediti, ecosistema M365, Cowork/Agent 365 2026) vs agenti realmente custom fuori dal lock-in.",
+    "dedupNotes": "Net-new: 'no-code-vs-agenti-ia' riguarda Make/Zapier/n8n e 'saas-verticale-pronto-vs-agente-ia-su-misura' un SaaS pronto; qui è l'agent-builder Microsoft (crediti, ecosistema M365, Cowork/Agent 365 2026) vs agenti realmente custom fuori dal lock-in.",
     "freshnessExpiry": "2027-06-30",
     "score": 80,
     "subScores": {
@@ -1319,7 +1319,7 @@
       "/case-studies/numeraria",
       "/parliamone"
     ],
-    "dedupNotes": "Net-new: 'rpa-vs-agenti-ia' compara paradigmi di automazione e 'report-ia-vs-report-manuale-excel' (parked) riguarda la reportistica; qui il confronto e' specifico sull'estrazione dati da fatture/PDF/documenti vs inserimento manuale o BPO di data entry.",
+    "dedupNotes": "Net-new: 'rpa-vs-agenti-ia' compara paradigmi di automazione e 'report-ia-vs-report-manuale-excel' (parked) riguarda la reportistica; qui il confronto è specifico sull'estrazione dati da fatture/PDF/documenti vs inserimento manuale o BPO di data entry.",
     "freshnessExpiry": null,
     "score": 79,
     "subScores": {
@@ -1355,7 +1355,7 @@
       "/ai-agents",
       "/parliamone"
     ],
-    "dedupNotes": "Net-new: 'receptionist-vocale-ia-vs-centralino-tradizionale' e' inbound e 'voicebot-ia-vs-chatbot-testuale' e' un confronto di canale; qui e' l'outbound (qualifica lead, richiami, appuntamenti) con l'angolo italiano di AI Act e Registro delle Opposizioni.",
+    "dedupNotes": "Net-new: 'receptionist-vocale-ia-vs-centralino-tradizionale' è inbound e 'voicebot-ia-vs-chatbot-testuale' è un confronto di canale; qui è l'outbound (qualifica lead, richiami, appuntamenti) con l'angolo italiano di AI Act e Registro delle Opposizioni.",
     "freshnessExpiry": "2027-03-31",
     "score": 77,
     "subScores": {
@@ -1390,7 +1390,7 @@
       "/ai-adoption",
       "/parliamone"
     ],
-    "dedupNotes": "Net-new: nessun confronto del backlog affronta il modello di ingaggio economico. E' una decisione reale build/partner (retainer con figure dedicate e ore riportabili vs progetto chiuso a scope fisso) e riflette direttamente il modello Soraia.",
+    "dedupNotes": "Net-new: nessun confronto del backlog affronta il modello di ingaggio economico. È una decisione reale build/partner (retainer con figure dedicate e ore riportabili vs progetto chiuso a scope fisso) e riflette direttamente il modello Soraia.",
     "freshnessExpiry": null,
     "score": 74,
     "subScores": {
@@ -1424,7 +1424,7 @@
       "/software-development",
       "/parliamone"
     ],
-    "dedupNotes": "Distinto da 'agente-ia-su-misura-vs-chatgpt-generico' (che compara ChatGPT generico per il team vs agente): qui il confronto e' tra un Custom GPT effettivamente costruito col GPT Builder (no-code, vive dentro ChatGPT, nessuna automazione) e un agente integrato via API nel CRM/gestionale che agisce; e' una decisione di profondita' di build, non di 'generico vs su misura'.",
+    "dedupNotes": "Distinto da 'agente-ia-su-misura-vs-chatgpt-generico' (che compara ChatGPT generico per il team vs agente): qui il confronto è tra un Custom GPT effettivamente costruito col GPT Builder (no-code, vive dentro ChatGPT, nessuna automazione) e un agente integrato via API nel CRM/gestionale che agisce; è una decisione di profondità di build, non di 'generico vs su misura'.",
     "freshnessExpiry": "2026-12-31",
     "score": 73,
     "subScores": {
@@ -1487,7 +1487,7 @@
     "categoria": "Sales / Marketing",
     "optionA_name": "Produzione contenuti con IA (agente su misura)",
     "optionB_name": "Agenzia di copywriting / content tradizionale",
-    "title_hint": "Contenuti marketing con IA vs agenzia di copywriting: qualita', scala e costi",
+    "title_hint": "Contenuti marketing con IA vs agenzia di copywriting: qualità, scala e costi",
     "primaryKeyword": "contenuti marketing IA vs agenzia copywriting",
     "targetPersona": "Marketing Manager PMI",
     "internalLinkTargets": [
@@ -1496,7 +1496,7 @@
       "/ai-agents",
       "/parliamone"
     ],
-    "dedupNotes": "Net-new: 'ai-sdr-vs-agenzia-lead-generation' riguarda la lead gen, non la produzione di contenuti. Qui il confronto e' sulla creazione di contenuti (blog, schede prodotto, email, ADV) con agente IA sui dati/brand vs affidamento a un'agenzia di copywriting.",
+    "dedupNotes": "Net-new: 'ai-sdr-vs-agenzia-lead-generation' riguarda la lead gen, non la produzione di contenuti. Qui il confronto è sulla creazione di contenuti (blog, schede prodotto, email, ADV) con agente IA sui dati/brand vs affidamento a un'agenzia di copywriting.",
     "freshnessExpiry": null,
     "score": 73,
     "subScores": {
@@ -1567,7 +1567,7 @@
       "/ai-agents",
       "/parliamone"
     ],
-    "dedupNotes": "Net-new: 'agente-ia-multilingua-vs-team-supporto-umano' riguarda il customer support multilingua in tempo reale; qui il confronto e' sulla traduzione/localizzazione di contenuti e documenti per l'export (made in Italy) tra IA/MT e agenzia di traduzione.",
+    "dedupNotes": "Net-new: 'agente-ia-multilingua-vs-team-supporto-umano' riguarda il customer support multilingua in tempo reale; qui il confronto è sulla traduzione/localizzazione di contenuti e documenti per l'export (made in Italy) tra IA/MT e agenzia di traduzione.",
     "freshnessExpiry": null,
     "score": 67,
     "subScores": {

@@ -25,6 +25,8 @@ one-sided ad.
   without a number or named source behind it.
 - PUNCTUATION (house style, deterministically enforced): ASCII hyphen `-` only. NEVER a
   typographic dash (em, en, horizontal bar) or minus sign. Ranges: `10-50k`.
+- ITALIAN ACCENTS: always type the accented letter (è, È, più, perché, già, può, qualità),
+  never an apostrophe in its place; the apostrophe is only for elisions (l'agente, un po').
 
 ## Hard rules
 1. **Balanced and honest.** Both `optionA` and `optionB` must have real `pro` AND real
@@ -41,19 +43,19 @@ one-sided ad.
 5. **Do not duplicate an existing comparison** (see the backlog / existing confronti slugs).
 
 ### Approved metric corpus (the only Soraia/client numbers you may use)
-- Pricing: tre servizi a prezzo fisso piu' add-on una tantum, e pacchetti di ore per i lavori
+- Pricing: tre servizi a prezzo fisso più add-on una tantum, e pacchetti di ore per i lavori
   piccoli. Analisi 3.000 una tantum (facoltativa, fino a 10 interviste, si compra anche da
   sola, scalata dal primo Sprint entro 30 giorni), Sprint da 8.000/mese (team continuativo,
   ma attivabile anche per un solo mese), Hypercare da 500/mese dopo il go-live, contratto
   annuale, facoltativa. Add-on una tantum e indipendenti, comprabili anche senza
   Analisi o Sprint: Compliance & Audit 4.000, Pentest 4.000, Formazione e adozione 3.000,
-  Supporto bandi 2.000, pagato solo se il bando e' vinto. Pacchetti di ore: 50 ore 4.000,
+  Supporto bandi 2.000, pagato solo se il bando è vinto. Pacchetti di ore: 50 ore 4.000,
   100 ore 7.500.
   AI Search Optimization audit 2.000, sprint 3-15k; Linkly 1.900/anno.
 - Delivery: primo rilascio in produzione in 4 settimane; uno Sprint al mese, con Sprint Goal
-  firmato a inizio mese, demo a meta' mese e rilascio a fine mese.
+  firmato a inizio mese, demo a metà mese e rilascio a fine mese.
 - Guarantee: "primo mese soddisfatti o rimborsati"; codice del cliente dal primo giorno, no lock-in.
-- Footprint: 40+ progetti consegnati, team di piu' di 10 persone distribuito in Italia, sede
+- Footprint: 40+ progetti consegnati, team di più di 10 persone distribuito in Italia, sede
   legale a Biella.
 - Never use (modello ritirato): "45 ore", "195 ore", "67 €/ora", monte ore,
   lavoro "a corpo", AI Readiness Assessment, Co-Building Sprint, AI Adoption Foundation,

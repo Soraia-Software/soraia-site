@@ -15,17 +15,17 @@ optionA:
   pro:
     - "Controllo pieno e conoscenza che resta in casa"
     - "Nessun costo ricorrente di consulenza una volta a regime"
-    - "Priorita' decise internamente"
+    - "Priorità decise internamente"
   contro:
     - "Tempi lunghi: selezione, formazione e primo agente serio richiedono in genere 1-2 anni"
     - "Rischio key-person se la persona chiave se ne va"
     - "Le competenze AI vanno aggiornate ogni pochi mesi"
   idealePer:
-    - "Aziende dove l'AI e' gia' un processo core e continuativo"
-    - "Chi ha gia' un tech lead senior con esperienza AI"
+    - "Aziende dove l'AI è già un processo core e continuativo"
+    - "Chi ha già un tech lead senior con esperienza AI"
 optionB:
   nome: "Partner esterno (come Soraia)"
-  descrizione: "Un partner costruisce l'agente sul tuo processo, con un metodo gia' rodato, e il codice resta tuo."
+  descrizione: "Un partner costruisce l'agente sul tuo processo, con un metodo già rodato, e il codice resta tuo."
   pro:
     - "Prima versione funzionante in 4 settimane, non in mesi"
     - "Rischio ridotto: con Soraia vale la garanzia primo mese soddisfatti o rimborsati"
@@ -44,7 +44,7 @@ tabella:
   - criterio: "Rischio iniziale"
     valoreA: "Alto (assunzioni, formazione)"
     valoreB: "Basso (paghi a risultato)"
-  - criterio: "Proprieta' del codice"
+  - criterio: "Proprietà del codice"
     valoreA: "Interna"
     valoreB: "Del cliente dal primo giorno"
   - criterio: "Costo a regime"
@@ -53,14 +53,14 @@ tabella:
   - criterio: "Conoscenza che resta"
     valoreA: "In casa da subito"
     valoreB: "Trasferibile con l'internalizzazione"
-verdetto: "Non e' una scelta binaria per sempre. Per una PMI che non ha ancora un team AI, partire con un partner esterno riduce tempi e rischio: vedi in 4 settimane se il processo funziona, con il codice gia' tuo, e decidi dopo. Man mano che l'AI diventa centrale, ha senso internalizzare le competenze, spesso proprio a partire da quello che il partner ha costruito e documentato. La domanda giusta non e' 'in casa o fuori', ma 'cosa mi conviene fare adesso, dato dove sono'."
+verdetto: "Non è una scelta binaria per sempre. Per una PMI che non ha ancora un team AI, partire con un partner esterno riduce tempi e rischio: vedi in 4 settimane se il processo funziona, con il codice già tuo, e decidi dopo. Man mano che l'AI diventa centrale, ha senso internalizzare le competenze, spesso proprio a partire da quello che il partner ha costruito e documentato. La domanda giusta non è 'in casa o fuori', ma 'cosa mi conviene fare adesso, dato dove sono'."
 faq:
   - q: "Quanto costa partire con un partner rispetto ad assumere?"
-    a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Un singolo sviluppatore senior interno, tra stipendio caricato e mesi di ramp-up, costa di piu' e rende molto piu' tardi. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Un singolo sviluppatore senior interno, tra stipendio caricato e mesi di ramp-up, costa di più e rende molto più tardi. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "Se parto con un partner, resto dipendente da lui?"
-    a: "No. Il <strong>codice e' tuo dal primo giorno</strong>, documentato e mantenibile: niente lock-in. Puoi internalizzare quando vuoi, spesso proprio a partire da quello che e' stato costruito."
+    a: "No. Il <strong>codice è tuo dal primo giorno</strong>, documentato e mantenibile: niente lock-in. Puoi internalizzare quando vuoi, spesso proprio a partire da quello che è stato costruito."
   - q: "E se non funziona?"
-    a: "Con Soraia vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: si fissa un target misurabile in fase di analisi e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto."
+    a: "Con Soraia vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: si fissa un target misurabile in fase di analisi e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto."
 related: []
 featured: true
 pubDate: 2026-07-16

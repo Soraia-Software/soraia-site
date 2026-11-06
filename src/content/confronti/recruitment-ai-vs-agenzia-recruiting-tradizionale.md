@@ -1,8 +1,8 @@
 ---
 titolo: "Recruitment con AI o agenzia tradizionale"
 sottotitolo: "Un agente IA che fa screening e outreach a scala, oppure un'agenzia di recruiting esterna. Cosa conviene a chi assume."
-description: "Recruitment con agenti IA vs agenzia di recruiting tradizionale: velocita', costo, qualita' e controllo a confronto, con un verdetto onesto per l'HR."
-inBreve: "Per volumi alti di candidati e ruoli ricorrenti, un agente IA vince su velocita' e costo per assunzione: fa screening e primo contatto in secondi, 24/7. Per ruoli senior, executive o rari, l'agenzia tradizionale porta rete, giudizio umano e negoziazione che l'AI non replica. Molte aziende usano entrambi: l'AI copre volume e primo filtro, l'agenzia i pochi ruoli critici."
+description: "Recruitment con agenti IA vs agenzia di recruiting tradizionale: velocità, costo, qualità e controllo a confronto, con un verdetto onesto per l'HR."
+inBreve: "Per volumi alti di candidati e ruoli ricorrenti, un agente IA vince su velocità e costo per assunzione: fa screening e primo contatto in secondi, 24/7. Per ruoli senior, executive o rari, l'agenzia tradizionale porta rete, giudizio umano e negoziazione che l'AI non replica. Molte aziende usano entrambi: l'AI copre volume e primo filtro, l'agenzia i pochi ruoli critici."
 categoria: "Recruitment & HR"
 author: "Daniel Levis"
 keywords:
@@ -20,8 +20,8 @@ optionA:
     - "Copertura 24/7, nessun candidato lasciato in coda"
     - "Dati e audit trail su ogni decisione, utili per GDPR e AI Act"
   contro:
-    - "Serve un processo di hiring gia' definito da mettere dentro l'agente"
-    - "Su ruoli rari o executive la rete umana e il giudizio pesano piu' dell'automazione"
+    - "Serve un processo di hiring già definito da mettere dentro l'agente"
+    - "Su ruoli rari o executive la rete umana e il giudizio pesano più dell'automazione"
     - "Richiede un referente HR che segua il progetto e validi i criteri"
     - "Costo iniziale di build prima del ritorno"
   idealePer:
@@ -38,8 +38,8 @@ optionB:
     - "Negoziazione e gestione della relazione con il candidato fino all'offerta"
   contro:
     - "Costo per assunzione alto (spesso 15-25% della RAL) e poco prevedibile a volume"
-    - "Tempi piu' lunghi su volumi elevati, ogni candidatura passa da persone"
-    - "Qualita' dipende dal singolo recruiter assegnato"
+    - "Tempi più lunghi su volumi elevati, ogni candidatura passa da persone"
+    - "Qualità dipende dal singolo recruiter assegnato"
     - "Il know-how e la pipeline restano fuori dall'azienda, nessun asset che rimane"
   idealePer:
     - "Ruoli senior, executive o profili rari da headhunting"
@@ -49,7 +49,7 @@ tabella:
   - criterio: "Tempo di risposta al candidato"
     valoreA: "Secondi (<1 min in casi reali)"
     valoreB: "Giorni, gestione manuale"
-  - criterio: "Scalabilita' sui volumi"
+  - criterio: "Scalabilità sui volumi"
     valoreA: "Alta, costo marginale ~zero"
     valoreB: "Limitata dal numero di recruiter"
   - criterio: "Modello di costo"
@@ -61,16 +61,16 @@ tabella:
   - criterio: "Asset che resta in azienda"
     valoreA: "Agente e dati del cliente dal primo giorno"
     valoreB: "Nessuno, know-how esterno"
-verdetto: "Non e' o l'uno o l'altro. Se assumi a volume su ruoli ricorrenti, un agente IA fa screening e primo contatto meglio e a costo prevedibile: lo vedi nei case APraise (100k+ candidati) e Stars Be Original (risposta <1 minuto). Se il ruolo e' senior, raro o richiede negoziazione fine, l'agenzia tradizionale porta rete e giudizio che l'AI oggi non replica. Il setup piu' efficace per molte PMI e' ibrido: l'agente copre volume e primo filtro, l'agenzia i pochi ruoli davvero critici. La domanda giusta e' 'quali ruoli sto assumendo', non 'AI o umano'."
+verdetto: "Non è o l'uno o l'altro. Se assumi a volume su ruoli ricorrenti, un agente IA fa screening e primo contatto meglio e a costo prevedibile: lo vedi nei case APraise (100k+ candidati) e Stars Be Original (risposta <1 minuto). Se il ruolo è senior, raro o richiede negoziazione fine, l'agenzia tradizionale porta rete e giudizio che l'AI oggi non replica. Il setup più efficace per molte PMI è ibrido: l'agente copre volume e primo filtro, l'agenzia i pochi ruoli davvero critici. La domanda giusta è 'quali ruoli sto assumendo', non 'AI o umano'."
 faq:
   - q: "Un agente IA sostituisce i recruiter?"
     a: "No, li potenzia. L'agente fa il lavoro ripetitivo (screening, parsing, primo contatto), i recruiter si concentrano su colloqui, valutazione e chiusura. Nel case <a href='/case-studies/apraise'>APraise</a> l'agente equivale a <strong>4 recruiter aggiuntivi</strong> senza sostituire il team esistente."
   - q: "Quanto costa un agente IA rispetto a un'agenzia?"
-    a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Un'agenzia tradizionale costa in genere il 15-25% della RAL per ogni assunzione: su volumi alti, il costo per assunzione dell'agente scende molto piu' velocemente. <a href='/parliamone'>Parliamone</a> per una stima sul tuo volume di hiring, o vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Un'agenzia tradizionale costa in genere il 15-25% della RAL per ogni assunzione: su volumi alti, il costo per assunzione dell'agente scende molto più velocemente. <a href='/parliamone'>Parliamone</a> per una stima sul tuo volume di hiring, o vedi i <a href='/prezzi'>prezzi</a>."
   - q: "E per i ruoli executive o molto rari?"
-    a: "Li' l'agenzia tradizionale resta spesso la scelta migliore: la rete di contatti e il giudizio umano su fit e negoziazione contano piu' dell'automazione. L'AI eccelle sul volume e sul primo filtro, non sul headhunting di pochi profili rari."
+    a: "Lì l'agenzia tradizionale resta spesso la scelta migliore: la rete di contatti e il giudizio umano su fit e negoziazione contano più dell'automazione. L'AI eccelle sul volume e sul primo filtro, non sul headhunting di pochi profili rari."
   - q: "E se l'agente non porta il risultato promesso?"
-    a: "Con Soraia vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: si fissa un target misurabile in fase di analisi (es. 5h/recruiter/settimana recuperate) e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finche' non sei soddisfatto. Vedi il cluster <a href='/recruitment'>Recruitment & HR</a>."
+    a: "Con Soraia vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: si fissa un target misurabile in fase di analisi (es. 5h/recruiter/settimana recuperate) e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto. Vedi il cluster <a href='/recruitment'>Recruitment & HR</a>."
 related: []
 featured: false
 pubDate: 2026-08-13
