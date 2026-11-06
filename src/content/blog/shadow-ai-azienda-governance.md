@@ -2,6 +2,7 @@
 title: "Shadow AI in azienda: come governarla prima del 2026"
 description: "I tuoi dipendenti già usano l'IA senza dirtelo. Guida pratica per COO: mappare la Shadow AI, ridurre il rischio data leak e scrivere una policy per l'AI Act."
 pubDate: 2026-07-17
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 tags:
   - "shadow ai"
@@ -21,7 +22,7 @@ faq:
   - q: "Cos'è la Shadow AI in azienda?"
     a: "È l'uso di strumenti di intelligenza artificiale pubblici (ChatGPT free, Gemini, Copilot personale, traduttori AI) da parte dei dipendenti senza autorizzazione o controllo aziendale. Il rischio principale non è l'IA in sé, ma i dati aziendali che finiscono incollati in tool su cui non hai un <strong>DPA art. 28 GDPR</strong> né controllo su dove viaggiano."
   - q: "La Shadow AI è vietata dall'AI Act?"
-    a: "No. L'AI Act non vieta l'uso di strumenti generalisti. Ma dal 2 febbraio 2025 introduce l'obbligo di <strong>AI literacy</strong> (art. 4): il personale che usa sistemi IA deve avere competenza adeguata. Uso non governato = zero tracciabilità di quella competenza, ed è un'esposizione che matura verso le scadenze del 2026."
+    a: "No. L'AI Act non vieta l'uso di strumenti generalisti. Ma dal 2 febbraio 2025 l'art. 4 chiede a chi usa sistemi di IA di occuparsi della <strong>AI literacy</strong> del personale. Dopo il Digital Omnibus, in vigore dal 27 luglio 2026, l'obbligo è adottare misure che sostengano la formazione, senza un livello di competenza da garantire. Con un uso non governato non sai nemmeno chi usa cosa, quindi non puoi mostrare quali misure hai preso."
   - q: "Devo bloccare ChatGPT sui computer aziendali?"
     a: "Quasi mai è la mossa giusta. Il blocco totale spinge l'uso sui dispositivi personali, dove perdi ogni visibilità. Meglio dare uno strumento aziendale approvato (Copilot o ChatGPT business con DPA), definire cosa è permesso e cosa no, e formare il team. Governare, non proibire."
   - q: "Da dove parto per governare la Shadow AI?"
@@ -49,7 +50,7 @@ Questa è la **Shadow AI**: uso di IA pubblica, senza regole, senza che tu lo sa
 **In breve:**
 - La Shadow AI è l'uso non governato di strumenti IA pubblici da parte dei dipendenti. Il rischio numero uno per le PMI nel 2026 non è l'IA in sé, ma il data leak silenzioso.
 - Bloccare ChatGPT non funziona: spinge l'uso sui dispositivi personali, dove perdi ogni visibilità.
-- L'AI Act (art. 4, in vigore dal 2 febbraio 2025) impone l'obbligo di AI literacy del personale. Uso non tracciato = esposizione che matura verso le scadenze del 2026.
+- L'AI Act (art. 4, dal 2 febbraio 2025) chiede a chi usa l'IA di adottare misure per la AI literacy del personale: il Digital Omnibus l'ha alleggerito, ma l'obbligo resta. Se l'uso non è tracciato, non puoi mostrare cosa hai fatto.
 - La risposta è governance in 3 mosse: mappare l'uso reale, dare uno strumento approvato con DPA art. 28, scrivere una policy di 1 pagina.
 - È un lavoro di poche settimane, non un progetto da sei mesi.
 
@@ -59,9 +60,9 @@ Se sei COO o Head of Ops, questo è un tuo problema prima che dell'IT. Perché i
 
 Tre rischi concreti:
 
-1. **Data leak**. Un dipendente incolla dati personali di un cliente in un tool free senza DPA. Hai appena fatto un trasferimento di dati non autorizzato, potenzialmente extra-UE. Problema GDPR, non solo teorico.
+1. **Data leak**. Un dipendente incolla dati personali di un cliente in un tool free senza DPA. Hai appena condiviso dati personali con un fornitore senza il contratto previsto dal [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj) (art. 28), e i dati possono finire fuori dall'UE, dove il trasferimento richiede garanzie specifiche (art. 44). Problema GDPR, non solo teorico.
 2. **Decisioni su output non verificato**. Qualcuno usa una risposta IA generalista come fosse vera. Nessun log, nessun controllo, nessuno che sa che quella decisione è stata presa con l'IA.
-3. **Esposizione AI Act**. Dal 2 febbraio 2025 l'art. 4 richiede AI literacy adeguata del personale. Se il tuo team usa IA a caso, non hai modo di dimostrare quella competenza.
+3. **Esposizione AI Act**. Dal 2 febbraio 2025 l'[art. 4 dell'AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) chiede a chi usa l'IA di occuparsi della formazione del personale. Il [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj), in vigore dal 27 luglio 2026, l'ha riscritto: nessun livello di competenza da garantire, ma l'obbligo di adottare misure resta. Se il tuo team usa IA a caso, non hai modo di mostrare quali misure hai preso.
 
 ## Il blocco totale non funziona (e peggiora le cose)
 

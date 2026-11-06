@@ -2,6 +2,7 @@
 title: "Shadow AI at Work: How to Govern It Before 2026"
 description: "Your employees already use AI without telling you. A practical COO guide to mapping Shadow AI, cutting data-leak risk and writing a policy before the AI Act."
 pubDate: 2026-07-17
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 tags:
   - "shadow ai"
@@ -21,7 +22,7 @@ faq:
   - q: "What is Shadow AI in a company?"
     a: "It's employees using public AI tools (free ChatGPT, Gemini, personal Copilot, AI translators) without company authorisation or oversight. The real risk isn't the AI itself but the company data pasted into tools where you have no <strong>Article 28 GDPR DPA</strong> and no control over where it travels."
   - q: "Does the AI Act ban Shadow AI?"
-    a: "No. The AI Act doesn't ban general-purpose tools. But since 2 February 2025 it introduces an <strong>AI literacy</strong> obligation (Article 4): staff using AI systems must have adequate competence. Ungoverned use means zero traceability of that competence, an exposure that grows toward the 2026 deadlines."
+    a: "No. The AI Act doesn't ban general-purpose tools. But since 2 February 2025 Article 4 asks those using AI systems to take care of their staff's <strong>AI literacy</strong>. After the Digital Omnibus, in force since 27 July 2026, the obligation is to take measures that support training, with no specific level of competence to guarantee. With ungoverned use you don't even know who uses what, so you can't show which measures you took."
   - q: "Should I block ChatGPT on company computers?"
     a: "Almost never the right move. A full block pushes usage onto personal devices, where you lose all visibility. Better to provide an approved business tool (Copilot or ChatGPT business with a DPA), define what's allowed and what isn't, and train the team. Govern, don't ban."
   - q: "Where do I start with governing Shadow AI?"
@@ -49,7 +50,7 @@ This is **Shadow AI**: use of public AI, no rules, without your knowledge. And t
 **Key takeaways:**
 - Shadow AI is the ungoverned use of public AI tools by employees. The number-one risk for SMEs in 2026 isn't AI itself, it's the silent data leak.
 - Blocking ChatGPT doesn't work: it pushes usage onto personal devices, where you lose all visibility.
-- The AI Act (Article 4, in force since 2 February 2025) mandates staff AI literacy. Untracked use means an exposure that grows toward the 2026 deadlines.
+- The AI Act (Article 4, since 2 February 2025) asks those using AI to take measures for staff AI literacy: the Digital Omnibus softened it, but the obligation remains. If usage isn't tracked, you can't show what you did.
 - The answer is governance in 3 moves: map real usage, provide an approved tool with an Article 28 DPA, write a one-page policy.
 - It's a few weeks of work, not a six-month project.
 
@@ -59,9 +60,9 @@ If you're a COO or Head of Ops, this is your problem before it's IT's. Because t
 
 Three concrete risks:
 
-1. **Data leak**. An employee pastes a client's personal data into a free tool with no DPA. You've just made an unauthorised, potentially non-EU data transfer. A GDPR problem, not just a theoretical one.
+1. **Data leak**. An employee pastes a client's personal data into a free tool with no DPA. You've just shared personal data with a vendor without the contract the [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj) requires (Article 28), and the data may end up outside the EU, where the transfer needs specific safeguards (Article 44). A GDPR problem, not just a theoretical one.
 2. **Decisions on unverified output**. Someone treats a generalist AI answer as if it were true. No log, no check, no one who knows that decision was made with AI.
-3. **AI Act exposure**. Since 2 February 2025, Article 4 requires adequate staff AI literacy. If your team uses AI at random, you can't demonstrate that competence.
+3. **AI Act exposure**. Since 2 February 2025, [Article 4 of the AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) asks those using AI to take care of staff training. The [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj), in force since 27 July 2026, rewrote it: no level of competence to guarantee, but the obligation to take measures remains. If your team uses AI at random, you can't show which measures you took.
 
 ## A full block doesn't work (and makes things worse)
 

@@ -2,6 +2,7 @@
 title: "AI Phone Agent for Business: Worth It for an SME?"
 description: "Does an AI voice agent save money or scare customers away? When a phone agent makes sense for an SME, when it does not, and how to measure the result."
 pubDate: 2026-11-04
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 tags:
   - "ai agents"
@@ -25,7 +26,7 @@ faq:
   - q: "How much does an AI phone agent cost for an SME?"
     a: "At Soraia we do not sell a fixed subscription: we work in sprints. A Sprint starts at <strong>€8,000/month</strong>: three dedicated people and a release in production at the end of the month. The first release runs on your real flows in 4 weeks. Compare the cost to your current baseline: what missed calls and switchboard time cost you today."
   - q: "Is it compatible with the AI Act and GDPR?"
-    a: "A customer-facing AI phone agent usually falls under the AI Act limited-risk tier: the main obligation is to tell the caller they are talking to an AI system. For GDPR you need an Article 28 DPA, call logging with a clear legal basis, and EU hosting where required. At Soraia audit logs, DPA and EU hosting are included by default."
+    a: "A customer-facing AI phone agent usually falls under the AI Act limited-risk tier: from 2 August 2026 the main obligation is to tell the caller they are talking to an AI system. For GDPR you need an Article 28 DPA, call logging with a clear legal basis, and EU hosting where required. At Soraia audit logs, DPA and EU hosting are included by default."
   - q: "AI phone agent or a WhatsApp/chat agent?"
     a: "Follow the channel your customers use. If your requests come by phone (bookings, urgent support, less digital clientele), voice makes sense. If customers already text, a text agent costs less and errs less. Often the answer is both, with the same knowledge behind them. Start with the channel where you have the volume and the clearest baseline."
 lang: "en"
@@ -94,7 +95,7 @@ A well-built AI phone agent does not trap: it filters the trivial, covers the de
 
 ## AI Act and GDPR: what you must declare
 
-An AI phone agent that talks to external customers is almost always **limited risk** under the AI Act now in force: the main obligation is transparency, telling the caller they are speaking to an AI system. On GDPR, recording or transcribing calls requires a clear legal basis, a privacy notice, and an Article 28 DPA with the provider. At Soraia audit logs on every call, the DPA and EU hosting where required are included by default, because without them we could not work on these scenarios.
+An AI phone agent that talks to external customers is almost always **limited risk** under the [AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj): the main obligation, which applies from 2 August 2026, is transparency, telling the caller they are speaking to an AI system (Article 50). On [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj), recording or transcribing calls requires a clear legal basis (Article 6), a privacy notice to the caller (Article 13) and a DPA with the provider (Article 28). At Soraia audit logs on every call, the DPA and EU hosting where required are included by default, because without them we could not work on these scenarios.
 
 ## How we approach it at Soraia
 
