@@ -1,5 +1,5 @@
 ---
-title: "Amazon settlement reconciliation: when payouts don't match"
+title: "Amazon settlement reconciliation: when payouts don’t match"
 description: "Amazon settlement reconciliation: match settlement reports to your ERP orders, classify refunds, fees and reserves, and propose journal entries for approval."
 pubDate: 2026-12-03
 author: "Daniel Levis"
@@ -15,7 +15,7 @@ keywords:
   - "Amazon reconciliation ERP"
 readMinutes: 6
 featured: false
-h1: "Amazon settlement reconciliation: why the payout doesn't match"
+h1: "Amazon settlement reconciliation: why the payout doesn’t match"
 faq:
   - q: "Do we need access to Amazon’s APIs?"
     a: "It is the best route: with the seller’s authorization the system downloads settlement reports by itself. Alternatively you can start from files downloaded from Seller Central, with one extra manual step."

@@ -49,7 +49,7 @@ A dye house works with dyes, auxiliaries, surfactants and finishing products fro
 The trouble is that the lists that matter change over time:
 
 - the [Candidate List](https://echa.europa.eu/candidate-list-table) of substances of very high concern (SVHC), which ECHA updates as new substances are identified;
-- the **CLP classification inventory**, which includes the harmonised classifications of the [CLP Regulation](https://eur-lex.europa.eu/eli/reg/2008/1272/oj);
+- the **CLP classification inventory**, which includes the harmonised classifications of the CLP Regulation;
 - **REACH Annexes XIV and XVII**, covering authorisation and restriction.
 
 For textiles, restrictions are not theoretical. Since 3 February 2021, nonylphenol ethoxylates may not exceed 0.01% by weight in textile articles that are washed in water: entry 46a of Annex XVII, added by [Regulation (EU) 2016/26](https://eur-lex.europa.eu/eli/reg/2016/26/oj). An auxiliary that contains them becomes a problem for every batch that uses it.

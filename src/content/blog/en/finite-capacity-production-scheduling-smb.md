@@ -70,7 +70,7 @@ AI is not central here. The value lies in the planning rules, coded together wit
 
 ## How it connects to ERP and MES
 
-The scheduler replaces neither the ERP nor the MES: it reads them. This is the boundary described by the [ISA-95](https://www.isa.org/standards-and-publications/isa-standards/isa-95-standard) standard, also known as IEC 62264, which deals precisely with the interface between business systems and manufacturing operations systems. In practice:
+The scheduler replaces neither the ERP nor the MES: it reads them. This is the boundary described by the [ISA-95](https://www.isa.org/standards-and-publications/isa-standards/isa-95-standard) standard, also known as [IEC 62264](https://webstore.iec.ch/en/publication/6675), which deals precisely with the interface between business systems and manufacturing operations systems. In practice:
 
 - the **ERP** provides orders and requested dates;
 - the **MES** provides progress and actual times;
