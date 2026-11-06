@@ -2,6 +2,7 @@
 title: "Model Context Protocol (MCP): agenti IA e dati aziendali"
 description: "Cos'è il Model Context Protocol, perché conta per la tua azienda e come colleghi un agente IA ai tuoi dati senza aprire falle di sicurezza. Guida non tecnica."
 pubDate: 2026-08-28
+updatedDate: 2026-11-06
 author: "Davide Silvestri"
 tags:
   - "ai agents"
@@ -25,7 +26,7 @@ faq:
   - q: "Devo usare per forza MCP per costruire un agente IA?"
     a: "No. Per un agente con 1-2 integrazioni semplici e stabili, un connettore diretto va benissimo e costa meno. MCP conviene quando prevedi <strong>più agenti che accedono agli stessi sistemi</strong>, o più sistemi collegati allo stesso agente. È una scelta di architettura, non un obbligo."
   - q: "MCP è compatibile con GDPR e AI Act?"
-    a: "MCP è un protocollo tecnico, la compliance dipende da come lo implementi. Il vantaggio è che centralizzando gli accessi rendi più facile applicare minimizzazione dei dati, DPA art. 28 col fornitore e audit log immutabile, tre cose che GDPR e AI Act (in vigore da agosto 2026) richiedono di dimostrare."
+    a: "MCP è un protocollo tecnico, la compliance dipende da come lo implementi. Il vantaggio è che centralizzando gli accessi rendi più facile applicare la minimizzazione dei dati e il DPA col fornitore che chiede il GDPR, e tenere i log che l'AI Act richiede per i sistemi ad alto rischio dal 2 dicembre 2027."
 lang: "it"
 gates:
   passedAt: 2026-07-25T07:02:12.416Z
@@ -42,7 +43,7 @@ draft: false
 
 Ti hanno detto che l'agente IA "si collega ai tuoi dati". Ok, ma *come*? E soprattutto: chi decide cosa quell'agente può leggere, cosa può modificare, e chi risponde se legge qualcosa che non doveva?
 
-Il **Model Context Protocol** (MCP) è lo standard emergente che risponde a queste domande. Te lo spiego senza gergo, perché è una decisione di architettura e di sicurezza, non un dettaglio da lasciare "agli sviluppatori".
+Il [**Model Context Protocol**](https://modelcontextprotocol.io/docs/getting-started/intro) (MCP) è lo standard aperto, supportato da Claude, ChatGPT e dai principali strumenti di sviluppo, che risponde a queste domande. Te lo spiego senza gergo, perché è una decisione di architettura e di sicurezza, non un dettaglio da lasciare "agli sviluppatori".
 
 **In breve:**
 - MCP è uno standard aperto che definisce **come un agente IA accede ai tuoi sistemi** (CRM, ERP, database, file), sostituendo integrazioni ad hoc con una "presa" comune.
@@ -67,7 +68,7 @@ Tre motivi concreti, in ordine di importanza.
 
 **2. Scali senza riscrivere.** Il secondo agente che vuoi costruire (magari sul finance dopo quello sul recruitment) riusa gli stessi server MCP. Non ripaghi l'integrazione da zero.
 
-**3. Rendi la compliance dimostrabile.** GDPR chiede minimizzazione dei dati e tracciabilità; l'AI Act, in vigore da agosto 2026, chiede di sapere *come* un sistema è arrivato a un output. Con gli accessi centralizzati in MCP, applicare questi principi diventa una configurazione, non un'archeologia su dieci codebase diverse.
+**3. Rendi la compliance dimostrabile.** Il [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj) chiede di minimizzare i dati e di poter dimostrare come li tratti (art. 5). L'[AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj), per i sistemi ad alto rischio, chiede log automatici delle operazioni (art. 12) e dà alle persone il diritto a una spiegazione delle decisioni prese con questi sistemi (art. 86), con obblighi che si applicano dal 2 dicembre 2027 dopo il rinvio deciso con il [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj). Con gli accessi centralizzati in MCP, applicare questi principi diventa una configurazione, non un'archeologia su dieci codebase diverse.
 
 ## Come si collega un agente ai dati senza aprire falle
 

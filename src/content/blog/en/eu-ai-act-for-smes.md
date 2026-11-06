@@ -2,7 +2,7 @@
 title: "EU AI Act 2026 for SMEs: What Actually Changes in Practice"
 description: "The EU AI Regulation is in force. For most European SMEs the direct obligations are limited, but there are 4 things you need to do. A practical guide."
 pubDate: 2026-04-22
-updatedDate: 2026-10-18
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 lang: "en"
 tags: ["ai act", "compliance", "gdpr", "guides"]
@@ -10,32 +10,33 @@ readMinutes: 7
 featured: false
 ---
 
-The EU AI Act is now in force. European SMEs are being flooded with AI consultancy emails waving the spectre of fines up to 7% of turnover.
+The EU [AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) has been in force since 1 August 2024. European SMEs are being flooded with AI consultancy emails waving the spectre of fines up to 7% of turnover.
 
-The operational reality is far calmer. For **90% of SMEs**, the direct obligations are few and manageable.
+The operational reality is far calmer. For **most SMEs**, the direct obligations are few and manageable.
 
 Here is the honest map.
 
 ## The 4 Categories of the Regulation
 
-The AI Act classifies AI systems into 4 risk levels:
+The AI Act classifies AI systems into [4 risk levels](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai):
 
-1. **Unacceptable risk**: prohibited (China-style social scoring, child exploitation, etc.). This does not apply to you.
-2. **High risk**: credit scoring, automated recruitment, healthcare systems, etc. Heavy obligations.
+1. **Unacceptable risk**: prohibited (China-style social scoring, exploiting the vulnerabilities of minors or vulnerable people, emotion recognition at work, etc.). It usually doesn't apply to you, but watch out for HR tools that infer employees' emotions.
+2. **High risk**: credit scoring, automated recruitment, healthcare systems, etc. Heavy obligations, which apply from 2 December 2027 after the postponement agreed in the [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj).
 3. **Limited risk**: client-facing chatbots. Main obligation: transparency.
-4. **Minimal risk**: everything else. Residual obligations.
+4. **Minimal risk**: everything else. No specific obligations, except training the people who use AI (Article 4), which applies to everyone.
 
-**The key question** for your SME: do your AI agents fall under level 2 (high) or levels 3–4 (limited/minimal)?
+**The key question** for your SME: do your AI agents fall under level 2 (high) or levels 3-4 (limited/minimal)?
 
 ## Recruitment & HR: Pay Attention
 
-If you use AI to **decide or significantly influence** hiring, promotions, or performance evaluations, the AI Act classifies you under **high risk**. Obligations:
+If you use AI to **select, filter or evaluate** candidates, or to decide on promotions and performance reviews, the AI Act classifies you under **high risk**. From 2 December 2027, whoever uses these systems must:
 
-- Documented risk assessment
-- Full logging of decisions
-- Human oversight on borderline cases
-- Communication to candidates that AI is involved in the process
-- Record retention for 6 years
+- Follow the provider's instructions
+- Assign human oversight to competent people
+- Keep the system's logs for at least six months
+- Inform workers and their representatives before use, and candidates that they are subject to the system
+
+These are the Article 26 obligations; the DPIA required by the GDPR comes on top.
 
 In practice, in Soraia's recruitment sprints:
 - The agent **filters and ranks** candidates, but a human recruiter always signs off on the final decision
@@ -43,7 +44,7 @@ In practice, in Soraia's recruitment sprints:
 - DPIA documents generated as a deliverable
 - The agent does not produce legally binding output
 
-This keeps us **between high risk (AI-assisted) and limited risk (human always in the loop)**. To stay safe, we treat all recruitment projects as high risk.
+Even with the recruiter signing off, filtering and ranking candidates stays **high risk**: it is profiling, which the AI Act always treats as high risk (Article 6). That's why we treat all recruitment projects as high risk.
 
 ## Finance & Accounting: Minimal Risk When Done Right
 
@@ -51,16 +52,18 @@ Agents that read invoices, run OCR, validate VAT, generate reports, **minimal ri
 
 Main obligation: internal transparency (the team must know the agent is AI-driven).
 
-## Sales & Marketing: Limited
+## Sales & Marketing: Minimal or Limited
 
-Agents handling personalised outreach, lead scoring, email drafting, **limited risk**. If the output goes to an external contact (e.g. an automated follow-up email), you need:
+Agents handling personalised outreach, lead scoring, email drafting are usually **minimal risk**. They become **limited risk** if the agent converses with customers on its own (e.g. automated follow-ups that carry the conversation forward). In that case:
 
-- An indication that it was generated with AI assistance (where appropriate)
-- The ability for the recipient to request human intervention
+- You must make clear, at the first interaction, that there's an AI on the other side (Article 50)
+- It's worth letting the recipient ask for a person
+
+If AI writes the email but a person reviews and sends it, there is no labelling obligation.
 
 ## Customer Support: It Depends
 
-Frontline chatbot → **limited risk**; you must inform the user they are talking to an AI.
+Frontline chatbot → **limited risk**; you must inform the user they are talking to an AI, clearly and at the first interaction.
 
 Internal routing + response drafting (with a human approving and sending) → **minimal risk**.
 
@@ -82,7 +85,7 @@ Define upfront: when the agent decides autonomously, and when it escalates to a 
 
 ### 4. DPA with Your Vendor
 
-If you use an external provider (Soraia, OpenAI, Anthropic, any other), you need a **Data Processing Agreement under GDPR Art. 28**. We include this in every sprint as standard.
+If you use an external provider (Soraia, OpenAI, Anthropic, any other), you need a **Data Processing Agreement** ([GDPR Article 28](https://eur-lex.europa.eu/eli/reg/2016/679/oj)). We include this in every sprint as standard.
 
 ## The Soraia Compliance Advantage
 

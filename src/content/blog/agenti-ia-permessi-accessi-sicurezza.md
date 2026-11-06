@@ -2,6 +2,7 @@
 title: "Rischi sicurezza agenti AI: dagli solo gli accessi giusti"
 description: "Un agente IA con troppi permessi è una minaccia interna. Guida pratica al least-privilege: come dare a un agente solo gli accessi che gli servono."
 pubDate: 2026-08-26
+updatedDate: 2026-11-06
 author: "Davide Silvestri"
 tags:
   - "ai agents"
@@ -53,13 +54,13 @@ Nel 2026 gli agenti IA sono la nuova minaccia interna. Non perché siano cattivi
 
 ## Perché un agente con troppi permessi è pericoloso
 
-Un LLM che risponde a una persona è contenuto: sbaglia una risposta, la persona la corregge. Un agente in produzione no. Riceve un trigger, esegue, agisce nei tuoi sistemi. Se ha accesso a CRM, ERP, mailbox e file server "per comodità", un solo problema (un prompt injection nel testo di un ticket, un bug nella logica, una credenziale esposta) si propaga a tutto ciò che l'agente può toccare.
+Un LLM che risponde a una persona è contenuto: sbaglia una risposta, la persona la corregge. Un agente in produzione no. Riceve un trigger, esegue, agisce nei tuoi sistemi. Se ha accesso a CRM, ERP, mailbox e file server "per comodità", un solo problema (un prompt injection nel testo di un ticket, un bug nella logica, una credenziale esposta) si propaga a tutto ciò che l'agente può toccare. L'OWASP, la fondazione no profit che pubblica le liste dei rischi di sicurezza del software, lo chiama ["Excessive Agency"](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) e lo mette tra i dieci rischi principali delle applicazioni basate su LLM.
 
 La domanda giusta non è *"l'agente è sicuro?"*. È *"cosa può fare l'agente nel peggiore dei casi?"*. E la risposta dipende da una cosa sola: quanti accessi gli hai dato.
 
 ## Least privilege in pratica, per un agente IA
 
-Il principio è vecchio quanto la sicurezza informatica, ma va tradotto sugli agenti. Ecco come lo applichiamo negli sprint Soraia.
+Il principio è vecchio quanto la sicurezza informatica, ma va tradotto sugli agenti. Le contromisure indicate dall'OWASP sono le stesse: permessi ridotti al minimo necessario e approvazione umana per le azioni ad alto impatto. Ecco come lo applichiamo negli sprint Soraia.
 
 ### 1. Un'identità dedicata, non quella di una persona
 
@@ -75,7 +76,7 @@ Definisci esattamente su quali risorse l'agente opera. Un agente di [customer su
 
 ### 4. Confine umano sulle operazioni irreversibili
 
-Cancellazioni definitive, movimenti economici, decisioni che impattano persone: qui l'agente propone, un umano conferma. Non è burocrazia, è il modo di tenere il raggio di un errore vicino a zero. È anche ciò che ti tiene allineato ad AI Act (in vigore per le PMI dal 2026) e GDPR.
+Cancellazioni definitive, movimenti economici, decisioni che impattano persone: qui l'agente propone, un umano conferma. Non è burocrazia, è il modo di tenere il raggio di un errore vicino a zero. È anche ciò che ti tiene allineato al [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj), che chiede protezione dei dati fin dalla progettazione e sicurezza del trattamento (artt. 25 e 32), e all'[AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj), che per i sistemi ad alto rischio chiede una supervisione umana effettiva.
 
 ### 5. Audit log immutabile su ogni decisione
 

@@ -2,6 +2,7 @@
 title: "Audit log agenti AI: la prova che regge all'AI Act"
 description: "L'audit log è ciò che rende difendibile un agente AI davanti a un revisore. Come progettarlo per decisioni tracciabili, non per la sola compliance formale."
 pubDate: 2026-09-11
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 tags:
   - "audit log"
@@ -45,6 +46,8 @@ Quando un agente AI decide qualcosa, la domanda che arriva prima o poi è sempre
 L'audit log è il registro immutabile di come un agente AI arriva a ogni output. Non è un requisito burocratico: è ciò che rende una decisione automatica difendibile e debuggabile. Un log utile registra cinque cose per decisione: input, contesto recuperato, regole o prompt applicati, output, escalation umana. Progettato così, serve tre scopi in uno: prova di conformità, strumento di debug, base di fiducia con clienti e revisori. Progettato male, è un file di testo che nessuno riesce a leggere quando serve.
 
 Questo pezzo non parla di normativa in astratto. Parla di come si costruisce la prova, campo per campo, dentro un agente in produzione.
+
+Per i sistemi ad alto rischio, comunque, la norma c'è: l'[AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) chiede che registrino automaticamente gli eventi (art. 12) e che chi li usa conservi questi log per almeno sei mesi (art. 26). Gli obblighi si applicano dal 2 dicembre 2027, dopo il rinvio deciso con il [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj). Per gli altri agenti il log non è obbligatorio, ma è il modo più semplice per rispondere quando qualcuno chiede conto di una decisione.
 
 **In breve:**
 - L'audit log risponde a una domanda operativa, non legale: **come ha deciso l'agente**. Chi non lo tiene parte già in ritardo su ogni contestazione.
@@ -91,7 +94,7 @@ Senza i cinque campi separati, questi tre casi sembrano lo stesso bug e ci perdi
 
 Sugli agenti interni di [finance](/finance), il log è quello che fa passare una riconciliazione automatica da "il computer dice così" a "ecco la regola applicata su questi dati". Sul [recruitment](/recruitment), dove trattiamo i progetti con la massima cautela, il log è la condizione per poter promettere volumi come i 100k+ candidati gestiti dall'agente di [APraise](/case-studies/apraise) senza che una singola valutazione resti inspiegabile.
 
-Il log da solo non basta. Serve abbinarlo al **DPA art. 28 GDPR** col fornitore: il log spiega come ha deciso l'agente, il DPA stabilisce chi tratta i dati, dove e con quali garanzie. Due strumenti diversi, stesso obiettivo: una decisione automatica che regge quando qualcuno la mette in discussione.
+Il log da solo non basta. Serve abbinarlo al **DPA** col fornitore previsto dall'[art. 28 del GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj): il log spiega come ha deciso l'agente, il DPA stabilisce chi tratta i dati, dove e con quali garanzie. Due strumenti diversi, stesso obiettivo: una decisione automatica che regge quando qualcuno la mette in discussione.
 
 ## Quando NON ti serve loggare tutto
 

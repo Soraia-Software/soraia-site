@@ -1,9 +1,9 @@
 ---
 title: "EU AI Act for Business: what actually changes in operations"
 h1: "EU AI Act for European Businesses: the 2026 operational guide"
-description: "The 4 risk levels of the AI Act, what changes for HR, finance, marketing, support, and the 4 concrete steps every European SME needs to take. Updated May 2026."
+description: "The 4 risk levels of the AI Act, what changes for HR, finance, marketing, support, and the 4 steps every European SME should take. Updated November 2026."
 pubDate: 2026-04-22
-updatedDate: 2026-05-24
+updatedDate: 2026-11-06
 readMinutes: 13
 featured: false
 lang: "en"
@@ -18,42 +18,43 @@ related:
   - "ai-consulting-costs"
 faq:
   - q: "Does the AI Act apply to European SMEs?"
-    a: "Yes, but proportionately. The majority of SMEs fall into <strong>limited or minimal risk</strong>. Substantive obligations are limited to 4 concrete steps (audit log, policy, DPA, human oversight on critical cases). The fines up to 7% of turnover circulating in scaremongering emails apply to serious violations involving high-risk systems, not ordinary use of ChatGPT in the office."
+    a: "Yes, but proportionately. The majority of SMEs fall into <strong>limited or minimal risk</strong>. Direct obligations are few: train the people who use AI (Article 4), tell people when they are talking to an AI system (Article 50) and avoid prohibited practices. The 4 steps we recommend (audit log, policy, DPA, human oversight on critical cases) cover them together with the GDPR. The fines up to 7% of turnover circulating in scaremongering emails apply to prohibited practices, not ordinary use of ChatGPT in the office."
   - q: "When did the AI Act come into force?"
-    a: "Regulation (EU) 2024/1689 came into force on <strong>1 August 2024</strong>. Obligations are phased: <strong>February 2025</strong> for prohibited practices, <strong>August 2025</strong> for general-purpose AI models, <strong>August 2026</strong> for most obligations on high-risk systems."
+    a: "Regulation (EU) 2024/1689 came into force on <strong>1 August 2024</strong>. Obligations are phased: <strong>February 2025</strong> for prohibited practices and staff AI literacy, <strong>August 2025</strong> for general-purpose AI models, <strong>August 2026</strong> for most other rules, including transparency. After the Digital Omnibus, high-risk obligations start on <strong>2 December 2027</strong> (2 August 2028 for those built into regulated products)."
   - q: "What are the 4 risk levels of the AI Act?"
-    a: "(1) <strong>Unacceptable</strong>, prohibited (social scoring, subliminal manipulation, real-time biometric identification in public spaces with exceptions). (2) <strong>High</strong>, recruitment, credit scoring, healthcare systems, critical infrastructure: heavy obligations. (3) <strong>Limited</strong>, chatbots, systems interacting with users: main obligation is transparency. (4) <strong>Minimal</strong>, everything else: residual obligations."
+    a: "(1) <strong>Unacceptable</strong>, prohibited (social scoring, subliminal manipulation, emotion recognition at work, real-time biometric identification in public spaces by law enforcement, with exceptions). (2) <strong>High</strong>, recruitment, credit scoring, healthcare systems, critical infrastructure: heavy obligations. (3) <strong>Limited</strong>, chatbots, systems interacting with users: main obligation is transparency. (4) <strong>Minimal</strong>, everything else: no specific obligations for the system."
   - q: "If I use ChatGPT at work, do I need to do anything specific for the AI Act?"
-    a: "Ordinary use of ChatGPT/Copilot/Claude by employees for daily tasks falls into the minimal risk level. Basic obligations: (1) <strong>internal AI use policy</strong> (1 page); (2) <strong>no sensitive personal data</strong> as input without a DPA with the vendor; (3) <strong>internal transparency</strong> with the team. No heavy bureaucracy."
+    a: "Ordinary use of ChatGPT/Copilot/Claude by employees for daily tasks falls into the minimal risk level. The AI Act obligation is to take measures to train the people who use it (Article 4). Beyond that it makes sense to have: (1) <strong>internal AI use policy</strong> (1 page); (2) <strong>no personal data</strong> as input without a DPA with the vendor, as the GDPR requires; (3) <strong>internal transparency</strong> with the team. No heavy bureaucracy."
   - q: "Recruitment with AI: what obligations apply?"
-    a: "Systems that <strong>decide or significantly influence</strong> hiring/promotion/performance decisions fall into the high-risk level. Obligations: <strong>documented risk assessment</strong>, <strong>full logging</strong> of decisions, <strong>human oversight</strong> on edge cases, <strong>disclosure to candidates</strong> that AI is involved, <strong>record retention for 6 years</strong>. Soraia handles this level in every recruitment project."
+    a: "Systems that select, filter or evaluate candidates, or decide on promotions and performance reviews, fall into the high-risk level. From 2 December 2027 whoever uses them must: follow the provider's instructions, assign <strong>human oversight</strong> to competent people, <strong>keep the logs</strong> for at least six months, <strong>inform workers</strong> and their representatives before use and <strong>inform candidates</strong> that they are subject to the system. Soraia handles this level in every recruitment project."
   - q: "What is a DPIA and when is it required?"
-    a: "DPIA = Data Protection Impact Assessment. <strong>Mandatory</strong> for high-risk AI systems that process personal data in a new way or at scale. For most SMEs: required for recruitment automation, customer scoring, and processes that evaluate individuals. A 5–15-page document that maps risks and mitigations. Soraia includes it as a deliverable in projects covering regulated sectors."
+    a: "DPIA = Data Protection Impact Assessment. It is a GDPR obligation (Article 35), not an AI Act one: it applies when processing, especially with new technologies, is likely to result in a <strong>high risk</strong> to people. For high-risk AI systems the AI Act asks deployers to carry it out using the provider's information. For most SMEs: required for recruitment automation, customer scoring, and processes that evaluate individuals. A 5-15-page document that maps risks and mitigations. Soraia includes it as a deliverable in projects covering regulated sectors."
   - q: "What are the AI Act fines?"
-    a: "<strong>Up to €35 million or 7% of annual turnover</strong> (whichever is higher) for serious violations involving prohibited systems. <strong>Up to €15 million or 3% of turnover</strong> for non-compliance with high-risk systems. <strong>Up to €7.5 million or 1% of turnover</strong> for false or misleading information to authorities. For SMEs the real risk is low if they follow the 4 basic steps."
+    a: "<strong>Up to €35 million or 7% of annual turnover</strong> for prohibited practices. <strong>Up to €15 million or 3% of turnover</strong> for breaching the other obligations, including high-risk and transparency. <strong>Up to €7.5 million or 1% of turnover</strong> for false or misleading information to authorities. For large companies the higher of the two amounts applies, for SMEs the lower. The real risk is low if the 4 basic steps are in place."
   - q: "Do I need to appoint an AI Officer?"
     a: "<strong>NO</strong> for most SMEs. The AI Act does not require the appointment of a dedicated AI Officer. For organisations using high-risk systems it is advisable to assign responsibility to an existing manager (DPO, Compliance, IT) without creating new roles. External agencies (e.g. Soraia) can assist as consultants on the topic."
 ---
 
-The EU AI Act came into force on 1 August 2024. Since then, European SMEs have been receiving emails from AI consultants raising the spectre of fines up to 7% of turnover. The operational reality is far calmer: for **90% of SMEs**, direct obligations are few and manageable.
+The EU [AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) came into force on 1 August 2024. Since then, European SMEs have been receiving emails from AI consultants raising the spectre of fines up to 7% of turnover. The operational reality is far calmer: for **most SMEs**, direct obligations are few and manageable.
 
 This is the honest map: what actually changes for your business, the 4 concrete steps you should take before 2026, and how specific sectors (HR, finance, marketing, support) are affected.
 
 ## The 4 AI Act risk categories
 
-The regulation classifies AI systems into 4 risk levels. The level determines the obligations. Understanding where each of your systems sits is the starting point.
+The regulation classifies AI systems into [4 risk levels](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai). The level determines the obligations. Understanding where each of your systems sits is the starting point.
 
 ### Unacceptable risk (prohibited)
 
-Systems banned throughout the EU from February 2025:
+Systems banned throughout the EU from February 2025 (Article 5):
 
 - **Social scoring** in the style of China (evaluating people based on social behaviour).
 - **Subliminal manipulation** causing harm.
 - **Exploitation of vulnerabilities** of specific groups (minors, people with disabilities).
-- **Real-time biometric identification** in public spaces (with exceptions for law enforcement).
+- **Real-time remote biometric identification** in public spaces for law enforcement, with narrow exceptions.
 - **Biometric categorisation** based on race/religion/orientation.
+- **Emotion recognition** in the workplace and in education, except for medical or safety reasons.
 
-**Does this affect your SME?** Probably not. Systems at this level are not used in ordinary business operations.
+**Does this affect your SME?** Probably not, with one exception worth remembering: an HR tool that infers employees' emotions is prohibited.
 
 ### High risk (heavy obligations)
 
@@ -66,26 +67,28 @@ Systems that can have a significant impact on people's rights, safety, and oppor
 - **Education** (access, student assessment).
 - **Law enforcement** (with specific exceptions).
 - **Migration/asylum** management.
+- **Emotion recognition** where it isn't prohibited, with the duty to inform the people exposed.
 
 **Does this affect your SME?** Yes, if you operate in recruitment, HR, finance, or healthcare. For other sectors: only if you build a system that falls specifically into this category.
 
+Obligations for these systems apply from 2 December 2027, or from 2 August 2028 for those built into regulated products such as medical devices, after the postponement agreed in the [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj).
+
 ### Limited risk (transparency)
 
-Systems that interact directly with individuals:
+Systems that interact with people or produce content that must be disclosed:
 
 - **Customer-facing chatbots**.
-- **Content generation systems** (AI that writes emails to customers, AI that generates images).
-- **Emotion recognition systems** (in non-prohibited contexts).
+- **Deepfakes** and texts generated to inform the public on matters of public interest.
 
-Main obligation: **transparency**. Users must know they are interacting with AI or that content is AI-generated.
+Main obligation: **transparency** (Article 50), from 2 August 2026. Users must know they are interacting with an AI, and AI-generated deepfakes and public-interest texts must be disclosed (texts are exempt if a person reviews them and takes editorial responsibility). Emails to customers written with AI and reviewed by a person carry no labelling obligation.
 
-**Does this affect your SME?** Yes, if you have a frontline chatbot, if you send AI-generated emails to customers, or if you generate AI images for marketing.
+**Does this affect your SME?** Yes, if you have chatbots or agents that talk to customers, or if you publish deepfakes. For marketing images, see [how to label AI-generated content](/en/blog/labeling-ai-generated-marketing-content).
 
 ### Minimal risk (residual obligations)
 
 Everything else: spam filters, recommendation systems, internal process optimisation, use of ChatGPT/Copilot for office productivity.
 
-Obligations: general principles of transparency and fair use. No heavy compliance required.
+Obligations: none specific to the system. As for everyone, training the people who use it still applies (Article 4). No heavy compliance required.
 
 **Does this affect your SME?** Yes, for the majority of everyday use cases. **Good news**: zero bureaucracy required.
 
@@ -94,29 +97,29 @@ Obligations: general principles of transparency and fair use. No heavy complianc
 | Level | Examples | Obligations |
 |---|---|---|
 | Unacceptable | Social scoring, manipulation | Prohibited |
-| High | Recruitment, credit, healthcare | Risk assessment, logging, human oversight, DPIA, 6-year records |
-| Limited | Chatbots, AI-generated content | Transparency |
-| Minimal | ChatGPT in the office, spam filters | Residual |
+| High | Recruitment, credit, healthcare | For users: provider's instructions, human oversight, logs for at least 6 months, informing people, DPIA (GDPR) |
+| Limited | Chatbots, deepfakes | Transparency |
+| Minimal | ChatGPT in the office, spam filters | None specific (staff training still applies, Article 4) |
 
 ## What changes by sector
 
 ### Recruitment & HR (high risk)
 
-If you use AI to **decide or significantly influence** hiring, promotion, or performance evaluations:
+If you use AI to **select, filter or evaluate** candidates, or to decide on promotions and performance reviews, from 2 December 2027 you must (Article 26):
 
-- Documented risk assessment of the system.
-- Full logging of decisions (input + output + criteria applied).
-- Human oversight on edge cases.
-- Disclosure to candidates that AI is involved in the process.
-- Record retention for 6 years.
+- Use the system according to the provider's instructions; the provider must have assessed and documented it.
+- Assign human oversight to competent people.
+- Keep the logs generated by the system for at least six months.
+- Inform workers and their representatives before use, and candidates that they are subject to the system.
+- Carry out the DPIA required by the GDPR, using the provider's information.
 
 **In practice in Soraia recruitment projects**:
 - The AI agent **filters and ranks** candidates, but the human recruiter always signs off on the final decision.
-- We maintain an immutable audit log for every decision, reconstructable over 6 years.
+- We maintain an immutable audit log for every decision, reconstructable over time.
 - DPIA document generated as a sprint deliverable.
 - The agent does not produce legally binding outputs without human review.
 
-This positioning keeps us **between high (assisted) and limited (human-in-the-loop)**. For safety, we operate at the high-risk level.
+Even with the recruiter signing off, filtering and ranking candidates stays **high risk**: it is profiling, which the AI Act always treats as high risk (Article 6). That's why we operate at the high-risk level.
 
 ### Finance & Accounting (minimal risk if done right)
 
@@ -124,28 +127,30 @@ Agents that read invoices, perform OCR, validate VAT, and generate reports → *
 
 Main obligation: internal transparency (the finance team must know the agent is AI-driven).
 
-**Exception**: if the agent makes **credit decisions** involving third parties or automatically influences customer invoicing → it may fall into the limited/high risk level. Requires case-by-case assessment.
+**Exception**: if the agent assesses the **creditworthiness** of natural persons → high risk (Annex III). If it automatically affects customer invoicing, it needs a case-by-case assessment.
 
-### Sales & Marketing (limited risk)
+### Sales & Marketing (minimal or limited risk)
 
-Agents performing personalised outreach, lead scoring, email drafting → **limited risk**.
+Agents performing personalised outreach, lead scoring, email drafting → usually **minimal risk**; it becomes **limited risk** if the agent converses with customers on its own.
 
-If the output goes to an external customer (e.g. an automated follow-up email):
-- Indication that the email was generated with AI assistance (where appropriate, in a non-intrusive way).
-- Ability for the recipient to request human intervention.
+If the agent writes and replies to customers on its own (e.g. automated follow-ups that carry the conversation forward):
+- You must make clear that there's an AI on the other side, at the latest at the first interaction (Article 50).
+- It's worth letting the recipient ask for a person.
+
+If AI writes the email but a person reviews and sends it, there is no labelling obligation.
 
 If the output stays internal (e.g. lead score for the sales team, not communicated to the customer):
 - Minimal risk. Internal transparency only.
 
 ### Customer Support (depends)
 
-**Frontline customer-facing chatbot** → limited risk. Obligation: inform the user they are talking to AI (even discretely at the bottom of the chat).
+**Frontline customer-facing chatbot** → limited risk. Obligation: inform the user they are talking to AI, clearly and at the latest at the first interaction (Article 50).
 
 **Internal routing + response drafting (human approves and sends)** → minimal risk. The human acts as the final check; the system is "assisted".
 
 ### Education & Training
 
-If your SME provides external training that uses AI for student assessment → high risk. If AI is used only to generate learning materials → limited risk. If AI is purely a productivity tool for internal trainers → minimal risk.
+If your SME provides external training that uses AI for student assessment → high risk. If AI is used only to generate learning materials → minimal risk. If AI is purely a productivity tool for internal trainers → minimal risk.
 
 ## The 4 concrete steps for SMEs
 
@@ -172,9 +177,9 @@ Every agent in production must **log every decision**:
 - Output produced.
 - Human escalation flag (yes/no/when).
 
-For high-risk systems this is a regulatory requirement. For others it is smart regardless: debugging, accountability, continuous improvement.
+For high-risk systems this is a regulatory requirement (Articles 12 and 26). For others it is smart regardless: debugging, accountability, continuous improvement.
 
-Standard 2026 tooling: Langfuse, OpenLLMetry, custom systems on S3 + metadata. Cost: ~€100–300/month for an average SME.
+Standard 2026 tooling: Langfuse, OpenLLMetry, custom systems on S3 + metadata. Cost: ~€100-300/month for an average SME.
 
 ### Step 3, Human oversight on critical cases
 
@@ -190,7 +195,7 @@ Documenting the "automatic cases / escalation cases" matrix is the most direct a
 
 ### Step 4, DPA with the vendor
 
-If you use an external provider (Soraia, OpenAI direct, Anthropic, Microsoft, Google), you need a **Data Processing Agreement under Art. 28 GDPR**.
+If you use an external provider (Soraia, OpenAI direct, Anthropic, Microsoft, Google), you need a **Data Processing Agreement** ([Article 28 GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj)).
 
 - OpenAI has a standard DPA available for download.
 - Anthropic has a standard DPA.
@@ -198,32 +203,36 @@ If you use an external provider (Soraia, OpenAI direct, Anthropic, Microsoft, Go
 - Google has a standard DPA.
 - Soraia (and any serious agency) includes it in the sprint contract.
 
-**Without a DPA, every input of personal data is a GDPR violation.** The most direct step, and the one most often skipped in a rush.
+**Without a DPA, handing personal data to a vendor breaches the GDPR.** The most direct step, and the one most often skipped in a rush.
 
-## Timeline 2025–2026: what expires when
+## Timeline 2025-2028: what expires when
 
 Key dates to plan your compliance:
 
-- **February 2025** ✓ already in force, prohibition of unacceptable AI practices.
+- **February 2025** ✓ already in force, prohibition of unacceptable AI practices and staff AI literacy (Article 4).
 - **August 2025** ✓ already in force, obligations for general-purpose AI models (mainly affects vendors like OpenAI/Anthropic, not end users).
-- **August 2026**, main obligations for high-risk systems. If you have recruitment AI, accounting AI with impact on individuals, etc., this is the operational deadline for compliance.
-- **August 2027**, obligations for high-risk systems embedded in regulated products (medical devices, machinery).
+- **August 2026** ✓ already in force, most of the regulation applies, including transparency: chatbots and agents that talk to customers must disclose they are AI.
+- **2 December 2026**, new prohibitions added by the Digital Omnibus (non-consensual intimate content and child sexual abuse material generated with AI); the grace period for providers to mark content generated by systems already on the market also ends.
+- **2 December 2027**, obligations for Annex III high-risk systems. If you have recruitment AI or credit scoring, this is the operational deadline for compliance.
+- **2 August 2028**, obligations for high-risk systems built into regulated products, such as medical devices.
 
-For most SMEs: **August 2026** is the date to mark in the calendar. At time of writing, you have 14 months.
+For most SMEs the date that mattered was **August 2026**, for transparency, and it has passed. Whoever uses high-risk systems has until **2 December 2027**.
 
 ## Fines: how they actually work
 
-Scaremongering emails throw around figures like "up to 7% of turnover". True, but misleading. Maximum fines are for **serious violations involving prohibited systems** or for providing false information to authorities.
+Scaremongering emails throw around figures like "up to 7% of turnover". True, but misleading. The maximum fine is for **prohibited practices**; the lowest is for false information to authorities.
 
 Operational summary:
 
 | Type of violation | Maximum fine |
 |---|---|
-| Prohibited AI practices | €35M or 7% of turnover (whichever is higher) |
-| Non-compliance with high-risk systems | €15M or 3% of turnover |
+| Prohibited AI practices | €35M or 7% of turnover |
+| Other obligations (high risk, transparency) | €15M or 3% of turnover |
 | False or misleading information | €7.5M or 1% of turnover |
 
-For an average European SME (turnover €5–20M), the real risk of a fine is low if you:
+For large companies the higher of the two amounts applies; for SMEs, including start-ups, the lower (Article 99).
+
+For an average European SME (turnover €5-20M), the real risk of a fine is low if you:
 
 - Do not use prohibited systems.
 - Have the 4 basic steps above implemented.
@@ -237,13 +246,13 @@ When an AI consultant tells you these things, it is a red flag:
 
 **"You are legally required to appoint an AI Officer."** False for SMEs. The AI Act does not mandate the appointment of a dedicated role.
 
-**"You need €50,000 worth of compliance work to be covered under the AI Act."** For most SMEs, the 4 basic steps cost €2–5k in one-off consulting, not €50k.
+**"You need €50,000 worth of compliance work to be covered under the AI Act."** For most SMEs, the 4 basic steps cost €2-5k in one-off consulting, not €50k.
 
-**"The AI Act bans the use of ChatGPT in business."** False. Business use of ChatGPT is minimal risk; an internal policy is enough.
+**"The AI Act bans the use of ChatGPT in business."** False. Business use of ChatGPT is minimal risk; an internal policy and training for the people who use it are enough (Article 4).
 
-**"Automatic fines from 2025 with no warning."** False. Enforcement is progressive; authorities request remediation before sanctioning.
+**"Automatic fines from 2025 with no warning."** False. Fines aren't automatic: authorities decide case by case, taking into account gravity, duration, company size and cooperation (Article 99).
 
-**"Only certified vendors are acceptable."** False. There is no mandatory "AI Act certification" for vendors (voluntary certifications exist but are not a prerequisite).
+**"Only certified vendors are acceptable."** False. Only high-risk systems need a conformity assessment and CE marking, which for Annex III systems, except biometrics, the provider carries out itself without external bodies (Article 43). For everything else there is no mandatory certification.
 
 ## The Soraia advantage for compliance
 
