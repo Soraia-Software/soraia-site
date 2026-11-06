@@ -2,7 +2,7 @@
 title: "Supervisione umana agenti AI: dove mettere l'umano"
 description: "Quanta autonomia dare a un agente IA senza perdere il risparmio di tempo? Dove mettere i checkpoint umani e gli approval gate, con un caso reale."
 pubDate: 2026-07-27
-updatedDate: 2026-10-18
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 tags:
   - "ai agents"
@@ -21,7 +21,7 @@ faq:
   - q: "Cos'è la supervisione umana (human-in-the-loop) in un agente IA?"
     a: "È la scelta di quali decisioni l'agente prende da solo e quali passano a un umano prima di produrre effetti. Il punto non è mettere un umano ovunque, ma <strong>solo sui pochi passi ad alto rischio o irreversibili</strong>. Ovunque altro, l'agente esegue e logga."
   - q: "L'AI Act obbliga la supervisione umana?"
-    a: "Per i sistemi ad <strong>alto rischio</strong> (recruitment, scoring credito, sanità) l'art. 14 richiede supervisione umana effettiva. Per rischio limitato o minimo l'obbligo è più leggero, ma un audit log e un checkpoint sui casi critici restano buona pratica. Vedi la nostra guida all'AI Act."
+    a: "Per i sistemi ad <strong>alto rischio</strong> (selezione del personale, merito di credito, alcuni sistemi sanitari) l'art. 14 richiede che siano progettati per una sorveglianza umana effettiva, e chi li usa deve affidarla a persone competenti. Questi obblighi si applicano dal 2 dicembre 2027, dopo il rinvio deciso con il Digital Omnibus. Per rischio limitato o minimo l'obbligo è più leggero, ma un audit log e un checkpoint sui casi critici restano buona pratica. Vedi la nostra <a href=\"/guide/ai-act-aziende\">guida all'AI Act</a>."
   - q: "Non è che mettendo un umano nel loop perdo tutto il risparmio di tempo?"
     a: "Solo se metti il checkpoint nel posto sbagliato. Se l'umano deve approvare il 100% degli output, sì, hai ricreato il lavoro manuale. Il design corretto lascia passare in autonomia l'80-90% dei casi standard e ferma per revisione solo eccezioni, anomalie e azioni irreversibili."
   - q: "Come decido dove mettere i checkpoint?"
@@ -49,13 +49,13 @@ La risposta operativa sta nel mezzo, ma non a caso. Si progetta.
 **In breve:**
 - La supervisione umana (human-in-the-loop) serve nei pochi punti ad alto rischio o irreversibili, NON ovunque. Se l'umano approva il 100% degli output, hai ricostruito il lavoro manuale.
 - Decidi dove mettere il checkpoint con due assi: reversibilità e impatto. Reversibile + basso impatto → autonomia. Irreversibile o alto impatto → approval gate umano.
-- L'AI Act (art. 14) impone supervisione umana effettiva solo ai sistemi ad alto rischio (es. recruitment); per il resto è buona pratica, non obbligo.
+- L'AI Act (art. 14) impone supervisione umana effettiva solo ai sistemi ad alto rischio (es. selezione del personale), dal 2 dicembre 2027; per il resto è buona pratica, non obbligo.
 - Un buon design lascia passare in autonomia l'80-90% dei casi standard e ferma solo eccezioni e anomalie.
 - Con Rainplan gestiamo centinaia di parcel e approvazioni multi-stakeholder in autonomia, con l'umano posizionato solo sul gate decisionale finale.
 
 ## Il vero costo di un checkpoint mal posizionato
 
-Ogni checkpoint umano è una tassa sul throughput. Non è gratis. Se un umano deve guardare ogni output prima che parta, hai due problemi: hai rimesso un collo di bottiglia umano nel processo, e l'umano si abitua a cliccare "approva" senza leggere (il cosiddetto *rubber-stamping*, che è peggio di nessuna supervisione perché ti dà l'illusione del controllo).
+Ogni checkpoint umano è una tassa sul throughput. Non è gratis. Se un umano deve guardare ogni output prima che parta, hai due problemi: hai rimesso un collo di bottiglia umano nel processo, e l'umano si abitua a cliccare "approva" senza leggere (il cosiddetto *rubber-stamping*, che è peggio di nessuna supervisione perché ti dà l'illusione del controllo). L'AI Act lo chiama "distorsione dell'automazione" e chiede che chi sorveglia un sistema ad alto rischio ne resti consapevole ([art. 14](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)).
 
 Quindi la regola numero uno: **metti l'umano dove il suo giudizio cambia davvero l'esito**, non dove ti fa sentire tranquillo.
 
@@ -65,7 +65,7 @@ Usiamo due assi per decidere ogni singolo passo di un workflow.
 
 **Reversibilità**: se l'azione va storta, quanto costa annullarla? Aggiornare un tag nel CRM è reversibile in 10 secondi. Inviare una mail a 400 clienti no. Autorizzare un bonifico no.
 
-**Impatto**: chi tocca l'errore? Un dato interno sbagliato è fastidio operativo. Una decisione sbagliata su una persona (un candidato scartato ingiustamente) o su un cliente è danno reale, e spesso reputazionale o legale.
+**Impatto**: chi tocca l'errore? Un dato interno sbagliato è fastidio operativo. Una decisione sbagliata su una persona (un candidato scartato ingiustamente) o su un cliente è danno reale, e spesso reputazionale o legale. Se poi la decisione è presa solo in automatico, entra in gioco l'[art. 22 del GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj), che dà alla persona il diritto di non subirla, salvo eccezioni.
 
 Da qui i quattro quadranti:
 - **Reversibile + basso impatto** (bozze, tag, enrichment, classificazione): autonomia piena, l'agente esegue e logga.
@@ -87,9 +87,9 @@ Questo è il punto che i team sbagliano più spesso: **il checkpoint umano non a
 
 ## Cosa dice l'AI Act (senza allarmismi)
 
-L'art. 14 del Regolamento europeo IA impone supervisione umana *effettiva* ai sistemi ad **alto rischio**. Per una PMI questo tipicamente significa recruitment e scoring su persone. Per il resto, agenti su finance, support interno, sales, l'obbligo diretto è più leggero.
+L'art. 14 del Regolamento europeo IA impone supervisione umana *effettiva* ai sistemi ad **alto rischio**, con obblighi che si applicano dal 2 dicembre 2027 dopo il rinvio deciso con il [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj). Per una PMI questo tipicamente significa selezione del personale e valutazione del merito di credito. Per il resto, agenti su finance, support interno, sales, l'obbligo diretto è più leggero.
 
-Ma "più leggero" non vuol dire "niente". Anche fuori dall'alto rischio, un [agente su customer support](/customer-support) che risponde a un cliente o un [agente finance](/finance) che tocca importi vuole comunque un audit log e un gate sui casi critici. Non per compliance: per accountability. Se un giorno devi spiegare "perché l'agente ha fatto X", il log e il punto di supervisione sono la tua risposta. Approfondiamo i livelli di rischio nella nostra guida all'AI Act.
+Ma "più leggero" non vuol dire "niente". Anche fuori dall'alto rischio, un [agente su customer support](/customer-support) che risponde a un cliente o un [agente finance](/finance) che tocca importi vuole comunque un audit log e un gate sui casi critici. Non per compliance: per accountability. Se un giorno devi spiegare "perché l'agente ha fatto X", il log e il punto di supervisione sono la tua risposta. Approfondiamo i livelli di rischio nella nostra [guida all'AI Act](/guide/ai-act-aziende).
 
 ## Quando NON serve un checkpoint
 

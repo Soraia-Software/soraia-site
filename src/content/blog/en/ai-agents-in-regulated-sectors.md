@@ -2,6 +2,7 @@
 title: "AI Agents in Regulated Sectors: What's Allowed"
 description: "Banking, insurance, healthcare: what you can actually do with AI agents in a regulated sector. An operational AI Act + GDPR map, without the scaremongering."
 pubDate: 2026-06-22
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 tags:
   - "ai agents"
@@ -19,13 +20,13 @@ featured: false
 h1: "AI Agents in Regulated Sectors: What's Actually Allowed"
 faq:
   - q: "Can an AI agent make autonomous decisions in banking or insurance?"
-    a: "No, not on decisions that affect people (granting credit, pricing policies, claims). The AI Act classifies these as <strong>high risk</strong>: documented human oversight on the final decision is mandatory. The agent can pre-process, score, prepare the file, but the sign-off stays human."
-  - q: "What changes with the AI Act in force from August 2026?"
-    a: "Obligations for high-risk systems (credit scoring, life/health insurance systems, clinical triage) become fully applicable. That means documented risk assessment, full decision logging, human oversight and record retention. See our <a href=\"/en/guide/ai-act-for-business\">AI Act guide</a> for the full picture."
+    a: "Not on decisions about people. Assessing creditworthiness and setting risk and price for life and health insurance are <strong>high-risk</strong> cases under the AI Act: from 2 December 2027 whoever uses them must assign oversight to competent people. Already today, Article 22 of the GDPR gives people the right not to be subject to decisions based solely on automated processing, with some exceptions. The agent can pre-process, score and prepare the file, but the sign-off stays human."
+  - q: "When do the AI Act high-risk obligations apply?"
+    a: "From 2 December 2027 for Annex III systems such as credit scoring, life and health insurance and emergency triage, after the postponement agreed in the Digital Omnibus; from 2 August 2028 for those built into regulated products, such as medical devices. For a bank or an insurer using them it means: using them according to the provider's instructions, assigning oversight to competent people, keeping logs for at least six months and, for credit and life and health insurance, carrying out a fundamental rights impact assessment before use. See our <a href=\"/en/guide/ai-act-for-business\">AI Act guide</a> for the full picture."
   - q: "Can I use an AI agent for document automation in a regulated sector?"
     a: "Yes, and it's usually the safest starting point. OCR on invoices, reconciliations, PDF data extraction, recurring reports are <strong>minimal risk</strong>: they don't decide on people. That's the Numeraria case, where automation gave back roughly half a month to management."
   - q: "Where do the data need to live to stay compliant?"
-    a: "For GDPR you need a <strong>DPA under art. 28</strong> with every vendor and, for sensitive data (healthcare, finance), EU hosting or on-premise. We include the DPA and EU hosting by default, and the LLMs are never trained on client data."
+    a: "The GDPR doesn't require EU hosting. It requires a <strong>DPA under Article 28</strong> with every vendor processing data on your behalf and, if data leaves the EU, the safeguards set for transfers (Article 44). Health data is a special category (Article 9) and calls for extra care. To keep things simple we include the DPA and EU hosting by default, and the LLMs are never trained on client data."
   - q: "When does an AI agent NOT make sense in a regulated sector?"
     a: "When the process requires a legally binding decision with no room for human oversight, or when the data needed can't leave a closed perimeter without a proper DPIA. In those cases you fix governance first, then automate. Never the other way around."
 lang: "en"
@@ -38,9 +39,9 @@ Honest answer: the compliance officer is right about some things and wrong about
 
 **In short:**
 
-- In a regulated sector what matters isn't *what the technology does*, it's *who the decision affects*: internal document automation is minimal risk, credit scoring or clinical triage is high risk.
-- From August 2026 the AI Act obligations for high-risk systems (credit scoring, life/health policies, healthcare systems) are fully applicable: risk assessment, logging, human oversight, multi-year records.
-- The practical rule we use: the AI agent *prepares and instructs*, the human *signs off*. This keeps most processes out of the banned autonomous-decision zone.
+- In a regulated sector what matters isn't *what the technology does*, it's *who the decision affects*: internal document automation is minimal risk, credit scoring or emergency patient triage is high risk.
+- The AI Act obligations for high-risk systems (credit scoring, life and health insurance, emergency triage) apply from 2 December 2027, after the Digital Omnibus postponement. For whoever uses them: human oversight, logs kept for at least six months and, for credit and insurance, a fundamental rights impact assessment.
+- The practical rule we use: the AI agent *prepares and instructs*, the human *signs off*. This keeps most processes out of decisions based solely on automated processing, which Article 22 of the GDPR restricts.
 - The safest starting point is almost always document automation (minimal risk). At Numeraria, a payroll and accounting firm, it gave back roughly half a month to management.
 - DPA under GDPR art. 28, EU hosting, immutable audit log, no LLM training on client data: without these foundations you don't even start.
 
@@ -48,17 +49,17 @@ Honest answer: the compliance officer is right about some things and wrong about
 
 An AI agent in a regulated sector is a software system that runs tasks autonomously (reads, evaluates, acts) inside an organization subject to sector-specific rules, banking, insurance, healthcare, where automated decisions are constrained by the AI Act, GDPR and supervisory regulation. The key distinction isn't technical: it's who bears the effect of the decision.
 
-Put bluntly: the exact same agent can be perfectly legal or banned, depending on what it decides and on whom.
+Put bluntly: the exact same agent can be free of obligations or subject to the AI Act's heaviest ones, depending on what it decides and on whom.
 
 ## The question that decides everything: who bears the output?
 
-The AI Act sorts systems into four risk levels (we mapped them in detail in our [AI Act guide for businesses](/en/guide/ai-act-for-business)). For regulated sectors the operational boundary is a single one.
+The [AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) sorts systems into [four risk levels](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai) (we mapped them in detail in our [AI Act guide for businesses](/en/guide/ai-act-for-business)). For regulated sectors the operational boundary is a single one.
 
-**If the agent decides or significantly influences a person**, granting a mortgage, setting a policy premium, accepting a claim, triaging a patient, you're in **high risk**. Full stop. No shortcuts.
+**If the agent decides or significantly influences a person** in one of the cases listed in Annex III, assessing creditworthiness for a mortgage, setting the risk and premium of a life or health policy, triaging a patient in an emergency, you're in **high risk**. Full stop. No shortcuts.
 
 **If the agent works on documents, data and internal processes** without deciding on people, reconciliations, invoice extraction, reports, archiving, you're in **minimal risk**.
 
-This single criterion settles 80% of the compliance officer's doubts.
+This single criterion settles most of the compliance officer's doubts. The high-risk obligations apply from 2 December 2027, after the postponement agreed in the [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj): there's time to prepare, but the boundary is already this one.
 
 ## Banking: where you can, where you can't
 
@@ -71,11 +72,11 @@ This single criterion settles 80% of the compliance officer's doubts.
 - Automated credit scoring that decides the outcome of a credit request
 - Credit-limit decisions without documented human oversight
 
-The viable path: the agent prepares the score and the file, the analyst signs the decision. The agent produces no legally binding output.
+The viable path: the agent prepares the score and the file, the analyst signs the decision. The agent produces no legally binding output. It's also the simplest path under [Article 22 of the GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj), which restricts decisions based solely on automated processing.
 
 ## Insurance: the pricing trap
 
-In insurance, high risk kicks in on two fronts that are often underestimated: **life/health policy pricing** and the **assessment of claims** that affect the policyholder's rights.
+In insurance, high risk kicks in on one precise front: **risk assessment and pricing of life and health policies** (Annex III, point 5). Claims handling isn't on the list, but a rejection decided only automatically still falls under Article 22 of the GDPR: there too, it's better to let a person decide.
 
 What's safe to do:
 - Extracting and validating policy and claim documents
@@ -84,9 +85,11 @@ What's safe to do:
 
 The rule: the agent flags, the human disposes.
 
+Banks and insurers have one more obligation, from 2 December 2027: before using a high-risk system for creditworthiness or for life and health insurance, they must carry out a fundamental rights impact assessment (Article 27 of the AI Act).
+
 ## Healthcare: the highest level of caution
 
-Here the data is sensitive under GDPR and many diagnostic-support systems fall into high risk. The safely automatable part is almost all **back-office and document work**: record management, report extraction, scheduling, documentary compliance. Anything touching diagnosis or clinical triage requires medical oversight and a serious DPIA before a single line of code is written.
+Here health data is a special category under the GDPR (Article 9) and many diagnostic-support systems are medical devices that fall into high risk: for them the AI Act obligations apply from 2 August 2028. The safely automatable part is almost all **back-office and document work**: record management, report extraction, scheduling, documentary compliance. Anything touching diagnosis or clinical triage requires medical oversight and a data protection impact assessment (DPIA, Article 35 of the GDPR) before a single line of code is written.
 
 ## The practical case: where safe automation always starts
 

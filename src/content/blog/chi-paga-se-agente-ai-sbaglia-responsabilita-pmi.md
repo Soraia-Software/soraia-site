@@ -2,6 +2,7 @@
 title: "Se l'agente IA sbaglia, chi paga? Responsabilità PMI"
 description: "Quando un agente IA allucina o sbaglia, la responsabilità resta tua. Contratti, DPA e polizze che le PMI ignorano prima di andare in produzione."
 pubDate: 2026-08-10
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 tags:
   - "compliance"
@@ -39,7 +40,7 @@ gates:
 draft: false
 ---
 
-> **Risposta diretta: chi è responsabile quando un agente IA sbaglia?** Quando un agente IA usato dalla tua azienda causa un danno a un cliente o a un terzo, la parte responsabile è la tua azienda, sia sul piano contrattuale sia in base all'AI Act. Il provider del modello (OpenAI, Anthropic) scarica la responsabilità nei propri termini d'uso; la responsabilità del vendor AI è limitata da contratto. Come deployer, sei tu l'ultima linea di esposizione legale, a prescindere da quale sistema abbia generato l'errore.
+> **Risposta diretta: chi è responsabile quando un agente IA sbaglia?** Quando un agente IA usato dalla tua azienda causa un danno a un cliente o a un terzo, verso di loro risponde la tua azienda. Nel contratto con un cliente il Codice civile è esplicito: chi si avvale dell'opera di terzi per adempiere risponde anche dei loro errori. L'AI Act non dice chi risarcisce, ma aggiunge obblighi per chi usa sistemi ad alto rischio. Il provider del modello (OpenAI, Anthropic) limita la propria responsabilità nei termini commerciali; quella del vendor AI dipende dal contratto. Come deployer, sei tu l'ultima linea di esposizione legale, a prescindere da quale sistema abbia generato l'errore.
 
 La domanda arriva sempre dopo la prima demo, quando il CEO capisce che l'agente andrà davvero in produzione: *"e se sbaglia? Se dice una cavolata a un cliente, chi paga?"*
 
@@ -51,16 +52,16 @@ La buona notizia: il rischio si governa. Ma va fatto *prima* del go-live, non do
 - Verso il cliente finale, la responsabilità per un errore o un'allucinazione dell'agente IA resta della tua azienda, non del fornitore del modello.
 - Molte polizze RC professionale tradizionali non coprono i danni da sistemi automatizzati: va verificato per iscritto col broker prima della produzione.
 - Il contratto col vendor AI deve fissare perimetro, limiti di autonomia, audit log immutabile e DPA art. 28 GDPR. Se tace, il rischio è tuo.
-- L'AI Act (in vigore, piena applicazione da agosto 2026) impone trasparenza sui sistemi a rischio limitato e supervisione umana su quelli ad alto rischio.
+- L'AI Act chiede trasparenza ai sistemi che parlano con le persone dal 2 agosto 2026 e sorveglianza umana su quelli ad alto rischio dal 2 dicembre 2027, dopo il rinvio del Digital Omnibus.
 - La difesa più efficace non è una clausola: è la supervisione umana sui casi critici e un log che ricostruisce ogni decisione.
 
 ## La catena di responsabilità che le PMI non vedono
 
 Quando un agente sbaglia, ci sono tre soggetti nella stanza: tu (che usi l'agente), il fornitore che l'ha costruito (es. Soraia), e il provider del modello (OpenAI, Anthropic). L'istinto è pensare che la colpa risalga la catena. Nella pratica succede il contrario.
 
-Verso il tuo cliente finale, il fornitore o l'ente pubblico, **il responsabile sei tu**. Sei tu ad aver mandato quella email, quel preventivo sbagliato, quella risposta di supporto che ha promesso un rimborso inesistente. L'agente è un tuo strumento, come lo sarebbe un dipendente junior.
+Verso il tuo cliente finale, il fornitore o l'ente pubblico, **il responsabile sei tu**. Sei tu ad aver mandato quella email, quel preventivo sbagliato, quella risposta di supporto che ha promesso un rimborso inesistente. L'agente è un tuo strumento, come lo sarebbe un dipendente junior. E per i contratti il Codice civile è esplicito: chi si avvale dell'opera di terzi per adempiere risponde anche dei loro errori ([art. 1228](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-03-16;262~art1228)), salvo patti diversi.
 
-Il fornitore AI risponde solo di quello che c'è scritto nel contratto. Il provider del modello, praticamente di nulla: i loro termini d'uso scaricano quasi tutto il rischio a valle.
+Il fornitore AI risponde solo di quello che c'è scritto nel contratto. Il provider del modello, ancora meno: i termini commerciali di [OpenAI](https://openai.com/policies/services-agreement/) e [Anthropic](https://www.anthropic.com/legal/commercial-terms) lasciano al cliente la verifica degli output e limitano la responsabilità a quanto pagato negli ultimi 12 mesi. L'eccezione è la manleva contro le contestazioni di terzi sulla proprietà intellettuale.
 
 Morale: se il contratto tra te e il tuo fornitore AI è vago, il rischio resta appeso a te.
 
@@ -75,12 +76,12 @@ Due leve reali:
 1. **Perimetro stretto.** Un agente che *propone* e fa firmare a un umano ha un profilo di rischio completamente diverso da uno che *agisce* in autonomia. Meno autonomia sui casi ad alto danno, meno esposizione.
 2. **Tracciabilità.** Se non puoi ricostruire perché l'agente ha detto X, non puoi difenderti né col cliente né con un revisore. Per questo in ogni nostro sprint c'è un **audit log immutabile** su ogni decisione: input, regole applicate, output, trigger, eventuale escalation.
 
-## Cosa dice l'AI Act (in vigore, piena applicazione agosto 2026)
+## Cosa dice l'AI Act, e da quando
 
 L'AI Act non ti dice "chi paga", ma alza gli obblighi che, se ignorati, ti mettono in torto.
 
-- **Rischio limitato** (chatbot client-facing): obbligo di trasparenza. L'utente deve sapere che parla con un'IA.
-- **Rischio alto** (recruitment automatico, scoring, decisioni su persone): risk assessment, logging, supervisione umana, conservazione record.
+- **Rischio limitato** (chatbot client-facing): obbligo di trasparenza dal 2 agosto 2026 ([art. 50](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)). L'utente deve sapere che parla con un'IA.
+- **Rischio alto** (i casi dell'allegato III, come selezione del personale, merito di credito, polizze vita e salute): chi usa questi sistemi deve seguire le istruzioni del fornitore, affidare la sorveglianza a persone competenti e conservare i log per almeno sei mesi (art. 26). Questi obblighi si applicano dal 2 dicembre 2027, dopo il rinvio deciso con il [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj).
 
 Se usi un agente ad alto rischio senza supervisione umana documentata e succede un danno, non stai solo pagando il danno: stai anche violando il Regolamento. Abbiamo scritto la mappa completa degli obblighi per settore nella [guida all'AI Act per le PMI](/guide/ai-act-aziende).
 

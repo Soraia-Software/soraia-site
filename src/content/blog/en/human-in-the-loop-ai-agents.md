@@ -2,7 +2,7 @@
 title: "Human oversight in AI agents: where the human goes"
 description: "How much autonomy should an AI agent get without killing your time savings? Where to place human checkpoints and approval gates, with a real case."
 pubDate: 2026-07-27
-updatedDate: 2026-10-18
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 tags:
   - "ai agents"
@@ -21,7 +21,7 @@ faq:
   - q: "What is human-in-the-loop oversight in an AI agent?"
     a: "It's the choice of which decisions the agent makes alone and which pass to a human before they take effect. The point isn't a human everywhere, it's a human <strong>only on the few high-risk or irreversible steps</strong>. Everywhere else, the agent runs and logs."
   - q: "Does the AI Act require human oversight?"
-    a: "For <strong>high-risk</strong> systems (recruitment, credit scoring, healthcare), Article 14 requires effective human oversight. For limited or minimal risk the obligation is lighter, but an audit log and a checkpoint on critical cases stay good practice. See our AI Act guide."
+    a: "For <strong>high-risk</strong> systems (recruitment, creditworthiness, some healthcare systems), Article 14 requires them to be designed for effective human oversight, and whoever uses them must assign it to competent people. These obligations apply from 2 December 2027, after the postponement agreed in the Digital Omnibus. For limited or minimal risk the obligation is lighter, but an audit log and a checkpoint on critical cases stay good practice. See our <a href=\"/en/guide/ai-act-for-business\">AI Act guide</a>."
   - q: "Won't a human in the loop kill all my time savings?"
     a: "Only if you put the checkpoint in the wrong place. If a human must approve 100% of outputs, yes, you've rebuilt manual work. Good design lets 80-90% of standard cases pass autonomously and stops only for exceptions, anomalies and irreversible actions."
   - q: "How do I decide where to put the checkpoints?"
@@ -49,13 +49,13 @@ The operational answer is in the middle, but not by accident. You design it.
 **Key takeaways:**
 - Human-in-the-loop oversight belongs on the few high-risk or irreversible steps, NOT everywhere. If a human approves 100% of outputs, you've rebuilt manual work.
 - Decide where to place a checkpoint with two axes: reversibility and impact. Reversible + low impact → autonomy. Irreversible or high impact → human approval gate.
-- The AI Act (Article 14) mandates effective human oversight only for high-risk systems (e.g. recruitment); for the rest it's good practice, not a legal duty.
+- The AI Act (Article 14) mandates effective human oversight only for high-risk systems (e.g. recruitment), from 2 December 2027; for the rest it's good practice, not a legal duty.
 - Good design lets 80-90% of standard cases pass autonomously and stops only for exceptions and anomalies.
 - With Rainplan we handle hundreds of parcels and multi-stakeholder approvals autonomously, with the human placed only at the final decision gate.
 
 ## The real cost of a mis-placed checkpoint
 
-Every human checkpoint is a tax on throughput. It isn't free. If a human has to look at every output before it goes out, you have two problems: you've re-inserted a human bottleneck, and the human gets used to clicking "approve" without reading (rubber-stamping, which is worse than no oversight because it gives you the illusion of control).
+Every human checkpoint is a tax on throughput. It isn't free. If a human has to look at every output before it goes out, you have two problems: you've re-inserted a human bottleneck, and the human gets used to clicking "approve" without reading (rubber-stamping, which is worse than no oversight because it gives you the illusion of control). The AI Act calls it "automation bias" and requires whoever oversees a high-risk system to stay aware of it ([Article 14](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)).
 
 So rule number one: **put the human where their judgement actually changes the outcome**, not where it makes you feel comfortable.
 
@@ -65,7 +65,7 @@ We use two axes to decide every single step of a workflow.
 
 **Reversibility**: if the action goes wrong, how costly is it to undo? Updating a tag in the CRM is reversible in 10 seconds. Emailing 400 clients isn't. Authorising a bank transfer isn't.
 
-**Impact**: who does the error touch? A wrong internal data point is operational annoyance. A wrong decision about a person (a candidate unfairly rejected) or a client is real damage, often reputational or legal.
+**Impact**: who does the error touch? A wrong internal data point is operational annoyance. A wrong decision about a person (a candidate unfairly rejected) or a client is real damage, often reputational or legal. And if the decision is made solely by automated means, [Article 22 of the GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj) comes into play: it gives the person the right not to be subject to it, with some exceptions.
 
 From this, four quadrants:
 - **Reversible + low impact** (drafts, tags, enrichment, classification): full autonomy, the agent runs and logs.
@@ -87,9 +87,9 @@ This is the point teams get wrong most often: **a human checkpoint doesn't kill 
 
 ## What the AI Act says (without the scaremongering)
 
-Article 14 of the European AI Regulation mandates *effective* human oversight for **high-risk** systems. For an SME that typically means recruitment and scoring about people. For the rest, agents on finance, internal support, sales, the direct obligation is lighter.
+Article 14 of the European AI Regulation mandates *effective* human oversight for **high-risk** systems, with obligations that apply from 2 December 2027 after the postponement agreed in the [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj). For an SME that typically means recruitment and creditworthiness assessment. For the rest, agents on finance, internal support, sales, the direct obligation is lighter.
 
-But "lighter" doesn't mean "nothing". Even outside high risk, a [customer support agent](/en/customer-support) that replies to a client or a [finance agent](/en/finance) that touches amounts still wants an audit log and a gate on critical cases. Not for compliance: for accountability. If one day you have to explain "why the agent did X", the log and the oversight point are your answer. We break the risk levels down in our AI Act guide.
+But "lighter" doesn't mean "nothing". Even outside high risk, a [customer support agent](/en/customer-support) that replies to a client or a [finance agent](/en/finance) that touches amounts still wants an audit log and a gate on critical cases. Not for compliance: for accountability. If one day you have to explain "why the agent did X", the log and the oversight point are your answer. We break the risk levels down in our [AI Act guide](/en/guide/ai-act-for-business).
 
 ## When you do NOT need a checkpoint
 

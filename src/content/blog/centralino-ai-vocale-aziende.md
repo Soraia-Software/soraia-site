@@ -2,6 +2,7 @@
 title: "Centralino AI per aziende: conviene a una PMI?"
 description: "Un centralino AI vocale fa risparmiare o fa scappare i clienti? Quando ha senso per una PMI, quando no, e come misurare il risultato senza illusioni."
 pubDate: 2026-11-04
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 tags:
   - "ai agents"
@@ -25,7 +26,7 @@ faq:
   - q: "Quanto costa un centralino AI per una PMI?"
     a: "In Soraia non vendiamo un canone fisso: lavoriamo a sprint. Uno Sprint parte da <strong>8.000 € al mese</strong>: tre persone dedicate e un rilascio in produzione a fine mese. Il primo rilascio gira sui tuoi flussi reali in 4 settimane. Il costo va confrontato con la baseline attuale: quanto ti costano oggi le chiamate perse e il tempo in centralino."
   - q: "È compatibile con l'AI Act e il GDPR?"
-    a: "Un centralino AI client-facing ricade di norma nel livello di rischio limitato dell'AI Act: l'obbligo principale è dichiarare al chiamante che parla con un sistema AI. Sul GDPR servono DPA art. 28, logging delle chiamate con base giuridica chiara e, dove richiesto, hosting UE. In Soraia audit log, DPA e hosting europeo sono inclusi di default."
+    a: "Un centralino AI client-facing ricade di norma nel livello di rischio limitato dell'AI Act: dal 2 agosto 2026 l'obbligo principale è dichiarare al chiamante che parla con un sistema AI. Sul GDPR servono DPA art. 28, logging delle chiamate con base giuridica chiara e, dove richiesto, hosting UE. In Soraia audit log, DPA e hosting europeo sono inclusi di default."
   - q: "Meglio un centralino AI o un agente WhatsApp/chat?"
     a: "Il canale segue il cliente. Se le tue richieste arrivano via telefono (prenotazioni, assistenza urgente, clientela meno digitale) il vocale ha senso. Se i clienti già scrivono, un agente testuale costa meno e sbaglia meno. Spesso la risposta è entrambi, con lo stesso knowledge dietro. Parti dal canale dove hai il volume e la baseline più chiara."
 lang: "it"
@@ -94,7 +95,7 @@ Un centralino AI ben fatto non intrappola: filtra il banale, gestisce l'orario m
 
 ## AI Act e GDPR: cosa devi dichiarare
 
-Un centralino AI che parla con clienti esterni è quasi sempre **rischio limitato** per l'AI Act in vigore: l'obbligo principale è la trasparenza, cioè dire al chiamante che sta parlando con un sistema AI. Sul fronte GDPR, registrare o trascrivere le chiamate richiede una base giuridica chiara, informativa, e DPA art. 28 con il fornitore. In Soraia audit log su ogni chiamata, DPA e hosting UE quando richiesto sono inclusi di default, perché senza non potremmo lavorare su questi scenari.
+Un centralino AI che parla con clienti esterni è quasi sempre **rischio limitato** per l'[AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj): l'obbligo principale, che si applica dal 2 agosto 2026, è la trasparenza, cioè dire al chiamante che sta parlando con un sistema AI (art. 50). Sul fronte [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj), registrare o trascrivere le chiamate richiede una base giuridica chiara (art. 6), un'informativa al chiamante (art. 13) e un DPA con il fornitore (art. 28). In Soraia audit log su ogni chiamata, DPA e hosting UE quando richiesto sono inclusi di default, perché senza non potremmo lavorare su questi scenari.
 
 ## Come lo affrontiamo in Soraia
 

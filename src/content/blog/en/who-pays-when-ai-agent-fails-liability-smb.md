@@ -2,6 +2,7 @@
 title: "When your AI agent fails, who pays? SMB liability"
 description: "When an AI agent hallucinates or errs, the liability stays with you. Contracts, DPAs and insurance policies SMBs ignore before going to production."
 pubDate: 2026-08-10
+updatedDate: 2026-11-06
 author: "Daniel Levis"
 tags:
   - "compliance"
@@ -39,7 +40,7 @@ gates:
 draft: false
 ---
 
-> **Direct answer: who is liable when an AI agent makes a mistake?** When an AI agent deployed by your company causes damage to a client or a third party, your company is the liable party, both under contract law and under the AI Act. The model provider (OpenAI, Anthropic) disclaims liability in their terms of use; the AI vendor's liability is capped by contract. As deployer, you are the last line of legal exposure, regardless of which system caused the error.
+> **Direct answer: who is liable when an AI agent makes a mistake?** When an AI agent deployed by your company causes damage to a client or a third party, your company is the one that answers to them. In a contract with a client, Italian law is explicit: whoever relies on third parties to perform also answers for their mistakes. The AI Act doesn't say who compensates, but it adds obligations for those using high-risk systems. The model provider (OpenAI, Anthropic) limits its liability in its commercial terms; the AI vendor's depends on the contract. As deployer, you are the last line of legal exposure, regardless of which system caused the error.
 
 The question always comes after the first demo, once the CEO realises the agent will actually go live: *"and if it's wrong? If it tells a customer nonsense, who pays?"*
 
@@ -51,16 +52,16 @@ The good news: the risk is governable. But it has to be done *before* go-live, n
 - Toward the end client, liability for an AI agent's error or hallucination stays with your company, not with the model provider.
 - Many traditional professional liability policies don't cover damages from automated systems: verify it in writing with your broker before production.
 - The vendor contract must fix scope, autonomy limits, an immutable audit log and an art. 28 GDPR DPA. If it's silent, the risk is yours.
-- The AI Act (in force, full application from August 2026) requires transparency on limited-risk systems and human oversight on high-risk ones.
+- The AI Act requires transparency from systems that talk to people from 2 August 2026, and human oversight on high-risk ones from 2 December 2027, after the Digital Omnibus postponement.
 - The most effective defence isn't a clause: it's human oversight on critical cases plus a log that reconstructs every decision.
 
 ## The liability chain SMBs don't see
 
 When an agent errs, three parties are in the room: you (who use the agent), the vendor who built it (e.g. Soraia), and the model provider (OpenAI, Anthropic). Instinct says the blame climbs the chain. In practice, the opposite happens.
 
-Toward your end client, supplier or public body, **you are responsible**. You sent that email, that wrong quote, that support reply promising a refund that doesn't exist. The agent is your tool, just as a junior employee would be.
+Toward your end client, supplier or public body, **you are responsible**. You sent that email, that wrong quote, that support reply promising a refund that doesn't exist. The agent is your tool, just as a junior employee would be. And for contracts, the Italian Civil Code is explicit: whoever relies on third parties to perform an obligation also answers for their mistakes ([Article 1228](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-03-16;262~art1228)), unless agreed otherwise.
 
-The AI vendor answers only for what's written in the contract. The model provider, for almost nothing: their terms of use push most of the risk downstream.
+The AI vendor answers only for what's written in the contract. The model provider, even less: the commercial terms of [OpenAI](https://openai.com/policies/services-agreement/) and [Anthropic](https://www.anthropic.com/legal/commercial-terms) leave it to the customer to check outputs and cap liability at what was paid in the last 12 months. The exception is an indemnity against third-party intellectual property claims.
 
 Bottom line: if the contract between you and your AI vendor is vague, the risk hangs on you.
 
@@ -75,12 +76,12 @@ Two real levers:
 1. **Tight scope.** An agent that *proposes* and lets a human sign off has a completely different risk profile than one that *acts* autonomously. Less autonomy on high-damage cases, less exposure.
 2. **Traceability.** If you can't reconstruct why the agent said X, you can't defend yourself, with the client or an auditor. That's why every sprint of ours ships an **immutable audit log** on each decision: input, rules applied, output, trigger, any escalation.
 
-## What the AI Act says (in force, full application August 2026)
+## What the AI Act says, and from when
 
 The AI Act doesn't tell you "who pays", but it raises the obligations that, if ignored, put you in the wrong.
 
-- **Limited risk** (client-facing chatbots): transparency obligation. The user must know they're talking to an AI.
-- **High risk** (automated recruitment, scoring, decisions on people): risk assessment, logging, human oversight, record keeping.
+- **Limited risk** (client-facing chatbots): transparency obligation from 2 August 2026 ([Article 50](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)). The user must know they're talking to an AI.
+- **High risk** (the Annex III cases, such as recruitment, creditworthiness, life and health insurance): whoever uses these systems must follow the provider's instructions, assign oversight to competent people and keep logs for at least six months (Article 26). These obligations apply from 2 December 2027, after the postponement agreed in the [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj).
 
 If you run a high-risk agent without documented human oversight and damage occurs, you're not just paying for the damage: you're also breaching the Regulation. We mapped the full per-sector obligations in the [AI Act guide for SMBs](/en/guide/ai-act-for-business).
 
