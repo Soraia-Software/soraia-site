@@ -1,7 +1,7 @@
 ---
 title: "CRM for sales agents and dealers: awnings and pergolas"
 description: "Awnings and pergolas: a CRM for sales agents and dealers that unites private buyers, dealers and trade-fair leads, with visits and quotes tied to the ERP."
-pubDate: 2026-12-09
+pubDate: 2026-11-10
 author: "Daniel Levis"
 tags:
   - "sales"
@@ -28,7 +28,7 @@ faq:
   - q: "Can a grant fund it?"
     a: "It can fall under Italian digitalization vouchers that cover software and consulting: you will find the open ones in our <a href='/bandi/'>grants list</a> (in Italian). With Grant Support at <strong>€2,000</strong> we prepare the application, and you only pay if the grant is awarded."
 lang: "en"
-draft: true
+draft: false
 ---
 
 A manufacturer of awnings and pergolas sells on two fronts. On one side, private buyers, including the leads collected at trade fairs; on the other, dealers, looked after by a network of sales agents who visit them in their territory.

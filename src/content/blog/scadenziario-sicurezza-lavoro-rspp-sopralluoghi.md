@@ -28,7 +28,7 @@ faq:
   - q: "Quanto tempo serve per partire?"
     a: "Il primo rilascio va in produzione in <strong>4 settimane</strong>. Si parte dalle scadenze che oggi costano più fatica o più rischio, e il resto arriva uno Sprint alla volta."
 lang: "it"
-draft: true
+draft: false
 ---
 
 Un RSPP esterno segue molte aziende, e per ognuna visite mediche, corsi di aggiornamento, controlli degli estintori e certificazioni scadono in date diverse. Basta una scadenza persa perché il cliente si ritrovi esposto a una sanzione, e agli occhi del cliente la colpa è di chi doveva ricordarsela.

@@ -1,7 +1,7 @@
 ---
 title: "Schede prodotto per distributori esteri, una per mercato"
 description: "Distributori esteri: schede prodotto su misura per ogni mercato, generate dal gestionale, e agenti IA che segnalano bandi e occasioni con le fonti."
-pubDate: 2026-12-07
+pubDate: 2026-11-24
 author: "Daniel Levis"
 tags:
   - "sales"
@@ -28,7 +28,7 @@ faq:
   - q: "Si può finanziare con un bando?"
     a: "Può rientrare nei voucher per la digitalizzazione che coprono software e consulenza: trovi quelli aperti nell’<a href='/bandi/'>elenco dei bandi</a>. Con il Supporto bandi da <strong>2.000 €</strong> prepariamo la domanda, e lo paghi solo se il bando è vinto."
 lang: "it"
-draft: true
+draft: false
 ---
 
 Un distributore estero vende meglio se riceve materiale scritto per il suo mercato: nella sua lingua, con esempi che parlano ai suoi clienti, collegato ai bandi e alle linee guida del suo Paese. Preparare a mano schede prodotto su misura per ogni distributore, però, non regge: con molti distributori esteri e un catalogo ampio diventa un lavoro senza fine.

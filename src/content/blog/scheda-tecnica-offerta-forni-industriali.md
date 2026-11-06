@@ -1,7 +1,7 @@
 ---
 title: "Scheda tecnica d’offerta per forni industriali con l’IA"
 description: "Forni industriali su misura: l’IA precompila le specifiche dai documenti del cliente, controlla i dati e scrive la scheda tecnica d’offerta in più lingue."
-pubDate: 2026-12-04
+pubDate: 2026-11-19
 author: "Daniel Levis"
 tags:
   - "manifatturiero"
@@ -28,7 +28,7 @@ faq:
   - q: "Si può finanziare con un bando?"
     a: "Può rientrare nei voucher per la digitalizzazione che coprono software e consulenza: trovi quelli aperti nell’<a href='/bandi/'>elenco dei bandi</a>. Con il Supporto bandi da <strong>2.000 €</strong> prepariamo la domanda, e lo paghi solo se il bando è vinto."
 lang: "it"
-draft: true
+draft: false
 ---
 
 In un'azienda che costruisce forni industriali, la scheda tecnica d'offerta la prepara un ingegnere. Legge il capitolato del cliente, ricava temperature di esercizio, carichi, dimensioni utili e atmosfera, controlla che i valori stiano insieme e scrive la scheda, spesso nella lingua del cliente. Per un impianto su misura ci vogliono giorni, e un dato sbagliato in offerta si paga in commessa.

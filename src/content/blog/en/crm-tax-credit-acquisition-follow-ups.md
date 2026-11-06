@@ -1,7 +1,7 @@
 ---
 title: "CRM for buying tax credits: who to call back today"
 description: "Buying tax credits: a CRM with a pipeline by credit status, a call agenda prepared by AI each morning and follow-ups by email, then WhatsApp."
-pubDate: 2026-12-11
+pubDate: 2026-11-12
 author: "Daniel Levis"
 tags:
   - "sales"
@@ -28,7 +28,7 @@ faq:
   - q: "How long does it take to get started?"
     a: "The first production release ships in 4 weeks, with the Sprint from <strong>€8,000 a month</strong> and our first month satisfied or refunded guarantee. Then the CRM grows one release at a time. Details are on our <a href='/en/pricing/'>pricing page</a>."
 lang: "en"
-draft: true
+draft: false
 ---
 
 In Italy's tax credit market, negotiations drag on. Whoever is selling the credit compares offers, waits for the bank's answer, puts things off. Whoever calls back at the right moment, with the right offer, closes; whoever calls at random annoys people, or arrives too late.

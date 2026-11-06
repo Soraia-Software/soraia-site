@@ -1,7 +1,7 @@
 ---
 title: "Schedulazione a capacità finita: il piano fuori da Excel"
 description: "Schedulazione a capacità finita per la PMI manifatturiera: lo schedulatore legge ERP e MES, considera persone, assenze e terzisti e confronta gli scenari."
-pubDate: 2026-12-02
+pubDate: 2026-11-26
 author: "Daniel Levis"
 tags:
   - "manifattura"
@@ -28,7 +28,7 @@ faq:
   - q: "Quanto tempo serve per partire?"
     a: "Il primo rilascio va in produzione in <strong>4 settimane</strong>. Si parte da un reparto, per esempio il montaggio, e si estende agli altri quando le regole hanno dimostrato di reggere."
 lang: "it"
-draft: true
+draft: false
 ---
 
 In molte officine il piano di produzione nasce da export del gestionale e del MES incollati in Excel. Funziona finché non succede niente. Poi un operatore si ammala, un terzista ritarda, un ordine urgente scavalca la fila, e il piano va rifatto da capo, spesso dall'unica persona che sa come farlo.

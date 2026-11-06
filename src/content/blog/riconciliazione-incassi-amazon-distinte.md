@@ -28,7 +28,7 @@ faq:
   - q: "Vale anche per altri marketplace?"
     a: "Il principio sì: distinta, ordini, differenze spiegate e registrazioni da approvare. Ogni marketplace ha però i suoi report e le sue causali, quindi va mappato a parte."
 lang: "it"
-draft: true
+draft: false
 ---
 
 Ogni distinta di Amazon mescola vendite, resi, commissioni e riserve, e l'amministrazione passa ore a capire perché l'incasso arrivato in banca non coincide con gli ordini nel gestionale. A ogni periodo la stessa scena, e ogni volta qualcuno ricostruisce la differenza a mano.

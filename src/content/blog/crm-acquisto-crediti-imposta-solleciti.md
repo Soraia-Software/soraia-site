@@ -1,7 +1,7 @@
 ---
 title: "CRM per l’acquisto di crediti d’imposta: chi richiamare"
 description: "Acquisto di crediti d’imposta: un CRM con la pipeline per stato del credito, l’agenda delle chiamate preparata dall’IA e solleciti via email e WhatsApp."
-pubDate: 2026-12-11
+pubDate: 2026-11-12
 author: "Daniel Levis"
 tags:
   - "sales"
@@ -28,7 +28,7 @@ faq:
   - q: "Quanto tempo serve per partire?"
     a: "Il primo rilascio in produzione arriva in 4 settimane, con lo Sprint da <strong>8.000 € al mese</strong> e la garanzia primo mese soddisfatti o rimborsati. Poi il CRM cresce un rilascio alla volta. I dettagli sono nella <a href='/prezzi/'>pagina prezzi</a>."
 lang: "it"
-draft: true
+draft: false
 ---
 
 Nell'acquisto di crediti d'imposta le trattative si allungano. Chi cede il credito confronta offerte, aspetta la risposta della banca, rimanda. Chi richiama al momento giusto, con la proposta giusta, chiude; chi richiama a caso disturba, o arriva tardi.

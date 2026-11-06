@@ -1,7 +1,7 @@
 ---
 title: "Technical offer sheets for industrial furnaces, with AI"
 description: "Custom industrial furnaces: AI pre-fills the specs from the customer’s documents, checks the data and writes the technical offer sheet in several languages."
-pubDate: 2026-12-04
+pubDate: 2026-11-19
 author: "Daniel Levis"
 tags:
   - "manufacturing"
@@ -28,7 +28,7 @@ faq:
   - q: "Can a grant fund it?"
     a: "It can fall under Italian digitalization vouchers that cover software and consulting: you will find the open ones in our <a href='/bandi/'>grants list</a> (in Italian). With Grant Support at <strong>€2,000</strong> we prepare the application, and you only pay if the grant is awarded."
 lang: "en"
-draft: true
+draft: false
 ---
 
 At a company that builds industrial furnaces, the technical offer sheet is prepared by an engineer. They read the customer's specification, work out operating temperatures, loads, usable dimensions and atmosphere, check that the values hang together and write the sheet, often in the customer's language. For a custom plant that takes days, and a wrong figure in the offer gets paid for on the job.

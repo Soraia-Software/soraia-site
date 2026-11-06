@@ -1,7 +1,7 @@
 ---
 title: "Finite capacity scheduling: production planning off Excel"
 description: "Finite capacity scheduling for manufacturing SMEs: the scheduler reads ERP and MES, accounts for people, absences and subcontractors, and compares scenarios."
-pubDate: 2026-12-02
+pubDate: 2026-11-26
 author: "Daniel Levis"
 tags:
   - "manufacturing"
@@ -28,7 +28,7 @@ faq:
   - q: "How long does it take to get started?"
     a: "The first release goes into production in <strong>4 weeks</strong>. We start with one department, such as assembly, and extend to the others once the rules have proved themselves."
 lang: "en"
-draft: true
+draft: false
 ---
 
 In many workshops the production plan is born from ERP and MES exports pasted into Excel. It works as long as nothing happens. Then an operator calls in sick, a subcontractor is late, a rush order jumps the queue, and the plan has to be rebuilt from scratch, often by the one person who knows how.
