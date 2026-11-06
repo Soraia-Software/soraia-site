@@ -1,7 +1,7 @@
 ---
 title: "Assistente IA per le famiglie nell’assistenza domiciliare"
 description: "Assistenza domiciliare: un assistente IA nell’area riservata risponde alle famiglie su presenze, fatture e obblighi di legge, con i dati sensibili protetti."
-pubDate: 2026-12-10
+pubDate: 2026-11-17
 author: "Daniel Levis"
 tags:
   - "customer support"
@@ -28,7 +28,7 @@ faq:
   - q: "Si può finanziare con un bando?"
     a: "Può rientrare nei voucher per la digitalizzazione che coprono software e consulenza: trovi quelli aperti nell’<a href='/bandi/'>elenco dei bandi</a>. Con il Supporto bandi da <strong>2.000 €</strong> prepariamo la domanda, e lo paghi solo se il bando è vinto."
 lang: "it"
-draft: true
+draft: false
 ---
 
 Nell'assistenza domiciliare, il call center di un'agenzia risponde tutto il giorno alle stesse domande delle famiglie: quante ore ha fatto l'assistente questo mese, perché la fattura è diversa dalla precedente, se il pagamento è arrivato, chi versa i contributi. Le risposte esistono già, nel gestionale, nelle FAQ e nelle norme.

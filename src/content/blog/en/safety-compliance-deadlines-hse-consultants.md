@@ -28,7 +28,7 @@ faq:
   - q: "How long does it take to get started?"
     a: "The first release goes into production in <strong>4 weeks</strong>. We start with the deadlines that cost the most effort or carry the most risk today, and the rest comes one Sprint at a time."
 lang: "en"
-draft: true
+draft: false
 ---
 
 In Italy every company must appoint an RSPP, the head of its prevention and protection service, and many hire an external one. An external safety officer follows many companies, and for each one medical checks, refresher courses, fire extinguisher checks and certifications expire on different dates. One missed deadline is enough to expose the client to a fine, and in the client's eyes the blame falls on whoever was supposed to remember it.

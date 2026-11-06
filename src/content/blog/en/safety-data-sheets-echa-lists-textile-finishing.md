@@ -28,7 +28,7 @@ faq:
   - q: "Can a grant fund it?"
     a: "It can fall under Italian digitalization vouchers that cover software and consulting: you will find the open ones in our <a href='/bandi/'>grants list</a> (in Italian). With Grant Support at <strong>€2,000</strong> we prepare the application, and you only pay if the grant is awarded."
 lang: "en"
-draft: true
+draft: false
 ---
 
 Every time ECHA updates a list, someone at a dye house has to reopen the safety data sheets one by one to see whether the change affects the dyes and auxiliaries they use. With hundreds of sheets from dozens of suppliers, that check takes days, while brands keep asking for REACH compliance declarations.

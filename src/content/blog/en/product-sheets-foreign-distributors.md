@@ -1,7 +1,7 @@
 ---
 title: "Product sheets for foreign distributors, one per market"
 description: "Foreign distributors: product sheets tailored to each market, generated from your ERP, and AI agents that flag tenders and opportunities with their sources."
-pubDate: 2026-12-07
+pubDate: 2026-11-24
 author: "Daniel Levis"
 tags:
   - "sales"
@@ -28,7 +28,7 @@ faq:
   - q: "Can a grant fund it?"
     a: "It can fall under Italian digitalization vouchers that cover software and consulting: you will find the open ones in our <a href='/bandi/'>grants list</a> (in Italian). With Grant Support at <strong>€2,000</strong> we prepare the application, and you only pay if the grant is awarded."
 lang: "en"
-draft: true
+draft: false
 ---
 
 A foreign distributor sells better when it receives material written for its market: in its language, with examples that speak to its customers, tied to its country's tenders and education guidelines. Preparing tailored product sheets for every distributor by hand, though, does not scale: with many foreign distributors and a wide catalogue, the work never ends.

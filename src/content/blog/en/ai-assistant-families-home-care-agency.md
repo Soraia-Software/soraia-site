@@ -1,7 +1,7 @@
 ---
 title: "AI assistant for families in home care agencies"
 description: "Home care agencies: an AI assistant in the family portal answers questions on hours, invoices and legal duties, with sensitive data protected."
-pubDate: 2026-12-10
+pubDate: 2026-11-17
 author: "Daniel Levis"
 tags:
   - "customer support"
@@ -28,7 +28,7 @@ faq:
   - q: "Can a grant fund it?"
     a: "It can fall under Italian digitalization vouchers that cover software and consulting: you will find the open ones in our <a href='/bandi/'>grants list</a> (in Italian). With Grant Support at <strong>€2,000</strong> we prepare the application, and you only pay if the grant is awarded."
 lang: "en"
-draft: true
+draft: false
 ---
 
 In home care, an agency's call centre spends the day answering the same questions from families: how many hours the caregiver worked this month, why the invoice differs from the last one, whether the payment arrived, who pays the social security contributions. The answers already exist, in the management system, in the FAQs and in the rules.

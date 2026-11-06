@@ -28,7 +28,7 @@ faq:
   - q: "How long does it take to get started?"
     a: "The first release goes into production in <strong>4 weeks</strong>. We first map the real flow, from sampling to report, and decide which calculations and records move to the phone first."
 lang: "en"
-draft: true
+draft: false
 ---
 
 In many environmental testing labs, the technician fills in the field sheet by hand, on a factory roof or next to a stack, and back at the office someone retypes it into the LIMS. The risk of error sits right on the data that ends up in the test report, the document the lab signs.

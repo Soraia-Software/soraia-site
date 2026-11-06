@@ -28,7 +28,7 @@ faq:
   - q: "Si può finanziare con un bando?"
     a: "Può rientrare nei voucher per la digitalizzazione che coprono software e consulenza: trovi quelli aperti nell’<a href='/bandi/'>elenco dei bandi</a>. Con il Supporto bandi da <strong>2.000 €</strong> prepariamo la domanda, e lo paghi solo se il bando è vinto."
 lang: "it"
-draft: true
+draft: false
 ---
 
 Ogni volta che ECHA aggiorna una lista, in una tintoria qualcuno deve riaprire le schede di sicurezza una per una per capire se il cambiamento riguarda i coloranti e gli ausiliari che usa. Con centinaia di schede di decine di fornitori il controllo richiede giorni, e intanto i marchi chiedono dichiarazioni di conformità REACH.

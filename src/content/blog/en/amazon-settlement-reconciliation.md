@@ -28,7 +28,7 @@ faq:
   - q: "Does it work for other marketplaces?"
     a: "The principle does: settlement, orders, explained differences and entries to approve. But every marketplace has its own reports and descriptions, so each one has to be mapped separately."
 lang: "en"
-draft: true
+draft: false
 ---
 
 Every Amazon settlement mixes sales, returns, fees and reserves, and the finance team spends hours working out why the payout that hit the bank doesn't match the orders in the ERP. Every period the same scene, and every time someone rebuilds the difference by hand.

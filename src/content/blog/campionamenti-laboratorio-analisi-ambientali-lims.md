@@ -28,7 +28,7 @@ faq:
   - q: "Quanto tempo serve per partire?"
     a: "Il primo rilascio va in produzione in <strong>4 settimane</strong>. Prima si mappa il flusso reale, dal prelievo al rapporto, e si decide quali calcoli e quali registrazioni portare subito sul telefono."
 lang: "it"
-draft: true
+draft: false
 ---
 
 In molti laboratori di analisi ambientali il tecnico compila il foglio di campo a mano, sul tetto di uno stabilimento o accanto a un camino, e in ufficio qualcuno ricopia tutto nel LIMS. Il rischio di errore sta proprio sul dato che finirà nel rapporto di prova, quello che il laboratorio firma.
