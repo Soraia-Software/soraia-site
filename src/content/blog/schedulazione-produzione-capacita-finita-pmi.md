@@ -70,7 +70,7 @@ L'intelligenza artificiale qui non è centrale. Il valore sta nelle regole di pi
 
 ## Come si collega a ERP e MES
 
-Lo schedulatore non sostituisce né il gestionale né il MES: li legge. È il confine descritto dallo standard [ISA-95](https://www.isa.org/standards-and-publications/isa-standards/isa-95-standard), noto anche come IEC 62264, che riguarda proprio l'interfaccia tra il livello dei sistemi gestionali e quello dei sistemi di produzione. In pratica:
+Lo schedulatore non sostituisce né il gestionale né il MES: li legge. È il confine descritto dallo standard [ISA-95](https://www.isa.org/standards-and-publications/isa-standards/isa-95-standard), noto anche come [IEC 62264](https://webstore.iec.ch/en/publication/6675), che riguarda proprio l'interfaccia tra il livello dei sistemi gestionali e quello dei sistemi di produzione. In pratica:
 
 - dal **gestionale** arrivano ordini e date richieste;
 - dal **MES** arrivano avanzamenti e tempi reali;

@@ -49,7 +49,7 @@ Una tintoria lavora con coloranti, ausiliari, tensioattivi e prodotti di finissa
 Il problema è che le liste che contano cambiano nel tempo:
 
 - la [Candidate List](https://echa.europa.eu/candidate-list-table) delle sostanze estremamente preoccupanti (SVHC), che ECHA aggiorna man mano che nuove sostanze vengono identificate;
-- l'**inventario delle classificazioni CLP**, che comprende le classificazioni armonizzate del [regolamento CLP](https://eur-lex.europa.eu/eli/reg/2008/1272/oj);
+- l'**inventario delle classificazioni CLP**, che comprende le classificazioni armonizzate del regolamento CLP;
 - gli **allegati XIV e XVII di REACH**, cioè autorizzazioni e restrizioni.
 
 Per il tessile le restrizioni non sono teoria. Dal 3 febbraio 2021 i nonilfenoli etossilati non possono superare lo 0,01% in peso negli articoli tessili che si lavano in acqua: lo stabilisce la voce 46a dell'allegato XVII, introdotta dal [regolamento UE 2016/26](https://eur-lex.europa.eu/eli/reg/2016/26/oj). Un ausiliario che li contiene diventa un problema per tutta la produzione che lo usa.
