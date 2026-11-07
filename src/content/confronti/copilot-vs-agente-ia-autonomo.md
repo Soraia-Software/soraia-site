@@ -40,6 +40,7 @@ optionB:
     - "Richiede fiducia e governance: chi controlla cosa fa l'agente"
     - "Non adatto a processi ambigui dove ogni caso è diverso"
     - "Se il processo a monte è disordinato, l'agente automatizza il disordine"
+    - "Sulle decisioni che riguardano persone valgono le cautele del GDPR (art. 22) e, nei casi ad alto rischio, dell'AI Act"
   idealePer:
     - "Processi ripetitivi ad alto volume con regole chiare"
     - "Chi vuole recuperare ore e non solo assistere le persone"
@@ -69,14 +70,27 @@ faq:
     a: "Il copilot <strong>suggerisce</strong>: propone bozze e azioni, ma l'umano decide e conferma ogni passo. L'agente autonomo <strong>esegue</strong>: porta a termine il processo da solo (estrarre, riconciliare, qualificare, inviare) e chiama l'umano solo sui casi limite. La differenza non è la tecnologia ma quanto controllo deleghi."
   - q: "Un agente autonomo è rischioso? Chi controlla cosa fa?"
     a: "Un agente ben costruito ha regole definite, <strong>escalation all'umano sui casi limite</strong> e un audit log immutabile su ogni decisione. Con Soraia si fissa in fase di analisi un target misurabile e i confini di autonomia; l'agente non fa più di ciò che gli è stato concesso. Vedi come lavoriamo su <a href='/ai-agents'>AI Agents</a>."
+  - q: "Un agente autonomo può decidere da solo su clienti o dipendenti?"
+    a: "Con cautela. Il <a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR (art. 22)</a> dà alle persone il diritto di non essere sottoposte a decisioni basate solo su un trattamento automatizzato che producono effetti giuridici o incidono in modo analogo su di loro, salvo eccezioni: per decisioni come concedere un credito o scartare un candidato serve di norma un intervento umano. Se poi il caso d'uso rientra tra quelli ad alto rischio dell'<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a>, come la selezione del personale o la valutazione del merito di credito, dal 2 dicembre 2027 (dopo il rinvio deciso con il <a href='https://eur-lex.europa.eu/eli/reg/2026/1744/oj'>Digital Omnibus</a>) servono sorveglianza umana e log conservati. Per riconciliazioni, estrazione dati o triage interni questi vincoli di solito non scattano."
+  - q: "«Copilot» è il prodotto di Microsoft?"
+    a: "Qui indica una categoria: un assistente che suggerisce e lascia decidere la persona. I prodotti però cambiano: in Copilot Studio di Microsoft, per esempio, i trigger di evento permettono a un agente di agire da solo quando succede qualcosa, senza un input dell'utente (<a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers-about'>Microsoft Learn</a>). Conta quanta autonomia dai, non il nome dello strumento."
   - q: "Da quale dei due conviene partire?"
     a: "Dipende dal processo. Su attività ripetitive ad alto volume (es. riconciliazioni o estrazione fatture in <a href='/finance'>Finance</a>) l'agente autonomo recupera più ore. Su attività variabili e ad alto giudizio, meglio un copilot. Spesso conviene un percorso: copilot prima per costruire fiducia, autonomia dopo dove i numeri la giustificano."
   - q: "Quanto tempo si risparmia davvero con un agente autonomo?"
     a: "Dipende dal processo, ma il target si fissa prima di iniziare: ad esempio <strong>5 ore a persona a settimana</strong> recuperate su un'attività ripetitiva. Con Soraia vale la garanzia primo mese soddisfatti o rimborsati: se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto. Per capire quale approccio fa per te, <a href='/parliamone'>parliamone</a>."
+fonti:
+  - titolo: "GDPR, Regolamento (UE) 2016/679, art. 22 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+  - titolo: "AI Act, Regolamento (UE) 2024/1689, Allegato III (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Digital Omnibus sull'IA, Regolamento (UE) 2026/1744 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+  - titolo: "Microsoft Learn, trigger di evento in Copilot Studio"
+    url: "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers-about"
 related: []
 featured: false
 pubDate: 2026-08-27
-updatedDate: 2026-10-18
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-07-25T06:59:28.357Z

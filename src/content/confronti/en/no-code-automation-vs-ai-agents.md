@@ -20,7 +20,7 @@ optionA:
     - "Large library of ready-made connectors to common tools"
   contro:
     - "Handles exceptions poorly: every new case adds a branch and the flow gets tangled"
-    - "Cannot reason over free text (emails, PDFs, tickets) without fragile workarounds"
+    - "AI features exist (Zapier, Make and n8n have agents and AI steps), but the flow logic still has to be designed by hand"
     - "Per-execution cost can climb unpredictably at high volume"
     - "Maintenance becomes heavy once flows number in the dozens and interdepend"
   idealePer:
@@ -58,27 +58,38 @@ tabella:
     valoreA: "Weak (each case = extra branch)"
     valoreB: "Strong (decides case by case)"
   - criterio: "Free text (email, PDF)"
-    valoreA: "Limited and fragile"
+    valoreA: "Possible with AI steps, to configure"
     valoreB: "Native"
   - criterio: "Maintenance at high volume"
     valoreA: "Grows with branches"
     valoreB: "More stable, but must be monitored"
-verdetto: "It is not a war between the two: they solve different problems. If the process is stable, clearly rule-based and has few exceptions, no-code automation is almost always the right call - faster, cheaper, easy to audit. An AI agent earns its place when the work needs reading free text or deciding on grey areas, and when every new exception would turn the no-code flow into an unmanageable maze. In practice the best solution is often hybrid: no-code to orchestrate the steps, an AI agent only where judgment is needed."
+verdetto: "It is not a war between the two: they solve different problems. If the process is stable, clearly rule-based and has few exceptions, no-code automation is almost always the right call: faster, cheaper, easy to check. An AI agent earns its place when the work needs reading free text or deciding on grey areas, and when every new exception would turn the no-code flow into an unmanageable maze. In practice the best solution is often hybrid: no-code to orchestrate the steps, an AI agent only where judgment is needed."
 faq:
   - q: "If I already have flows on Make or n8n, do I scrap them to move to AI agents?"
     a: "No. In most cases a <strong>hybrid</strong> approach wins: the no-code flows stay for orchestration (triggers, syncs, notifications) and the AI agent steps in only on the part that needs judgment, like reading an email or deciding on a grey case. To see where an agent makes sense, <a href='/en/contact'>let's talk</a>."
   - q: "How do I tell whether a rule-based flow is enough or I need an agent?"
     a: "Rule of thumb: if you can write every condition as 'if X then Y' without endless branches, <strong>no-code is enough</strong>. If the work depends on free text, on cases you cannot fully predict, or the exceptions keep multiplying, you need an <a href='/en/ai-agents'>AI agent that reasons</a>."
   - q: "How much does an AI agent cost versus a no-code subscription?"
-    a: "A no-code tool costs a monthly fee plus setup: cheap at low volume. A custom AI agent with Soraia starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month, with first delivery in 4 weeks. It is worth it when no-code cannot handle the exceptions or volume makes per-execution costs explode."
+    a: "A no-code tool costs a monthly fee plus setup: Zapier Professional starts at $19.99 a month, n8n Starter at €20 a month billed annually (<a href='https://zapier.com/pricing'>Zapier</a>, <a href='https://n8n.io/pricing/'>n8n</a>). Cheap at low volume. A custom AI agent with Soraia starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month, with first delivery in 4 weeks. It is worth it when no-code cannot handle the exceptions or volume makes per-execution costs explode."
+  - q: "Does the AI Act apply to no-code flows too?"
+    a: "A flow made only of rules written by people is not an AI system (<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act, recital 12</a>), so the AI Act does not cover it. If you add a step with an AI model, which Zapier, Make and n8n now allow (<a href='https://zapier.com/pricing'>Zapier</a>, <a href='https://www.make.com/ai-agents'>Make</a>, <a href='https://n8n.io/pricing/'>n8n</a>), the AI Act rules apply to that use: for example, from 2 August 2026 people interacting with the AI must be told (Article 50)."
   - q: "Is an AI agent as reliable as a deterministic flow?"
     a: "A rule-based flow is predictable by definition; an agent decides, so it needs oversight. That is why every Soraia agent ships with an <strong>immutable audit log on each decision</strong> and defined guardrails: you get the flexibility of judgment with the traceability of automation."
   - q: "What if I build an agent and it does not deliver the expected value?"
     a: "With Soraia the <strong>first month satisfied or refunded</strong> guarantee applies: a measurable target is set in the process audit and, if the first month doesn't convince you, we refund it or keep working for free until you're satisfied. The <a href='/en/software-development'>code stays yours</a> from day one."
+fonti:
+  - titolo: "Zapier, pricing and AI products"
+    url: "https://zapier.com/pricing"
+  - titolo: "Make, AI agents"
+    url: "https://www.make.com/ai-agents"
+  - titolo: "n8n, pricing"
+    url: "https://n8n.io/pricing/"
+  - titolo: "AI Act, Regulation (EU) 2024/1689, recital 12 and Article 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
 related: []
 featured: false
 pubDate: 2026-07-21
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-07-16T14:27:12.049Z

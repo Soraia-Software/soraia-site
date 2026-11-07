@@ -36,8 +36,8 @@ optionB:
     - "Excellent for recurring KPIs and continuous monitoring"
     - "Mature ecosystem, widespread skills and ready-made integrations"
   contro:
-    - "Every new question needs a new report or a change: time and a queue at the data team"
-    - "Rigid: it only answers well the questions planned at design time"
+    - "Without Copilot, every new question needs a new report or a change: time and a queue at the data team"
+    - "Dashboards only answer well the questions planned at design time"
     - "Requires specific skills to build and maintain the dashboards"
     - "Sprawl of unused dashboards creates maintenance and confusion"
   idealePer:
@@ -47,7 +47,7 @@ optionB:
 tabella:
   - criterio: "Ad-hoc questions"
     valoreA: "Seconds, in plain language"
-    valoreB: "Needs a new report or change"
+    valoreB: "New report, or Copilot on Fabric or Premium capacity"
   - criterio: "Recurring KPIs"
     valoreA: "Less suited (low repeatability)"
     valoreB: "Its strong point"
@@ -68,17 +68,28 @@ faq:
   - q: "Does conversational AI replace Power BI?"
     a: "No, in most cases it <strong>complements</strong> it. Power BI stays better for recurring KPIs and always-identical reporting; conversational AI covers the ad-hoc questions that otherwise queue up at the data team. The worst move is throwing away a clean BI data model: that's often exactly what makes the AI reliable."
   - q: "How do I stop the AI giving wrong answers on the data?"
-    a: "Three things: a clean, documented data model, explicitly defined metrics (so the AI doesn't 'invent' how to compute margin) and controls on permissions and audit. We design the data agent with an <strong>immutable audit log on every answer</strong> and no LLM training on client data. See how we work on <a href='/ai-agents'>AI Agents</a>."
+    a: "Language models can give confident but wrong answers, a risk NIST calls confabulation (<a href='https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf'>NIST AI 600-1</a>). You reduce it with three things: a clean, documented data model, explicitly defined metrics (so the AI doesn't 'invent' how to compute margin) and controls on permissions and audit. We design the data agent with an <strong>immutable audit log on every answer</strong> and no LLM training on client data. See how we work on <a href='/ai-agents'>AI Agents</a>."
+  - q: "Doesn't Power BI already have AI to ask questions about data?"
+    a: "Yes: Copilot in Power BI answers questions about your data, but it requires paid Fabric capacity (F2 or higher) or Power BI Premium (P1 or higher), not trial or free licences (<a href='https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-introduction'>Microsoft Learn</a>). The older Q&A natural-language feature goes away in February 2027 and Microsoft recommends moving to Copilot (<a href='https://learn.microsoft.com/en-us/power-bi/natural-language/q-and-a-intro'>Microsoft Learn</a>). A custom agent makes sense when data also sits outside the Power BI model, or when you need rules and controls you decide."
   - q: "How much does it cost to add conversational AI to our data?"
     a: "With Soraia it starts at <strong>8,000 € per month</strong> with three dedicated people (Account Manager, Project Manager and AI Engineer) and first delivery in 4 weeks. The real cost depends mostly on the state of the data model: if it's already clean you move fast, otherwise part of the work is fixing it. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
   - q: "Do we need a dashboard first, or can we start straight from AI?"
     a: "It depends on data maturity. If you already have stable KPIs and a structured data model, AI adds value immediately on ad-hoc questions. If data is scattered across sheets and systems, it makes sense to structure it first, useful work in either case. In <a href='/finance'>Finance</a> and <a href='/sales-marketing'>Sales & Marketing</a> we often start exactly from tidying up the data."
   - q: "Is our data safe with conversational AI?"
-    a: "Yes, if it's designed well. We work <strong>GDPR-compliant</strong>, with European or on-premise infrastructure when required, an art. 28 DPA in the contract and <strong>no LLM training on client data</strong>. Permissions decide who can query what, just like in a BI tool."
+    a: "Yes, if it's designed well. We design the agent for the <strong>GDPR</strong>, with European or on-premise infrastructure when required, an art. 28 DPA in the contract (<a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR, Article 28</a>) and <strong>no LLM training on client data</strong>. Permissions decide who can query what, just like in a BI tool."
+fonti:
+  - titolo: "Microsoft Learn, Copilot in Power BI"
+    url: "https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-introduction"
+  - titolo: "Microsoft Learn, Power BI Q&A deprecation"
+    url: "https://learn.microsoft.com/en-us/power-bi/natural-language/q-and-a-intro"
+  - titolo: "NIST AI 600-1, Generative AI risk profile"
+    url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf"
+  - titolo: "GDPR, Regulation (EU) 2016/679, Article 28 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
 related: []
 featured: false
 pubDate: 2026-10-15
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-09-25T09:00:07.199Z
