@@ -5,7 +5,7 @@ const title = "Cookie Policy | Soraia";
 const description =
   "Informativa sull'utilizzo dei cookie e di tecnologie simili sul sito soraia.io, ai sensi del Provvedimento del Garante del 10 giugno 2021 e del Regolamento UE 2016/679.";
 
-const lastUpdate = "1 ottobre 2026";
+const lastUpdate = "7 novembre 2026";
 ---
 
 <Layout title={title} description={description} lang="it">
@@ -34,7 +34,7 @@ const lastUpdate = "1 ottobre 2026";
 
         <h2>2. Approccio di Soraia</h2>
         <p>
-          Soraia adotta un approccio <strong>privacy-first</strong>: il sito soraia.io è progettato per funzionare con il minor numero possibile di cookie e senza tracker pubblicitari di terze parti. Non utilizziamo strumenti di profilazione comportamentale, retargeting o pubblicità mirata.
+          Soraia adotta un approccio <strong>privacy-first</strong>: il sito soraia.io è progettato per funzionare con il minor numero possibile di cookie e senza tracker pubblicitari di terze parti. Non utilizziamo strumenti di retargeting o di pubblicità mirata. L'unico strumento non tecnico, descritto al punto 3.4, parte solo se l'utente dà il consenso dal banner che compare alla prima visita.
         </p>
 
         <h2>3. Tipologie di cookie utilizzati</h2>
@@ -47,17 +47,21 @@ const lastUpdate = "1 ottobre 2026";
           <li>Cookie di sicurezza e mitigazione attacchi (es. anti-bot del CDN).</li>
           <li>Cookie di bilanciamento del carico e di sessione tecnica.</li>
           <li>Memorizzazione locale di preferenze dell'utente (es. lingua selezionata).</li>
+          <li>Memorizzazione locale della scelta espressa sul banner del consenso.</li>
         </ul>
 
         <h3>3.2. Cookie di terze parti</h3>
         <p>
-          Il sito integra una sola risorsa fornita da terza parte che imposta cookie tecnici essenziali al proprio funzionamento:
+          Il sito integra una risorsa fornita da terza parte che imposta cookie tecnici essenziali al proprio funzionamento:
         </p>
         <ul>
           <li>
             <strong>Cloudflare</strong>: utilizzato come Content Delivery Network e per la sicurezza/anti-bot. Imposta cookie tecnici esenti da consenso per la protezione del sito. Maggiori informazioni: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a>.
           </li>
         </ul>
+        <p>
+          Solo con il consenso dell'utente il sito carica inoltre lo strumento di lemlist descritto al punto 3.4, che non imposta cookie.
+        </p>
         <p>
           I <strong>caratteri tipografici</strong> del sito sono ospitati direttamente sul nostro dominio (self-hosting): non viene effettuata alcuna chiamata a servizi terzi (es. Google Fonts) per il caricamento dei font.
         </p>
@@ -67,9 +71,18 @@ const lastUpdate = "1 ottobre 2026";
           Al momento il sito non utilizza strumenti di analytics di terza parte (es. Google Analytics, Hotjar, Meta Pixel) che richiedano consenso preventivo. Eventuali strumenti di misurazione interna del traffico utilizzati in futuro saranno configurati per essere assimilabili a cookie tecnici (IP anonimizzato, nessun cross-site tracking, nessuna condivisione con terze parti per finalità di marketing).
         </p>
 
-        <h3>3.4. Cookie di profilazione e marketing</h3>
+        <h3>3.4. Strumenti di marketing</h3>
         <p>
-          Soraia <strong>non utilizza cookie di profilazione, retargeting, advertising o social media tracking</strong> sul proprio sito. Non viene impostato alcun cookie destinato a costruire profili dell'utente per finalità di marketing diretto da parte di Soraia o di terzi.
+          Soraia <strong>non utilizza cookie di retargeting, advertising o social media tracking</strong> sul proprio sito.
+        </p>
+        <p>
+          Solo con il consenso dell'utente, il sito carica lo strumento di riconoscimento dei visitatori di <strong>lemlist</strong> (lempire SAS, 128 rue La Boétie, 75008 Parigi, Francia). Serve a Soraia per sapere da quale azienda arriva una visita e per contattare con proposte commerciali le aziende che potrebbero essere interessate ai suoi servizi.
+        </p>
+        <p>
+          Lo strumento non imposta cookie e non scrive dati nel browser. A ogni pagina visitata invia a lemlist l'indirizzo della pagina, il tempo di permanenza, il numero di clic e il tipo di browser; dalla connessione lemlist riceve anche l'indirizzo IP, da cui ricava l'azienda. lemlist conserva i dati su server situati nell'Unione Europea. Maggiori informazioni: <a href="https://www.lemlist.com/privacy-policy" target="_blank" rel="noopener">lemlist.com/privacy-policy</a>.
+        </p>
+        <p>
+          Senza consenso lo strumento non viene caricato e il sito funziona allo stesso modo. Il consenso si può ritirare in qualsiasi momento (vedi punto 5).
         </p>
 
         <h2>4. Durata dei cookie</h2>
@@ -77,9 +90,13 @@ const lastUpdate = "1 ottobre 2026";
         <ul>
           <li><strong>Cookie di sessione</strong>: cancellati automaticamente alla chiusura del browser.</li>
           <li><strong>Cookie persistenti</strong>: conservati per un periodo predeterminato, tipicamente compreso tra 24 ore e 12 mesi a seconda della finalità tecnica.</li>
+          <li><strong>Scelta sul banner del consenso</strong>: conservata nel browser per 6 mesi, trascorsi i quali il banner viene riproposto.</li>
         </ul>
 
         <h2>5. Gestione dei cookie da parte dell'utente</h2>
+        <p>
+          Il consenso allo strumento di lemlist si dà o si nega dal banner che compare alla prima visita, e si può cambiare in qualsiasi momento dal link <a href="/cookies" data-consent-open>Preferenze cookie</a> in fondo a ogni pagina.
+        </p>
         <p>
           L'utente può in qualsiasi momento gestire, bloccare o eliminare i cookie attraverso le impostazioni del proprio browser. La disabilitazione dei cookie tecnici essenziali potrebbe compromettere il corretto funzionamento del sito.
         </p>
