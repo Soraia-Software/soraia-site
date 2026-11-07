@@ -1,7 +1,7 @@
 ---
 titolo: "Plugin di ChatGPT (ex Custom GPT) o agente IA integrato"
 sottotitolo: "OpenAI ritira i Custom GPT l'11 dicembre 2026 e li sostituisce con i plugin. Cosa fanno, e quando serve invece un agente integrato nei tuoi sistemi."
-description: "Custom GPT ritirati l'11 dicembre 2026: plugin di ChatGPT o agente IA integrato nei tuoi sistemi? Cosa fanno, costi e dati a confronto, con un verdetto onesto."
+description: "Custom GPT ritirati l'11 dicembre 2026: plugin di ChatGPT o agente IA integrato nei tuoi sistemi? Cosa fanno, costi e dati a confronto, con un verdetto."
 inBreve: "OpenAI ritira i Custom GPT l'11 dicembre 2026 (l'11 febbraio 2027 per alcuni workspace Enterprise con proroga) e li sostituisce con i plugin di ChatGPT, che riuniscono istruzioni, file di riferimento e app collegate. Un plugin va bene per assistere le persone dentro ChatGPT, anche con azioni sulle app collegate. Un agente integrato via API costa di più e richiede sviluppo, ma esegue il processo nei tuoi sistemi, con regole e log tuoi. Se oggi usi un Custom GPT: migralo e testa il plugin prima del ritiro, poi valuta l'agente integrato dove serve automatizzare un processo end-to-end."
 categoria: "Build depth"
 author: "Daniel Levis"

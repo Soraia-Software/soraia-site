@@ -1,5 +1,5 @@
 ---
-titolo: "ChatGPT plugins (formerly custom GPTs) or integrated AI agent"
+titolo: "Custom GPTs, now ChatGPT plugins, or integrated AI agent"
 sottotitolo: "OpenAI retires custom GPTs on 11 December 2026 and replaces them with plugins. What they do, and when you need an agent integrated into your systems instead."
 description: "Custom GPTs retire on 11 December 2026: ChatGPT plugins or an AI agent integrated into your systems? What each does, cost and data compared, honestly."
 inBreve: "OpenAI retires custom GPTs on 11 December 2026 (11 February 2027 for some Enterprise workspaces with a deferral) and replaces them with ChatGPT plugins, which bring together instructions, reference files and connected apps. A plugin works well to assist people inside ChatGPT, including actions on connected apps. An agent integrated via API costs more and needs development, but it runs the process in your systems, with your own rules and logs. If you use a custom GPT today: migrate it and test the plugin before the retirement, then consider an integrated agent where you need to automate a process end-to-end."
