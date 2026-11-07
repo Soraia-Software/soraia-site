@@ -19,10 +19,10 @@ optionA:
     - "Non serve integrazione via API: opera sull'interfaccia dei sistemi legacy"
     - "Tecnologia matura, con tool consolidati (UiPath, Automation Anywhere, Power Automate)"
   contro:
-    - "Fragile ai cambiamenti: se cambia l'interfaccia o un campo, il bot si rompe"
-    - "Gestisce male le eccezioni e gli input non strutturati (email, PDF variabili)"
-    - "Alto costo di manutenzione nel tempo, spesso sottovalutato"
-    - "Non 'ragiona': segue solo le regole scritte, nessuna interpretazione"
+    - "Fragile ai cambiamenti dell'interfaccia, salvo strumenti di auto-riparazione come Healing Agent di UiPath, venduto come componente aggiuntivo"
+    - "Sugli input non strutturati (email, PDF variabili) servono moduli IA aggiuntivi, come Document Understanding di UiPath"
+    - "La manutenzione dei bot va messa a budget: ogni cambio di processo o di interfaccia la richiede"
+    - "Il bot classico non 'ragiona': segue solo le regole scritte"
   idealePer:
     - "Processi ad alto volume, stabili e con regole fisse"
     - "Data entry e trasferimento dati tra sistemi legacy senza API"
@@ -55,10 +55,10 @@ tabella:
     valoreA: "Deterministico"
     valoreB: "Probabilistico + guardrail"
   - criterio: "Fragilità ai cambiamenti"
-    valoreA: "Alta (si rompe al campo spostato)"
+    valoreA: "Alta, salvo strumenti di auto-riparazione"
     valoreB: "Più robusta"
   - criterio: "Manutenzione"
-    valoreA: "Alta e ricorrente"
+    valoreA: "Ricorrente, a ogni cambio di processo o interfaccia"
     valoreB: "Moderata, ma serve supervisione"
   - criterio: "Tempo al primo risultato"
     valoreA: "Variabile per processo"
@@ -66,19 +66,30 @@ tabella:
 verdetto: "Non è RPA contro Agenti IA, ma il giusto strumento per il giusto pezzo di processo. La RPA resta ottima dove il flusso è stabile, ad alto volume e con regole fisse: paga bene su data entry meccanico e trasferimenti tra sistemi legacy. Gli Agenti IA vincono dove serve interpretare input non strutturati o gestire eccezioni che con la RPA diventano centinaia di regole fragili. Molte PMI ottengono il massimo combinandoli: l'agente decide e interpreta, la RPA esegue i click deterministici a valle. La domanda giusta è 'quanto giudizio richiede questo processo', non 'quale tecnologia è migliore in assoluto'."
 faq:
   - q: "La RPA è superata dagli Agenti IA?"
-    a: "No. La <strong>RPA resta valida</strong> su processi stabili, ad alto volume e con regole fisse, dove il comportamento deterministico è un vantaggio. Gli agenti IA non la sostituiscono ovunque: la superano solo dove serve interpretare input non strutturati o gestire eccezioni. Spesso convivono nello stesso flusso."
+    a: "No. La <strong>RPA resta valida</strong> su processi stabili, ad alto volume e con regole fisse, dove il comportamento deterministico è un vantaggio. Gli agenti IA non la sostituiscono ovunque: la superano solo dove serve interpretare input non strutturati o gestire eccezioni. Spesso convivono nello stesso flusso, e le piattaforme RPA stesse aggiungono l'IA: UiPath, per esempio, propone Healing Agent per riparare le automazioni quando cambia l'interfaccia (<a href='https://docs.uipath.com/agents/automation-cloud/latest/user-guide-ha/what-is-healing-agent'>UiPath</a>)."
   - q: "Quando conviene un Agente IA invece della RPA?"
     a: "Quando il processo tocca <strong>email, PDF, fatture o testo libero</strong>, o quando le eccezioni sono tante e ogni caso richiede una regola nuova con la RPA. In quei casi un <a href='/ai-agents'>agente IA</a> interpreta il contesto invece di rompersi. Se invece è un copia-incolla meccanico e ripetitivo, la RPA basta e costa meno."
+  - q: "L'AI Act riguarda anche la RPA?"
+    a: "Un bot fatto di regole scritte da persone non è un sistema di IA (<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act, considerando 12</a>). Lo diventano i passaggi che usano modelli IA, come la lettura dei documenti con Document Understanding (<a href='https://docs.uipath.com/document-understanding/automation-cloud/latest/user-guide/about-document-understanding'>UiPath</a>) o un agente IA: lì valgono le regole dell'AI Act, che per i casi ad alto rischio, come la selezione del personale, scattano dal 2 dicembre 2027 (<a href='https://eur-lex.europa.eu/eli/reg/2026/1744/oj'>Digital Omnibus</a>)."
   - q: "Posso usarli insieme?"
     a: "Sì, ed è spesso la scelta migliore. L'agente IA <strong>interpreta e decide</strong> (es. legge una fattura variabile, capisce la casistica), poi passa il risultato strutturato alla RPA che <strong>esegue i click deterministici</strong> sui sistemi legacy. Ognuno fa ciò in cui è forte."
   - q: "Quanto costa partire con un agente IA?"
     a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese, con prima delivery in 4 settimane e codice del cliente dal primo giorno. Per capire se il tuo processo è da RPA, da agente o da entrambi, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "Un agente IA è auditabile come un bot RPA?"
     a: "Sì, se costruito bene. Con Soraia ogni decisione dell'agente ha un <strong>audit log immutabile</strong> e sono previsti guardrail per i casi ad alto rischio. Il comportamento resta probabilistico, quindi serve validazione, ma la tracciabilità è garantita."
+fonti:
+  - titolo: "UiPath, Healing Agent"
+    url: "https://docs.uipath.com/agents/automation-cloud/latest/user-guide-ha/what-is-healing-agent"
+  - titolo: "UiPath, Document Understanding"
+    url: "https://docs.uipath.com/document-understanding/automation-cloud/latest/user-guide/about-document-understanding"
+  - titolo: "AI Act, Regolamento (UE) 2024/1689, considerando 12 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Digital Omnibus sull'IA, Regolamento (UE) 2026/1744 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
 related: []
 featured: false
 pubDate: 2026-08-06
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-07-25T06:11:37.739Z

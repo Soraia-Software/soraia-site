@@ -38,7 +38,7 @@ optionB:
   contro:
     - "Non conosce i tuoi dati né i tuoi processi: risposte generiche"
     - "Rischio di dati sensibili incollati in un tool non governato"
-    - "Non esegue nulla: resta un assistente, dipende dalla persona che lo usa"
+    - "Con gli agenti di workspace (in anteprima sui piani business) esegue flussi sulle app collegate; per i sistemi senza app serve un'integrazione su misura"
     - "Qualità e uso variano molto da persona a persona, difficile da misurare"
   idealePer:
     - "Team che vogliono provare l'IA con spesa e rischio minimi"
@@ -47,13 +47,13 @@ optionB:
 tabella:
   - criterio: "Cosa fa"
     valoreA: "Esegue un processo sui tuoi dati"
-    valoreB: "Assiste la persona con testo generico"
+    valoreB: "Assiste; con gli agenti di workspace esegue flussi sulle app collegate"
   - criterio: "Conosce i tuoi dati"
     valoreA: "Sì, integrato con i tuoi sistemi"
-    valoreB: "No, conoscenza generale"
+    valoreB: "Solo i file e le app che colleghi"
   - criterio: "Costo"
     valoreA: "Da 8.000 €/mese"
-    valoreB: "Poche decine di euro/utente al mese"
+    valoreB: "20-30 $ a utente al mese (piani business)"
   - criterio: "Tempo di attivazione"
     valoreA: "Prima delivery in 4 settimane"
     valoreB: "Immediato"
@@ -63,22 +63,31 @@ tabella:
   - criterio: "Risultato misurabile"
     valoreA: "Su target concordato"
     valoreB: "Difficile, dipende dall'uso"
-verdetto: "Non è aut-aut. ChatGPT generico è il modo più rapido ed economico per far usare l'IA al team e capire dove porta valore: tienilo. Ma quando un processo ripetibile va eseguito sui tuoi dati in modo affidabile e misurabile, ChatGPT resta un assistente che dipende dalla persona: lì serve un agente su misura. La domanda giusta è 'voglio assistere le persone o eseguire un processo?'. Molte PMI fanno entrambe: ChatGPT diffuso per la produttività quotidiana, un agente costruito sul processo core che pesa di più."
+verdetto: "Non è aut-aut. ChatGPT generico è il modo più rapido ed economico per far usare l'IA al team e capire dove porta valore: tienilo. Ma quando un processo ripetibile va eseguito sui tuoi dati in modo affidabile e misurabile, ChatGPT, anche con i nuovi agenti, lavora sulle app collegate e con le regole della piattaforma: lì serve un agente su misura. La domanda giusta è 'voglio assistere le persone o eseguire un processo?'. Molte PMI fanno entrambe: ChatGPT diffuso per la produttività quotidiana, un agente costruito sul processo core che pesa di più."
 faq:
   - q: "ChatGPT non basta se gli do accesso ai miei documenti?"
-    a: "Aiuta, ma resta un assistente: risponde a chi lo interroga, non esegue un processo end-to-end sui tuoi sistemi. Un <a href='/ai-agents'>agente su misura</a> si collega a CRM, gestionale e PDF, applica le tue regole e produce un risultato ripetibile con audit trail. Sono due strumenti diversi, non due versioni dello stesso."
+    a: "Aiuta, e con gli agenti di workspace, in anteprima sui piani business, ChatGPT può anche eseguire flussi ricorrenti sulle app collegate, con permessi, approvazioni e log decisi dagli admin (<a href='https://openai.com/business/workspace-agents/'>OpenAI</a>). Non arriva però ai sistemi senza app, come molti gestionali, e le regole restano quelle della piattaforma. Un <a href='/ai-agents'>agente su misura</a> si collega a CRM, gestionale e PDF, applica le tue regole e produce un risultato ripetibile con audit trail. Sono due strumenti diversi, non due versioni dello stesso."
   - q: "Quanto costa un agente rispetto agli abbonamenti ChatGPT?"
-    a: "ChatGPT costa poche decine di euro per utente al mese. Un agente su misura parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Non è un confronto alla pari: paghi di più perché l'agente esegue un processo e restituisce ore misurabili. Per capire se conviene sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
+    a: "ChatGPT Business costa 20 $ per utente al mese con fatturazione annuale, 25 $ con quella mensile (<a href='https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq'>OpenAI</a>). Un agente su misura parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Non è un confronto alla pari: paghi di più perché l'agente esegue un processo e restituisce ore misurabili. Per capire se conviene sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "E i dati sensibili? Con ChatGPT generico rischio?"
-    a: "Il rischio maggiore è che le persone incollino dati sensibili in un tool non governato. Con un agente su misura Soraia i dati restano tuoi: <strong>nessun training degli LLM sui dati cliente</strong>, audit log immutabile, DPA art. 28 e allineamento all'AI Act. Se serve, infrastruttura europea o on-premise."
+    a: "Il rischio maggiore è che le persone incollino dati sensibili in un tool non governato: sui piani personali, anche Plus e Pro, la condivisione dei dati per migliorare i modelli è attiva di default (<a href='https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt'>OpenAI</a>), mentre su ChatGPT Business OpenAI non addestra i modelli sui dati del workspace (<a href='https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq'>OpenAI</a>). Con un agente su misura Soraia i dati restano tuoi: <strong>nessun training degli LLM sui dati cliente</strong>, audit log immutabile, DPA art. 28 e allineamento all'AI Act. Se serve, infrastruttura europea o on-premise."
   - q: "Da quale dei due dovrei partire?"
     a: "Quasi sempre: prima ChatGPT diffuso nel team per creare confidenza, poi un percorso di <a href='/ai-adoption'>AI Adoption</a> per capire dove l'IA porta valore, e infine un agente su misura sul processo che si è dimostrato ripetibile e ad alto volume. Vedi anche la <a href='/guide/agenti-ai-aziende'>guida agli agenti IA in azienda</a>."
   - q: "Quanto ci mette un agente su misura a partire?"
     a: "La prima versione funzionante è in genere live in <strong>4 settimane</strong>, seguita da 30 giorni di hypercare. Vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto."
+fonti:
+  - titolo: "OpenAI, agenti di workspace"
+    url: "https://openai.com/business/workspace-agents/"
+  - titolo: "OpenAI, domande frequenti su ChatGPT Business"
+    url: "https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq"
+  - titolo: "OpenAI, controlli sui dati in ChatGPT"
+    url: "https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt"
+  - titolo: "OpenAI, plugin in ChatGPT"
+    url: "https://help.openai.com/en/articles/20001256-plugins-in-chatgpt"
 related: []
 featured: false
 pubDate: 2026-08-04
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-07-25T06:01:42.081Z

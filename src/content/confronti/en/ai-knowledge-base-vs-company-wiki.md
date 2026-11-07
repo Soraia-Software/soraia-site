@@ -16,7 +16,7 @@ optionA:
   pro:
     - "Answers in seconds even across scattered docs (PDFs, drives, email, ERP)"
     - "Nobody has to remember where the info lives: you just ask"
-    - "Cites the source, so the answer is verifiable and not fabricated"
+    - "Cites the source, so the answer can be checked"
     - "Ingests messy documents without rewriting them all by hand"
   contro:
     - "If the underlying sources are stale or contradictory, the AI propagates the error"
@@ -38,7 +38,7 @@ optionB:
   contro:
     - "Tends to go stale: without a clear owner nobody keeps it updated"
     - "Finding the right page requires already knowing where to look"
-    - "Keyword search fails if you do not use the exact terms"
+    - "Wikis' AI search (Rovo in Confluence, Notion AI) exists, but it depends on the plan and the credits included"
     - "Only captures what someone had the time to write down"
   idealePer:
     - "Small companies with few well-defined procedures"
@@ -47,7 +47,7 @@ optionB:
 tabella:
   - criterio: "How you find an answer"
     valoreA: "You ask in natural language"
-    valoreB: "You hunt for the right page by hand"
+    valoreB: "You hunt for the page, or ask the wiki's AI if your plan includes it"
   - criterio: "Messy sources"
     valoreA: "Ingests them as they are"
     valoreB: "Must be rewritten and organized first"
@@ -63,23 +63,33 @@ tabella:
   - criterio: "Verifiability"
     valoreA: "Cites the source of the answer"
     valoreB: "The page is the source"
-verdetto: "It is not one against the other. The wiki stays the source of truth for critical procedures, written and approved by hand; the AI knowledge base is how you query everything else - scattered docs, email, PDFs - without knowing where to look. If you have little documentation and an owner who keeps it current, a good wiki can be enough. If internal questions come back every week and nobody finds answers in time, AI on top of your sources pays back fast. One caveat: AI does not fix wrong documents, it propagates them. Tidy at least the key sources first, then put AI on top."
+verdetto: "It is not one against the other. The wiki stays the source of truth for critical procedures, written and approved by hand; the AI knowledge base is how you query everything else, that is scattered docs, email and PDFs, without knowing where to look. If you have little documentation and an owner who keeps it current, a good wiki can be enough. If internal questions come back every week and nobody finds answers in time, AI on top of your sources pays back fast. One caveat: AI does not fix wrong documents, it propagates them. Tidy at least the key sources first, then put AI on top."
 faq:
   - q: "Does AI make the wiki useless?"
-    a: "No, it often makes it more useful. The AI knowledge base <strong>reads the sources you have</strong>, wiki included, and makes them queryable in chat or by voice. The wiki stays valuable for critical procedures written and approved by hand; AI adds a fast way to find answers without knowing where to look."
+    a: "No, it often makes it more useful. The AI knowledge base <strong>reads the sources you have</strong>, wiki included, and makes them queryable in chat or by voice. The wiki stays valuable for critical procedures written and approved by hand; AI adds a fast way to find answers without knowing where to look. Wikis are moving too: Confluence includes Rovo, with AI search and chat, in its Standard, Premium and Enterprise plans (<a href='https://www.atlassian.com/licensing/rovo'>Atlassian</a>), and Notion promises answers with citations (<a href='https://www.notion.com/pricing'>Notion</a>)."
   - q: "If my documents are a mess, does AI sort them out?"
     a: "Only partly. AI <strong>ingests messy sources</strong> better than keyword search, but it cannot tell an old procedure from a new one if both are still in the files. The first step is cleaning up the key sources (removing stale versions and contradictions), then AI works much better on top."
   - q: "How do you stop the AI from inventing answers?"
-    a: "You use an approach that <strong>answers only from your documents and cites the source</strong>. Every answer is then verifiable: the reader can open the original document. In our <a href='/customer-support'>customer & compliance</a> work we also keep an audit log of the agent's answers."
+    a: "You use an approach that <strong>answers only from your documents and cites the source</strong>. Every answer is then verifiable: the reader can open the original document. It does not remove the risk, because models can fabricate citations too (<a href='https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf'>NIST AI 600-1</a>): important answers should be checked against the document. In our <a href='/customer-support'>customer & compliance</a> work we also keep an audit log of the agent's answers."
   - q: "Do people using it need to be technical?"
     a: "No. You ask in natural language, like writing to a colleague. The technical part is the initial setup (indexing, permissions, testing). For it to actually get used, adoption matters: we cover that in our <a href='/ai-adoption'>AI Adoption</a> programs, not just the technology."
   - q: "Are permissions respected? I don't want everyone seeing everything."
-    a: "This must be configured properly from the start: the AI knowledge base should <strong>respect the same permissions as the sources</strong>, so everyone sees only what they already could. It must be tested before going live. To work out how to set it up for your case, <a href='/parliamone'>let's talk</a>."
+    a: "This must be configured properly from the start: the AI knowledge base should <strong>respect the same permissions as the sources</strong>, so everyone sees only what they already could. It is also a GDPR requirement, which calls for confidentiality and appropriate security measures (<a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>Articles 5 and 32</a>). It must be tested before going live. To work out how to set it up for your case, <a href='/parliamone'>let's talk</a>."
   - q: "How long does it take to launch an AI knowledge base?"
     a: "It depends on how many sources you connect and how tidy they are, but our <strong>first delivery is in 4 weeks</strong>. We often start with a narrow domain (e.g. onboarding or support) and expand once it proves it works."
+fonti:
+  - titolo: "Atlassian, Rovo in Confluence and Jira plans"
+    url: "https://www.atlassian.com/licensing/rovo"
+  - titolo: "Notion, plans and AI features"
+    url: "https://www.notion.com/pricing"
+  - titolo: "NIST AI 600-1, Generative AI risk profile"
+    url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf"
+  - titolo: "GDPR, Regulation (EU) 2016/679, Articles 5 and 32 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
 related: []
 featured: false
 pubDate: 2026-10-22
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-09-25T09:03:38.870Z

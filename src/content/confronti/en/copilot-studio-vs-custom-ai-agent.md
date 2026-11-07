@@ -19,10 +19,10 @@ optionA:
     - "Native integration with Teams, SharePoint, Outlook and Graph"
     - "Governance, tenant and security handled inside the Microsoft ecosystem"
   contro:
-    - "Consumption (credits) pricing is hard to predict: scales poorly under heavy use"
-    - "Lock-in: agents live inside the Microsoft tenant, hard to move out"
-    - "Complex logic or non-M365 integrations quickly become a limitation"
-    - "Roadmap (Cowork/Agent 365, expected 2026) decided by Microsoft, not you"
+    - "Consumption pricing: packs of 25,000 credits at $200 a month, with pay-as-you-go cover if they run out"
+    - "Agents live in the Microsoft tenant: to move them out they have to be rebuilt"
+    - "Integrations exist (connectors, MCP, APIs), but each system must be configured and complex flows weigh on credits"
+    - "Roadmap and prices are decided by Microsoft, not you"
   idealePer:
     - "SMEs fully inside Microsoft 365 with IT managing the tenant"
     - "Simple internal use cases: FAQs, document search, SharePoint assistants"
@@ -33,7 +33,7 @@ optionB:
     - "Shaped on the real process, without the platform's constraints"
     - "Integrates any system, including outside the Microsoft ecosystem"
     - "Client-owned code from day one, no lock-in"
-    - "Predictable costs and European or on-premise infrastructure when needed"
+    - "Sprint cost known up front and European or on-premise infrastructure when needed"
   contro:
     - "Upfront build cost on the company"
     - "Needs a partner or team with real skills, not just drag-and-drop"
@@ -48,9 +48,9 @@ tabella:
     valoreB: "4 weeks (first delivery)"
   - criterio: "Cost model"
     valoreA: "Consumption (credits) + licenses"
-    valoreB: "Sprint + optional retainer, predictable"
+    valoreB: "Sprint from 8,000 € a month, plus model usage via API"
   - criterio: "Non-M365 integrations"
-    valoreA: "Limited / complex"
+    valoreA: "Connectors, MCP and APIs, to configure"
     valoreB: "Open, any system"
   - criterio: "Ownership and portability"
     valoreA: "Inside the Microsoft tenant"
@@ -61,22 +61,27 @@ tabella:
   - criterio: "Best fit"
     valoreA: "Simple internal M365 cases"
     valoreB: "Core and complex processes"
-verdetto: "It isn't the same question for everyone. If you're already fully inside Microsoft 365 and the use case is simple and internal (document search, FAQs, a SharePoint assistant), Copilot Studio gets you live in days with governance already in place: it's the sensible choice. But as soon as the process becomes core, touches systems outside the Microsoft ecosystem, or usage grows, consumption credits and tenant lock-in start to hurt: that's where a custom agent, with predictable costs and code you own, pays back the upfront spend. The right question is how much that process matters to your business and how much it can grow."
+verdetto: "It isn't the same question for everyone. If you're already fully inside Microsoft 365 and the use case is simple and internal (document search, FAQs, a SharePoint assistant), Copilot Studio gets you live in days with governance already in place: it's the sensible choice. But as soon as the process becomes core, touches systems outside the Microsoft ecosystem, or usage grows, consumption credits and tenant lock-in start to hurt: that's where a custom agent, with a Sprint cost known up front and code you own, pays back the upfront spend. The right question is how much that process matters to your business and how much it can grow."
 faq:
   - q: "Is Copilot Studio cheaper than a custom agent?"
-    a: "At the start almost always yes, because there's no build: you turn it on and pay per use. The catch is scale. The credit model gets unpredictable as usage grows, while a custom agent has an upfront cost but more stable costs afterwards. With Soraia you start from <strong>8,000 € per month</strong> with a measurable target: look at total cost over 2-3 years, not just day one. See our <a href='/ai-agents'>AI agents</a>."
+    a: "At the start almost always yes, because there's no build: you turn it on and pay per use, with packs of 25,000 credits at $200 a month, or with Microsoft 365 Copilot licences at $30 per user per month (<a href='https://www.microsoft.com/en-us/copilot/pricing/copilot-studio'>Microsoft</a>). The catch is scale: every agent action or response consumes credits, so cost follows usage. A custom agent has an upfront cost, then the Sprint and model usage via API, to be estimated the same way. With Soraia you start from <strong>8,000 € per month</strong> with a measurable target: look at total cost over 2-3 years, not just day one. See our <a href='/ai-agents'>AI agents</a>."
   - q: "If I build on Copilot Studio, am I tied to Microsoft?"
-    a: "Largely yes. Agents live inside the Microsoft 365 tenant and rely on credits, licenses and a roadmap decided by Microsoft (e.g. Cowork/Agent 365 expected in 2026). Moving them out is complex. A custom agent gives you the <strong>code from day one</strong> and no lock-in: you decide where it runs and how it evolves."
+    a: "Largely yes. Agents live inside the Microsoft 365 tenant and rely on credits, licenses and a roadmap decided by Microsoft. Moving them out is complex. A custom agent gives you the <strong>code from day one</strong> and no lock-in: you decide where it runs and how it evolves."
   - q: "Can I use Copilot Studio for simple cases and custom for core processes?"
     a: "Yes, and it's often the most rational choice. Copilot Studio for internal Microsoft 365 assistants (FAQs, document search), custom agents where the process is critical or touches external systems. An <a href='/ai-adoption'>AI Adoption path</a> helps the team decide which case goes where."
   - q: "What if I already have systems outside Microsoft?"
-    a: "That's where Copilot Studio shows its limits: integrating CRMs, ERPs or non-Microsoft tools gets complex. A custom agent integrates any system by design. If you have a heterogeneous stack, look at <a href='/software-development'>custom development</a> or <a href='/parliamone'>let's talk</a> to figure out what fits."
+    a: "Copilot Studio has ready connectors for external services such as Salesforce or ServiceNow, custom connectors, HTTP requests and the MCP protocol (<a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/integrations'>Microsoft</a>). The limit comes with ERPs without APIs or logic that doesn't fit the platform's flows: there a custom agent integrates the system by design. If you have a heterogeneous stack, look at <a href='/software-development'>custom development</a> or <a href='/parliamone'>let's talk</a> to figure out what fits."
   - q: "How much control do I have over data with each option?"
     a: "With Copilot Studio data stays in the Microsoft tenant, under its rules. With a custom agent you choose the infrastructure: <strong>European or on-premise</strong>, with no LLM training on your data and an immutable audit log. If you have strict GDPR or sector constraints, custom gives you more room."
+fonti:
+  - titolo: "Microsoft, Copilot Studio pricing"
+    url: "https://www.microsoft.com/en-us/copilot/pricing/copilot-studio"
+  - titolo: "Microsoft Learn, Copilot Studio integrations"
+    url: "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/integrations"
 related: []
 featured: false
 pubDate: 2026-10-01
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-09-25T08:47:52.819Z

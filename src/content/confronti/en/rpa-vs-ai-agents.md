@@ -19,10 +19,10 @@ optionA:
     - "No API integration needed: it operates on the UI of legacy systems"
     - "Mature technology with established tools (UiPath, Automation Anywhere, Power Automate)"
   contro:
-    - "Fragile to change: if the interface or a field moves, the bot breaks"
-    - "Handles exceptions and unstructured inputs (email, variable PDFs) poorly"
-    - "High maintenance cost over time, often underestimated"
-    - "It doesn't 'reason': it only follows the written rules, no interpretation"
+    - "Fragile to interface changes, unless you add self-healing tools such as UiPath Healing Agent, sold as an add-on"
+    - "Unstructured inputs (email, variable PDFs) need extra AI modules, such as UiPath Document Understanding"
+    - "Bot maintenance must be budgeted: every process or interface change requires it"
+    - "The classic bot doesn't 'reason': it only follows the written rules"
   idealePer:
     - "High-volume, stable processes with fixed rules"
     - "Data entry and moving data between legacy systems without APIs"
@@ -55,10 +55,10 @@ tabella:
     valoreA: "Deterministic"
     valoreB: "Probabilistic + guardrails"
   - criterio: "Fragility to change"
-    valoreA: "High (breaks on moved field)"
+    valoreA: "High, unless self-healing tools are used"
     valoreB: "More robust"
   - criterio: "Maintenance"
-    valoreA: "High and recurring"
+    valoreA: "Recurring, at every process or interface change"
     valoreB: "Moderate, but needs supervision"
   - criterio: "Time to first result"
     valoreA: "Varies by process"
@@ -66,19 +66,30 @@ tabella:
 verdetto: "It isn't RPA against AI Agents, but the right tool for the right piece of the process. RPA stays excellent where the flow is stable, high-volume and rule-fixed: it pays off on mechanical data entry and transfers between legacy systems. AI Agents win where you need to interpret unstructured inputs or handle exceptions that with RPA turn into hundreds of fragile rules. Many SMEs get the most by combining them: the agent decides and interprets, RPA runs the deterministic clicks downstream. The right question is 'how much judgment does this process require', not 'which technology is better in absolute terms'."
 faq:
   - q: "Is RPA made obsolete by AI Agents?"
-    a: "No. <strong>RPA remains valid</strong> on stable, high-volume, rule-fixed processes, where deterministic behavior is an advantage. AI agents don't replace it everywhere: they only outperform it where you need to interpret unstructured inputs or handle exceptions. Often they coexist in the same flow."
+    a: "No. <strong>RPA remains valid</strong> on stable, high-volume, rule-fixed processes, where deterministic behavior is an advantage. AI agents don't replace it everywhere: they only outperform it where you need to interpret unstructured inputs or handle exceptions. Often they coexist in the same flow, and RPA platforms themselves are adding AI: UiPath, for example, offers Healing Agent to repair automations when the interface changes (<a href='https://docs.uipath.com/agents/automation-cloud/latest/user-guide-ha/what-is-healing-agent'>UiPath</a>)."
   - q: "When is an AI Agent better than RPA?"
     a: "When the process touches <strong>email, PDFs, invoices or free text</strong>, or when exceptions are many and each case needs a new RPA rule. In those cases an <a href='/ai-agents'>AI agent</a> reads the context instead of breaking. If it's mechanical, repetitive copy-paste, RPA is enough and costs less."
+  - q: "Does the AI Act cover RPA too?"
+    a: "A bot made of rules written by people is not an AI system (<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act, recital 12</a>). The steps that use AI models become one, such as reading documents with Document Understanding (<a href='https://docs.uipath.com/document-understanding/automation-cloud/latest/user-guide/about-document-understanding'>UiPath</a>) or an AI agent: there the AI Act rules apply, and for high-risk cases such as recruitment they start on 2 December 2027 (<a href='https://eur-lex.europa.eu/eli/reg/2026/1744/oj'>Digital Omnibus</a>)."
   - q: "Can I use them together?"
     a: "Yes, and it's often the best choice. The AI agent <strong>interprets and decides</strong> (e.g. reads a variable invoice, figures out the case), then hands the structured result to RPA that <strong>runs the deterministic clicks</strong> on legacy systems. Each does what it's strong at."
   - q: "How much does it cost to start with an AI agent?"
     a: "With Soraia it starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month, with first delivery in 4 weeks and client-owned code from day one. To figure out whether your process is for RPA, an agent or both, <a href='/en/contact'>let's talk</a>."
   - q: "Is an AI agent as auditable as an RPA bot?"
     a: "Yes, if built well. With Soraia every agent decision has an <strong>immutable audit log</strong> and guardrails are in place for high-risk cases. The behavior stays probabilistic, so it needs validation, but traceability is guaranteed."
+fonti:
+  - titolo: "UiPath, Healing Agent"
+    url: "https://docs.uipath.com/agents/automation-cloud/latest/user-guide-ha/what-is-healing-agent"
+  - titolo: "UiPath, Document Understanding"
+    url: "https://docs.uipath.com/document-understanding/automation-cloud/latest/user-guide/about-document-understanding"
+  - titolo: "AI Act, Regulation (EU) 2024/1689, recital 12 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Digital Omnibus on AI, Regulation (EU) 2026/1744 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
 related: []
 featured: false
 pubDate: 2026-08-06
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-07-25T06:11:37.739Z
