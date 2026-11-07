@@ -167,7 +167,9 @@ const prodotti = [
           </div>
         </li>
 
-        <!-- Ordine deciso il 2026-10-17: Servizi, Casi studio, Chi siamo, Prezzi (Prodotti solo nel footer) -->
+        <!-- Ordine deciso il 2026-10-17: Servizi, Casi studio, Chi siamo, Prezzi (Prodotti solo nel footer).
+             Dal 7/11/2026 in italiano c'è anche Settori, dopo Servizi (le pagine di settore esistono solo in italiano). -->
+        {lang === "it" && <li><a href="/settori/" class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">Settori</a></li>}
         <li><a href={casesHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_cases}</a></li>
         <li><a href={aboutHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_about}</a></li>
         <li><a href={prezziHref} class="link-underline-anim px-3 py-2 hover:text-ink-900 transition-colors">{labels.nav_prezzi}</a></li>
@@ -249,6 +251,7 @@ const prodotti = [
           </div>
         </details>
 
+        {lang === "it" && <a href="/settori/" class="mobile-section__top">Settori</a>}
         <a href={casesHref} class="mobile-section__top">{labels.nav_cases}</a>
         <a href={aboutHref} class="mobile-section__top">{labels.nav_about}</a>
         <a href={prezziHref} class="mobile-section__top">{labels.nav_prezzi}</a>

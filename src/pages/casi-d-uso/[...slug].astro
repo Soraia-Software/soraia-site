@@ -1,0 +1,169 @@
+---
+// Caso d'uso anonimo: per chi, il problema, cosa abbiamo costruito, dove lavora l'IA. Mai il nome
+// del cliente. Solo italiano.
+import Layout from "~/layouts/Layout.astro";
+import { render } from "astro:content";
+import CTABanner from "~/components/CTABanner.astro";
+import SchedaCaso from "~/components/SchedaCaso.astro";
+import { settori, casiUso, srcsetCopertina, piccola, articoliPubblicati } from "~/lib/settori";
+import { SITE } from "~/lib/schema";
+
+export async function getStaticPaths() {
+  return (await casiUso()).map((c) => ({ params: { slug: c.id }, props: { caso: c } }));
+}
+
+const { caso } = Astro.props;
+const d = caso.data;
+const { Content } = await render(caso);
+const url = `${SITE}/casi-d-uso/${caso.id}/`;
+const settore = (await settori()).find((s) => s.id === d.settore);
+const altri = (await casiUso()).filter((c) => c.id !== caso.id && c.data.settore === d.settore).slice(0, 3);
+const articoli = await articoliPubblicati(d.articoli);
+const title = !d.title.includes("Soraia") && d.title.length + " | Soraia".length <= 60 ? `${d.title} | Soraia` : d.title;
+
+const jsonLd = [
+  {
+    "@type": "Article",
+    headline: d.titolo,
+    description: d.description,
+    datePublished: d.pubDate.toISOString(),
+    dateModified: (d.updatedDate || d.pubDate).toISOString(),
+    image: { "@type": "ImageObject", url: `${SITE}${d.copertina.src}`, width: 1600, height: 900 },
+    about: settore ? { "@type": "Thing", name: settore.data.nome } : undefined,
+    author: { "@type": "Organization", name: "Soraia" },
+  },
+  {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Casi d'uso", item: `${SITE}/casi-d-uso/` },
+      ...(settore ? [{ "@type": "ListItem", position: 3, name: settore.data.nome, item: `${SITE}/settori/${settore.id}/` }] : []),
+      { "@type": "ListItem", position: settore ? 4 : 3, name: d.titolo, item: url },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={d.description} lang="it" jsonLd={jsonLd} hideLangSwitch>
+  <article>
+    <!-- HERO -->
+    <header class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
+      <div class="container-soraia pt-16 md:pt-24 pb-12 md:pb-16">
+        <nav aria-label="Percorso" class="text-[12px] font-medium tracking-[0.1em] uppercase mb-6" style="color: var(--color-ink-soft);">
+          <a href="/casi-d-uso/" class="hover:opacity-70">Casi d'uso</a>
+          {settore && (<> <span aria-hidden="true">/</span> <a href={`/settori/${settore.id}/`} class="hover:opacity-70">{settore.data.nome}</a></>)}
+        </nav>
+        <h1 class="text-balance max-w-4xl" style="font-size: clamp(2rem, 4vw + 0.75rem, 3.25rem); line-height: 1.08; letter-spacing: -0.025em; font-weight: 500;">
+          {d.titolo}
+        </h1>
+        <p class="mt-5 text-[15px]" style="color: var(--color-ink-soft);">Per: <span style="color: var(--color-ink);">{d.perChi}</span></p>
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-start">
+          <img
+            src={d.copertina.src}
+            srcset={srcsetCopertina(d.copertina.src)}
+            sizes="(min-width: 1024px) 620px, 100vw"
+            alt={d.copertina.alt}
+            width="1600"
+            height="900"
+            fetchpriority="high"
+            decoding="async"
+            class="w-full h-auto rounded-3xl object-cover aspect-[16/9]"
+            style="box-shadow: var(--shadow-md);"
+          />
+          <div class="rounded-2xl border border-line bg-white p-6 md:p-7">
+            <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-3" style="color: var(--color-ink-soft);">In breve</p>
+            <p class="text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink);">{d.inBreve}</p>
+            {d.risultati && (
+              <p class="mt-5 pt-5 border-t border-line text-[15px] leading-relaxed" style="color: var(--color-ink);"><span class="font-medium" style="color: var(--color-brand);">Risultati:</span> {d.risultati}</p>
+            )}
+            {d.copertina.credito && (
+              <p class="mt-5 text-[11.5px]" style="color: var(--color-ink-soft);">
+                Immagine: {d.copertina.fonte ? <a href={d.copertina.fonte} target="_blank" rel="noopener nofollow" class="hover:underline">{d.copertina.credito}</a> : d.copertina.credito}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CORPO -->
+    <section class="bg-white">
+      <div class="container-soraia max-w-3xl py-12 md:py-16">
+        <h2 class="caso-h2">Il problema</h2>
+        <p class="caso-p">{d.problema}</p>
+
+        <h2 class="caso-h2">Cosa abbiamo costruito</h2>
+        <ul class="caso-ul">
+          {d.soluzione.map((s) => <li>{s}</li>)}
+        </ul>
+
+        {d.ia && (
+          <>
+            <h2 class="caso-h2">Dove lavora l'IA</h2>
+            <p class="caso-p">{d.ia}</p>
+          </>
+        )}
+
+        <div class="prose-caso mt-10">
+          <Content />
+        </div>
+
+        {d.strumenti.length > 0 && (
+          <div class="mt-10 flex flex-wrap gap-2">
+            {d.strumenti.map((s) => (
+              <span class="text-[12px] font-medium px-3 py-1.5 rounded-full" style="background: var(--color-ink-50); color: var(--color-ink-muted);">{s}</span>
+            ))}
+          </div>
+        )}
+
+        {(articoli.length > 0 || settore) && (
+          <div class="mt-12 pt-8 border-t border-line">
+            <p class="eyebrow mb-4">Per approfondire</p>
+            <ul class="space-y-2 text-[15.5px]">
+              {settore && <li><a href={`/settori/${settore.id}/`} class="link-violet">Cosa possiamo fare per {settore.data.nome.toLowerCase()}</a></li>}
+              {articoli.map((a) => <li><a href={a.href} class="link-violet">{a.titolo}</a></li>)}
+            </ul>
+          </div>
+        )}
+      </div>
+    </section>
+
+    {altri.length > 0 && (
+      <section class="section" style="background: #FAFAF8;">
+        <div class="container-soraia">
+          <p class="eyebrow mb-4">Altri progetti nello stesso settore</p>
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {altri.map((c) => (
+              <SchedaCaso href={`/casi-d-uso/${c.id}/`} immagine={piccola(c.data.copertina.src)} srcset={srcsetCopertina(c.data.copertina.src)} alt={c.data.copertina.alt} etichetta="Caso d'uso" perChi={c.data.perChi} titolo={c.data.titolo} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <CTABanner
+      title="Avete un processo simile?"
+      description="20 minuti con Daniel per capire se un agente IA fa al caso vostro e da dove partire. Senza impegno."
+      ctaText="20 minuti con Daniel"
+      ctaHref="/parliamone/"
+      secondaryText="Oppure fai il Check-up IA gratuito · 3 min"
+      secondaryHref="/check-up/"
+      avatarName="Daniel Levis"
+      avatarRole="Cofondatore e amministratore delegato"
+      avatarSrc="/team/avatar/daniel-levis.webp"
+    />
+  </article>
+</Layout>
+
+<style is:global>
+  .caso-h2 { font-size: clamp(1.4rem, 1.8vw + 0.6rem, 1.75rem); line-height: 1.2; letter-spacing: -0.02em; font-weight: 500; margin: 2.2rem 0 0.8rem; scroll-margin-top: 6rem; }
+  .caso-h2:first-child { margin-top: 0; }
+  .caso-p { font-size: 17px; line-height: 1.7; color: var(--color-ink); }
+  .caso-ul { list-style: disc; padding-left: 1.25rem; }
+  .caso-ul li { font-size: 17px; line-height: 1.65; color: var(--color-ink); margin-top: 0.45rem; }
+  .prose-caso > * + * { margin-top: 1.1em; }
+  .prose-caso h2 { font-size: clamp(1.4rem, 1.8vw + 0.6rem, 1.75rem); line-height: 1.2; letter-spacing: -0.02em; font-weight: 500; margin-top: 2.2rem; scroll-margin-top: 6rem; }
+  .prose-caso p, .prose-caso li { font-size: 17px; line-height: 1.7; color: var(--color-ink); }
+  .prose-caso ul { list-style: disc; padding-left: 1.25rem; }
+  .prose-caso a { color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; }
+</style>

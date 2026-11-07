@@ -1,0 +1,76 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import CTABanner from "~/components/CTABanner.astro";
+import SchedaCaso from "~/components/SchedaCaso.astro";
+import { settori, casiUso, srcsetCopertina, piccola } from "~/lib/settori";
+import { SITE } from "~/lib/schema";
+
+const title = "Casi d'uso: agenti IA nelle aziende | Soraia";
+const description =
+  "I progetti di Soraia divisi per settore: il problema di partenza, cosa abbiamo costruito e dove lavora l'IA. Senza nomi, se il cliente preferisce così.";
+
+const elenco = await settori();
+const casi = await casiUso();
+const gruppi = elenco
+  .map((s) => ({ settore: s, casi: casi.filter((c) => c.data.settore === s.id) }))
+  .filter((g) => g.casi.length > 0);
+
+const jsonLd = {
+  "@type": "CollectionPage",
+  name: "Casi d'uso",
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: casi.map((c, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE}/casi-d-uso/${c.id}/`, name: c.data.titolo })),
+  },
+};
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd} hideLangSwitch>
+  <section class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
+    <div class="container-soraia pt-20 md:pt-28 pb-16 md:pb-20">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full bg-violet-600"></span>
+        Casi d'uso
+      </p>
+      <h1 class="text-balance max-w-3xl" style="font-size: clamp(2.25rem, 5vw + 1rem, 4rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+        Cosa abbiamo costruito, settore per settore.
+      </h1>
+      <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
+        {casi.length} progetti raccontati senza il nome del cliente: il problema di partenza, cosa fa il software e dove lavora l'IA. I clienti che hanno accettato di comparire sono nei <a href="/case-studies/" class="link-violet">casi studio</a>.
+      </p>
+      <nav aria-label="Settori" class="mt-8 flex flex-wrap gap-2">
+        {gruppi.map((g) => (
+          <a href={`#${g.settore.id}`} class="text-[13px] font-medium px-3.5 py-1.5 rounded-full border border-line bg-white hover:border-violet-400 transition-colors">{g.settore.data.nome} <span style="color: var(--color-ink-soft);">{g.casi.length}</span></a>
+        ))}
+      </nav>
+    </div>
+  </section>
+
+  {gruppi.map((g, i) => (
+    <section id={g.settore.id} class="section" style={`background: ${i % 2 ? "#FAFAF8" : "#fff"}; scroll-margin-top: 5rem;`}>
+      <div class="container-soraia">
+        <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+          <h2 style="font-size: clamp(1.6rem, 2.5vw + 0.5rem, 2.2rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 500;">{g.settore.data.nome}</h2>
+          <a href={`/settori/${g.settore.id}/`} class="link-violet text-[14.5px]">Cosa possiamo fare per questo settore</a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {g.casi.map((c) => (
+            <SchedaCaso href={`/casi-d-uso/${c.id}/`} immagine={piccola(c.data.copertina.src)} srcset={srcsetCopertina(c.data.copertina.src)} alt={c.data.copertina.alt} etichetta="Caso d'uso" perChi={c.data.perChi} titolo={c.data.titolo} />
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <CTABanner
+    title="Avete un processo simile a uno di questi?"
+    description="20 minuti con Daniel per capire se un agente IA fa al caso vostro e da dove partire. Senza impegno."
+    ctaText="20 minuti con Daniel"
+    ctaHref="/parliamone/"
+    secondaryText="Oppure fai il Check-up IA gratuito · 3 min"
+    secondaryHref="/check-up/"
+    avatarName="Daniel Levis"
+    avatarRole="Cofondatore e amministratore delegato"
+    avatarSrc="/team/avatar/daniel-levis.webp"
+  />
+</Layout>

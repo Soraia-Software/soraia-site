@@ -178,4 +178,64 @@ const jobs = defineCollection({
   }),
 });
 
-export const collections = { blog, caseStudies, guides, confronti, jobs };
+// Settori (/settori/<slug>/), dal 7/11/2026: per ogni settore cosa possiamo fare (una mappa delle
+// automazioni per area, sul modello di botchi.ai/it/resources/automation-map) e cosa abbiamo già
+// fatto per altri (casi d'uso anonimi e case study con il nome). Solo italiano per ora.
+const copertina = z.object({
+  src: z.string(),                 // /settori/img/<slug>.webp o /casi-d-uso/img/<file>.webp (1600x900)
+  alt: z.string(),
+  credito: z.string().optional(),  // "Foto di Nome Cognome su Unsplash"
+  fonte: z.string().url().optional(),
+});
+const settori = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/settori" }),
+  schema: z.object({
+    nome: z.string(),                          // etichetta breve: "Manifattura e meccanica"
+    title: z.string(),                         // <title>, ≤ 60 caratteri
+    description: z.string(),                   // meta description, 120-155 caratteri
+    h1: z.string(),
+    intro: z.string(),                         // 2-3 frasi sotto l'H1
+    copertina,
+    mappa: z.array(z.object({                  // «Cosa possiamo fare per te», per area aziendale
+      area: z.string(),
+      voci: z.array(z.object({ titolo: z.string(), descrizione: z.string(), obiettivo: z.string() })),
+    })),
+    caseStudy: z.array(z.string()).default([]),       // slug dei case study pubblici con il nome
+    settoriVicini: z.array(z.string()).default([]),   // da cui prendere «progetti simili»
+    paginaServizio: z.object({ href: z.string(), testo: z.string() }).optional(), // pagina servizio esistente
+    articoli: z.array(z.string()).default([]),        // percorsi di articoli e guide collegati
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+    ordine: z.number().default(100),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+// Casi d'uso anonimi (/casi-d-uso/<slug>/): uno per ogni use case del CRM che non ha già un
+// case study pubblico con il nome. Mai il nome del cliente né dettagli che lo rendano riconoscibile.
+const casiUso = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/casi-d-uso" }),
+  schema: z.object({
+    titolo: z.string(),                        // H1
+    title: z.string(),                         // <title>, ≤ 60 caratteri (« | Soraia» si aggiunge se ci sta)
+    description: z.string(),                   // meta description, 120-155 caratteri
+    settore: z.string(),                       // slug del settore
+    perChi: z.string(),                        // descrizione anonima del cliente
+    inBreve: z.string(),                       // risposta in 1-2 frasi (GEO)
+    problema: z.string(),
+    soluzione: z.array(z.string()),            // cosa abbiamo costruito, punti brevi
+    ia: z.string().optional(),                 // dove lavora l'IA
+    risultati: z.string().optional(),          // solo numeri veri presenti nel CRM
+    strumenti: z.array(z.string()).default([]),
+    copertina,
+    articoli: z.array(z.string()).default([]),
+    crmId: z.number(),                         // id dello use case nel CRM (riferimento interno)
+    ordine: z.number().default(100),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { blog, caseStudies, guides, confronti, jobs, settori, casiUso };

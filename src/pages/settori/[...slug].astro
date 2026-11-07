@@ -1,0 +1,234 @@
+---
+// Pagina di settore: cosa possiamo fare per te (mappa delle automazioni per area aziendale) e cosa
+// abbiamo già fatto per altri (casi d'uso anonimi + case study con il nome). Solo italiano.
+import Layout from "~/layouts/Layout.astro";
+import { render } from "astro:content";
+import FAQ from "~/components/FAQ.astro";
+import CTABanner from "~/components/CTABanner.astro";
+import SchedaCaso from "~/components/SchedaCaso.astro";
+import { settori, casiUso, caseStudyIt, srcsetCopertina, piccola, fotoCaseStudy, articoliPubblicati } from "~/lib/settori";
+import { SITE } from "~/lib/schema";
+
+export async function getStaticPaths() {
+  return (await settori()).map((s) => ({ params: { slug: s.id }, props: { settore: s } }));
+}
+
+const { settore } = Astro.props;
+const d = settore.data;
+const { Content } = await render(settore);
+const url = `${SITE}/settori/${settore.id}/`;
+
+const tutti = await settori();
+const nomeSettore = Object.fromEntries(tutti.map((s) => [s.id, s.data.nome]));
+const casi = await casiUso();
+const propri = casi.filter((c) => c.data.settore === settore.id);
+const caseStudy = (await caseStudyIt()).filter((c) => d.caseStudy.includes(c.id));
+// Se il settore ha pochi progetti propri, mostriamo quelli dei settori vicini (dichiarati nel file).
+const simili = propri.length + caseStudy.length < 3
+  ? casi.filter((c) => d.settoriVicini.includes(c.data.settore)).slice(0, 3)
+  : [];
+
+const articoli = await articoliPubblicati(d.articoli);
+const voci = d.mappa.reduce((n, a) => n + a.voci.length, 0);
+// Come nel blog: « | Soraia» solo se il title resta entro 60 caratteri.
+const title = d.title.includes("Soraia") || d.title.length + 9 > 60 ? d.title : `${d.title} | Soraia`;
+
+const jsonLd = [
+  {
+    "@type": "Service",
+    name: d.h1,
+    serviceType: `Agenti IA e software su misura per ${d.nome.toLowerCase()}`,
+    description: d.description,
+    areaServed: "IT",
+    url,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Cosa possiamo fare per te",
+      itemListElement: d.mappa.flatMap((a) => a.voci.map((v) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: v.titolo, description: v.descrizione } }))),
+    },
+  },
+  {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Settori", item: `${SITE}/settori/` },
+      { "@type": "ListItem", position: 3, name: d.nome, item: url },
+    ],
+  },
+  ...(propri.length
+    ? [{
+        "@type": "ItemList",
+        name: `Progetti per ${d.nome.toLowerCase()}`,
+        itemListElement: propri.map((c, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE}/casi-d-uso/${c.id}/`, name: c.data.titolo })),
+      }]
+    : []),
+  ...(d.faq.length
+    ? [{ "@type": "FAQPage", mainEntity: d.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }]
+    : []),
+];
+---
+
+<Layout title={title} description={d.description} lang="it" jsonLd={jsonLd} hideLangSwitch>
+  <!-- HERO -->
+  <section class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
+    <div class="container-soraia pt-16 md:pt-24 pb-14 md:pb-20">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
+        <div>
+          <nav aria-label="Percorso" class="text-[12px] font-medium tracking-[0.1em] uppercase mb-6" style="color: var(--color-ink-soft);">
+            <a href="/settori/" class="hover:opacity-70">Settori</a> <span aria-hidden="true">/</span> <span>{d.nome}</span>
+          </nav>
+          <h1 class="text-balance" style="font-size: clamp(2.1rem, 4.5vw + 0.75rem, 3.6rem); line-height: 1.06; letter-spacing: -0.025em; font-weight: 500;">
+            {d.h1}
+          </h1>
+          <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed text-pretty max-w-xl" style="color: var(--color-ink-muted);">{d.intro}</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/parliamone/" class="btn btn-primary">20 minuti con Daniel
+              <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            </a>
+            {(propri.length > 0 || caseStudy.length > 0) && <a href="#fatto" class="btn btn-secondary">Cosa abbiamo già fatto</a>}
+          </div>
+        </div>
+        <figure class="relative">
+          <img
+            src={d.copertina.src}
+            srcset={srcsetCopertina(d.copertina.src)}
+            sizes="(min-width: 1024px) 560px, 100vw"
+            alt={d.copertina.alt}
+            width="1600"
+            height="900"
+            fetchpriority="high"
+            decoding="async"
+            class="w-full h-auto rounded-3xl object-cover aspect-[16/9]"
+            style="box-shadow: var(--shadow-md);"
+          />
+          {d.copertina.credito && (
+            <figcaption class="mt-2 text-[11.5px]" style="color: var(--color-ink-soft);">
+              {d.copertina.fonte ? <a href={d.copertina.fonte} target="_blank" rel="noopener nofollow" class="hover:underline">{d.copertina.credito}</a> : d.copertina.credito}
+            </figcaption>
+          )}
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- COSA POSSIAMO FARE PER TE -->
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <p class="eyebrow mb-4">Cosa possiamo fare per te</p>
+      <h2 class="text-balance max-w-3xl" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem); line-height: 1.12; letter-spacing: -0.025em; font-weight: 500;">
+        {voci} attività che un agente IA può togliervi dalla scrivania.
+      </h2>
+      <p class="mt-5 text-[17px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
+        Divise per area dell'azienda. Ogni voce è un punto di partenza: si sceglie insieme quella con più ritorno, la si costruisce sui vostri dati e la si mette in produzione in poche settimane.
+      </p>
+      <div class="mt-12 space-y-14">
+        {d.mappa.map((a) => (
+          <div>
+            <h3 class="mb-6" style="font-size: clamp(1.25rem, 1.5vw + 0.6rem, 1.5rem); line-height: 1.2; letter-spacing: -0.015em; font-weight: 500;">{a.area}</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {a.voci.map((v, i) => (
+                <div class="rounded-2xl border border-line p-6 flex flex-col" style="background: #FAFAF8;">
+                  <span class="text-[12px] font-medium tracking-[0.12em] mb-3" style="color: var(--color-ink-soft);">{String(i + 1).padStart(2, "0")}</span>
+                  <h4 class="font-medium text-[17px] leading-snug mb-2" style="color: var(--color-ink);">{v.titolo}</h4>
+                  <p class="text-[14.5px] leading-relaxed text-pretty flex-1" style="color: var(--color-ink-muted);">{v.descrizione}</p>
+                  <p class="mt-4 pt-4 border-t border-line text-[13.5px] leading-snug" style="color: var(--color-ink);"><span class="font-medium" style="color: var(--color-brand);">Obiettivo:</span> {v.obiettivo}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- COSA ABBIAMO GIÀ FATTO PER ALTRI -->
+  {(propri.length > 0 || caseStudy.length > 0 || simili.length > 0) && (
+    <section id="fatto" class="section bg-violet-mesh border-y border-line">
+      <div class="container-soraia">
+        <p class="eyebrow mb-4">Cosa abbiamo già fatto per altri</p>
+        <h2 class="text-balance max-w-3xl" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem); line-height: 1.12; letter-spacing: -0.025em; font-weight: 500;">
+          {propri.length + caseStudy.length > 0 ? `Progetti nel settore ${d.nome.toLowerCase()}.` : "Progetti simili in settori vicini."}
+        </h2>
+        <p class="mt-5 text-[17px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
+          Il nome del cliente compare solo quando ce lo permette. Per ogni progetto: il problema di partenza, cosa abbiamo costruito e dove lavora l'IA.
+        </p>
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {propri.map((c) => (
+            <SchedaCaso href={`/casi-d-uso/${c.id}/`} immagine={piccola(c.data.copertina.src)} srcset={srcsetCopertina(c.data.copertina.src)} alt={c.data.copertina.alt} etichetta="Caso d'uso" perChi={c.data.perChi} titolo={c.data.titolo} />
+          ))}
+          {caseStudy.map((c) => (
+            <SchedaCaso href={`/case-studies/${c.id}/`} immagine={fotoCaseStudy(c)} alt={c.data.client} etichetta="Caso studio" perChi={`${c.data.client} · ${c.data.sector}`} titolo={c.data.metaTitle?.replace(/\s*\|.*$/, "") ?? c.data.title} />
+          ))}
+        </div>
+        {simili.length > 0 && propri.length + caseStudy.length > 0 && (
+          <>
+            <h3 class="mt-14 mb-6 font-medium text-[20px]">Progetti simili in settori vicini</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {simili.map((c) => (
+                <SchedaCaso href={`/casi-d-uso/${c.id}/`} immagine={piccola(c.data.copertina.src)} srcset={srcsetCopertina(c.data.copertina.src)} alt={c.data.copertina.alt} etichetta={nomeSettore[c.data.settore] ?? "Caso d'uso"} perChi={c.data.perChi} titolo={c.data.titolo} />
+              ))}
+            </div>
+          </>
+        )}
+        {simili.length > 0 && propri.length + caseStudy.length === 0 && (
+          <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {simili.map((c) => (
+              <SchedaCaso href={`/casi-d-uso/${c.id}/`} immagine={piccola(c.data.copertina.src)} srcset={srcsetCopertina(c.data.copertina.src)} alt={c.data.copertina.alt} etichetta={nomeSettore[c.data.settore] ?? "Caso d'uso"} perChi={c.data.perChi} titolo={c.data.titolo} />
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
+  <!-- CONTESTO (corpo del file) -->
+  <section class="section bg-white">
+    <div class="container-soraia max-w-3xl">
+      <div class="prose-settore">
+        <Content />
+      </div>
+      {(articoli.length > 0 || d.paginaServizio) && (
+        <div class="mt-12 pt-8 border-t border-line">
+          <p class="eyebrow mb-4">Per approfondire</p>
+          <ul class="space-y-2 text-[15.5px]">
+            {d.paginaServizio && <li><a href={d.paginaServizio.href} class="link-violet">{d.paginaServizio.testo}</a></li>}
+            {articoli.map((a) => <li><a href={a.href} class="link-violet">{a.titolo}</a></li>)}
+          </ul>
+        </div>
+      )}
+    </div>
+  </section>
+
+  {d.faq.length > 0 && (
+    <section class="section" style="background: #FAFAF8;">
+      <div class="container-soraia max-w-3xl">
+        <p class="eyebrow mb-4">Domande frequenti</p>
+        <h2 class="mb-8 text-balance" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500;">Quello che ci chiedono di solito.</h2>
+        <FAQ items={d.faq} />
+      </div>
+    </section>
+  )}
+
+  <CTABanner
+    title="Da dove partire nella vostra azienda?"
+    description="20 minuti con Daniel per capire quale attività conviene affidare per prima a un agente IA. Senza impegno."
+    ctaText="20 minuti con Daniel"
+    ctaHref="/parliamone/"
+    secondaryText="Oppure fai il Check-up IA gratuito · 3 min"
+    secondaryHref="/check-up/"
+    avatarName="Daniel Levis"
+    avatarRole="Cofondatore e amministratore delegato"
+    avatarSrc="/team/avatar/daniel-levis.webp"
+  />
+</Layout>
+
+<style is:global>
+  .prose-settore > * + * { margin-top: 1.1em; }
+  .prose-settore h2 { font-size: clamp(1.5rem, 2vw + 0.5rem, 1.875rem); line-height: 1.2; letter-spacing: -0.02em; font-weight: 500; margin-top: 2em; scroll-margin-top: 6rem; }
+  .prose-settore h2:first-child { margin-top: 0; }
+  .prose-settore h3 { font-size: 1.2rem; font-weight: 500; margin-top: 1.6em; }
+  .prose-settore p, .prose-settore li { font-size: 17px; line-height: 1.7; color: var(--color-ink); }
+  .prose-settore ul { list-style: disc; padding-left: 1.25rem; }
+  .prose-settore ol { list-style: decimal; padding-left: 1.25rem; }
+  .prose-settore a { color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; }
+</style>

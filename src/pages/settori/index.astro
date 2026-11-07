@@ -1,0 +1,81 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import CTABanner from "~/components/CTABanner.astro";
+import { settori, casiUso, caseStudyIt, srcsetCopertina, piccola } from "~/lib/settori";
+import { SITE } from "~/lib/schema";
+
+const title = "Agenti IA per settore: cosa possiamo fare | Soraia";
+const description =
+  "Manifattura, tessile, distribuzione, edilizia, sanità e altri settori: cosa può fare per voi un agente IA e i progetti che abbiamo già realizzato.";
+
+const elenco = await settori();
+const casi = await casiUso();
+const caseStudy = await caseStudyIt();
+const progetti = (id: string, cs: string[]) =>
+  casi.filter((c) => c.data.settore === id).length + caseStudy.filter((c) => cs.includes(c.id)).length;
+
+const jsonLd = {
+  "@type": "CollectionPage",
+  name: "Agenti IA per settore",
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: elenco.map((s, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE}/settori/${s.id}/`, name: s.data.nome })),
+  },
+};
+---
+
+<Layout title={title} description={description} lang="it" jsonLd={jsonLd} hideLangSwitch>
+  <section class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
+    <div class="container-soraia pt-20 md:pt-28 pb-16 md:pb-20">
+      <p class="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.15em] uppercase mb-6" style="color: var(--color-ink-soft);">
+        <span class="w-1 h-1 rounded-full bg-violet-600"></span>
+        Settori
+      </p>
+      <h1 class="text-balance max-w-3xl" style="font-size: clamp(2.25rem, 5vw + 1rem, 4rem); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500;">
+        Agenti IA per il vostro settore.
+      </h1>
+      <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed max-w-2xl text-pretty" style="color: var(--color-ink-muted);">
+        Per ogni settore, le attività d'ufficio che un agente IA può fare al posto delle persone e i progetti che abbiamo già costruito per aziende come la vostra.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-soraia">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {elenco.map((s) => {
+          const n = progetti(s.id, s.data.caseStudy);
+          return (
+            <a href={`/settori/${s.id}/`} class="group flex flex-col rounded-2xl border border-line bg-white overflow-hidden no-underline transition-all hover:-translate-y-1 hover:shadow-md">
+              <div class="relative aspect-[16/9] overflow-hidden" style="background: var(--color-ink-100);">
+                <img src={piccola(s.data.copertina.src)} srcset={srcsetCopertina(s.data.copertina.src)} sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw" alt={s.data.copertina.alt} width="960" height="540" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+              </div>
+              <div class="flex flex-col flex-1 p-6">
+                <h2 class="font-medium text-[20px] leading-snug" style="color: var(--color-ink);">{s.data.nome}</h2>
+                <p class="mt-2 text-[14.5px] leading-relaxed text-pretty flex-1" style="color: var(--color-ink-muted);">{s.data.intro}</p>
+                <p class="mt-4 text-[13px] font-medium" style="color: var(--color-brand);">
+                  {s.data.mappa.reduce((t, a) => t + a.voci.length, 0)} attività{n > 0 ? ` · ${n} ${n === 1 ? "progetto" : "progetti"}` : ""}
+                </p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+      <p class="mt-10 text-[15px]" style="color: var(--color-ink-muted);">
+        Tutti i progetti, divisi per settore, sono nella pagina <a href="/casi-d-uso/" class="link-violet">casi d'uso</a>.
+      </p>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Il vostro settore non c'è?"
+    description="Ogni azienda ha attività d'ufficio ripetitive. In 20 minuti capiamo insieme quali conviene affidare a un agente IA."
+    ctaText="20 minuti con Daniel"
+    ctaHref="/parliamone/"
+    secondaryText="Oppure fai il Check-up IA gratuito · 3 min"
+    secondaryHref="/check-up/"
+    avatarName="Daniel Levis"
+    avatarRole="Cofondatore e amministratore delegato"
+    avatarSrc="/team/avatar/daniel-levis.webp"
+  />
+</Layout>
