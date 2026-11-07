@@ -2,7 +2,7 @@
 title: "Cloud and Cybersecurity Voucher 2026: cover 50%"
 description: "Italy’s MIMIT Cloud and Cybersecurity voucher covers 50% as a grant, up to €20,000. What it really funds in an AI agent project, and what stays out."
 pubDate: 2026-09-21
-updatedDate: 2026-11-05
+updatedDate: 2026-11-07
 author: "Daniel Levis"
 tags:
   - "incentives"
@@ -20,7 +20,7 @@ featured: false
 h1: "Cloud and Cybersecurity Voucher 2026: what it really covers in an AI agent project"
 faq:
   - q: "Does the Cloud and Cybersecurity voucher cover AI agents?"
-    a: "Not as custom development. The voucher only pays for products and services on the <a href='https://www.mimit.gov.it/it/incentivi/sostegno-alla-domanda-di-servizi-di-cloud-computing-e-cyber-security'>MIMIT list</a>, bought from registered suppliers: security hardware and software, IaaS and PaaS cloud, SaaS software (including productivity solutions with artificial intelligence features) and configuration and support services, the latter up to 30% of the spending plan. The logic of a custom-built agent is not on the list; the infrastructure it runs on can be, if you buy it from a registered supplier."
+    a: "Not as custom development. The voucher only pays for products and services on the <a href='https://www.mimit.gov.it/it/incentivi/sostegno-alla-domanda-di-servizi-di-cloud-computing-e-cyber-security'>MIMIT list</a>, bought from registered suppliers: security hardware and software, IaaS and PaaS cloud, SaaS software (including productivity solutions with artificial intelligence features) and configuration and support services, the latter up to 30% of the spending plan. The logic of a custom-built agent is not on the list; the infrastructure it runs on can be, if you buy it from a registered supplier. Soraia is not a registered supplier."
   - q: "How much of the cost is a grant?"
     a: "<strong>50% of eligible spend as a non-repayable grant</strong>, up to a maximum contribution of €20,000, with a spending plan of at least €4,000. The rate is the same for everyone: it does not change with company size or spending category. It is set by the <a href='https://www.mimit.gov.it/it/normativa/decreti-direttoriali/decreto-direttoriale-4-agosto-2026-voucher-cloud-cybersecurity-termini-e-modalita-di-presentazione-delle-domande-di-agevolazione'>directorial decree of 4 August 2026</a> (in Italian)."
   - q: "Can I combine the voucher with other grants?"
@@ -84,6 +84,8 @@ A typical [custom software](/en/software-development) build or [AI agents](/en/a
 2. **Agent / software development** (design, prompts, skills, ATS/ERP integration): outside the voucher, to be covered by other incentives or your own budget.
 3. **Adoption and training**: outside the voucher, which explicitly excludes training.
 
+Soraia is not on the list of registered suppliers: you buy block 1 from a supplier that is, and we build the agent on top of that infrastructure.
+
 This structure avoids the most common mistake: a single undifferentiated quote. The application must come with supplier offers carrying the codes of the products and services on the list, and a description of what improves compared with what you use today: a custom development line won't pass there.
 
 ## The voucher doesn't justify the project
@@ -111,7 +113,7 @@ Straight talk:
 - **No baseline**: if you don't know what the process costs you today, the voucher is a way to fund a mistake at half price.
 - **You need to start now**: only spend after the application counts, and the review normally takes up to 60 days. If you can't wait, start and fund the next project.
 
-Otherwise, work on [finance](/en/finance) processes and on agent infrastructure is often the most natural candidate, because it has a real, measurable cloud and security component.
+Otherwise, [finance](/en/finance) process projects and agent infrastructure are often the most natural candidates, because they have a real, measurable cloud and security component. The eligible part, though, must be bought from a registered supplier, not from us.
 
 ## Want to know if your project is fundable?
 
