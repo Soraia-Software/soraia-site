@@ -74,11 +74,16 @@ faq:
   - q: "Come evito che l'agente peggiori l'esperienza cliente?"
     a: "Si fissa un target misurabile in fase di analisi (es. quota di richieste risolte senza operatore) e vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto. Il codice è tuo dal primo giorno."
   - q: "Entrambi i canali sono compatibili con GDPR e AI Act?"
-    a: "Sì, se progettati bene. Serve <strong>audit trail delle decisioni</strong>, base giuridica per il trattamento e handoff umano dove richiesto. Il voice aggiunge il tema delle registrazioni e delle trascrizioni, da gestire con la stessa attenzione. Vedi come lavoriamo gli <a href='/ai-agents'>agenti IA</a>."
+    a: "Sì, se progettati bene. Per l'<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a> l'obbligo principale vale per entrambi: dal 2 agosto 2026 chi scrive o chiama deve sapere che parla con un'IA (art. 50). Per il <a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR</a> servono base giuridica e informativa (artt. 6 e 13), e il voice aggiunge registrazioni e trascrizioni, da gestire con la stessa attenzione. <strong>Audit trail delle decisioni</strong> e handoff umano non sono obblighi di legge per un agente di assistenza, ma sono il modo per tenerlo sotto controllo. Vedi come lavoriamo gli <a href='/ai-agents'>agenti IA</a>."
+fonti:
+  - titolo: "AI Act, Regolamento (UE) 2024/1689, art. 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "GDPR, Regolamento (UE) 2016/679 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
 related: []
 featured: false
 pubDate: 2026-08-20
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-07-25T06:42:46.431Z

@@ -38,7 +38,7 @@ optionB:
   contro:
     - "Value depends on people's discipline: if they don't update it, data is empty or stale"
     - "Repetitive work (qualification, follow-up, reporting) stays on the rep's shoulders"
-    - "Native 'AI' features are often suggestions, not task execution"
+    - "The AI agents built into off-the-shelf CRMs cover standard tasks: custom ones need configuration and often usage-based credits"
     - "Risk of becoming an archive nobody looks at: licence cost, little ROI"
   idealePer:
     - "SMEs with no CRM today who first need to get their data in order"
@@ -63,22 +63,39 @@ tabella:
   - criterio: "Expected ROI"
     valoreA: "Selling time freed up"
     valoreB: "Pipeline visibility, if kept updated"
-verdetto: "It is not really either-or. If your problem today is clean data and a visible pipeline, a well-adopted traditional CRM solves 90% of the need at low cost, and starting there makes sense. An AI-agent CRM wins when the bottleneck is not recording data but executing the repetitive tasks (qualification, follow-up, reporting) that eat selling time, and you need a defined process for the agent to automate it well. For many SMEs the most pragmatic path is to keep the traditional CRM and plug in AI agents only on the tasks where the return is measurable, not to rewrite everything."
+verdetto: "It is not really either-or. If your problem today is clean data and a visible pipeline, a well-adopted traditional CRM solves most of the need at low cost, and starting there makes sense. An AI-agent CRM wins when the bottleneck is not recording data but executing the repetitive tasks (qualification, follow-up, reporting) that eat selling time, and you need a defined process for the agent to automate it well. For many SMEs the most pragmatic path is to keep the traditional CRM and plug in AI agents only on the tasks where the return is measurable, not to rewrite everything."
 faq:
   - q: "Do I have to ditch my current CRM to use AI agents?"
     a: "Almost never. In most cases you keep your data and existing CRM and plug <strong>AI agents onto the right tasks</strong> (qualification, follow-up, record updates, reporting). See how we work on <a href='/sales-marketing'>Sales & Marketing</a>."
+  - q: "Don't off-the-shelf CRMs already have their own AI agents?"
+    a: "Yes, and they are expanding them. <a href='https://www.hubspot.com/products/artificial-intelligence/ai-agents'>HubSpot</a> offers agents that answer questions and resolve support tickets, research accounts and draft outreach; <a href='https://www.salesforce.com/blog/small-business/agentforce-in-salesforce-suites/'>Salesforce</a> has included in its Starter and Pro Suites an Employee Agent that summarises records, drafts messages and logs activities, at no extra cost. They are useful for standard tasks. A custom agent makes sense when the task depends on your process or on systems outside the CRM, such as your ERP: there it pays to compare configuration and usage-based credits with the cost of a dedicated project."
   - q: "Does an AI-agent CRM really save time?"
     a: "It depends on how much repetitive work your reps carry today. Where qualification, follow-up and data entry weigh heavily, the agent runs them instead and frees up selling time. We always set a <strong>measurable target</strong> (e.g. hours recovered per rep) before starting."
   - q: "How much does adding AI agents to a CRM cost?"
     a: "With Soraia it starts at <strong>8,000 € per month</strong>: three dedicated people (Account Manager, Project Manager and AI Engineer) and one release in production every month, and a first delivery in 4 weeks. The code is yours from day one, no lock-in. For an estimate on your case, <a href='/parliamone'>let's talk</a>."
+  - q: "Can an AI agent send follow-up emails to leads?"
+    a: "Yes, under the same rules as emails written by hand. Replying to someone who asked you for a quote or information is not marketing: it falls under the pre-contractual steps they requested (<a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR, Article 6</a>). For promotional emails, instead, the Italian <a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-06-30;196~art130'>Privacy Code (Article 130)</a> requires the recipient's prior consent, and under the <a href='https://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/2542348'>Italian Data Protection Authority's guidelines</a> even a business address like name.surname@company.com is personal data. The exception is your own customers, for products similar to those they already bought, if they have not objected. And if the agent replies to contacts on its own, from 2 August 2026 it must say it is an AI (<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act, Article 50</a>)."
   - q: "What if my sales process isn't clear yet?"
     a: "Then a traditional CRM first makes sense, to get organised and map the process. An agent automates well only what is defined: without a clear process you risk automating the chaos."
   - q: "How is this different from a custom-built CRM?"
     a: "A custom CRM solves 'where do I record data' when off-the-shelf tools fall short; AI agents solve 'who executes the tasks'. They often coexist: see the <a href='/case-studies/talent-match'>Talent Match</a> case, where a custom ATS + CRM and AI matching work together. More on <a href='/software-development'>custom software</a>."
+fonti:
+  - titolo: "Italian Privacy Code, Article 130 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-06-30;196~art130"
+  - titolo: "Italian Data Protection Authority, anti-spam guidelines (2013)"
+    url: "https://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/2542348"
+  - titolo: "GDPR, Regulation (EU) 2016/679, Article 6 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+  - titolo: "AI Act, Regulation (EU) 2024/1689, Article 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "HubSpot, AI agents"
+    url: "https://www.hubspot.com/products/artificial-intelligence/ai-agents"
+  - titolo: "Salesforce, Agentforce in the Salesforce Suites for small business (17 March 2026)"
+    url: "https://www.salesforce.com/blog/small-business/agentforce-in-salesforce-suites/"
 related: []
 featured: false
 pubDate: 2026-10-29
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-09-25T09:07:46.803Z

@@ -38,7 +38,7 @@ optionB:
   contro:
     - "Il valore dipende dalla disciplina delle persone: se non aggiornano, i dati sono vuoti o vecchi"
     - "Il lavoro ripetitivo (qualifica, follow-up, report) resta sulle spalle del venditore"
-    - "Le funzioni 'AI' native spesso sono suggerimenti, non esecuzione dei task"
+    - "Gli agenti IA inclusi nei CRM pronti coprono task standard: per quelli su misura servono configurazione e spesso crediti a consumo"
     - "Rischio di diventare un archivio che nessuno guarda, con costo di licenza ma poco ROI"
   idealePer:
     - "PMI che oggi non hanno un CRM e devono prima mettere ordine nei dati"
@@ -63,22 +63,39 @@ tabella:
   - criterio: "ROI atteso"
     valoreA: "Tempo di vendita liberato"
     valoreB: "Visibilità pipeline, se aggiornato"
-verdetto: "Non è davvero un aut-aut. Se il tuo problema oggi è avere i dati ordinati e la pipeline visibile, un CRM tradizionale ben adottato risolve il 90% del bisogno a costo basso: partire da lì è sensato. Il CRM con agenti IA conviene quando il collo di bottiglia non è registrare i dati ma eseguire i task ripetitivi (qualifica, follow-up, reporting) che rubano tempo di vendita, e serve un processo già definito perché l'agente lo automatizzi bene. La strada più pragmatica per molte PMI è tenere il CRM tradizionale e innestare agenti IA solo sui task dove il ritorno è misurabile, non riscrivere tutto."
+verdetto: "Non è davvero un aut-aut. Se il tuo problema oggi è avere i dati ordinati e la pipeline visibile, un CRM tradizionale ben adottato risolve gran parte del bisogno a costo basso: partire da lì è sensato. Il CRM con agenti IA conviene quando il collo di bottiglia non è registrare i dati ma eseguire i task ripetitivi (qualifica, follow-up, reporting) che rubano tempo di vendita, e serve un processo già definito perché l'agente lo automatizzi bene. La strada più pragmatica per molte PMI è tenere il CRM tradizionale e innestare agenti IA solo sui task dove il ritorno è misurabile, non riscrivere tutto."
 faq:
   - q: "Devo buttare il mio CRM attuale per usare agenti IA?"
     a: "Quasi mai. Nella maggior parte dei casi si tengono i dati e il CRM esistente e si innestano <strong>agenti IA sopra i task giusti</strong> (qualifica, follow-up, aggiornamento schede, report). Si veda come lavoriamo su <a href='/sales-marketing'>Sales & Marketing</a>."
+  - q: "I CRM pronti non hanno già i loro agenti IA?"
+    a: "Sì, e li stanno ampliando. <a href='https://www.hubspot.com/products/artificial-intelligence/ai-agents'>HubSpot</a> offre agenti che rispondono alle domande e risolvono i ticket di assistenza, fanno ricerca sugli account e scrivono bozze di messaggi; <a href='https://www.salesforce.com/blog/small-business/agentforce-in-salesforce-suites/'>Salesforce</a> ha incluso nelle Starter e Pro Suites un Employee Agent che riassume i record, scrive bozze e registra le attività, senza costi aggiuntivi. Sono utili sui task standard. Un agente su misura ha senso quando il task dipende dal tuo processo o da sistemi fuori dal CRM, come il gestionale: lì conviene confrontare configurazione e crediti a consumo con il costo di un progetto dedicato."
   - q: "Un CRM con agenti IA fa risparmiare davvero tempo?"
     a: "Dipende da quanto lavoro ripetitivo hanno oggi i tuoi venditori. Dove qualifica, follow-up e data entry pesano molto, l'agente li esegue al posto loro e libera tempo di vendita. Fissiamo sempre un <strong>target misurabile</strong> (es. ore recuperate a venditore) prima di partire."
   - q: "Quanto costa aggiungere agenti IA a un CRM?"
     a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese, e prima delivery in 4 settimane. Il codice è tuo dal primo giorno, senza lock-in. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
+  - q: "Un agente IA può mandare i follow-up via email ai lead?"
+    a: "Sì, con le stesse regole delle email scritte a mano. Rispondere a chi ti ha chiesto un preventivo o delle informazioni non è marketing: rientra nelle misure precontrattuali che ha chiesto (<a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR, art. 6</a>). Per le email promozionali, invece, il <a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-06-30;196~art130'>Codice privacy (art. 130)</a> chiede il consenso preventivo del destinatario, e per le <a href='https://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/2542348'>linee guida del Garante</a> anche un indirizzo aziendale come nome.cognome@azienda.it è un dato personale. Fanno eccezione i tuoi clienti, per prodotti analoghi a quelli già acquistati, se non si sono opposti. E se l'agente risponde da solo ai contatti, dal 2 agosto 2026 deve dire che è un'IA (<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act, art. 50</a>)."
   - q: "E se il processo di vendita non è ancora chiaro?"
     a: "Allora conviene prima un CRM tradizionale per mettere ordine e mappare il processo. Un agente automatizza bene solo ciò che è definito: senza un processo chiaro rischi di automatizzare il caos."
   - q: "Che differenza c'è rispetto a un CRM custom su misura?"
     a: "Un CRM custom risolve il 'dove registro i dati' quando i tool pronti non bastano; gli agenti IA risolvono il 'chi esegue i task'. Spesso convivono: si veda il case <a href='/case-studies/talent-match'>Talent Match</a>, dove ATS + CRM custom e AI matching lavorano insieme. Approfondimento su <a href='/software-development'>Software custom</a>."
+fonti:
+  - titolo: "Codice privacy, art. 130 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-06-30;196~art130"
+  - titolo: "Garante privacy, linee guida contro lo spam (2013)"
+    url: "https://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/2542348"
+  - titolo: "GDPR, Regolamento (UE) 2016/679, art. 6 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+  - titolo: "AI Act, Regolamento (UE) 2024/1689, art. 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "HubSpot, agenti IA"
+    url: "https://www.hubspot.com/products/artificial-intelligence/ai-agents"
+  - titolo: "Salesforce, Agentforce nelle Suites per le piccole imprese (17 marzo 2026)"
+    url: "https://www.salesforce.com/blog/small-business/agentforce-in-salesforce-suites/"
 related: []
 featured: false
 pubDate: 2026-10-29
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-09-25T09:07:46.803Z

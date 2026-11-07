@@ -70,13 +70,18 @@ faq:
   - q: "Quanto costa partire con un agente IA rispetto a un BPO?"
     a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Un BPO ha invece un costo ricorrente per operatore o per ticket, basso all'inizio ma <strong>lineare</strong> al crescere dei volumi. La convenienza dipende dai tuoi numeri: <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "L'agente IA rispetta il GDPR e l'AI Act?"
-    a: "Sì. Gli <a href='/ai-agents'>agenti IA</a> di Soraia sono GDPR-compliant, con infrastruttura europea quando richiesto, DPA art. 28 inclusa e <strong>audit log immutabile su ogni decisione</strong>. Nessun training degli LLM sui dati del cliente."
+    a: "Gli <a href='/ai-agents'>agenti IA</a> di Soraia sono progettati per il <a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR</a>: infrastruttura europea quando richiesto, DPA ai sensi dell'art. 28 inclusa, <strong>audit log immutabile su ogni decisione</strong> e nessun training degli LLM sui dati del cliente. Per l'<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a> un agente di assistenza non è ad alto rischio: l'obbligo che conta è dire al cliente che parla con un'IA (art. 50, dal 2 agosto 2026)."
   - q: "E se l'agente non raggiunge la qualità promessa?"
     a: "Con Soraia vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: si fissa un target misurabile in fase di analisi (es. quota di ticket risolti in autonomia) e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto."
+fonti:
+  - titolo: "GDPR, Regolamento (UE) 2016/679 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+  - titolo: "AI Act, Regolamento (UE) 2024/1689, art. 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
 related: []
 featured: false
 pubDate: 2026-09-29
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-08-25T05:51:36.774Z

@@ -19,7 +19,7 @@ optionA:
     - "Quickly raises basic awareness of what AI can and cannot do"
     - "Useful as a first step to document the training the AI Act requires"
   contro:
-    - "The effect fades fast: without guided practice most of it is forgotten within weeks"
+    - "The effect fades fast without guided practice after the class"
     - "It rarely changes daily working habits"
     - "It doesn't address the specific use cases of your business processes"
     - "Anyone left behind or with doubts afterwards has no point of reference"
@@ -63,20 +63,27 @@ tabella:
   - criterio: "AI Act coverage"
     valoreA: "Documentable base training"
     valoreB: "Continuous, traceable training"
-verdetto: "It's not either/or: they're two stages of the same journey. A one-off workshop is the right, low-cost way to start, raise awareness and cover the base training the AI Act requires. But if you stop there, little remains after a few weeks: habits simply don't change without guided practice. Ongoing mentoring costs more but is what turns interest into real adoption, because it follows people on the processes that matter most. For most SMEs it makes sense to start with the workshop and continue with mentoring precisely on the use cases where AI frees the most hours."
+verdetto: "It's not either/or: they're two stages of the same journey. A one-off workshop is the right, low-cost way to start, raise awareness and start the training measures the AI Act asks for. But if you stop there, little remains: habits simply don't change without guided practice. Ongoing mentoring costs more but is what turns interest into real adoption, because it follows people on the processes that matter most. For most SMEs it makes sense to start with the workshop and continue with mentoring precisely on the use cases where AI frees the most hours."
 faq:
   - q: "Is a single workshop enough to comply with the AI Act?"
-    a: "The AI Act (art. 4) requires an adequate level of <strong>AI literacy</strong> for staff using these systems. A one-off workshop helps document base training, but the rule talks about adequate, ongoing competence: if AI use grows, training must be maintained over time. Source: EU Regulation 2024/1689. To understand what your case needs, <a href='/parliamone'>let's talk</a>."
+    a: "It can be a good start. The <a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act (Article 4)</a> requires providers and deployers of AI systems to take measures to support the <strong>AI literacy</strong> of the staff who use them and, after the <a href='https://eur-lex.europa.eu/eli/reg/2026/1744/oj'>Digital Omnibus</a>, no longer sets a “sufficient” level of competence to guarantee. The obligation has applied since 2 February 2025 and national authorities supervise it from 2 August 2026. As the <a href='https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers'>European Commission</a> explains, no certificate is needed and you can keep an internal record of training initiatives. Those who use high-risk systems must also train the people in charge of human oversight. If AI use grows, it makes sense to update the training: to understand what your case needs, <a href='/en/contact'>let's talk</a>."
   - q: "Why does a workshop alone often change nothing?"
-    a: "Because without application to real cases most of what's learned is forgotten within weeks. Real adoption happens when people use AI on their own work with someone to ask. That's the logic of Soraia's <a href='/ai-adoption'>AI Adoption</a> paths, which pair the workshop with monthly mentoring."
+    a: "Because without application to real cases, working habits don't change. Real adoption happens when people use AI on their own work with someone to ask. That's the logic of Soraia's <a href='/ai-adoption'>AI Adoption</a> paths, which pair the workshop with monthly mentoring."
   - q: "How much does ongoing mentoring cost compared to a workshop?"
     a: "With Soraia both now sit in one model that starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month. On the tracked use cases we free on average 110 hours/year per person. More in the <a href='/guide/formazione-ai-aziendale'>company AI training guide</a>. <a href='/en/contact'>Let's talk</a>."
   - q: "Can I start with the workshop and add mentoring later?"
     a: "Yes, and it's often the smartest choice. The workshop raises awareness and surfaces use cases; the mentoring then works exactly on those. This way you invest in the continuous path only where there's concrete value to free."
+fonti:
+  - titolo: "AI Act, Regulation (EU) 2024/1689, Article 4 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Digital Omnibus on AI, Regulation (EU) 2026/1744 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+  - titolo: "European Commission, AI literacy questions and answers"
+    url: "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers"
 related: []
 featured: false
 pubDate: 2026-09-15
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-08-25T05:20:09.220Z

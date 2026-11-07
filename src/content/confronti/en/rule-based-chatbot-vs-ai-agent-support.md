@@ -16,6 +16,7 @@ optionA:
     - "Predictable behavior: it only says what you wrote, no made-up answers"
     - "Low starting cost, often bundled into help desk tools"
     - "Easy to explain and show for compliance: every branch is traceable"
+    - "Under the AI Act a tree of rules written by people is not an AI system: no transparency obligation"
     - "Great at deflecting repetitive FAQs (hours, shipping, returns)"
   contro:
     - "Breaks the moment a customer leaves the script or writes freely"
@@ -37,7 +38,7 @@ optionB:
   contro:
     - "Higher upfront cost and it needs integration with your systems (help desk, orders)"
     - "Must be tightly constrained: without guardrails it risks wrong or overconfident answers"
-    - "Requires governance: audit log, data handling and AI Act alignment"
+    - "Requires governance: audit log, data handling and the AI Act duty to tell customers they are talking to an AI"
     - "Needs an internal owner to curate the knowledge base and edge cases"
   idealePer:
     - "Companies with high volumes and varied, often free-text questions"
@@ -67,15 +68,18 @@ faq:
   - q: "Do I have to throw away my existing rule-based chatbot?"
     a: "No. It often makes sense to keep the FAQ tree for the most frequent, stable cases and add an <a href='/ai-agents'>AI agent</a> for free language, triage and routing. The chatbot stays as a first filter, the agent covers the rest."
   - q: "Does an AI agent risk giving customers wrong answers?"
-    a: "That's the real risk if you don't constrain it. That's why it must be built with guardrails, a curated knowledge base and escalation to a human on edge cases. In <a href='/customer-support'>customer support</a> we add an <strong>immutable audit log</strong> on every decision and AI Act alignment."
+    a: "That's the real risk if you don't constrain it. That's why it must be built with guardrails, a curated knowledge base and escalation to a human on edge cases. In <a href='/customer-support'>customer support</a> we add an <strong>immutable audit log</strong> on every decision. And from 2 August 2026 the <a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act (Article 50)</a> requires telling customers they are talking to an AI."
   - q: "How much does moving from a chatbot to an AI agent cost?"
     a: "With Soraia it starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month, with first delivery in <strong>4 weeks</strong>. Cost depends on integrations (help desk, order system). For an estimate on your case, <a href='/parliamone'>let's talk</a>."
   - q: "How do I know which one I actually need?"
     a: "Look at your tickets: if most are a few repeated questions, rules are enough. If many customers write in free language or ask for actions on their order, the tree won't cut it. With Soraia we set a measurable target (e.g. share of tickets resolved without a human) and the <strong>first month satisfied or refunded</strong> guarantee applies."
+fonti:
+  - titolo: "AI Act, Regulation (EU) 2024/1689, Recital 12 and Article 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
 related: []
 featured: false
 pubDate: 2026-07-23
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-07-16T14:32:02.878Z

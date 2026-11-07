@@ -19,7 +19,7 @@ optionA:
     - "Alza rapidamente la consapevolezza di base su cosa l'AI può e non può fare"
     - "Utile come primo passo per documentare la formazione richiesta dall'AI Act"
   contro:
-    - "L'effetto svanisce in fretta: senza pratica guidata gran parte si dimentica in poche settimane"
+    - "L'effetto svanisce in fretta se dopo l'aula non c'è pratica guidata"
     - "Raramente cambia le abitudini di lavoro quotidiane"
     - "Non affronta i casi d'uso specifici dei processi aziendali"
     - "Chi resta indietro o ha dubbi dopo l'aula non ha un punto di riferimento"
@@ -63,20 +63,27 @@ tabella:
   - criterio: "Copertura AI Act"
     valoreA: "Formazione base documentabile"
     valoreB: "Formazione continua e tracciabile"
-verdetto: "Non è un aut-aut: sono due tappe dello stesso percorso. Un workshop una tantum è il modo giusto ed economico per partire, alzare la consapevolezza e coprire la formazione base che l'AI Act richiede. Ma se ti fermi lì, dopo qualche settimana resta poco: le abitudini non cambiano senza pratica guidata. Il tutoraggio continuo costa di più ma è quello che trasforma l'interesse in adozione reale, perché segue le persone sui processi che contano. Per la maggior parte delle PMI ha senso partire dal workshop e proseguire con il tutoraggio proprio sui casi d'uso dove l'AI libera più ore."
+verdetto: "Non è un aut-aut: sono due tappe dello stesso percorso. Un workshop una tantum è il modo giusto ed economico per partire, alzare la consapevolezza e avviare le misure di formazione che l'AI Act chiede. Ma se ti fermi lì, resta poco: le abitudini non cambiano senza pratica guidata. Il tutoraggio continuo costa di più ma è quello che trasforma l'interesse in adozione reale, perché segue le persone sui processi che contano. Per la maggior parte delle PMI ha senso partire dal workshop e proseguire con il tutoraggio proprio sui casi d'uso dove l'AI libera più ore."
 faq:
   - q: "Un solo workshop basta per essere in regola con l'AI Act?"
-    a: "L'AI Act (art. 4) richiede un livello adeguato di <strong>alfabetizzazione AI</strong> del personale che usa questi sistemi. Un workshop una tantum aiuta a documentare la formazione base, ma la norma parla di competenza adeguata e continuativa: se l'uso dell'AI cresce, serve mantenere la formazione nel tempo. Fonte: Regolamento UE 2024/1689. Per capire cosa serve nel tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Può essere un buon inizio. L'<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act (art. 4)</a> chiede a chi fornisce o usa sistemi di IA di adottare misure per l'<strong>alfabetizzazione</strong> del personale che li usa e, dopo il <a href='https://eur-lex.europa.eu/eli/reg/2026/1744/oj'>Digital Omnibus</a>, non fissa più un livello «sufficiente» di competenza da garantire. L'obbligo vale dal 2 febbraio 2025 e dal 2 agosto 2026 lo controllano le autorità nazionali. Come spiega la <a href='https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers'>Commissione europea</a>, non serve un certificato e si può tenere un registro interno delle iniziative di formazione. Per chi usa sistemi ad alto rischio resta in più l'obbligo di formare chi esercita la sorveglianza umana. Se l'uso dell'IA cresce, conviene aggiornare la formazione: per capire cosa serve nel tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "Perché un workshop da solo spesso non cambia nulla?"
-    a: "Perché senza applicazione sui casi reali gran parte di quanto appreso si dimentica in poche settimane. L'adozione vera nasce quando le persone usano l'AI sul proprio lavoro con un riferimento a cui chiedere. È la logica dei percorsi di <a href='/ai-adoption'>AI Adoption</a> di Soraia, che affiancano il workshop a un tutoraggio mensile."
+    a: "Perché senza applicazione sui casi reali le abitudini di lavoro non cambiano. L'adozione vera nasce quando le persone usano l'AI sul proprio lavoro con un riferimento a cui chiedere. È la logica dei percorsi di <a href='/ai-adoption'>AI Adoption</a> di Soraia, che affiancano il workshop a un tutoraggio mensile."
   - q: "Quanto costa il tutoraggio continuo rispetto al workshop?"
     a: "Con Soraia formazione e tutoraggio seguono un unico modello, a partire da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Sui casi seguiti liberiamo in media 110 ore/anno per persona. Vedi i <a href='/prezzi'>prezzi</a> e gli approfondimenti nella <a href='/guide/formazione-ai-aziendale'>guida alla formazione AI aziendale</a>."
   - q: "Posso partire dal workshop e aggiungere il tutoraggio dopo?"
     a: "Sì, ed è spesso la scelta più sensata. Il workshop alza la consapevolezza e fa emergere i casi d'uso; il tutoraggio poi lavora proprio su quelli. Così investi sul continuo solo dove c'è valore concreto da liberare."
+fonti:
+  - titolo: "AI Act, Regolamento (UE) 2024/1689, art. 4 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Digital Omnibus sull'IA, Regolamento (UE) 2026/1744 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+  - titolo: "Commissione europea, domande e risposte sull'alfabetizzazione in materia di IA"
+    url: "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers"
 related: []
 featured: false
 pubDate: 2026-09-15
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-08-25T05:20:09.220Z
