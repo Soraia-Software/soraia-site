@@ -103,7 +103,10 @@ const featuredGuides = [
 ---
 
 <footer class="bg-ink-50 border-t border-line bg-lines-light glow-tr relative overflow-hidden" style="background-color: #F2F1ED;">
-  <div class="container-soraia relative z-10">
+  <!-- data-nosnippet: Google non usa il footer (uguale su ogni pagina) come testo dei risultati;
+       cercando «soraia biella» mostrava «© Soraia S.r.l. · Via Losana 13…» al posto della descrizione.
+       Va su un div: Google lo legge solo su div, span e section. -->
+  <div class="container-soraia relative z-10" data-nosnippet>
     <!-- Big editorial tagline -->
     <div class="py-20 md:py-28 max-w-4xl">
       <a href={homeHref} class="inline-flex items-center gap-3 mb-10">
