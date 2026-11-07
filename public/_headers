@@ -8,3 +8,8 @@
 # modifica, quindi si possono tenere in cache per un anno (prima: 4 ore e revalidate).
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Il dominio di servizio di Cloudflare Pages serve lo stesso sito di www.soraia.io: fuori dai
+# motori di ricerca (sintassi documentata da Cloudflare per i domini *.pages.dev).
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
