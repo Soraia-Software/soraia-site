@@ -1,6 +1,6 @@
 ---
 title: "Cambio generazionale in azienda: cosa digitalizzare prima"
-description: "Quando entra la nuova generazione in una PMI industriale, cosa modernizzare per primo senza fermare la produzione. Una guida onesta al cambio generazionale."
+description: "Quando entra la nuova generazione in una PMI industriale, cosa modernizzare per primo senza fermare la produzione. Guida onesta al cambio generazionale."
 pubDate: 2026-06-29
 author: "Daniel Levis"
 tags:

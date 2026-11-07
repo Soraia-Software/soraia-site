@@ -1,6 +1,6 @@
 ---
 title: "Riconciliazione incassi Amazon: le distinte che non tornano"
-description: "Riconciliazione degli incassi Amazon: confrontare le distinte con il gestionale, classificare resi, commissioni e riserve e proporre registrazioni da approvare."
+description: "Riconciliazione incassi Amazon: confronta le distinte con il gestionale, classifica resi, commissioni e riserve e prepara le registrazioni da approvare."
 pubDate: 2026-12-03
 author: "Daniel Levis"
 tags:

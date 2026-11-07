@@ -1,7 +1,7 @@
 ---
 title: "Fatturazione elettronica 2026: basta reinserire dati a mano"
 h1: "Fatturazione elettronica 2026: basta reinserire i dati a mano"
-description: "Dal 2024 la fattura elettronica è obbligatoria anche per tutti i forfettari. Come automatizzare estrazione e riconciliazione dei dati fattura con agenti IA."
+description: "Dal 2024 la fattura elettronica è obbligatoria anche per i forfettari. Come automatizzare estrazione e riconciliazione dei dati fattura con agenti IA."
 pubDate: 2026-07-06
 updatedDate: 2026-11-05
 author: "Daniel Levis"

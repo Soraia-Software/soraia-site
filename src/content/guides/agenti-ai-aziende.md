@@ -1,7 +1,7 @@
 ---
-title: "Agenti AI per Aziende: cosa sono, come scegliere, esempi reali"
+title: "Agenti AI per aziende: cosa sono, come sceglierli, esempi"
 h1: "Agenti IA per Aziende: la guida operativa per le PMI italiane"
-description: "Cosa è un agente IA in azienda, quando ha senso, come si costruisce, quanto costa, 4 esempi reali di agenti IA in produzione in PMI italiane. Guida aggiornata 2026."
+description: "Cos'è un agente IA in azienda, quando ha senso, come si costruisce e quanto costa, con 4 esempi reali in produzione in PMI italiane. Aggiornata al 2026."
 pubDate: 2026-04-10
 updatedDate: 2026-10-31
 readMinutes: 12

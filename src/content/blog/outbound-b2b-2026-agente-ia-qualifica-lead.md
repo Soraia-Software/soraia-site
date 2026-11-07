@@ -1,6 +1,6 @@
 ---
 title: "Outbound B2B 2026: l'agente IA che qualifica i lead"
-description: "L'outbound a freddo nel 2026 rende sempre meno. Cosa fa al suo posto un agente IA che qualifica e arricchisce i lead, con un esempio reale e i limiti onesti."
+description: "L'outbound a freddo nel 2026 rende sempre meno. Cosa fa al suo posto un agente IA che qualifica e arricchisce i lead, con un caso reale e i limiti onesti."
 pubDate: 2026-06-24
 author: "Daniel Levis"
 tags:

@@ -1,7 +1,7 @@
 ---
 titolo: "Knowledge base IA o wiki aziendale"
 sottotitolo: "Interrogare i documenti in linguaggio naturale con l'IA (RAG) oppure mantenere un wiki curato a mano. Cosa conviene davvero per trovare le risposte interne."
-description: "Knowledge base IA interna vs wiki aziendale: costi, tempi, precisione e manutenzione a confronto, con un verdetto onesto su quando conviene l'uno o l'altro."
+description: "Knowledge base IA interna vs wiki aziendale: costi, tempi, precisione e manutenzione a confronto, con un verdetto su quando conviene l'uno o l'altro."
 inBreve: "Per la maggior parte delle PMI non è un aut-aut: la scelta migliore è un wiki curato come fonte e un'IA che lo interroga sopra. Il wiki da solo funziona se hai documentazione già ordinata e poche persone che la aggiornano; la knowledge base IA conviene quando i documenti sono tanti, sparsi e nessuno trova le risposte in tempo. L'IA senza fonti ordinate sotto risponde comunque male."
 categoria: "Internal knowledge / Adoption"
 author: "Daniel Levis"

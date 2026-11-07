@@ -1,7 +1,7 @@
 ---
 titolo: "Hiring a junior or an AI agent: how to choose"
 sottotitolo: "Covering a repetitive operational role with a junior hire or with an AI agent. What actually makes sense for an SME."
-description: "Hiring a junior vs an AI agent for a repetitive operational role: cost, time, scalability and limits compared, with an honest verdict on when each one wins."
+description: "Hiring a junior vs an AI agent for a repetitive operational role: cost, time, scalability and limits compared, with a verdict on when each one wins."
 inBreve: "For a truly repetitive, high-volume role (CV screening, data extraction, ticket triage), an AI agent covers the load faster and at a lower marginal cost. But if the role needs judgement, relationships with people, or is the first step of a growth path, a junior is still the right choice. In practice many SMEs do both: the agent takes the mechanical work, the junior handles what needs a human head."
 categoria: "HR & Ops"
 author: "Daniel Levis"

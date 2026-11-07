@@ -1,6 +1,6 @@
 ---
 title: "Legge 132/2025 IA: cosa cambia per le imprese"
-description: "La legge italiana sull'IA (132/2025) è in vigore da ottobre 2025. Cosa aggiunge all'AI Act per le imprese, tra AgID, ACN e il fondo da 1 miliardo per le PMI."
+description: "La legge italiana sull'IA (132/2025) è in vigore da ottobre 2025. Cosa aggiunge all'AI Act per le imprese, tra AgID, ACN e il fondo da 1 miliardo."
 pubDate: 2026-08-17
 updatedDate: 2026-11-05
 author: "Daniel Levis"

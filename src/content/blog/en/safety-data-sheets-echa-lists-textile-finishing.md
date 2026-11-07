@@ -1,6 +1,6 @@
 ---
 title: "Safety data sheets vs ECHA lists: automatic monitoring"
-description: "Dye houses and textile finishers: check safety data sheets against ECHA lists, CLP and REACH every day, and know at once which products contain a substance."
+description: "Dye houses and textile finishers: check safety data sheets against ECHA lists, CLP and REACH daily, and know at once which products contain a substance."
 pubDate: 2026-11-27
 author: "Daniel Levis"
 tags:

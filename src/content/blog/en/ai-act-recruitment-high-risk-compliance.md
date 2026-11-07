@@ -1,6 +1,6 @@
 ---
 title: "AI Act & recruitment: what to do before December 2027"
-description: "The AI Act classifies AI used for staff selection as a high-risk system. The 5 concrete obligations (human oversight, candidate notice, logs) to avoid fines."
+description: "The AI Act classifies AI used for staff selection as high-risk. The 5 concrete obligations (human oversight, candidate notice, logs) to avoid fines."
 pubDate: 2026-06-23
 updatedDate: 2026-11-05
 author: "Daniel Levis"

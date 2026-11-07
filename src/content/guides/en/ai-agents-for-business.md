@@ -1,7 +1,7 @@
 ---
-title: "AI Agents for Business: what they are, how to choose, real examples"
+title: "AI Agents for Business: what they are and how to choose"
 h1: "AI Agents for Business: the operational guide for European SMEs"
-description: "What is an AI agent in business, when it makes sense, how it's built, what it costs, 4 real AI agents live in production at European SMEs. Updated guide 2026."
+description: "What an AI agent in business is, when it makes sense, how it's built and what it costs, with 4 real agents in production at European SMEs. Updated 2026."
 lang: "en"
 pubDate: 2026-04-10
 updatedDate: 2026-10-31

@@ -1,6 +1,6 @@
 ---
 title: "Agenti IA nel recruitment PMI: cosa cambia"
-description: "Come un agente IA cambia lo screening e il contatto candidati in una PMI: baseline, numeri reali dai case, quando conviene e quando no. Guida per Head of HR."
+description: "Come un agente IA cambia lo screening e il contatto dei candidati in una PMI: baseline, numeri reali, quando conviene e quando no. Per chi guida l'HR."
 pubDate: 2026-09-09
 updatedDate: 2026-10-18
 author: "Daniel Levis"

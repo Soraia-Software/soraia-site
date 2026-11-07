@@ -1,5 +1,7 @@
 ---
 title: "CXL, Agente IA che onboarda gli esperti in 70 ore in meno"
+metaTitle: "CXL: 70 ore risparmiate per ogni esperto | Case study Soraia"
+metaDescription: "L'agente IA di CXL segue ogni nuovo esperto dal primo contatto, tra bozza di contratto, materiali, accessi e follow-up. 70 ore risparmiate per esperto."
 client: "CXL"
 clientLogo: "/logos/clients/cxl.webp"
 industry: "sales-marketing"

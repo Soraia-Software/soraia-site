@@ -3,8 +3,8 @@ import Layout from "~/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import CaseStudyCardJet from "~/components/CaseStudyCardJet.astro";
 
-const title = "Case Studies | Soraia";
-const description = "Agenti IA in produzione per PMI italiane ed europee. Recruitment, consumer mobile, finance, climate, public sector: cosa abbiamo costruito e quali risultati.";
+const title = "Case study: agenti IA in produzione nelle PMI | Soraia";
+const description = "Agenti IA in produzione per PMI italiane ed europee, dal recruitment alla finanza. Per ogni progetto, cosa abbiamo costruito e cosa è cambiato.";
 
 const cases = (await getCollection("caseStudies"))
   .filter((c) => c.data.lang === "it" && !c.data.draft)

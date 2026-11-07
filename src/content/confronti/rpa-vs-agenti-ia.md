@@ -1,7 +1,7 @@
 ---
 titolo: "RPA o Agenti IA: quale automazione per la PMI"
 sottotitolo: "Bot rule-based che replicano i click su un'interfaccia, oppure agenti IA che ragionano sul processo. Cosa conviene davvero."
-description: "RPA vs Agenti IA per una PMI: dati strutturati, eccezioni, manutenzione e casi d'uso a confronto, con un verdetto onesto su quando scegliere l'uno o l'altro."
+description: "RPA vs Agenti IA per una PMI: dati strutturati, eccezioni, manutenzione e casi d'uso a confronto, con un verdetto su quando scegliere l'uno o l'altro."
 inBreve: "Scegli la RPA quando il processo è stabile, ad alto volume e con regole fisse: input strutturati, poche eccezioni, interfacce che non cambiano. Scegli gli Agenti IA quando il processo richiede giudizio, input non strutturati (email, PDF, testo libero) o gestione di eccezioni. Molte PMI usano entrambi: la RPA esegue i passaggi meccanici, l'agente decide dove serve interpretare."
 categoria: "Automazione processi"
 author: "Daniel Levis"

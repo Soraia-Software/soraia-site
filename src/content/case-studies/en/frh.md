@@ -1,5 +1,7 @@
 ---
 title: "French Riviera Househunting, AI agents for lead enrichment and property sourcing"
+metaTitle: "French Riviera Househunting: AI for leads and listings"
+metaDescription: "Two AI agents for a Côte d'Azur property agency: one qualifies leads and builds the dossier, the other captures listings in one click for each client."
 client: "French Riviera Househunting"
 clientLogo: "/logos/clients/frh.webp"
 lang: "en"

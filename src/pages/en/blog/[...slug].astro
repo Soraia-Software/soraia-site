@@ -27,7 +27,8 @@ function formatDate(d: Date) {
   return d.toLocaleDateString("en-US", { day: "numeric", month: "long", year: "numeric" });
 }
 
-const title = `${post.data.title} | Soraia`;
+// Google truncates titles past 60 characters: add the brand suffix only when it fits.
+const title = post.data.title.length + " | Soraia".length <= 60 ? `${post.data.title} | Soraia` : post.data.title;
 const description = post.data.description;
 const h1 = post.data.h1 || post.data.title;
 const itSlug = EN_TO_IT_BLOG[slug];

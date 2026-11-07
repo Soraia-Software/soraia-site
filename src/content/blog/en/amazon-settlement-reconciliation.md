@@ -1,6 +1,6 @@
 ---
 title: "Amazon settlement reconciliation: when payouts don’t match"
-description: "Amazon settlement reconciliation: match settlement reports to your ERP orders, classify refunds, fees and reserves, and propose journal entries for approval."
+description: "Amazon settlement reconciliation: match settlement reports to ERP orders, classify refunds, fees and reserves, and propose journal entries for approval."
 pubDate: 2026-12-03
 author: "Daniel Levis"
 tags:

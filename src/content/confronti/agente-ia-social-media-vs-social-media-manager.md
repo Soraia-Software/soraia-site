@@ -1,7 +1,7 @@
 ---
 titolo: "Agente IA social o social media manager"
 sottotitolo: "Automatizzare la gestione dei social con un agente IA su misura, oppure affidarsi a un social media manager o a un'agenzia. Cosa conviene alla tua PMI."
-description: "Agente IA per i social vs social media manager: costi, qualità, strategia e community a confronto, con un verdetto onesto su quando conviene l'uno o l'altro."
+description: "Agente IA per i social vs social media manager: costi, qualità, strategia e community a confronto, con un verdetto su quando conviene l'uno o l'altro."
 inBreve: "Un agente IA per i social media su misura conviene per il lavoro ripetitivo ad alto volume (programmazione, pubblicazione multi-canale, bozze, triage dei commenti), mentre un social media manager o agenzia social tradizionale serve per strategia, creatività e gestione vera della community. Per la maggior parte delle PMI la scelta non è esclusiva: la combinazione più efficiente è spesso un manager che usa un agente IA per il carico operativo. Scegli solo l'IA se hai già una direzione chiara e ti serve esecuzione; scegli solo la persona se i social sono ancora da impostare."
 categoria: "AI vs servizio tradizionale"
 author: "Daniel Levis"

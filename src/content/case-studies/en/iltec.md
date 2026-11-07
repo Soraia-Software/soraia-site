@@ -1,5 +1,7 @@
 ---
 title: "ILTEC: website rebuilt in 3 weeks with AI search optimization + AI agent"
+metaTitle: "ILTEC: new website in 3 weeks, AI agent via QR | Soraia"
+metaDescription: "ILTEC, office technology near Biella: site rebuilt in 3 weeks for AI search, conversion rate tripled, and an AI agent via QR code on every machine."
 client: "ILTEC"
 clientLogo: "/logos/clients/iltec.webp"
 industry: "sales-marketing"

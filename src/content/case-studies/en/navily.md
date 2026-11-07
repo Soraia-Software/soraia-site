@@ -1,5 +1,7 @@
 ---
 title: "Navily, AI Agent for Review Moderation + Nautical Data Enrichment"
+metaTitle: "Navily: AI review moderation, 70%+ less time | Soraia"
+metaDescription: "Navily's AI agent moderates reviews and images and fills in data on ports and anchorages, escalating only edge cases. Operational time down by 70%+."
 client: "Navily"
 clientLogo: "/logos/clients/navily.webp"
 industry: "customer-support"

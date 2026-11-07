@@ -1,6 +1,6 @@
 ---
 title: "Transizione 5.0 and AI Software: What Applies in 2026"
-description: "Italy's Transizione 5.0 ran out of funds in 2025. In 2026 AI software goes through the hyper-depreciation: what qualifies, what it is worth, what a CFO needs."
+description: "Italy's Transizione 5.0 ran out of funds in 2025. In 2026 AI software goes through the hyper-depreciation: what qualifies, what it's worth, what CFOs need."
 pubDate: 2026-08-24
 updatedDate: 2026-11-07
 author: "Daniel Levis"

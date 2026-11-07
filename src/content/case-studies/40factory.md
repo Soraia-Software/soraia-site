@@ -1,5 +1,7 @@
 ---
 title: "40Factory, Linkly per lead generation da fiere B2B"
+metaTitle: "40Factory: lead delle fiere B2B nel CRM con Linkly | Soraia"
+metaDescription: "Come 40Factory ha tolto il data entry dopo le fiere: ogni biglietto diventa un contatto arricchito e qualificato nel CRM in pochi secondi, con 5 agenti IA."
 draft: false
 client: "40Factory"
 clientLogo: "/logos/clients/40factory.webp"

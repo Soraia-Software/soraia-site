@@ -1,6 +1,6 @@
 ---
 title: "AI Sales Strategist"
-description: "Cerchiamo un AI Sales Strategist per il mercato italiano: presa appuntamenti in cold call, discovery, follow-up e closing, riportando direttamente ai founder. Full remote, collaborazione P.IVA."
+description: "Cerchiamo un AI Sales Strategist per il mercato italiano, dalle chiamate a freddo alla chiusura dei contratti. Full remote, collaborazione con partita IVA."
 team: "Sales"
 location: "Full remote (mercato italiano)"
 type: "Collaborazione P.IVA"

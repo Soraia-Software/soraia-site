@@ -1,6 +1,6 @@
 ---
 title: "AI agents for hotels and hospitality: a practical guide"
-description: "Bookings, guest requests and upsell handled by an AI agent without losing the human touch. Where it genuinely pays off in hotels and B&Bs, and where it doesn't."
+description: "Bookings, guest requests and upsell handled by an AI agent without losing the human touch. Where it really pays off in hotels and B&Bs, and where not."
 pubDate: 2026-11-13
 author: "Daniel Levis"
 tags:

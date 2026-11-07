@@ -1,6 +1,6 @@
 ---
 title: "AI Act e selezione del personale: obblighi per chi assume"
-description: "L'AI Act classifica l'IA per la selezione del personale come sistema ad alto rischio. I 5 obblighi (sorveglianza, informativa, log) per non rischiare multe."
+description: "L'AI Act classifica l'IA per la selezione del personale come sistema ad alto rischio. I 5 obblighi (sorveglianza, informativa, log) per evitare le multe."
 pubDate: 2026-06-23
 updatedDate: 2026-11-05
 author: "Daniel Levis"

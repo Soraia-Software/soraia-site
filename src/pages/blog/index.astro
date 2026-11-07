@@ -2,8 +2,8 @@
 import Layout from "~/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const title = "Blog & Insights | Soraia";
-const description = "Pratico, contrarian, basato su 40+ progetti agenti IA reali. Niente AI hype, solo decisioni operative.";
+const title = "Blog su agenti IA e automazione per PMI | Soraia";
+const description = "Articoli pratici su agenti IA, automazione e AI Act per le PMI italiane, scritti partendo da 40+ progetti reali. Niente hype, solo scelte operative.";
 
 const posts = (await getCollection("blog"))
   .filter((p) => p.data.lang === "it" && (import.meta.env.DEV || (!p.data.draft && p.data.pubDate <= new Date())))

@@ -1,7 +1,7 @@
 ---
 titolo: "LLM open source o proprietario: quale scegliere"
 sottotitolo: "Modelli con pesi aperti, come quelli di Mistral, contro modelli chiusi come GPT o Claude: controllo e costi contro prestazioni e velocità."
-description: "LLM open source vs proprietario per una PMI: controllo, privacy e costi contro prestazioni e time-to-value a confronto, con un verdetto onesto per caso d'uso."
+description: "LLM open source vs proprietario per una PMI: controllo, privacy e costi contro prestazioni e time-to-value a confronto, con un verdetto per caso d'uso."
 inBreve: "Per la maggior parte delle PMI conviene partire con un modello proprietario (GPT di OpenAI, Claude): prestazioni migliori subito, nessuna infrastruttura da gestire, prima versione utile in settimane. Un LLM open source, come i modelli di Mistral con licenza Apache 2.0, ha senso quando privacy stringente, dati che non devono uscire, volumi alti o costi per token diventano il vincolo dominante. Nella pratica molte aziende usano entrambi: proprietario per i task difficili, open source dove serve controllo e prevedibilità di costo. Il punto di partenza consigliato per la maggior parte delle PMI è proprietario, con open source introdotto solo quando privacy o costi lo impongono."
 categoria: "Modelli AI"
 author: "Daniel Levis"

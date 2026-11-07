@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 
 const bare = (id: string) => id.replace(/^en\//, "");
 const title = "Comparisons: A vs B to decide without regret | Soraia";
-const description = "Operational head-to-head comparisons for SMEs: criteria, honest pros and cons, a readable table and a reasoned verdict. To pick the right tool without regret.";
+const description = "Head-to-head comparisons for SMEs, with criteria, honest pros and cons, a clear table and a reasoned verdict, so you pick the right tool.";
 
 const items = (await getCollection("confronti"))
   .filter((c) => c.data.lang === "en" && (import.meta.env.DEV || (!c.data.draft && c.data.pubDate <= new Date())))

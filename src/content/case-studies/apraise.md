@@ -1,5 +1,7 @@
 ---
 title: "APraise, Agente IA ATS con Web Clipper LinkedIn per executive search"
+metaTitle: "APraise: dal profilo LinkedIn all'ATS in un clic | Soraia"
+metaDescription: "Per APraise, executive search, un ATS con Web Clipper: il profilo LinkedIn entra nel database in un clic e l'IA lo struttura. 150+ candidati a ricerca."
 client: "APraise"
 clientLogo: "/logos/clients/apraise.webp"
 industry: "recruitment-hr"

@@ -1,6 +1,6 @@
 ---
 title: "Digital Omnibus: l'AI Act alto rischio slitta al 2027"
-description: "Il Digital Omnibus rinvia l'Allegato III al 2027. Ma ad agosto 2026 restano obbligatori trasparenza (art. 50), literacy (art. 4) e i divieti. Cosa fare in PMI."
+description: "Il Digital Omnibus rinvia l'Allegato III al 2027. Ad agosto 2026 restano obbligatori trasparenza (art. 50), literacy (art. 4) e divieti. Cosa fare in PMI."
 pubDate: 2026-08-21
 updatedDate: 2026-11-05
 author: "Daniel Levis"

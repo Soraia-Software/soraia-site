@@ -1,7 +1,7 @@
 ---
 titolo: "AI SDR pronto o agente IA su misura"
 sottotitolo: "Un tool SDR in abbonamento già pronto, oppure un agente IA costruito sui tuoi dati e sul tuo CRM. Cosa genera più pipeline davvero."
-description: "AI SDR pronto vs agente IA su misura per le vendite: costi, tempi, personalizzazione e deliverability a confronto, con un verdetto onesto per Head of Sales."
+description: "AI SDR pronto vs agente IA su misura per le vendite: costi, tempi, personalizzazione e deliverability a confronto, con un verdetto per Head of Sales."
 inBreve: "Se vendi un prodotto standard a un mercato ampio e vuoi partire in pochi giorni, un AI SDR in abbonamento conviene: niente sviluppo, testi subito. Se vendi B2B complesso, con dati in un CRM specifico e un processo di qualifica tuo, un agente IA su misura genera pipeline più pulita perché parla la tua lingua e vive nei tuoi sistemi. Molte PMI B2B partono dal tool per validare e passano al su misura quando il processo è chiaro. In entrambi i casi, in Italia le email promozionali automatiche richiedono il consenso preventivo."
 categoria: "Platform vs Custom (build-vs-buy)"
 author: "Daniel Levis"

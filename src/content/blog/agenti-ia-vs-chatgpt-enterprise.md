@@ -1,6 +1,6 @@
 ---
 title: "Agenti IA custom vs ChatGPT Enterprise, quando conviene cosa"
-description: "Tre criteri concreti per capire se al tuo team serve una licenza ChatGPT Enterprise condivisa o un agente IA custom sui processi. Senza FOMO, senza vendite."
+description: "Tre criteri concreti per capire se al tuo team serve una licenza ChatGPT Enterprise condivisa o un agente IA sui tuoi processi. Senza FOMO, senza vendite."
 pubDate: 2026-05-08
 updatedDate: 2026-05-24
 author: "Daniel Levis"

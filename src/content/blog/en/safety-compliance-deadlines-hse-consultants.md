@@ -1,6 +1,6 @@
 ---
 title: "Safety compliance deadlines for external HSE consultants"
-description: "Safety compliance deadlines for external safety officers and HSE consultants: medical checks, training and extinguishers across clients, and tablet inspections."
+description: "Safety compliance deadlines for external HSE consultants: medical checks, training and extinguishers across clients, plus inspections on a tablet."
 pubDate: 2026-12-01
 author: "Daniel Levis"
 tags:

@@ -1,5 +1,7 @@
 ---
 title: "Numeraria, AI agents that automate end-to-end studio management"
+metaTitle: "Numeraria: quotes, hours and billing with AI | Soraia"
+metaDescription: "For Numeraria, a payroll and accounting firm, AI agents that generate quotes, reconcile hours and prepare billing. Half a month handed back to management."
 client: "Numeraria"
 clientLogo: "/logos/clients/numeraria.webp"
 industry: "finance-vc"

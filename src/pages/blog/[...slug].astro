@@ -23,7 +23,8 @@ function formatDate(d: Date) {
   return d.toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
 }
 
-const title = `${post.data.title} | Soraia`;
+// Google taglia i title oltre i 60 caratteri: il suffisso del brand si aggiunge solo se ci sta.
+const title = post.data.title.length + " | Soraia".length <= 60 ? `${post.data.title} | Soraia` : post.data.title;
 const description = post.data.description;
 const h1 = post.data.h1 || post.data.title;
 const altHref = BLOG_SLUG_MAP[post.id] ? `/en/blog/${BLOG_SLUG_MAP[post.id]}/` : "/en/blog";

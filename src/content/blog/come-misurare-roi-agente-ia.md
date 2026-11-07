@@ -1,5 +1,6 @@
 ---
-title: "Come misurare il ROI di un agente IA, framework + baseline che funzionano"
+title: "Come misurare il ROI di un agente IA: baseline e metodo"
+h1: "Come misurare il ROI di un agente IA, framework + baseline che funzionano"
 description: "Senza baseline, ogni claim 'l'AI ci ha fatto risparmiare X ore' è un'opinione. Il framework che usiamo con i clienti Soraia per misurare ROI con onestà."
 pubDate: 2026-05-15
 updatedDate: 2026-10-18

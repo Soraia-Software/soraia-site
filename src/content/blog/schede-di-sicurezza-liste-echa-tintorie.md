@@ -1,6 +1,6 @@
 ---
 title: "Schede di sicurezza e liste ECHA: il controllo automatico"
-description: "Tintorie e finissaggi: confrontare ogni giorno le schede di sicurezza con le liste ECHA, CLP e REACH, e sapere subito quali prodotti contengono una sostanza."
+description: "Tintorie e finissaggi: confronta ogni giorno le schede di sicurezza con le liste ECHA, CLP e REACH e scopri subito quali prodotti contengono una sostanza."
 pubDate: 2026-11-27
 author: "Daniel Levis"
 tags:

@@ -1,7 +1,7 @@
 ---
 titolo: "Software su misura o gestionale pronto"
 sottotitolo: "Costruire un tool su misura oppure comprare un ERP già pronto: cosa conviene davvero a una PMI, tra costo totale, tempi e lock-in."
-description: "Software su misura vs gestionale pronto per una PMI: costi, tempi, lock-in e controllo a confronto, con un verdetto onesto su quando conviene l'uno o l'altro."
+description: "Software su misura vs gestionale pronto per una PMI: costi, tempi, lock-in e controllo a confronto, con un verdetto su quando conviene l'uno o l'altro."
 inBreve: "Per la maggior parte delle PMI conviene un gestionale pronto sui processi standard (contabilità, magazzino, HR di base): costa meno subito e va live in fretta. Il software su misura ha senso solo dove il processo è un vantaggio competitivo, il pacchetto ti costringe a piegare il lavoro al software, o i costi di licenza a 3 anni superano il build. La scelta giusta spesso è ibrida: ERP standard sul commodity, custom sul cuore del business."
 categoria: "Build vs Buy"
 author: "Daniel Levis"

@@ -6,7 +6,7 @@ import CaseStudyCardJet from "~/components/CaseStudyCardJet.astro";
 const bare = (id: string) => id.replace(/^en\//, "");
 
 const title = "Case Studies | Soraia";
-const description = "AI agents in production for Italian and European SMEs. Recruitment, consumer mobile, finance, climate, public sector: what we built and the results we delivered.";
+const description = "AI agents in production at Italian and European SMEs, from recruitment to finance and climate tech. For each project, what we built and what changed.";
 
 const cases = (await getCollection("caseStudies"))
   .filter((c) => c.data.lang === "en" && !c.data.draft)

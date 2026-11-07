@@ -1,5 +1,7 @@
 ---
 title: "Rainplan, AI Platform for Climate Parcel Management"
+metaTitle: "Rainplan: climate incentives on one AI platform | Soraia"
+metaDescription: "For Rainplan, a climate tech company, one platform for climate incentives: virtual site visits, eligibility checks and approvals across many stakeholders."
 client: "Rainplan"
 clientLogo: "/logos/clients/rainplan.webp"
 industry: "real-estate"

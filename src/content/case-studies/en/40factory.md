@@ -1,5 +1,7 @@
 ---
 title: "40Factory, Linkly for B2B trade show lead generation"
+metaTitle: "40Factory: trade show leads into the CRM with Linkly"
+metaDescription: "How 40Factory dropped post-show data entry: every business card becomes an enriched, qualified CRM contact within seconds, handled by 5 AI agents."
 draft: false
 client: "40Factory"
 clientLogo: "/logos/clients/40factory.webp"

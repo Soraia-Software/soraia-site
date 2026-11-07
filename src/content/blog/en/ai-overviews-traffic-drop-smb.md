@@ -1,6 +1,6 @@
 ---
 title: "Google AI Overviews traffic drop: how to measure it"
-description: "Organic traffic falling and you don't know why? Here's how to measure how much Google AI Overviews is taking from you and what to do, no panic, no magic SEO."
+description: "Organic traffic falling and you don't know why? How to measure how much Google AI Overviews takes from you and what to do, without panic or magic SEO."
 pubDate: 2026-07-20
 updatedDate: 2026-09-12
 author: "Daniel Levis"

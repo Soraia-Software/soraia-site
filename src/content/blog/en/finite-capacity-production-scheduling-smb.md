@@ -1,6 +1,6 @@
 ---
 title: "Finite capacity scheduling: production planning off Excel"
-description: "Finite capacity scheduling for manufacturing SMEs: the scheduler reads ERP and MES, accounts for people, absences and subcontractors, and compares scenarios."
+description: "Finite capacity scheduling for manufacturing SMEs: the scheduler reads ERP and MES, accounts for people, absences and subcontractors, compares scenarios."
 pubDate: 2026-11-26
 author: "Daniel Levis"
 tags:
