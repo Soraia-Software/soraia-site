@@ -1,14 +1,16 @@
 ---
-// Banner del consenso per l'unico strumento non tecnico del sito: il «visitor tracking»
-// di lemlist, che riconosce l'azienda da cui arriva una visita (Daniel, 7/11/2026).
-// Lo script non imposta cookie, ma manda a lemlist pagina, tempo, clic, browser e IP:
-// per le linee guida EDPB 2/2023 (§51, §54-55) e l'art. 122 del Codice Privacy serve
-// il consenso. Quindi parte solo dopo «Accetta», su soraia.io e non in locale.
+// Banner del consenso. Il primo livello è generico, per categorie (Daniel, 7/11/2026):
+// «Necessari» sempre attivi e «Marketing» solo con il consenso. Oggi «Marketing» è il
+// visitor tracking di lemlist (dettagli nella cookie policy, punto 3.4): non imposta
+// cookie, ma manda a lemlist pagina, tempo, clic, browser e IP, e per le linee guida
+// EDPB 2/2023 (§51, §54-55) e l'art. 122 del Codice Privacy serve il consenso. Parte
+// solo dopo il consenso, su soraia.io e non in locale.
 //
 // La scelta sta nel localStorage (chiave soraia_consent) per 6 mesi, come chiede il
-// Garante per non riproporre il banner prima. La X chiude e vale come «Rifiuta».
-// Il link «Preferenze cookie» del footer (data-consent-open) riapre il banner;
-// chi ritira il consenso ricarica la pagina, così lo script già partito si ferma.
+// Garante per non riproporre il banner prima. La X chiude e vale come «Rifiuta»; la
+// casella Marketing parte spenta. Il link «Preferenze cookie» del footer
+// (data-consent-open) riapre il banner con le categorie aperte; chi ritira il
+// consenso ricarica la pagina, così lo script già partito si ferma.
 import type { Lang } from "~/lib/i18n";
 import { path as i18nPath } from "~/lib/i18n";
 
@@ -19,20 +21,34 @@ const { lang = "it" } = Astro.props;
 
 const t = {
   it: {
-    title: "Una scelta sulla privacy",
-    text: "Con il tuo consenso usiamo uno strumento di lemlist che riconosce l'azienda da cui arriva la visita, così possiamo contattare chi potrebbe essere interessato ai nostri servizi. Non imposta cookie e senza consenso non parte.",
+    title: "La tua privacy",
+    text: "Usiamo cookie tecnici, necessari al funzionamento del sito, e, solo con il tuo consenso, strumenti di terze parti per finalità di marketing. Puoi accettare, rifiutare o scegliere cosa attivare.",
     more: "Cookie policy",
     accept: "Accetta",
     reject: "Rifiuta",
+    customize: "Personalizza",
+    save: "Salva scelte",
     close: "Chiudi e rifiuta",
+    necessary: "Necessari",
+    necessaryText: "Servono al funzionamento e alla sicurezza del sito.",
+    marketing: "Marketing",
+    marketingText: "Strumenti di terze parti usati per finalità commerciali.",
+    always: "Sempre attivi",
   },
   en: {
-    title: "A privacy choice",
-    text: "With your consent we use a lemlist tool that recognises the company a visit comes from, so we can get in touch with those who may need our services. It sets no cookies and does not run without consent.",
+    title: "Your privacy",
+    text: "We use technical cookies, needed for the site to work, and, only with your consent, third-party tools for marketing purposes. You can accept, decline or choose what to enable.",
     more: "Cookie policy",
     accept: "Accept",
     reject: "Decline",
+    customize: "Customise",
+    save: "Save choices",
     close: "Close and decline",
+    necessary: "Necessary",
+    necessaryText: "Needed for the site to work and stay secure.",
+    marketing: "Marketing",
+    marketingText: "Third-party tools used for business purposes.",
+    always: "Always on",
   },
 }[lang];
 ---
@@ -45,8 +61,27 @@ const t = {
   <p id="consent-text" class="consent-text">
     {t.text} <a href={i18nPath("/cookies", lang)}>{t.more}</a>
   </p>
+
+  <div class="consent-panel" hidden>
+    <div class="consent-cat">
+      <div>
+        <p class="consent-cat-name">{t.necessary}</p>
+        <p class="consent-cat-text">{t.necessaryText}</p>
+      </div>
+      <span class="consent-always">{t.always}</span>
+    </div>
+    <label class="consent-cat">
+      <div>
+        <p class="consent-cat-name">{t.marketing}</p>
+        <p class="consent-cat-text">{t.marketingText}</p>
+      </div>
+      <input type="checkbox" class="consent-switch" data-consent-marketing />
+    </label>
+  </div>
+
   <div class="consent-actions">
     <button type="button" class="btn btn-secondary consent-btn" data-consent="reject">{t.reject}</button>
+    <button type="button" class="btn btn-secondary consent-btn" data-consent="customize" data-label-save={t.save}>{t.customize}</button>
     <button type="button" class="btn btn-secondary consent-btn" data-consent="accept">{t.accept}</button>
   </div>
 </div>
@@ -58,46 +93,65 @@ const t = {
     var SRC = "https://visitors.lemlist.com/api/visitors/tracking?k=5p29dJ4GxJqoLrTAHl4Vbu6mRzAxP5nep4i9gm7A9bs%3D&t=tea_vg6yTp5QrCz6Mp94C";
     var banner = document.getElementById("consent-banner");
     if (!banner) return;
+    var panel = banner.querySelector(".consent-panel");
+    var box = banner.querySelector("[data-consent-marketing]");
+    var mid = banner.querySelector('[data-consent="customize"]');
+    var midLabel = mid.textContent;
 
+    // { marketing: bool, ts, v: 2 }; la v1 aveva { lemlist: bool }
     function read() {
       try {
         var v = JSON.parse(localStorage.getItem(KEY) || "null");
-        if (v && typeof v.lemlist === "boolean" && v.ts && Date.now() - v.ts < MAXAGE) return v;
+        if (!v || !v.ts || Date.now() - v.ts >= MAXAGE) return null;
+        var m = typeof v.marketing === "boolean" ? v.marketing : v.lemlist;
+        return typeof m === "boolean" ? { marketing: m } : null;
       } catch (e) {}
       return null;
     }
     function load() {
       if (!/(^|\.)soraia\.io$/.test(location.hostname)) return; // niente visite da locale o anteprime
-      if (document.querySelector('script[data-lemlist-tracker]')) return;
+      if (document.querySelector("script[data-lemlist-tracker]")) return;
       var s = document.createElement("script");
       s.src = SRC;
       s.async = true;
       s.setAttribute("data-lemlist-tracker", "");
       document.head.appendChild(s);
     }
-    function save(accepted) {
+    function setPanel(open) {
+      panel.hidden = !open;
+      mid.textContent = open ? mid.getAttribute("data-label-save") : midLabel;
+    }
+    function save(marketing) {
       var before = read();
-      try { localStorage.setItem(KEY, JSON.stringify({ lemlist: accepted, ts: Date.now(), v: 1 })); } catch (e) {}
+      try { localStorage.setItem(KEY, JSON.stringify({ marketing: marketing, ts: Date.now(), v: 2 })); } catch (e) {}
       banner.hidden = true;
-      if (accepted) load();
-      else if (before && before.lemlist) location.reload(); // ritirato: ferma lo script già partito
+      setPanel(false);
+      if (marketing) load();
+      else if (before && before.marketing) location.reload(); // ritirato: ferma lo script già partito
     }
 
     var choice = read();
-    if (choice) { if (choice.lemlist) load(); }
+    if (choice) { if (choice.marketing) load(); }
     else banner.hidden = false;
 
     banner.addEventListener("click", function (e) {
       var b = e.target.closest("[data-consent]");
-      if (b) save(b.getAttribute("data-consent") === "accept");
+      if (!b) return;
+      var a = b.getAttribute("data-consent");
+      if (a === "accept") save(true);
+      else if (a === "reject") save(false);
+      else if (panel.hidden) setPanel(true);
+      else save(box.checked);
     });
     document.addEventListener("click", function (e) {
       var o = e.target.closest("[data-consent-open]");
       if (!o) return;
       e.preventDefault();
+      var c = read();
+      box.checked = !!(c && c.marketing);
+      setPanel(true);
       banner.hidden = false;
-      var first = banner.querySelector(".consent-btn");
-      if (first) first.focus();
+      box.focus();
     });
   })();
 </script>
@@ -109,6 +163,8 @@ const t = {
     bottom: 1.25rem;
     z-index: 10000;
     width: min(26rem, calc(100vw - 2.5rem));
+    max-height: calc(100vh - 2.5rem);
+    overflow-y: auto;
     padding: 1.25rem 1.25rem 1.1rem;
     background: #fff;
     color: var(--color-ink);
@@ -118,7 +174,7 @@ const t = {
     font-size: 14px;
     line-height: 1.55;
   }
-  .consent-banner[hidden] { display: none; }
+  .consent-banner[hidden], .consent-panel[hidden] { display: none; }
   .consent-title {
     font-weight: 600;
     margin: 0 2rem 0.4rem 0;
@@ -129,14 +185,56 @@ const t = {
     text-decoration: underline;
     text-underline-offset: 3px;
   }
+  .consent-panel {
+    margin-top: 0.9rem;
+    border-top: 1px solid var(--color-line, #e4e4e7);
+  }
+  .consent-cat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-line, #e4e4e7);
+    cursor: default;
+  }
+  label.consent-cat { cursor: pointer; }
+  .consent-cat-name { margin: 0; font-weight: 600; }
+  .consent-cat-text { margin: 0.1rem 0 0; font-size: 13px; color: var(--color-ink-muted, #5f5e5a); }
+  .consent-always { font-size: 12.5px; color: var(--color-ink-muted, #5f5e5a); white-space: nowrap; }
+  .consent-switch {
+    appearance: none;
+    flex: none;
+    width: 2.4rem;
+    height: 1.4rem;
+    border-radius: 999px;
+    background: var(--color-line-strong, #c9c7c0);
+    position: relative;
+    cursor: pointer;
+    transition: background-color 150ms ease;
+  }
+  .consent-switch::after {
+    content: "";
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 999px;
+    background: #fff;
+    transition: transform 150ms ease;
+  }
+  .consent-switch:checked { background: var(--color-brand); }
+  .consent-switch:checked::after { transform: translateX(1rem); }
+  .consent-switch:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
   .consent-actions {
     display: flex;
-    gap: 0.6rem;
+    gap: 0.5rem;
     margin-top: 1rem;
   }
   .consent-btn {
     flex: 1;
-    padding: 0.7rem 1rem;
+    padding: 0.7rem 0.5rem;
     font-size: 14px;
   }
   .consent-x {
