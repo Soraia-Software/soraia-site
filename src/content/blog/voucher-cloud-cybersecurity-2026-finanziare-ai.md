@@ -2,7 +2,7 @@
 title: "Voucher Cloud e Cybersecurity 2026: copri il 50%"
 description: "Il voucher MIMIT Cloud e Cybersecurity copre il 50% a fondo perduto, fino a 20.000 €. Cosa finanzia davvero in un progetto di agenti IA e cosa resta fuori."
 pubDate: 2026-09-21
-updatedDate: 2026-11-05
+updatedDate: 2026-11-07
 author: "Daniel Levis"
 tags:
   - "incentivi"
@@ -20,7 +20,7 @@ featured: false
 h1: "Voucher Cloud e Cybersecurity 2026: cosa copre davvero in un progetto di agenti IA"
 faq:
   - q: "Il voucher Cloud e Cybersecurity copre gli agenti IA?"
-    a: "Non come sviluppo su misura. Il voucher paga solo prodotti e servizi presenti nell’<a href='https://www.mimit.gov.it/it/incentivi/sostegno-alla-domanda-di-servizi-di-cloud-computing-e-cyber-security'>elenco del MIMIT</a>, acquistati da fornitori iscritti: sicurezza hardware e software, cloud IaaS e PaaS, software SaaS (comprese le soluzioni di produttività con funzionalità di intelligenza artificiale) e servizi di configurazione e supporto, questi ultimi fino al 30% del piano di spesa. La logica di un agente costruito su misura non è nell’elenco; l’infrastruttura su cui gira può esserci, se la compri da un fornitore iscritto."
+    a: "Non come sviluppo su misura. Il voucher paga solo prodotti e servizi presenti nell’<a href='https://www.mimit.gov.it/it/incentivi/sostegno-alla-domanda-di-servizi-di-cloud-computing-e-cyber-security'>elenco del MIMIT</a>, acquistati da fornitori iscritti: sicurezza hardware e software, cloud IaaS e PaaS, software SaaS (comprese le soluzioni di produttività con funzionalità di intelligenza artificiale) e servizi di configurazione e supporto, questi ultimi fino al 30% del piano di spesa. La logica di un agente costruito su misura non è nell’elenco; l’infrastruttura su cui gira può esserci, se la compri da un fornitore iscritto. Soraia non è tra i fornitori iscritti."
   - q: "Quanto copre a fondo perduto?"
     a: "Il <strong>50% a fondo perduto</strong> delle spese ammissibili, fino a un contributo massimo di 20.000 €, con un piano di spesa di almeno 4.000 €. La percentuale è la stessa per tutti: non cambia con la dimensione dell’impresa né con la categoria di spesa. Lo stabilisce il <a href='https://www.mimit.gov.it/it/normativa/decreti-direttoriali/decreto-direttoriale-4-agosto-2026-voucher-cloud-cybersecurity-termini-e-modalita-di-presentazione-delle-domande-di-agevolazione'>decreto direttoriale del 4 agosto 2026</a>."
   - q: "Posso cumulare il voucher con altri bandi?"
@@ -84,6 +84,8 @@ Un nostro [software custom](/software-development) o uno sprint di [agenti IA](/
 2. **Sviluppo dell'agente / del software** (design, prompt, skill, integrazione ATS/ERP): fuori dal voucher, da coprire con altri incentivi o a budget.
 3. **Adoption e formazione**: fuori dal voucher, che esclude esplicitamente la formazione.
 
+Soraia non è tra i fornitori iscritti all'elenco: il blocco 1 lo compri da un fornitore che c'è, e noi costruiamo l'agente sopra quell'infrastruttura.
+
 Con questa struttura eviti l'errore più comune: un preventivo unico e indistinto. La domanda va accompagnata dalle offerte dei fornitori, con i codici dei prodotti e dei servizi dell'elenco e la descrizione di cosa migliora rispetto a quello che usi oggi: una voce di sviluppo su misura lì dentro non passa.
 
 ## Il voucher non giustifica il progetto
@@ -111,7 +113,7 @@ Te lo dico in faccia:
 - **Nessuna baseline**: se non sai quanto ti costa oggi il processo, il voucher è un modo per finanziare un errore a metà prezzo.
 - **Serve partire subito**: valgono solo le spese successive alla domanda, e l'istruttoria dura di norma fino a 60 giorni. Se non puoi aspettare, parti e finanzia il prossimo progetto.
 
-Per il resto, i lavori sui processi [finance](/finance) e sull'infrastruttura degli agenti sono spesso i candidati più naturali, perché hanno una componente cloud e sicurezza reale e misurabile.
+Per il resto, i progetti sui processi [finance](/finance) e l'infrastruttura degli agenti sono spesso i candidati più naturali, perché hanno una componente cloud e sicurezza reale e misurabile. La parte candidabile, però, va comprata da un fornitore iscritto, non da noi.
 
 ## Vuoi capire se il tuo progetto è finanziabile?
 

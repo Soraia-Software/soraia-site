@@ -1,100 +1,110 @@
 ---
-title: "Transizione 5.0 and AI Software: AI Act Compliance"
-description: "From 2026, AI software funded under Italy's Transizione 5.0 risks losing the credit if the system isn't AI Act compliant. What a CFO must check first."
+title: "Transizione 5.0 and AI Software: What Applies in 2026"
+description: "Italy's Transizione 5.0 ran out of funds in 2025. In 2026 AI software goes through the hyper-depreciation: what qualifies, what it is worth, what a CFO needs."
 pubDate: 2026-08-24
+updatedDate: 2026-11-07
 author: "Daniel Levis"
 tags:
-  - "ai act"
   - "transizione 5.0"
-  - "compliance"
-  - "industrial-sme"
+  - "funding"
+  - "hyper-depreciation"
+  - "ai act"
 keywords:
-  - "transizione 5.0 ai act compliant software"
-  - "ai act tax credit"
-  - "ai act compliant funding"
-  - "eligible ai software italy"
+  - "transizione 5.0 ai software"
+  - "italy hyper-depreciation 2026 software"
+  - "iperammortamento artificial intelligence"
+  - "new transizione 5.0 plan"
 readMinutes: 6
 featured: false
-h1: "Transizione 5.0 and AI Software: From 2026 the Tax Credit Holds Only if the System Is AI Act Compliant"
+h1: "Transizione 5.0 Has Closed: in 2026 AI Software Goes Through the Hyper-Depreciation"
 faq:
-  - q: "Is AI software still eligible under Transizione 5.0 in 2026?"
-    a: "Yes, intangible AI assets remain among eligible costs. But the incentive is tied to the asset being admissible. If the AI system doesn't meet the EU AI Act obligations, you risk a challenge during audit. In practice: compliance and documentation must be in place <strong>before</strong> deployment, not after."
-  - q: "What's the risk if funded AI software isn't AI Act compliant?"
-    a: "The main risk is <strong>forfeiture of the incentive</strong> at audit, with recovery of the tax credit plus penalties. A non-compliant system may be deemed ineligible. For a CFO that means booking a benefit that might have to be paid back: a risk to assess when choosing the vendor, not once the project is done."
-  - q: "Is my agent that reads PDFs and invoices high-risk under the AI Act?"
-    a: "Almost always no. Internal automations like OCR, invoice extraction and reconciliation generally fall under minimal risk: no autonomous decisions affecting people. The main obligation is internal transparency and an audit trail. High-risk systems are others (decision-making recruitment, credit scoring, machinery safety)."
-  - q: "What should I ask the software vendor to stay covered?"
-    a: "Ask for: the system's AI Act risk classification, an immutable audit log of decisions, a GDPR art. 28 DPA in the contract, EU hosting where needed, and the technical documentation proving compliance. If the vendor can't answer, they're not ready for funded spend under audit."
+  - q: "Is Transizione 5.0 still open in 2026?"
+    a: "No. The tax credit covered investments made between 1 January 2024 and 31 December 2025, and with the decree of 6 November 2025 the Ministry of Enterprises (MIMIT) announced that the funds had run out. From 2026 the “New Transizione 5.0 Plan” is the <strong>hyper-depreciation</strong> (iperammortamento) of Italy's 2026 budget law."
+  - q: "Does artificial intelligence software qualify for the hyper-depreciation?"
+    a: "Yes, if it is a new asset listed in Annex V of Law 199/2025 and interconnected with the company's production management system or supply network. Annex V explicitly names generative AI and large language models, <strong>Agentic AI</strong> systems that orchestrate workflows, MLOps platforms and predictive maintenance. A sworn technical appraisal and an accounting certification are required."
+  - q: "How much is the hyper-depreciation worth?"
+    a: "For tax purposes only, the cost of the asset is increased by <strong>180%</strong> up to €2.5 million of investment, by 100% up to €10 million and by 50% up to €20 million. It is not a tax credit offset through the F24 form: it reduces taxable income through higher depreciation. It applies to investments made from 1 January 2026 to 30 September 2028."
+  - q: "Is AI Act compliance required to get the incentive?"
+    a: "It is not among the requirements of the budget law, which looks at the asset, the list, interconnection and documentation. The AI Act still applies to the system you buy, though: for most internal automations the obligations are light, and for high-risk systems they start on 2 December 2027."
+  - q: "How do you access the hyper-depreciation?"
+    a: "Through the GSE platform, in three steps: booking, confirmation with the payment of a deposit equal to 20% of the cost of each asset, and a completion notice once the investment is done, by 15 November 2028. The benefit starts from the tax period in which you send the completion notice and depends on the checks being passed."
 lang: "en"
-gates:
-  passedAt: 2026-07-25T06:46:45.275Z
-  model: "claude-sonnet-4-6"
-  lenses:
-    - { name: "house-style", score: 10, pass: true }
-    - { name: "fact-check", score: 9, pass: true }
-    - { name: "originality", score: 8, pass: true }
-    - { name: "brand-voice", score: 9, pass: true }
-    - { name: "seo-structure", score: 9, pass: true }
-    - { name: "geo-citability", score: 8, pass: true }
 draft: false
 ---
 
-Funding-advisory emails promise a tax credit on AI software under Italy's Transizione 5.0 plan. Few mention the uncomfortable part: from 2026 that spend survives an audit only if the AI system is AI Act compliant.
-
-For a CFO at an industrial SME this changes the question. It's no longer "is AI software eligible?". It's "will the AI software I'm about to buy stay eligible when the audit comes?".
+If you search for "Transizione 5.0 AI software", you still find many pages about a tax credit to book. That measure has closed. In 2026, AI software in Italy is incentivised through a different tool, with different rules, which for once names AI agents explicitly.
 
 **Key takeaways:**
-- From 2026, AI software spend under Transizione 5.0 (and R&D credits) risks forfeiture if the system isn't compliant with the EU AI Act (in force, high-risk obligations from August 2026).
-- The risk isn't theoretical: a challenged incentive means recovery of the tax credit plus penalties, on a benefit already booked.
-- Compliance must be in place before deployment: risk classification, audit log, art. 28 DPA, technical documentation.
-- Most industrial automations (OCR, invoice extraction, reconciliation) are minimal risk. Heavy obligations only kick in for high-risk systems.
-- The right question to ask the vendor is asked when choosing them, not at final acceptance.
+- Transizione 5.0 covered investments from 1 January 2024 to 31 December 2025. The funds ran out with the decree of 6 November 2025 and the deadlines have closed.
+- From 2026 the "New Transizione 5.0 Plan" is the hyper-depreciation of Italy's 2026 budget law: the cost of the asset is increased by 180%, 100% or 50% depending on the amount, for investments from 1 January 2026 to 30 September 2028.
+- It is not a credit offset through the F24 form: it reduces taxable income through higher depreciation.
+- AI software qualifies if it is in Annex V, which names generative AI, Agentic AI, MLOps and predictive maintenance, and is interconnected with the company's systems. A sworn technical appraisal and an accounting certification are required.
+- AI Act compliance is not a requirement of the incentive, but it remains a separate obligation.
 
-## Why incentive and compliance now overlap
+## Transizione 5.0: what happened
 
-Until recently these were two separate worlds. Funding advisory looked at the amount and the cost category. AI compliance was a legal topic, handled apart.
+The [Transizione 5.0 Plan](https://www.mimit.gov.it/it/incentivi/piano-transizione-5-0) granted a tax credit for investments in 4.0 assets within innovation projects that cut energy consumption, made from 1 January 2024 to 31 December 2025. With the decree of 6 November 2025 the Ministry announced that the funds had run out: bookings that came in later stayed in a queue, waiting for any new funds, and the deadlines have now closed.
 
-In 2026 they intersect. An intangible asset is eligible if it is admissible. And an AI system that isn't AI Act compliant may be deemed inadmissible at audit. At that point the tax credit you've already offset becomes a liability.
+Companies that already have a booked and confirmed credit follow the rules set by MIMIT and GSE for using it. Companies that still have to invest can no longer go this way.
 
-It's a logic a CFO knows well from other areas: you take the incentive now, the audit comes later. If the documentation doesn't hold, you pay it all back with interest.
+## The New Transizione 5.0 Plan: the hyper-depreciation
 
-## What it actually means for an industrial SME
+The [2026 budget law](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-12-30;199~art1-com427!vig=2026-11-07) (Law 199/2025, Article 1, paragraphs 427-436) replaced the Transizione 4.0 and 5.0 tax credits with an increase in the cost of new capital goods, valid for tax purposes only. The operating rules are in the implementing decree of 7 May 2026, summarised on the [MIMIT page](https://www.mimit.gov.it/it/incentivi/iperammortamento-2026).
 
-The good news: most AI systems on the factory floor are not high-risk.
+| Share of investment | Increase in cost |
+|---|---|
+| Up to €2.5 million | 180% |
+| Over €2.5 and up to €10 million | 100% |
+| Over €10 and up to €20 million | 50% |
 
-The AI Act sorts systems into four levels. Typical industrial automations - an agent that extracts data from PDFs, reconciles invoices, enriches trade-show leads, generates reports - usually fall under minimal risk. No autonomous decisions affecting people. Main obligation: internal transparency and an audit trail.
+Three practical differences from the old tax credit:
 
-Heavy obligations (documented risk assessment, human oversight, record retention) apply to high-risk systems: machinery safety components, automated hiring decisions, scoring. The full map is in our [AI Act guide for companies](/guide/ai-act-aziende).
+1. **It is not offset through the F24 form.** The increase raises the deductible depreciation, so it reduces taxable income. What it is really worth for your company depends on the taxes you pay: it is a calculation to do with your accountant.
+2. **It covers investments made from 1 January 2026 to 30 September 2028.** All companies resident in Italy can apply, with the exclusions set for companies in liquidation or insolvency proceedings.
+3. **Everything goes through the GSE**: booking, confirmation with a deposit equal to 20% of the cost of each asset, completion notice by 15 November 2028. The benefit starts from the tax period in which you send the completion notice and depends on the checks being passed, as the [GSE](https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/calcolo-del-beneficio) explains.
 
-The point isn't to get scared. It's to know which category the system you're funding falls into, and to have the documentation ready before the audit.
+## Does AI software qualify? Yes, and the law says so
 
-## The 4 things to put in the vendor contract
+The incentive covers new tangible and intangible assets listed in Annexes IV and V of Law 199/2025, interconnected with the company's production management system or supply network (paragraph 429). Annex V, the software one, explicitly names under letter dd):
 
-When you buy AI software to fund, these four points aren't an extra. They're the difference between a solid tax credit and one that comes back.
+- **generative AI** software and platforms, including large language models, to generate content, technical documentation and code and to support decisions;
+- **autonomous AI (Agentic AI)** systems that perform complex tasks, orchestrate workflows and make automated decisions in operating processes;
+- platforms to manage the model lifecycle (**MLOps**);
+- AI algorithms for **predictive maintenance**.
 
-1. **The system's AI Act risk classification**, in writing, with the reasoning behind it.
-2. **An immutable audit log** of every agent decision: input, rules applied, output, trigger. It's already the standard in our sprints.
-3. **GDPR art. 28 DPA** included in the contract, not an annex that's missing at audit time.
-4. **Technical documentation** proving compliance, and EU hosting where needed.
+An AI agent working on your processes can therefore qualify. The conditions, though, must be checked before you sign the order:
 
-If you're building an internal tool or a custom web app, these requirements belong in the architecture, not bolted on later. That's the model of our [custom software development](/en/software-development): your code from day one, compliance inside the project. The same holds for [AI agents on your processes](/en/ai-agents).
+1. **A new capital asset**, included in the list.
+2. **Interconnection** with the production management system or the supply network, documented.
+3. **A sworn technical appraisal and an accounting certification**, attesting the features, the interconnection and the expenses incurred.
 
-## A concrete example: trade-show lead generation
+## And the AI Act?
 
-With [40Factory](/en/case-studies/40factory), an Industrial IoT SME, we put 5 AI agents into production to capture, enrich, qualify and activate in CRM the leads collected at trade shows, with automated follow-up.
+AI Act compliance is not among the requirements of the budget law: what counts is the asset, the list, interconnection and documentation. The AI Act is still a separate obligation, which applies to the system you buy, incentivised or not:
 
-It's exactly the kind of system an industrial SME considers funding. And it falls under minimal risk: no decisions affecting people's rights, just internal commercial automation with an audit trail. Easy to document, if the project is built that way. A nightmare to reconstruct afterwards, if the vendor didn't think about it.
+- most internal automations (data extraction from documents, reconciliations, reports) are minimal risk;
+- if the system talks to customers or outside people, it must say it is an AI (Article 50, from 2 August 2026);
+- if it falls among the high-risk cases, such as recruitment, the obligations start on 2 December 2027, after the postponement agreed in the [Digital Omnibus](https://eur-lex.europa.eu/eli/reg/2026/1744/oj).
+
+The full map is in our [AI Act guide for businesses](/en/guide/ai-act-for-business).
+
+## What to ask your vendor before ordering
+
+If you plan to bring an AI project under the hyper-depreciation, you need documents your vendor must be able to provide:
+
+1. **A technical description of the system**, with the functions that place it in Annex V.
+2. **How it interconnects** with your management system or supply network, so the appraiser can verify it.
+3. **Invoices and contracts** with clear items, which the accounting certification can trace back to the incentivised assets.
+4. **A DPA under Article 28 of the GDPR**, if the system processes personal data, and its AI Act risk classification.
 
 ## When NOT to force the incentive
 
-Let me be blunt: not every AI project should be tied to an incentive.
+- **The company has little taxable income**: an increase in depreciation is worth as much as the taxes it reduces.
+- **The project has no ROI at full cost**: the incentive lowers the cost, it doesn't create value.
+- **The system is neither interconnected nor documentable**: without the appraisal the incentive doesn't hold.
 
-- If the system is high-risk and compliance isn't mature yet, funding it adds forfeiture risk to an already delicate project. Compliance first, incentive second.
-- If the tax benefit is marginal versus the operational value, don't complicate delivery for a small credit.
-- If the vendor can't classify their own system's risk, the problem isn't the incentive: it's the vendor.
-
-Funded spend makes sense when the system genuinely serves the process and survives the audit. Not as a justification to buy AI you don't need.
+*Update of 7 November 2026: this article has been rewritten. The previous version treated Transizione 5.0 as still open and tied the incentive to AI Act compliance, which is not a requirement.*
 
 ---
 
-**Want to check whether the AI system you're evaluating holds up on both ROI and AI Act audit?** [Let's talk](/en/contact) for 20 minutes, or take the [3-minute check-up](/check-up).
+**Want to know whether your AI project can qualify for the hyper-depreciation, and whether its ROI holds at full cost?** [Let's talk](/en/contact) for 20 minutes, or take the [3-minute check-up](/en/check-up).
