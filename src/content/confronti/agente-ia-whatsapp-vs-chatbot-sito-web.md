@@ -2,7 +2,7 @@
 titolo: "Agente IA su WhatsApp o chatbot sul sito"
 sottotitolo: "Dove far parlare i clienti con l'agente IA: sul canale che già usano ogni giorno o sul widget del tuo sito."
 description: "Agente IA WhatsApp vs chatbot sul sito web: reach, costi Meta, controllo e conversioni a confronto, con un verdetto onesto per chi gestisce il support."
-inBreve: "WhatsApp vince quando il tuo pubblico ti scrive già lì e vuoi conversazioni asincrone e proattive, accettando le tariffe Meta per conversazione e i vincoli di policy Meta (template approvati, possibili cambi di regole). Il chatbot sul sito vince quando devi convertire visitatori anonimi in tempo reale e vuoi controllo totale su dati e UX. Regola pratica: scegli WhatsApp se la maggior parte dei tuoi contatti in ingresso ti scrive già lì; scegli il chatbot sul sito se la tua leva di crescita è convertire visitatori anonimi; esponi l'agente su entrambi solo dopo aver costruito un unico agente IA sul processo."
+inBreve: "WhatsApp vince quando il tuo pubblico ti scrive già lì e vuoi conversazioni asincrone e proattive, accettando le tariffe Meta per messaggio e i vincoli di policy Meta (template approvati, possibili cambi di regole). Il chatbot sul sito vince quando devi convertire visitatori anonimi in tempo reale e vuoi controllo totale su dati e UX. Regola pratica: scegli WhatsApp se la maggior parte dei tuoi contatti in ingresso ti scrive già lì; scegli il chatbot sul sito se la tua leva di crescita è convertire visitatori anonimi; esponi l'agente su entrambi solo dopo aver costruito un unico agente IA sul processo."
 categoria: "Canale customer engagement"
 author: "Daniel Levis"
 keywords:
@@ -12,14 +12,14 @@ keywords:
   - "canale customer engagement PMI"
 optionA:
   nome: "Agente IA su WhatsApp Business"
-  descrizione: "L'agente IA risponde ai clienti dentro WhatsApp, sul numero Business dell'azienda, tramite le API ufficiali di Meta. Con il lancio Meta del 2026 in Italia diventa un canale sempre più presidiato."
+  descrizione: "L'agente IA risponde ai clienti dentro WhatsApp, sul numero Business dell'azienda, tramite le API ufficiali di Meta, che prevedono espressamente risposte gestite da una soluzione IA di terze parti o da persone."
   pro:
-    - "Sei dove il cliente italiano già scrive ogni giorno: alto tasso di apertura e risposta"
+    - "Sei sul canale dove il cliente già scrive, con le notifiche sul suo telefono"
     - "Conversazioni asincrone: il cliente risponde con comodo, la chat resta aperta"
     - "Puoi essere proattivo (notifiche, promemoria, follow-up) entro le regole Meta"
     - "Identità del cliente già nota tramite numero: meno frizione all'avvio"
   contro:
-    - "Costo per conversazione secondo le tariffe Meta, che crescono col volume"
+    - "Costo per messaggio secondo le tariffe Meta: le risposte di assistenza sono gratuite fino a 1.000 al mese per numero, poi a pagamento"
     - "Sei dentro i vincoli di policy Meta: regole, template approvati e possibili cambi di policy"
     - "I template proattivi vanno pre-approvati e limitano la libertà del messaggio"
     - "Meno adatto a convertire visitatori anonimi che non ti hanno ancora dato il numero"
@@ -32,12 +32,12 @@ optionB:
   descrizione: "L'agente IA vive in un widget sul tuo sito e risponde ai visitatori mentre navigano, con controllo pieno su dati, UX e integrazioni."
   pro:
     - "Intercetti il visitatore nel momento in cui sta valutando: ottimo per conversione"
-    - "Controllo totale su dati, design e integrazioni: nessuna tariffa per conversazione"
+    - "Controllo totale su dati, design e integrazioni: nessuna tariffa per messaggio"
     - "Nessuna dipendenza da policy o approvazioni di terzi"
     - "Funziona anche con utenti anonimi che non ti hanno ancora lasciato un contatto"
   contro:
     - "Funziona solo mentre l'utente è sul sito: niente conversazione asincrona nativa"
-    - "Tassi di apertura più bassi rispetto a un canale di messaggistica personale"
+    - "Nessuna notifica sul telefono: il cliente deve tornare sul sito"
     - "Difficile essere proattivi: se l'utente chiude la tab, la conversazione muore"
     - "Richiede traffico sul sito per generare valore"
   idealePer:
@@ -46,39 +46,46 @@ optionB:
     - "Aziende che vogliono controllo totale su dati e compliance"
 tabella:
   - criterio: "Reach del cliente"
-    valoreA: "Dove già scrive (alto open rate)"
+    valoreA: "Dove già scrive, con notifiche"
     valoreB: "Solo chi è sul sito"
   - criterio: "Conversazione asincrona"
     valoreA: "Nativa"
     valoreB: "No (finisce con la sessione)"
   - criterio: "Messaggi proattivi"
-    valoreA: "Si, con template Meta approvati"
+    valoreA: "Sì, con template Meta approvati"
     valoreB: "Difficile / limitato"
   - criterio: "Costo variabile"
-    valoreA: "Tariffe Meta per conversazione"
-    valoreB: "Nessuna tariffa per conversazione"
+    valoreA: "Tariffe Meta per messaggio"
+    valoreB: "Nessuna tariffa per messaggio"
   - criterio: "Controllo su dati e UX"
     valoreA: "Dentro i vincoli di policy Meta"
     valoreB: "Pieno"
   - criterio: "Conversione visitatori anonimi"
     valoreA: "Debole"
     valoreB: "Forte"
-verdetto: "La domanda giusta non è 'WhatsApp o sito', ma 'dove sono i miei clienti quando hanno bisogno di me'. Se il tuo pubblico ti scrive già su WhatsApp e vivi di follow-up e conversazioni asincrone, parti da lì accettando le tariffe Meta e i vincoli di policy Meta (template approvati, possibili cambi di regole). Se hai traffico web da convertire e vuoi controllo pieno su dati e UX, il chatbot sul sito rende di più e senza costo per conversazione. Nella pratica la scelta più solida per una PMI è costruire un solo agente IA sul processo e poi esporlo sul canale (o sui canali) dove stanno davvero i clienti."
+verdetto: "La domanda giusta non è 'WhatsApp o sito', ma 'dove sono i miei clienti quando hanno bisogno di me'. Se il tuo pubblico ti scrive già su WhatsApp e vivi di follow-up e conversazioni asincrone, parti da lì accettando le tariffe Meta e i vincoli di policy Meta (template approvati, possibili cambi di regole). Se hai traffico web da convertire e vuoi controllo pieno su dati e UX, il chatbot sul sito rende di più e senza costo per messaggio. Nella pratica la scelta più solida per una PMI è costruire un solo agente IA sul processo e poi esporlo sul canale (o sui canali) dove stanno davvero i clienti."
 faq:
   - q: "Devo per forza scegliere un solo canale?"
     a: "No. La parte difficile e costosa è l'<strong>agente IA sul processo</strong> (triage, risposte, routing al team umano): una volta costruito quello, esporlo sia su WhatsApp sia sul widget del sito è un lavoro di integrazione, non un secondo progetto da zero. Vedi come lavoriamo sul <a href='/customer-support'>customer support</a>."
   - q: "Quanto costa partire con un agente IA su un canale?"
-    a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese, con prima delivery in <strong>4 settimane</strong>. Le tariffe Meta per WhatsApp sono un costo a parte, variabile, che dipende dai volumi. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese, con prima delivery in <strong>4 settimane</strong>. Le tariffe Meta per WhatsApp sono un costo a parte, per messaggio consegnato, che dipende da volumi, tipo di messaggio e paese (<a href='https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing'>Meta</a>). Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a> e vedi i <a href='/prezzi'>prezzi</a>."
   - q: "L'agente su WhatsApp o sul sito è conforme al GDPR?"
-    a: "Si. In entrambi i casi lavoriamo GDPR-compliant, con DPA art. 28 nel contratto, audit log immutabile e nessun training degli LLM sui tuoi dati. Sul sito hai controllo pieno sui dati; su WhatsApp passi anche dall'infrastruttura Meta, quindi va valutato quali dati transitano."
+    a: "Sì, se è progettato bene. In entrambi i casi lavoriamo con DPA art. 28 nel contratto, audit log immutabile e nessun training degli LLM sui tuoi dati, e chi scrive va informato su come tratti i suoi dati (<a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR, art. 13</a>). Sul sito hai controllo pieno sui dati; su WhatsApp i messaggi passano anche dall'infrastruttura Meta, quindi va valutato quali dati transitano. E su entrambi i canali, dal 2 agosto 2026, chi scrive deve sapere che risponde un'IA (<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act, art. 50</a>)."
   - q: "Un agente IA riesce davvero a ridurre il carico sul team?"
-    a: "Si, se è costruito sul processo giusto. Su un progetto community come <a href='/case-studies/navily'>Navily</a> l'automazione di moderazione ed enrichment ha ridotto del <strong>70%</strong> il tempo operativo. Vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto."
+    a: "Sì, se è costruito sul processo giusto. Su un progetto community come <a href='/case-studies/navily'>Navily</a> l'automazione di moderazione ed enrichment ha ridotto del <strong>70%</strong> il tempo operativo. Vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto."
   - q: "E se domani Meta cambia le regole di WhatsApp?"
-    a: "È un rischio reale del canale: policy e tariffe sono decise da Meta. Per questo teniamo la <strong>logica dell'agente separata dal canale</strong>: se WhatsApp cambia condizioni, l'agente resta e lo spostiamo o affianchiamo sul sito, senza rifare il lavoro. Il codice è tuo dal primo giorno, nessun lock-in."
+    a: "È un rischio reale del canale: policy e tariffe sono decise da Meta, che per esempio è passata dalla tariffa per conversazione a quella per messaggio il 1° luglio 2025 e ha aggiornato i prezzi dei messaggi di assistenza il 1° ottobre 2026. Per questo teniamo la <strong>logica dell'agente separata dal canale</strong>: se WhatsApp cambia condizioni, l'agente resta e lo spostiamo o affianchiamo sul sito, senza rifare il lavoro. Il codice è tuo dal primo giorno, nessun lock-in."
+fonti:
+  - titolo: "Meta, prezzi della WhatsApp Business Platform"
+    url: "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing"
+  - titolo: "GDPR, Regolamento (UE) 2016/679, art. 13 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+  - titolo: "AI Act, Regolamento (UE) 2024/1689, art. 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
 related: []
 featured: false
 pubDate: 2026-09-10
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-08-25T05:05:53.176Z

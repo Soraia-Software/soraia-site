@@ -38,7 +38,7 @@ optionB:
   contro:
     - "Doesn't know your data or processes: generic answers"
     - "Risk of sensitive data pasted into an ungoverned tool"
-    - "It executes nothing: stays an assistant, depends on the person using it"
+    - "With workspace agents (in preview on business plans) it runs workflows on connected apps; systems without an app need a custom integration"
     - "Quality and usage vary widely per person, hard to measure"
   idealePer:
     - "Teams that want to try AI with minimal spend and risk"
@@ -47,13 +47,13 @@ optionB:
 tabella:
   - criterio: "What it does"
     valoreA: "Executes a process on your data"
-    valoreB: "Assists a person with generic text"
+    valoreB: "Assists; with workspace agents it runs workflows on connected apps"
   - criterio: "Knows your data"
     valoreA: "Yes, integrated with your systems"
-    valoreB: "No, general knowledge"
+    valoreB: "Only the files and apps you connect"
   - criterio: "Cost"
     valoreA: "From €8,000/month"
-    valoreB: "A few tens of euro/user per month"
+    valoreB: "$20-30 per user per month (business plans)"
   - criterio: "Time to activate"
     valoreA: "First delivery in 4 weeks"
     valoreB: "Immediate"
@@ -63,22 +63,31 @@ tabella:
   - criterio: "Measurable result"
     valoreA: "Against an agreed target"
     valoreB: "Hard, depends on usage"
-verdetto: "It's not either/or. Generic ChatGPT is the fastest, cheapest way to get the team using AI and to see where it adds value: keep it. But when a repeatable process needs to run on your data reliably and measurably, ChatGPT stays an assistant that depends on the person: that's where a custom agent belongs. The right question is 'do I want to assist people or execute a process?'. Many SMEs do both: ChatGPT spread for daily productivity, a custom agent built on the core process that weighs more."
+verdetto: "It's not either/or. Generic ChatGPT is the fastest, cheapest way to get the team using AI and to see where it adds value: keep it. But when a repeatable process needs to run on your data reliably and measurably, ChatGPT, even with the new agents, works on connected apps and under the platform's rules: that's where a custom agent belongs. The right question is 'do I want to assist people or execute a process?'. Many SMEs do both: ChatGPT spread for daily productivity, a custom agent built on the core process that weighs more."
 faq:
   - q: "Isn't ChatGPT enough if I give it access to my documents?"
-    a: "It helps, but it stays an assistant: it answers whoever queries it, it doesn't execute an end-to-end process on your systems. A <a href='/ai-agents'>custom agent</a> connects to CRM, ERP and PDFs, applies your rules and produces a repeatable result with an audit trail. They are two different tools, not two versions of the same one."
+    a: "It helps, and with workspace agents, in preview on business plans, ChatGPT can also run recurring workflows on connected apps, with permissions, approvals and logs set by admins (<a href='https://openai.com/business/workspace-agents/'>OpenAI</a>). It does not reach systems without an app, such as many ERPs, and the rules stay the platform's. A <a href='/ai-agents'>custom agent</a> connects to CRM, ERP and PDFs, applies your rules and produces a repeatable result with an audit trail. They are two different tools, not two versions of the same one."
   - q: "How much does an agent cost compared to ChatGPT subscriptions?"
-    a: "ChatGPT costs a few tens of euro per user per month. A custom agent with Soraia starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month. It's not a like-for-like comparison: you pay more because the agent executes a process and returns measurable hours. To see if it's worth it for your case, <a href='/parliamone'>let's talk</a>."
+    a: "ChatGPT Business costs $20 per user per month billed annually, $25 billed monthly (<a href='https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq'>OpenAI</a>). A custom agent with Soraia starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month. It's not a like-for-like comparison: you pay more because the agent executes a process and returns measurable hours. To see if it's worth it for your case, <a href='/parliamone'>let's talk</a>."
   - q: "What about sensitive data? Is generic ChatGPT a risk?"
-    a: "The biggest risk is people pasting sensitive data into an ungoverned tool. With a Soraia custom agent your data stays yours: <strong>no LLM training on client data</strong>, immutable audit log, art. 28 DPA and AI Act alignment. European infrastructure or on-premise where required."
+    a: "The biggest risk is people pasting sensitive data into an ungoverned tool: on personal plans, Plus and Pro included, data sharing to improve the models is on by default (<a href='https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt'>OpenAI</a>), while on ChatGPT Business OpenAI does not train models on workspace data (<a href='https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq'>OpenAI</a>). With a Soraia custom agent your data stays yours: <strong>no LLM training on client data</strong>, immutable audit log, art. 28 DPA and AI Act alignment. European infrastructure or on-premise where required."
   - q: "Which one should I start with?"
     a: "Almost always: first ChatGPT spread across the team to build confidence, then an <a href='/ai-adoption'>AI Adoption</a> path to see where AI adds value, and finally a custom agent on the process that proved repeatable and high-volume. See also the <a href='/guide/agenti-ai-aziende'>guide to AI agents in companies</a>."
   - q: "How long does a custom agent take to go live?"
     a: "A first working version is usually live in <strong>4 weeks</strong>, followed by 30 days of hypercare. The <strong>first month satisfied or refunded</strong> guarantee applies: if the first month doesn't convince you, we refund it or keep working for free until you're satisfied."
+fonti:
+  - titolo: "OpenAI, workspace agents"
+    url: "https://openai.com/business/workspace-agents/"
+  - titolo: "OpenAI, ChatGPT Business general FAQ"
+    url: "https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq"
+  - titolo: "OpenAI, data controls in ChatGPT"
+    url: "https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt"
+  - titolo: "OpenAI, plugins in ChatGPT"
+    url: "https://help.openai.com/en/articles/20001256-plugins-in-chatgpt"
 related: []
 featured: false
 pubDate: 2026-08-04
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-07-25T06:01:42.081Z
