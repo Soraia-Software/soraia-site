@@ -41,6 +41,7 @@ const labels = {
     privacy: "Privacy policy",
     terms: "Termini",
     cookies: "Cookie",
+    cookie_prefs: "Preferenze cookie",
     admin: "Area riservata",
     rights: "Tutti i diritti riservati.",
     guides_label: "Guide AI",
@@ -79,6 +80,7 @@ const labels = {
     privacy: "Privacy policy",
     terms: "Terms",
     cookies: "Cookies",
+    cookie_prefs: "Cookie preferences",
     admin: "Admin area",
     rights: "All rights reserved.",
     guides_label: "AI Guides",
@@ -184,6 +186,7 @@ const featuredGuides = [
           <li><a href={p("/privacy")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.privacy}</a></li>
           <li><a href={p("/terms")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.terms}</a></li>
           <li><a href={p("/cookies")} class="link-underline-anim hover:opacity-80 transition-opacity">{labels.cookies}</a></li>
+          <li><a href={p("/cookies")} data-consent-open class="link-underline-anim hover:opacity-80 transition-opacity">{labels.cookie_prefs}</a></li>
           <li><a href="/admin/" class="link-underline-anim hover:opacity-80 transition-opacity">{labels.admin}</a></li>
         </ul>
       </div>
