@@ -49,7 +49,7 @@ Companies that already have a booked and confirmed credit follow the rules set b
 
 ## The New Transizione 5.0 Plan: the hyper-depreciation
 
-The [2026 budget law](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-12-30;199~art1-com427!vig=2026-11-07) (Law 199/2025, Article 1, paragraphs 427-436) replaced the Transizione 4.0 and 5.0 tax credits with an increase in the cost of new capital goods, valid for tax purposes only. The operating rules are in the implementing decree of 7 May 2026, summarised on the [MIMIT page](https://www.mimit.gov.it/it/incentivi/iperammortamento-2026).
+The [2026 budget law](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-12-30;199~art1-com427!vig=2026-11-07) (Law 199/2025, Article 1, paragraphs 427-436) replaced the Transizione 4.0 and 5.0 tax credits with an increase in the cost of new capital goods, valid for tax purposes only. The operating rules are in the implementing decree of 7 May 2026, summarised on the [MIMIT page](https://www.mimit.gov.it/it/incentivi/nuovo-piano-transizione-5-0-iperammortamento).
 
 | Share of investment | Increase in cost |
 |---|---|

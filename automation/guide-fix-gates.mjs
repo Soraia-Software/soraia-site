@@ -78,7 +78,7 @@ for (const itPath of files) {
     "",
     "GATE FINDINGS TO RESOLVE:\n" + findings,
     "",
-    "CONSTRAINTS you must keep satisfied: meta description 140-160 chars; title <=60 chars (both include the primary keyword); FAQ 3-8 items; >=3 internal links; body 800-1600 words; EN metrics match IT; keep `draft: true` and `lang` unchanged. The body MUST keep (or gain) the contact CTA inviting an honest expert opinion from Soraia: /parliamone in IT, /en/contact in EN. Invent no numbers, Soraia/client figures must trace to llms.txt; every external regulatory/fiscal fact must be attributed to a named source. Use ONLY the ASCII hyphen, never a typographic dash.",
+    "CONSTRAINTS you must keep satisfied: meta description 120-155 chars; title <=60 chars (both include the primary keyword); FAQ 3-8 items; >=3 internal links; body 800-1600 words; EN metrics match IT; keep `draft: true` and `lang` unchanged. The body MUST keep (or gain) the contact CTA inviting an honest expert opinion from Soraia: /parliamone in IT, /en/contact in EN. Invent no numbers, Soraia/client figures must trace to llms.txt; every external regulatory/fiscal fact must be attributed to a named source. Use ONLY the ASCII hyphen, never a typographic dash.",
     `CURRENT MEASUREMENTS, IT ${measure(it)}${en ? `; EN ${measure(en)}` : ""}.`,
     "",
     "Internal links may ONLY be one of these real published routes:\n" + VALID_ROUTES.join("  "),

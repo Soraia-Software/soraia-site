@@ -6,6 +6,12 @@ import AskAIWidget from "~/components/AskAIWidget.astro";
 import AnnouncementBar from "~/components/AnnouncementBar.astro";
 import ConsentBanner from "~/components/ConsentBanner.astro";
 import { localizePath, path as i18nPath, withSlash } from "~/lib/i18n";
+import { ogImagePath } from "~/lib/og-path.mjs";
+import { buildGraph, mainArticle } from "~/lib/schema";
+// I due pesi di Inter che servono sopra la piega: con il preload partono insieme al CSS
+// invece che dopo (prima arrivavano a 4,4 s su mobile).
+import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
+import inter500 from "@fontsource/inter/files/inter-latin-500-normal.woff2?url";
 
 interface Props {
   title: string;
@@ -23,18 +29,22 @@ interface Props {
   hideLangSwitch?: boolean;
   /** Keep the page out of search engines (e.g. in-call sales tools). */
   noindex?: boolean;
+  /** The page has no translation: keep the language switcher (it leads to `altHref`,
+   *  e.g. the other blog index) but declare no hreflang alternate. */
+  noAlternate?: boolean;
 }
 
 const {
   title,
   description,
-  ogImage = "/og/default.png",
+  ogImage,
   canonical,
   lang = "it",
   jsonLd,
   altHref,
   hideLangSwitch = false,
   noindex = false,
+  noAlternate = false,
 } = Astro.props;
 
 const siteUrl = "https://www.soraia.io";
@@ -49,6 +59,12 @@ const enPath = withSlash(lang === "en" ? Astro.url.pathname : otherPath);
 const itUrl = new URL(itPath, siteUrl).toString();
 const enUrl = new URL(enPath, siteUrl).toString();
 const contactHref = i18nPath("/parliamone", lang);
+
+// Anteprima della pagina: la genera scripts/og-images.mjs dopo la build, con lo stesso nome.
+const ogImageUrl = new URL(ogImage ?? ogImagePath(Astro.url.pathname), siteUrl).toString();
+const graph = buildGraph(jsonLd, { url: canonicalUrl, lang, title, description, image: ogImageUrl });
+const article = mainArticle(graph);
+const rssHref = lang === "en" ? "/en/blog/rss.xml" : "/blog/rss.xml";
 ---
 
 <!DOCTYPE html>
@@ -65,23 +81,30 @@ const contactHref = i18nPath("/parliamone", lang);
 
     <!-- hreflang alternates -->
     <link rel="alternate" hreflang={lang} href={lang === "en" ? enUrl : itUrl} />
-    {!hideLangSwitch && <link rel="alternate" hreflang={lang === "en" ? "it" : "en"} href={lang === "en" ? itUrl : enUrl} />}
-    <link rel="alternate" hreflang="x-default" href={itUrl} />
+    {!hideLangSwitch && !noAlternate && <link rel="alternate" hreflang={lang === "en" ? "it" : "en"} href={lang === "en" ? itUrl : enUrl} />}
+    <link rel="alternate" hreflang="x-default" href={noAlternate && lang === "en" ? enUrl : itUrl} />
+    <link rel="alternate" type="application/rss+xml" title={lang === "en" ? "Soraia blog" : "Blog di Soraia"} href={rssHref} />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={article ? "article" : "website"} />
+    <meta property="og:site_name" content="Soraia" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(ogImage, siteUrl).toString()} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
     <meta property="og:locale" content={lang === "it" ? "it_IT" : "en_US"} />
-    <meta property="og:locale:alternate" content={lang === "it" ? "en_US" : "it_IT"} />
+    {!hideLangSwitch && !noAlternate && <meta property="og:locale:alternate" content={lang === "it" ? "en_US" : "it_IT"} />}
+    {article?.datePublished && <meta property="article:published_time" content={article.datePublished} />}
+    {article?.dateModified && <meta property="article:modified_time" content={article.dateModified} />}
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(ogImage, siteUrl).toString()} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <!-- Theme -->
     <meta name="theme-color" content="#4A1E5C" />
@@ -93,19 +116,16 @@ const contactHref = i18nPath("/parliamone", lang);
     <meta name="ICBM" content="45.5648864, 8.0542568" />
 
     <!-- Fonts self-hosted via @fontsource (importati in globals.css), niente CDN Google -->
+    <link rel="preload" href={inter400} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={inter500} as="font" type="font/woff2" crossorigin />
 
-
-    <!-- Favicon (placeholder) -->
+    <!-- Icone: .ico per i client che lo cercano alla radice, SVG per i browser, PNG per iOS -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    {
-      jsonLd && (
-        <script
-          type="application/ld+json"
-          set:html={JSON.stringify(jsonLd)}
-        />
-      )
-    }
+    <!-- Un solo @graph: WebSite, Organization, WebPage e i nodi della pagina (src/lib/schema.ts) -->
+    <script type="application/ld+json" set:html={JSON.stringify(graph).replace(/</g, "\\u003c")} />
     <!-- First-touch attribution: capture utm_* + external referrer + landing page once
          per visitor (90-day window) so a lead can be traced to the channel that brought
          them. Read by LeadForm at submit; stored on the lead in D1. -->
@@ -131,6 +151,9 @@ const contactHref = i18nPath("/parliamone", lang);
     </script>
   </head>
   <body class="min-h-screen flex flex-col antialiased">
+    <!-- email_off: niente offuscamento delle email di Cloudflare. Senza JavaScript (crawler IA
+         compresi) info@soraia.io diventava «[email protected]» con un link 404 in ogni pagina. -->
+    <!--email_off-->
     {lang === "it" && (
       <AnnouncementBar
         text="Bandi aperti per digitalizzare la tua azienda."
@@ -152,7 +175,9 @@ const contactHref = i18nPath("/parliamone", lang);
     <ConsentBanner lang={lang} />
 
     <!-- Sticky mobile CTA bottom, visible only on mobile, hidden when /parliamone is the current path -->
-    <div id="sticky-cta" class="md:hidden fixed bottom-0 left-0 right-0 z-40 px-4 pb-3 pt-2 transition-transform duration-300" style="background: linear-gradient(180deg, rgba(250,250,248,0) 0%, rgba(250,250,248,0.95) 30%, #FAFAF8 100%);">
+    <!-- Parte nascosta: in cima alla pagina c'è già la CTA dell'hero (prima all'apertura se ne
+         vedevano due uguali sovrapposte). Compare scorrendo verso l'alto, come prima. -->
+    <div id="sticky-cta" class="md:hidden fixed bottom-0 left-0 right-0 z-40 px-4 pb-3 pt-2 transition-transform duration-300" style="transform: translateY(110%); background: linear-gradient(180deg, rgba(250,250,248,0) 0%, rgba(250,250,248,0.95) 30%, #FAFAF8 100%);">
       <a href={contactHref} class="btn btn-primary w-full !justify-center shadow-lg">
         {lang === "en" ? "20 min with Daniel" : "20 min con Daniel"}
         <span class="btn-arrow">
@@ -173,7 +198,7 @@ const contactHref = i18nPath("/parliamone", lang);
         }
         // Hide on scroll down past hero, show again on scroll up
         let lastY = window.scrollY;
-        let visible = true;
+        let visible = false;
         window.addEventListener("scroll", () => {
           const y = window.scrollY;
           if (y < 200) {
@@ -213,5 +238,6 @@ const contactHref = i18nPath("/parliamone", lang);
         }
       }
     </script>
+    <!--/email_off-->
   </body>
 </html>

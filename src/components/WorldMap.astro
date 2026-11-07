@@ -2,7 +2,7 @@
 interface CountryBreakdown {
   flag: string;
   name: string;
-  count: number;
+  count?: number;
 }
 
 interface Region {
@@ -10,7 +10,7 @@ interface Region {
   y: number;          // percent top
   label: string;
   flag: string;
-  total: number;
+  total?: number;
   countries: CountryBreakdown[];
   align?: "left" | "right" | "center";
 }
@@ -44,7 +44,7 @@ const clientsLabel = lang === "en" ? "clients" : "clienti";
       <button
         type="button"
         class="region-dot"
-        aria-label={`${r.label}, ${r.total} ${clientsLabel}`}
+        aria-label={r.total !== undefined ? `${r.label}, ${r.total} ${clientsLabel}` : r.label}
       >
         <span class="region-pulse"></span>
         <span class="region-core"></span>
@@ -53,13 +53,13 @@ const clientsLabel = lang === "en" ? "clients" : "clienti";
       <div class="region-popup">
         <div class="region-popup-flag">{r.flag}</div>
         <p class="region-popup-name">{r.label}</p>
-        <p class="region-popup-total">{r.total} {clientsLabel}</p>
+        {r.total !== undefined && <p class="region-popup-total">{r.total} {clientsLabel}</p>}
         {r.countries.length > 1 && (
           <ul class="region-popup-list">
             {r.countries.map((c) => (
               <li>
                 <span class="popup-flag">{c.flag}</span>
-                <span class="popup-text"><strong>{c.count}</strong> {c.name}</span>
+                <span class="popup-text">{c.count !== undefined && <strong>{c.count}</strong>} {c.name}</span>
               </li>
             ))}
           </ul>

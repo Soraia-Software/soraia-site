@@ -94,6 +94,6 @@ Fai questo esercizio su 3-4 processi: assegna a ciascuno i 5 segnali "sì" e ver
 
 Se vuoi una mano a fare lo scoring, il [check-up](/check-up) di 3 minuti ti dà una prima lettura, senza email.
 
-## CTA
+## Da dove partire
 
 Vuoi capire quale dei tuoi processi parte per primo? [Fai il check-up](/check-up) (3 minuti) o guarda come abbiamo lavorato su processi ad alto volume nei nostri [agenti IA](/ai-agents).

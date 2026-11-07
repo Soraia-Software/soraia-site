@@ -84,6 +84,6 @@ Un processo alla volta. Prima delivery in 4 settimane, 30 giorni di hypercare, m
 
 Non è il modo più veloce di digitalizzare l'azienda. È il modo che non ferma la produzione e che non fa scappare chi la manda avanti da vent'anni.
 
-## CTA
+## Da dove partire
 
 Se stai entrando in azienda e non sai da dove cominciare, [parliamone](/parliamone): 20 minuti, senza pitch. Oppure fai il [check-up](/check-up) in 3 minuti per capire quale processo conviene digitalizzare per primo.

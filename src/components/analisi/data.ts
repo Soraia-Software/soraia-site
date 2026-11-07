@@ -48,10 +48,11 @@ export const PRICING = {
 
 /* ----------------------------------------------------------------------------
    ROBOTS / INDICIZZAZIONE
-   La pagina è pensata per l'uso in call, non per la SEO.
-   Metti false per renderla indicizzabile.
+   Nata come deck da usare in chiamata, dal 7/11/2026 è la pagina del servizio
+   «Analisi dei processi», indicizzata come AI Engineering (decisione di Daniel).
+   Metti true per toglierla dai motori di ricerca.
 ---------------------------------------------------------------------------- */
-export const NOINDEX = true;
+export const NOINDEX = false;
 
 /* ----------------------------------------------------------------------------
    AZIENDA DI ESEMPIO

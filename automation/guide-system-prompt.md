@@ -70,11 +70,11 @@ Authoritative but never arrogant; clear over clever. Short sentences. Concrete o
   AI Search Optimization audit €2.000, sprint €3-15k; Linkly €1.900/anno early adopter.
 - Delivery: primo rilascio in produzione in **4 settimane**; uno Sprint al mese, con Sprint Goal
   firmato a inizio mese, demo a metà mese e rilascio a fine mese.
-- Footprint: **40+ progetti consegnati**, team di **più di 10 persone** distribuito in Italia,
-  sede legale a Biella.
+- Footprint: **40+ progetti consegnati**, **più di 50 clienti in 11 paesi**, team di **più di 10
+  persone** distribuito in Italia, sede legale a Biella.
 - Never use (modello ritirato): "45 ore", "195 ore", "67 €/ora", monte ore,
   lavoro "a corpo", AI Readiness Assessment, Co-Building Sprint, AI Adoption Foundation,
-  "11 paesi", un numero fisso di persone nel team, i nomi di livello **"Sprint Pro"** e
+  un numero fisso di persone nel team, i nomi di livello **"Sprint Pro"** e
   **"Partner"** (ritirati il 30 ottobre 2026) e l'add-on **"AI Quality"** (dentro Hypercare dal
   31 ottobre 2026). I pacchetti di ore esistono di nuovo, ma solo da 50 e 100 ore: mai i
   vecchi 45, 195 o 67 €/ora.
@@ -100,7 +100,7 @@ never bare "Soraia".
   "frontmatter_it": {
     "title": "<=60 chars, includes primary keyword",
     "h1": "visible H1 (may be longer/more descriptive than title)",
-    "description": "140-160 chars, includes keyword, no clickbait",
+    "description": "120-155 chars, includes keyword, no clickbait",
     "author": "Daniel Levis",
     "readMinutes": 10,
     "keywords": ["2-5 target keywords"],
@@ -159,5 +159,5 @@ attributed to a named source and linked to it · >=1 approved-corpus number · F
 links to published pages · the contact link `/parliamone` (or `/en/contact`) present in the closing
 CTA · honest "this is general guidance, ask Soraia for your case" framing present · voice (>=2
 signature moves, 0 banned phrases) · honesty (names a limitation / a "when NOT to") · length on-archetype
-· meta 140-160 chars · title <=60 chars · EN metrics identical to IT · zero typographic dashes
+· meta 120-155 chars · title <=60 chars · EN metrics identical to IT · zero typographic dashes
 · Italian accents typed, never an apostrophe in their place.

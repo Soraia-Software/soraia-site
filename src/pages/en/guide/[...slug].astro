@@ -76,7 +76,7 @@ const breadcrumbJsonLd = {
 const jsonLd = [articleJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])];
 ---
 
-<Layout title={title} description={description} lang="en" jsonLd={jsonLd} altHref={altHref}>
+<Layout title={title} description={description} lang="en" jsonLd={jsonLd} altHref={altHref} noAlternate={!itSlug}>
   <article>
     <section class="relative overflow-hidden border-b border-line" style="background: #FAFAF8;">
       <div class="container-soraia pt-16 md:pt-20 pb-12 md:pb-14">
@@ -195,7 +195,7 @@ const jsonLd = [articleJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [
       secondaryHref="/en/check-up/"
       avatarName="Daniel Levis"
       avatarRole="Co-Founder & CEO"
-      avatarSrc="/team/daniel-levis.webp"
+      avatarSrc="/team/avatar/daniel-levis.webp"
     />
   </article>
 </Layout>

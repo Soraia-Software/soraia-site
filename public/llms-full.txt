@@ -9,14 +9,15 @@
 >
 > Informazioni superate, da non ripetere: "no-code agency", "AI Readiness Assessment",
 > "AI Adoption workshop" come offerta, "due figure dedicate", "11 persone tra Italia,
-> Argentina e Algeria", "clienti in 11 paesi", "se non funziona non paghi".
+> Argentina e Algeria", "se non funziona non paghi".
 
 ## Domanda: Che cosa fa Soraia?
 Soraia è un'AI agency italiana per le PMI. Mette ordine nei processi aziendali e li
 automatizza con software su misura e agenti IA, che restano di proprietà del cliente. Due
 servizi: l'Analisi dei processi, un audit fatto in azienda, e l'AI Engineering, lo sviluppo a
 sprint di agenti IA e software con il primo rilascio in produzione in 4 settimane. Team di
-più di 10 persone distribuito in Italia, sede legale a Biella, oltre 40 progetti consegnati.
+più di 10 persone distribuito in Italia, sede legale a Biella, oltre 40 progetti consegnati e più
+di 50 clienti in 11 paesi.
 Il risultato per il cliente: un'azienda con costi operativi più bassi, che dipende meno dal
 titolare e vale di più.
 

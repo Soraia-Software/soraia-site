@@ -73,7 +73,7 @@ for (const itPath of files) {
     "",
     "GATE FINDINGS TO RESOLVE:\n" + findings,
     "",
-    "CONSTRAINTS: titolo <=60 chars with primary keyword; description 140-160 chars; inBreve a self-contained situation-dependent verdict; FAQ 3-6; >=3 table rows; both optionA and optionB keep real pro AND contro (non-empty); verdetto nuanced and balanced; keep `draft: true` and `lang` unchanged. Invent no numbers (trace to llms.txt); internal links only from the list below; ASCII hyphen only, never a typographic dash.",
+    "CONSTRAINTS: titolo <=60 chars with primary keyword; description 120-155 chars; inBreve a self-contained situation-dependent verdict; FAQ 3-6; >=3 table rows; both optionA and optionB keep real pro AND contro (non-empty); verdetto nuanced and balanced; keep `draft: true` and `lang` unchanged. Invent no numbers (trace to llms.txt); internal links only from the list below; ASCII hyphen only, never a typographic dash.",
     "",
     "Internal links may ONLY be these real published routes:\n" + VALID_ROUTES.join("  "),
     "",

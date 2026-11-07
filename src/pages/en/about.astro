@@ -2,6 +2,7 @@
 import Layout from "~/layouts/Layout.astro";
 import SectionHeader from "~/components/SectionHeader.astro";
 import WorldMap from "~/components/WorldMap.astro";
+import { getWorldRegions } from "~/data/worldRegions";
 import FAQ from "~/components/FAQ.astro";
 import CTABanner from "~/components/CTABanner.astro";
 
@@ -89,20 +90,20 @@ const founders = [
 ];
 
 const teamEvents = [
-  { src: "/team-events/soraia-retreat-biella.webp",                          caption: "Soraia Retreat in Biella" },
-  { src: "/team-events/ai-summit-paris-2025.webp",                           caption: "AI Summit Paris 2025, meeting with the CEO of Xano (AI governance partner)" },
-  { src: "/team-events/ai-workshop-roma-2026.webp",                          caption: "AI workshop in Rome, 2026" },
-  { src: "/team-events/escp-hackathon-jury-2025.webp",                       caption: "ESCP Hackathon, jury 2025" },
-  { src: "/team-events/escp-hackathon-speech.webp",                          caption: "ESCP Hackathon, keynote speech" },
-  { src: "/team-events/escp-ai-workshop-students-2025.webp",                 caption: "AI Workshop with ESCP students, 2025" },
-  { src: "/team-events/escp-zero-to-startup-2026-a.webp",                    caption: "Course 'From Zero to Startup', ESCP 2026" },
-  { src: "/team-events/sponsor-nel-mondo-venire-biella-2025-a.webp",         caption: "Sponsor of 'Nel Mondo a Venire', Biella 2025" },
-  { src: "/team-events/sponsor-nel-mondo-venire-biella-2025-b.webp",         caption: "Sponsor of 'Nel Mondo a Venire', Biella 2025" },
-  { src: "/team-events/orecchiette-retreat-puglia.webp",                     caption: "Puglia retreat: handmade orecchiette" },
-  { src: "/team-events/alberobello-retreat-puglia.webp",                     caption: "Puglia retreat, Alberobello" },
-  { src: "/team-events/boat-trip-retreat-puglia.webp",                       caption: "Puglia retreat, boat trip" },
-  { src: "/team-events/orecchiette-2-retreat-puglia.webp",                   caption: "Puglia retreat, cooking together" },
-  { src: "/team-events/sebastian-argentina.webp",                            caption: "Sebastian in Argentina" },
+  { src: "/team-events/soraia-retreat-biella.webp", w: 372, h: 440,                          caption: "Soraia Retreat in Biella" },
+  { src: "/team-events/ai-summit-paris-2025.webp", w: 330, h: 440,                           caption: "AI Summit Paris 2025, meeting with the CEO of Xano (AI governance partner)" },
+  { src: "/team-events/ai-workshop-roma-2026.webp", w: 247, h: 440,                          caption: "AI workshop in Rome, 2026" },
+  { src: "/team-events/escp-hackathon-jury-2025.webp", w: 330, h: 440,                       caption: "ESCP Hackathon, jury 2025" },
+  { src: "/team-events/escp-hackathon-speech.webp", w: 352, h: 440,                          caption: "ESCP Hackathon, keynote speech" },
+  { src: "/team-events/escp-ai-workshop-students-2025.webp", w: 439, h: 440,                 caption: "AI Workshop with ESCP students, 2025" },
+  { src: "/team-events/escp-zero-to-startup-2026-a.webp", w: 556, h: 440,                    caption: "Course 'From Zero to Startup', ESCP 2026" },
+  { src: "/team-events/sponsor-nel-mondo-venire-biella-2025-a.webp", w: 330, h: 440,         caption: "Sponsor of 'Nel Mondo a Venire', Biella 2025" },
+  { src: "/team-events/sponsor-nel-mondo-venire-biella-2025-b.webp", w: 330, h: 440,         caption: "Sponsor of 'Nel Mondo a Venire', Biella 2025" },
+  { src: "/team-events/orecchiette-retreat-puglia.webp", w: 586, h: 440,                     caption: "Puglia retreat: handmade orecchiette" },
+  { src: "/team-events/alberobello-retreat-puglia.webp", w: 330, h: 440,                     caption: "Puglia retreat, Alberobello" },
+  { src: "/team-events/boat-trip-retreat-puglia.webp", w: 586, h: 440,                       caption: "Puglia retreat, boat trip" },
+  { src: "/team-events/orecchiette-2-retreat-puglia.webp", w: 586, h: 440,                   caption: "Puglia retreat, cooking together" },
+  { src: "/team-events/sebastian-argentina.webp", w: 330, h: 440,                            caption: "Sebastian in Argentina" },
 ];
 // two rows for the horizontal looping marquee
 const eventsRowA = teamEvents.filter((_, i) => i % 2 === 0);
@@ -139,28 +140,7 @@ const mosaicSlots = [
   { area: "f", slug: "martina-rochstein", dir: "x" },
 ];
 
-const worldRegions = [
-  {
-    x: 50.5, y: 36,
-    label: "Europe",
-    flag: "🇪🇺",
-    total: 28,
-    countries: [
-      { flag: "🇮🇹", name: "Italy", count: 12 },
-      { flag: "🇨🇭", name: "Switzerland", count: 3 },
-      { flag: "🇫🇷", name: "France", count: 3 },
-      { flag: "🇬🇧", name: "UK", count: 3 },
-      { flag: "🇪🇸", name: "Spain", count: 2 },
-      { flag: "🇳🇱", name: "Netherlands", count: 2 },
-      { flag: "🇩🇪", name: "Germany", count: 2 },
-      { flag: "🇵🇹", name: "Portugal", count: 1 },
-    ],
-    align: "right" as const,
-  },
-  { x: 23, y: 40,  label: "United States",   flag: "🇺🇸", total: 7, countries: [{ flag: "🇺🇸", name: "USA", count: 7 }], align: "left" as const },
-  { x: 60, y: 49,  label: "UAE",              flag: "🇦🇪", total: 4, countries: [{ flag: "🇦🇪", name: "UAE", count: 4 }] },
-  { x: 84, y: 71,  label: "Australia",        flag: "🇦🇺", total: 2, countries: [{ flag: "🇦🇺", name: "Australia", count: 2 }], align: "right" as const },
-];
+const worldRegions = getWorldRegions("en");
 
 const faqs = [
   {
@@ -210,12 +190,12 @@ const faqs = [
       <div class="events-marquee mt-12 md:mt-16" aria-label="Soraia team moments and retreats">
         <div class="em-row em-row--a">
           {[...eventsRowA, ...eventsRowA].map((e, i) => (
-            <img src={e.src} alt={i < eventsRowA.length ? e.caption : ""} aria-hidden={i >= eventsRowA.length ? "true" : undefined} loading="lazy" decoding="async" />
+            <img src={e.src} width={e.w} height={e.h} alt={i < eventsRowA.length ? e.caption : ""} aria-hidden={i >= eventsRowA.length ? "true" : undefined} loading="lazy" decoding="async" />
           ))}
         </div>
         <div class="em-row em-row--b">
           {[...eventsRowB, ...eventsRowB].map((e, i) => (
-            <img src={e.src} alt={i < eventsRowB.length ? e.caption : ""} aria-hidden={i >= eventsRowB.length ? "true" : undefined} loading="lazy" decoding="async" />
+            <img src={e.src} width={e.w} height={e.h} alt={i < eventsRowB.length ? e.caption : ""} aria-hidden={i >= eventsRowB.length ? "true" : undefined} loading="lazy" decoding="async" />
           ))}
         </div>
       </div>
@@ -516,7 +496,7 @@ const faqs = [
       <SectionHeader
         eyebrow="Global reach"
         title="Italian company. Clients worldwide."
-        subtitle="Team <strong>full-remote based in Italy</strong>, but we work with <strong>40+ clients</strong> distributed across Europe, the United States, the UAE, and Australia."
+        subtitle="Team <strong>full-remote based in Italy</strong>, but we work with <strong>more than 50 clients in 11 countries</strong> across Europe, the United States, the UAE and Australia."
         align="center"
       />
 
@@ -529,7 +509,7 @@ const faqs = [
             {i > 0 && <span style="color: var(--color-ink-soft); opacity: 0.6;">·</span>}
             <span class="inline-flex items-center gap-2">
               <span class="text-[14px] leading-none">{r.flag}</span>
-              <span><strong style="color: var(--color-ink); font-weight: 500;">{r.total}</strong> {r.label}</span>
+              <span>{r.label}</span>
             </span>
           </>
         ))}
@@ -576,6 +556,6 @@ const faqs = [
     ctaHref="/en/contact/"
     avatarName="Daniel Levis"
     avatarRole="Co-Founder & CEO"
-    avatarSrc="/team/daniel-levis.webp"
+    avatarSrc="/team/avatar/daniel-levis.webp"
   />
 </Layout>

@@ -92,6 +92,6 @@ Anche il sistema più bello fallisce se il team continua a tenere il "suo" Excel
 
 Per questo la digitalizzazione del processo è metà tecnologia e metà adozione. Il sistema deve essere più comodo del foglio, non solo più corretto. E il team va accompagnato, non solo formato. È il lavoro che facciamo con [AI Adoption](/ai-adoption): non spegniamo Excel con un decreto, lo rendiamo inutile rendendo il nuovo flusso più facile.
 
-## CTA
+## Da dove partire
 
 Se hai in mente il foglio Excel mentre leggi questo, fai due cose. Prima, [il check-up](/check-up): tre minuti, niente email, ti dice a che punto è la maturità dei tuoi processi. Poi, se vuoi un parere onesto su quale delle tre uscite regge nel tuo caso, [parliamone](/parliamone): venti minuti, senza pitch. A volte la risposta è "tienilo, l'Excel". Te lo diciamo lo stesso.
