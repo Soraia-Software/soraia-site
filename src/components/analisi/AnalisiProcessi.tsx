@@ -24,10 +24,10 @@ function Opening({ data }: P) {
         <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--color-amber)", flex: "0 0 auto" }} />
         {opening.eyebrow}
       </motion.p>
-      <motion.h1 className="ap-head" {...r} transition={{ ...r.transition, delay: 0.05 }} style={{ fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)", letterSpacing: "-0.025em", lineHeight: 1.05, color: "#fff", maxWidth: "18ch" }}>
+      <motion.h1 className="ap-head" style={{ fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)", letterSpacing: "-0.025em", lineHeight: 1.05, color: "#fff", maxWidth: "18ch" }}>
         {opening.title}
       </motion.h1>
-      <motion.p {...r} transition={{ ...r.transition, delay: 0.12 }} className="ap-lead" style={{ marginTop: 20, maxWidth: "56ch" }}>
+      <motion.p className="ap-lead" style={{ marginTop: 20, maxWidth: "56ch" }}>
         {opening.subtitle}
       </motion.p>
     </Section>

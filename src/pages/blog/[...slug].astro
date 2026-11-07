@@ -12,12 +12,17 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+// Indice in testa agli articoli con almeno 4 sezioni: link «salta a» nei risultati di Google e
+// sezioni più facili da citare per i motori IA (le guide lo avevano già).
+const toc = headings.filter((h) => h.depth === 2);
 
 const allPosts = (await getCollection("blog"))
   .filter((p) => p.data.lang === "it" && (import.meta.env.DEV || (!p.data.draft && p.data.pubDate <= new Date())))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const related = allPosts.filter((p) => p.id !== post.id).slice(0, 2);
+// Correlati per argomento (tag in comune), a parità di tag i più recenti: prima erano solo gli ultimi due.
+const shared = (p: typeof post) => p.data.tags.filter((t) => post.data.tags.includes(t)).length;
+const related = allPosts.filter((p) => p.id !== post.id).sort((a, b) => shared(b) - shared(a)).slice(0, 2);
 
 function formatDate(d: Date) {
   return d.toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
@@ -74,7 +79,7 @@ const breadcrumbJsonLd = {
 const jsonLd = [articleJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])];
 ---
 
-<Layout title={title} description={description} lang="it" altHref={altHref} jsonLd={jsonLd}>
+<Layout title={title} description={description} lang="it" altHref={altHref} noAlternate={!BLOG_SLUG_MAP[post.id]} jsonLd={jsonLd}>
   <article>
     <!-- ============================================================
          HERO POST
@@ -106,6 +111,16 @@ const jsonLd = [articleJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [
          ============================================================ -->
     <section class="bg-white">
       <div class="container-soraia max-w-3xl py-12 md:py-16">
+        {toc.length >= 4 && (
+          <nav aria-label="Indice dell'articolo" class="mb-10 rounded-2xl border border-line p-5 md:p-6" style="background: var(--color-ink-50);">
+            <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase mb-3" style="color: var(--color-ink-soft);">In questo articolo</p>
+            <ol class="list-decimal pl-5 space-y-2 text-[14.5px] leading-snug" style="color: var(--color-ink-muted);">
+              {toc.map((h) => (
+                <li><a href={`#${h.slug}`} class="hover:text-[color:var(--color-brand)] transition-colors">{h.text}</a></li>
+              ))}
+            </ol>
+          </nav>
+        )}
         <div class="prose-soraia">
           <Content />
         </div>
@@ -203,6 +218,7 @@ const jsonLd = [articleJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [
   }
   .prose-soraia > * + * { margin-top: 1.25em; }
   .prose-soraia h2 {
+    scroll-margin-top: 6rem;
     font-size: clamp(1.5rem, 2vw + 0.5rem, 1.875rem);
     line-height: 1.2;
     letter-spacing: -0.02em;

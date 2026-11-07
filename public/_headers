@@ -3,3 +3,13 @@
 # resources (llms.txt = site summary for LLMs, the agent-skills index, the sitemap).
 /*
   Link: </llms.txt>; rel="describedby"; type="text/plain", </.well-known/agent-skills/index.json>; rel="describedby"; type="application/json", </sitemap-index.xml>; rel="sitemap"
+
+# CSS, JS, font e immagini processate da Astro hanno l'hash nel nome: cambiano nome a ogni
+# modifica, quindi si possono tenere in cache per un anno (prima: 4 ore e revalidate).
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Il dominio di servizio di Cloudflare Pages serve lo stesso sito di www.soraia.io: fuori dai
+# motori di ricerca (sintassi documentata da Cloudflare per i domini *.pages.dev).
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex

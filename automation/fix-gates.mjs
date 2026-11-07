@@ -82,7 +82,7 @@ for (const itPath of files) {
     "",
     "GATE FINDINGS TO RESOLVE:\n" + findings,
     "",
-    "CONSTRAINTS you must keep satisfied: meta description 140-160 chars; title ≤60 chars (both include the primary keyword); FAQ 3-7 items; ≥3 internal links; body 450-1500 words; EN metrics match IT; keep `draft: true` and `lang` unchanged. Invent no numbers — Soraia/client figures must trace to llms.txt; external facts must be attributed to a named source.",
+    "CONSTRAINTS you must keep satisfied: meta description 120-155 chars; title ≤60 chars (both include the primary keyword); FAQ 3-7 items; ≥3 internal links; body 450-1500 words; EN metrics match IT; keep `draft: true` and `lang` unchanged. Invent no numbers — Soraia/client figures must trace to llms.txt; external facts must be attributed to a named source.",
     `CURRENT MEASUREMENTS — IT ${measure(it)}${en ? `; EN ${measure(en)}` : ""}.`,
     "",
     "Internal links may ONLY be one of these real published routes:\n" + VALID_ROUTES.join("  "),

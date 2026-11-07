@@ -49,7 +49,7 @@ Chi ha già un credito prenotato e confermato segue le regole di fruizione indic
 
 ## Il Nuovo Piano Transizione 5.0: l'iperammortamento
 
-La [legge di bilancio 2026](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-12-30;199~art1-com427!vig=2026-11-07) (legge 199/2025, articolo 1, commi 427-436) ha sostituito i crediti d'imposta di Transizione 4.0 e 5.0 con una maggiorazione del costo dei beni strumentali nuovi, valida solo ai fini fiscali. Le regole operative sono nel decreto attuativo del 7 maggio 2026, riassunto sulla [pagina del MIMIT](https://www.mimit.gov.it/it/incentivi/iperammortamento-2026).
+La [legge di bilancio 2026](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-12-30;199~art1-com427!vig=2026-11-07) (legge 199/2025, articolo 1, commi 427-436) ha sostituito i crediti d'imposta di Transizione 4.0 e 5.0 con una maggiorazione del costo dei beni strumentali nuovi, valida solo ai fini fiscali. Le regole operative sono nel decreto attuativo del 7 maggio 2026, riassunto sulla [pagina del MIMIT](https://www.mimit.gov.it/it/incentivi/nuovo-piano-transizione-5-0-iperammortamento).
 
 | Quota di investimento | Maggiorazione del costo |
 |---|---|

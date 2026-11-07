@@ -23,10 +23,10 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      // Fuori dalla sitemap le pagine noindex o di servizio: deck in call, demo portale,
+      // Fuori dalla sitemap le pagine noindex o di servizio: demo portale,
       // report di esempio del vecchio sito, area admin, pagine legali (noindex perché
       // Google le mostrava come sitelink cercando «soraia», Daniel 7/11/2026).
-      filter: (page) => !/\/(analisi-processi|process-audit|demo-portale|downloads|admin|terms|privacy|cookies)(\/|$)/.test(page),
+      filter: (page) => !/\/(demo-portale|downloads|admin|terms|privacy|cookies)(\/|$)/.test(page),
       serialize(item) {
         const lastmod = lastmodOf(item.url);
         return lastmod ? { ...item, lastmod } : item;

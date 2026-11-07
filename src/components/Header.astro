@@ -47,7 +47,7 @@ const labels = {
 
 const homeHref = lang === "en" ? "/en/" : "/";
 const contactHref = path("/parliamone", lang);
-// The deck exists in both languages: /analisi-processi and /en/process-audit (both noindex).
+// The service page exists in both languages: /analisi-processi and /en/process-audit (indexed since 7/11/2026).
 const analisiHref = path("/analisi-processi", lang);
 const aiEngHref = path("/ai-engineering", lang);
 const prodottiHref = path("/prodotti", lang);
@@ -132,7 +132,7 @@ const prodotti = [
           title={lang === "en" ? "Soraia is a member of Unione Industriale Biellese" : "Soraia è associata all'Unione Industriale Biellese"}
           aria-label={lang === "en" ? "Soraia is a member of Unione Industriale Biellese" : "Soraia è associata all'Unione Industriale Biellese"}
         >
-          <img src="/logos/unione-industriale-biellese.png" alt="" width="700" height="217" class="h-7 w-auto" />
+          <img src="/logos/unione-industriale-biellese.webp" alt="" width="271" height="84" loading="lazy" decoding="async" class="h-7 w-auto" />
         </a>
       </div>
 
@@ -257,7 +257,7 @@ const prodotti = [
       <div class="px-5 py-4 border-t border-ink-200/60">
         <p class="text-[10.5px] font-semibold tracking-[0.14em] uppercase mb-2.5" style="color: var(--color-ink-soft);">{lang === "en" ? "Member of" : "Associati a"}</p>
         <a href="https://www.ui.biella.it" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg bg-white px-3 py-2 border" style="border-color: var(--color-line);" aria-label="Unione Industriale Biellese">
-          <img src="/logos/unione-industriale-biellese.png" alt="" width="700" height="217" class="h-6 w-auto" />
+          <img src="/logos/unione-industriale-biellese.webp" alt="" width="271" height="84" loading="lazy" decoding="async" class="h-6 w-auto" />
         </a>
       </div>
 

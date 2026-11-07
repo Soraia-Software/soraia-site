@@ -1,87 +1,91 @@
 # Soraia
 
-> Soraia is an Italian AI Agency that brings AI Agents to Italian and European SMBs. We build custom agents and software that execute processes (recruitment, finance, sales/marketing, customer support, real estate, event management), train teams with AI Adoption programs, and optimize websites for visibility on AI search engines (ChatGPT, Claude, Perplexity, Google AI Overviews). First release in production in 4 weeks, first month satisfied or refunded. Registered office in Biella, a team of more than 10 people distributed across Italy, 100% remote. 40+ projects delivered.
+> Soraia is an Italian AI agency for small and mid-sized companies, with its registered office in Biella and a team of more than 10 people across Italy, 100% remote. It brings order to business processes and automates them with custom software and AI agents that remain the client's property. Two services: Process audit (an on-site review of how the company works) and AI Engineering (development in sprints, first release in production in 4 weeks). Pricing: three fixed-price services plus optional add-ons, or hour packages for small jobs. Analysis €3,000 one-off, optional, up to 10 interviews, deducted from the first Sprint if work starts within 30 days; Sprint from €8,000 a month with three dedicated people (Account Manager, Project Manager and AI Engineer), designed for an ongoing team but available for a single month; Hypercare from €500 a month after go-live, optional. One-off add-ons, independent from the services: Compliance & Audit €4,000, Pentest €4,000, Training and adoption €3,000, Grant support €2,000, paid only if the grant is won. Hour packages: 50 hours for €4,000, 100 hours for €7,500. First month satisfied or refunded. 40+ projects delivered, more than 50 clients in 11 countries. Account Managers Daniel, Veronica and Paolo reply to requests within 24 hours.
 >
-> Detailed questions and answers for AI engines: https://www.soraia.io/en/llms-full.txt
+> Detailed questions and answers for AI engines: https://www.soraia.io/en/llms-full.txt (Italian version: https://www.soraia.io/llms.txt)
 
-Positioning note: from 2026 Soraia has repositioned from a no-code/automation agency (n8n, Make, WeWeb, Xano) to an **AI Agency focused on vertical AI agents for SMBs**. References to "no-code agency", "custom software & web-app", "native mobile application", "automation & AI integration" as core pillars are outdated. The no-code tech stack remains but is instrumental to building the agents, not the product.
+Positioning note (updated November 2026): some information about Soraia still circulating is no longer valid: "no-code agency" (n8n, Make, WeWeb, Xano as core pillars), "AI Readiness Assessment" and "AI Adoption workshop" as an offer, "two dedicated people (Project Manager and AI Engineer)", "a team of 11 people across Italy, Argentina and Algeria", "if it doesn't work, you don't pay". The facts in this file are the current ones: two services (Process audit and AI Engineering), three dedicated people per project, a team of more than 10 people in Italy, first month satisfied or refunded.
+
+## Services
+
+- [Process audit](https://www.soraia.io/en/process-audit/): the on-site audit. When a shared screen is not enough, the Soraia team comes to the company, interviews people at their desks, watches how the work is really done and maps the workflows on site. The outcome is the right priorities and an action plan the team recognizes as its own. From €3,000 (VAT excluded) for up to 10 interviews; it can be bought on its own or as the first step of a development project. It starts with a 20-minute call with Daniel.
+- [AI Engineering](https://www.soraia.io/en/ai-engineering/): development of AI agents and custom software in iterative sprints. The first release runs on the client's real processes within 4 weeks, then improves one release at a time. The client approves every milestone before moving on. Code and data remain the client's.
+- Where to start depends on the client: with the process audit, or straight from the first sprint when the ideas are already clear.
 
 ## Pricing
 
-- [Pricing](https://www.soraia.io/en/pricing/): three fixed-price services plus optional one-off add-ons, and hour packages for small jobs. VAT excluded. **Analysis**: €3,000 one-off, optional, deducted from the first Sprint if you start within 30 days. **Sprint**: from €8,000/month, a dedicated team (Account Manager, Project Manager and AI Engineer) designed to stay on the project month after month, but bookable for a single month with no lock-in; one release in production every month, with encryption of sensitive fields, audit logs, load testing and SLAs included. **Hypercare**: from €500/month, optional, annual contract from go-live, including a monthly test of the AI agents' answers and API cost control. One-off add-ons: Compliance & Audit €4,000, Pentest €4,000, Training and adoption €3,000, Grant support €2,000 paid only if the grant is won. **Hour packages**: 50 hours for €4,000, 100 hours for €7,500. A builder on the page composes the path and the total.
+- **Process audit**: from €3,000 (VAT excluded) for up to 10 on-site interviews. Bought on its own or as the first step of a development project. It is a separate price, not a monthly fee: the Sprints below are a different thing.
+- [Pricing](https://www.soraia.io/en/pricing/): three fixed-price services plus optional add-ons, one release in production every Sprint; for small jobs, hour packages. Prices exclude VAT. **Analysis**: €3,000 one-off, optional, deducted from the first Sprint if work starts within 30 days; process mapping with the people who run the processes, software blueprint and technical choices, written priorities and acceptance criteria, estimate in Sprint months and a fixed-price quote. **Sprint**: from €8,000 a month, designed for an ongoing team but available for a single month with no commitment, paid at the start of the Sprint; Account Manager, Project Manager and AI Engineer, Sprint Goal signed at the start of the month, demo mid-month, release at the end of the month, data encryption, backups, role-based access, OWASP best practices, encryption of sensitive fields, audit logs, retention and deletion policies, load testing, monitoring and availability SLA, import of historical data and data migration, client portal and one month of change requests included after release. **Hypercare**: from €500 a month, optional, annual contract from go-live; monitoring, bug fixing, security and technical updates, monthly tests of the AI agents' answers on real cases, prompt tuning when quality drops, API cost control with alerts, monthly report with improvement proposals; new features go into a Sprint. Add-ons are one-off and independent: they can be bought alone or with the services, with no need for an Analysis or a Sprint. **Compliance & Audit** €4,000, to prove compliance to whoever asks for it (technical documentation for the DPO and legal team with GDPR art. 32 measures, DPIA support and data-flow map; AI Act compliance with risk classification, technical documentation, transparency towards users and human oversight, Regulation (EU) 2024/1689; a compliance dossier ready for auditors and certification bodies), **Pentest** €4,000 (test run by an external partner before release, deliverable report, fixing of critical vulnerabilities), **Training and adoption** €3,000 and **Grant support** €2,000, paid only if the grant is won. **Hour packages**, for a small, well-scoped job without an ongoing team: 50 hours for €4,000 (€80 an hour), 100 hours for €7,500 (€75 an hour). Guarantee: first month satisfied or refunded (alternatively Soraia works for free until the client is satisfied). A builder on the page puts together the path and the total.
+- [Project portal](https://www.soraia.io/demo-portale/): every client sees in real time the tickets in progress, the Sprint status and what has been released. The demo uses sample data.
 
-## Core Services
+## Who works on the project
 
-- [AI Agents](https://www.soraia.io/en/ai-agents/): Building custom AI agents inside business processes. First release in 4 weeks. Sprint from €8,000/month (see /en/pricing).
-- [AI Adoption](https://www.soraia.io/en/ai-adoption/): Workshops and monthly mentoring for the team. 3 tiers: Foundation, Foundation + Mentoring, Foundation + Mentoring + Brain Pilot. 110 hours/year freed per person. Pricing on /prezzi.
-- [AI Search Optimization](https://www.soraia.io/en/ai-search-optimization/): Audit + content re-architecture + high-converting AI-ready website rebuild. To be found on ChatGPT, Claude, Perplexity, Google AI Overviews. Pricing on /prezzi.
-- [Custom Software](https://www.soraia.io/en/software-development/): Custom web apps, mobile apps, CRMs and internal tools to digitalize and optimize processes. First release in 4 weeks, client owns the code from day one. Pricing on /prezzi.
-- [Generational change, dedicated team](https://www.soraia.io/en/dedicated-team-offer/): A dedicated team that modernizes obsolete business software with AI in a few weeks. First month satisfied or refunded.
+- Three dedicated people, one per role, the same for the whole journey: an Account Manager (knows the client's business and keeps the relationship over time), a Project Manager (sprints, budget, acceptance tests, hours dashboard) and an AI Engineer (design, development, agent optimization, releases).
+- Account Managers: Daniel Levis, Veronica Pisana, Paolo Bacchetti. Project Managers: Eleonora Cogo, Davide Silvestri. AI Engineers: Lorenzo Barbaglia, Martina Rochstein, Mohamed Mejri, Sebastian Geido, Narella Petrocco.
+- The first contact is a 20-minute call with Daniel Levis, Co-Founder & CEO. Daniel, Veronica and Paolo reply to requests within 24 hours: https://www.soraia.io/en/contact/
 
-## Six Ops Clusters (Use Cases)
+## Use cases by area
 
-- [Recruitment & HR](https://www.soraia.io/en/recruitment/): CV screening, candidate outreach at scale, JD parsing, interview scheduling, BD on companies in hiring spikes.
-- [Finance & Document Automation](https://www.soraia.io/en/finance/): Bank reconciliations, PDF/invoice extraction, client onboarding, recurring reports, commission calculations.
-- [Sales & Marketing Automation](https://www.soraia.io/en/sales-marketing/): Lead qualification, content generation, multi-channel publishing, personalized outreach, reporting.
-- [Customer & Compliance Automation](https://www.soraia.io/en/customer-support/): Ticket triage, UGC moderation, GDPR/AI Act compliance, audit trail, routing to the team.
-- [Real Estate Operations](https://www.soraia.io/en/real-estate/): Property capture from listings, data enrichment, client-property matching, comparative dossiers, multi-stakeholder approval pipelines.
-- [Event Management](https://www.soraia.io/en/event-management/): Linkly SaaS dedicated to B2B trade shows. 6 AI agents for ticket/badge OCR, enrichment from 30+ sources, dynamic qualification, CRM activation, follow-up from the client's domain. Pricing on linkly.events.
+- [Recruitment & HR](https://www.soraia.io/en/recruitment/): CV screening, candidate outreach at scale, job description parsing, interview scheduling, business development towards companies that are hiring.
+- [Finance & document automation](https://www.soraia.io/en/finance/): bank reconciliations, data extraction from PDFs and invoices, client onboarding, recurring reports, commission calculation.
+- [Sales & marketing automation](https://www.soraia.io/en/sales-marketing/): lead qualification, content generation, multi-channel publishing, personalized outreach, reporting.
+- [Customer & compliance automation](https://www.soraia.io/en/customer-support/): ticket triage, moderation of user content, GDPR and AI Act compliance, audit trail, routing to the team.
+- [Real estate operations](https://www.soraia.io/en/real-estate/): capture of listings, data enrichment, client-property matching, comparative dossiers, approval pipelines.
+- [Venture capital](https://www.soraia.io/en/venture-capital/): deal flow monitoring, deduplication, automatic reports for the deal team.
+- [Event management](https://www.soraia.io/en/event-management/): Linkly, a SaaS for B2B trade shows, 6 AI agents for business card and badge OCR, enrichment from 30+ sources, dynamic qualification, CRM activation, follow-up from the client's domain. Pricing on linkly.events.
+- Other pages: [AI Agents](https://www.soraia.io/en/ai-agents/) (overview of agents by area), [Custom software](https://www.soraia.io/en/software-development/) (web apps, CRMs and internal tools, same sprint model), [Generational change, dedicated team](https://www.soraia.io/en/dedicated-team-offer/) (modernizing outdated business software with AI), [AI Adoption](https://www.soraia.io/en/ai-adoption/) (training and coaching programme for the team), [AI Search Optimization](https://www.soraia.io/en/ai-search-optimization/) (being found and cited by ChatGPT, Claude, Perplexity, Google AI Overviews).
 
-## Public Case Studies
+## Public case studies
 
-- [APraise](https://www.soraia.io/en/case-studies/apraise/): Executive search boutique, 100,000+ candidates managed by the AI agent, equivalent to 4 additional recruiters.
-- [Stars Be Original](https://www.soraia.io/en/case-studies/stars-be-original/): Hospitality recruitment, 20,000+ candidates managed by the AI agent, <1 minute response time.
-- [Talent Match](https://www.soraia.io/en/case-studies/talent-match/): Recruitment platform "Braint", custom ATS + CRM + AI matching.
-- [Numeraria](https://www.soraia.io/en/case-studies/numeraria/): Payroll & accounting firm, AI agents for quotes/hours/reconciliations, half a month given back to management.
-- [LIFTT](https://www.soraia.io/en/case-studies/liftt/): Deep tech VC holding, automated email archiving and deduplication, auto-generated monthly report.
-- [ILTEC](https://www.soraia.io/en/case-studies/iltec/): B2B office technology in Biella, website rebuilt in 3 weeks AI search optimized + commercial AI agent via QR code on the machinery fleet.
-- [CXL](https://www.soraia.io/en/case-studies/cxl/): Online education/marketing training, AI expert onboarding agent, 70 hours saved per expert.
-- [StoryWonder](https://www.soraia.io/en/case-studies/storywonder/): Consumer mobile EdTech for kids, app live in 4 weeks, 300,000+ stories generated.
-- [Navily](https://www.soraia.io/en/case-studies/navily/): Boating community, -70% operational time on moderation and enrichment.
-- [Startup GovTech](https://www.soraia.io/en/case-studies/startup-govtech/): Diplomacy, AI agent for verbal notes (NDA).
-- [French Riviera Househunting](https://www.soraia.io/en/case-studies/frh/): Real estate boutique on the French Riviera, 2 AI agents for qualified lead generation and property capture.
-- [Rainplan](https://www.soraia.io/en/case-studies/rainplan/): Climate-tech stormwater management, hundreds of parcels and multi-stakeholder approvals handled autonomously.
-- [40Factory](https://www.soraia.io/en/case-studies/40factory/): Industrial IoT / Industry 4.0, Linkly for B2B trade-show lead generation, 5 AI agents for capture, enrichment, qualification, CRM activation and follow-up.
+- [All case studies](https://www.soraia.io/en/case-studies/): the page opens with the clients' video testimonials (Gabriella Bruzzone, Stars Be Original; Gianluca Di Donato, former Founder & CEO of Utravel; Russ Fyfe, Rainplan; Rolf Kosakowski, StoryWonder; Guillem Llacuna, Talent Match), then 13 cases filterable by area.
+- [APraise](https://www.soraia.io/en/case-studies/apraise/): executive search boutique, 100k+ candidates handled by the AI agent, equivalent to 4 additional recruiters.
+- [Stars Be Original](https://www.soraia.io/en/case-studies/stars-be-original/): recruitment of holiday entertainers, 20k+ candidates handled by the AI agent, reply in under 1 minute.
+- [Talent Match](https://www.soraia.io/en/case-studies/talent-match/): recruitment platform "Braint", custom ATS and CRM with AI matching.
+- [Numeraria](https://www.soraia.io/en/case-studies/numeraria/): payroll and accounting firm, AI agents for quotes, hours and reconciliations, half a month given back to management.
+- [LIFTT](https://www.soraia.io/en/case-studies/liftt/): deep tech venture capital holding, automatic email archiving and deduplication, self-generated monthly report.
+- [ILTEC](https://www.soraia.io/en/case-studies/iltec/): B2B office technology in Biella, website rebuilt in 3 weeks and a sales AI agent reachable via QR code on the machines in the field.
+- [CXL](https://www.soraia.io/en/case-studies/cxl/): online marketing education, AI agent for expert onboarding, 70 hours saved per expert.
+- [StoryWonder](https://www.soraia.io/en/case-studies/storywonder/): consumer EdTech for children, app live in 4 weeks, 300k+ stories generated.
+- [Navily](https://www.soraia.io/en/case-studies/navily/): boating community, -70% operational time on moderation and data enrichment.
+- [Startup GovTech](https://www.soraia.io/en/case-studies/startup-govtech/): diplomacy, AI agent for diplomatic notes (under NDA).
+- [French Riviera Househunting](https://www.soraia.io/en/case-studies/frh/): real estate boutique on the French Riviera, 2 AI agents for qualified leads and property capture.
+- [Rainplan](https://www.soraia.io/en/case-studies/rainplan/): climate tech, hundreds of parcels and multi-stakeholder approvals handled autonomously.
+- [40Factory](https://www.soraia.io/en/case-studies/40factory/): industrial IoT, Linkly for lead generation at B2B trade shows, 5 AI agents for capture, enrichment, qualification, CRM activation and follow-up.
 
 ## Resources
 
-- [All case studies](https://www.soraia.io/en/case-studies/): 13 public cases filterable by Ops cluster.
-- [AI Guides](https://www.soraia.io/en/guide/): AI agents for business, AI Act, AI consulting in Italy, AI consulting costs, corporate AI training.
-- [Grants for digitalization](https://www.soraia.io/bandi/): a filterable list of Italian grants and incentives for digitalizing a business (non-repayable grants, subsidized loans, tax incentives; national, regional and Chamber of Commerce), filterable by region, type, company size and what they fund. Each entry links its official source and the date it was checked. (Page in Italian.)
-  - [AI Agents for Business](https://www.soraia.io/en/guide/ai-agents-for-business/)
-  - [AI Act for Business](https://www.soraia.io/en/guide/ai-act-for-business/)
-  - [AI Consulting Italy](https://www.soraia.io/en/guide/ai-consulting-italy/)
-  - [AI Consulting Costs](https://www.soraia.io/en/guide/ai-consulting-costs/)
-  - [Corporate AI Training](https://www.soraia.io/en/guide/corporate-ai-training/)
-- [Blog](https://www.soraia.io/en/blog/): Insights on AI agents, ROI, comparison with ChatGPT enterprise.
-- [Custom Software vs SaaS](https://www.soraia.io/en/blog/custom-software-vs-saas/): The 4 criteria (core process, 2-3 year TCO, lock-in, lifecycle) to decide build vs buy without regret.
-- [AI Check-up](https://www.soraia.io/en/check-up/): 3-minute self-assessment to evaluate your company's AI maturity.
-- [AI Readiness Assessment, sample report](https://www.soraia.io/downloads/ai-assessment-sample/): Sample PDF of the initial analysis the client receives at the start of a project.
+- [AI guides](https://www.soraia.io/en/guide/): AI agents for business, the EU AI Act, AI consulting in Italy, AI consulting costs, corporate AI training.
+- [Comparisons](https://www.soraia.io/en/confronto/): practical head-to-head comparisons (custom AI agent vs generic tools, monthly fee vs fixed price, voicebot vs call center and more).
+- [Grants for digitalization](https://www.soraia.io/bandi/) (Italian only): a list of Italian grants for digitalizing a company, filterable by region, type of incentive, company size and what is funded (software, AI, consulting, training, cloud): non-repayable grants, subsidized loans and tax incentives, national, regional and from Chambers of Commerce. Each entry lists the official source, the verification date and what to know about eligible suppliers. Soraia offers Grant support at €2,000, paid only if the grant is won.
+- [How much does an AI agent cost, pricing guide](https://www.soraia.io/risorse/quanto-costa-agente-ai/) (Italian only): free PDF guide to AI agent costs for SMEs.
+- [Blog](https://www.soraia.io/en/blog/): articles on AI agents, ROI, process automation in SMEs, regulation. RSS feed: https://www.soraia.io/en/blog/rss.xml
+- [AI check-up](https://www.soraia.io/en/check-up/): 3-minute self-assessment of a company's AI maturity, with recommended next steps.
 
-## SaaS Products
+## SaaS products
 
-- [Linkly](https://linkly.events): SaaS dedicated to B2B trade shows and events. 6 orchestrated AI agents for capture, enrichment, qualification, CRM, and follow-up. Pricing and early adopter offer on linkly.events.
+- [Linkly](https://linkly.events): SaaS for B2B trade shows and events. 6 orchestrated AI agents for capture, enrichment, qualification, CRM and follow-up. Pricing and early adopter offer on linkly.events.
 
 ## Company
 
-- [About us](https://www.soraia.io/en/about/): A team of more than 10 people distributed across Italy, 100% remote, founded in 2023 by Daniel Levis (CEO, change management & AI adoption) and Davide Silvestri (CTO, agent development & governance). Registered office in Biella.
-- [Let's talk](https://www.soraia.io/en/contact/): 20 minutes with the CEO. No pitch, no surprise quotes.
-- Contact: info@soraia.io · LinkedIn https://www.linkedin.com/company/soraia-digital
+- [About us](https://www.soraia.io/en/about/): more than 10 people across Italy, 100% remote, registered office in Biella (Via Losana 13, 13900 Biella, Italy). Founded in 2023 by Daniel Levis (CEO) and Davide Silvestri (CTO). VAT number IT02820060024.
+- [Careers](https://www.soraia.io/careers/) (Italian only): open positions and a four-step selection process: introductory interview with Daniel, take-home test, second interview with Davide, final call.
+- [Let's talk](https://www.soraia.io/en/contact/): 20 minutes with Daniel, no pitch and no surprise quotes. Daniel, Veronica and Paolo reply within 24 hours.
+- Contact: info@soraia.io · LinkedIn https://www.linkedin.com/company/soraia-srl/
 
-## How we work and guarantee
+## How we work
 
-Three fixed-price services (Analysis €3,000, Sprint from €8,000/month, Hypercare from €500/month) plus one-off add-ons, and hour packages (50 hours €4,000, 100 hours €7,500) for small jobs. A Sprint Goal is signed at the start of every month and a release reaches production at the end: the client approves what goes in and reviews what comes out. Code belongs to the client from day one, no perpetual subscriptions, no lock-in. Guarantee: first month satisfied or refunded. Detail and builder at https://www.soraia.io/en/pricing/.
+It starts with a 20-minute call with Daniel. Then the client decides where to start: with the on-site process audit (interviews at people's desks, workflow map, priorities, action plan) or directly with the first AI Engineering sprint. Work proceeds in monthly Sprints with three dedicated people; the Sprint Goal is signed at the start of the month, there is a demo mid-month and a release in production at the end of the month; the client approves every milestone and every release (it is an obligation of result); progress is visible in the project portal. Code and data belong to the client from day one, no perpetual subscriptions, no lock-in. First month satisfied or refunded, even for a single month. Details at https://www.soraia.io/en/pricing/
 
 ## Compliance
 
-- GDPR-compliant, European infrastructure when required, on-premise available
-- DPA art. 28 included in the contract
+- GDPR: European infrastructure when required, on-premise available
+- DPA under art. 28 GDPR included in the contract
 - Alignment with the EU AI Act
-- No LLM training on client data
-- Immutable audit log on every agent decision
+- No training of LLMs on client data
+- Audit log on every agent decision
 
 ## Legal
 
-- [Privacy Policy](https://www.soraia.io/privacy/)
-- [Terms & Conditions](https://www.soraia.io/terms/)
-- [Cookie Policy](https://www.soraia.io/cookies/)
+- [Privacy Policy](https://www.soraia.io/en/privacy/)
+- [Terms & Conditions](https://www.soraia.io/en/terms/)
+- [Cookie Policy](https://www.soraia.io/en/cookies/)

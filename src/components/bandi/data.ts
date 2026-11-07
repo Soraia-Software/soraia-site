@@ -90,7 +90,7 @@ export const BANDI: Bando[] = [
     daSapere:
       "Non c’è un elenco di fornitori: il bene si acquista da chi scegli. Il software deve essere un bene nuovo, acquistato e iscritto a bilancio. La domanda si presenta in banca o alla società di leasing.",
     senzaScadenza: "Misura strutturale, sempre attiva",
-    fonte: "https://www.mimit.gov.it/it/incentivi/beni-strumentali-nuova-sabatini",
+    fonte: "https://www.mimit.gov.it/it/incentivi/agevolazioni-per-gli-investimenti-delle-pmi-in-beni-strumentali-nuova-sabatini",
     verificato: "2026-10-31",
   },
   {

@@ -3,6 +3,7 @@ import Layout from "~/layouts/Layout.astro";
 import SectionHeader from "~/components/SectionHeader.astro";
 import ProofBar from "~/components/ProofBar.astro";
 import WorldMap from "~/components/WorldMap.astro";
+import { getWorldRegions } from "~/data/worldRegions";
 import CTABanner from "~/components/CTABanner.astro";
 import HeroVisual from "~/components/HeroVisual.astro";
 import FAQ from "~/components/FAQ.astro";
@@ -10,6 +11,7 @@ import PartnersStrip from "~/components/PartnersStrip.astro";
 import AskAISection from "~/components/AskAISection.astro";
 import CaseStudyCarousel from "~/components/CaseStudyCarousel.astro";
 import { getCollection } from "astro:content";
+import { ORG_ID } from "~/lib/schema";
 
 // Pesca case studies featured + più recenti, mappa nel formato Jet card.
 const allCases = (await getCollection("caseStudies")).filter((c) => c.data.lang === "it" && !c.data.draft);
@@ -49,41 +51,9 @@ const title = "Soraia. Portiamo gli Agenti IA nelle PMI Italiane";
 const description =
   "Mettiamo ordine nei processi della tua PMI e li automatizziamo con agenti IA che restano tuoi. Da 8.000 € al mese, primo mese soddisfatti o rimborsati.";
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://www.soraia.io/#organization",
-  name: "Soraia",
-  legalName: "Soraia S.r.l.",
-  url: "https://www.soraia.io",
-  logo: "https://www.soraia.io/logos/soraia-full.svg",
-  description,
-  email: "info@soraia.io",
-  vatID: "IT02820060024",
-  foundingDate: "2023",
-  numberOfEmployees: { "@type": "QuantitativeValue", minValue: 10 },
-  knowsAbout: ["Analisi dei processi aziendali", "Agenti IA", "AI Engineering", "Automazione dei processi per PMI"],
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Via Losana 13",
-    addressLocality: "Biella",
-    postalCode: "13900",
-    addressRegion: "BI",
-    addressCountry: "IT",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 45.5648864,
-    longitude: 8.0542568,
-  },
-  areaServed: ["IT", "EU"],
-  founder: [
-    { "@type": "Person", name: "Daniel Levis", jobTitle: "CEO", sameAs: ["https://www.linkedin.com/in/daniel-levis/"] },
-    { "@type": "Person", name: "Davide Silvestri", jobTitle: "CTO", sameAs: ["https://www.linkedin.com/in/davide-silvestri/"] },
-  ],
-  memberOf: { "@type": "Organization", name: "Unione Industriale Biellese", url: "https://www.ui.biella.it/" },
-  sameAs: ["https://www.linkedin.com/company/soraia-digital", "https://github.com/Soraia-Software"],
-};
+// Organization e WebSite li mette Layout.astro su ogni pagina (src/lib/schema.ts):
+// qui basta dire che la home parla dell'azienda.
+const jsonLd = { "@type": "WebPage", about: { "@id": ORG_ID } };
 
 // I loghi clienti (due file, ordine deciso il 2026-10-17) vivono in src/data/clientLogos.ts:
 // ProofBar li usa da solo, così ogni pagina mostra la stessa barra.
@@ -125,54 +95,7 @@ const partners = [
 
 
 // Regional dots. Europa raggruppata, altre regioni singole
-const worldRegions = [
-  {
-    x: 50.5, y: 36,
-    label: "Europa",
-    flag: "🇪🇺",
-    total: 28,
-    countries: [
-      { flag: "🇮🇹", name: "Italia", count: 12 },
-      { flag: "🇨🇭", name: "Svizzera", count: 3 },
-      { flag: "🇫🇷", name: "Francia", count: 3 },
-      { flag: "🇬🇧", name: "Inghilterra", count: 3 },
-      { flag: "🇪🇸", name: "Spagna", count: 2 },
-      { flag: "🇳🇱", name: "Paesi Bassi", count: 2 },
-      { flag: "🇩🇪", name: "Germania", count: 2 },
-      { flag: "🇵🇹", name: "Portogallo", count: 1 },
-    ],
-    align: "right" as const,
-  },
-  {
-    x: 23, y: 40,
-    label: "Stati Uniti",
-    flag: "🇺🇸",
-    total: 7,
-    countries: [
-      { flag: "🇺🇸", name: "USA", count: 7 },
-    ],
-    align: "left" as const,
-  },
-  {
-    x: 60, y: 49,
-    label: "Emirati Arabi",
-    flag: "🇦🇪",
-    total: 4,
-    countries: [
-      { flag: "🇦🇪", name: "UAE", count: 4 },
-    ],
-  },
-  {
-    x: 84, y: 71,
-    label: "Australia",
-    flag: "🇦🇺",
-    total: 2,
-    countries: [
-      { flag: "🇦🇺", name: "Australia", count: 2 },
-    ],
-    align: "right" as const,
-  },
-];
+const worldRegions = getWorldRegions("it");
 
 const faqs = [
   {
@@ -261,9 +184,9 @@ const faqs = [
           <!-- CHI RISPONDE: gli Account Manager, Daniel, Veronica e Paolo (i volti del team stanno più sotto) -->
           <a href="/parliamone/" class="mt-8 inline-flex items-center gap-4 text-[13px] leading-tight no-underline group fade-up fade-up-delay-4">
             <span class="flex items-center flex-shrink-0">
-              <img src="/team/daniel-levis.webp?v=4" alt="Daniel Levis" loading="eager" width="56" height="56" class="w-14 h-14 rounded-full object-cover ring-2 ring-[#1A0820] flex-shrink-0" />
-              <img src="/team/veronica-pisana.webp?v=4" alt="Veronica Pisana" loading="eager" width="56" height="56" class="w-14 h-14 rounded-full object-cover ring-2 ring-[#1A0820] flex-shrink-0 -ml-4" />
-              <img src="/team/paolo-bacchetti.webp?v=4" alt="Paolo Bacchetti" loading="eager" width="56" height="56" class="w-14 h-14 rounded-full object-cover ring-2 ring-[#1A0820] flex-shrink-0 -ml-4" />
+              <img src="/team/avatar/daniel-levis.webp" alt="Daniel Levis" loading="eager" width="56" height="56" class="w-14 h-14 rounded-full object-cover ring-2 ring-[#1A0820] flex-shrink-0" />
+              <img src="/team/avatar/veronica-pisana.webp" alt="Veronica Pisana" loading="eager" width="56" height="56" class="w-14 h-14 rounded-full object-cover ring-2 ring-[#1A0820] flex-shrink-0 -ml-4" />
+              <img src="/team/avatar/paolo-bacchetti.webp" alt="Paolo Bacchetti" loading="eager" width="56" height="56" class="w-14 h-14 rounded-full object-cover ring-2 ring-[#1A0820] flex-shrink-0 -ml-4" />
             </span>
             <span class="block">
               <span class="block text-white font-medium text-[14px]">Daniel, Veronica e Paolo ti rispondono entro 24 ore.</span>
@@ -303,7 +226,7 @@ const faqs = [
       <div class="mt-11 flex flex-col items-center gap-4">
         <div class="flex items-center">
           {["daniel-levis", "eleonora-cogo", "lorenzo-barbaglia", "veronica-pisana", "davide-silvestri", "martina-rochstein", "mohamed-mejri"].map((slug, i) => (
-            <img src={`/team/${slug}.webp?v=4`} alt="" loading="lazy" width="44" height="44" class={`w-11 h-11 rounded-full object-cover border-2 border-white ${i === 0 ? "" : "-ml-3"}`} style="box-shadow: var(--shadow-sm);" />
+            <img src={`/team/avatar/${slug}.webp`} alt="" loading="lazy" width="44" height="44" class={`w-11 h-11 rounded-full object-cover border-2 border-white ${i === 0 ? "" : "-ml-3"}`} style="box-shadow: var(--shadow-sm);" />
           ))}
         </div>
         <p class="text-[15px] md:text-[16px] font-medium text-center" style="color: var(--color-ink);">
@@ -428,7 +351,7 @@ const faqs = [
         ].map((p) => (
           <div class="card !p-7 md:!p-8 flex flex-col">
             <div class="flex items-center gap-4 mb-6">
-              <img src={`/team/${p.slug}.webp?v=4`} alt={p.name} loading="lazy" width="60" height="60" class="rounded-full object-cover flex-shrink-0" style="width: 60px; height: 60px; box-shadow: var(--shadow-sm);" />
+              <img src={`/team/avatar/${p.slug}.webp`} alt={p.name} loading="lazy" width="60" height="60" class="rounded-full object-cover flex-shrink-0" style="width: 60px; height: 60px; box-shadow: var(--shadow-sm);" />
               <div>
                 <p class="font-medium" style="font-size: 1rem; color: var(--color-ink);">{p.name}</p>
                 <p class="text-[13px] font-medium" style="color: var(--color-brand-accent);">{p.role}</p>
@@ -582,7 +505,7 @@ const faqs = [
           Passa a Soraia.
         </h2>
         <p class="mt-4 text-[16px] md:text-[17px] leading-relaxed text-pretty" style="color: var(--color-ink-muted);">
-          40+ aziende hanno costruito agenti IA con noi. Tempo medio al primo agente in produzione: 4 settimane.
+          Più di 50 aziende in 11 paesi lavorano con noi. Tempo medio al primo agente in produzione: 4 settimane.
         </p>
       </div>
 
@@ -598,7 +521,7 @@ const faqs = [
       <SectionHeader
         eyebrow="Reach globale"
         title="Azienda italiana. Clienti in tutto il mondo."
-        subtitle="Team <strong>full-remote basato in Italia</strong>, ma lavoriamo con <strong>40+ clienti</strong> distribuiti tra Europa, Stati Uniti, Emirati Arabi e Australia."
+        subtitle="Team <strong>full-remote basato in Italia</strong>, ma lavoriamo con <strong>più di 50 clienti in 11 paesi</strong>, tra Europa, Stati Uniti, Emirati Arabi e Australia."
         align="center"
       />
 
@@ -611,7 +534,7 @@ const faqs = [
             {i > 0 && <span style="color: var(--color-ink-soft); opacity: 0.6;">·</span>}
             <span class="inline-flex items-center gap-2">
               <span class="text-[14px] leading-none">{r.flag}</span>
-              <span><strong style="color: var(--color-ink); font-weight: 500;">{r.total}</strong> {r.label}</span>
+              <span>{r.label}</span>
             </span>
           </>
         ))}
@@ -722,7 +645,7 @@ const faqs = [
           <div class="lg:col-span-4 flex flex-col items-start lg:items-end gap-3.5 reveal reveal-delay-2">
             <div class="flex items-center">
               {["daniel-levis", "veronica-pisana", "paolo-bacchetti"].map((slug, i) => (
-                <img src={`/team/${slug}.webp?v=4`} alt="" loading="lazy" width="56" height="56" class={`rounded-full object-cover border-2 ${i === 0 ? "" : "-ml-3.5"}`} style="width: 56px; height: 56px; border-color: rgba(255,255,255,0.92); box-shadow: 0 2px 12px rgba(0,0,0,0.28);" />
+                <img src={`/team/avatar/${slug}.webp`} alt="" loading="lazy" width="56" height="56" class={`rounded-full object-cover border-2 ${i === 0 ? "" : "-ml-3.5"}`} style="width: 56px; height: 56px; border-color: rgba(255,255,255,0.92); box-shadow: 0 2px 12px rgba(0,0,0,0.28);" />
               ))}
             </div>
             <p style="color: rgba(255,255,255,0.72);" class="text-[13px] font-medium lg:text-right">

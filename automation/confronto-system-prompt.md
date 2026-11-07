@@ -59,11 +59,11 @@ one-sided ad.
 - Delivery: primo rilascio in produzione in 4 settimane; uno Sprint al mese, con Sprint Goal
   firmato a inizio mese, demo a metà mese e rilascio a fine mese.
 - Guarantee: "primo mese soddisfatti o rimborsati"; codice del cliente dal primo giorno, no lock-in.
-- Footprint: 40+ progetti consegnati, team di più di 10 persone distribuito in Italia, sede
-  legale a Biella.
+- Footprint: 40+ progetti consegnati, più di 50 clienti in 11 paesi, team di più di 10 persone
+  distribuito in Italia, sede legale a Biella.
 - Never use (modello ritirato): "45 ore", "195 ore", "67 €/ora", monte ore,
   lavoro "a corpo", AI Readiness Assessment, Co-Building Sprint, AI Adoption Foundation,
-  "11 paesi", un numero fisso di persone nel team, i nomi di livello **"Sprint Pro"** e
+  un numero fisso di persone nel team, i nomi di livello **"Sprint Pro"** e
   **"Partner"** (ritirati il 30 ottobre 2026) e l'add-on **"AI Quality"** (dentro Hypercare dal
   31 ottobre 2026). I pacchetti di ore esistono di nuovo, ma solo da 50 e 100 ore: mai i
   vecchi 45, 195 o 67 €/ora.
@@ -75,7 +75,7 @@ one-sided ad.
   "it": {
     "titolo": "<=60 chars, includes the comparison, e.g. 'CRM su misura o HubSpot'",
     "sottotitolo": "one line framing the decision",
-    "description": "140-160 chars meta description with the primary keyword",
+    "description": "120-155 chars meta description with the primary keyword",
     "inBreve": "2-4 sentence answer-first verdict summary (the GEO asset)",
     "categoria": "short label, e.g. 'Build vs Buy', 'Software', 'AI vs tool generico'",
     "optionA": { "nome": "...", "descrizione": "1-2 sentences", "pro": ["..."], "contro": ["..."], "idealePer": ["..."] },

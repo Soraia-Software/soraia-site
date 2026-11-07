@@ -84,6 +84,6 @@ One process at a time. First delivery in 4 weeks, 30 days of hypercare, measurem
 
 It's not the fastest way to digitalize a company. It's the way that doesn't stop production and doesn't drive away the people who've kept it running for twenty years.
 
-## CTA
+## Where to start
 
 If you're joining the company and don't know where to start, [let's talk](/en/contact): 20 minutes, no pitch. Or take the [check-up](/en/check-up) in 3 minutes to figure out which process is worth digitalizing first.

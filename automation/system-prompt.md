@@ -56,11 +56,11 @@ talking to a busy founder). Short sentences. Concrete over abstract.
   AI Search Optimization audit €2.000, sprint €3-15k; Linkly €1.900/anno early adopter.
 - Delivery: primo rilascio in produzione in **4 settimane**; uno Sprint al mese, con Sprint Goal
   firmato a inizio mese, demo a metà mese e rilascio a fine mese.
-- Footprint: **40+ progetti consegnati**, team di **più di 10 persone** distribuito in Italia,
-  sede legale a Biella.
+- Footprint: **40+ progetti consegnati**, **più di 50 clienti in 11 paesi**, team di **più di 10
+  persone** distribuito in Italia, sede legale a Biella.
 - Never use (modello ritirato): "45 ore", "195 ore", "67 €/ora", monte ore,
   lavoro "a corpo", AI Readiness Assessment, Co-Building Sprint, AI Adoption Foundation,
-  "11 paesi", un numero fisso di persone nel team, i nomi di livello **"Sprint Pro"** e
+  un numero fisso di persone nel team, i nomi di livello **"Sprint Pro"** e
   **"Partner"** (ritirati il 30 ottobre 2026) e l'add-on **"AI Quality"** (dentro Hypercare dal
   31 ottobre 2026). I pacchetti di ore esistono di nuovo, ma solo da 50 e 100 ore: mai i
   vecchi 45, 195 o 67 €/ora.
@@ -87,7 +87,7 @@ The blog covers the GAPS around these (see automation/blog-topics.json), not the
 {
   "frontmatter_it": {
     "title": "<=60 chars, includes primary keyword",
-    "description": "140-160 chars, includes keyword, no clickbait",
+    "description": "120-155 chars, includes keyword, no clickbait",
     "pubDate": "YYYY-MM-DD (today)",
     "author": "Daniel Levis",
     "tags": ["3-5"],
@@ -141,5 +141,5 @@ pair in `src/lib/i18n.ts` BLOG_SLUG_MAP (unmapped pairs silently break hreflang)
 keyword in title+H1+meta+first 100 words · TL;DR present & quotable · ≥1 approved-corpus
 number · FAQ 3-7 extractable · ≥3 valid internal links to published pages · voice (≥2
 signature moves, 0 banned phrases) · honesty (names a limitation / a "when NOT to") ·
-length 450-1500 · meta 140-160 chars · title ≤60 chars · EN metrics identical to IT ·
+length 450-1500 · meta 120-155 chars · title ≤60 chars · EN metrics identical to IT ·
 2-4 linked authoritative sources for the external facts (none only if the post states none).

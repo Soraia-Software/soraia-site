@@ -4,9 +4,9 @@ import AnalisiProcessi from "~/components/analisi/AnalisiProcessi.tsx";
 import { NOINDEX } from "~/components/analisi/data";
 import "~/styles/analisi.css";
 
-const title = "Process audit | Soraia";
+const title = "Business process audit for SMEs | Soraia";
 const description =
-  "How Soraia's process audit works: interviews, workflow mapping, grouping by theme, priority matrix and action plan. The tool we use to find out where automation and artificial intelligence bring the most value.";
+  "We come to your company, interview the people who do the work and map the flows, then hand you priorities and an action plan for automation and AI agents.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -16,6 +16,13 @@ const jsonLd = {
   areaServed: "IT",
   description,
   inLanguage: "en",
+  offers: {
+    "@type": "Offer",
+    name: "Process audit",
+    price: "3000",
+    priceCurrency: "EUR",
+    description: "Up to 10 on-site interviews, workflow map, priorities and action plan. VAT excluded.",
+  },
 };
 ---
 

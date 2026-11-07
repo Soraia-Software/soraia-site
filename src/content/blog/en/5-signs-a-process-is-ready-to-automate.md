@@ -94,6 +94,6 @@ Run this exercise on 3-4 processes: score each against the 5 "yes" signs and che
 
 If you want help with the scoring, the 3-minute [check-up](/en/check-up) gives you a first read.
 
-## CTA
+## Where to start
 
 Want to figure out which of your processes goes first? [Take the check-up](/en/check-up) (3 minutes) or see how we worked on high-volume processes with our [AI agents](/en/ai-agents).

@@ -92,6 +92,6 @@ Even the best system fails if the team keeps a "backup" Excel on the side. I've 
 
 That's why digitising a process is half technology, half adoption. The system has to be more convenient than the sheet, not just more correct. And the team needs to be brought along, not just trained. That's the work we do with [AI Adoption](/en/ai-adoption): we don't kill Excel by decree, we make it useless by making the new flow easier.
 
-## CTA
+## Where to start
 
 If you've had a specific spreadsheet in mind while reading this, do two things. First, [the check-up](/en/check-up): three minutes, no email, it tells you where your process maturity stands. Then, if you want an honest read on which of the three exits holds for your case, [let's talk](/en/contact): twenty minutes, no pitch. Sometimes the answer is "keep the spreadsheet." We'll tell you anyway.
