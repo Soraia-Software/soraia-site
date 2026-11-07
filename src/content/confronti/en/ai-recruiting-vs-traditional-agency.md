@@ -24,6 +24,7 @@ optionA:
     - "For rare or executive roles, human network and judgment outweigh automation"
     - "Requires an HR owner to follow the project and validate the criteria"
     - "Upfront build cost before the payback"
+    - "CV screening is high-risk under the AI Act: from 2 December 2027 you need human oversight, retained logs and notice to candidates"
   idealePer:
     - "Companies with high volumes and recurring roles (retail, hospitality, contact centers)"
     - "HR teams that want to free time from manual screening"
@@ -37,7 +38,7 @@ optionB:
     - "No technical setup: you start immediately"
     - "Negotiation and candidate relationship management up to the offer"
   contro:
-    - "High cost per hire (often 15-25% of salary) and hard to predict at volume"
+    - "A fee per hire as a percentage of salary, which adds up at volume"
     - "Slower on high volumes, every application goes through people"
     - "Quality depends on the individual recruiter assigned"
     - "Know-how and pipeline stay outside the company, no asset remains"
@@ -54,7 +55,7 @@ tabella:
     valoreB: "Limited by number of recruiters"
   - criterio: "Cost model"
     valoreA: "From €8,000/month"
-    valoreB: "Fee per hire (15-25% of salary)"
+    valoreB: "Fee per hire, as a % of salary"
   - criterio: "Senior/executive roles"
     valoreA: "Weak without human network"
     valoreB: "Strong (headhunting, negotiation)"
@@ -66,15 +67,30 @@ faq:
   - q: "Does an AI agent replace recruiters?"
     a: "No, it augments them. The agent does the repetitive work (screening, parsing, first contact), recruiters focus on interviews, evaluation and closing. In the <a href='/case-studies/apraise'>APraise</a> case the agent equals <strong>4 extra recruiters</strong> without replacing the existing team."
   - q: "How much does an AI agent cost versus an agency?"
-    a: "With Soraia it starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month. A traditional agency typically charges 15-25% of salary per hire: at high volumes, the agent's cost per hire drops far faster. <a href='/parliamone'>Let's talk</a> for an estimate on your hiring volume."
+    a: "With Soraia it starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month. A traditional agency usually charges a fee for each hire, calculated as a percentage of salary: at high volumes, the agent's cost per hire drops far faster. <a href='/en/contact'>Let's talk</a> for an estimate on your hiring volume."
   - q: "What about executive or very rare roles?"
     a: "There a traditional agency is often still the better choice: the contact network and human judgment on fit and negotiation matter more than automation. AI excels at volume and first filter, not at headhunting a handful of rare profiles."
+  - q: "Is AI CV screening high-risk?"
+    a: "Yes. The <a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a> lists systems that analyse and filter job applications or evaluate candidates as <strong>high-risk</strong> (Annex III, point 4). After the postponement agreed in the <a href='https://eur-lex.europa.eu/eli/reg/2026/1744/oj'>Digital Omnibus</a>, the obligations for those who use them start on 2 December 2027: human oversight assigned to competent people, logs kept for at least six months, and notice to candidates and workers' representatives (Article 26). If the agent is custom-built, settle early who will be the “provider”: under the AI Act it can also be whoever has a system developed and puts it into service under their own name (Article 3), with heavier obligations than those who only use it."
+  - q: "Which rules already apply today?"
+    a: "The <a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR (Article 22)</a> does not allow, except in specific cases, rejecting a candidate through a solely automated decision: in practice the final decision should rest with a person. In Italy, <a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art11'>Law 132/2025 (Article 11)</a> also refers to <a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-05-26;152~art1bis'>Article 1-bis of Legislative Decree 152/1997</a>, which requires employers to inform workers about fully automated decision-making or monitoring systems used for hiring, managing or ending the employment relationship."
   - q: "What if the agent doesn't deliver the promised result?"
     a: "With Soraia the <strong>first month satisfied or refunded</strong> guarantee applies: a measurable target is set in the process audit (e.g. 5h/recruiter/week recovered) and, if the first month doesn't convince you, we refund it or keep working for free until you're satisfied. See the <a href='/recruitment'>Recruitment & HR</a> cluster."
+fonti:
+  - titolo: "AI Act, Regulation (EU) 2024/1689, Articles 3 and 26, Annex III (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Digital Omnibus on AI, Regulation (EU) 2026/1744 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+  - titolo: "GDPR, Regulation (EU) 2016/679, Article 22 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+  - titolo: "Italian Law 132/2025 on artificial intelligence, Article 11 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art11"
+  - titolo: "Italian Legislative Decree 152/1997, Article 1-bis (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-05-26;152~art1bis"
 related: []
 featured: false
 pubDate: 2026-08-13
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-07-25T06:30:44.062Z

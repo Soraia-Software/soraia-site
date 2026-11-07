@@ -73,12 +73,19 @@ faq:
     a: "With Soraia it starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month, with first delivery in <strong>4 weeks</strong>. The per-call cost once live is low and predictable; the sensible comparison is with the staff cost to cover the same hours and peaks. <a href='/en/contact'>Let's talk</a>."
   - q: "What if the agent gets it wrong or the call is delicate?"
     a: "It's designed with <strong>escalation rules</strong>: when it recognizes an ambiguous, emotional or out-of-scope case, it hands off to a person instead of pushing. Every call stays traceable with log and transcript, also useful to improve the agent over time. See it in a real context on <a href='/en/real-estate'>real estate operations</a>."
+  - q: "Do I have to tell callers they are talking to an AI?"
+    a: "Yes. From 2 August 2026 the <a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act (Article 50)</a> requires callers to know it at the latest at the first interaction, for example with a sentence at the start of the call. And if you record or transcribe calls, callers must also be informed under the <a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR (Article 13)</a>, with a clear legal basis for the processing."
   - q: "How does the guarantee work if it doesn't deliver?"
     a: "The <strong>first month satisfied or refunded</strong> guarantee applies: in the process audit you set a measurable target (e.g. calls handled autonomously or missed calls brought to zero) and, if the first month doesn't convince you, we refund it or keep working for free until you're satisfied. The <a href='/en/ai-agents'>code is yours from day one</a>, no lock-in."
+fonti:
+  - titolo: "AI Act, Regulation (EU) 2024/1689, Article 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "GDPR, Regulation (EU) 2016/679 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
 related: []
 featured: false
 pubDate: 2026-09-24
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-08-25T05:49:09.965Z

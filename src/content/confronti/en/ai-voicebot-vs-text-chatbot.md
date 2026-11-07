@@ -74,11 +74,16 @@ faq:
   - q: "How do I avoid the agent worsening the customer experience?"
     a: "You set a measurable target in the process audit (e.g. share of requests resolved without an operator) and the <strong>first month satisfied or refunded</strong> guarantee applies: if the first month doesn't convince you, we refund it or keep working for free until you're satisfied. The code is yours from day one."
   - q: "Are both channels compatible with GDPR and the AI Act?"
-    a: "Yes, if designed well. You need an <strong>audit trail of decisions</strong>, a legal basis for processing and a human handoff where required. Voice adds the topic of recordings and transcriptions, to be handled with the same care. See how we build <a href='/ai-agents'>AI agents</a>."
+    a: "Yes, if designed well. Under the <a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a> the main obligation applies to both: from 2 August 2026 whoever writes or calls must know they are talking to an AI (Article 50). Under the <a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR</a> you need a legal basis and a privacy notice (Articles 6 and 13), and voice adds recordings and transcriptions, to be handled with the same care. An <strong>audit trail of decisions</strong> and a human handoff are not legal obligations for a support agent, but they are how you keep it under control. See how we build <a href='/ai-agents'>AI agents</a>."
+fonti:
+  - titolo: "AI Act, Regulation (EU) 2024/1689, Article 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "GDPR, Regulation (EU) 2016/679 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
 related: []
 featured: false
 pubDate: 2026-08-20
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-07-25T06:42:46.431Z

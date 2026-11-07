@@ -2,7 +2,7 @@
 titolo: "AI on-premise o in cloud: dove farla girare"
 sottotitolo: "Far girare gli agenti IA su server locali o su infrastruttura cloud: cosa cambia davvero per costi, controllo dei dati e conformità GDPR."
 description: "AI on-premise vs cloud per PMI: costi, controllo dati, GDPR e velocità a confronto, con un verdetto onesto su quando conviene l'una o l'altra scelta."
-inBreve: "Per la maggior parte delle PMI italiane la scelta giusta è l'AI in cloud (modelli via API, nessun hardware da gestire): più veloce da avviare, meno costi fissi e conforme al GDPR se usi region europee e un DPA in ordine. Scegli invece l'AI on-premise (locale, sui tuoi server) solo in due casi: quando un vincolo contrattuale o normativo vieta ai dati di uscire dal tuo perimetro, oppure quando i volumi di inferenza sono così alti e costanti da rendere il cloud più caro dell'hardware nel tempo. Nella pratica molte aziende adottano un modello ibrido: dati sensibili in locale, elaborazione generica in cloud."
+inBreve: "Per la maggior parte delle PMI italiane la scelta giusta è l'AI in cloud (modelli via API, nessun hardware da gestire): più veloce da avviare, con meno costi fissi, e compatibile con il GDPR: non serve tenere i dati in Europa, ma servono un DPA con il fornitore, misure di sicurezza adeguate e garanzie se i dati escono dall'UE. Scegli invece l'AI on-premise (locale, sui tuoi server) solo in due casi: quando un vincolo contrattuale o normativo vieta ai dati di uscire dal tuo perimetro, oppure quando i volumi di inferenza sono così alti e costanti da rendere il cloud più caro dell'hardware nel tempo. Nella pratica molte aziende adottano un modello ibrido: dati sensibili in locale, elaborazione generica in cloud."
 categoria: "Infrastruttura AI"
 author: "Daniel Levis"
 keywords:
@@ -24,7 +24,7 @@ optionA:
     - "I modelli open che puoi ospitare in locale sono spesso meno capaci dei modelli cloud di frontiera"
     - "Scalare significa comprare altro hardware, non alzare un limite"
   idealePer:
-    - "Aziende con dati sotto vincoli contrattuali o settoriali stringenti (sanità, difesa, PA)"
+    - "Aziende con clausole contrattuali o regole di settore che vietano ai dati di uscire dal perimetro"
     - "Chi ha già un reparto IT strutturato e un data center"
     - "Volumi di inferenza altissimi e continui"
 optionB:
@@ -34,9 +34,9 @@ optionB:
     - "Avvio rapido: nessun hardware da comprare, primo agente live in poche settimane"
     - "Accesso ai modelli più capaci del momento, aggiornati dal provider"
     - "Scali su e giù in base al carico, paghi quello che usi"
-    - "GDPR-compliant se usi region europee, DPA art. 28 e nessun training sui tuoi dati"
+    - "Compatibile con il GDPR: region europee, DPA art. 28 e nessun training sui tuoi dati semplificano la conformità"
   contro:
-    - "I dati passano da un fornitore terzo: serve un DPA solido e la scelta della region"
+    - "I dati passano da un fornitore terzo: servono un DPA solido e, se escono dall'UE, garanzie per il trasferimento"
     - "Costo a consumo che può crescere con l'uso se non monitorato"
     - "Dipendenza dal provider e possibile lock-in se non progetti la portabilità"
     - "Alcuni clienti o normative possono vietare l'elaborazione fuori dal perimetro"
@@ -66,16 +66,24 @@ tabella:
 verdetto: "Non è una scelta ideologica ma di vincoli concreti. Se non hai un obbligo contrattuale o normativo che impedisce ai dati di uscire dal tuo perimetro, il cloud con region europee, DPA art. 28 e nessun training sui tuoi dati è quasi sempre più rapido, economico e capace: parti in settimane invece che in mesi. L'on-premise ha senso quando i dati sono davvero blindati (settori regolati, clausole che vietano l'esterno) o quando i volumi sono così alti e costanti da ammortizzare l'hardware. In molti casi la risposta migliore è ibrida: tieni in locale il dato sensibile e lasci al cloud l'elaborazione generica."
 faq:
   - q: "Il cloud è compatibile con il GDPR per una PMI italiana?"
-    a: "Sì, a condizioni chiare: usa <strong>region europee</strong>, un <strong>DPA art. 28</strong> nel contratto e un fornitore che <strong>non addestra i modelli sui tuoi dati</strong>. Con Soraia questi tre punti sono standard, insieme a un audit log immutabile su ogni decisione dell'agente. Se serve, l'<a href='/customer-support'>elaborazione compliance</a> può restare interamente dentro perimetro europeo."
+    a: "Sì. Il <a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR</a> non impone di tenere i dati in Europa: chiede una base giuridica per il trattamento (art. 6), un contratto con il fornitore che tratta i dati per tuo conto (<strong>DPA, art. 28</strong>), misure di sicurezza adeguate (art. 32) e, quando il rischio è elevato, una valutazione d'impatto (art. 35). Se i dati escono dall'UE servono garanzie per il trasferimento (art. 44 e seguenti): verso gli Stati Uniti, per esempio, c'è la <a href='https://eur-lex.europa.eu/eli/dec_impl/2023/1795/oj'>decisione di adeguatezza sul Data Privacy Framework</a>, che vale per le aziende certificate. Scegliere <strong>region europee</strong> e un fornitore che <strong>non addestra i modelli sui tuoi dati</strong> semplifica molto le cose. Con Soraia questi punti sono standard, insieme a un audit log immutabile su ogni decisione dell'agente. Se serve, l'<a href='/customer-support'>elaborazione compliance</a> può restare interamente dentro perimetro europeo."
   - q: "Quando conviene davvero l'on-premise?"
     a: "Quando un vincolo <strong>contrattuale o normativo</strong> impedisce ai dati di uscire dalla tua infrastruttura (es. clausole di clienti in settori regolati), oppure quando hai volumi di inferenza così alti e costanti da rendere l'hardware più economico del consumo cloud nel tempo. Fuori da questi casi, l'investimento iniziale e la gestione IT raramente si ripagano."
   - q: "Posso partire in cloud e passare on-premise dopo?"
     a: "Sì, se progetti la portabilità dall'inizio. Con Soraia il <strong>codice è del cliente dal primo giorno</strong> e l'infrastruttura europea o on-premise è possibile quando richiesto: puoi validare in cloud e spostare in locale le parti sensibili senza rifare tutto."
   - q: "Un modello locale è capace quanto ChatGPT o Claude?"
-    a: "Di solito no. I modelli di frontiera che giri via cloud sono più capaci e vengono aggiornati di continuo; i modelli open ospitabili in locale sono migliorati molto ma restano spesso indietro sui compiti complessi. Per casi in cui basta un modello più piccolo e specializzato, il divario si assottiglia. Se vuoi valutare cosa serve al tuo caso, <a href='/parliamone'>parliamone</a>."
+    a: "Il divario si è ridotto ma c'è ancora: secondo l'<a href='https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance'>AI Index 2026 di Stanford</a>, a marzo 2026 il miglior modello chiuso superava il miglior modello open del 3,3% nella classifica Arena. I migliori modelli open però sono molto grandi e richiedono server con più GPU: quelli che si fanno girare su hardware più contenuto sono più piccoli e restano spesso indietro sui compiti complessi. Per casi in cui basta un modello più piccolo e specializzato, il divario si assottiglia. Se vuoi valutare cosa serve al tuo caso, <a href='/parliamone'>parliamone</a>."
+fonti:
+  - titolo: "GDPR, Regolamento (UE) 2016/679, artt. 6, 28, 32, 35 e 44 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+  - titolo: "Decisione di esecuzione (UE) 2023/1795 sul Data Privacy Framework UE-USA (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/dec_impl/2023/1795/oj"
+  - titolo: "Stanford HAI, AI Index 2026, prestazioni tecniche"
+    url: "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance"
 related: []
 featured: false
 pubDate: 2026-08-11
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-07-25T06:28:02.713Z

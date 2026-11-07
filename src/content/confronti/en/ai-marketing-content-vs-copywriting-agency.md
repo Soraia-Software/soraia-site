@@ -70,15 +70,30 @@ faq:
   - q: "Is AI content quality good enough?"
     a: "It depends on two things: how well you train the agent on your <strong>brand voice and data</strong>, and whether there is human review. Without these, output is generic. With an agent built on your real content and a final check, quality is solid for most volume formats. See how we work on <a href='/en/sales-marketing'>Sales & Marketing</a>."
   - q: "How much does building a content agent cost?"
-    a: "With Soraia it starts at <strong>3.000 € per month</strong>: three dedicated people (Account Manager, Project Manager and AI Engineer) and one release in production every month. <strong>First delivery is in 4 weeks</strong> and the code is yours from day one. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
+    a: "With Soraia it starts at <strong>8,000 € per month</strong>: three dedicated people (Account Manager, Project Manager and AI Engineer) and one release in production every month. <strong>First delivery is in 4 weeks</strong> and the code is yours from day one. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
   - q: "Is AI content penalized by search and AI engines?"
-    a: "It is not the origin that matters, but whether the content is useful, accurate and well structured. Reviewed AI content rich in real data can be <strong>more visible on AI engines</strong> when structured well. We handle this with <a href='/en/ai-search-optimization'>AI Search Optimization</a>."
+    a: "Not if it is useful. Google says quality matters, not how content is produced: those who want to rank should aim for <strong>original, high-quality, people-first content</strong> (<a href='https://developers.google.com/search/blog/2023/02/google-search-and-ai-content'>Google Search Central</a>). It becomes spam, instead, to generate many pages mainly to manipulate rankings, however they are created (<a href='https://developers.google.com/search/docs/essentials/spam-policies'>Google's spam policies</a>). There are no additional requirements or special optimizations to appear in AI Overviews and AI Mode: standard SEO best practices apply (<a href='https://developers.google.com/search/docs/appearance/ai-features'>Google, AI features</a>). See how we work on this in <a href='/en/ai-search-optimization'>AI Search Optimization</a>."
+  - q: "Is AI-written copy protected by copyright?"
+    a: "Only if it results from a person's intellectual work. Since 10 October 2025, Italy's <a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art25'>Law 132/2025 (Article 25)</a> has amended the copyright law: protected works are works of human creativity, even when made with the help of AI, as long as they result from the author's intellectual work. Copy generated without real human input may therefore not be protected: one more reason for review."
+  - q: "Do I have to disclose that content is made with AI?"
+    a: "It depends on the content. From 2 August 2026 the <a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act (Article 50)</a> requires disclosure of <strong>deepfakes</strong> (images, audio or video that imitate real people, places or events so as to look authentic) and of AI-generated text published to inform the public on matters of public interest, unless a person has reviewed it and holds editorial responsibility. Product pages, emails and ad variants usually fall outside this."
   - q: "Can I keep my brand voice with an agent?"
     a: "Yes, and it is the key point. Brand voice is codified once (guidelines, real examples, dos and don'ts) and the agent applies it consistently across every piece. It becomes more consistent than a pool of different copywriters. See how we build <a href='/en/ai-agents'>AI agents</a>."
+fonti:
+  - titolo: "Google Search Central, guidance about AI-generated content (2023)"
+    url: "https://developers.google.com/search/blog/2023/02/google-search-and-ai-content"
+  - titolo: "Google Search Central, spam policies (scaled content abuse)"
+    url: "https://developers.google.com/search/docs/essentials/spam-policies"
+  - titolo: "Google Search Central, AI features and your website"
+    url: "https://developers.google.com/search/docs/appearance/ai-features"
+  - titolo: "Italian Law 132/2025 on artificial intelligence, Article 25 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art25"
+  - titolo: "AI Act, Regulation (EU) 2024/1689, Article 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
 related: []
 featured: false
 pubDate: 2026-10-20
-updatedDate: 2026-10-29
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-09-25T09:02:16.332Z

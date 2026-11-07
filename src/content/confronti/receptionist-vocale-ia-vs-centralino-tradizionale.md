@@ -73,12 +73,19 @@ faq:
     a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese, con prima delivery in <strong>4 settimane</strong>. Il costo per chiamata a regime è basso e prevedibile; il confronto sensato è col costo del personale che copre gli stessi orari e picchi. Vedi i <a href='/prezzi'>prezzi</a>."
   - q: "E se l'agente sbaglia o la chiamata è delicata?"
     a: "Si progetta con <strong>regole di escalation</strong>: quando riconosce un caso ambiguo, emotivo o fuori scenario, passa a una persona invece di insistere. Ogni chiamata resta tracciata con log e trascrizione, utile anche per migliorare l'agente nel tempo. Puoi vederne l'uso in un contesto reale sulle <a href='/real-estate'>operazioni immobiliari</a>."
+  - q: "Devo dire a chi chiama che parla con un'IA?"
+    a: "Sì. Dal 2 agosto 2026 l'<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act (art. 50)</a> chiede che chi chiama lo sappia al più tardi alla prima interazione, per esempio con una frase all'inizio della telefonata. E se registri o trascrivi le chiamate, chi chiama va informato anche secondo il <a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR (art. 13)</a>, con una base giuridica chiara per il trattamento."
   - q: "Come funziona la garanzia se non porta il risultato?"
     a: "Vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: in fase di analisi si fissa un target misurabile (es. chiamate gestite in autonomia o chiamate perse azzerate) e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto. Il <a href='/ai-agents'>codice è tuo dal primo giorno</a>, senza lock-in."
+fonti:
+  - titolo: "AI Act, Regolamento (UE) 2024/1689, art. 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "GDPR, Regolamento (UE) 2016/679 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
 related: []
 featured: false
 pubDate: 2026-09-24
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-08-25T05:49:09.965Z

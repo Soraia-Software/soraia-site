@@ -70,13 +70,18 @@ faq:
   - q: "How much does starting with an AI agent cost versus a BPO?"
     a: "With Soraia it starts from <strong>€8,000/month</strong>: three dedicated people (an Account Manager, a Project Manager and an AI Engineer) and one release in production every month. A BPO instead has a recurring cost per agent or per ticket, low at first but <strong>linear</strong> as volumes grow. What pays off depends on your numbers: <a href='/parliamone'>let's talk</a>."
   - q: "Is the AI agent GDPR and AI Act compliant?"
-    a: "Yes. Soraia's <a href='/ai-agents'>AI agents</a> are GDPR-compliant, with European infrastructure when required, an art. 28 DPA included and an <strong>immutable audit log on every decision</strong>. No LLM training on client data."
+    a: "Soraia's <a href='/ai-agents'>AI agents</a> are designed for the <a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR</a>: European infrastructure when required, a DPA under Article 28 included, an <strong>immutable audit log on every decision</strong> and no LLM training on client data. Under the <a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a> a support agent is not high risk: the obligation that matters is telling customers they are talking to an AI (Article 50, from 2 August 2026)."
   - q: "What if the agent falls short of the promised quality?"
     a: "With Soraia the <strong>first month satisfied or refunded</strong> guarantee applies: a measurable target is set in the process audit (e.g. share of tickets resolved autonomously) and, if the first month doesn't convince you, Soraia refunds it or keeps working for free until you're satisfied."
+fonti:
+  - titolo: "GDPR, Regulation (EU) 2016/679 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+  - titolo: "AI Act, Regulation (EU) 2024/1689, Article 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
 related: []
 featured: false
 pubDate: 2026-09-29
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-08-25T05:51:36.774Z

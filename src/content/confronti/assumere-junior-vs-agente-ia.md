@@ -15,7 +15,7 @@ optionA:
   descrizione: "Assumi e formi una persona junior che copre il ruolo operativo, cresce nel tempo e resta parte del team."
   pro:
     - "Gestisce l'ambiguità e i casi fuori standard con giudizio umano"
-    - "Cresce: dopo 12-18 mesi può fare cose che oggi non fa"
+    - "Cresce: col tempo può fare cose che oggi non fa"
     - "Costruisce relazioni con candidati, clienti e colleghi"
     - "Nessuna dipendenza tecnica: sa spiegare cosa ha fatto e perché"
   contro:
@@ -40,6 +40,7 @@ optionB:
     - "Non costruisce relazioni né cresce in nuovi ruoli"
     - "Costo iniziale di costruzione a carico dell'azienda"
     - "Serve un referente interno che definisca le regole e controlli gli output"
+    - "Se fa screening dei CV è un sistema ad alto rischio per l'AI Act, con obblighi dal 2 dicembre 2027"
   idealePer:
     - "Ruoli ad alto volume, ripetitivi e con regole chiare"
     - "Chi ha una coda di lavoro meccanico che ruba tempo al team"
@@ -67,6 +68,8 @@ verdetto: "Non è una vera alternativa: dipende da cosa fa davvero il ruolo. Se 
 faq:
   - q: "Un agente IA sostituisce davvero un junior?"
     a: "Solo per la parte ripetitiva del ruolo. Un agente <strong>esegue a scala il lavoro meccanico</strong> (screening, estrazione, triage), ma non gestisce l'ambiguità né costruisce relazioni. Il modello che funziona è l'agente sul carico ripetitivo e la persona su ciò che richiede giudizio: vedi come lo applichiamo su <a href='/recruitment'>recruitment</a> e con gli <a href='/ai-agents'>agenti IA</a>."
+  - q: "E se il ruolo comprende lo screening dei CV?"
+    a: "Allora l'agente rientra tra i sistemi ad <strong>alto rischio</strong> dell'<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a> (Allegato III, punto 4) e, dopo il rinvio deciso con il <a href='https://eur-lex.europa.eu/eli/reg/2026/1744/oj'>Digital Omnibus</a>, dal 2 dicembre 2027 servono sorveglianza umana, log conservati e informativa ai candidati. Con un agente su misura chiarisci prima chi sarà il «fornitore»: per l'AI Act può esserlo anche chi fa sviluppare un sistema e lo mette in servizio con il proprio nome (art. 3). E già oggi, se usi sistemi decisionali integralmente automatizzati per assumere o gestire il personale, il lavoratore va informato (<a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-05-26;152~art1bis'>art. 1-bis del D.Lgs. 152/1997</a>)."
   - q: "Quanto ci mette un agente IA a essere operativo rispetto a un junior?"
     a: "Con Soraia la <strong>prima delivery è in 4 settimane</strong>. Un junior richiede in genere settimane o mesi di ramp-up prima di essere pienamente produttivo, e quel tempo è investito anche se poi la persona cambia ruolo o azienda."
   - q: "Quanto costa un agente IA rispetto a uno stipendio?"
@@ -75,10 +78,17 @@ faq:
     a: "Con Soraia si fissa un target misurabile in fase di analisi (es. ore recuperate a settimana) e vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>. Così validi presto se l'agente porta valore sul ruolo, prima di impegnarti su un'assunzione o su un percorso lungo."
   - q: "Posso usare sia il junior sia l'agente?"
     a: "Sì, ed è spesso la scelta migliore. L'<strong>agente prende il lavoro ripetitivo</strong> che demotiva e rallenta, mentre la persona junior si concentra sui casi che richiedono giudizio e cresce più in fretta perché non è sepolta dalla routine."
+fonti:
+  - titolo: "AI Act, Regolamento (UE) 2024/1689, art. 3 e Allegato III (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Digital Omnibus sull'IA, Regolamento (UE) 2026/1744 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+  - titolo: "D.Lgs. 152/1997, art. 1-bis (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-05-26;152~art1bis"
 related: []
 featured: false
 pubDate: 2026-10-27
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-09-25T09:06:35.319Z

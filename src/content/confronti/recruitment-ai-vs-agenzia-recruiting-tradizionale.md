@@ -24,6 +24,7 @@ optionA:
     - "Su ruoli rari o executive la rete umana e il giudizio pesano più dell'automazione"
     - "Richiede un referente HR che segua il progetto e validi i criteri"
     - "Costo iniziale di build prima del ritorno"
+    - "Lo screening dei CV è ad alto rischio per l'AI Act: dal 2 dicembre 2027 servono sorveglianza umana, log conservati e informativa ai candidati"
   idealePer:
     - "Aziende con volumi alti e ruoli ricorrenti (retail, hospitality, contact center)"
     - "HR che vogliono liberare tempo dallo screening manuale"
@@ -37,7 +38,7 @@ optionB:
     - "Nessun setup tecnico: si parte subito"
     - "Negoziazione e gestione della relazione con il candidato fino all'offerta"
   contro:
-    - "Costo per assunzione alto (spesso 15-25% della RAL) e poco prevedibile a volume"
+    - "Fee per assunzione in percentuale della RAL, che a volume pesa"
     - "Tempi più lunghi su volumi elevati, ogni candidatura passa da persone"
     - "Qualità dipende dal singolo recruiter assegnato"
     - "Il know-how e la pipeline restano fuori dall'azienda, nessun asset che rimane"
@@ -53,8 +54,8 @@ tabella:
     valoreA: "Alta, costo marginale ~zero"
     valoreB: "Limitata dal numero di recruiter"
   - criterio: "Modello di costo"
-    valoreA: "Sprint una tantum + eventuale retainer"
-    valoreB: "Fee per assunzione (15-25% RAL)"
+    valoreA: "Da 8.000 € al mese"
+    valoreB: "Fee per assunzione, in % della RAL"
   - criterio: "Ruoli senior/executive"
     valoreA: "Debole senza rete umana"
     valoreB: "Forte (headhunting, negoziazione)"
@@ -66,15 +67,30 @@ faq:
   - q: "Un agente IA sostituisce i recruiter?"
     a: "No, li potenzia. L'agente fa il lavoro ripetitivo (screening, parsing, primo contatto), i recruiter si concentrano su colloqui, valutazione e chiusura. Nel case <a href='/case-studies/apraise'>APraise</a> l'agente equivale a <strong>4 recruiter aggiuntivi</strong> senza sostituire il team esistente."
   - q: "Quanto costa un agente IA rispetto a un'agenzia?"
-    a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Un'agenzia tradizionale costa in genere il 15-25% della RAL per ogni assunzione: su volumi alti, il costo per assunzione dell'agente scende molto più velocemente. <a href='/parliamone'>Parliamone</a> per una stima sul tuo volume di hiring, o vedi i <a href='/prezzi'>prezzi</a>."
+    a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. Un'agenzia tradizionale si paga di solito con una fee per ogni assunzione, calcolata in percentuale della RAL: su volumi alti, il costo per assunzione dell'agente scende molto più velocemente. <a href='/parliamone'>Parliamone</a> per una stima sul tuo volume di hiring, o vedi i <a href='/prezzi'>prezzi</a>."
   - q: "E per i ruoli executive o molto rari?"
     a: "Lì l'agenzia tradizionale resta spesso la scelta migliore: la rete di contatti e il giudizio umano su fit e negoziazione contano più dell'automazione. L'AI eccelle sul volume e sul primo filtro, non sul headhunting di pochi profili rari."
+  - q: "Lo screening dei CV con l'IA è ad alto rischio?"
+    a: "Sì. L'<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a> mette tra i sistemi ad <strong>alto rischio</strong> quelli che analizzano e filtrano le candidature o valutano i candidati (Allegato III, punto 4). Dopo il rinvio deciso con il <a href='https://eur-lex.europa.eu/eli/reg/2026/1744/oj'>Digital Omnibus</a>, gli obblighi per chi li usa partono il 2 dicembre 2027: sorveglianza umana affidata a persone competenti, log conservati per almeno sei mesi, informativa ai candidati e ai rappresentanti dei lavoratori (art. 26). Se l'agente è costruito su misura, chiarisci prima chi sarà il «fornitore»: per l'AI Act può esserlo anche chi fa sviluppare un sistema e lo mette in servizio con il proprio nome (art. 3), con obblighi più pesanti di chi lo usa e basta."
+  - q: "Quali regole valgono già oggi?"
+    a: "Il <a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR (art. 22)</a> non permette, salvo eccezioni, di scartare un candidato con una decisione solo automatizzata: nella pratica la decisione finale va lasciata a una persona. In più la <a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art11'>legge 132/2025 (art. 11)</a> rinvia all'<a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-05-26;152~art1bis'>art. 1-bis del D.Lgs. 152/1997</a>, che obbliga a informare il lavoratore sui sistemi decisionali o di monitoraggio integralmente automatizzati usati per l'assunzione, la gestione o la cessazione del rapporto di lavoro."
   - q: "E se l'agente non porta il risultato promesso?"
     a: "Con Soraia vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: si fissa un target misurabile in fase di analisi (es. 5h/recruiter/settimana recuperate) e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto. Vedi il cluster <a href='/recruitment'>Recruitment & HR</a>."
+fonti:
+  - titolo: "AI Act, Regolamento (UE) 2024/1689, artt. 3 e 26, Allegato III (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Digital Omnibus sull'IA, Regolamento (UE) 2026/1744 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+  - titolo: "GDPR, Regolamento (UE) 2016/679, art. 22 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+  - titolo: "Legge 132/2025 sull'intelligenza artificiale, art. 11 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art11"
+  - titolo: "D.Lgs. 152/1997, art. 1-bis (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-05-26;152~art1bis"
 related: []
 featured: false
 pubDate: 2026-08-13
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-07-25T06:30:44.062Z

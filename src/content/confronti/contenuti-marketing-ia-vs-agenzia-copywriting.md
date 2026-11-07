@@ -72,13 +72,28 @@ faq:
   - q: "Quanto costa costruire un agente per i contenuti?"
     a: "Con Soraia si parte da <strong>8.000 € al mese</strong>: tre persone dedicate (Account Manager, Project Manager e AI Engineer) e un rilascio in produzione ogni mese. La <strong>prima delivery è in 4 settimane</strong> e il codice è tuo dal primo giorno. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "I contenuti IA sono penalizzati sui motori di ricerca e AI?"
-    a: "Non è l'origine che conta, ma se il contenuto è utile, accurato e ben strutturato. Contenuti IA rivisti e ricchi di dati reali possono essere <strong>più visibili sui motori AI</strong> se strutturati bene. Ce ne occupiamo con <a href='/ai-search-optimization'>AI Search Optimization</a>."
+    a: "No, se sono utili. Google dice che conta la qualità, non il modo in cui il contenuto è prodotto: chi vuole posizionarsi deve puntare su contenuti <strong>originali, di qualità e scritti per le persone</strong> (<a href='https://developers.google.com/search/blog/2023/02/google-search-and-ai-content'>Google Search Central</a>). Diventa spam, invece, generare molte pagine con lo scopo principale di manipolare il ranking, comunque siano create (<a href='https://developers.google.com/search/docs/essentials/spam-policies'>norme antispam di Google</a>). Per comparire negli AI Overviews e in AI Mode non ci sono requisiti aggiuntivi né ottimizzazioni speciali: valgono le buone pratiche SEO (<a href='https://developers.google.com/search/docs/appearance/ai-features'>Google, funzioni IA</a>). Come lavoriamo su questi temi lo trovi in <a href='/ai-search-optimization'>AI Search Optimization</a>."
+  - q: "I testi scritti con l'IA sono protetti dal diritto d'autore?"
+    a: "Solo se sono il risultato del lavoro intellettuale di una persona. Dal 10 ottobre 2025 la <a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art25'>legge 132/2025 (art. 25)</a> ha modificato la legge sul diritto d'autore: sono protette le opere dell'ingegno umano, anche create con l'aiuto dell'IA, purché siano frutto del lavoro intellettuale dell'autore. Un testo generato senza un vero apporto umano rischia quindi di non essere tutelato: un motivo in più per la revisione."
+  - q: "Devo dichiarare che un contenuto è fatto con l'IA?"
+    a: "Dipende dal contenuto. Dal 2 agosto 2026 l'<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act (art. 50)</a> chiede di dichiarare i <strong>deepfake</strong> (immagini, audio o video che imitano persone, luoghi o eventi reali in modo da sembrare autentici) e i testi generati con l'IA pubblicati per informare il pubblico su temi di interesse pubblico, salvo che una persona li abbia rivisti e ne abbia la responsabilità editoriale. Schede prodotto, email e varianti ADV di norma non rientrano."
   - q: "Posso mantenere la voce del mio brand con un agente?"
     a: "Sì, ed è il punto centrale. La voce del brand si codifica una volta (linee guida, esempi reali, do e don't) e l'agente la applica in modo coerente su ogni contenuto. Diventa più costante di un pool di copywriter diversi. Vedi come costruiamo gli <a href='/ai-agents'>agenti IA</a>."
+fonti:
+  - titolo: "Google Search Central, indicazioni sui contenuti generati con l'IA (2023)"
+    url: "https://developers.google.com/search/blog/2023/02/google-search-and-ai-content"
+  - titolo: "Google Search Central, norme antispam (abuso di contenuti su larga scala)"
+    url: "https://developers.google.com/search/docs/essentials/spam-policies"
+  - titolo: "Google Search Central, funzioni IA e il tuo sito"
+    url: "https://developers.google.com/search/docs/appearance/ai-features"
+  - titolo: "Legge 132/2025 sull'intelligenza artificiale, art. 25 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art25"
+  - titolo: "AI Act, Regolamento (UE) 2024/1689, art. 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
 related: []
 featured: false
 pubDate: 2026-10-20
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "it"
 gates:
   passedAt: 2026-09-25T09:02:16.332Z

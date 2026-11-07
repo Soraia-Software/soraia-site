@@ -15,7 +15,7 @@ optionA:
   descrizione: "You hire and train a junior person who covers the operational role, grows over time and stays part of the team."
   pro:
     - "Handles ambiguity and edge cases with human judgement"
-    - "Grows: after 12-18 months can do things they cannot today"
+    - "Grows: over time can do things they cannot today"
     - "Builds relationships with candidates, clients and colleagues"
     - "No technical dependency: can explain what they did and why"
   contro:
@@ -40,6 +40,7 @@ optionB:
     - "Builds no relationships and does not grow into new roles"
     - "Upfront build cost on the company"
     - "Needs an internal owner to define the rules and check outputs"
+    - "If it screens CVs it is a high-risk system under the AI Act, with obligations from 2 December 2027"
   idealePer:
     - "High-volume, repetitive roles with clear rules"
     - "Those with a queue of mechanical work stealing team time"
@@ -67,6 +68,8 @@ verdetto: "It is not a real either/or: it depends on what the role actually does
 faq:
   - q: "Does an AI agent really replace a junior?"
     a: "Only the repetitive part of the role. An agent <strong>runs the mechanical work at scale</strong> (screening, extraction, triage), but does not handle ambiguity or build relationships. The model that works is the agent on the repetitive load and the person on what needs judgement: see how we apply it in <a href='/recruitment'>recruitment</a> and with <a href='/ai-agents'>AI agents</a>."
+  - q: "What if the role includes CV screening?"
+    a: "Then the agent falls among the <strong>high-risk</strong> systems of the <a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a> (Annex III, point 4) and, after the postponement agreed in the <a href='https://eur-lex.europa.eu/eli/reg/2026/1744/oj'>Digital Omnibus</a>, from 2 December 2027 you need human oversight, retained logs and notice to candidates. With a custom agent, settle early who will be the “provider”: under the AI Act it can also be whoever has a system developed and puts it into service under their own name (Article 3). And already today, in Italy, if you use fully automated decision-making systems to hire or manage staff, workers must be informed (<a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-05-26;152~art1bis'>Article 1-bis of Legislative Decree 152/1997</a>)."
   - q: "How fast is an AI agent operational compared to a junior?"
     a: "With Soraia the <strong>first delivery is in 4 weeks</strong>. A junior usually needs weeks or months of ramp-up before being fully productive, and that time is invested even if the person then changes role or leaves."
   - q: "How much does an AI agent cost compared to a salary?"
@@ -75,10 +78,17 @@ faq:
     a: "With Soraia we set a measurable target in the process audit (e.g. hours recovered per week) and the <strong>first month satisfied or refunded</strong> guarantee applies. So you validate early whether the agent adds value on the role, before committing to a hire or a long path."
   - q: "Can I use both the junior and the agent?"
     a: "Yes, and it is often the best choice. The <strong>agent takes the repetitive work</strong> that demotivates and slows people down, while the junior focuses on cases that need judgement and grows faster because they are not buried in routine."
+fonti:
+  - titolo: "AI Act, Regulation (EU) 2024/1689, Article 3 and Annex III (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Digital Omnibus on AI, Regulation (EU) 2026/1744 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+  - titolo: "Italian Legislative Decree 152/1997, Article 1-bis (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-05-26;152~art1bis"
 related: []
 featured: false
 pubDate: 2026-10-27
-updatedDate: 2026-10-31
+updatedDate: 2026-11-07
 lang: "en"
 gates:
   passedAt: 2026-09-25T09:06:35.319Z
