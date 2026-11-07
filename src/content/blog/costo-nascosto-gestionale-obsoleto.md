@@ -1,6 +1,6 @@
 ---
 title: "Sostituire un gestionale obsoleto: il costo nascosto"
-description: "Il gestionale legacy nelle PMI industriali costa più di quanto pensi: onboarding lento, rischio key-person, lock-in. Quando svecchiarlo e quando sostituirlo."
+description: "Il gestionale legacy nelle PMI industriali costa più di quanto pensi: onboarding lento, rischio key-person, lock-in. Quando svecchiarlo, quando cambiarlo."
 pubDate: 2026-06-24
 updatedDate: 2026-10-31
 author: "Daniel Levis"

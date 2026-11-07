@@ -1,6 +1,6 @@
 ---
 title: "AI Agents in Regulated Sectors: What's Allowed"
-description: "Banking, insurance, healthcare: what you can actually do with AI agents in a regulated sector. An operational AI Act + GDPR map, without the scaremongering."
+description: "Banking, insurance, healthcare: what you can actually do with AI agents in a regulated sector. An operational AI Act and GDPR map, no scaremongering."
 pubDate: 2026-06-22
 updatedDate: 2026-11-06
 author: "Daniel Levis"

@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 
 const title = "Lavora con noi | Soraia";
 const description =
-  "Posizioni aperte in Soraia, agenzia di trasformazione AI. Team piccolo, full remote, AI-first e bootstrapped: costruisci qualcosa di concreto, non una slide per il prossimo round.";
+  "Le posizioni aperte in Soraia. Siamo un team piccolo e full remote che cresce con i ricavi dei clienti, senza investitori esterni.";
 
 const jobs = (await getCollection("jobs"))
   .filter((j) => j.data.lang === "it" && (import.meta.env.DEV || !j.data.draft))

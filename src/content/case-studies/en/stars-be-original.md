@@ -1,5 +1,7 @@
 ---
 title: "Stars Be Original, AI Agent Managing 20,000+ Applicants"
+metaTitle: "Stars Be Original: 20,000+ applicants handled by AI | Soraia"
+metaDescription: "Stars Be Original's AI agent answers casting applicants, qualifies them and updates their status in real time: 20,000+ applicants, 200,000+ messages."
 client: "Stars Be Original"
 clientLogo: "/logos/clients/starsbeoriginal.webp"
 industry: "recruitment-hr"

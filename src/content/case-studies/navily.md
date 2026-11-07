@@ -1,5 +1,7 @@
 ---
 title: "Navily, Agente IA moderazione recensioni + enrichment dati nautici"
+metaTitle: "Navily: recensioni moderate dall'IA, -70% di tempo | Soraia"
+metaDescription: "L'agente IA di Navily modera le recensioni e completa i dati su porti e ancoraggi, lasciando a una persona i casi limite. Oltre il 70% di tempo in meno."
 client: "Navily"
 clientLogo: "/logos/clients/navily.webp"
 industry: "customer-support"

@@ -1,6 +1,6 @@
 ---
 title: "GDPR e agente IA sui dati aziendali: cosa fare prima"
-description: "Un agente IA che legge dati di clienti o candidati tratta dati personali. Base giuridica, DPA art. 28 e DPIA: la checklist GDPR da chiudere prima di accenderlo."
+description: "Un agente IA che legge dati di clienti o candidati tratta dati personali. Base giuridica, DPA art. 28 e DPIA: la checklist GDPR prima di accenderlo."
 pubDate: 2026-09-14
 updatedDate: 2026-11-05
 author: "Daniel Levis"

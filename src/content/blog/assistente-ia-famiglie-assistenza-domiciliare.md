@@ -1,6 +1,6 @@
 ---
 title: "Assistente IA per le famiglie nell’assistenza domiciliare"
-description: "Assistenza domiciliare: un assistente IA nell’area riservata risponde alle famiglie su presenze, fatture e obblighi di legge, con i dati sensibili protetti."
+description: "Assistenza domiciliare: un assistente IA nell’area riservata risponde alle famiglie su presenze, fatture e obblighi di legge, proteggendo i dati sensibili."
 pubDate: 2026-11-17
 author: "Daniel Levis"
 tags:

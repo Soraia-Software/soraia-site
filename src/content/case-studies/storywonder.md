@@ -1,5 +1,7 @@
 ---
 title: "StoryWonder, Agente IA che genera 300.000+ storie per bambini"
+metaTitle: "StoryWonder: 300.000+ storie per bambini con l'IA | Soraia"
+metaDescription: "App per iOS e Android con un agente IA che scrive storie su misura per ogni bambino. Sugli store in 4 settimane, 50.000+ utenti e 300.000+ storie."
 client: "StoryWonder"
 clientLogo: "/logos/clients/storywonder.webp"
 industry: "sales-marketing"

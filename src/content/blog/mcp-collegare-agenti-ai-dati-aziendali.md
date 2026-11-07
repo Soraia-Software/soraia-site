@@ -1,6 +1,6 @@
 ---
 title: "Model Context Protocol (MCP): agenti IA e dati aziendali"
-description: "Cos'è il Model Context Protocol, perché conta per la tua azienda e come colleghi un agente IA ai tuoi dati senza aprire falle di sicurezza. Guida non tecnica."
+description: "Cos'è il Model Context Protocol, perché conta per la tua azienda e come colleghi un agente IA ai tuoi dati senza aprire falle. Guida non tecnica."
 pubDate: 2026-08-28
 updatedDate: 2026-11-06
 author: "Davide Silvestri"

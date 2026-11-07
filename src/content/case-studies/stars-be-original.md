@@ -1,5 +1,7 @@
 ---
 title: "Stars Be Original, Agente IA che gestisce 20.000+ candidati"
+metaTitle: "Stars Be Original: 20.000+ candidati gestiti dall'IA"
+metaDescription: "L'agente IA di Stars Be Original risponde a chi si candida al casting, qualifica i profili e aggiorna lo stato: 20.000+ candidati e 200.000+ messaggi."
 client: "Stars Be Original"
 clientLogo: "/logos/clients/starsbeoriginal.webp"
 industry: "recruitment-hr"

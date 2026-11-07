@@ -1,6 +1,6 @@
 ---
 title: "GDPR and AI agents on company data: what to fix first"
-description: "An AI agent reading customer or candidate data processes personal data. Legal basis, art. 28 DPA and DPIA: the GDPR checklist to close before you switch it on."
+description: "An AI agent reading customer or candidate data processes personal data. Legal basis, art. 28 DPA and DPIA: the GDPR checklist before you switch it on."
 pubDate: 2026-09-14
 updatedDate: 2026-11-05
 author: "Daniel Levis"

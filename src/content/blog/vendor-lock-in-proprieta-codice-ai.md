@@ -1,6 +1,6 @@
 ---
 title: "Di chi è il tuo agente IA? Codice e vendor lock-in"
-description: "Prima di firmare un contratto per un agente IA, chiedi chi possiede codice e dati. Le 5 domande per evitare il vendor lock-in, da un founder di un'AI agency."
+description: "Prima di firmare per un agente IA, chiedi chi possiede codice e dati. Le 5 domande per evitare il vendor lock-in, scritte dal founder di un'agenzia IA."
 pubDate: 2026-11-02
 author: "Daniel Levis"
 tags:

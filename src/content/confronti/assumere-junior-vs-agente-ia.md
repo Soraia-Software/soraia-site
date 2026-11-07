@@ -1,7 +1,7 @@
 ---
 titolo: "Assumere un junior o un agente IA: come scegliere"
 sottotitolo: "Coprire un ruolo operativo ripetitivo con una persona junior oppure con un agente IA. Cosa conviene davvero a una PMI."
-description: "Assumere un junior vs agente IA per un ruolo operativo ripetitivo: costi, tempi, scalabilità e limiti a confronto, con un verdetto onesto su quando conviene."
+description: "Assumere un junior vs agente IA per un ruolo operativo ripetitivo: costi, tempi, scalabilità e limiti a confronto, con un verdetto su quando conviene."
 inBreve: "Per un ruolo davvero ripetitivo e ad alto volume (screening CV, estrazione dati, triage ticket), un agente IA copre il carico più in fretta e a costo marginale più basso. Ma se il ruolo richiede giudizio, relazione con le persone o è il primo passo di un percorso di crescita, un junior resta la scelta giusta. Nella pratica molte PMI fanno entrambe le cose: l'agente prende il lavoro meccanico, il junior fa ciò che richiede una testa umana."
 categoria: "HR & Ops"
 author: "Daniel Levis"

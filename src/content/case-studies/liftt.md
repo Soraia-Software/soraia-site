@@ -1,5 +1,7 @@
 ---
 title: "LIFTT, Agente IA che gestisce il deal flow in autonomia"
+metaTitle: "LIFTT: il deal flow gestito da un agente IA | Soraia"
+metaDescription: "Per LIFTT, venture capital, un agente IA archivia email e allegati, unisce i deal doppi nel CRM e prepara da solo il report mensile con i grafici."
 client: "LIFTT"
 clientLogo: "/logos/clients/liftt.webp"
 industry: "finance-vc"

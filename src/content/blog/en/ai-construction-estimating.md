@@ -1,6 +1,6 @@
 ---
 title: "Construction estimating and bills of quantities with AI"
-description: "How an AI agent helps construction firms and technical offices prepare estimates and bills of quantities in hours, not days. Practical method, limits included."
+description: "How an AI agent helps construction firms prepare estimates and bills of quantities in hours, not days. A practical method, limits included."
 pubDate: 2026-11-16
 author: "Daniel Levis"
 tags:

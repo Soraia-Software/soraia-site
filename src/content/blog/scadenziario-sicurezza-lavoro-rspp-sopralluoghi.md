@@ -1,6 +1,6 @@
 ---
 title: "Scadenziario sicurezza sul lavoro per RSPP e consulenti"
-description: "Scadenziario della sicurezza sul lavoro per RSPP e consulenti: visite, corsi ed estintori di più aziende, e sopralluoghi su tablet con relazione a fine visita."
+description: "Scadenziario sicurezza sul lavoro per RSPP e consulenti: visite, corsi ed estintori di più aziende, e sopralluoghi su tablet con relazione a fine visita."
 pubDate: 2026-12-01
 author: "Daniel Levis"
 tags:

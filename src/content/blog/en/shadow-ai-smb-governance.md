@@ -1,6 +1,6 @@
 ---
 title: "Shadow AI at Work: How to Govern It Before 2026"
-description: "Your employees already use AI without telling you. A practical COO guide to mapping Shadow AI, cutting data-leak risk and writing a policy before the AI Act."
+description: "Your employees already use AI without telling you. A practical guide to mapping Shadow AI, cutting data-leak risk and writing a policy before the AI Act."
 pubDate: 2026-07-17
 updatedDate: 2026-11-06
 author: "Daniel Levis"

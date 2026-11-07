@@ -1,7 +1,7 @@
 ---
 titolo: "RAG o fine-tuning: come dare i tuoi dati all'AI"
 sottotitolo: "Due modi per far usare all'AI aziendale la tua conoscenza interna: recuperare i documenti al volo (RAG) oppure riaddestrare il modello (fine-tuning). Cosa conviene a una PMI."
-description: "RAG vs fine-tuning per l'AI aziendale: costi, aggiornamento dei dati, controllo e privacy a confronto, con un verdetto onesto su quando serve l'uno o l'altro."
+description: "RAG vs fine-tuning per l'AI aziendale: costi, aggiornamento dei dati, controllo e privacy a confronto, con un verdetto su quando serve l'uno o l'altro."
 inBreve: "Per la maggior parte delle PMI il punto di partenza giusto è il RAG: collega l'AI ai tuoi documenti senza riaddestrare nulla, aggiorni la conoscenza in tempo reale e tieni i dati sotto controllo. Il fine-tuning conviene quando ti serve un tono, un formato o un comportamento molto specifico e ripetuto, non per iniettare fatti che cambiano spesso. Nella pratica i due approcci non si escludono: spesso si parte da RAG e si aggiunge fine-tuning solo dove serve davvero."
 categoria: "Architettura AI"
 author: "Daniel Levis"

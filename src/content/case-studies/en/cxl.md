@@ -1,5 +1,7 @@
 ---
 title: "CXL, AI Agent That Onboards Experts in 70 Fewer Hours"
+metaTitle: "CXL: 70 hours saved per expert onboarded | Soraia"
+metaDescription: "CXL's AI agent takes each new expert from first contact through contract draft, materials, access and follow-ups. 70 hours saved per expert onboarded."
 client: "CXL"
 clientLogo: "/logos/clients/cxl.webp"
 industry: "sales-marketing"

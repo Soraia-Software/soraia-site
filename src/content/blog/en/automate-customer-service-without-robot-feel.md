@@ -1,6 +1,6 @@
 ---
 title: "Automate customer replies without the robot feel (SME)"
-description: "How to automate customer replies in an SME without sounding fake: triage, escalation and tone. Where the AI agent helps and where it must hand off to a human."
+description: "How to automate customer replies in an SME without sounding fake: triage, escalation and tone. Where the AI agent helps and when a human must take over."
 pubDate: 2026-08-07
 updatedDate: 2026-10-18
 author: "Daniel Levis"

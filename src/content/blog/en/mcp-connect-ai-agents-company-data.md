@@ -1,6 +1,6 @@
 ---
 title: "Model Context Protocol (MCP): AI agents and company data"
-description: "What the Model Context Protocol is, why it matters for your company, and how to connect an AI agent to your data without opening holes. Non-technical guide."
+description: "What the Model Context Protocol is, why it matters for your company, and how to connect an AI agent to your data without opening holes. Non-technical."
 pubDate: 2026-08-28
 updatedDate: 2026-11-06
 author: "Davide Silvestri"

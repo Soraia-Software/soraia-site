@@ -1,6 +1,6 @@
 ---
 title: "Etichettare contenuti AI nel marketing: la guida"
-description: "Immagini e testi generati dall'IA nel marketing: come rispettare l'art. 50 dell'AI Act e la marcatura machine-readable in vigore da agosto 2026. Guida pratica."
+description: "Immagini e testi generati con l'IA nel marketing: come rispettare l'art. 50 dell'AI Act e la marcatura machine-readable da agosto 2026. Guida pratica."
 pubDate: 2026-08-14
 updatedDate: 2026-11-05
 author: "Daniel Levis"

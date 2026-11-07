@@ -1,6 +1,6 @@
 ---
 title: "Shadow AI in azienda: come governarla prima del 2026"
-description: "I tuoi dipendenti già usano l'IA senza dirtelo. Guida pratica per COO: mappare la Shadow AI, ridurre il rischio data leak e scrivere una policy per l'AI Act."
+description: "I tuoi dipendenti già usano l'IA senza dirtelo. Guida pratica per mappare la Shadow AI, ridurre il rischio di fuga di dati e scrivere una policy da AI Act."
 pubDate: 2026-07-17
 updatedDate: 2026-11-06
 author: "Daniel Levis"

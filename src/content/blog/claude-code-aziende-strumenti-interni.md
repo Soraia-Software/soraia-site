@@ -1,6 +1,6 @@
 ---
 title: "Claude Code in azienda: strumenti interni in giorni"
-description: "Come un coding agent tipo Claude Code costruisce i tuoi strumenti interni in giorni. Cosa fa bene, dove serve un umano, e quando conviene affidarlo a un team."
+description: "Come un coding agent tipo Claude Code costruisce i tuoi strumenti interni in giorni. Cosa fa bene, dove serve una persona e quando affidarlo a un team."
 pubDate: 2026-09-04
 updatedDate: 2026-10-31
 author: "Daniel Levis"

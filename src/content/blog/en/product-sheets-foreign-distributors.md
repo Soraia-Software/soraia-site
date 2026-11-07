@@ -1,6 +1,6 @@
 ---
 title: "Product sheets for foreign distributors, one per market"
-description: "Foreign distributors: product sheets tailored to each market, generated from your ERP, and AI agents that flag tenders and opportunities with their sources."
+description: "Foreign distributors: product sheets tailored to each market, generated from your ERP, and AI agents that flag tenders and opportunities with sources."
 pubDate: 2026-11-24
 author: "Daniel Levis"
 tags:

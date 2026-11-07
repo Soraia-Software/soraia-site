@@ -1,7 +1,7 @@
 ---
 title: "AI Act per Aziende: cosa cambia davvero in operatività"
 h1: "AI Act per Aziende italiane: la guida operativa 2026"
-description: "I 4 livelli di rischio dell'AI Act, cosa cambia per HR, finance, marketing, support e i 4 step che ogni PMI italiana dovrebbe fare. Aggiornata novembre 2026."
+description: "I 4 livelli di rischio dell'AI Act, cosa cambia per HR, finance, marketing e support e i 4 passi da fare in ogni PMI italiana. Aggiornata a novembre 2026."
 pubDate: 2026-04-22
 updatedDate: 2026-11-06
 readMinutes: 13

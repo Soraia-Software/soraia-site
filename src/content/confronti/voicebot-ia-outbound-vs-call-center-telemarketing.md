@@ -1,7 +1,7 @@
 ---
 titolo: "Voicebot IA outbound o call center telemarketing"
 sottotitolo: "Qualificare lead, richiamare e fissare appuntamenti: chiamate automatiche con IA vocale o operatori umani a confronto per una PMI italiana."
-description: "Voicebot IA outbound vs call center telemarketing: costi, conversione, compliance AI Act e Registro Opposizioni a confronto, con un verdetto onesto per le PMI."
+description: "Voicebot IA outbound vs call center telemarketing: costi, conversione, compliance AI Act e Registro Opposizioni a confronto, con un verdetto per le PMI."
 inBreve: "Per la maggior parte delle PMI il voicebot IA outbound conviene sopra le poche centinaia di chiamate al mese ripetitive (qualifica primo contatto, richiami, promemoria appuntamenti), dove abbatte il costo per chiamata e lavora 24/7. Il call center umano resta migliore su trattative complesse, obiezioni articolate e vendita ad alto valore per contatto. In Italia, però, le regole non sono le stesse: il call center con operatore può chiamare chi non è iscritto al Registro delle Opposizioni, mentre le chiamate promozionali automatizzate richiedono il consenso preventivo (art. 130 del Codice privacy), e dal 2 agosto 2026 il voicebot deve dire che è un'IA (AI Act). Spesso la scelta giusta è ibrida: IA per filtrare, umani per chiudere."
 categoria: "Sales / Voice"
 author: "Daniel Levis"

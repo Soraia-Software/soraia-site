@@ -1,6 +1,6 @@
 ---
 title: "Environmental lab sampling: from the phone to the LIMS"
-description: "Environmental testing labs: record field sampling on a phone with photos, GPS and live calculations, and send the same data to the LIMS and the test report."
+description: "Environmental testing labs: record field sampling on a phone with photos, GPS and live calculations, and send the same data to the LIMS and the report."
 pubDate: 2026-11-30
 author: "Daniel Levis"
 tags:

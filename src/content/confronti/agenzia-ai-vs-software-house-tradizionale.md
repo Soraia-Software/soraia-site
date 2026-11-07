@@ -1,7 +1,7 @@
 ---
 titolo: "Agenzia AI o software house classica"
 sottotitolo: "A chi affidare un progetto software o di automazione: un'agenzia AI-native o una software house tradizionale. Pro, contro e quando conviene l'una o l'altra."
-description: "Agenzia AI vs software house per una PMI: metodo di delivery, tempi, costi e rischio a confronto, con un verdetto onesto su quando scegliere l'una o l'altra."
+description: "Agenzia AI vs software house per una PMI: metodo di delivery, tempi, costi e rischio a confronto, con un verdetto su quando scegliere l'una o l'altra."
 inBreve: "Scegli una software house tradizionale per progetti ben definiti e di grande portata, con specifiche stabili e dove serve un capitolato chiuso a budget fisso. Scegli un'agenzia AI-native (come Soraia) quando l'obiettivo è automatizzare processi con agenti IA, i requisiti sono ancora da scoprire e vuoi un primo risultato in produzione in settimane, non in mesi. Spesso la differenza vera non è 'AI o no', ma il modello di lavoro: a sprint iterativi vs a progetto chiuso."
 categoria: "Who to hire (partner choice)"
 author: "Daniel Levis"

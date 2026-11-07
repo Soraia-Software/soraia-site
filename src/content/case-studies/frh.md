@@ -1,5 +1,7 @@
 ---
 title: "French Riviera Househunting, agenti IA per lead enrichment e sourcing immobili"
+metaTitle: "French Riviera Househunting: lead e immobili con l'IA"
+metaDescription: "Due agenti IA per un'agenzia in Costa Azzurra: uno qualifica i lead e prepara il dossier, l'altro cattura in un clic gli immobili adatti al cliente."
 client: "French Riviera Househunting"
 clientLogo: "/logos/clients/frh.webp"
 industry: "real-estate"

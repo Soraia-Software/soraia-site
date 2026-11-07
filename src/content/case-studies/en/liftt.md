@@ -1,5 +1,7 @@
 ---
 title: "LIFTT, an AI Agent that manages deal flow autonomously"
+metaTitle: "LIFTT: an AI agent that runs the deal flow | Soraia"
+metaDescription: "For LIFTT, a venture capital firm, an AI agent archives emails and attachments, merges duplicate deals in the CRM and writes the monthly report."
 client: "LIFTT"
 clientLogo: "/logos/clients/liftt.webp"
 industry: "finance-vc"

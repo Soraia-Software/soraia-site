@@ -1,7 +1,7 @@
 ---
-title: "Costi della consulenza AI: range, modelli, cosa influenza il prezzo"
+title: "Costi della consulenza AI: range di prezzo e modelli"
 h1: "Costi della consulenza AI in Italia 2026: la guida ai prezzi reali"
-description: "Quanto costa davvero un agente IA in Italia, i 4 modelli commerciali (fix price, retainer, % savings, mixed), cosa influenza il prezzo, come si misura il ROI."
+description: "Quanto costa un agente IA in Italia, i 4 modelli commerciali (fix price, retainer, % savings, mixed), cosa influenza il prezzo e come misurare il ROI."
 pubDate: 2026-04-25
 updatedDate: 2026-10-31
 readMinutes: 12

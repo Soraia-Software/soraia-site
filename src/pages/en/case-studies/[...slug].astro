@@ -55,8 +55,9 @@ const videoSrc = video
     : `https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0`
   : null;
 
-const title = `${study.data.title} | Soraia case study`;
-const description = study.data.teaser.problem;
+// metaTitle/metaDescription: short versions for Google (title ≤ 60, description 120-155 characters).
+const title = study.data.metaTitle ?? `${study.data.title} | Soraia case study`;
+const description = study.data.metaDescription ?? study.data.teaser.problem;
 
 const jsonLd = {
   "@context": "https://schema.org",

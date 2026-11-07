@@ -1,6 +1,6 @@
 ---
 title: "Technical offer sheets for industrial furnaces, with AI"
-description: "Custom industrial furnaces: AI pre-fills the specs from the customer’s documents, checks the data and writes the technical offer sheet in several languages."
+description: "Custom industrial furnaces: AI pre-fills the specs from the customer’s documents, checks the data and drafts the technical offer in several languages."
 pubDate: 2026-11-19
 author: "Daniel Levis"
 tags:

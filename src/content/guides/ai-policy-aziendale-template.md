@@ -1,7 +1,7 @@
 ---
 title: "AI policy aziendale: template operativo per PMI"
 h1: "AI policy aziendale: come scriverla (template operativo per PMI)"
-description: "Come scrivere una AI policy aziendale utile: chi può usare cosa, quali dati, approvazioni, log. Template operativo per PMI in 9 sezioni, pronto da adattare."
+description: "Come scrivere una AI policy aziendale utile: chi può usare cosa, quali dati, approvazioni, log. Template per PMI in 9 sezioni, pronto da adattare."
 pubDate: 2026-07-08
 author: "Daniel Levis"
 readMinutes: 11

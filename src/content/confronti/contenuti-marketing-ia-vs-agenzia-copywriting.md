@@ -1,7 +1,7 @@
 ---
 titolo: "Contenuti con IA o agenzia di copywriting"
 sottotitolo: "Produrre blog, schede prodotto, email e ADV con un agente IA sul tuo brand, oppure affidarti a un'agenzia di copywriting. Cosa conviene a una PMI."
-description: "Contenuti marketing con IA vs agenzia di copywriting: qualità, scala, costi e voce del brand a confronto, con un verdetto onesto su quando conviene ciascuno."
+description: "Contenuti marketing con IA vs agenzia di copywriting: qualità, scala, costi e voce del brand a confronto, con un verdetto su quando conviene ciascuno."
 inBreve: "Per una PMI che deve produrre molti contenuti ripetitivi e strutturati (schede prodotto, newsletter, varianti ADV, social), un agente IA addestrato sul brand vince su scala e costo unitario. Per contenuti pochi ma ad alto impatto (posizionamento, campagne creative, testi che devono emozionare) un'agenzia di copywriting resta più forte. La scelta migliore per molti è ibrida: l'IA fa il volume, l'umano cura strategia e pezzi chiave."
 categoria: "Sales / Marketing"
 author: "Daniel Levis"

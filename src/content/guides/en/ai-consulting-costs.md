@@ -1,5 +1,5 @@
 ---
-title: "AI consulting costs: ranges, models, and what drives the price"
+title: "AI consulting costs: price ranges, models and drivers"
 h1: "AI consulting costs in 2026: the guide to real market prices"
 description: "What an AI agent actually costs, the 4 commercial models (fixed price, retainer, % savings, mixed), what drives the price, and how to measure ROI."
 pubDate: 2026-04-25

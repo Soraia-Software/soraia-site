@@ -1,5 +1,6 @@
 ---
-title: "How to measure the ROI of an AI agent: a framework and baselines that actually work"
+title: "How to measure AI agent ROI: baselines and a framework"
+h1: "How to measure the ROI of an AI agent: a framework and baselines that actually work"
 description: "Without a baseline, every claim that 'AI saved us X hours' is just an opinion. The framework Soraia uses with clients to measure ROI honestly."
 pubDate: 2026-05-15
 updatedDate: 2026-10-18

@@ -1,7 +1,7 @@
 ---
 titolo: "Analisi contratti con IA o avvocato"
 sottotitolo: "Quando conviene un agente IA per leggere clausole e rischi, e quando serve davvero un legale. La divisione del lavoro che funziona per una PMI."
-description: "Analisi contratti con IA vs consulenza legale: velocità, costi, rischio e responsabilità a confronto, con un verdetto onesto su quando usare l'uno o l'altro."
+description: "Analisi contratti con IA vs consulenza legale: velocità, costi, rischio e responsabilità a confronto, con un verdetto su quando usare l'uno o l'altro."
 inBreve: "Non è o l'uno o l'altro. Per una PMI conviene l'IA per il primo passaggio su contratti ripetitivi (NDA, ordini, fornitura standard); l'avvocato resta indispensabile dove serve responsabilità, negoziazione o interpretazione."
 categoria: "AI vs servizio tradizionale"
 author: "Daniel Levis"

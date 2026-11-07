@@ -1,7 +1,7 @@
 ---
 titolo: "Copilot Studio o agente IA su misura"
 sottotitolo: "Costruire agenti dentro l'ecosistema Microsoft 365 con Copilot Studio, oppure un agente davvero custom fuori dal lock-in. Cosa conviene a una PMI."
-description: "Copilot Studio vs agenti IA su misura per una PMI: costi, crediti, controllo e lock-in a confronto, con un verdetto onesto su quando conviene l'uno o l'altro."
+description: "Copilot Studio vs agenti IA su misura per una PMI: costi, crediti, controllo e lock-in a confronto, con un verdetto su quando conviene l'uno o l'altro."
 inBreve: "Per la maggior parte delle PMI già dentro Microsoft 365, Copilot Studio conviene quando il caso d'uso è semplice e vive dentro Teams/SharePoint/Outlook: parti in giorni e paghi a consumo. Un agente su misura conviene quando il processo è core, tocca sistemi fuori dall'ecosistema Microsoft o vuoi controllo su costi, dati e proprietà del codice. La domanda non è quale sia 'migliore', ma quanto quel processo pesa sul tuo business."
 categoria: "Build platform vs bespoke"
 author: "Daniel Levis"

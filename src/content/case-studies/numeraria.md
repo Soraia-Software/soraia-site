@@ -1,5 +1,7 @@
 ---
 title: "Numeraria, agenti IA che automatizzano la gestione studio end-to-end"
+metaTitle: "Numeraria: preventivi, ore e fatturazione con l'IA | Soraia"
+metaDescription: "Per Numeraria, studio paghe e contabilità, agenti IA che generano i preventivi, riconciliano le ore e preparano la fatturazione. Metà mese restituito."
 client: "Numeraria"
 clientLogo: "/logos/clients/numeraria.webp"
 industry: "finance-vc"

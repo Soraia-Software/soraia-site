@@ -1,5 +1,7 @@
 ---
 title: "Talent Match, Agente IA matching candidati per recruitment spagnolo"
+metaTitle: "Talent Match: da 200 a 10 candidati da rivedere | Soraia"
+metaDescription: "Un agente IA ordina i candidati per ogni annuncio: i recruiter di Talent Match ne rivedono 5-10 invece di 200, ciascuno con un punteggio motivato."
 client: "Talent Match"
 clientLogo: "/logos/clients/talentmatch.webp"
 industry: "recruitment-hr"

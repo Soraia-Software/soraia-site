@@ -1,5 +1,7 @@
 ---
 title: "Rainplan, Piattaforma AI per la gestione di climate parcel"
+metaTitle: "Rainplan: incentivi climatici su una piattaforma IA | Soraia"
+metaDescription: "Per Rainplan, climate tech, una piattaforma unica per gli incentivi climatici: visite virtuali, verifiche di idoneità e approvazioni tra più soggetti."
 client: "Rainplan"
 clientLogo: "/logos/clients/rainplan.webp"
 industry: "real-estate"

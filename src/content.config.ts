@@ -91,6 +91,8 @@ const caseStudies = defineCollection({
       alt: z.string().optional(),
     })).default([]),
     related: z.array(z.string()).default([]),  // bare slugs of related case studies (same in IT/EN)
+    metaTitle: z.string().optional(),          // <title> (≤ 60 chars); default: "<title> | Case study Soraia"
+    metaDescription: z.string().optional(),    // <meta description> (120-155 chars); default: teaser.problem
     lang: z.enum(["it", "en"]).default("it"),  // EN entries live in the en/ subfolder
     draft: z.boolean().default(false),         // hidden everywhere when true (e.g. awaiting client approval)
   }),

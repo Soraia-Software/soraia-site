@@ -1,5 +1,7 @@
 ---
 title: "GovTech Startup, AI Agent for International Diplomacy (NDA)"
+metaTitle: "GovTech startup: an AI agent for diplomacy | Soraia"
+metaDescription: "A platform for diplomatic events with an AI agent that drafts notes verbales to protocol, SSO and OTP sign-in, and several governments on one system."
 client: "Startup GovTech"
 industry: "customer-support"
 lang: "en"

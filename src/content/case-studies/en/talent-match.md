@@ -1,5 +1,7 @@
 ---
 title: "Talent Match, AI Agent for Candidate Matching in Spanish Recruitment"
+metaTitle: "Talent Match: from 200 to 10 candidates to review | Soraia"
+metaDescription: "A custom ATS with an AI agent that ranks candidates for every job: Talent Match recruiters review 5-10 profiles instead of 200, with the score explained."
 client: "Talent Match"
 clientLogo: "/logos/clients/talentmatch.webp"
 industry: "recruitment-hr"

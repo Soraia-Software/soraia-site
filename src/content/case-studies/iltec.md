@@ -1,5 +1,7 @@
 ---
 title: "ILTEC, sito rifatto in 3 settimane con AI search optimization + AI agent"
+metaTitle: "ILTEC: sito nuovo in 3 settimane e agente IA via QR | Soraia"
+metaDescription: "ILTEC, office technology nel Biellese: sito rifatto in 3 settimane per la ricerca con l'IA, conversioni triplicate e un agente IA via QR su ogni macchina."
 client: "ILTEC"
 clientLogo: "/logos/clients/iltec.webp"
 industry: "sales-marketing"

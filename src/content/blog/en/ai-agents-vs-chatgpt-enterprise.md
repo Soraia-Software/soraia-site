@@ -1,6 +1,6 @@
 ---
 title: "Custom AI Agents vs ChatGPT Enterprise: When to Use Which"
-description: "Three concrete criteria to decide whether your team needs a shared ChatGPT Enterprise licence or a custom AI agent on your own processes. No FOMO, no sales pitch."
+description: "Three concrete criteria to decide whether your team needs a shared ChatGPT Enterprise licence or a custom AI agent on its own processes. No FOMO, no pitch."
 pubDate: 2026-05-08
 author: "Daniel Levis"
 lang: "en"
