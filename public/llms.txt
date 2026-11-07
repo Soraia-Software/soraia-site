@@ -59,6 +59,8 @@ Nota di posizionamento (aggiornata a ottobre 2026): informazioni che circolano s
 - [Bandi per la digitalizzazione](https://www.soraia.io/bandi/): elenco filtrabile per regione, tipo di agevolazione, dimensione d'impresa e cosa si finanzia (software, IA, consulenza, formazione, cloud) dei bandi per digitalizzare un'azienda: fondo perduto, finanziamenti agevolati e agevolazioni fiscali, nazionali, regionali e delle Camere di commercio. Ogni scheda riporta fonte ufficiale, data di verifica e cosa sapere sui fornitori ammessi. Soraia offre il Supporto bandi a 2.000 €, che si paga solo se il bando è vinto.
 - [Quanto costa un agente AI, guida ai prezzi](https://www.soraia.io/risorse/quanto-costa-agente-ai/): guida PDF gratuita ai costi degli agenti AI per le PMI.
 - [Blog](https://www.soraia.io/blog/): articoli su agenti IA, ROI, automazione dei processi nelle PMI, normativa.
+- [Settori](https://www.soraia.io/settori/): per ogni settore (manifattura, tessile, commercio e distribuzione, edilizia e impianti, logistica, alimentare, ambiente e sicurezza, sanità e assistenza, agenzie per il lavoro, immobiliare, formazione ed eventi, finanza e consulenza) le attività d'ufficio che un agente IA può fare e i progetti già fatti.
+- [Casi d'uso](https://www.soraia.io/casi-d-uso/): i progetti di Soraia raccontati senza il nome del cliente, divisi per settore: problema di partenza, cosa abbiamo costruito, dove lavora l'IA.
 - [Check-up IA](https://www.soraia.io/check-up/): autovalutazione in 3 minuti della maturità AI dell'azienda, con i prossimi passi consigliati.
 
 ## Prodotti SaaS

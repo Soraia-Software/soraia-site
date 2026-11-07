@@ -36,7 +36,7 @@ const LINES = `data:image/svg+xml;base64,${Buffer.from(
 ).toString("base64")}`;
 
 const SECTIONS = {
-  it: { blog: "Blog", guide: "Guida", confronto: "Confronto", "case-studies": "Case study", careers: "Lavora con noi", bandi: "Bandi", risorse: "Risorse" },
+  it: { blog: "Blog", guide: "Guida", confronto: "Confronto", "case-studies": "Caso studio", careers: "Lavora con noi", bandi: "Bandi", risorse: "Risorse", settori: "Settori", "casi-d-uso": "Caso d'uso" },
   en: { blog: "Blog", guide: "Guide", confronto: "Comparison", "case-studies": "Case study", careers: "Careers" },
 };
 const FALLBACK_KICKER = { it: "AI agency per le PMI", en: "AI agency for SMEs" };
