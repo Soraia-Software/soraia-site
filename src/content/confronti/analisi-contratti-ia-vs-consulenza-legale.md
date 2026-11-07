@@ -70,11 +70,22 @@ faq:
   - q: "Che tipo di contratti ha senso far analizzare a un agente IA?"
     a: "Quelli <strong>ad alto volume e bassa variabilità</strong>: NDA, ordini, contratti di fornitura standard, moduli ricorrenti. L'agente applica sempre la stessa checklist aziendale e segnala ciò che si discosta. I contratti strategici, unici o complessi restano sul tavolo del legale."
   - q: "E la privacy e la conformità all'AI Act?"
-    a: "Sono il punto critico. Un agente che legge contratti tratta dati sensibili e rientra nel perimetro del Regolamento europeo IA. Noi lavoriamo con infrastruttura europea quando richiesto, <strong>DPA art. 28 nel contratto, audit log su ogni decisione e nessun training degli LLM sui tuoi dati</strong>. Vedi la nostra <a href='/guide/ai-act-aziende'>guida all'AI Act per le aziende</a> e i casi di <a href='/customer-support'>Customer & Compliance Automation</a>."
+    a: "Sono il punto critico. Un agente che legge contratti tratta dati personali, a volte anche categorie particolari come i dati sanitari (<a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR, art. 9</a>). Per l'<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a> non è un sistema ad alto rischio: l'allegato III riguarda i sistemi usati dalle autorità giudiziarie, non l'analisi dei contratti aziendali. Restano la formazione di chi lo usa (art. 4) e, se l'agente dialoga con persone, l'obbligo di dirlo (art. 50). Noi lavoriamo con infrastruttura europea quando richiesto, <strong>DPA art. 28 nel contratto, audit log su ogni decisione e nessun training degli LLM sui tuoi dati</strong>. Vedi la nostra <a href='/guide/ai-act-aziende'>guida all'AI Act per le aziende</a> e i casi di <a href='/customer-support'>Customer & Compliance Automation</a>."
+  - q: "Il mio legale può usare l'IA sui contratti?"
+    a: "Sì, con dei limiti. Per la <a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art13'>legge 132/2025 (art. 13)</a> nelle professioni intellettuali l'IA serve solo ad attività strumentali e di supporto, con prevalenza del lavoro del professionista, che deve dirti quali sistemi usa. È la stessa divisione del lavoro che consigliamo: l'IA prepara, il legale decide e firma, con la sua polizza professionale."
   - q: "Quanto costa mettere in piedi un agente di analisi contratti?"
     a: "Dipende dai volumi e dalle integrazioni. Con Soraia si parte da <strong>8.000 € al mese</strong> con uno Sprint, e il primo rilascio è in produzione in 4 settimane. Il primo mese è soddisfatti o rimborsati e il codice resta tuo. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "L'agente IA va a sostituire del tutto il lavoro manuale?"
     a: "No: serve comunque un controllo umano sui casi segnalati e sulle clausole ambigue. L'obiettivo è togliere il lavoro ripetitivo a basso rischio, non eliminare il giudizio. Vedi come funzionano i nostri <a href='/ai-agents'>agenti IA</a> per area."
+fonti:
+  - titolo: "Legge 132/2025 sull'intelligenza artificiale, art. 13 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art13"
+  - titolo: "Legge 247/2012 sulla professione forense, art. 12 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2012-12-31;247~art12"
+  - titolo: "GDPR, Regolamento (UE) 2016/679 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+  - titolo: "AI Act, Regolamento (UE) 2024/1689 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
 related: []
 featured: false
 pubDate: 2026-11-12

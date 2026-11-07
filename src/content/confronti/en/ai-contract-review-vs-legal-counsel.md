@@ -70,11 +70,22 @@ faq:
   - q: "What kind of contracts make sense for an AI agent?"
     a: "Those that are <strong>high-volume and low-variability</strong>: NDAs, orders, standard supply contracts, recurring forms. The agent always applies the same company checklist and flags whatever deviates. Strategic, unique or complex contracts stay on the lawyer's desk."
   - q: "What about privacy and AI Act compliance?"
-    a: "That is the critical point. An agent that reads contracts handles sensitive data and falls within the scope of the EU AI Regulation. We work with European infrastructure when required, <strong>a DPA under art. 28 in the contract, audit logs on every decision and no LLM training on your data</strong>. See our <a href='/en/guide'>guide to the AI Act for companies</a> and our <a href='/en/customer-support'>Customer & Compliance Automation</a> use cases."
+    a: "That is the critical point. An agent that reads contracts handles personal data, sometimes also special categories such as health data (<a href='https://eur-lex.europa.eu/eli/reg/2016/679/oj'>GDPR, Article 9</a>). Under the <a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a> it is not a high-risk system: Annex III covers systems used by judicial authorities, not the review of company contracts. What remains is training the people who use it (Article 4) and, if the agent talks to people, telling them it is an AI (Article 50). We work with European infrastructure when required, <strong>a DPA under art. 28 in the contract, audit logs on every decision and no LLM training on your data</strong>. See our <a href='/en/guide'>guide to the AI Act for companies</a> and our <a href='/en/customer-support'>Customer & Compliance Automation</a> use cases."
+  - q: "Can my lawyer use AI on contracts?"
+    a: "Yes, within limits. Under Italy's <a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art13'>Law 132/2025 (Article 13)</a>, in the intellectual professions AI may only be used for instrumental and support activities, with the professional's own work prevailing, and the professional must tell you which systems they use. It is the same division of work we recommend: AI prepares, the lawyer decides and signs, backed by their professional insurance."
   - q: "How much does it cost to set up a contract-review agent?"
     a: "It depends on volumes and integrations. With Soraia you start from <strong>EUR 8,000 per month</strong> with a Sprint, and the first release is live in production in 4 weeks. The first month is satisfied-or-refunded and the code stays yours. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
   - q: "Does the AI agent remove manual work entirely?"
     a: "No: you still need a human check on flagged cases and ambiguous clauses. The goal is to remove low-risk repetitive work, not to eliminate judgement. See how our <a href='/en/ai-agents'>AI agents</a> work by area."
+fonti:
+  - titolo: "Italian Law 132/2025 on artificial intelligence, Article 13 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art13"
+  - titolo: "Italian Law 247/2012 on the legal profession, Article 12 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2012-12-31;247~art12"
+  - titolo: "GDPR, Regulation (EU) 2016/679 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+  - titolo: "AI Act, Regulation (EU) 2024/1689 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
 related: []
 featured: false
 pubDate: 2026-11-12

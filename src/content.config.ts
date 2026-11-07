@@ -145,6 +145,7 @@ const confronti = defineCollection({
     })).default([]),
     verdetto: z.string(),                       // reasoned verdict (>= 80 chars)
     faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+    fonti: z.array(z.object({ titolo: z.string(), url: z.string().url() })).default([]), // official sources: "Fonti" section + JSON-LD citation
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     author: z.string().default("Daniel Levis"),

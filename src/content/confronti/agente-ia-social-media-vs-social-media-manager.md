@@ -70,10 +70,19 @@ faq:
     a: "Con Soraia si lavora a Sprint mensili: si parte da <strong>8.000 € al mese</strong>, con tre persone dedicate e un rilascio in produzione a fine mese. Il primo rilascio gira sui tuoi processi reali in 4 settimane. Per capire se ha senso nel tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "Chi controlla cosa viene pubblicato?"
     a: "Un agente ben costruito lavora con <strong>approvazione umana sui contenuti</strong> prima della pubblicazione, o almeno su quelli sensibili. Vedi come impostiamo questi flussi nella pagina <a href='/sales-marketing'>Sales & Marketing Automation</a> e nella panoramica <a href='/ai-agents'>AI Agents</a>."
+  - q: "Devo dichiarare che i contenuti sono fatti con l'IA?"
+    a: "Per l'<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act (art. 50)</a>, dal 2 agosto 2026 vanno dichiarati i deepfake: immagini, audio o video generati con l'IA che sembrano reali. I testi promozionali dei post non hanno questo obbligo, ma se l'agente risponde da solo a commenti e messaggi deve dire che è un'IA. Le app di Meta, poi, aggiungono l'etichetta <a href='https://about.fb.com/news/2024/04/metas-approach-to-labeling-ai-generated-content-and-manipulated-media/'>«AI info»</a> quando rilevano contenuti generati con l'IA. E un post creato solo dall'IA può non essere protetto dal diritto d'autore: la legge tutela le opere dell'ingegno umano, anche fatte con l'IA purché siano frutto del lavoro dell'autore (<a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art25'>legge 132/2025, art. 25</a>). Un motivo in più per la revisione umana."
   - q: "E se provo l'agente IA e non funziona?"
     a: "Con Soraia vale la garanzia <strong>primo mese soddisfatti o rimborsati</strong>: si fissa un target misurabile in fase di analisi e, se il primo mese non ti convince, rimborsiamo oppure lavoriamo gratis finché non sei soddisfatto. Inoltre codice e logica restano tuoi dal primo giorno, senza lock-in."
   - q: "Posso tenere il mio social media manager e aggiungere un agente IA?"
     a: "Sì, ed è spesso la scelta migliore. Il manager tiene strategia, creatività e community; l'agente IA si prende programmazione, pubblicazione multi-canale, bozze e reporting. Così la persona passa più tempo su ciò che fa davvero la differenza e meno sul lavoro meccanico."
+fonti:
+  - titolo: "AI Act, Regolamento (UE) 2024/1689, art. 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Legge 132/2025 sull'intelligenza artificiale, art. 25 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art25"
+  - titolo: "Meta, etichette per i contenuti generati con l'IA"
+    url: "https://about.fb.com/news/2024/04/metas-approach-to-labeling-ai-generated-content-and-manipulated-media/"
 related: []
 featured: false
 pubDate: 2026-11-17

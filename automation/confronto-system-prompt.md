@@ -35,6 +35,10 @@ one-sided ad.
    published case study. External facts (laws, market data) must be attributed to a named
    source. Never fabricate. When a description or FAQ answer cites a law or a statistic, link
    the official source you opened with web_fetch (never an aggregator or a competitor).
+   List every source you relied on in `fonti` (2-4, each opened with web_fetch): laws and
+   guidance on EUR-Lex, Normattiva or the Garante; vendor facts (prices, plans, features,
+   terms) on the vendor's own pricing, documentation or terms page. Never a blog, an
+   aggregator or a competitor's marketing page. A confronto without `fonti` is not published.
 3. **Only real published internal links** (in FAQ answers / descriptions): use routes that
    exist. Never link oggi-lavoro or aegis (draft, 404). The page template already adds the
    final contact CTA, so you do NOT need to add a hard-sell.
@@ -79,9 +83,10 @@ one-sided ad.
     "tabella": [ { "criterio": "...", "valoreA": "...", "valoreB": "..." } ],
     "verdetto": ">=80 chars, nuanced and situation-dependent, balanced",
     "faq": [ { "q": "...", "a": "... (may contain inline <strong>/<a href>)" } ],
+    "fonti": [ { "titolo": "official source name, e.g. 'AI Act, art. 50 (EUR-Lex)'", "url": "https://... opened with web_fetch" } ],
     "keywords": ["2-5 target keywords"]
   },
-  "en": { "...same shape, NATIVE English rewrite (not machine-translated)..." },
+  "en": { "...same shape, NATIVE English rewrite (not machine-translated); same fonti URLs, English titles..." },
   "slug_it": "kebab-case-italian",
   "slug_en": "kebab-case-english",
   "confronto_slug_map_entry": "\"<slug_it>\": \"<slug_en>\","

@@ -70,10 +70,19 @@ faq:
     a: "With Soraia the work runs in monthly Sprints: it starts from <strong>8.000 € a month</strong>, with three dedicated people and a release in production at the end of the month. The first release runs on your real processes in 4 weeks. To see if it makes sense in your case, <a href='/parliamone'>let's talk</a>."
   - q: "Who controls what gets published?"
     a: "A well-built agent works with <strong>human approval on content</strong> before publishing, or at least on sensitive posts. See how we design these flows on the <a href='/sales-marketing'>Sales & Marketing Automation</a> page and the <a href='/ai-agents'>AI Agents</a> overview."
+  - q: "Do I have to disclose that content is made with AI?"
+    a: "Under the <a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act (Article 50)</a>, from 2 August 2026 deepfakes must be disclosed: AI-generated images, audio or video that look real. Promotional post copy carries no such obligation, but if the agent replies to comments and messages on its own it must say it is an AI. Meta's apps also add an <a href='https://about.fb.com/news/2024/04/metas-approach-to-labeling-ai-generated-content-and-manipulated-media/'>“AI info”</a> label when they detect AI-generated content. And a post created by AI alone may not be protected by copyright: Italian law protects works of human intellect, including those made with AI as long as they result from the author's own work (<a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art25'>Law 132/2025, Article 25</a>). One more reason for human review."
   - q: "What if I try the AI agent and it doesn't work?"
     a: "With Soraia there is a <strong>first-month satisfied-or-refunded guarantee</strong>: we set a measurable target during analysis and, if the first month doesn't convince you, we refund or keep working for free until you're satisfied. Plus code and logic stay yours from day one, with no lock-in."
   - q: "Can I keep my social media manager and add an AI agent?"
     a: "Yes, and it's often the best choice. The manager owns strategy, creativity and community; the AI agent takes scheduling, multi-channel publishing, drafts and reporting. That way the person spends more time on what truly makes a difference and less on mechanical work."
+fonti:
+  - titolo: "AI Act, Regulation (EU) 2024/1689, Article 50 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Italian Law 132/2025 on artificial intelligence, Article 25 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art25"
+  - titolo: "Meta, labels for AI-generated content"
+    url: "https://about.fb.com/news/2024/04/metas-approach-to-labeling-ai-generated-content-and-manipulated-media/"
 related: []
 featured: false
 pubDate: 2026-11-17

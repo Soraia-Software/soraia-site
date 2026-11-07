@@ -2,7 +2,7 @@
 titolo: "AI agency specializzata o Big4"
 sottotitolo: "Per un progetto AI in una PMI: una boutique specializzata o un grande system integrator. Cosa cambia davvero su tempi, prezzo e accountability."
 description: "AI agency specializzata vs Big4 per un progetto AI in PMI: tempi, costi, accountability e scala a confronto, con un verdetto su quando scegliere ciascuno."
-inBreve: "Se il tuo progetto riguarda uno o pochi processi in Italia, scegli una AI agency specializzata: tempi rapidi, prezzi prevedibili e una persona che risponde con nome e cognome. Se il progetto è multi-paese, tocca la governance di gruppo o serve un brand da mettere davanti al board, scegli un Big4. Per un singolo processo la scala di un Big4 spesso costa in tempi e overhead più di quanto aggiunga in valore."
+inBreve: "Se il tuo progetto riguarda uno o pochi processi in Italia, scegli una AI agency specializzata: tempi rapidi, prezzi prevedibili e una persona che risponde con nome e cognome. Se il progetto è multi-paese, tocca la governance di gruppo o serve un brand da mettere davanti al board, scegli un Big4. Per un singolo processo conta di più un team piccolo che lavora sul processo di una struttura pensata per progetti di gruppo."
 categoria: "Fornitori"
 author: "Daniel Levis"
 keywords:
@@ -16,8 +16,8 @@ optionA:
   pro:
     - "Tempi rapidi: un primo rilascio in produzione in poche settimane (con Soraia, 4 settimane)"
     - "Accountability chiara: le stesse persone dall'inizio alla fine, risponde chi fa il lavoro"
-    - "Prezzo più prevedibile e costi di struttura bassi rispetto a un grande integrator"
-    - "Codice e dati restano del cliente, meno rischio di lock-in su stack proprietari"
+    - "Prezzo fisso e noto prima di partire (con Soraia, Sprint mensili da 8.000 €)"
+    - "Codice e dati restano del cliente dal primo giorno (con Soraia, per contratto)"
   contro:
     - "Capacità limitata: un team piccolo non assorbe un rollout simultaneo su 15 paesi"
     - "Meno 'brand' da mettere davanti a un board o a un CdA conservatore"
@@ -36,10 +36,10 @@ optionB:
     - "Brand riconosciuto, utile davanti a un board o per requisiti di procurement enterprise"
     - "Continuità di struttura: il turnover di una persona non blocca il progetto"
   contro:
-    - "Tempi lunghi: fasi di scoping, approvazioni e gerarchie prima del primo risultato concreto"
-    - "Costi elevati e spesso poco prevedibili (day rate alti, team numerosi)"
-    - "Chi vende il progetto non è chi lo esegue: il senior va, i junior restano"
-    - "Rischio di lock-in su piattaforme e metodologie proprietarie"
+    - "Più fasi e livelli di approvazione: chiedi quando arriva il primo rilascio in produzione"
+    - "Prezzo di solito a giornate per profilo: il totale dipende da team e durata"
+    - "Team ampi: chiedi chi lavorerà davvero sul progetto e con quale seniority"
+    - "Possono proporre piattaforme e metodi propri: chiarisci nel contratto a chi appartengono codice e dati"
   idealePer:
     - "Gruppi con progetti AI multi-paese o che toccano la governance di gruppo"
     - "Aziende enterprise con requisiti di procurement e compliance stringenti"
@@ -47,19 +47,19 @@ optionB:
 tabella:
   - criterio: "Tempo al primo risultato"
     valoreA: "Settimane (4 con Soraia)"
-    valoreB: "Mesi (scoping + approvazioni)"
+    valoreB: "Più fasi prima del rilascio"
   - criterio: "Prevedibilità del costo"
     valoreA: "Alta (Sprint mensili)"
-    valoreB: "Variabile (day rate, team ampi)"
+    valoreB: "A giornate, dipende da team e durata"
   - criterio: "Chi esegue il lavoro"
     valoreA: "Le stesse persone dall'inizio"
-    valoreB: "Spesso junior dopo la vendita"
+    valoreB: "Da chiarire nel contratto"
   - criterio: "Scala / multi-paese"
     valoreA: "Limitata"
     valoreB: "Elevata"
   - criterio: "Proprietà del codice"
     valoreA: "Del cliente dal primo giorno"
-    valoreB: "Dipende dal contratto (rischio lock-in)"
+    valoreB: "Dipende dal contratto"
   - criterio: "Brand davanti al board"
     valoreA: "Minore"
     valoreB: "Forte"
@@ -68,13 +68,16 @@ faq:
   - q: "Un Big4 è più sicuro per un progetto AI importante?"
     a: "Dipende da cosa intendi per sicuro. Un Big4 porta brand, scala e continuità di struttura. Ma per un singolo processo la sicurezza spesso la fanno di più un target misurabile e tempi brevi: con una <a href='/ai-agents'>agency specializzata come Soraia</a> vedi un primo rilascio in produzione in 4 settimane e il <strong>primo mese è soddisfatti o rimborsati</strong>. Se non ti convince, rimborsiamo o lavoriamo finché non sei soddisfatto."
   - q: "Quanto cambia il prezzo tra agency specializzata e Big4?"
-    a: "Gli ordini di grandezza sono diversi. Con Soraia si parte da <strong>8.000 € al mese</strong>, con tre persone dedicate e un rilascio in produzione a fine mese. I day rate e i team numerosi dei grandi integrator portano i progetti su budget molto più alti e meno prevedibili. Per capire cosa serve davvero al tuo caso, <a href='/prezzi'>vedi come funzionano i prezzi</a>."
+    a: "Gli ordini di grandezza sono diversi. Con Soraia si parte da <strong>8.000 € al mese</strong>, con tre persone dedicate e un rilascio in produzione a fine mese. Le grandi società di consulenza lavorano di solito a giornate per profilo, quindi il budget dipende da quante persone e quanti giorni servono: confronta i preventivi sul totale e sul primo rilascio, non sulla tariffa. Per capire cosa serve davvero al tuo caso, <a href='/prezzi'>vedi come funzionano i prezzi</a>."
   - q: "Chi esegue davvero il lavoro?"
-    a: "È la differenza più concreta. Nei grandi integrator spesso chi vende il progetto non è chi lo esegue: dopo la firma arrivano profili più junior. In una agency specializzata il team è piccolo e dedicato: con Soraia le <strong>stesse tre persone</strong> (Account Manager, Project Manager, AI Engineer) ti seguono dall'inizio alla fine."
+    a: "È la domanda più concreta da fare a qualunque fornitore: chi lavorerà sul progetto dopo la firma, e con quale seniority. In una agency specializzata il team è piccolo e dedicato: con Soraia le <strong>stesse tre persone</strong> (Account Manager, Project Manager, AI Engineer) ti seguono dall'inizio alla fine."
   - q: "E se il mio progetto diventa multi-paese?"
     a: "Qui un Big4 ha un vantaggio reale di scala. Se già sai che il rollout tocca molte sedi e paesi in parallelo, con requisiti di governance di gruppo, la struttura di un grande integrator è progettata per quello. Se invece parti da uno o pochi processi, conviene validare prima con una agency e crescere da lì. Vedi anche la <a href='/guide/consulenza-ai-italia'>guida alla consulenza AI in Italia</a>."
   - q: "Rischio il lock-in con una agency piccola?"
-    a: "Con Soraia no: <strong>codice e dati restano tuoi dal primo giorno</strong>, documentati e mantenibili, niente abbonamenti perpetui. Paradossalmente il rischio di lock-in è spesso più alto con piattaforme e metodologie proprietarie dei grandi integrator. La domanda da fare a entrambi è la stessa: a chi appartiene quello che costruite, e posso portarlo via?"
+    a: "Con Soraia no: <strong>codice e dati restano tuoi dal primo giorno</strong>, documentati e mantenibili, niente abbonamenti perpetui. La domanda da fare a entrambi è la stessa: a chi appartiene quello che costruite, e posso portarlo via? Per legge il software scritto da un dipendente appartiene al datore di lavoro, salvo patto contrario; quello commissionato a un fornitore dipende dal contratto (<a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1941-04-22;633~art12bis'>legge 633/1941, art. 12-bis</a>)."
+fonti:
+  - titolo: "Legge 633/1941 sul diritto d'autore, art. 12-bis (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1941-04-22;633~art12bis"
 related: []
 featured: false
 pubDate: 2026-11-24
