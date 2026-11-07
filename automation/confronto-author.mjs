@@ -66,6 +66,11 @@ function frontmatter(d, lang) {
     o.push("faq:");
     for (const f of d.faq) { o.push(`  - q: ${j(f.q)}`); o.push(`    a: ${j(unescapeHtml(f.a))}`); }
   }
+  // Official sources the comparison cites: rendered as the "Fonti" section and as JSON-LD citation.
+  if (d.fonti && d.fonti.length) {
+    o.push("fonti:");
+    for (const f of d.fonti) { o.push(`  - titolo: ${j(f.titolo)}`); o.push(`    url: ${j(f.url)}`); }
+  }
   o.push("related: []");
   o.push("featured: false");
   o.push(`pubDate: ${PUBDATE}`);
@@ -142,6 +147,9 @@ const text = textAfterTools(resp);
 const art = extractJson(text);
 for (const k of ["it", "en"]) {
   if (!art[k] || !art[k].titolo || !art[k].optionA || !art[k].optionB || !art[k].verdetto) die("Model output missing/invalid field: " + k);
+  // Every confronto cites official sources: no `fonti` (or a non-https URL) means no draft.
+  const fonti = art[k].fonti;
+  if (!Array.isArray(fonti) || !fonti.length || fonti.some((f) => !f || !f.titolo || !/^https:\/\//.test(f.url || ""))) die("Model output missing/invalid fonti: " + k);
 }
 art.slug_it = topic.slug_it; art.slug_en = topic.slug_en;
 

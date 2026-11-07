@@ -64,15 +64,22 @@ tabella:
 verdetto: "Non è una scelta binaria. Se hai già un IT interno sommerso da reset password e FAQ, un agente IA sul primo livello libera tempo subito e tiene conoscenza e controllo in casa; ma non sostituisce chi mette le mani sull'hardware. Se non hai un reparto IT o ti serve presenza fisica e copertura H24, un MSP resta la scelta sensata. Per molte PMI la risposta migliore è ibrida: agente IA che smaltisce il L1 ad alto volume e un MSP che copre interventi complessi e on-field. La domanda giusta è 'che tipo di ticket mi sommerge oggi', non 'IA o fornitore'."
 faq:
   - q: "Un agente IA può davvero chiudere i ticket da solo?"
-    a: "Sui casi di primo livello ad alto volume, sì: reset password, accessi, procedure note, FAQ interne. L'agente risponde, guida l'utente e, quando il caso è complesso, raccoglie le informazioni e fa il routing al tecnico giusto. Su un flusso di triage ticket questo è esattamente il tipo di lavoro che automatizziamo, vedi <a href='/customer-support'>Customer & Compliance Automation</a> e <a href='/ai-agents'>gli agenti IA per area</a>."
+    a: "Sui casi di primo livello ad alto volume, sì: reset password, accessi, procedure note, FAQ interne. L'agente risponde, guida l'utente e, quando il caso è complesso, raccoglie le informazioni e fa il routing al tecnico giusto. Su un flusso di triage ticket questo è esattamente il tipo di lavoro che automatizziamo, vedi <a href='/customer-support'>Customer & Compliance Automation</a> e <a href='/ai-agents'>gli agenti IA per area</a>. Su reset di password e accessi, però, serve una verifica forte dell'identità di chi chiede: per le aziende soggette alla NIS2 controllo degli accessi e autenticazione a più fattori sono tra le misure obbligatorie (<a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2024-09-04;138~art24'>D.Lgs. 138/2024, art. 24</a>)."
   - q: "Se automatizzo il primo livello, elimino l'MSP?"
     a: "Non necessariamente. L'agente IA e l'outsourcing coprono cose diverse: l'agente smaltisce il ripetitivo, l'MSP gestisce interventi fisici, on-site e casi complessi. Molte PMI tengono entrambi e usano l'agente per <strong>ridurre i volumi</strong> che pagano al fornitore."
   - q: "Quanto costa partire con un agente IA sull'help desk?"
     a: "Con Soraia si lavora a Sprint mensili: si parte da <strong>8.000 € al mese</strong>, con tre persone dedicate e un rilascio in produzione a fine mese. Il primo rilascio gira sui processi reali in 4 settimane e vale la garanzia primo mese soddisfatti o rimborsati. Per una stima sul tuo caso, <a href='/parliamone'>parliamone</a>."
   - q: "I dati dei ticket restano al sicuro?"
-    a: "Sì. Codice e dati restano del cliente dal primo giorno, con audit log su ogni risposta dell'agente, allineamento all'AI Act e nessun training degli LLM sui tuoi dati. Infrastruttura europea quando richiesto."
+    a: "Sì. Codice e dati restano del cliente dal primo giorno, con audit log su ogni risposta dell'agente e nessun training degli LLM sui tuoi dati, con infrastruttura europea quando richiesto. Per l'<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a> un help desk non è ad alto rischio: va detto ai colleghi che stanno scrivendo a un'IA (art. 50, dal 2 agosto 2026). E se i log servissero anche a valutare i dipendenti, lo <a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-05-20;300~art4'>Statuto dei lavoratori (art. 4)</a> chiede di informarli prima su strumenti e controlli."
   - q: "Non ho un IT interno: ha senso un agente IA?"
     a: "In quel caso parti probabilmente meglio da un MSP che garantisce copertura completa. L'agente IA sul primo livello rende di più quando hai già un IT interno sommerso dai ticket banali, oppure in affiancamento all'MSP per abbassarne i volumi."
+fonti:
+  - titolo: "D.Lgs. 138/2024 (NIS2), art. 24 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2024-09-04;138~art24"
+  - titolo: "AI Act, Regolamento (UE) 2024/1689 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Statuto dei lavoratori, legge 300/1970, art. 4 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-05-20;300~art4"
 related: []
 featured: false
 pubDate: 2026-11-19

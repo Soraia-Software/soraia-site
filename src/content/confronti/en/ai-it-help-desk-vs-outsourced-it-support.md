@@ -64,15 +64,22 @@ tabella:
 verdetto: "This is not a binary choice. If you already have internal IT drowning in password resets and FAQs, an AI agent on the first level frees time immediately and keeps knowledge and control in-house; but it does not replace someone touching the hardware. If you have no IT department or need physical presence and 24/7 coverage, an MSP stays the sensible option. For many SMEs the best answer is hybrid: an AI agent clearing high-volume L1, and an MSP covering complex and on-field work. The right question is 'what kind of tickets are flooding me today', not 'AI or provider'."
 faq:
   - q: "Can an AI agent really close tickets on its own?"
-    a: "On high-volume first-level cases, yes: password resets, access, known procedures, internal FAQs. The agent answers, guides the user and, when the case is complex, collects the details and routes to the right technician. On a ticket triage flow this is exactly the work we automate, see <a href='/en/customer-support'>Customer & Compliance Automation</a> and <a href='/en/ai-agents'>the AI agents by area</a>."
+    a: "On high-volume first-level cases, yes: password resets, access, known procedures, internal FAQs. The agent answers, guides the user and, when the case is complex, collects the details and routes to the right technician. On a ticket triage flow this is exactly the work we automate, see <a href='/en/customer-support'>Customer & Compliance Automation</a> and <a href='/en/ai-agents'>the AI agents by area</a>. For password resets and access, though, the requester's identity needs strong verification: for companies subject to NIS2, access control and multi-factor authentication are among the mandatory measures (<a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2024-09-04;138~art24'>Italian Legislative Decree 138/2024, Article 24</a>)."
   - q: "If I automate the first level, do I drop the MSP?"
     a: "Not necessarily. An AI agent and outsourcing cover different things: the agent clears the repetitive load, the MSP handles physical, on-site and complex cases. Many SMEs keep both and use the agent to <strong>reduce the volumes</strong> they pay the provider for."
   - q: "How much does it cost to start with an AI help desk agent?"
     a: "With Soraia we work in monthly Sprints: it starts at <strong>8,000 € per month</strong>, with three dedicated people and a release in production at the end of the month. The first release runs on your real processes in 4 weeks and comes with a first-month satisfied-or-refunded guarantee. For an estimate on your case, <a href='/en/contact'>let's talk</a>."
   - q: "Is ticket data kept safe?"
-    a: "Yes. Code and data stay the client's from day one, with an audit log on every agent answer, AI Act alignment and no LLM training on your data. European infrastructure when required."
+    a: "Yes. Code and data stay the client's from day one, with an audit log on every agent answer and no LLM training on your data, with European infrastructure when required. Under the <a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj'>AI Act</a> a help desk is not high risk: colleagues must be told they are writing to an AI (Article 50, from 2 August 2026). And if the logs were also used to assess employees, Italy's <a href='https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-05-20;300~art4'>Workers' Statute (Article 4)</a> requires informing them in advance about the tools and the checks."
   - q: "I have no internal IT: does an AI agent make sense?"
     a: "In that case you probably start better with an MSP that guarantees full coverage. An AI agent on the first level pays off more when you already have internal IT buried in trivial tickets, or alongside the MSP to lower its volumes."
+fonti:
+  - titolo: "Italian Legislative Decree 138/2024 (NIS2), Article 24 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2024-09-04;138~art24"
+  - titolo: "AI Act, Regulation (EU) 2024/1689 (EUR-Lex)"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  - titolo: "Italian Workers' Statute, Law 300/1970, Article 4 (Normattiva)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-05-20;300~art4"
 related: []
 featured: false
 pubDate: 2026-11-19
